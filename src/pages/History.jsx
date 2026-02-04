@@ -3,10 +3,10 @@ function History() {
 
   const collegeGolfers = [
     { gradYear: '2025', player: 'Torger Ohe', college: 'University of Minnesota', notes: 'Individual State Champion - 2024' },
+    { gradYear: '2025', player: 'Sam LaFrenz', college: 'Gustavus Adolphus College', notes: '' },
     { gradYear: '2024', player: 'Gavin Sendar', college: 'Wesleyan University', notes: '' },
     { gradYear: '2024', player: 'Jimmy Abdo', college: 'Gustavus Adolphus College', notes: '2025 U.S. Amateur Championship - Round of 8' },
     { gradYear: '2024', player: 'Ben Sanderson', college: 'Amherst College', notes: '' },
-    { gradYear: '2024', player: 'Gus Breuer', college: 'Hamilton College', notes: '' },
     { gradYear: '2023', player: 'Parker Hughes', college: 'Eastern Illinois University', notes: '' },
     { gradYear: '2023', player: 'Owen Nielsen', college: 'Williams College', notes: '' },
     { gradYear: '2022', player: 'Jack Wetzel', college: 'University of Minnesota', notes: 'Individual State Champion - 2022' },

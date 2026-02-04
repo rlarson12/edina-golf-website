@@ -55,7 +55,7 @@
       "team": "varsity"
     },
     {
-      "name": "Sam Lafrenz",
+      "name": "Sam LaFrenz",
       "gradYear": 2025,
       "grade": 12,
       "team": "varsity"
@@ -1455,7 +1455,7 @@
     },
     {
       "id": "SLAFF",
-      "name": "Sam Lafrenz",
+      "name": "Sam LaFrenz",
       "gradYear": 2025,
       "team": "varsity",
       "grade": 12,
@@ -2539,7 +2539,7 @@
       ]
     },
     {
-      "name": "Sam Lafrenz",
+      "name": "Sam LaFrenz",
       "average": 74.25,
       "trend": "",
       "last3Avg": 72,
@@ -4189,7 +4189,7 @@
         ]
       },
       {
-        "name": "Sam Lafrenz",
+        "name": "Sam LaFrenz",
         "scores": [
           null,
           null,
