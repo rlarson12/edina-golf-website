@@ -15,7 +15,7 @@ function History() {
     { gradYear: '2017', player: 'Jack Ebner', college: 'Miami University (OH)', notes: '' },
     { gradYear: '2015', player: 'Kobi Boe', college: 'University of Nebraska Omaha', notes: '' },
     { gradYear: '2015', player: 'Ben Olson', college: 'University of Loyola Chicago', notes: '' },
-    { gradYear: '2015', player: 'Sam Foust', college: 'University of Oregon', notes: 'Current Associate Head Coach, University of San Diego' },
+    { gradYear: '2015', player: 'Sam Foust', college: 'University of Oregon', notes: '2016 NCAA National Champion (Oregon), Current Associate Head Coach, University of San Diego' },
     { gradYear: '1980', player: 'Chris Perry', college: 'Ohio State University', notes: '3x Individual State Champion (1978, 1979, 1980), PGA Tour Pro, 2025 MN Golf Hall of Fame' },
   ]
 

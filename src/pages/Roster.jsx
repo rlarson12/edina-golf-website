@@ -135,6 +135,7 @@ function Roster() {
         }
       })
       .filter(s => s.score !== null)
+      .reverse()
   }
 
   // Calculate weighted 18-hole average from scores
