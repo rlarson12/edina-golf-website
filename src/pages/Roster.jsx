@@ -1,5 +1,10 @@
 import { useState, useMemo } from 'react'
-import golfData from '../data/golfData.json'
+impor
+                            {s.position && (
+                              <span className="text-xs text-gray-500 bg-gray-100 px-1.5 py-0.5 rounded ml-1">
+                                {s.position}
+                              </span>
+                            )}t golfData from '../data/golfData.json'
 
 function Roster() {
   const [filter, setFilter] = useState('all')
@@ -23,6 +28,21 @@ function Roster() {
     })
     return map
   }, [])
+
+  const playerPositionMap = useMemo(() => {
+    const map = {}
+    const allEvents = [...(golfData.events || []), ...(golfData.jvEvents || [])]
+    allEvents.forEach(event => {
+      if (event.id && event.players) {
+        map[event.id] = {}
+        event.players.forEach(p => {
+          map[event.id][p.name] = p.position || null
+        })
+      }
+    })
+    return map
+  }, [])
+
 
   // Get holes for an event header
   const getEventHoles = (eventHeader) => {
@@ -110,6 +130,20 @@ function Roster() {
 
         // Extract event name
         const eventName = header.replace(/^\d{2}\/\d{2} - /, '') || `Event ${idx + 1}`
+        const dateM = header.match(/^(\d{2})\/(\d{2})/)
+        let matchedEventId = null
+        if (dateM) {
+          const allEvts = [...(golfData.events || []), ...(golfData.jvEvents || [])]
+          const evMatch = allEvts.find(e => {
+            if (!e.id) return false
+            const p = e.id.match(/(\d{4})-(\d{2})-(\d{2})/)
+            return p && p[2] === dateM[1] && p[3] === dateM[2]
+          })
+          matchedEventId = evMatch?.id || null
+        }
+        const position = matchedEventId && playerPositionMap[matchedEventId]
+          ? playerPositionMap[matchedEventId][playerName] || null
+          : null
         const eventNameLower = eventName.toLowerCase()
 
         // Find event info - try exact match first, then partial match

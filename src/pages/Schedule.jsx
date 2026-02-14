@@ -31,6 +31,20 @@ function Schedule() {
   const varsitySchedule = golfData.schedule || []
   const jvSchedule = golfData.jvSchedule || []
 
+  const eventPlayersMap = useMemo(() => {
+    const map = {}
+    const allEvents = [...(golfData.events || []), ...(golfData.jvEvents || [])]
+    allEvents.forEach(event => {
+      if (event.id && event.players) {
+        map[event.id] = event.players
+      }
+    })
+    return map
+  }, [])
+
+  const getEventPlayers = (eventId) => eventPlayersMap[eventId] || []
+
+
   // Combine and tag events by level (2025)
   const allCombined2025 = useMemo(() => {
     const varsityTagged = varsitySchedule.map(e => ({ ...e, level: 'Varsity' }))
@@ -284,6 +298,34 @@ function Schedule() {
                 </div>
               </div>
             ))}
+          </div>
+        )}
+
+        {/* Expanded player scores */}
+        {isExpanded && !isRound && getEventPlayers(event.id).length > 0 && (
+          <div className="border-t border-gray-100 bg-gray-50/50 p-4">
+            <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Individual Scores</div>
+            <div className="space-y-1">
+              {getEventPlayers(event.id)
+                .sort((a, b) => a.score - b.score)
+                .map((player, idx) => (
+                <div key={idx} className="flex items-center justify-between p-2 bg-white rounded-lg border border-gray-100">
+                  <div className="flex items-center gap-3">
+                    <span className="w-6 text-center text-sm font-medium text-gray-400">{idx + 1}</span>
+                    <div>
+                      <span className="font-medium text-gray-900 text-sm">{player.name}</span>
+                      {player.grade && <span className="text-xs text-gray-400 ml-1">({player.grade})</span>}
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="font-semibold text-gray-900">{player.score}</span>
+                    {player.position && (
+                      <span className="text-xs text-gray-500 bg-gray-100 px-1.5 py-0.5 rounded">{player.position}</span>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         )}
       </div>
