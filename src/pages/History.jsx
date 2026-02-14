@@ -2,6 +2,7 @@ function History() {
   const championshipYears = [2023, 2022, 2019, 2014, 1987, 1978, 1977, 1973, 1970, 1954]
 
   const collegeGolfers = [
+    { gradYear: 2026, player: 'Sander Ohe', college: 'Bethel University', notes: 'Committed for Fall 2026' },
     { gradYear: '2025', player: 'Torger Ohe', college: 'University of Minnesota', notes: 'Individual State Champion - 2024' },
     { gradYear: '2025', player: 'Sam LaFrenz', college: 'Gustavus Adolphus College', notes: '' },
     { gradYear: '2024', player: 'Gavin Sendar', college: 'Wesleyan University', notes: '' },
