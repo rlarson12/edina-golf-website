@@ -1,1 +1,6208 @@
-undefined
+{
+  "players": [
+    {
+      "name": "Charlie Nielsen",
+      "gradYear": 2027,
+      "grade": 10,
+      "team": "varsity"
+    },
+    {
+      "name": "Chase Larson",
+      "gradYear": 2027,
+      "grade": 10,
+      "team": "varsity"
+    },
+    {
+      "name": "David Colby",
+      "gradYear": 2026,
+      "grade": 11,
+      "team": "varsity"
+    },
+    {
+      "name": "Harry Kuretsky",
+      "gradYear": 2025,
+      "grade": 12,
+      "team": "varsity"
+    },
+    {
+      "name": "Lorenzo D'Angelo",
+      "gradYear": 2025,
+      "grade": 12,
+      "team": "varsity"
+    },
+    {
+      "name": "Max Romslo",
+      "gradYear": 2027,
+      "grade": 10,
+      "team": "varsity"
+    },
+    {
+      "name": "Michael Vernon",
+      "gradYear": 2028,
+      "grade": 9,
+      "team": "varsity"
+    },
+    {
+      "name": "Peter Bennett",
+      "gradYear": 2026,
+      "grade": 11,
+      "team": "varsity"
+    },
+    {
+      "name": "Ryan Toren",
+      "gradYear": 2025,
+      "grade": 12,
+      "team": "varsity"
+    },
+    {
+      "name": "Sam LaFrenz",
+      "gradYear": 2025,
+      "grade": 12,
+      "team": "varsity"
+    },
+    {
+      "name": "Sander Ohe",
+      "gradYear": 2026,
+      "grade": 11,
+      "team": "varsity"
+    },
+    {
+      "name": "Torger Ohe",
+      "gradYear": 2025,
+      "grade": 12,
+      "team": "varsity"
+    },
+    {
+      "name": "Anderson Wold",
+      "gradYear": 2027,
+      "grade": 10,
+      "team": "jv"
+    },
+    {
+      "name": "Billy Smith",
+      "gradYear": 2027,
+      "grade": 10,
+      "team": "jv"
+    },
+    {
+      "name": "Blake Miller",
+      "gradYear": 2027,
+      "grade": 10,
+      "team": "jv"
+    },
+    {
+      "name": "Carter Ringle",
+      "gradYear": 2028,
+      "grade": 9,
+      "team": "jv"
+    },
+    {
+      "name": "Cole Considine",
+      "gradYear": 2028,
+      "grade": 9,
+      "team": "jv"
+    },
+    {
+      "name": "George Heinen",
+      "gradYear": 2027,
+      "grade": 10,
+      "team": "jv"
+    },
+    {
+      "name": "Henry Freeman",
+      "gradYear": 2027,
+      "grade": 10,
+      "team": "jv"
+    },
+    {
+      "name": "Hudson Strodl",
+      "gradYear": 2026,
+      "grade": 11,
+      "team": "jv"
+    },
+    {
+      "name": "Macallen Smith",
+      "gradYear": 2026,
+      "grade": 11,
+      "team": "jv"
+    },
+    {
+      "name": "Nash Paine",
+      "gradYear": 2028,
+      "grade": 9,
+      "team": "jv"
+    },
+    {
+      "name": "Ryan Geyer",
+      "gradYear": 2027,
+      "grade": 10,
+      "team": "jv"
+    },
+    {
+      "name": "Tighe Rogers",
+      "gradYear": 2026,
+      "grade": 11,
+      "team": "jv"
+    },
+    {
+      "name": "Ty Pankratz",
+      "gradYear": 2026,
+      "grade": 11,
+      "team": "jv"
+    }
+  ],
+  "events": [
+    {
+      "id": "2025-04-22-VAR",
+      "date": "2025-04-22T00:00:00.000Z",
+      "dateFormatted": "Apr 21",
+      "dateISO": "2025-04-22",
+      "name": "Lake Conference Opener",
+      "level": "Varsity",
+      "course": "Braemar Golf Course",
+      "holes": 18,
+      "par": 72,
+      "teamScore": "283 (-5)",
+      "teamFinish": "1st of 7",
+      "sortOrder": 1,
+      "players": [
+        {
+          "name": "Sander Ohe",
+          "grade": "JR",
+          "score": 69,
+          "position": 1
+        },
+        {
+          "name": "Torger Ohe",
+          "grade": "SR",
+          "score": 69,
+          "position": 1
+        },
+        {
+          "name": "David Colby",
+          "grade": "JR",
+          "score": 72,
+          "position": 5
+        },
+        {
+          "name": "Chase Larson",
+          "grade": "SO",
+          "score": 73,
+          "position": 7
+        },
+        {
+          "name": "Lorenzo D'Angelo",
+          "grade": "SR",
+          "score": 73,
+          "position": 7
+        },
+        {
+          "name": "Charlie Nielsen",
+          "grade": "SO",
+          "score": 75,
+          "position": 15
+        }
+      ]
+    },
+    {
+      "id": "2025-04-23-VAR",
+      "date": "2025-04-23T00:00:00.000Z",
+      "dateFormatted": "Apr 22",
+      "dateISO": "2025-04-23",
+      "name": "East Ridge Invite",
+      "level": "Varsity",
+      "course": "StoneRidge Golf Club",
+      "holes": 18,
+      "par": 72,
+      "teamScore": "293 (+5)",
+      "teamFinish": "1st of 16",
+      "sortOrder": 2,
+      "players": [
+        {
+          "name": "Torger Ohe",
+          "grade": "SR",
+          "score": 71,
+          "position": 1
+        },
+        {
+          "name": "Henry Bennett",
+          "grade": "JR",
+          "score": 72,
+          "position": 3
+        },
+        {
+          "name": "Sander Ohe",
+          "grade": "JR",
+          "score": 74,
+          "position": 6
+        },
+        {
+          "name": "Charlie Nielsen",
+          "grade": "SO",
+          "score": 76,
+          "position": 10
+        },
+        {
+          "name": "David Colby",
+          "grade": "JR",
+          "score": 78,
+          "position": 14
+        },
+        {
+          "name": "Chase Larson",
+          "grade": "SO",
+          "score": 79,
+          "position": 16
+        }
+      ]
+    },
+    {
+      "id": "2025-04-29-VAR",
+      "date": "2025-04-29T00:00:00.000Z",
+      "dateFormatted": "Apr 28",
+      "dateISO": "2025-04-29",
+      "name": "Lake Conference Tri",
+      "level": "Varsity",
+      "course": "Wild Marsh Golf Club",
+      "holes": 18,
+      "par": 71,
+      "teamScore": "294 (+10)",
+      "teamFinish": "1st of 3",
+      "sortOrder": 3,
+      "players": [
+        {
+          "name": "Torger Ohe",
+          "grade": "SR",
+          "score": 69,
+          "position": 1
+        },
+        {
+          "name": "Charlie Nielsen",
+          "grade": "SO",
+          "score": 73,
+          "position": 3
+        },
+        {
+          "name": "Sander Ohe",
+          "grade": "JR",
+          "score": 75,
+          "position": 5
+        },
+        {
+          "name": "David Colby",
+          "grade": "JR",
+          "score": 77,
+          "position": 6
+        },
+        {
+          "name": "Henry Bennett",
+          "grade": "JR",
+          "score": 78,
+          "position": 7
+        },
+        {
+          "name": "Lorenzo D'Angelo",
+          "grade": "SR",
+          "score": 79,
+          "position": 8
+        }
+      ]
+    },
+    {
+      "id": "2025-04-30-VAR",
+      "date": "2025-04-30T00:00:00.000Z",
+      "dateFormatted": "Apr 29",
+      "dateISO": "2025-04-30",
+      "name": "Border Battle Day 1",
+      "level": "Varsity",
+      "course": "Troy Burne",
+      "holes": 18,
+      "par": 71,
+      "teamScore": null,
+      "teamFinish": null,
+      "sortOrder": 4
+    },
+    {
+      "id": "2025-05-01-VAR",
+      "date": "2025-05-01T00:00:00.000Z",
+      "dateFormatted": "Apr 30",
+      "dateISO": "2025-05-01",
+      "name": "Border Battle Final",
+      "level": "Varsity",
+      "course": "St Croix",
+      "holes": 18,
+      "par": 72,
+      "teamScore": "576 (+4)",
+      "teamFinish": "1st of 22",
+      "sortOrder": 5,
+      "players": [
+        {
+          "name": "Charlie Nielsen",
+          "grade": "SO",
+          "score": 143,
+          "position": 3
+        },
+        {
+          "name": "Chase Larson",
+          "grade": "SO",
+          "score": 144,
+          "position": 6
+        },
+        {
+          "name": "Sander Ohe",
+          "grade": "JR",
+          "score": 144,
+          "position": 6
+        },
+        {
+          "name": "David Colby",
+          "grade": "JR",
+          "score": 150,
+          "position": 15
+        },
+        {
+          "name": "Henry Bennett",
+          "grade": "JR",
+          "score": 152,
+          "position": 17
+        },
+        {
+          "name": "Torger Ohe",
+          "grade": "SR",
+          "score": 153,
+          "position": 19
+        }
+      ]
+    },
+    {
+      "id": "2025-05-02-VAR",
+      "date": "2025-05-02T00:00:00.000Z",
+      "dateFormatted": "May 1",
+      "dateISO": "2025-05-02",
+      "name": "Dacotah Ridge Day 1",
+      "level": "Varsity",
+      "course": "Dacotah Ridge GC",
+      "holes": 18,
+      "par": 72,
+      "teamScore": null,
+      "teamFinish": null,
+      "sortOrder": 6
+    },
+    {
+      "id": "2025-05-03-VAR",
+      "date": "2025-05-03T00:00:00.000Z",
+      "dateFormatted": "May 2",
+      "dateISO": "2025-05-03",
+      "name": "Dacotah Ridge Final",
+      "level": "Varsity",
+      "course": "Dacotah Ridge GC",
+      "holes": 18,
+      "par": 72,
+      "teamScore": "585 (+9)",
+      "teamFinish": "1st of 14",
+      "sortOrder": 7,
+      "players": [
+        {
+          "name": "Torger Ohe",
+          "grade": "SR",
+          "score": 142,
+          "position": 1
+        },
+        {
+          "name": "Henry Bennett",
+          "grade": "JR",
+          "score": 149,
+          "position": 8
+        },
+        {
+          "name": "Chase Larson",
+          "grade": "SO",
+          "score": 149,
+          "position": 8
+        },
+        {
+          "name": "David Colby",
+          "grade": "JR",
+          "score": 149,
+          "position": 8
+        },
+        {
+          "name": "Sander Ohe",
+          "grade": "JR",
+          "score": 154,
+          "position": 17
+        },
+        {
+          "name": "Charlie Nielsen",
+          "grade": "SO",
+          "score": 158,
+          "position": 26
+        }
+      ]
+    },
+    {
+      "id": "2025-05-08-VAR",
+      "date": "2025-05-08T00:00:00.000Z",
+      "dateFormatted": "May 7",
+      "dateISO": "2025-05-08",
+      "name": "Lake Conference Tri",
+      "level": "Varsity",
+      "course": "Braemar Golf Course",
+      "holes": 18,
+      "par": 72,
+      "teamScore": "291 (+3)",
+      "teamFinish": "1st of 3",
+      "sortOrder": 8,
+      "players": [
+        {
+          "name": "Henry Bennett",
+          "grade": "JR",
+          "score": 69,
+          "position": 1
+        },
+        {
+          "name": "Henry Lafrenz",
+          "grade": "JR",
+          "score": 70,
+          "position": 2
+        },
+        {
+          "name": "Max Romslo",
+          "grade": "SO",
+          "score": 76,
+          "position": 5
+        },
+        {
+          "name": "Hudson Strodl",
+          "grade": "JR",
+          "score": 76,
+          "position": 5
+        },
+        {
+          "name": "Noah Kuretsky",
+          "grade": "JR",
+          "score": 78,
+          "position": 8
+        },
+        {
+          "name": "Will Toren",
+          "grade": "SO",
+          "score": 84,
+          "position": 14
+        }
+      ]
+    },
+    {
+      "id": "2025-05-09-VAR",
+      "date": "2025-05-09T00:00:00.000Z",
+      "dateFormatted": "May 8",
+      "dateISO": "2025-05-09",
+      "name": "Detroit Lakes Day 1",
+      "level": "Varsity",
+      "course": "Detroit Country Club",
+      "holes": 18,
+      "par": 71,
+      "teamScore": null,
+      "teamFinish": null,
+      "sortOrder": 9
+    },
+    {
+      "id": "2025-05-10-VAR",
+      "date": "2025-05-10T00:00:00.000Z",
+      "dateFormatted": "May 9",
+      "dateISO": "2025-05-10",
+      "name": "Detroit Lakes Final",
+      "level": "Varsity",
+      "course": "Detroit Country Club",
+      "holes": 18,
+      "par": 71,
+      "teamScore": "597 (+29)",
+      "teamFinish": "2nd of 16",
+      "sortOrder": 10,
+      "players": [
+        {
+          "name": "Torger Ohe",
+          "grade": "SR",
+          "score": 146,
+          "position": 3
+        },
+        {
+          "name": "David Colby",
+          "grade": "JR",
+          "score": 148,
+          "position": 6
+        },
+        {
+          "name": "Chase Larson",
+          "grade": "SO",
+          "score": 150,
+          "position": 12
+        },
+        {
+          "name": "Charlie Nielsen",
+          "grade": "SO",
+          "score": 153,
+          "position": 20
+        },
+        {
+          "name": "Sander Ohe",
+          "grade": "JR",
+          "score": 158,
+          "position": 33
+        },
+        {
+          "name": "Michael Vernon",
+          "grade": "FR",
+          "score": 170,
+          "position": 54
+        }
+      ]
+    },
+    {
+      "id": "2025-05-12-VAR",
+      "date": "2025-05-12T00:00:00.000Z",
+      "dateFormatted": "May 11",
+      "dateISO": "2025-05-12",
+      "name": "Oak Ridge Day 1",
+      "level": "Varsity",
+      "course": "Oak Ridge CC",
+      "holes": 18,
+      "par": 70,
+      "teamScore": null,
+      "teamFinish": null,
+      "sortOrder": 11
+    },
+    {
+      "id": "2025-05-13-VAR",
+      "date": "2025-05-13T00:00:00.000Z",
+      "dateFormatted": "May 12",
+      "dateISO": "2025-05-13",
+      "name": "Oak Ridge Final",
+      "level": "Varsity",
+      "course": "Oak Ridge CC",
+      "holes": 18,
+      "par": 70,
+      "teamScore": "575 (+15)",
+      "teamFinish": "1st of 6",
+      "sortOrder": 12,
+      "players": [
+        {
+          "name": "Torger Ohe",
+          "grade": "SR",
+          "score": 143,
+          "position": 1
+        },
+        {
+          "name": "Sander Ohe",
+          "grade": "JR",
+          "score": 145,
+          "position": 4
+        },
+        {
+          "name": "David Colby",
+          "grade": "JR",
+          "score": 147,
+          "position": 8
+        },
+        {
+          "name": "Charlie Nielsen",
+          "grade": "SO",
+          "score": 150,
+          "position": 14
+        },
+        {
+          "name": "Henry Bennett",
+          "grade": "JR",
+          "score": 150,
+          "position": 14
+        },
+        {
+          "name": "Chase Larson",
+          "grade": "SO",
+          "score": 155,
+          "position": 23
+        }
+      ]
+    },
+    {
+      "id": "2025-05-14-VAR",
+      "date": "2025-05-14T00:00:00.000Z",
+      "dateFormatted": "May 13",
+      "dateISO": "2025-05-14",
+      "name": "Sartell Invite",
+      "level": "Varsity",
+      "course": "Blackberry Ridge GC",
+      "holes": 18,
+      "par": 72,
+      "teamScore": "316 (+28)",
+      "teamFinish": "8th of 15",
+      "sortOrder": 13,
+      "players": [
+        {
+          "name": "Lorenzo D'Angelo",
+          "grade": "SR",
+          "score": 78,
+          "position": 18
+        },
+        {
+          "name": "Noah Kuretsky",
+          "grade": "JR",
+          "score": 79,
+          "position": 22
+        },
+        {
+          "name": "Henry Lafrenz",
+          "grade": "JR",
+          "score": 79,
+          "position": 22
+        },
+        {
+          "name": "Max Romslo",
+          "grade": "SO",
+          "score": 80,
+          "position": 27
+        },
+        {
+          "name": "Will Toren",
+          "grade": "SO",
+          "score": 80,
+          "position": 27
+        },
+        {
+          "name": "Michael Vernon",
+          "grade": "FR",
+          "score": 82,
+          "position": 37
+        }
+      ]
+    },
+    {
+      "id": "2025-05-15-VAR",
+      "date": "2025-05-15T00:00:00.000Z",
+      "dateFormatted": "May 14",
+      "dateISO": "2025-05-15",
+      "name": "EHS vs CDH Duel",
+      "level": "Varsity",
+      "course": "Edina Country Club",
+      "holes": 18,
+      "par": 70,
+      "teamScore": "302 (+14)",
+      "teamFinish": "2nd of 2",
+      "sortOrder": 14,
+      "players": [
+        {
+          "name": "Torger Ohe",
+          "grade": "SR",
+          "score": 69,
+          "position": 1
+        },
+        {
+          "name": "Sander Ohe",
+          "grade": "JR",
+          "score": 77,
+          "position": 5
+        },
+        {
+          "name": "Chase Larson",
+          "grade": "SO",
+          "score": 77,
+          "position": 5
+        },
+        {
+          "name": "Henry Bennett",
+          "grade": "JR",
+          "score": 79,
+          "position": 7
+        },
+        {
+          "name": "Charlie Nielsen",
+          "grade": "SO",
+          "score": 85,
+          "position": 11
+        },
+        {
+          "name": "David Colby",
+          "grade": "JR",
+          "score": 89,
+          "position": 14
+        }
+      ]
+    },
+    {
+      "id": "2025-05-16-VAR",
+      "date": "2025-05-16T00:00:00.000Z",
+      "dateFormatted": "May 15",
+      "dateISO": "2025-05-16",
+      "name": "Pioneer Creek Event",
+      "level": "Varsity",
+      "course": "Pioneer Creek GC",
+      "holes": 18,
+      "par": 72,
+      "teamScore": "304 (+16)",
+      "teamFinish": "1st of 3",
+      "sortOrder": 15,
+      "players": [
+        {
+          "name": "Lorenzo D'Angelo",
+          "grade": "SR",
+          "score": 72,
+          "position": 1
+        },
+        {
+          "name": "Henry Lafrenz",
+          "grade": "JR",
+          "score": 76,
+          "position": 2
+        },
+        {
+          "name": "Michael Vernon",
+          "grade": "FR",
+          "score": 76,
+          "position": 2
+        },
+        {
+          "name": "Will Toren",
+          "grade": "SO",
+          "score": 80,
+          "position": 5
+        },
+        {
+          "name": "Noah Kuretsky",
+          "grade": "JR",
+          "score": 86,
+          "position": 7
+        },
+        {
+          "name": "Max Romslo",
+          "grade": "SO",
+          "score": 86,
+          "position": 7
+        }
+      ]
+    },
+    {
+      "id": "2025-05-21-VAR",
+      "date": "2025-05-21T00:00:00.000Z",
+      "dateFormatted": "May 20",
+      "dateISO": "2025-05-21",
+      "name": "EHS vs Waconia Duel",
+      "level": "Varsity",
+      "course": "Island View GC",
+      "holes": 18,
+      "par": 72,
+      "teamScore": "292 (+4)",
+      "teamFinish": "1st of 2",
+      "sortOrder": 16,
+      "players": [
+        {
+          "name": "Torger Ohe",
+          "grade": "SR",
+          "score": 70,
+          "position": 1
+        },
+        {
+          "name": "Henry Lafrenz",
+          "grade": "JR",
+          "score": 72,
+          "position": 2
+        },
+        {
+          "name": "David Colby",
+          "grade": "JR",
+          "score": 74,
+          "position": 3
+        },
+        {
+          "name": "Henry Bennett",
+          "grade": "JR",
+          "score": 76,
+          "position": 5
+        },
+        {
+          "name": "Sander Ohe",
+          "grade": "JR",
+          "score": 77,
+          "position": 7
+        },
+        {
+          "name": "Charlie Nielsen",
+          "grade": "SO",
+          "score": 79,
+          "position": 9
+        }
+      ]
+    },
+    {
+      "id": "2025-05-27-VAR",
+      "date": "2025-05-27T00:00:00.000Z",
+      "dateFormatted": "May 26",
+      "dateISO": "2025-05-27",
+      "name": "MSHSL Boys 6AAA Section Tournament Day 1",
+      "level": "Varsity",
+      "course": "Meadows at Mystic Lake",
+      "holes": 18,
+      "par": 72,
+      "teamScore": null,
+      "teamFinish": null,
+      "sortOrder": 17
+    },
+    {
+      "id": "2025-05-28-VAR",
+      "date": "2025-05-28T00:00:00.000Z",
+      "dateFormatted": "May 27",
+      "dateISO": "2025-05-28",
+      "name": "MSHSL Boys 6AAA Section Tournament Final",
+      "level": "Varsity",
+      "course": "Meadows at Mystic Lake",
+      "holes": 18,
+      "par": 72,
+      "teamScore": "581 (+4)",
+      "teamFinish": "2nd of 13",
+      "sortOrder": 18,
+      "players": [
+        {
+          "name": "Torger Ohe",
+          "grade": "SR",
+          "score": 143,
+          "position": 2
+        },
+        {
+          "name": "Chase Larson",
+          "grade": "SO",
+          "score": 146,
+          "position": 7
+        },
+        {
+          "name": "David Colby",
+          "grade": "JR",
+          "score": 147,
+          "position": 8
+        },
+        {
+          "name": "Henry Bennett",
+          "grade": "JR",
+          "score": 148,
+          "position": 10
+        },
+        {
+          "name": "Sander Ohe",
+          "grade": "JR",
+          "score": 150,
+          "position": 14
+        },
+        {
+          "name": "Charlie Nielsen",
+          "grade": "SO",
+          "score": 158,
+          "position": 28
+        }
+      ]
+    },
+    {
+      "id": "2025-06-09-VAR",
+      "date": "2025-06-09T00:00:00.000Z",
+      "dateFormatted": "Jun 9",
+      "dateISO": "2025-06-09",
+      "name": "MSHSL Boys AAA State Championship Day 1",
+      "level": "Varsity",
+      "course": "Bunker Hills Golf Club",
+      "holes": 18,
+      "par": 72,
+      "teamScore": null,
+      "teamFinish": null,
+      "sortOrder": 19
+    },
+    {
+      "id": "2025-06-10-VAR",
+      "date": "2025-06-10T00:00:00.000Z",
+      "dateFormatted": "Jun 10",
+      "dateISO": "2025-06-10",
+      "name": "MSHSL Boys AAA State Championship Final",
+      "level": "Varsity",
+      "course": "Bunker Hills Golf Club",
+      "holes": 18,
+      "par": 72,
+      "teamScore": "N/A",
+      "teamFinish": "Individual qualifiers",
+      "sortOrder": 20,
+      "players": [
+        {
+          "name": "Torger Ohe",
+          "grade": "SR",
+          "score": 147,
+          "position": "T10"
+        },
+        {
+          "name": "Chase Larson",
+          "grade": "SO",
+          "score": 151,
+          "position": "T30"
+        }
+      ]
+    }
+  ],
+  "jvEvents": [
+    {
+      "id": "2025-04-21-JV",
+      "date": "2025-04-21T00:00:00.000Z",
+      "dateFormatted": "Apr 20",
+      "dateISO": "2025-04-21",
+      "name": "Lake Conference JV Tournament",
+      "level": "JV",
+      "course": "Bluff Creek GC",
+      "holes": 18,
+      "par": 72,
+      "teamScore": "326 (+28)",
+      "teamFinish": "2nd of 7",
+      "sortOrder": 19,
+      "players": [
+        {
+          "name": "Ty Pankratz",
+          "grade": "JR",
+          "score": 77,
+          "position": 5
+        },
+        {
+          "name": "Nash Paine",
+          "grade": "FR",
+          "score": 79,
+          "position": 8
+        },
+        {
+          "name": "Billy Smith",
+          "grade": "SO",
+          "score": 79,
+          "position": 8
+        },
+        {
+          "name": "George Heinen",
+          "grade": "SO",
+          "score": 81,
+          "position": 11
+        },
+        {
+          "name": "MacAllen Smith",
+          "grade": "JR",
+          "score": 81,
+          "position": 11
+        },
+        {
+          "name": "Henry Freeman",
+          "grade": "SO",
+          "score": 82,
+          "position": 14
+        }
+      ]
+    },
+    {
+      "id": "2025-04-23-JV",
+      "date": "2025-04-23T00:00:00.000Z",
+      "dateFormatted": "Apr 22",
+      "dateISO": "2025-04-23",
+      "name": "East Ridge JV Event",
+      "level": "JV",
+      "course": "Clifton Highlands",
+      "holes": 18,
+      "par": 72,
+      "teamScore": "316 (+32)",
+      "teamFinish": "2nd of 23",
+      "sortOrder": 20,
+      "players": [
+        {
+          "name": "Andy Wold",
+          "grade": "SO",
+          "score": 76,
+          "position": 2
+        },
+        {
+          "name": "Carter Ringle",
+          "grade": "FR",
+          "score": 76,
+          "position": 2
+        },
+        {
+          "name": "Hudson Strodl",
+          "grade": "JR",
+          "score": 79,
+          "position": 6
+        },
+        {
+          "name": "Ryan Geyer",
+          "grade": "SO",
+          "score": 85,
+          "position": 16
+        },
+        {
+          "name": "Blake Miller",
+          "grade": "SO",
+          "score": 88,
+          "position": 19
+        },
+        {
+          "name": "Tighe Rogers",
+          "grade": "JR",
+          "score": 93,
+          "position": 25
+        }
+      ]
+    },
+    {
+      "id": "2025-04-24-JV",
+      "date": "2025-04-24T00:00:00.000Z",
+      "dateFormatted": "Apr 23",
+      "dateISO": "2025-04-24",
+      "name": "Rosemount JV Day 1",
+      "level": "JV",
+      "course": "Oak Marsh GC",
+      "holes": 18,
+      "par": 70,
+      "teamScore": null,
+      "teamFinish": null,
+      "sortOrder": 21
+    },
+    {
+      "id": "2025-04-25-JV",
+      "date": "2025-04-25T00:00:00.000Z",
+      "dateFormatted": "Apr 24",
+      "dateISO": "2025-04-25",
+      "name": "Rosemount JV Final",
+      "level": "JV",
+      "course": "Oak Marsh GC",
+      "holes": 18,
+      "par": 70,
+      "teamScore": "595 (+35)",
+      "teamFinish": "1st of 10",
+      "sortOrder": 22,
+      "players": [
+        {
+          "name": "Michael Vernon",
+          "grade": "FR",
+          "score": 141,
+          "position": 1
+        },
+        {
+          "name": "Max Romslo",
+          "grade": "SO",
+          "score": 150,
+          "position": 7
+        },
+        {
+          "name": "MacAllen Smith",
+          "grade": "JR",
+          "score": 151,
+          "position": 9
+        },
+        {
+          "name": "Hudson Strodl",
+          "grade": "JR",
+          "score": 153,
+          "position": 13
+        },
+        {
+          "name": "Billy Smith",
+          "grade": "SO",
+          "score": 161,
+          "position": 29
+        },
+        {
+          "name": "Henry Freeman",
+          "grade": "SO",
+          "score": 162,
+          "position": 35
+        }
+      ]
+    },
+    {
+      "id": "2025-04-28-JV",
+      "date": "2025-04-28T00:00:00.000Z",
+      "dateFormatted": "Apr 27",
+      "dateISO": "2025-04-28",
+      "name": "Eden Prairie JV Invite",
+      "level": "JV",
+      "course": "Bluff Creek GC",
+      "holes": 18,
+      "par": 72,
+      "teamScore": "305 (+13)",
+      "teamFinish": "1st of 13",
+      "sortOrder": 23,
+      "players": [
+        {
+          "name": "Michael Vernon",
+          "grade": "FR",
+          "score": 75,
+          "position": 2
+        },
+        {
+          "name": "Cole Considine",
+          "grade": "FR",
+          "score": 75,
+          "position": 2
+        },
+        {
+          "name": "Max Romslo",
+          "grade": "SO",
+          "score": 75,
+          "position": 2
+        },
+        {
+          "name": "Andy Wold",
+          "grade": "SO",
+          "score": 76,
+          "position": 8
+        },
+        {
+          "name": "Blake Miller",
+          "grade": "SO",
+          "score": 78,
+          "position": 15
+        },
+        {
+          "name": "Carter Ringle",
+          "grade": "FR",
+          "score": 79,
+          "position": 22
+        }
+      ]
+    },
+    {
+      "id": "2025-05-08-JV",
+      "date": "2025-05-08T00:00:00.000Z",
+      "dateFormatted": "May 7",
+      "dateISO": "2025-05-08",
+      "name": "Duel vs Southwest Christian (9 Holes)",
+      "level": "JV",
+      "course": "Edina Country Club",
+      "holes": 9,
+      "par": 35,
+      "teamScore": "151 (+5)",
+      "teamFinish": "1st of 2",
+      "sortOrder": 24
+    },
+    {
+      "id": "2025-05-09-JV",
+      "date": "2025-05-09T00:00:00.000Z",
+      "dateFormatted": "May 8",
+      "dateISO": "2025-05-09",
+      "name": "Detroit Lakes JV Day 1",
+      "level": "JV",
+      "course": "Wildflower GC",
+      "holes": 18,
+      "par": 72,
+      "teamScore": null,
+      "teamFinish": null,
+      "sortOrder": 25
+    },
+    {
+      "id": "2025-05-10-JV",
+      "date": "2025-05-10T00:00:00.000Z",
+      "dateFormatted": "May 9",
+      "dateISO": "2025-05-10",
+      "name": "Detroit Lakes JV Final",
+      "level": "JV",
+      "course": "Wildflower GC",
+      "holes": 18,
+      "par": 72,
+      "teamScore": "615 (+39)",
+      "teamFinish": "2nd of 8",
+      "sortOrder": 26,
+      "players": [
+        {
+          "name": "Hudson Strodl",
+          "grade": "JR",
+          "score": 148,
+          "position": 3
+        },
+        {
+          "name": "MacAllen Smith",
+          "grade": "JR",
+          "score": 151,
+          "position": 5
+        },
+        {
+          "name": "Cole Considine",
+          "grade": "FR",
+          "score": 151,
+          "position": 5
+        },
+        {
+          "name": "Andy Wold",
+          "grade": "SO",
+          "score": 166,
+          "position": 24
+        },
+        {
+          "name": "Billy Smith",
+          "grade": "SO",
+          "score": 169,
+          "position": 33
+        },
+        {
+          "name": "Blake Miller",
+          "grade": "SO",
+          "score": 171,
+          "position": 35
+        }
+      ]
+    },
+    {
+      "id": "2025-05-12-JV",
+      "date": "2025-05-12T00:00:00.000Z",
+      "dateFormatted": "May 11",
+      "dateISO": "2025-05-12",
+      "name": "Wild Marsh JV Event (9 Holes)",
+      "level": "JV",
+      "course": "Wild Marsh GC",
+      "holes": 9,
+      "par": 35,
+      "teamScore": "152 (+12)",
+      "teamFinish": "1st of 3",
+      "sortOrder": 27,
+      "players": [
+        {
+          "name": "Ryan Geyer",
+          "grade": "SO",
+          "score": 35,
+          "position": 1
+        },
+        {
+          "name": "Ty Pankratz",
+          "grade": "JR",
+          "score": 36,
+          "position": 2
+        },
+        {
+          "name": "Henry Freeman",
+          "grade": "SO",
+          "score": 40,
+          "position": 4
+        },
+        {
+          "name": "George Heinen",
+          "grade": "SO",
+          "score": 41,
+          "position": 5
+        },
+        {
+          "name": "Carter Ringle",
+          "grade": "FR",
+          "score": 41,
+          "position": 5
+        },
+        {
+          "name": "Tighe Rogers",
+          "grade": "JR",
+          "score": 47,
+          "position": 15
+        }
+      ]
+    },
+    {
+      "id": "2025-05-13-JV",
+      "date": "2025-05-13T00:00:00.000Z",
+      "dateFormatted": "May 12",
+      "dateISO": "2025-05-13",
+      "name": "Braemar JV Tri",
+      "level": "JV",
+      "course": "Braemar GC",
+      "holes": 18,
+      "par": 72,
+      "teamScore": "309 (+21)",
+      "teamFinish": "1st of 3",
+      "sortOrder": 28,
+      "players": [
+        {
+          "name": "Henry Freeman",
+          "grade": "SO",
+          "score": 75,
+          "position": 1
+        },
+        {
+          "name": "Hudson Strodl",
+          "grade": "JR",
+          "score": 75,
+          "position": 1
+        },
+        {
+          "name": "MacAllen Smith",
+          "grade": "JR",
+          "score": 79,
+          "position": 3
+        },
+        {
+          "name": "Billy Smith",
+          "grade": "SO",
+          "score": 80,
+          "position": 4
+        },
+        {
+          "name": "Blake Miller",
+          "grade": "SO",
+          "score": 80,
+          "position": 4
+        },
+        {
+          "name": "Nash Paine",
+          "grade": "FR",
+          "score": 81,
+          "position": 8
+        }
+      ]
+    },
+    {
+      "id": "2025-05-21-JV-A",
+      "date": "2025-05-21T00:00:00.000Z",
+      "dateFormatted": "May 20",
+      "dateISO": "2025-05-21",
+      "name": "Holy Family JV Event A",
+      "level": "JV",
+      "course": "Dahlgreen GC",
+      "holes": 18,
+      "par": 72,
+      "teamScore": "311 (+23)",
+      "teamFinish": "2nd of 17",
+      "sortOrder": 29,
+      "players": [
+        {
+          "name": "Hudson Strodl",
+          "grade": "JR",
+          "score": 80,
+          "position": 18
+        },
+        {
+          "name": "MacAllen Smith",
+          "grade": "JR",
+          "score": 76,
+          "position": 4
+        },
+        {
+          "name": "Billy Smith",
+          "grade": "SO",
+          "score": 81,
+          "position": 27
+        },
+        {
+          "name": "Andy Wold",
+          "grade": "SO",
+          "score": 79,
+          "position": 16
+        },
+        {
+          "name": "George Heinen",
+          "grade": "SO",
+          "score": 76,
+          "position": 4
+        },
+        {
+          "name": "Nash Paine",
+          "grade": "FR",
+          "score": 81,
+          "position": 27
+        }
+      ]
+    },
+    {
+      "id": "2025-05-21-JV-B",
+      "date": "2025-05-21T00:00:00.000Z",
+      "dateFormatted": "May 20",
+      "dateISO": "2025-05-21",
+      "name": "Holy Family JV Event B",
+      "level": "JV",
+      "course": "Dahlgreen GC",
+      "holes": 18,
+      "par": 72,
+      "teamScore": "325 (+37)",
+      "teamFinish": "7th of 17",
+      "sortOrder": 30,
+      "players": [
+        {
+          "name": "Ty Pankratz",
+          "grade": "JR",
+          "score": 84,
+          "position": 50
+        },
+        {
+          "name": "Ryan Geyer",
+          "grade": "SO",
+          "score": 82,
+          "position": 34
+        },
+        {
+          "name": "Henry Freeman",
+          "grade": "SO",
+          "score": 81,
+          "position": 27
+        },
+        {
+          "name": "Cole Considine",
+          "grade": "FR",
+          "score": 80,
+          "position": 18
+        },
+        {
+          "name": "Carter Ringle",
+          "grade": "FR",
+          "score": 82,
+          "position": 34
+        },
+        {
+          "name": "Blake Miller",
+          "grade": "SO",
+          "score": 82,
+          "position": 34
+        }
+      ]
+    }
+  ],
+  "schedule": [
+    {
+      "id": "2025-04-22-VAR",
+      "date": "2025-04-22",
+      "dateFormatted": "Apr 21",
+      "event": "Lake Conference Opener",
+      "course": "Braemar Golf Course",
+      "par": 72,
+      "teamScore": "283 (-5)",
+      "teamFinish": "1st of 7",
+      "isDay1": false,
+      "isFinal": false,
+      "type": "conference"
+    },
+    {
+      "id": "2025-04-23-VAR",
+      "date": "2025-04-23",
+      "dateFormatted": "Apr 22",
+      "event": "East Ridge Invite",
+      "course": "StoneRidge Golf Club",
+      "par": 72,
+      "teamScore": "293 (+5)",
+      "teamFinish": "1st of 16",
+      "isDay1": false,
+      "isFinal": false,
+      "type": "invitational"
+    },
+    {
+      "id": "2025-04-29-VAR",
+      "date": "2025-04-29",
+      "dateFormatted": "Apr 28",
+      "event": "Lake Conference Tri",
+      "course": "Wild Marsh Golf Club",
+      "par": 71,
+      "teamScore": "294 (+10)",
+      "teamFinish": "1st of 3",
+      "isDay1": false,
+      "isFinal": false,
+      "type": "conference"
+    },
+    {
+      "id": "2025-05-01-VAR",
+      "date": "2025-05-01",
+      "dateFormatted": "Apr 30",
+      "event": "Border Battle",
+      "course": "Troy Burne / St Croix",
+      "par": null,
+      "teamScore": "576 (+4)",
+      "teamFinish": "1st of 22",
+      "isMultiDay": true,
+      "type": "invitational",
+      "rounds": [
+        {
+          "round": 1,
+          "date": "2025-04-30",
+          "dateFormatted": "Apr 29",
+          "course": "Troy Burne",
+          "par": 71,
+          "teamScore": "287 (+3)"
+        },
+        {
+          "round": 2,
+          "date": "2025-05-01",
+          "dateFormatted": "Apr 30",
+          "course": "St Croix",
+          "par": 72,
+          "teamScore": "289 (+1)"
+        }
+      ]
+    },
+    {
+      "id": "2025-05-03-VAR",
+      "date": "2025-05-03",
+      "dateFormatted": "May 2",
+      "event": "Dacotah Ridge",
+      "course": "Dacotah Ridge GC / Dacotah Ridge GC",
+      "par": null,
+      "teamScore": "585 (+9)",
+      "teamFinish": "1st of 14",
+      "isMultiDay": true,
+      "type": "invitational",
+      "rounds": [
+        {
+          "round": 1,
+          "date": "2025-05-02",
+          "dateFormatted": "May 1",
+          "course": "Dacotah Ridge GC",
+          "par": 72,
+          "teamScore": "303 (+15)"
+        },
+        {
+          "round": 2,
+          "date": "2025-05-03",
+          "dateFormatted": "May 2",
+          "course": "Dacotah Ridge GC",
+          "par": 72,
+          "teamScore": "282 (-6)"
+        }
+      ]
+    },
+    {
+      "id": "2025-05-08-VAR",
+      "date": "2025-05-08",
+      "dateFormatted": "May 7",
+      "event": "Lake Conference Tri",
+      "course": "Braemar Golf Course",
+      "par": 72,
+      "teamScore": "291 (+3)",
+      "teamFinish": "1st of 3",
+      "isDay1": false,
+      "isFinal": false,
+      "type": "conference"
+    },
+    {
+      "id": "2025-05-10-VAR",
+      "date": "2025-05-10",
+      "dateFormatted": "May 9",
+      "event": "Detroit Lakes",
+      "course": "Detroit Country Club / Detroit Country Club",
+      "par": null,
+      "teamScore": "597 (+29)",
+      "teamFinish": "2nd of 16",
+      "isMultiDay": true,
+      "type": "invitational",
+      "rounds": [
+        {
+          "round": 1,
+          "date": "2025-05-09",
+          "dateFormatted": "May 8",
+          "course": "Detroit Country Club",
+          "par": 71,
+          "teamScore": "299 (+15)"
+        },
+        {
+          "round": 2,
+          "date": "2025-05-10",
+          "dateFormatted": "May 9",
+          "course": "Detroit Country Club",
+          "par": 71,
+          "teamScore": "298 (+14)"
+        }
+      ]
+    },
+    {
+      "id": "2025-05-13-VAR",
+      "date": "2025-05-13",
+      "dateFormatted": "May 12",
+      "event": "Oak Ridge",
+      "course": "Oak Ridge CC / Oak Ridge CC",
+      "par": null,
+      "teamScore": "575 (+15)",
+      "teamFinish": "1st of 6",
+      "isMultiDay": true,
+      "type": "invitational",
+      "rounds": [
+        {
+          "round": 1,
+          "date": "2025-05-12",
+          "dateFormatted": "May 11",
+          "course": "Oak Ridge CC",
+          "par": 70,
+          "teamScore": "288 (+8)"
+        },
+        {
+          "round": 2,
+          "date": "2025-05-13",
+          "dateFormatted": "May 12",
+          "course": "Oak Ridge CC",
+          "par": 70,
+          "teamScore": "287 (+7)"
+        }
+      ]
+    },
+    {
+      "id": "2025-05-14-VAR",
+      "date": "2025-05-14",
+      "dateFormatted": "May 13",
+      "event": "Sartell Invite",
+      "course": "Blackberry Ridge GC",
+      "par": 72,
+      "teamScore": "316 (+28)",
+      "teamFinish": "8th of 15",
+      "isDay1": false,
+      "isFinal": false,
+      "type": "invitational"
+    },
+    {
+      "id": "2025-05-15-VAR",
+      "date": "2025-05-15",
+      "dateFormatted": "May 14",
+      "event": "EHS vs CDH Duel",
+      "course": "Edina Country Club",
+      "par": 70,
+      "teamScore": "302 (+14)",
+      "teamFinish": "2nd of 2",
+      "isDay1": false,
+      "isFinal": false,
+      "type": "match"
+    },
+    {
+      "id": "2025-05-16-VAR",
+      "date": "2025-05-16",
+      "dateFormatted": "May 15",
+      "event": "Pioneer Creek Event",
+      "course": "Pioneer Creek GC",
+      "par": 72,
+      "teamScore": "304 (+16)",
+      "teamFinish": "1st of 3",
+      "isDay1": false,
+      "isFinal": false,
+      "type": "invitational"
+    },
+    {
+      "id": "2025-05-21-VAR",
+      "date": "2025-05-21",
+      "dateFormatted": "May 20",
+      "event": "EHS vs Waconia Duel",
+      "course": "Island View GC",
+      "par": 72,
+      "teamScore": "292 (+4)",
+      "teamFinish": "1st of 2",
+      "isDay1": false,
+      "isFinal": false,
+      "type": "match"
+    },
+    {
+      "id": "2025-05-28-VAR",
+      "date": "2025-05-28",
+      "dateFormatted": "May 27",
+      "event": "MSHSL Boys 6AAA Section Tournament",
+      "course": "Meadows at Mystic Lake / Meadows at Mystic Lake",
+      "par": null,
+      "teamScore": "581 (+4)",
+      "teamFinish": "2nd of 13",
+      "isMultiDay": true,
+      "type": "tournament",
+      "rounds": [
+        {
+          "round": 1,
+          "date": "2025-05-27",
+          "dateFormatted": "May 26",
+          "course": "Meadows at Mystic Lake",
+          "par": 72,
+          "teamScore": "289 (+1)"
+        },
+        {
+          "round": 2,
+          "date": "2025-05-28",
+          "dateFormatted": "May 27",
+          "course": "Meadows at Mystic Lake",
+          "par": 72,
+          "teamScore": "292 (+3)"
+        }
+      ]
+    },
+    {
+      "id": "2025-06-10-VAR",
+      "date": "2025-06-10",
+      "dateFormatted": "Jun 10",
+      "event": "MSHSL Boys AAA State Championship",
+      "course": "Bunker Hills Golf Club",
+      "par": 144,
+      "teamScore": "N/A",
+      "teamFinish": "Individual qualifiers",
+      "isMultiDay": true,
+      "type": "postseason",
+      "rounds": [
+        {
+          "round": 1,
+          "date": "2025-06-09",
+          "dateFormatted": "Jun 9",
+          "course": "Bunker Hills Golf Club",
+          "par": 72
+        },
+        {
+          "round": 2,
+          "date": "2025-06-10",
+          "dateFormatted": "Jun 10",
+          "course": "Bunker Hills Golf Club",
+          "par": 72
+        }
+      ]
+    }
+  ],
+  "jvSchedule": [
+    {
+      "id": "2025-04-21-JV",
+      "date": "2025-04-21",
+      "dateFormatted": "Apr 20",
+      "event": "Lake Conference JV Tournament",
+      "course": "Bluff Creek GC",
+      "par": 72,
+      "teamScore": "326 (+28)",
+      "teamFinish": "2nd of 7",
+      "isDay1": false,
+      "isFinal": false,
+      "type": "conference"
+    },
+    {
+      "id": "2025-04-23-JV",
+      "date": "2025-04-23",
+      "dateFormatted": "Apr 22",
+      "event": "East Ridge JV Event",
+      "course": "Clifton Highlands",
+      "par": 72,
+      "teamScore": "316 (+32)",
+      "teamFinish": "2nd of 23",
+      "isDay1": false,
+      "isFinal": false,
+      "type": "invitational"
+    },
+    {
+      "id": "2025-04-25-JV",
+      "date": "2025-04-25",
+      "dateFormatted": "Apr 24",
+      "event": "Rosemount JV",
+      "course": "Oak Marsh GC / Oak Marsh GC",
+      "par": null,
+      "teamScore": "595 (+35)",
+      "teamFinish": "1st of 10",
+      "isMultiDay": true,
+      "type": "invitational",
+      "rounds": [
+        {
+          "round": 1,
+          "date": "2025-04-24",
+          "dateFormatted": "Apr 23",
+          "course": "Oak Marsh GC",
+          "par": 70,
+          "teamScore": "304 (+24)"
+        },
+        {
+          "round": 2,
+          "date": "2025-04-25",
+          "dateFormatted": "Apr 24",
+          "course": "Oak Marsh GC",
+          "par": 70,
+          "teamScore": "291 (+11)"
+        }
+      ]
+    },
+    {
+      "id": "2025-04-28-JV",
+      "date": "2025-04-28",
+      "dateFormatted": "Apr 27",
+      "event": "Eden Prairie JV Invite",
+      "course": "Bluff Creek GC",
+      "par": 72,
+      "teamScore": "305 (+13)",
+      "teamFinish": "1st of 13",
+      "isDay1": false,
+      "isFinal": false,
+      "type": "invitational"
+    },
+    {
+      "id": "2025-05-08-JV",
+      "date": "2025-05-08",
+      "dateFormatted": "May 7",
+      "event": "Duel vs Southwest Christian (9 Holes)",
+      "course": "Edina Country Club",
+      "par": 35,
+      "teamScore": "151 (+5)",
+      "teamFinish": "1st of 2",
+      "isDay1": false,
+      "isFinal": false,
+      "type": "match"
+    },
+    {
+      "id": "2025-05-10-JV",
+      "date": "2025-05-10",
+      "dateFormatted": "May 9",
+      "event": "Detroit Lakes JV",
+      "course": "Wildflower GC / Wildflower GC",
+      "par": null,
+      "teamScore": "615 (+39)",
+      "teamFinish": "2nd of 8",
+      "isMultiDay": true,
+      "type": "invitational",
+      "rounds": [
+        {
+          "round": 1,
+          "date": "2025-05-09",
+          "dateFormatted": "May 8",
+          "course": "Wildflower GC",
+          "par": 72,
+          "teamScore": "323 (+35)"
+        },
+        {
+          "round": 2,
+          "date": "2025-05-10",
+          "dateFormatted": "May 9",
+          "course": "Wildflower GC",
+          "par": 72,
+          "teamScore": "292 (+4)"
+        }
+      ]
+    },
+    {
+      "id": "2025-05-12-JV",
+      "date": "2025-05-12",
+      "dateFormatted": "May 11",
+      "event": "Wild Marsh JV Event (9 Holes)",
+      "course": "Wild Marsh GC",
+      "par": 35,
+      "teamScore": "152 (+12)",
+      "teamFinish": "1st of 3",
+      "isDay1": false,
+      "isFinal": false,
+      "type": "invitational"
+    },
+    {
+      "id": "2025-05-13-JV",
+      "date": "2025-05-13",
+      "dateFormatted": "May 12",
+      "event": "Braemar JV Tri",
+      "course": "Braemar GC",
+      "par": 72,
+      "teamScore": "309 (+21)",
+      "teamFinish": "1st of 3",
+      "isDay1": false,
+      "isFinal": false,
+      "type": "match"
+    },
+    {
+      "id": "2025-05-21-JV-A",
+      "date": "2025-05-21",
+      "dateFormatted": "May 20",
+      "event": "Holy Family JV Event A",
+      "course": "Dahlgreen GC",
+      "par": 72,
+      "teamScore": "311 (+23)",
+      "teamFinish": "2nd of 17",
+      "isDay1": false,
+      "isFinal": false,
+      "type": "invitational"
+    },
+    {
+      "id": "2025-05-21-JV-B",
+      "date": "2025-05-21",
+      "dateFormatted": "May 20",
+      "event": "Holy Family JV Event B",
+      "course": "Dahlgreen GC",
+      "par": 72,
+      "teamScore": "325 (+37)",
+      "teamFinish": "7th of 17",
+      "isDay1": false,
+      "isFinal": false,
+      "type": "invitational"
+    }
+  ],
+  "seasonResults": [
+    {
+      "date": "2025-04-22T00:00:00.000Z",
+      "dateFormatted": "Apr 21",
+      "dateISO": "2025-04-22",
+      "event": "Lake Conference Opener",
+      "course": "Braemar Golf Course",
+      "teamScore": "283 (-5)",
+      "finish": "1st of 7"
+    },
+    {
+      "date": "2025-04-23T00:00:00.000Z",
+      "dateFormatted": "Apr 22",
+      "dateISO": "2025-04-23",
+      "event": "East Ridge Invite",
+      "course": "StoneRidge Golf Club",
+      "teamScore": "293 (+5)",
+      "finish": "1st of 16"
+    },
+    {
+      "date": "2025-04-29T00:00:00.000Z",
+      "dateFormatted": "Apr 28",
+      "dateISO": "2025-04-29",
+      "event": "Lake Conference Tri",
+      "course": "Wild Marsh Golf Club",
+      "teamScore": "294 (+10)",
+      "finish": "1st of 3"
+    },
+    {
+      "date": "2025-05-01T00:00:00.000Z",
+      "dateFormatted": "Apr 30",
+      "dateISO": "2025-05-01",
+      "event": "Border Battle Final",
+      "course": "St Croix",
+      "teamScore": "576 (+4)",
+      "finish": "1st of 22"
+    },
+    {
+      "date": "2025-05-03T00:00:00.000Z",
+      "dateFormatted": "May 2",
+      "dateISO": "2025-05-03",
+      "event": "Dacotah Ridge Final",
+      "course": "Dacotah Ridge GC",
+      "teamScore": "585 (+9)",
+      "finish": "1st of 14"
+    },
+    {
+      "date": "2025-05-08T00:00:00.000Z",
+      "dateFormatted": "May 7",
+      "dateISO": "2025-05-08",
+      "event": "Lake Conference Tri",
+      "course": "Braemar Golf Course",
+      "teamScore": "291 (+3)",
+      "finish": "1st of 3"
+    },
+    {
+      "date": "2025-05-10T00:00:00.000Z",
+      "dateFormatted": "May 9",
+      "dateISO": "2025-05-10",
+      "event": "Detroit Lakes Final",
+      "course": "Detroit Country Club",
+      "teamScore": "597 (+29)",
+      "finish": "2nd of 16"
+    },
+    {
+      "date": "2025-05-13T00:00:00.000Z",
+      "dateFormatted": "May 12",
+      "dateISO": "2025-05-13",
+      "event": "Oak Ridge Final",
+      "course": "Oak Ridge CC",
+      "teamScore": "575 (+15)",
+      "finish": "1st of 6"
+    },
+    {
+      "date": "2025-05-14T00:00:00.000Z",
+      "dateFormatted": "May 13",
+      "dateISO": "2025-05-14",
+      "event": "Sartell Invite",
+      "course": "Blackberry Ridge GC",
+      "teamScore": "316 (+28)",
+      "finish": "8th of 15"
+    },
+    {
+      "date": "2025-05-15T00:00:00.000Z",
+      "dateFormatted": "May 14",
+      "dateISO": "2025-05-15",
+      "event": "EHS vs CDH Duel",
+      "course": "Edina Country Club",
+      "teamScore": "302 (+14)",
+      "finish": "2nd of 2"
+    },
+    {
+      "date": "2025-05-16T00:00:00.000Z",
+      "dateFormatted": "May 15",
+      "dateISO": "2025-05-16",
+      "event": "Pioneer Creek Event",
+      "course": "Pioneer Creek GC",
+      "teamScore": "304 (+16)",
+      "finish": "1st of 3"
+    },
+    {
+      "date": "2025-05-21T00:00:00.000Z",
+      "dateFormatted": "May 20",
+      "dateISO": "2025-05-21",
+      "event": "EHS vs Waconia Duel",
+      "course": "Island View GC",
+      "teamScore": "292 (+4)",
+      "finish": "1st of 2"
+    },
+    {
+      "date": "2025-05-28T00:00:00.000Z",
+      "dateFormatted": "May 27",
+      "dateISO": "2025-05-28",
+      "event": "MSHSL Boys 6AAA Section Tournament Final",
+      "course": "Meadows at Mystic Lake",
+      "teamScore": "581 (+4)",
+      "finish": "2nd of 13"
+    },
+    {
+      "date": "2025-06-10T00:00:00.000Z",
+      "dateFormatted": "Jun 10",
+      "dateISO": "2025-06-10",
+      "event": "MSHSL Boys AAA State Championship",
+      "course": "Bunker Hills Golf Club",
+      "teamScore": "N/A",
+      "finish": "Individual qualifiers"
+    }
+  ],
+  "playerStats": [
+    {
+      "id": "TPANKRATZ",
+      "name": "Ty Pankratz",
+      "gradYear": 2026,
+      "team": "jv",
+      "grade": 11,
+      "rounds": 4,
+      "average": 58.25,
+      "lowRound": 36,
+      "scores": [
+        {
+          "eventId": "2025-04-21-JV",
+          "playerId": "TPANKRATZ",
+          "score": 77,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-08-JV",
+          "playerId": "TPANKRATZ",
+          "score": 36,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-12-JV",
+          "playerId": "TPANKRATZ",
+          "score": 36,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-21-JV",
+          "playerId": "TPANKRATZ",
+          "score": 84,
+          "counting": true
+        }
+      ]
+    },
+    {
+      "id": "RGEY",
+      "name": "Ryan Geyer",
+      "gradYear": 2027,
+      "team": "jv",
+      "grade": 10,
+      "rounds": 4,
+      "average": 59.5,
+      "lowRound": 35,
+      "scores": [
+        {
+          "eventId": "2025-04-23-JV",
+          "playerId": "RGEY",
+          "score": 85,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-08-JV",
+          "playerId": "RGEY",
+          "score": 36,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-12-JV",
+          "playerId": "RGEY",
+          "score": 35,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-21-JV",
+          "playerId": "RGEY",
+          "score": 82,
+          "counting": true
+        }
+      ]
+    },
+    {
+      "id": "GHEIN",
+      "name": "George Heinen",
+      "gradYear": 2027,
+      "team": "jv",
+      "grade": 10,
+      "rounds": 4,
+      "average": 59.75,
+      "lowRound": 41,
+      "scores": [
+        {
+          "eventId": "2025-04-21-JV",
+          "playerId": "GHEIN",
+          "score": 81,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-08-JV",
+          "playerId": "GHEIN",
+          "score": 41,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-12-JV",
+          "playerId": "GHEIN",
+          "score": 41,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-21-JV",
+          "playerId": "GHEIN",
+          "score": 76,
+          "counting": true
+        }
+      ]
+    },
+    {
+      "id": "TROGERS",
+      "name": "Tighe Rogers",
+      "gradYear": 2026,
+      "team": "jv",
+      "grade": 11,
+      "rounds": 3,
+      "average": 62.33,
+      "lowRound": 47,
+      "scores": [
+        {
+          "eventId": "2025-04-23-JV",
+          "playerId": "TROGERS",
+          "score": 93,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-08-JV",
+          "playerId": "TROGERS",
+          "score": 47,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-12-JV",
+          "playerId": "TROGERS",
+          "score": 47,
+          "counting": true
+        }
+      ]
+    },
+    {
+      "id": "CRINGLE",
+      "name": "Carter Ringle",
+      "gradYear": 2028,
+      "team": "jv",
+      "grade": 9,
+      "rounds": 5,
+      "average": 63.8,
+      "lowRound": 41,
+      "scores": [
+        {
+          "eventId": "2025-04-23-JV",
+          "playerId": "CRINGLE",
+          "score": 76,
+          "counting": true
+        },
+        {
+          "eventId": "2025-04-28-JV",
+          "playerId": "CRINGLE",
+          "score": 79,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-08-JV",
+          "playerId": "CRINGLE",
+          "score": 41,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-12-JV",
+          "playerId": "CRINGLE",
+          "score": 41,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-21-JV",
+          "playerId": "CRINGLE",
+          "score": 82,
+          "counting": true
+        }
+      ]
+    },
+    {
+      "id": "HFREEMAN",
+      "name": "Henry Freeman",
+      "gradYear": 2027,
+      "team": "jv",
+      "grade": 10,
+      "rounds": 7,
+      "average": 68.43,
+      "lowRound": 39,
+      "scores": [
+        {
+          "eventId": "2025-04-21-JV",
+          "playerId": "HFREEMAN",
+          "score": 82,
+          "counting": true
+        },
+        {
+          "eventId": "2025-04-24-JV",
+          "playerId": "HFREEMAN",
+          "score": 81,
+          "counting": true
+        },
+        {
+          "eventId": "2025-04-25-JV",
+          "playerId": "HFREEMAN",
+          "score": 81,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-08-JV",
+          "playerId": "HFREEMAN",
+          "score": 39,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-12-JV",
+          "playerId": "HFREEMAN",
+          "score": 40,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-13-JV",
+          "playerId": "HFREEMAN",
+          "score": 75,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-21-JV",
+          "playerId": "HFREEMAN",
+          "score": 81,
+          "counting": true
+        }
+      ]
+    },
+    {
+      "id": "TOHE",
+      "name": "Torger Ohe",
+      "gradYear": 2025,
+      "team": "varsity",
+      "grade": 12,
+      "rounds": 16,
+      "average": 71.88,
+      "lowRound": 67,
+      "scores": [
+        {
+          "eventId": "2025-04-22-VAR",
+          "playerId": "TOHE",
+          "score": 69,
+          "counting": true
+        },
+        {
+          "eventId": "2025-04-23-VAR",
+          "playerId": "TOHE",
+          "score": 71,
+          "counting": true
+        },
+        {
+          "eventId": "2025-04-29-VAR",
+          "playerId": "TOHE",
+          "score": 69,
+          "counting": true
+        },
+        {
+          "eventId": "2025-04-30-VAR",
+          "playerId": "TOHE",
+          "score": 77,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-01-VAR",
+          "playerId": "TOHE",
+          "score": 76,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-02-VAR",
+          "playerId": "TOHE",
+          "score": 75,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-03-VAR",
+          "playerId": "TOHE",
+          "score": 67,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-09-VAR",
+          "playerId": "TOHE",
+          "score": 74,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-10-VAR",
+          "playerId": "TOHE",
+          "score": 72,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-12-VAR",
+          "playerId": "TOHE",
+          "score": 70,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-13-VAR",
+          "playerId": "TOHE",
+          "score": 73,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-15-VAR",
+          "playerId": "TOHE",
+          "score": 69,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-21-VAR",
+          "playerId": "TOHE",
+          "score": 70,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-27-VAR",
+          "playerId": "TOHE",
+          "score": 73,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-28-VAR",
+          "playerId": "TOHE",
+          "score": 70,
+          "counting": true
+        },
+        {
+          "eventId": "2025-06-09-VAR",
+          "score": 70,
+          "holes": 18,
+          "individualFinish": "T10th of 88"
+        },
+        {
+          "eventId": "2025-06-10-VAR",
+          "score": 77,
+          "holes": 18,
+          "individualFinish": "T10th of 88"
+        }
+      ]
+    },
+    {
+      "id": "SLAFF",
+      "name": "Sam LaFrenz",
+      "gradYear": 2025,
+      "team": "varsity",
+      "grade": 12,
+      "rounds": 4,
+      "average": 74.25,
+      "lowRound": 70,
+      "scores": [
+        {
+          "eventId": "2025-05-08-VAR",
+          "playerId": "SLAFF",
+          "score": 70,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-14-VAR",
+          "playerId": "SLAFF",
+          "score": 79,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-16-VAR",
+          "playerId": "SLAFF",
+          "score": 76,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-21-VAR",
+          "playerId": "SLAFF",
+          "score": 72,
+          "counting": true
+        }
+      ]
+    },
+    {
+      "id": "CLARSON",
+      "name": "Chase Larson",
+      "gradYear": 2027,
+      "team": "varsity",
+      "grade": 10,
+      "rounds": 14,
+      "average": 74.93,
+      "lowRound": 69,
+      "scores": [
+        {
+          "eventId": "2025-04-22-VAR",
+          "playerId": "CLARSON",
+          "score": 73,
+          "counting": true
+        },
+        {
+          "eventId": "2025-04-23-VAR",
+          "playerId": "CLARSON",
+          "score": 79,
+          "counting": true
+        },
+        {
+          "eventId": "2025-04-30-VAR",
+          "playerId": "CLARSON",
+          "score": 75,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-01-VAR",
+          "playerId": "CLARSON",
+          "score": 69,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-02-VAR",
+          "playerId": "CLARSON",
+          "score": 78,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-03-VAR",
+          "playerId": "CLARSON",
+          "score": 71,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-09-VAR",
+          "playerId": "CLARSON",
+          "score": 77,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-10-VAR",
+          "playerId": "CLARSON",
+          "score": 73,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-12-VAR",
+          "playerId": "CLARSON",
+          "score": 81,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-13-VAR",
+          "playerId": "CLARSON",
+          "score": 74,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-15-VAR",
+          "playerId": "CLARSON",
+          "score": 77,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-27-VAR",
+          "playerId": "CLARSON",
+          "score": 71,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-28-VAR",
+          "playerId": "CLARSON",
+          "score": 75,
+          "counting": true
+        },
+        {
+          "eventId": "2025-06-09-VAR",
+          "score": 78,
+          "holes": 18,
+          "individualFinish": "30th of 88"
+        },
+        {
+          "eventId": "2025-06-10-VAR",
+          "score": 73,
+          "holes": 18,
+          "individualFinish": "30th of 88"
+        }
+      ]
+    },
+    {
+      "id": "PBEN",
+      "name": "Peter Bennett",
+      "gradYear": 2026,
+      "team": "varsity",
+      "grade": 11,
+      "rounds": 13,
+      "average": 74.85,
+      "lowRound": 69,
+      "scores": [
+        {
+          "eventId": "2025-04-23-VAR",
+          "playerId": "PBEN",
+          "score": 72,
+          "counting": true
+        },
+        {
+          "eventId": "2025-04-29-VAR",
+          "playerId": "PBEN",
+          "score": 78,
+          "counting": true
+        },
+        {
+          "eventId": "2025-04-30-VAR",
+          "playerId": "PBEN",
+          "score": 71,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-01-VAR",
+          "playerId": "PBEN",
+          "score": 81,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-02-VAR",
+          "playerId": "PBEN",
+          "score": 74,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-03-VAR",
+          "playerId": "PBEN",
+          "score": 75,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-08-VAR",
+          "playerId": "PBEN",
+          "score": 69,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-12-VAR",
+          "playerId": "PBEN",
+          "score": 70,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-13-VAR",
+          "playerId": "PBEN",
+          "score": 80,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-15-VAR",
+          "playerId": "PBEN",
+          "score": 79,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-21-VAR",
+          "playerId": "PBEN",
+          "score": 76,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-27-VAR",
+          "playerId": "PBEN",
+          "score": 77,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-28-VAR",
+          "playerId": "PBEN",
+          "score": 71,
+          "counting": true
+        }
+      ]
+    },
+    {
+      "id": "SOHE",
+      "name": "Sander Ohe",
+      "gradYear": 2026,
+      "team": "varsity",
+      "grade": 11,
+      "rounds": 15,
+      "average": 74.87,
+      "lowRound": 69,
+      "scores": [
+        {
+          "eventId": "2025-04-22-VAR",
+          "playerId": "SOHE",
+          "score": 69,
+          "counting": true
+        },
+        {
+          "eventId": "2025-04-23-VAR",
+          "playerId": "SOHE",
+          "score": 74,
+          "counting": true
+        },
+        {
+          "eventId": "2025-04-29-VAR",
+          "playerId": "SOHE",
+          "score": 75,
+          "counting": true
+        },
+        {
+          "eventId": "2025-04-30-VAR",
+          "playerId": "SOHE",
+          "score": 71,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-01-VAR",
+          "playerId": "SOHE",
+          "score": 73,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-02-VAR",
+          "playerId": "SOHE",
+          "score": 83,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-03-VAR",
+          "playerId": "SOHE",
+          "score": 71,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-09-VAR",
+          "playerId": "SOHE",
+          "score": 81,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-10-VAR",
+          "playerId": "SOHE",
+          "score": 77,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-12-VAR",
+          "playerId": "SOHE",
+          "score": 71,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-13-VAR",
+          "playerId": "SOHE",
+          "score": 74,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-15-VAR",
+          "playerId": "SOHE",
+          "score": 77,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-21-VAR",
+          "playerId": "SOHE",
+          "score": 77,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-27-VAR",
+          "playerId": "SOHE",
+          "score": 74,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-28-VAR",
+          "playerId": "SOHE",
+          "score": 76,
+          "counting": true
+        }
+      ]
+    },
+    {
+      "id": "DCOL",
+      "name": "David Colby",
+      "gradYear": 2026,
+      "team": "varsity",
+      "grade": 11,
+      "rounds": 15,
+      "average": 75.4,
+      "lowRound": 70,
+      "scores": [
+        {
+          "eventId": "2025-04-22-VAR",
+          "playerId": "DCOL",
+          "score": 72,
+          "counting": true
+        },
+        {
+          "eventId": "2025-04-23-VAR",
+          "playerId": "DCOL",
+          "score": 78,
+          "counting": true
+        },
+        {
+          "eventId": "2025-04-29-VAR",
+          "playerId": "DCOL",
+          "score": 77,
+          "counting": true
+        },
+        {
+          "eventId": "2025-04-30-VAR",
+          "playerId": "DCOL",
+          "score": 73,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-01-VAR",
+          "playerId": "DCOL",
+          "score": 77,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-02-VAR",
+          "playerId": "DCOL",
+          "score": 76,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-03-VAR",
+          "playerId": "DCOL",
+          "score": 73,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-09-VAR",
+          "playerId": "DCOL",
+          "score": 72,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-10-VAR",
+          "playerId": "DCOL",
+          "score": 76,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-12-VAR",
+          "playerId": "DCOL",
+          "score": 77,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-13-VAR",
+          "playerId": "DCOL",
+          "score": 70,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-15-VAR",
+          "playerId": "DCOL",
+          "score": 89,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-21-VAR",
+          "playerId": "DCOL",
+          "score": 74,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-27-VAR",
+          "playerId": "DCOL",
+          "score": 71,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-28-VAR",
+          "playerId": "DCOL",
+          "score": 76,
+          "counting": true
+        }
+      ]
+    },
+    {
+      "id": "LDAN",
+      "name": "Lorenzo D'Angelo",
+      "gradYear": 2025,
+      "team": "varsity",
+      "grade": 12,
+      "rounds": 4,
+      "average": 75.5,
+      "lowRound": 72,
+      "scores": [
+        {
+          "eventId": "2025-04-22-VAR",
+          "playerId": "LDAN",
+          "score": 73,
+          "counting": true
+        },
+        {
+          "eventId": "2025-04-29-VAR",
+          "playerId": "LDAN",
+          "score": 79,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-14-VAR",
+          "playerId": "LDAN",
+          "score": 78,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-16-VAR",
+          "playerId": "LDAN",
+          "score": 72,
+          "counting": true
+        }
+      ]
+    },
+    {
+      "id": "HSTR",
+      "name": "Hudson Strodl",
+      "gradYear": 2026,
+      "team": "jv",
+      "grade": 11,
+      "rounds": 8,
+      "average": 76.38,
+      "lowRound": 72,
+      "scores": [
+        {
+          "eventId": "2025-05-08-VAR",
+          "playerId": "HSTR",
+          "score": 76,
+          "counting": true
+        },
+        {
+          "eventId": "2025-04-23-JV",
+          "playerId": "HSTR",
+          "score": 79,
+          "counting": true
+        },
+        {
+          "eventId": "2025-04-24-JV",
+          "playerId": "HSTR",
+          "score": 81,
+          "counting": true
+        },
+        {
+          "eventId": "2025-04-25-JV",
+          "playerId": "HSTR",
+          "score": 72,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-09-JV",
+          "playerId": "HSTR",
+          "score": 74,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-10-JV",
+          "playerId": "HSTR",
+          "score": 74,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-13-JV",
+          "playerId": "HSTR",
+          "score": 75,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-21-JV",
+          "playerId": "HSTR",
+          "score": 80,
+          "counting": true
+        }
+      ]
+    },
+    {
+      "id": "CCONSIDINE",
+      "name": "Cole Considine",
+      "gradYear": 2028,
+      "team": "jv",
+      "grade": 9,
+      "rounds": 4,
+      "average": 76.5,
+      "lowRound": 74,
+      "scores": [
+        {
+          "eventId": "2025-04-28-JV",
+          "playerId": "CCONSIDINE",
+          "score": 75,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-09-JV",
+          "playerId": "CCONSIDINE",
+          "score": 77,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-10-JV",
+          "playerId": "CCONSIDINE",
+          "score": 74,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-21-JV",
+          "playerId": "CCONSIDINE",
+          "score": 80,
+          "counting": true
+        }
+      ]
+    },
+    {
+      "id": "CNIE",
+      "name": "Charlie Nielsen",
+      "gradYear": 2027,
+      "team": "varsity",
+      "grade": 10,
+      "rounds": 15,
+      "average": 76.67,
+      "lowRound": 70,
+      "scores": [
+        {
+          "eventId": "2025-04-22-VAR",
+          "playerId": "CNIE",
+          "score": 75,
+          "counting": true
+        },
+        {
+          "eventId": "2025-04-23-VAR",
+          "playerId": "CNIE",
+          "score": 76,
+          "counting": true
+        },
+        {
+          "eventId": "2025-04-29-VAR",
+          "playerId": "CNIE",
+          "score": 73,
+          "counting": true
+        },
+        {
+          "eventId": "2025-04-30-VAR",
+          "playerId": "CNIE",
+          "score": 72,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-01-VAR",
+          "playerId": "CNIE",
+          "score": 71,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-02-VAR",
+          "playerId": "CNIE",
+          "score": 83,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-03-VAR",
+          "playerId": "CNIE",
+          "score": 75,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-09-VAR",
+          "playerId": "CNIE",
+          "score": 76,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-10-VAR",
+          "playerId": "CNIE",
+          "score": 77,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-12-VAR",
+          "playerId": "CNIE",
+          "score": 80,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-13-VAR",
+          "playerId": "CNIE",
+          "score": 70,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-15-VAR",
+          "playerId": "CNIE",
+          "score": 85,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-21-VAR",
+          "playerId": "CNIE",
+          "score": 79,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-27-VAR",
+          "playerId": "CNIE",
+          "score": 74,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-28-VAR",
+          "playerId": "CNIE",
+          "score": 84,
+          "counting": true
+        }
+      ]
+    },
+    {
+      "id": "MSMITH",
+      "name": "Macallen Smith",
+      "gradYear": 2026,
+      "team": "jv",
+      "grade": 11,
+      "rounds": 7,
+      "average": 76.86,
+      "lowRound": 68,
+      "scores": [
+        {
+          "eventId": "2025-04-21-JV",
+          "playerId": "MSMITH",
+          "score": 81,
+          "counting": true
+        },
+        {
+          "eventId": "2025-04-24-JV",
+          "playerId": "MSMITH",
+          "score": 76,
+          "counting": true
+        },
+        {
+          "eventId": "2025-04-25-JV",
+          "playerId": "MSMITH",
+          "score": 75,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-09-JV",
+          "playerId": "MSMITH",
+          "score": 83,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-10-JV",
+          "playerId": "MSMITH",
+          "score": 68,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-13-JV",
+          "playerId": "MSMITH",
+          "score": 79,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-21-JV",
+          "playerId": "MSMITH",
+          "score": 76,
+          "counting": true
+        }
+      ]
+    },
+    {
+      "id": "MVER",
+      "name": "Michael Vernon",
+      "gradYear": 2028,
+      "team": "varsity",
+      "grade": 9,
+      "rounds": 7,
+      "average": 77.71,
+      "lowRound": 69,
+      "scores": [
+        {
+          "eventId": "2025-05-09-VAR",
+          "playerId": "MVER",
+          "score": 82,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-10-VAR",
+          "playerId": "MVER",
+          "score": 88,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-14-VAR",
+          "playerId": "MVER",
+          "score": 82,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-16-VAR",
+          "playerId": "MVER",
+          "score": 76,
+          "counting": true
+        },
+        {
+          "eventId": "2025-04-24-JV",
+          "playerId": "MVER",
+          "score": 72,
+          "counting": true
+        },
+        {
+          "eventId": "2025-04-25-JV",
+          "playerId": "MVER",
+          "score": 69,
+          "counting": true
+        },
+        {
+          "eventId": "2025-04-28-JV",
+          "playerId": "MVER",
+          "score": 75,
+          "counting": true
+        }
+      ]
+    },
+    {
+      "id": "MROM",
+      "name": "Max Romslo",
+      "gradYear": 2027,
+      "team": "varsity",
+      "grade": 10,
+      "rounds": 6,
+      "average": 77.83,
+      "lowRound": 75,
+      "scores": [
+        {
+          "eventId": "2025-05-08-VAR",
+          "playerId": "MROM",
+          "score": 76,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-14-VAR",
+          "playerId": "MROM",
+          "score": 80,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-16-VAR",
+          "playerId": "MROM",
+          "score": 86,
+          "counting": true
+        },
+        {
+          "eventId": "2025-04-24-JV",
+          "playerId": "MROM",
+          "score": 75,
+          "counting": true
+        },
+        {
+          "eventId": "2025-04-25-JV",
+          "playerId": "MROM",
+          "score": 75,
+          "counting": true
+        },
+        {
+          "eventId": "2025-04-28-JV",
+          "playerId": "MROM",
+          "score": 75,
+          "counting": true
+        }
+      ]
+    },
+    {
+      "id": "AWOLD",
+      "name": "Anderson Wold",
+      "gradYear": 2027,
+      "team": "jv",
+      "grade": 10,
+      "rounds": 5,
+      "average": 79.4,
+      "lowRound": 76,
+      "scores": [
+        {
+          "eventId": "2025-04-23-JV",
+          "playerId": "AWOLD",
+          "score": 76,
+          "counting": true
+        },
+        {
+          "eventId": "2025-04-28-JV",
+          "playerId": "AWOLD",
+          "score": 76,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-09-JV",
+          "playerId": "AWOLD",
+          "score": 90,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-10-JV",
+          "playerId": "AWOLD",
+          "score": 76,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-21-JV",
+          "playerId": "AWOLD",
+          "score": 79,
+          "counting": true
+        }
+      ]
+    },
+    {
+      "id": "NPAINE",
+      "name": "Nash Paine",
+      "gradYear": 2028,
+      "team": "jv",
+      "grade": 9,
+      "rounds": 3,
+      "average": 80.33,
+      "lowRound": 79,
+      "scores": [
+        {
+          "eventId": "2025-04-21-JV",
+          "playerId": "NPAINE",
+          "score": 79,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-13-JV",
+          "playerId": "NPAINE",
+          "score": 81,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-21-JV",
+          "playerId": "NPAINE",
+          "score": 81,
+          "counting": true
+        }
+      ]
+    },
+    {
+      "id": "HKUR",
+      "name": "Harry Kuretsky",
+      "gradYear": 2025,
+      "team": "varsity",
+      "grade": 12,
+      "rounds": 3,
+      "average": 81,
+      "lowRound": 78,
+      "scores": [
+        {
+          "eventId": "2025-05-08-VAR",
+          "playerId": "HKUR",
+          "score": 78,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-14-VAR",
+          "playerId": "HKUR",
+          "score": 79,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-16-VAR",
+          "playerId": "HKUR",
+          "score": 86,
+          "counting": true
+        }
+      ]
+    },
+    {
+      "id": "RTOR",
+      "name": "Ryan Toren",
+      "gradYear": 2025,
+      "team": "varsity",
+      "grade": 12,
+      "rounds": 3,
+      "average": 81.33,
+      "lowRound": 80,
+      "scores": [
+        {
+          "eventId": "2025-05-08-VAR",
+          "playerId": "RTOR",
+          "score": 84,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-14-VAR",
+          "playerId": "RTOR",
+          "score": 80,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-16-VAR",
+          "playerId": "RTOR",
+          "score": 80,
+          "counting": true
+        }
+      ]
+    },
+    {
+      "id": "BSMITH",
+      "name": "Billy Smith",
+      "gradYear": 2027,
+      "team": "jv",
+      "grade": 10,
+      "rounds": 7,
+      "average": 81.43,
+      "lowRound": 77,
+      "scores": [
+        {
+          "eventId": "2025-04-21-JV",
+          "playerId": "BSMITH",
+          "score": 79,
+          "counting": true
+        },
+        {
+          "eventId": "2025-04-24-JV",
+          "playerId": "BSMITH",
+          "score": 84,
+          "counting": true
+        },
+        {
+          "eventId": "2025-04-25-JV",
+          "playerId": "BSMITH",
+          "score": 77,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-09-JV",
+          "playerId": "BSMITH",
+          "score": 90,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-10-JV",
+          "playerId": "BSMITH",
+          "score": 79,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-13-JV",
+          "playerId": "BSMITH",
+          "score": 80,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-21-JV",
+          "playerId": "BSMITH",
+          "score": 81,
+          "counting": true
+        }
+      ]
+    },
+    {
+      "id": "BMILLER",
+      "name": "Blake Miller",
+      "gradYear": 2027,
+      "team": "jv",
+      "grade": 10,
+      "rounds": 6,
+      "average": 83.17,
+      "lowRound": 78,
+      "scores": [
+        {
+          "eventId": "2025-04-23-JV",
+          "playerId": "BMILLER",
+          "score": 88,
+          "counting": true
+        },
+        {
+          "eventId": "2025-04-28-JV",
+          "playerId": "BMILLER",
+          "score": 78,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-09-JV",
+          "playerId": "BMILLER",
+          "score": 89,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-10-JV",
+          "playerId": "BMILLER",
+          "score": 82,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-13-JV",
+          "playerId": "BMILLER",
+          "score": 80,
+          "counting": true
+        },
+        {
+          "eventId": "2025-05-21-JV",
+          "playerId": "BMILLER",
+          "score": 82,
+          "counting": true
+        }
+      ]
+    }
+  ],
+  "rankings": [
+    {
+      "name": "Torger Ohe",
+      "average": 71.67,
+      "trend": "",
+      "last3Avg": 70,
+      "scores": [
+        null,
+        69,
+        71,
+        null,
+        null,
+        null,
+        null,
+        69,
+        77,
+        76,
+        75,
+        67,
+        null,
+        null,
+        74,
+        null,
+        72,
+        null,
+        70,
+        null,
+        73,
+        null,
+        null,
+        69,
+        null,
+        70,
+        null,
+        null,
+        null,
+        73,
+        70,
+        null,
+        70,
+        77
+      ]
+    },
+    {
+      "name": "Sam LaFrenz",
+      "average": 74.25,
+      "trend": "",
+      "last3Avg": 72,
+      "scores": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        70,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        79,
+        null,
+        76,
+        72,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Chase Larson",
+      "average": 74.85,
+      "trend": "",
+      "last3Avg": 75,
+      "scores": [
+        null,
+        73,
+        79,
+        null,
+        null,
+        null,
+        null,
+        null,
+        75,
+        69,
+        78,
+        71,
+        null,
+        null,
+        77,
+        null,
+        73,
+        null,
+        81,
+        null,
+        74,
+        null,
+        null,
+        77,
+        null,
+        null,
+        null,
+        null,
+        null,
+        71,
+        75,
+        null,
+        78,
+        73
+      ]
+    },
+    {
+      "name": "Peter Bennett",
+      "average": 74.85,
+      "trend": "",
+      "last3Avg": 71,
+      "scores": [
+        null,
+        null,
+        72,
+        null,
+        null,
+        null,
+        null,
+        78,
+        71,
+        81,
+        74,
+        75,
+        69,
+        null,
+        null,
+        null,
+        null,
+        null,
+        70,
+        null,
+        80,
+        null,
+        null,
+        79,
+        null,
+        76,
+        null,
+        null,
+        null,
+        77,
+        71,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Sander Ohe",
+      "average": 74.87,
+      "trend": "",
+      "last3Avg": 76,
+      "scores": [
+        null,
+        69,
+        74,
+        null,
+        null,
+        null,
+        null,
+        75,
+        71,
+        73,
+        83,
+        71,
+        null,
+        null,
+        81,
+        null,
+        77,
+        null,
+        71,
+        null,
+        74,
+        null,
+        null,
+        77,
+        null,
+        77,
+        null,
+        null,
+        null,
+        74,
+        76,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "David Colby",
+      "average": 75.4,
+      "trend": "",
+      "last3Avg": 76,
+      "scores": [
+        null,
+        72,
+        78,
+        null,
+        null,
+        null,
+        null,
+        77,
+        73,
+        77,
+        76,
+        73,
+        null,
+        null,
+        72,
+        null,
+        76,
+        null,
+        77,
+        null,
+        70,
+        null,
+        null,
+        89,
+        null,
+        74,
+        null,
+        null,
+        null,
+        71,
+        76,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Lorenzo D'Angelo",
+      "average": 75.5,
+      "trend": "",
+      "last3Avg": 72,
+      "scores": [
+        null,
+        73,
+        null,
+        null,
+        null,
+        null,
+        null,
+        79,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        78,
+        null,
+        72,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Ty Pankratz",
+      "average": 76.25,
+      "trend": "",
+      "last3Avg": 84,
+      "scores": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        36,
+        null,
+        null,
+        null,
+        null,
+        null,
+        36,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        84,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Hudson Strodl",
+      "average": 76.38,
+      "trend": "",
+      "last3Avg": 80,
+      "scores": [
+        null,
+        null,
+        null,
+        79,
+        81,
+        72,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        76,
+        null,
+        null,
+        74,
+        null,
+        74,
+        null,
+        null,
+        null,
+        75,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        80,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Cole Considine",
+      "average": 76.5,
+      "trend": "",
+      "last3Avg": 80,
+      "scores": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        75,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        77,
+        null,
+        74,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        80,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Charlie Nielsen",
+      "average": 76.67,
+      "trend": "",
+      "last3Avg": 84,
+      "scores": [
+        null,
+        75,
+        76,
+        null,
+        null,
+        null,
+        null,
+        73,
+        72,
+        71,
+        83,
+        75,
+        null,
+        null,
+        76,
+        null,
+        77,
+        null,
+        80,
+        null,
+        70,
+        null,
+        null,
+        85,
+        null,
+        79,
+        null,
+        null,
+        null,
+        74,
+        84,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Macallen Smith",
+      "average": 76.86,
+      "trend": "",
+      "last3Avg": 76,
+      "scores": [
+        null,
+        null,
+        null,
+        null,
+        76,
+        75,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        83,
+        null,
+        68,
+        null,
+        null,
+        null,
+        79,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        76,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Ryan Geyer",
+      "average": 77.25,
+      "trend": "",
+      "last3Avg": 82,
+      "scores": [
+        null,
+        null,
+        null,
+        85,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        36,
+        null,
+        null,
+        null,
+        null,
+        null,
+        35,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        82,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Michael Vernon",
+      "average": 77.71,
+      "trend": "",
+      "last3Avg": 76,
+      "scores": [
+        null,
+        null,
+        null,
+        null,
+        72,
+        69,
+        75,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        82,
+        null,
+        88,
+        null,
+        null,
+        null,
+        null,
+        null,
+        82,
+        null,
+        76,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Max Romslo",
+      "average": 77.83,
+      "trend": "",
+      "last3Avg": 86,
+      "scores": [
+        null,
+        null,
+        null,
+        null,
+        75,
+        75,
+        75,
+        null,
+        null,
+        null,
+        null,
+        null,
+        76,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        80,
+        null,
+        86,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Anderson Wold",
+      "average": 79.4,
+      "trend": "",
+      "last3Avg": 79,
+      "scores": [
+        null,
+        null,
+        null,
+        76,
+        null,
+        null,
+        76,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        90,
+        null,
+        76,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        79,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Henry Freeman",
+      "average": 79.71,
+      "trend": "",
+      "last3Avg": 81,
+      "scores": [
+        null,
+        null,
+        null,
+        null,
+        81,
+        81,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        39,
+        null,
+        null,
+        null,
+        null,
+        null,
+        40,
+        null,
+        75,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        81,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Carter Ringle",
+      "average": 80.2,
+      "trend": "",
+      "last3Avg": 82,
+      "scores": [
+        null,
+        null,
+        null,
+        76,
+        null,
+        null,
+        79,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        41,
+        null,
+        null,
+        null,
+        null,
+        null,
+        41,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        82,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "George Heinen",
+      "average": 80.25,
+      "trend": "",
+      "last3Avg": 76,
+      "scores": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        41,
+        null,
+        null,
+        null,
+        null,
+        null,
+        41,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        76,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Nash Paine",
+      "average": 80.33,
+      "trend": "",
+      "last3Avg": 81,
+      "scores": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        81,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        81,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Harry Kuretsky",
+      "average": 81,
+      "trend": "",
+      "last3Avg": 86,
+      "scores": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        78,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        79,
+        null,
+        86,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Ryan Toren",
+      "average": 81.33,
+      "trend": "",
+      "last3Avg": 80,
+      "scores": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        84,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        80,
+        null,
+        80,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Billy Smith",
+      "average": 81.43,
+      "trend": "",
+      "last3Avg": 81,
+      "scores": [
+        null,
+        null,
+        null,
+        null,
+        84,
+        77,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        90,
+        null,
+        79,
+        null,
+        null,
+        null,
+        80,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        81,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Blake Miller",
+      "average": 83.17,
+      "trend": "",
+      "last3Avg": 82,
+      "scores": [
+        null,
+        null,
+        null,
+        88,
+        null,
+        null,
+        78,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        89,
+        null,
+        82,
+        null,
+        null,
+        null,
+        80,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        82,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "name": "Tighe Rogers",
+      "average": 93.67,
+      "trend": "",
+      "last3Avg": 47,
+      "scores": [
+        null,
+        null,
+        null,
+        93,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        47,
+        null,
+        null,
+        null,
+        null,
+        null,
+        47,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    }
+  ],
+  "heatmap": {
+    "eventHeaders": [
+      "04/21 - Lake Conference JV Tournament",
+      "04/22 - Lake Conference Opener",
+      "04/23 - East Ridge Invite",
+      "04/23 - East Ridge JV Event",
+      "04/24 - Rosemount JV Day 1",
+      "04/25 - Rosemount JV Final",
+      "04/28 - Eden Prairie JV Invite",
+      "04/29 - Lake Conference Tri",
+      "04/30 - Border Battle Day 1",
+      "05/01 - Border Battle Final",
+      "05/02 - Dacotah Ridge Day 1",
+      "05/03 - Dacotah Ridge Final",
+      "05/08 - Duel vs Southwest Christian (9 Holes)",
+      "05/08 - Lake Conference Tri",
+      "05/09 - Detroit Lakes Day 1",
+      "05/09 - Detroit Lakes JV Day 1",
+      "05/10 - Detroit Lakes Final",
+      "05/10 - Detroit Lakes JV Final",
+      "05/12 - Oak Ridge Day 1",
+      "05/12 - Wild Marsh JV Event (9 Holes)",
+      "05/13 - Braemar JV Tri",
+      "05/13 - Oak Ridge Final",
+      "05/14 - Sartell Invite",
+      "05/15 - EHS vs CDH Duel",
+      "05/16 - Pioneer Creek Event",
+      "05/21 - EHS vs Waconia Duel",
+      "05/21 - Holy Family JV",
+      "05/27 - MSHSL Boys 6AAA Section Tournament Day 1",
+      "05/28 - MSHSL Boys 6AAA Section Tournament Final",
+      "06/09 - MSHSL Boys AAA State Championship Day 1",
+      "06/10 - MSHSL Boys AAA State Championship Final"
+    ],
+    "playerScores": [
+      {
+        "name": "Anderson Wold",
+        "scores": [
+          null,
+          null,
+          null,
+          76,
+          null,
+          null,
+          76,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          90,
+          null,
+          76,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          79,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Billy Smith",
+        "scores": [
+          79,
+          null,
+          null,
+          null,
+          84,
+          77,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          90,
+          null,
+          79,
+          null,
+          null,
+          80,
+          null,
+          null,
+          null,
+          null,
+          null,
+          81,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Blake Miller",
+        "scores": [
+          null,
+          null,
+          null,
+          88,
+          null,
+          null,
+          78,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          89,
+          null,
+          82,
+          null,
+          null,
+          80,
+          null,
+          null,
+          null,
+          null,
+          null,
+          82,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Carter Ringle",
+        "scores": [
+          null,
+          null,
+          null,
+          76,
+          null,
+          null,
+          79,
+          null,
+          null,
+          null,
+          null,
+          null,
+          41,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          41,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          82,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Charlie Nielsen",
+        "scores": [
+          null,
+          75,
+          76,
+          null,
+          null,
+          null,
+          null,
+          73,
+          72,
+          71,
+          83,
+          75,
+          null,
+          null,
+          76,
+          null,
+          77,
+          null,
+          80,
+          null,
+          null,
+          70,
+          null,
+          85,
+          null,
+          79,
+          null,
+          74,
+          84,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Chase Larson",
+        "scores": [
+          null,
+          73,
+          79,
+          null,
+          null,
+          null,
+          null,
+          null,
+          75,
+          69,
+          78,
+          71,
+          null,
+          null,
+          77,
+          null,
+          73,
+          null,
+          81,
+          null,
+          null,
+          74,
+          null,
+          77,
+          null,
+          null,
+          null,
+          71,
+          75,
+          78,
+          73
+        ]
+      },
+      {
+        "name": "Cole Considine",
+        "scores": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          75,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          77,
+          null,
+          74,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          80,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "David Colby",
+        "scores": [
+          null,
+          72,
+          78,
+          null,
+          null,
+          null,
+          null,
+          77,
+          73,
+          77,
+          76,
+          73,
+          null,
+          null,
+          72,
+          null,
+          76,
+          null,
+          77,
+          null,
+          null,
+          70,
+          null,
+          89,
+          null,
+          74,
+          null,
+          71,
+          76,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "George Heinen",
+        "scores": [
+          81,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          41,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          41,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          76,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Harry Kuretsky",
+        "scores": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          78,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          79,
+          null,
+          86,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Henry Freeman",
+        "scores": [
+          82,
+          null,
+          null,
+          null,
+          81,
+          81,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          39,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          40,
+          75,
+          null,
+          null,
+          null,
+          null,
+          null,
+          81,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Hudson Strodl",
+        "scores": [
+          null,
+          null,
+          null,
+          79,
+          81,
+          72,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          76,
+          null,
+          74,
+          null,
+          74,
+          null,
+          null,
+          75,
+          null,
+          null,
+          null,
+          null,
+          null,
+          80,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Lorenzo D'Angelo",
+        "scores": [
+          null,
+          73,
+          null,
+          null,
+          null,
+          null,
+          null,
+          79,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          78,
+          null,
+          72,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Macallen Smith",
+        "scores": [
+          81,
+          null,
+          null,
+          null,
+          76,
+          75,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          83,
+          null,
+          68,
+          null,
+          null,
+          79,
+          null,
+          null,
+          null,
+          null,
+          null,
+          76,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Max Romslo",
+        "scores": [
+          null,
+          null,
+          null,
+          null,
+          75,
+          75,
+          75,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          76,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          80,
+          null,
+          86,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Michael Vernon",
+        "scores": [
+          null,
+          null,
+          null,
+          null,
+          72,
+          69,
+          75,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          82,
+          null,
+          88,
+          null,
+          null,
+          null,
+          null,
+          null,
+          82,
+          null,
+          76,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Nash Paine",
+        "scores": [
+          79,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          81,
+          null,
+          null,
+          null,
+          null,
+          null,
+          81,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Peter Bennett",
+        "scores": [
+          null,
+          null,
+          72,
+          null,
+          null,
+          null,
+          null,
+          78,
+          71,
+          81,
+          74,
+          75,
+          null,
+          69,
+          null,
+          null,
+          null,
+          null,
+          70,
+          null,
+          null,
+          80,
+          null,
+          79,
+          null,
+          76,
+          null,
+          77,
+          71,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Ryan Geyer",
+        "scores": [
+          null,
+          null,
+          null,
+          85,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          36,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          35,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          82,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Ryan Toren",
+        "scores": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          84,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          80,
+          null,
+          80,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Sam LaFrenz",
+        "scores": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          70,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          79,
+          null,
+          76,
+          72,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Sander Ohe",
+        "scores": [
+          null,
+          69,
+          74,
+          null,
+          null,
+          null,
+          null,
+          75,
+          71,
+          73,
+          83,
+          71,
+          null,
+          null,
+          81,
+          null,
+          77,
+          null,
+          71,
+          null,
+          null,
+          74,
+          null,
+          77,
+          null,
+          77,
+          null,
+          74,
+          76,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Tighe Rogers",
+        "scores": [
+          null,
+          null,
+          null,
+          93,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          47,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          47,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Torger Ohe",
+        "scores": [
+          null,
+          69,
+          71,
+          null,
+          null,
+          null,
+          null,
+          69,
+          77,
+          76,
+          75,
+          67,
+          null,
+          null,
+          74,
+          null,
+          72,
+          null,
+          70,
+          null,
+          null,
+          73,
+          null,
+          69,
+          null,
+          70,
+          null,
+          73,
+          70,
+          70,
+          77
+        ]
+      },
+      {
+        "name": "Ty Pankratz",
+        "scores": [
+          77,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          36,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          36,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          84,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    ]
+  },
+  "eventNames": [
+    "Lake Conference JV Tournament",
+    "Lake Conference Opener",
+    "East Ridge Invite",
+    "East Ridge JV Event",
+    "Rosemount JV Day 1",
+    "Rosemount JV Final",
+    "Eden Prairie JV Invite",
+    "Lake Conference Tri",
+    "Border Battle Day 1",
+    "Border Battle Final",
+    "Dacotah Ridge Day 1",
+    "Dacotah Ridge Final",
+    "Lake Conference Tri",
+    "Duel vs Southwest Christian (9 Holes)",
+    "Detroit Lakes Day 1",
+    "Detroit Lakes JV Day 1",
+    "Detroit Lakes Final",
+    "Detroit Lakes JV Final",
+    "Oak Ridge Day 1",
+    "Wild Marsh JV Event (9 Holes)",
+    "Oak Ridge Final",
+    "Braemar JV Tri",
+    "Sartell Invite",
+    "EHS vs CDH Duel",
+    "Pioneer Creek Event",
+    "EHS vs Waconia Duel",
+    "Holy Family JV Event A",
+    "Holy Family JV Event B",
+    "Holy Family JV",
+    "MSHSL Boys 6AAA Section Tournament Day 1",
+    "MSHSL Boys 6AAA Section Tournament Final"
+  ],
+  "events2026": [
+    {
+      "id": "2026-2026-04-20-VAR-0",
+      "date": "2026-04-20T00:00:00.000Z",
+      "dateFormatted": "Apr 20",
+      "dateISO": "2026-04-20",
+      "name": "Lake Conference Tournament #1",
+      "level": "Varsity",
+      "course": "Chaska Town Course",
+      "holes": 18,
+      "par": 72,
+      "teamScore": null,
+      "teamFinish": null
+    },
+    {
+      "id": "2026-2026-04-22-VAR-2",
+      "date": "2026-04-22T00:00:00.000Z",
+      "dateFormatted": "Apr 22",
+      "dateISO": "2026-04-22",
+      "name": "East Ridge Invitational",
+      "level": "Varsity",
+      "course": "Stoneridge Golf Club",
+      "holes": 18,
+      "par": 72,
+      "teamScore": null,
+      "teamFinish": null
+    },
+    {
+      "id": "2026-2026-04-23-VAR-3",
+      "date": "2026-04-23T00:00:00.000Z",
+      "dateFormatted": "Apr 23",
+      "dateISO": "2026-04-23",
+      "name": "Lake Conference Meet",
+      "level": "Varsity",
+      "course": "Pioneer Creek Golf Course",
+      "holes": 18,
+      "par": 72,
+      "teamScore": null,
+      "teamFinish": null
+    },
+    {
+      "id": "2026-2026-04-24-VAR-4",
+      "date": "2026-04-24T00:00:00.000Z",
+      "dateFormatted": "Apr 24",
+      "dateISO": "2026-04-24",
+      "name": "The Preview Day 1",
+      "level": "Varsity",
+      "course": "Edinburgh Golf Course",
+      "holes": 18,
+      "par": 72,
+      "teamScore": null,
+      "teamFinish": null
+    },
+    {
+      "id": "2026-2026-04-25-VAR-5",
+      "date": "2026-04-25T00:00:00.000Z",
+      "dateFormatted": "Apr 25",
+      "dateISO": "2026-04-25",
+      "name": "The Preview Day 2",
+      "level": "Varsity",
+      "course": "Edinburgh Golf Course",
+      "holes": 18,
+      "par": 72,
+      "teamScore": null,
+      "teamFinish": null
+    },
+    {
+      "id": "2026-2026-04-27-VAR-6",
+      "date": "2026-04-27T00:00:00.000Z",
+      "dateFormatted": "Apr 27",
+      "dateISO": "2026-04-27",
+      "name": "Lake Conference Meet",
+      "level": "Varsity",
+      "course": "Oak Ridge Country Club",
+      "holes": 18,
+      "par": 70,
+      "teamScore": null,
+      "teamFinish": null
+    },
+    {
+      "id": "2026-2026-05-01-VAR-8",
+      "date": "2026-05-01T00:00:00.000Z",
+      "dateFormatted": "May 1",
+      "dateISO": "2026-05-01",
+      "name": "Lakeville South Invitational Day 1",
+      "level": "Varsity",
+      "course": "Dacotah Ridge Golf Club",
+      "holes": 18,
+      "par": 72,
+      "teamScore": null,
+      "teamFinish": null
+    },
+    {
+      "id": "2026-2026-05-02-VAR-9",
+      "date": "2026-05-02T00:00:00.000Z",
+      "dateFormatted": "May 2",
+      "dateISO": "2026-05-02",
+      "name": "Lakeville South Invitational Day 2",
+      "level": "Varsity",
+      "course": "Dacotah Ridge Golf Club",
+      "holes": 18,
+      "par": 72,
+      "teamScore": null,
+      "teamFinish": null
+    },
+    {
+      "id": "2026-2026-05-04-VAR-10",
+      "date": "2026-05-04T00:00:00.000Z",
+      "dateFormatted": "May 4",
+      "dateISO": "2026-05-04",
+      "name": "Spring Lake Park Invitational",
+      "level": "Varsity",
+      "course": "TPC Twin Cities",
+      "holes": 18,
+      "par": 72,
+      "teamScore": null,
+      "teamFinish": null
+    },
+    {
+      "id": "2026-2026-05-08-VAR-11",
+      "date": "2026-05-08T00:00:00.000Z",
+      "dateFormatted": "May 8",
+      "dateISO": "2026-05-08",
+      "name": "Northwest Classic Day 1",
+      "level": "Varsity",
+      "course": "Detroit Lakes Country Club",
+      "holes": 18,
+      "par": 71,
+      "teamScore": null,
+      "teamFinish": null
+    },
+    {
+      "id": "2026-2026-05-09-VAR-12",
+      "date": "2026-05-09T00:00:00.000Z",
+      "dateFormatted": "May 9",
+      "dateISO": "2026-05-09",
+      "name": "Northwest Classic Day 2",
+      "level": "Varsity",
+      "course": "Detroit Lakes Country Club",
+      "holes": 18,
+      "par": 71,
+      "teamScore": null,
+      "teamFinish": null
+    },
+    {
+      "id": "2026-2026-05-11-VAR-13",
+      "date": "2026-05-11T00:00:00.000Z",
+      "dateFormatted": "May 11",
+      "dateISO": "2026-05-11",
+      "name": "Edina Invitational Day 1",
+      "level": "Varsity",
+      "course": "Oak Ridge Country Club",
+      "holes": 18,
+      "par": 70,
+      "teamScore": null,
+      "teamFinish": null
+    },
+    {
+      "id": "2026-2026-05-12-VAR-14",
+      "date": "2026-05-12T00:00:00.000Z",
+      "dateFormatted": "May 12",
+      "dateISO": "2026-05-12",
+      "name": "Edina Invitational Day 2",
+      "level": "Varsity",
+      "course": "Oak Ridge Country Club",
+      "holes": 18,
+      "par": 70,
+      "teamScore": null,
+      "teamFinish": null
+    },
+    {
+      "id": "2026-2026-05-19-VAR-15",
+      "date": "2026-05-19T00:00:00.000Z",
+      "dateFormatted": "May 19",
+      "dateISO": "2026-05-19",
+      "name": "Lake Conference Championship",
+      "level": "Varsity",
+      "course": "Fox Hollow Golf Club",
+      "holes": 18,
+      "par": 72,
+      "teamScore": null,
+      "teamFinish": null
+    },
+    {
+      "id": "2026-2026-05-26-VAR-16",
+      "date": "2026-05-26T00:00:00.000Z",
+      "dateFormatted": "May 26",
+      "dateISO": "2026-05-26",
+      "name": "MSHSL Boys 6AAA Section Tournament Day 1",
+      "level": "Varsity",
+      "course": "Meadows at Mystic Lake",
+      "holes": 18,
+      "par": 72,
+      "teamScore": null,
+      "teamFinish": null
+    },
+    {
+      "id": "2026-2026-05-27-VAR-17",
+      "date": "2026-05-27T00:00:00.000Z",
+      "dateFormatted": "May 27",
+      "dateISO": "2026-05-27",
+      "name": "MSHSL Boys 6AAA Section Tournament Day 2",
+      "level": "Varsity",
+      "course": "Meadows at Mystic Lake",
+      "holes": 18,
+      "par": 72,
+      "teamScore": null,
+      "teamFinish": null
+    },
+    {
+      "id": "2026-2026-06-09-VAR-18",
+      "date": "2026-06-09T00:00:00.000Z",
+      "dateFormatted": "Jun 9",
+      "dateISO": "2026-06-09",
+      "name": "MSHSL Boys AAA MSHSL Boys AAA State Championship Day 1",
+      "level": "Varsity",
+      "course": "Bunker Hills Golf Course",
+      "holes": 18,
+      "par": 72,
+      "teamScore": null,
+      "teamFinish": null
+    },
+    {
+      "id": "2026-2026-06-10-VAR-19",
+      "date": "2026-06-10T00:00:00.000Z",
+      "dateFormatted": "Jun 10",
+      "dateISO": "2026-06-10",
+      "name": "MSHSL Boys AAA State Tournament Day 2",
+      "level": "Varsity",
+      "course": "Bunker Hills Golf Course",
+      "holes": 18,
+      "par": 72,
+      "teamScore": null,
+      "teamFinish": null
+    }
+  ],
+  "jvEvents2026": [
+    {
+      "id": "2026-2026-04-20-JV-1",
+      "date": "2026-04-20T00:00:00.000Z",
+      "dateFormatted": "Apr 20",
+      "dateISO": "2026-04-20",
+      "name": "JV Lake Conference Match #1",
+      "level": "JV",
+      "course": "Bluff Creek Golf Course",
+      "holes": 18,
+      "par": 72,
+      "teamScore": null,
+      "teamFinish": null
+    },
+    {
+      "id": "2026-2026-04-27-JV-7",
+      "date": "2026-04-27T00:00:00.000Z",
+      "dateFormatted": "Apr 27",
+      "dateISO": "2026-04-27",
+      "name": "Eden Prairie JV Invite",
+      "level": "JV",
+      "course": "Bluff Creek Golf Course",
+      "holes": 18,
+      "par": 72,
+      "teamScore": null,
+      "teamFinish": null
+    }
+  ],
+  "schedule2026": [
+    {
+      "id": "2026-2026-04-20-VAR-0",
+      "date": "2026-04-20T00:00:00.000Z",
+      "dateFormatted": "Apr 20",
+      "dateISO": "2026-04-20",
+      "name": "Lake Conference Tournament #1",
+      "level": "Varsity",
+      "course": "Chaska Town Course",
+      "holes": 18,
+      "par": 72,
+      "teamScore": null,
+      "teamFinish": null,
+      "event": "Lake Conference Tournament #1"
+    },
+    {
+      "id": "2026-2026-04-22-VAR-2",
+      "date": "2026-04-22T00:00:00.000Z",
+      "dateFormatted": "Apr 22",
+      "dateISO": "2026-04-22",
+      "name": "East Ridge Invitational",
+      "level": "Varsity",
+      "course": "Stoneridge Golf Club",
+      "holes": 18,
+      "par": 72,
+      "teamScore": null,
+      "teamFinish": null,
+      "event": "East Ridge Invitational"
+    },
+    {
+      "id": "2026-2026-04-23-VAR-3",
+      "date": "2026-04-23T00:00:00.000Z",
+      "dateFormatted": "Apr 23",
+      "dateISO": "2026-04-23",
+      "name": "Lake Conference Meet",
+      "level": "Varsity",
+      "course": "Pioneer Creek Golf Course",
+      "holes": 18,
+      "par": 72,
+      "teamScore": null,
+      "teamFinish": null,
+      "event": "Lake Conference Meet"
+    },
+    {
+      "id": "2026-2026-04-24-VAR-4",
+      "date": "2026-04-24T00:00:00.000Z",
+      "dateFormatted": "Apr 24",
+      "dateISO": "2026-04-24",
+      "name": "The Preview Day 1",
+      "level": "Varsity",
+      "course": "Edinburgh Golf Course",
+      "holes": 18,
+      "par": 72,
+      "teamScore": null,
+      "teamFinish": null,
+      "event": "The Preview Day 1"
+    },
+    {
+      "id": "2026-2026-04-25-VAR-5",
+      "date": "2026-04-25T00:00:00.000Z",
+      "dateFormatted": "Apr 25",
+      "dateISO": "2026-04-25",
+      "name": "The Preview Day 2",
+      "level": "Varsity",
+      "course": "Edinburgh Golf Course",
+      "holes": 18,
+      "par": 72,
+      "teamScore": null,
+      "teamFinish": null,
+      "event": "The Preview Day 2"
+    },
+    {
+      "id": "2026-2026-04-27-VAR-6",
+      "date": "2026-04-27T00:00:00.000Z",
+      "dateFormatted": "Apr 27",
+      "dateISO": "2026-04-27",
+      "name": "Lake Conference Meet",
+      "level": "Varsity",
+      "course": "Oak Ridge Country Club",
+      "holes": 18,
+      "par": 70,
+      "teamScore": null,
+      "teamFinish": null,
+      "event": "Lake Conference Meet"
+    },
+    {
+      "id": "2026-2026-05-01-VAR-8",
+      "date": "2026-05-01T00:00:00.000Z",
+      "dateFormatted": "May 1",
+      "dateISO": "2026-05-01",
+      "name": "Lakeville South Invitational Day 1",
+      "level": "Varsity",
+      "course": "Dacotah Ridge Golf Club",
+      "holes": 18,
+      "par": 72,
+      "teamScore": null,
+      "teamFinish": null,
+      "event": "Lakeville South Invitational Day 1"
+    },
+    {
+      "id": "2026-2026-05-02-VAR-9",
+      "date": "2026-05-02T00:00:00.000Z",
+      "dateFormatted": "May 2",
+      "dateISO": "2026-05-02",
+      "name": "Lakeville South Invitational Day 2",
+      "level": "Varsity",
+      "course": "Dacotah Ridge Golf Club",
+      "holes": 18,
+      "par": 72,
+      "teamScore": null,
+      "teamFinish": null,
+      "event": "Lakeville South Invitational Day 2"
+    },
+    {
+      "id": "2026-2026-05-04-VAR-10",
+      "date": "2026-05-04T00:00:00.000Z",
+      "dateFormatted": "May 4",
+      "dateISO": "2026-05-04",
+      "name": "Spring Lake Park Invitational",
+      "level": "Varsity",
+      "course": "TPC Twin Cities",
+      "holes": 18,
+      "par": 72,
+      "teamScore": null,
+      "teamFinish": null,
+      "event": "Spring Lake Park Invitational"
+    },
+    {
+      "id": "2026-2026-05-08-VAR-11",
+      "date": "2026-05-08T00:00:00.000Z",
+      "dateFormatted": "May 8",
+      "dateISO": "2026-05-08",
+      "name": "Northwest Classic Day 1",
+      "level": "Varsity",
+      "course": "Detroit Lakes Country Club",
+      "holes": 18,
+      "par": 71,
+      "teamScore": null,
+      "teamFinish": null,
+      "event": "Northwest Classic Day 1"
+    },
+    {
+      "id": "2026-2026-05-09-VAR-12",
+      "date": "2026-05-09T00:00:00.000Z",
+      "dateFormatted": "May 9",
+      "dateISO": "2026-05-09",
+      "name": "Northwest Classic Day 2",
+      "level": "Varsity",
+      "course": "Detroit Lakes Country Club",
+      "holes": 18,
+      "par": 71,
+      "teamScore": null,
+      "teamFinish": null,
+      "event": "Northwest Classic Day 2"
+    },
+    {
+      "id": "2026-2026-05-11-VAR-13",
+      "date": "2026-05-11T00:00:00.000Z",
+      "dateFormatted": "May 11",
+      "dateISO": "2026-05-11",
+      "name": "Edina Invitational Day 1",
+      "level": "Varsity",
+      "course": "Oak Ridge Country Club",
+      "holes": 18,
+      "par": 70,
+      "teamScore": null,
+      "teamFinish": null,
+      "event": "Edina Invitational Day 1"
+    },
+    {
+      "id": "2026-2026-05-12-VAR-14",
+      "date": "2026-05-12T00:00:00.000Z",
+      "dateFormatted": "May 12",
+      "dateISO": "2026-05-12",
+      "name": "Edina Invitational Day 2",
+      "level": "Varsity",
+      "course": "Oak Ridge Country Club",
+      "holes": 18,
+      "par": 70,
+      "teamScore": null,
+      "teamFinish": null,
+      "event": "Edina Invitational Day 2"
+    },
+    {
+      "id": "2026-2026-05-19-VAR-15",
+      "date": "2026-05-19T00:00:00.000Z",
+      "dateFormatted": "May 19",
+      "dateISO": "2026-05-19",
+      "name": "Lake Conference Championship",
+      "level": "Varsity",
+      "course": "Fox Hollow Golf Club",
+      "holes": 18,
+      "par": 72,
+      "teamScore": null,
+      "teamFinish": null,
+      "event": "Lake Conference Championship"
+    },
+    {
+      "id": "2026-2026-05-26-VAR-16",
+      "date": "2026-05-26T00:00:00.000Z",
+      "dateFormatted": "May 26",
+      "dateISO": "2026-05-26",
+      "name": "MSHSL Boys 6AAA Section Tournament Day 1",
+      "level": "Varsity",
+      "course": "Meadows at Mystic Lake",
+      "holes": 18,
+      "par": 72,
+      "teamScore": null,
+      "teamFinish": null,
+      "event": "MSHSL Boys 6AAA Section Tournament Day 1"
+    },
+    {
+      "id": "2026-2026-05-27-VAR-17",
+      "date": "2026-05-27T00:00:00.000Z",
+      "dateFormatted": "May 27",
+      "dateISO": "2026-05-27",
+      "name": "MSHSL Boys 6AAA Section Tournament Day 2",
+      "level": "Varsity",
+      "course": "Meadows at Mystic Lake",
+      "holes": 18,
+      "par": 72,
+      "teamScore": null,
+      "teamFinish": null,
+      "event": "MSHSL Boys 6AAA Section Tournament Day 2"
+    },
+    {
+      "id": "2026-2026-06-09-VAR-18",
+      "date": "2026-06-09T00:00:00.000Z",
+      "dateFormatted": "Jun 9",
+      "dateISO": "2026-06-09",
+      "name": "MSHSL Boys AAA MSHSL Boys AAA State Championship Day 1",
+      "level": "Varsity",
+      "course": "Bunker Hills Golf Course",
+      "holes": 18,
+      "par": 72,
+      "teamScore": null,
+      "teamFinish": null,
+      "event": "MSHSL Boys AAA MSHSL Boys AAA State Championship Day 1"
+    },
+    {
+      "id": "2026-2026-06-10-VAR-19",
+      "date": "2026-06-10T00:00:00.000Z",
+      "dateFormatted": "Jun 10",
+      "dateISO": "2026-06-10",
+      "name": "MSHSL Boys AAA State Tournament Day 2",
+      "level": "Varsity",
+      "course": "Bunker Hills Golf Course",
+      "holes": 18,
+      "par": 72,
+      "teamScore": null,
+      "teamFinish": null,
+      "event": "MSHSL Boys AAA State Tournament Day 2"
+    }
+  ],
+  "jvSchedule2026": [
+    {
+      "id": "2026-2026-04-20-JV-1",
+      "date": "2026-04-20T00:00:00.000Z",
+      "dateFormatted": "Apr 20",
+      "dateISO": "2026-04-20",
+      "name": "JV Lake Conference Match #1",
+      "level": "JV",
+      "course": "Bluff Creek Golf Course",
+      "holes": 18,
+      "par": 72,
+      "teamScore": null,
+      "teamFinish": null,
+      "event": "JV Lake Conference Match #1"
+    },
+    {
+      "id": "2026-2026-04-27-JV-7",
+      "date": "2026-04-27T00:00:00.000Z",
+      "dateFormatted": "Apr 27",
+      "dateISO": "2026-04-27",
+      "name": "Eden Prairie JV Invite",
+      "level": "JV",
+      "course": "Bluff Creek Golf Course",
+      "holes": 18,
+      "par": 72,
+      "teamScore": null,
+      "teamFinish": null,
+      "event": "Eden Prairie JV Invite"
+    }
+  ],
+  "playerStats2026": [],
+  "rankings2026": [],
+  "heatmap2026": {
+    "eventHeaders": [
+      "04/20 - Lake Conference Tournament #1",
+      "04/20 - JV Lake Conference Match #1",
+      "04/22 - East Ridge Invitational",
+      "04/23 - Lake Conference Meet",
+      "04/24 - The Preview Day 1",
+      "04/25 - The Preview Day 2",
+      "04/27 - Lake Conference Meet",
+      "04/27 - Eden Prairie JV Invite",
+      "05/01 - Lakeville South Invitational Day 1",
+      "05/02 - Lakeville South Invitational Day 2",
+      "05/04 - Spring Lake Park Invitational",
+      "05/08 - Northwest Classic Day 1",
+      "05/09 - Northwest Classic Day 2",
+      "05/11 - Edina Invitational Day 1",
+      "05/12 - Edina Invitational Day 2",
+      "05/19 - Lake Conference Championship",
+      "05/26 - MSHSL Boys 6AAA Section Tournament Day 1",
+      "05/27 - MSHSL Boys 6AAA Section Tournament Day 2",
+      "06/09 - MSHSL Boys AAA MSHSL Boys AAA State Championship Day 1",
+      "06/10 - MSHSL Boys AAA State Tournament Day 2"
+    ],
+    "playerScores": []
+  },
+  "scorecards2026": [
+    {
+      "playerName": "Torger Ohe",
+      "eventDate": "2025-06-09",
+      "eventName": "MSHSL Boys AAA State Championship Day 1",
+      "round": 1,
+      "courseName": "Bunker Hills Golf Club",
+      "par": [
+        4,
+        4,
+        3,
+        5,
+        4,
+        5,
+        3,
+        4,
+        4,
+        4,
+        5,
+        3,
+        4,
+        5,
+        4,
+        4,
+        3,
+        4
+      ],
+      "scores": [
+        4,
+        4,
+        3,
+        4,
+        4,
+        5,
+        3,
+        4,
+        4,
+        4,
+        4,
+        3,
+        4,
+        4,
+        4,
+        4,
+        3,
+        5
+      ],
+      "total": 70
+    },
+    {
+      "playerName": "Torger Ohe",
+      "eventDate": "2025-06-10",
+      "eventName": "MSHSL Boys AAA State Championship Final",
+      "round": 2,
+      "courseName": "Bunker Hills Golf Club",
+      "par": [
+        4,
+        4,
+        3,
+        5,
+        4,
+        5,
+        3,
+        4,
+        4,
+        4,
+        5,
+        3,
+        4,
+        5,
+        4,
+        4,
+        3,
+        4
+      ],
+      "scores": [
+        4,
+        4,
+        3,
+        5,
+        5,
+        3,
+        4,
+        4,
+        5,
+        5,
+        5,
+        3,
+        5,
+        6,
+        4,
+        5,
+        3,
+        4
+      ],
+      "total": 77
+    },
+    {
+      "playerName": "Chase Larson",
+      "eventDate": "2025-06-09",
+      "eventName": "MSHSL Boys AAA State Championship Day 1",
+      "round": 1,
+      "courseName": "Bunker Hills Golf Club",
+      "par": [
+        4,
+        4,
+        3,
+        5,
+        4,
+        5,
+        3,
+        4,
+        4,
+        4,
+        5,
+        3,
+        4,
+        5,
+        4,
+        4,
+        3,
+        4
+      ],
+      "scores": [
+        5,
+        4,
+        4,
+        4,
+        5,
+        5,
+        3,
+        5,
+        5,
+        5,
+        6,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "total": 78
+    },
+    {
+      "playerName": "Chase Larson",
+      "eventDate": "2025-06-10",
+      "eventName": "MSHSL Boys AAA State Championship Final",
+      "round": 2,
+      "courseName": "Bunker Hills Golf Club",
+      "par": [
+        4,
+        4,
+        3,
+        5,
+        4,
+        5,
+        3,
+        4,
+        4,
+        4,
+        5,
+        3,
+        4,
+        5,
+        4,
+        4,
+        3,
+        4
+      ],
+      "scores": [
+        4,
+        4,
+        3,
+        5,
+        4,
+        4,
+        4,
+        4,
+        4,
+        5,
+        4,
+        3,
+        4,
+        4,
+        4,
+        4,
+        3,
+        6
+      ],
+      "total": 73
+    }
+  ]
+}
