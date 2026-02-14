@@ -897,6 +897,48 @@
           "position": 28
         }
       ]
+    },
+    {
+      "id": "2025-06-09-VAR",
+      "date": "2025-06-09T00:00:00.000Z",
+      "dateFormatted": "Jun 9",
+      "dateISO": "2025-06-09",
+      "name": "State Tournament Day 1",
+      "level": "Varsity",
+      "course": "Bunker Hills Golf Club",
+      "holes": 18,
+      "par": 72,
+      "teamScore": null,
+      "teamFinish": null,
+      "sortOrder": 19
+    },
+    {
+      "id": "2025-06-10-VAR",
+      "date": "2025-06-10T00:00:00.000Z",
+      "dateFormatted": "Jun 10",
+      "dateISO": "2025-06-10",
+      "name": "State Tournament Final",
+      "level": "Varsity",
+      "course": "Bunker Hills Golf Club",
+      "holes": 18,
+      "par": 72,
+      "teamScore": "N/A",
+      "teamFinish": "Individual qualifiers",
+      "sortOrder": 20,
+      "players": [
+        {
+          "name": "Torger Ohe",
+          "grade": "SR",
+          "score": 147,
+          "position": "T10"
+        },
+        {
+          "name": "Chase Larson",
+          "grade": "SO",
+          "score": 151,
+          "position": "T30"
+        }
+      ]
     }
   ],
   "jvEvents": [
@@ -1665,6 +1707,34 @@
           "teamScore": "292 (+3)"
         }
       ]
+    },
+    {
+      "id": "2025-06-10-VAR",
+      "date": "2025-06-10",
+      "dateFormatted": "Jun 10",
+      "event": "MSHSL Boys AAA State Championship",
+      "course": "Bunker Hills Golf Club",
+      "par": 144,
+      "teamScore": "N/A",
+      "teamFinish": "Individual qualifiers",
+      "isMultiDay": true,
+      "type": "postseason",
+      "rounds": [
+        {
+          "round": 1,
+          "date": "2025-06-09",
+          "dateFormatted": "Jun 9",
+          "course": "Bunker Hills Golf Club",
+          "par": 72
+        },
+        {
+          "round": 2,
+          "date": "2025-06-10",
+          "dateFormatted": "Jun 10",
+          "course": "Bunker Hills Golf Club",
+          "par": 72
+        }
+      ]
     }
   ],
   "jvSchedule": [
@@ -1950,6 +2020,15 @@
       "course": "Meadows at Mystic Lake",
       "teamScore": "581 (+4)",
       "finish": "2nd of 13"
+    },
+    {
+      "date": "2025-06-10T00:00:00.000Z",
+      "dateFormatted": "Jun 10",
+      "dateISO": "2025-06-10",
+      "event": "MSHSL Boys AAA State Championship",
+      "course": "Bunker Hills Golf Club",
+      "teamScore": "N/A",
+      "finish": "Individual qualifiers"
     }
   ],
   "playerStats": [
@@ -2193,7 +2272,7 @@
       "gradYear": 2025,
       "team": "varsity",
       "grade": 12,
-      "rounds": 15,
+      "rounds": 16,
       "average": 71.67,
       "lowRound": 67,
       "scores": [
@@ -2286,6 +2365,12 @@
           "playerId": "TOHE",
           "score": 70,
           "counting": true
+        },
+        {
+          "eventId": "2025-06-10-VAR",
+          "playerId": "TOHE",
+          "score": 147,
+          "counting": true
         }
       ]
     },
@@ -2331,7 +2416,7 @@
       "gradYear": 2027,
       "team": "varsity",
       "grade": 10,
-      "rounds": 13,
+      "rounds": 14,
       "average": 74.85,
       "lowRound": 69,
       "scores": [
@@ -2411,6 +2496,12 @@
           "eventId": "2025-05-28-VAR",
           "playerId": "CLARSON",
           "score": 75,
+          "counting": true
+        },
+        {
+          "eventId": "2025-06-10-VAR",
+          "playerId": "CLARSON",
+          "score": 151,
           "counting": true
         }
       ]
@@ -3371,7 +3462,9 @@
         null,
         null,
         73,
-        70
+        70,
+        null,
+        147
       ]
     },
     {
@@ -3406,6 +3499,8 @@
         null,
         76,
         72,
+        null,
+        null,
         null,
         null,
         null,
@@ -3449,7 +3544,9 @@
         null,
         null,
         71,
-        75
+        75,
+        null,
+        151
       ]
     },
     {
@@ -3488,7 +3585,9 @@
         null,
         null,
         77,
-        71
+        71,
+        null,
+        null
       ]
     },
     {
@@ -3527,7 +3626,9 @@
         null,
         null,
         74,
-        76
+        76,
+        null,
+        null
       ]
     },
     {
@@ -3566,7 +3667,9 @@
         null,
         null,
         71,
-        76
+        76,
+        null,
+        null
       ]
     },
     {
@@ -3600,6 +3703,8 @@
         78,
         null,
         72,
+        null,
+        null,
         null,
         null,
         null,
@@ -3644,6 +3749,8 @@
         null,
         84,
         null,
+        null,
+        null,
         null
       ]
     },
@@ -3682,6 +3789,8 @@
         null,
         null,
         80,
+        null,
+        null,
         null,
         null
       ]
@@ -3722,6 +3831,8 @@
         null,
         80,
         null,
+        null,
+        null,
         null
       ]
     },
@@ -3761,7 +3872,9 @@
         null,
         null,
         74,
-        84
+        84,
+        null,
+        null
       ]
     },
     {
@@ -3799,6 +3912,8 @@
         null,
         null,
         76,
+        null,
+        null,
         null,
         null
       ]
@@ -3839,6 +3954,8 @@
         null,
         82,
         null,
+        null,
+        null,
         null
       ]
     },
@@ -3873,6 +3990,8 @@
         82,
         null,
         76,
+        null,
+        null,
         null,
         null,
         null,
@@ -3917,6 +4036,8 @@
         null,
         null,
         null,
+        null,
+        null,
         null
       ]
     },
@@ -3955,6 +4076,8 @@
         null,
         null,
         79,
+        null,
+        null,
         null,
         null
       ]
@@ -3995,6 +4118,8 @@
         null,
         81,
         null,
+        null,
+        null,
         null
       ]
     },
@@ -4033,6 +4158,8 @@
         null,
         null,
         82,
+        null,
+        null,
         null,
         null
       ]
@@ -4073,6 +4200,8 @@
         null,
         76,
         null,
+        null,
+        null,
         null
       ]
     },
@@ -4112,6 +4241,8 @@
         null,
         81,
         null,
+        null,
+        null,
         null
       ]
     },
@@ -4146,6 +4277,8 @@
         79,
         null,
         86,
+        null,
+        null,
         null,
         null,
         null,
@@ -4190,6 +4323,8 @@
         null,
         null,
         null,
+        null,
+        null,
         null
       ]
     },
@@ -4228,6 +4363,8 @@
         null,
         null,
         81,
+        null,
+        null,
         null,
         null
       ]
@@ -4268,6 +4405,8 @@
         null,
         82,
         null,
+        null,
+        null,
         null
       ]
     },
@@ -4297,6 +4436,8 @@
         null,
         null,
         47,
+        null,
+        null,
         null,
         null,
         null,
@@ -4341,7 +4482,9 @@
       "05/21 - EHS vs Waconia Duel",
       "05/21 - Holy Family JV",
       "05/27 - MSHSL Boys 6AAA Section Tournament Day 1",
-      "05/28 - MSHSL Boys 6AAA Section Tournament Final"
+      "05/28 - MSHSL Boys 6AAA Section Tournament Final",
+      "06/09 - State Tournament Day 1",
+      "06/10 - State Tournament Final"
     ],
     "playerScores": [
       {
@@ -4374,6 +4517,8 @@
           null,
           null,
           79,
+          null,
+          null,
           null,
           null
         ]
@@ -4409,6 +4554,8 @@
           null,
           81,
           null,
+          null,
+          null,
           null
         ]
       },
@@ -4442,6 +4589,8 @@
           null,
           null,
           82,
+          null,
+          null,
           null,
           null
         ]
@@ -4477,6 +4626,8 @@
           null,
           82,
           null,
+          null,
+          null,
           null
         ]
       },
@@ -4511,7 +4662,9 @@
           79,
           null,
           74,
-          84
+          84,
+          null,
+          null
         ]
       },
       {
@@ -4545,7 +4698,9 @@
           null,
           null,
           71,
-          75
+          75,
+          null,
+          151
         ]
       },
       {
@@ -4578,6 +4733,8 @@
           null,
           null,
           80,
+          null,
+          null,
           null,
           null
         ]
@@ -4613,7 +4770,9 @@
           74,
           null,
           71,
-          76
+          76,
+          null,
+          null
         ]
       },
       {
@@ -4647,6 +4806,8 @@
           null,
           76,
           null,
+          null,
+          null,
           null
         ]
       },
@@ -4678,6 +4839,8 @@
           79,
           null,
           86,
+          null,
+          null,
           null,
           null,
           null,
@@ -4715,6 +4878,8 @@
           null,
           81,
           null,
+          null,
+          null,
           null
         ]
       },
@@ -4749,6 +4914,8 @@
           null,
           80,
           null,
+          null,
+          null,
           null
         ]
       },
@@ -4780,6 +4947,8 @@
           78,
           null,
           72,
+          null,
+          null,
           null,
           null,
           null,
@@ -4817,6 +4986,8 @@
           null,
           76,
           null,
+          null,
+          null,
           null
         ]
       },
@@ -4848,6 +5019,8 @@
           80,
           null,
           86,
+          null,
+          null,
           null,
           null,
           null,
@@ -4885,6 +5058,8 @@
           null,
           null,
           null,
+          null,
+          null,
           null
         ]
       },
@@ -4918,6 +5093,8 @@
           null,
           null,
           81,
+          null,
+          null,
           null,
           null
         ]
@@ -4953,7 +5130,9 @@
           76,
           null,
           77,
-          71
+          71,
+          null,
+          null
         ]
       },
       {
@@ -4987,6 +5166,8 @@
           null,
           82,
           null,
+          null,
+          null,
           null
         ]
       },
@@ -5018,6 +5199,8 @@
           80,
           null,
           80,
+          null,
+          null,
           null,
           null,
           null,
@@ -5055,6 +5238,8 @@
           72,
           null,
           null,
+          null,
+          null,
           null
         ]
       },
@@ -5089,7 +5274,9 @@
           77,
           null,
           74,
-          76
+          76,
+          null,
+          null
         ]
       },
       {
@@ -5115,6 +5302,8 @@
           null,
           null,
           47,
+          null,
+          null,
           null,
           null,
           null,
@@ -5157,7 +5346,9 @@
           70,
           null,
           73,
-          70
+          70,
+          null,
+          147
         ]
       },
       {
@@ -5190,6 +5381,8 @@
           null,
           null,
           84,
+          null,
+          null,
           null,
           null
         ]
