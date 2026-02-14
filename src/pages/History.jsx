@@ -63,7 +63,7 @@ function History() {
                 className="text-3xl md:text-4xl lg:text-5xl font-bold text-edina-green mb-2"
                 style={{ fontFamily: "'Oswald', sans-serif" }}
               >
-                10x MSHSL AAA State Champions
+                10x State Champions
               </h2>
               <div className="w-32 h-1 bg-edina-gold mx-auto rounded-full"></div>
             </div>
