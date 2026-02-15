@@ -164,7 +164,45 @@
       "par": 72,
       "teamScore": "283 (-5)",
       "teamFinish": "1st of 7",
-      "sortOrder": 1
+      "sortOrder": 1,
+      "players": [
+        {
+          "name": "Sander Ohe",
+          "grade": "JR",
+          "score": 69,
+          "position": 1
+        },
+        {
+          "name": "Torger Ohe",
+          "grade": "SR",
+          "score": 69,
+          "position": 1
+        },
+        {
+          "name": "David Colby",
+          "grade": "JR",
+          "score": 72,
+          "position": 5
+        },
+        {
+          "name": "Chase Larson",
+          "grade": "SO",
+          "score": 73,
+          "position": 7
+        },
+        {
+          "name": "Lorenzo D'Angelo",
+          "grade": "SR",
+          "score": 73,
+          "position": 7
+        },
+        {
+          "name": "Charlie Nielsen",
+          "grade": "SO",
+          "score": 75,
+          "position": 15
+        }
+      ]
     },
     {
       "id": "2025-04-23-VAR",
@@ -178,7 +216,45 @@
       "par": 72,
       "teamScore": "293 (+5)",
       "teamFinish": "1st of 16",
-      "sortOrder": 2
+      "sortOrder": 2,
+      "players": [
+        {
+          "name": "Torger Ohe",
+          "grade": "SR",
+          "score": 71,
+          "position": 1
+        },
+        {
+          "name": "Henry Bennett",
+          "grade": "JR",
+          "score": 72,
+          "position": 3
+        },
+        {
+          "name": "Sander Ohe",
+          "grade": "JR",
+          "score": 74,
+          "position": 6
+        },
+        {
+          "name": "Charlie Nielsen",
+          "grade": "SO",
+          "score": 76,
+          "position": 10
+        },
+        {
+          "name": "David Colby",
+          "grade": "JR",
+          "score": 78,
+          "position": 14
+        },
+        {
+          "name": "Chase Larson",
+          "grade": "SO",
+          "score": 79,
+          "position": 16
+        }
+      ]
     },
     {
       "id": "2025-04-29-VAR",
@@ -192,7 +268,45 @@
       "par": 71,
       "teamScore": "294 (+10)",
       "teamFinish": "1st of 3",
-      "sortOrder": 3
+      "sortOrder": 3,
+      "players": [
+        {
+          "name": "Torger Ohe",
+          "grade": "SR",
+          "score": 69,
+          "position": 1
+        },
+        {
+          "name": "Charlie Nielsen",
+          "grade": "SO",
+          "score": 73,
+          "position": 3
+        },
+        {
+          "name": "Sander Ohe",
+          "grade": "JR",
+          "score": 75,
+          "position": 5
+        },
+        {
+          "name": "David Colby",
+          "grade": "JR",
+          "score": 77,
+          "position": 6
+        },
+        {
+          "name": "Henry Bennett",
+          "grade": "JR",
+          "score": 78,
+          "position": 7
+        },
+        {
+          "name": "Lorenzo D'Angelo",
+          "grade": "SR",
+          "score": 79,
+          "position": 8
+        }
+      ]
     },
     {
       "id": "2025-04-30-VAR",
@@ -220,7 +334,45 @@
       "par": 72,
       "teamScore": "576 (+4)",
       "teamFinish": "1st of 22",
-      "sortOrder": 5
+      "sortOrder": 5,
+      "players": [
+        {
+          "name": "Charlie Nielsen",
+          "grade": "SO",
+          "score": 143,
+          "position": 3
+        },
+        {
+          "name": "Chase Larson",
+          "grade": "SO",
+          "score": 144,
+          "position": 6
+        },
+        {
+          "name": "Sander Ohe",
+          "grade": "JR",
+          "score": 144,
+          "position": 6
+        },
+        {
+          "name": "David Colby",
+          "grade": "JR",
+          "score": 150,
+          "position": 15
+        },
+        {
+          "name": "Henry Bennett",
+          "grade": "JR",
+          "score": 152,
+          "position": 17
+        },
+        {
+          "name": "Torger Ohe",
+          "grade": "SR",
+          "score": 153,
+          "position": 19
+        }
+      ]
     },
     {
       "id": "2025-05-02-VAR",
@@ -248,7 +400,45 @@
       "par": 72,
       "teamScore": "585 (+9)",
       "teamFinish": "1st of 14",
-      "sortOrder": 7
+      "sortOrder": 7,
+      "players": [
+        {
+          "name": "Torger Ohe",
+          "grade": "SR",
+          "score": 142,
+          "position": 1
+        },
+        {
+          "name": "Henry Bennett",
+          "grade": "JR",
+          "score": 149,
+          "position": 8
+        },
+        {
+          "name": "Chase Larson",
+          "grade": "SO",
+          "score": 149,
+          "position": 8
+        },
+        {
+          "name": "David Colby",
+          "grade": "JR",
+          "score": 149,
+          "position": 8
+        },
+        {
+          "name": "Sander Ohe",
+          "grade": "JR",
+          "score": 154,
+          "position": 17
+        },
+        {
+          "name": "Charlie Nielsen",
+          "grade": "SO",
+          "score": 158,
+          "position": 26
+        }
+      ]
     },
     {
       "id": "2025-05-08-VAR",
@@ -262,7 +452,45 @@
       "par": 72,
       "teamScore": "291 (+3)",
       "teamFinish": "1st of 3",
-      "sortOrder": 8
+      "sortOrder": 8,
+      "players": [
+        {
+          "name": "Henry Bennett",
+          "grade": "JR",
+          "score": 69,
+          "position": 1
+        },
+        {
+          "name": "Henry Lafrenz",
+          "grade": "JR",
+          "score": 70,
+          "position": 2
+        },
+        {
+          "name": "Max Romslo",
+          "grade": "SO",
+          "score": 76,
+          "position": 5
+        },
+        {
+          "name": "Hudson Strodl",
+          "grade": "JR",
+          "score": 76,
+          "position": 5
+        },
+        {
+          "name": "Noah Kuretsky",
+          "grade": "JR",
+          "score": 78,
+          "position": 8
+        },
+        {
+          "name": "Will Toren",
+          "grade": "SO",
+          "score": 84,
+          "position": 14
+        }
+      ]
     },
     {
       "id": "2025-05-09-VAR",
@@ -290,7 +518,45 @@
       "par": 71,
       "teamScore": "597 (+29)",
       "teamFinish": "2nd of 16",
-      "sortOrder": 10
+      "sortOrder": 10,
+      "players": [
+        {
+          "name": "Torger Ohe",
+          "grade": "SR",
+          "score": 146,
+          "position": 3
+        },
+        {
+          "name": "David Colby",
+          "grade": "JR",
+          "score": 148,
+          "position": 6
+        },
+        {
+          "name": "Chase Larson",
+          "grade": "SO",
+          "score": 150,
+          "position": 12
+        },
+        {
+          "name": "Charlie Nielsen",
+          "grade": "SO",
+          "score": 153,
+          "position": 20
+        },
+        {
+          "name": "Sander Ohe",
+          "grade": "JR",
+          "score": 158,
+          "position": 33
+        },
+        {
+          "name": "Michael Vernon",
+          "grade": "FR",
+          "score": 170,
+          "position": 54
+        }
+      ]
     },
     {
       "id": "2025-05-12-VAR",
@@ -318,7 +584,45 @@
       "par": 70,
       "teamScore": "575 (+15)",
       "teamFinish": "1st of 6",
-      "sortOrder": 12
+      "sortOrder": 12,
+      "players": [
+        {
+          "name": "Torger Ohe",
+          "grade": "SR",
+          "score": 143,
+          "position": 1
+        },
+        {
+          "name": "Sander Ohe",
+          "grade": "JR",
+          "score": 145,
+          "position": 4
+        },
+        {
+          "name": "David Colby",
+          "grade": "JR",
+          "score": 147,
+          "position": 8
+        },
+        {
+          "name": "Charlie Nielsen",
+          "grade": "SO",
+          "score": 150,
+          "position": 14
+        },
+        {
+          "name": "Henry Bennett",
+          "grade": "JR",
+          "score": 150,
+          "position": 14
+        },
+        {
+          "name": "Chase Larson",
+          "grade": "SO",
+          "score": 155,
+          "position": 23
+        }
+      ]
     },
     {
       "id": "2025-05-14-VAR",
@@ -332,7 +636,45 @@
       "par": 72,
       "teamScore": "316 (+28)",
       "teamFinish": "8th of 15",
-      "sortOrder": 13
+      "sortOrder": 13,
+      "players": [
+        {
+          "name": "Lorenzo D'Angelo",
+          "grade": "SR",
+          "score": 78,
+          "position": 18
+        },
+        {
+          "name": "Noah Kuretsky",
+          "grade": "JR",
+          "score": 79,
+          "position": 22
+        },
+        {
+          "name": "Henry Lafrenz",
+          "grade": "JR",
+          "score": 79,
+          "position": 22
+        },
+        {
+          "name": "Max Romslo",
+          "grade": "SO",
+          "score": 80,
+          "position": 27
+        },
+        {
+          "name": "Will Toren",
+          "grade": "SO",
+          "score": 80,
+          "position": 27
+        },
+        {
+          "name": "Michael Vernon",
+          "grade": "FR",
+          "score": 82,
+          "position": 37
+        }
+      ]
     },
     {
       "id": "2025-05-15-VAR",
@@ -346,7 +688,45 @@
       "par": 70,
       "teamScore": "302 (+14)",
       "teamFinish": "2nd of 2",
-      "sortOrder": 14
+      "sortOrder": 14,
+      "players": [
+        {
+          "name": "Torger Ohe",
+          "grade": "SR",
+          "score": 69,
+          "position": 1
+        },
+        {
+          "name": "Sander Ohe",
+          "grade": "JR",
+          "score": 77,
+          "position": 5
+        },
+        {
+          "name": "Chase Larson",
+          "grade": "SO",
+          "score": 77,
+          "position": 5
+        },
+        {
+          "name": "Henry Bennett",
+          "grade": "JR",
+          "score": 79,
+          "position": 7
+        },
+        {
+          "name": "Charlie Nielsen",
+          "grade": "SO",
+          "score": 85,
+          "position": 11
+        },
+        {
+          "name": "David Colby",
+          "grade": "JR",
+          "score": 89,
+          "position": 14
+        }
+      ]
     },
     {
       "id": "2025-05-16-VAR",
@@ -360,7 +740,45 @@
       "par": 72,
       "teamScore": "304 (+16)",
       "teamFinish": "1st of 3",
-      "sortOrder": 15
+      "sortOrder": 15,
+      "players": [
+        {
+          "name": "Lorenzo D'Angelo",
+          "grade": "SR",
+          "score": 72,
+          "position": 1
+        },
+        {
+          "name": "Henry Lafrenz",
+          "grade": "JR",
+          "score": 76,
+          "position": 2
+        },
+        {
+          "name": "Michael Vernon",
+          "grade": "FR",
+          "score": 76,
+          "position": 2
+        },
+        {
+          "name": "Will Toren",
+          "grade": "SO",
+          "score": 80,
+          "position": 5
+        },
+        {
+          "name": "Noah Kuretsky",
+          "grade": "JR",
+          "score": 86,
+          "position": 7
+        },
+        {
+          "name": "Max Romslo",
+          "grade": "SO",
+          "score": 86,
+          "position": 7
+        }
+      ]
     },
     {
       "id": "2025-05-21-VAR",
@@ -374,7 +792,45 @@
       "par": 72,
       "teamScore": "292 (+4)",
       "teamFinish": "1st of 2",
-      "sortOrder": 16
+      "sortOrder": 16,
+      "players": [
+        {
+          "name": "Torger Ohe",
+          "grade": "SR",
+          "score": 70,
+          "position": 1
+        },
+        {
+          "name": "Henry Lafrenz",
+          "grade": "JR",
+          "score": 72,
+          "position": 2
+        },
+        {
+          "name": "David Colby",
+          "grade": "JR",
+          "score": 74,
+          "position": 3
+        },
+        {
+          "name": "Henry Bennett",
+          "grade": "JR",
+          "score": 76,
+          "position": 5
+        },
+        {
+          "name": "Sander Ohe",
+          "grade": "JR",
+          "score": 77,
+          "position": 7
+        },
+        {
+          "name": "Charlie Nielsen",
+          "grade": "SO",
+          "score": 79,
+          "position": 9
+        }
+      ]
     },
     {
       "id": "2025-05-27-VAR",
@@ -402,7 +858,87 @@
       "par": 72,
       "teamScore": "581 (+4)",
       "teamFinish": "2nd of 13",
-      "sortOrder": 18
+      "sortOrder": 18,
+      "players": [
+        {
+          "name": "Torger Ohe",
+          "grade": "SR",
+          "score": 143,
+          "position": 2
+        },
+        {
+          "name": "Chase Larson",
+          "grade": "SO",
+          "score": 146,
+          "position": 7
+        },
+        {
+          "name": "David Colby",
+          "grade": "JR",
+          "score": 147,
+          "position": 8
+        },
+        {
+          "name": "Henry Bennett",
+          "grade": "JR",
+          "score": 148,
+          "position": 10
+        },
+        {
+          "name": "Sander Ohe",
+          "grade": "JR",
+          "score": 150,
+          "position": 14
+        },
+        {
+          "name": "Charlie Nielsen",
+          "grade": "SO",
+          "score": 158,
+          "position": 28
+        }
+      ]
+    },
+    {
+      "id": "2025-06-09-VAR",
+      "date": "2025-06-09T00:00:00.000Z",
+      "dateFormatted": "Jun 9",
+      "dateISO": "2025-06-09",
+      "name": "MSHSL Boys AAA State Championship Day 1",
+      "level": "Varsity",
+      "course": "Bunker Hills Golf Club",
+      "holes": 18,
+      "par": 72,
+      "teamScore": null,
+      "teamFinish": null,
+      "sortOrder": 19
+    },
+    {
+      "id": "2025-06-10-VAR",
+      "date": "2025-06-10T00:00:00.000Z",
+      "dateFormatted": "Jun 10",
+      "dateISO": "2025-06-10",
+      "name": "MSHSL Boys AAA State Championship Final",
+      "level": "Varsity",
+      "course": "Bunker Hills Golf Club",
+      "holes": 18,
+      "par": 72,
+      "teamScore": "N/A",
+      "teamFinish": "Individual qualifiers",
+      "sortOrder": 20,
+      "players": [
+        {
+          "name": "Torger Ohe",
+          "grade": "SR",
+          "score": 147,
+          "position": "T10"
+        },
+        {
+          "name": "Chase Larson",
+          "grade": "SO",
+          "score": 151,
+          "position": "T30"
+        }
+      ]
     }
   ],
   "jvEvents": [
@@ -418,7 +954,45 @@
       "par": 72,
       "teamScore": "326 (+28)",
       "teamFinish": "2nd of 7",
-      "sortOrder": 19
+      "sortOrder": 19,
+      "players": [
+        {
+          "name": "Ty Pankratz",
+          "grade": "JR",
+          "score": 77,
+          "position": 5
+        },
+        {
+          "name": "Nash Paine",
+          "grade": "FR",
+          "score": 79,
+          "position": 8
+        },
+        {
+          "name": "Billy Smith",
+          "grade": "SO",
+          "score": 79,
+          "position": 8
+        },
+        {
+          "name": "George Heinen",
+          "grade": "SO",
+          "score": 81,
+          "position": 11
+        },
+        {
+          "name": "MacAllen Smith",
+          "grade": "JR",
+          "score": 81,
+          "position": 11
+        },
+        {
+          "name": "Henry Freeman",
+          "grade": "SO",
+          "score": 82,
+          "position": 14
+        }
+      ]
     },
     {
       "id": "2025-04-23-JV",
@@ -432,7 +1006,45 @@
       "par": 72,
       "teamScore": "316 (+32)",
       "teamFinish": "2nd of 23",
-      "sortOrder": 20
+      "sortOrder": 20,
+      "players": [
+        {
+          "name": "Andy Wold",
+          "grade": "SO",
+          "score": 76,
+          "position": 2
+        },
+        {
+          "name": "Carter Ringle",
+          "grade": "FR",
+          "score": 76,
+          "position": 2
+        },
+        {
+          "name": "Hudson Strodl",
+          "grade": "JR",
+          "score": 79,
+          "position": 6
+        },
+        {
+          "name": "Ryan Geyer",
+          "grade": "SO",
+          "score": 85,
+          "position": 16
+        },
+        {
+          "name": "Blake Miller",
+          "grade": "SO",
+          "score": 88,
+          "position": 19
+        },
+        {
+          "name": "Tighe Rogers",
+          "grade": "JR",
+          "score": 93,
+          "position": 25
+        }
+      ]
     },
     {
       "id": "2025-04-24-JV",
@@ -460,7 +1072,45 @@
       "par": 70,
       "teamScore": "595 (+35)",
       "teamFinish": "1st of 10",
-      "sortOrder": 22
+      "sortOrder": 22,
+      "players": [
+        {
+          "name": "Michael Vernon",
+          "grade": "FR",
+          "score": 141,
+          "position": 1
+        },
+        {
+          "name": "Max Romslo",
+          "grade": "SO",
+          "score": 150,
+          "position": 7
+        },
+        {
+          "name": "MacAllen Smith",
+          "grade": "JR",
+          "score": 151,
+          "position": 9
+        },
+        {
+          "name": "Hudson Strodl",
+          "grade": "JR",
+          "score": 153,
+          "position": 13
+        },
+        {
+          "name": "Billy Smith",
+          "grade": "SO",
+          "score": 161,
+          "position": 29
+        },
+        {
+          "name": "Henry Freeman",
+          "grade": "SO",
+          "score": 162,
+          "position": 35
+        }
+      ]
     },
     {
       "id": "2025-04-28-JV",
@@ -474,7 +1124,45 @@
       "par": 72,
       "teamScore": "305 (+13)",
       "teamFinish": "1st of 13",
-      "sortOrder": 23
+      "sortOrder": 23,
+      "players": [
+        {
+          "name": "Michael Vernon",
+          "grade": "FR",
+          "score": 75,
+          "position": 2
+        },
+        {
+          "name": "Cole Considine",
+          "grade": "FR",
+          "score": 75,
+          "position": 2
+        },
+        {
+          "name": "Max Romslo",
+          "grade": "SO",
+          "score": 75,
+          "position": 2
+        },
+        {
+          "name": "Andy Wold",
+          "grade": "SO",
+          "score": 76,
+          "position": 8
+        },
+        {
+          "name": "Blake Miller",
+          "grade": "SO",
+          "score": 78,
+          "position": 15
+        },
+        {
+          "name": "Carter Ringle",
+          "grade": "FR",
+          "score": 79,
+          "position": 22
+        }
+      ]
     },
     {
       "id": "2025-05-08-JV",
@@ -516,7 +1204,45 @@
       "par": 72,
       "teamScore": "615 (+39)",
       "teamFinish": "2nd of 8",
-      "sortOrder": 26
+      "sortOrder": 26,
+      "players": [
+        {
+          "name": "Hudson Strodl",
+          "grade": "JR",
+          "score": 148,
+          "position": 3
+        },
+        {
+          "name": "MacAllen Smith",
+          "grade": "JR",
+          "score": 151,
+          "position": 5
+        },
+        {
+          "name": "Cole Considine",
+          "grade": "FR",
+          "score": 151,
+          "position": 5
+        },
+        {
+          "name": "Andy Wold",
+          "grade": "SO",
+          "score": 166,
+          "position": 24
+        },
+        {
+          "name": "Billy Smith",
+          "grade": "SO",
+          "score": 169,
+          "position": 33
+        },
+        {
+          "name": "Blake Miller",
+          "grade": "SO",
+          "score": 171,
+          "position": 35
+        }
+      ]
     },
     {
       "id": "2025-05-12-JV",
@@ -530,7 +1256,45 @@
       "par": 35,
       "teamScore": "152 (+12)",
       "teamFinish": "1st of 3",
-      "sortOrder": 27
+      "sortOrder": 27,
+      "players": [
+        {
+          "name": "Ryan Geyer",
+          "grade": "SO",
+          "score": 35,
+          "position": 1
+        },
+        {
+          "name": "Ty Pankratz",
+          "grade": "JR",
+          "score": 36,
+          "position": 2
+        },
+        {
+          "name": "Henry Freeman",
+          "grade": "SO",
+          "score": 40,
+          "position": 4
+        },
+        {
+          "name": "George Heinen",
+          "grade": "SO",
+          "score": 41,
+          "position": 5
+        },
+        {
+          "name": "Carter Ringle",
+          "grade": "FR",
+          "score": 41,
+          "position": 5
+        },
+        {
+          "name": "Tighe Rogers",
+          "grade": "JR",
+          "score": 47,
+          "position": 15
+        }
+      ]
     },
     {
       "id": "2025-05-13-JV",
@@ -544,7 +1308,45 @@
       "par": 72,
       "teamScore": "309 (+21)",
       "teamFinish": "1st of 3",
-      "sortOrder": 28
+      "sortOrder": 28,
+      "players": [
+        {
+          "name": "Henry Freeman",
+          "grade": "SO",
+          "score": 75,
+          "position": 1
+        },
+        {
+          "name": "Hudson Strodl",
+          "grade": "JR",
+          "score": 75,
+          "position": 1
+        },
+        {
+          "name": "MacAllen Smith",
+          "grade": "JR",
+          "score": 79,
+          "position": 3
+        },
+        {
+          "name": "Billy Smith",
+          "grade": "SO",
+          "score": 80,
+          "position": 4
+        },
+        {
+          "name": "Blake Miller",
+          "grade": "SO",
+          "score": 80,
+          "position": 4
+        },
+        {
+          "name": "Nash Paine",
+          "grade": "FR",
+          "score": 81,
+          "position": 8
+        }
+      ]
     },
     {
       "id": "2025-05-21-JV-A",
@@ -558,7 +1360,45 @@
       "par": 72,
       "teamScore": "311 (+23)",
       "teamFinish": "2nd of 17",
-      "sortOrder": 29
+      "sortOrder": 29,
+      "players": [
+        {
+          "name": "Hudson Strodl",
+          "grade": "JR",
+          "score": 80,
+          "position": 18
+        },
+        {
+          "name": "MacAllen Smith",
+          "grade": "JR",
+          "score": 76,
+          "position": 4
+        },
+        {
+          "name": "Billy Smith",
+          "grade": "SO",
+          "score": 81,
+          "position": 27
+        },
+        {
+          "name": "Andy Wold",
+          "grade": "SO",
+          "score": 79,
+          "position": 16
+        },
+        {
+          "name": "George Heinen",
+          "grade": "SO",
+          "score": 76,
+          "position": 4
+        },
+        {
+          "name": "Nash Paine",
+          "grade": "FR",
+          "score": 81,
+          "position": 27
+        }
+      ]
     },
     {
       "id": "2025-05-21-JV-B",
@@ -572,7 +1412,45 @@
       "par": 72,
       "teamScore": "325 (+37)",
       "teamFinish": "7th of 17",
-      "sortOrder": 30
+      "sortOrder": 30,
+      "players": [
+        {
+          "name": "Ty Pankratz",
+          "grade": "JR",
+          "score": 84,
+          "position": 50
+        },
+        {
+          "name": "Ryan Geyer",
+          "grade": "SO",
+          "score": 82,
+          "position": 34
+        },
+        {
+          "name": "Henry Freeman",
+          "grade": "SO",
+          "score": 81,
+          "position": 27
+        },
+        {
+          "name": "Cole Considine",
+          "grade": "FR",
+          "score": 80,
+          "position": 18
+        },
+        {
+          "name": "Carter Ringle",
+          "grade": "FR",
+          "score": 82,
+          "position": 34
+        },
+        {
+          "name": "Blake Miller",
+          "grade": "SO",
+          "score": 82,
+          "position": 34
+        }
+      ]
     }
   ],
   "schedule": [
@@ -827,6 +1705,34 @@
           "course": "Meadows at Mystic Lake",
           "par": 72,
           "teamScore": "292 (+3)"
+        }
+      ]
+    },
+    {
+      "id": "2025-06-10-VAR",
+      "date": "2025-06-10",
+      "dateFormatted": "Jun 10",
+      "event": "MSHSL Boys AAA State Championship",
+      "course": "Bunker Hills Golf Club",
+      "par": 144,
+      "teamScore": "N/A",
+      "teamFinish": "Individual qualifiers",
+      "isMultiDay": true,
+      "type": "postseason",
+      "rounds": [
+        {
+          "round": 1,
+          "date": "2025-06-09",
+          "dateFormatted": "Jun 9",
+          "course": "Bunker Hills Golf Club",
+          "par": 72
+        },
+        {
+          "round": 2,
+          "date": "2025-06-10",
+          "dateFormatted": "Jun 10",
+          "course": "Bunker Hills Golf Club",
+          "par": 72
         }
       ]
     }
@@ -1114,6 +2020,15 @@
       "course": "Meadows at Mystic Lake",
       "teamScore": "581 (+4)",
       "finish": "2nd of 13"
+    },
+    {
+      "date": "2025-06-10T00:00:00.000Z",
+      "dateFormatted": "Jun 10",
+      "dateISO": "2025-06-10",
+      "event": "MSHSL Boys AAA State Championship",
+      "course": "Bunker Hills Golf Club",
+      "teamScore": "N/A",
+      "finish": "Individual qualifiers"
     }
   ],
   "playerStats": [
@@ -1357,8 +2272,8 @@
       "gradYear": 2025,
       "team": "varsity",
       "grade": 12,
-      "rounds": 15,
-      "average": 71.67,
+      "rounds": 16,
+      "average": 71.88,
       "lowRound": 67,
       "scores": [
         {
@@ -1450,6 +2365,18 @@
           "playerId": "TOHE",
           "score": 70,
           "counting": true
+        },
+        {
+          "eventId": "2025-06-09-VAR",
+          "score": 70,
+          "holes": 18,
+          "individualFinish": "T10th of 88"
+        },
+        {
+          "eventId": "2025-06-10-VAR",
+          "score": 77,
+          "holes": 18,
+          "individualFinish": "T10th of 88"
         }
       ]
     },
@@ -1495,8 +2422,8 @@
       "gradYear": 2027,
       "team": "varsity",
       "grade": 10,
-      "rounds": 13,
-      "average": 74.85,
+      "rounds": 14,
+      "average": 74.93,
       "lowRound": 69,
       "scores": [
         {
@@ -1576,6 +2503,18 @@
           "playerId": "CLARSON",
           "score": 75,
           "counting": true
+        },
+        {
+          "eventId": "2025-06-09-VAR",
+          "score": 78,
+          "holes": 18,
+          "individualFinish": "30th of 88"
+        },
+        {
+          "eventId": "2025-06-10-VAR",
+          "score": 73,
+          "holes": 18,
+          "individualFinish": "30th of 88"
         }
       ]
     },
@@ -2535,7 +3474,10 @@
         null,
         null,
         73,
-        70
+        70,
+        null,
+        70,
+        77
       ]
     },
     {
@@ -2570,6 +3512,8 @@
         null,
         76,
         72,
+        null,
+        null,
         null,
         null,
         null,
@@ -2613,7 +3557,10 @@
         null,
         null,
         71,
-        75
+        75,
+        null,
+        78,
+        73
       ]
     },
     {
@@ -2652,7 +3599,9 @@
         null,
         null,
         77,
-        71
+        71,
+        null,
+        null
       ]
     },
     {
@@ -2691,7 +3640,9 @@
         null,
         null,
         74,
-        76
+        76,
+        null,
+        null
       ]
     },
     {
@@ -2730,7 +3681,9 @@
         null,
         null,
         71,
-        76
+        76,
+        null,
+        null
       ]
     },
     {
@@ -2764,6 +3717,8 @@
         78,
         null,
         72,
+        null,
+        null,
         null,
         null,
         null,
@@ -2808,6 +3763,8 @@
         null,
         84,
         null,
+        null,
+        null,
         null
       ]
     },
@@ -2846,6 +3803,8 @@
         null,
         null,
         80,
+        null,
+        null,
         null,
         null
       ]
@@ -2886,6 +3845,8 @@
         null,
         80,
         null,
+        null,
+        null,
         null
       ]
     },
@@ -2925,7 +3886,9 @@
         null,
         null,
         74,
-        84
+        84,
+        null,
+        null
       ]
     },
     {
@@ -2963,6 +3926,8 @@
         null,
         null,
         76,
+        null,
+        null,
         null,
         null
       ]
@@ -3003,6 +3968,8 @@
         null,
         82,
         null,
+        null,
+        null,
         null
       ]
     },
@@ -3037,6 +4004,8 @@
         82,
         null,
         76,
+        null,
+        null,
         null,
         null,
         null,
@@ -3081,6 +4050,8 @@
         null,
         null,
         null,
+        null,
+        null,
         null
       ]
     },
@@ -3119,6 +4090,8 @@
         null,
         null,
         79,
+        null,
+        null,
         null,
         null
       ]
@@ -3159,6 +4132,8 @@
         null,
         81,
         null,
+        null,
+        null,
         null
       ]
     },
@@ -3197,6 +4172,8 @@
         null,
         null,
         82,
+        null,
+        null,
         null,
         null
       ]
@@ -3237,6 +4214,8 @@
         null,
         76,
         null,
+        null,
+        null,
         null
       ]
     },
@@ -3276,6 +4255,8 @@
         null,
         81,
         null,
+        null,
+        null,
         null
       ]
     },
@@ -3310,6 +4291,8 @@
         79,
         null,
         86,
+        null,
+        null,
         null,
         null,
         null,
@@ -3354,6 +4337,8 @@
         null,
         null,
         null,
+        null,
+        null,
         null
       ]
     },
@@ -3392,6 +4377,8 @@
         null,
         null,
         81,
+        null,
+        null,
         null,
         null
       ]
@@ -3432,6 +4419,8 @@
         null,
         82,
         null,
+        null,
+        null,
         null
       ]
     },
@@ -3461,6 +4450,8 @@
         null,
         null,
         47,
+        null,
+        null,
         null,
         null,
         null,
@@ -3505,7 +4496,9 @@
       "05/21 - EHS vs Waconia Duel",
       "05/21 - Holy Family JV",
       "05/27 - MSHSL Boys 6AAA Section Tournament Day 1",
-      "05/28 - MSHSL Boys 6AAA Section Tournament Final"
+      "05/28 - MSHSL Boys 6AAA Section Tournament Final",
+      "06/09 - MSHSL Boys AAA State Championship Day 1",
+      "06/10 - MSHSL Boys AAA State Championship Final"
     ],
     "playerScores": [
       {
@@ -3538,6 +4531,8 @@
           null,
           null,
           79,
+          null,
+          null,
           null,
           null
         ]
@@ -3573,6 +4568,8 @@
           null,
           81,
           null,
+          null,
+          null,
           null
         ]
       },
@@ -3606,6 +4603,8 @@
           null,
           null,
           82,
+          null,
+          null,
           null,
           null
         ]
@@ -3641,6 +4640,8 @@
           null,
           82,
           null,
+          null,
+          null,
           null
         ]
       },
@@ -3675,7 +4676,9 @@
           79,
           null,
           74,
-          84
+          84,
+          null,
+          null
         ]
       },
       {
@@ -3709,7 +4712,9 @@
           null,
           null,
           71,
-          75
+          75,
+          78,
+          73
         ]
       },
       {
@@ -3742,6 +4747,8 @@
           null,
           null,
           80,
+          null,
+          null,
           null,
           null
         ]
@@ -3777,7 +4784,9 @@
           74,
           null,
           71,
-          76
+          76,
+          null,
+          null
         ]
       },
       {
@@ -3811,6 +4820,8 @@
           null,
           76,
           null,
+          null,
+          null,
           null
         ]
       },
@@ -3842,6 +4853,8 @@
           79,
           null,
           86,
+          null,
+          null,
           null,
           null,
           null,
@@ -3879,6 +4892,8 @@
           null,
           81,
           null,
+          null,
+          null,
           null
         ]
       },
@@ -3913,6 +4928,8 @@
           null,
           80,
           null,
+          null,
+          null,
           null
         ]
       },
@@ -3944,6 +4961,8 @@
           78,
           null,
           72,
+          null,
+          null,
           null,
           null,
           null,
@@ -3981,6 +5000,8 @@
           null,
           76,
           null,
+          null,
+          null,
           null
         ]
       },
@@ -4012,6 +5033,8 @@
           80,
           null,
           86,
+          null,
+          null,
           null,
           null,
           null,
@@ -4049,6 +5072,8 @@
           null,
           null,
           null,
+          null,
+          null,
           null
         ]
       },
@@ -4082,6 +5107,8 @@
           null,
           null,
           81,
+          null,
+          null,
           null,
           null
         ]
@@ -4117,7 +5144,9 @@
           76,
           null,
           77,
-          71
+          71,
+          null,
+          null
         ]
       },
       {
@@ -4151,6 +5180,8 @@
           null,
           82,
           null,
+          null,
+          null,
           null
         ]
       },
@@ -4182,6 +5213,8 @@
           80,
           null,
           80,
+          null,
+          null,
           null,
           null,
           null,
@@ -4219,6 +5252,8 @@
           72,
           null,
           null,
+          null,
+          null,
           null
         ]
       },
@@ -4253,7 +5288,9 @@
           77,
           null,
           74,
-          76
+          76,
+          null,
+          null
         ]
       },
       {
@@ -4279,6 +5316,8 @@
           null,
           null,
           47,
+          null,
+          null,
           null,
           null,
           null,
@@ -4321,7 +5360,9 @@
           70,
           null,
           73,
-          70
+          70,
+          70,
+          77
         ]
       },
       {
@@ -4354,6 +5395,8 @@
           null,
           null,
           84,
+          null,
+          null,
           null,
           null
         ]
@@ -4607,7 +5650,7 @@
       "date": "2026-06-09T00:00:00.000Z",
       "dateFormatted": "Jun 9",
       "dateISO": "2026-06-09",
-      "name": "MSHSL Boys AAA State Tournament Day 1",
+      "name": "MSHSL Boys AAA MSHSL Boys AAA State Championship Day 1",
       "level": "Varsity",
       "course": "Bunker Hills Golf Course",
       "holes": 18,
@@ -4887,14 +5930,14 @@
       "date": "2026-06-09T00:00:00.000Z",
       "dateFormatted": "Jun 9",
       "dateISO": "2026-06-09",
-      "name": "MSHSL Boys AAA State Tournament Day 1",
+      "name": "MSHSL Boys AAA MSHSL Boys AAA State Championship Day 1",
       "level": "Varsity",
       "course": "Bunker Hills Golf Course",
       "holes": 18,
       "par": 72,
       "teamScore": null,
       "teamFinish": null,
-      "event": "MSHSL Boys AAA State Tournament Day 1"
+      "event": "MSHSL Boys AAA MSHSL Boys AAA State Championship Day 1"
     },
     {
       "id": "2026-2026-06-10-VAR-19",
@@ -4963,9 +6006,203 @@
       "05/19 - Lake Conference Championship",
       "05/26 - MSHSL Boys 6AAA Section Tournament Day 1",
       "05/27 - MSHSL Boys 6AAA Section Tournament Day 2",
-      "06/09 - MSHSL Boys AAA State Tournament Day 1",
+      "06/09 - MSHSL Boys AAA MSHSL Boys AAA State Championship Day 1",
       "06/10 - MSHSL Boys AAA State Tournament Day 2"
     ],
     "playerScores": []
-  }
+  },
+  "scorecards2026": [
+    {
+      "playerName": "Torger Ohe",
+      "eventDate": "2025-06-09",
+      "eventName": "MSHSL Boys AAA State Championship Day 1",
+      "round": 1,
+      "courseName": "Bunker Hills Golf Club",
+      "par": [
+        4,
+        4,
+        3,
+        5,
+        4,
+        5,
+        3,
+        4,
+        4,
+        4,
+        5,
+        3,
+        4,
+        5,
+        4,
+        4,
+        3,
+        4
+      ],
+      "scores": [
+        4,
+        4,
+        3,
+        4,
+        4,
+        5,
+        3,
+        4,
+        4,
+        4,
+        4,
+        3,
+        4,
+        4,
+        4,
+        4,
+        3,
+        5
+      ],
+      "total": 70
+    },
+    {
+      "playerName": "Torger Ohe",
+      "eventDate": "2025-06-10",
+      "eventName": "MSHSL Boys AAA State Championship Final",
+      "round": 2,
+      "courseName": "Bunker Hills Golf Club",
+      "par": [
+        4,
+        4,
+        3,
+        5,
+        4,
+        5,
+        3,
+        4,
+        4,
+        4,
+        5,
+        3,
+        4,
+        5,
+        4,
+        4,
+        3,
+        4
+      ],
+      "scores": [
+        4,
+        4,
+        3,
+        5,
+        5,
+        3,
+        4,
+        4,
+        5,
+        5,
+        5,
+        3,
+        5,
+        6,
+        4,
+        5,
+        3,
+        4
+      ],
+      "total": 77
+    },
+    {
+      "playerName": "Chase Larson",
+      "eventDate": "2025-06-09",
+      "eventName": "MSHSL Boys AAA State Championship Day 1",
+      "round": 1,
+      "courseName": "Bunker Hills Golf Club",
+      "par": [
+        4,
+        4,
+        3,
+        5,
+        4,
+        5,
+        3,
+        4,
+        4,
+        4,
+        5,
+        3,
+        4,
+        5,
+        4,
+        4,
+        3,
+        4
+      ],
+      "scores": [
+        5,
+        4,
+        4,
+        4,
+        5,
+        5,
+        3,
+        5,
+        5,
+        5,
+        6,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "total": 78
+    },
+    {
+      "playerName": "Chase Larson",
+      "eventDate": "2025-06-10",
+      "eventName": "MSHSL Boys AAA State Championship Final",
+      "round": 2,
+      "courseName": "Bunker Hills Golf Club",
+      "par": [
+        4,
+        4,
+        3,
+        5,
+        4,
+        5,
+        3,
+        4,
+        4,
+        4,
+        5,
+        3,
+        4,
+        5,
+        4,
+        4,
+        3,
+        4
+      ],
+      "scores": [
+        4,
+        4,
+        3,
+        5,
+        4,
+        4,
+        4,
+        4,
+        4,
+        5,
+        4,
+        3,
+        4,
+        4,
+        4,
+        4,
+        3,
+        6
+      ],
+      "total": 73
+    }
+  ]
 }

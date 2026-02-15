@@ -291,9 +291,6 @@ function Schedule() {
                     {event.time}
                   </span>
                 )}
-                {event.par && (
-                  <span className="text-gray-400">Par {event.par}</span>
-                )}
               </div>
             </div>
 

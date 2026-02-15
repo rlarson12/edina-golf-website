@@ -379,26 +379,6 @@ function Home() {
 
           <div className="grid md:grid-cols-2 gap-6">
             {/* Hilltop Fundraiser */}
-            <div className="bg-white rounded-xl p-5 md:p-6 shadow-sm border-l-4 border-edina-green">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-edina-green/10 rounded-lg flex items-center justify-center">
-                  <svg className="w-6 h-6 text-edina-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <div className="flex-grow">
-                  <div className="flex flex-wrap items-center gap-2 mb-1">
-                    <h3 className="font-bold text-gray-900">Hilltop Fundraiser</h3>
-                    <span className="text-xs font-semibold text-edina-green bg-edina-green/10 px-2 py-0.5 rounded">March 2</span>
-                  </div>
-                  <p className="text-sm text-gray-600">
-                    Join us for our season kickoff fundraiser at The Hilltop Restaurant! Come out for dinner with the family, meet Coach Vernon and the coaching staff, and connect with other golf families while supporting the team. More details coming soon.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Team Apparel Store */}
             <div className="bg-white rounded-xl p-5 md:p-6 shadow-sm border-l-4 border-edina-gold">
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-edina-gold/10 rounded-lg flex items-center justify-center">

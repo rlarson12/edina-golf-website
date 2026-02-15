@@ -515,6 +515,11 @@ function Roster() {
                                 <span className={`text-sm font-medium ${isUnderPar ? 'text-red-600' : 'text-gray-500'}`}>
                                   ({toParStr})
                                 </span>
+                                {s.position && (
+                                                    <span className="text-xs text-gray-500 bg-gray-100 px-1.5 py-0.5 rounded ml-1">
+                                                      {s.position}
+                                                    </span>
+                                                  )}
                               </div>
                             </div>
                           )
