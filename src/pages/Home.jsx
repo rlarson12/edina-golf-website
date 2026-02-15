@@ -45,13 +45,17 @@ function Home() {
 
     const totalEvents = golfData.seasonResults?.length || 0
 
-    const topPlayer = golfData.rankings?.[0]
+    // Calculate low avg dynamically from playerStats
+    const allAverages = (golfData.playerStats || [])
+      .filter(p => p.scores?.length > 0)
+      .map(p => p.scores.reduce((sum, s) => sum + s.score, 0) / p.scores.length)
+    const lowAvg = allAverages.length > 0 ? Math.min(...allAverages) : null
 
     return [
       { label: 'Tournament Wins', value: wins.toString() },
       { label: 'Events Played', value: totalEvents.toString() },
       { label: 'Team Members', value: golfData.players?.length?.toString() || '0' },
-      { label: 'Low Avg', value: topPlayer?.average?.toFixed(1) || '-' },
+      { label: 'Low Avg', value: lowAvg ? lowAvg.toFixed(1) : '-' },
     ]
   }, [])
 
@@ -71,24 +75,27 @@ function Home() {
       .reverse()
   }, [])
 
+  // Dynamically calculate leaderboard from playerStats scores
+  const calculateLeaderboard = (stats, team) => {
+    return stats
+      .filter(p => p.team === team && p.scores?.length > 0)
+      .map(p => {
+        const totalStrokes = p.scores.reduce((sum, s) => sum + s.score, 0)
+        const rounds = p.scores.length
+        return { name: p.name, average: totalStrokes / rounds }
+      })
+      .sort((a, b) => a.average - b.average)
+      .slice(0, 5)
+  }
+
   // Get varsity players for leaderboard
   const varsityPlayers = useMemo(() => {
-    const varsityNames = golfData.players
-      ?.filter(p => p.team === 'varsity')
-      .map(p => p.name) || []
-    return (golfData.rankings || [])
-      .filter(r => varsityNames.includes(r.name))
-      .slice(0, 5)
+    return calculateLeaderboard(golfData.playerStats || [], 'varsity')
   }, [])
 
   // Get JV players for leaderboard
   const jvPlayers = useMemo(() => {
-    const jvNames = golfData.players
-      ?.filter(p => p.team === 'jv')
-      .map(p => p.name) || []
-    return (golfData.rankings || [])
-      .filter(r => jvNames.includes(r.name))
-      .slice(0, 5)
+    return calculateLeaderboard(golfData.playerStats || [], 'jv')
   }, [])
 
   return (
@@ -172,11 +179,6 @@ function Home() {
                         </svg>
                         {nextEvent.course}
                       </span>
-                      {nextEvent.isMultiDay && (
-                        <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-600">
-                          2-Day
-                        </span>
-                      )}
                     </div>
                   </div>
 
