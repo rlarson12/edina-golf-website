@@ -45,10 +45,13 @@ function Home() {
 
     const totalEvents = golfData.seasonResults?.length || 0
 
-    // Calculate low avg dynamically from playerStats
+    // Calculate low avg dynamically from playerStats (normalize 9-hole scores)
     const allAverages = (golfData.playerStats || [])
       .filter(p => p.scores?.length > 0)
-      .map(p => p.scores.reduce((sum, s) => sum + s.score, 0) / p.scores.length)
+      .map(p => {
+        const total = p.scores.reduce((sum, s) => sum + (s.score < 50 ? s.score * 2 : s.score), 0)
+        return total / p.scores.length
+      })
     const lowAvg = allAverages.length > 0 ? Math.min(...allAverages) : null
 
     return [
@@ -81,7 +84,8 @@ function Home() {
     return stats
       .filter(p => p.team === team && p.scores?.length > 0)
       .map(p => {
-        const totalStrokes = p.scores.reduce((sum, s) => sum + s.score, 0)
+        // Normalize 9-hole scores (< 50) by doubling to 18-hole equivalent
+        const totalStrokes = p.scores.reduce((sum, s) => sum + (s.score < 50 ? s.score * 2 : s.score), 0)
         const rounds = p.scores.length
         return { name: p.name, average: totalStrokes / rounds }
       })
