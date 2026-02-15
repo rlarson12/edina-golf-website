@@ -4,7 +4,6 @@ import golfData from '../data/golfData.json'
 function Schedule() {
   const [yearFilter, setYearFilter] = useState('2026')
   const [levelFilter, setLevelFilter] = useState('all')
-  const [seasonFilter, setSeasonFilter] = useState('all')
   const [expandedEvents, setExpandedEvents] = useState(new Set())
 
   // 2026 Schedule (Varsity and JV events)
@@ -31,48 +30,6 @@ function Schedule() {
   const varsitySchedule = golfData.schedule || []
   const jvSchedule = golfData.jvSchedule || []
 
-  const eventPlayersMap = useMemo(() => {
-    const map = {}
-    const allEvents = [...(golfData.events || []), ...(golfData.jvEvents || [])]
-    allEvents.forEach(event => {
-      if (event.id && event.players) {
-        map[event.id] = event.players
-      }
-    })
-    return map
-  }, [])
-
-  const getEventPlayers = (eventId) => eventPlayersMap[eventId] || []
-
-  const playerStatsMap = useMemo(() => {
-    const map = {}
-    ;[...(golfData.playerStats || [])].forEach(player => {
-      if (player.scores) {
-        map[player.name] = {}
-        player.scores.forEach(s => {
-          if (s && s.eventId) map[player.name][s.eventId] = s.score
-        })
-      }
-    })
-    return map
-  }, [])
-
-  const getPlayerRoundScores = (playerName, event) => {
-    if (!event.rounds || !playerStatsMap[playerName]) return null
-    return event.rounds.map(round => ({
-      score: playerStatsMap[playerName][round.date + '-VAR'] || null,
-      par: round.par || 72
-    }))
-  }
-
-  const formatScoreToPar = (score, par) => {
-    if (!score || !par) return ''
-    const diff = score - par
-    if (diff === 0) return 'E'
-    return diff > 0 ? '+' + diff : String(diff)
-  }
-
-
   // Combine and tag events by level (2025)
   const allCombined2025 = useMemo(() => {
     const varsityTagged = varsitySchedule.map(e => ({ ...e, level: 'Varsity' }))
@@ -97,28 +54,11 @@ function Schedule() {
       return yearSchedule
     }
     if (levelFilter === 'all') return yearSchedule
-    if (levelFilter === 'varsity') return varsitySchedule
-    return jvSchedule
+    if (levelFilter === 'varsity') return [...varsitySchedule].sort((a, b) => new Date(b.date) - new Date(a.date))
+    return [...jvSchedule].sort((a, b) => new Date(b.date) - new Date(a.date))
   }, [yearFilter, levelFilter, yearSchedule, varsitySchedule, jvSchedule])
 
-  // Filter by regular/post season
-  const schedule = useMemo(() => {
-    if (seasonFilter === 'all') return levelFiltered
-    if (seasonFilter === 'postseason') {
-      return levelFiltered.filter(e =>
-        e.event.toLowerCase().includes('section') ||
-        e.event.toLowerCase().includes('state') ||
-        e.event.toLowerCase().includes('conference champ') ||
-        e.type === 'tournament'
-      )
-    }
-    // Regular season - exclude postseason events
-    return levelFiltered.filter(e =>
-      !e.event.toLowerCase().includes('section') &&
-      !e.event.toLowerCase().includes('state') &&
-      e.type !== 'tournament'
-    )
-  }, [levelFiltered, seasonFilter])
+  const schedule = levelFiltered
 
   const toggleExpand = (eventId) => {
     setExpandedEvents(prev => {
@@ -154,6 +94,79 @@ function Schedule() {
     return new Date(dateStr) < new Date()
   }
 
+  // Build player scores lookup by event ID
+  const playerScoresByEvent = useMemo(() => {
+    const map = {}
+    ;(golfData.playerStats || []).forEach(player => {
+      player.scores.forEach(s => {
+        if (!map[s.eventId]) map[s.eventId] = []
+        map[s.eventId].push({ name: player.name, score: s.score })
+      })
+    })
+    Object.values(map).forEach(scores => scores.sort((a, b) => a.score - b.score))
+    return map
+  }, [])
+
+  // Build event info map (par, holes) by event ID
+  const eventInfoMap = useMemo(() => {
+    const map = {}
+    ;[...(golfData.events || []), ...(golfData.jvEvents || [])].forEach(event => {
+      map[event.id] = { par: event.par, holes: event.holes }
+    })
+    return map
+  }, [])
+
+  // Get individual player scores for a schedule event
+  const getEventScores = (event) => {
+    if (event.isMultiDay && event.rounds) {
+      const suffix = event.id.replace(/^\d{4}-\d{2}-\d{2}-/, '')
+      const roundEventIds = event.rounds.map(r => `${r.date}-${suffix}`)
+
+      const playerMap = {}
+      roundEventIds.forEach((eventId, roundIdx) => {
+        const scores = playerScoresByEvent[eventId] || []
+        const info = eventInfoMap[eventId] || {}
+        scores.forEach(s => {
+          if (!playerMap[s.name]) {
+            playerMap[s.name] = { name: s.name, rounds: new Array(event.rounds.length).fill(null), pars: new Array(event.rounds.length).fill(null), total: 0, totalPar: 0, hasAny: false }
+          }
+          playerMap[s.name].rounds[roundIdx] = s.score
+          playerMap[s.name].pars[roundIdx] = info.par
+          playerMap[s.name].total += s.score
+          playerMap[s.name].totalPar += info.par || 0
+          playerMap[s.name].hasAny = true
+        })
+      })
+
+      return Object.values(playerMap)
+        .filter(p => p.hasAny)
+        .sort((a, b) => {
+          const aPlayed = a.rounds.filter(r => r !== null).length
+          const bPlayed = b.rounds.filter(r => r !== null).length
+          if (aPlayed !== bPlayed) return bPlayed - aPlayed
+          return a.total - b.total
+        })
+    }
+
+    const scores = playerScoresByEvent[event.id] || []
+    const info = eventInfoMap[event.id] || {}
+    return scores.map(s => ({
+      name: s.name,
+      score: s.score,
+      par: info.par,
+      toPar: info.par ? s.score - info.par : null
+    }))
+  }
+
+  // Check if event has individual scores
+  const hasPlayerScores = (event) => {
+    if (event.isMultiDay && event.rounds) {
+      const suffix = event.id.replace(/^\d{4}-\d{2}-\d{2}-/, '')
+      return event.rounds.some(r => (playerScoresByEvent[`${r.date}-${suffix}`] || []).length > 0)
+    }
+    return (playerScoresByEvent[event.id] || []).length > 0
+  }
+
   // Summary stats
   const stats = useMemo(() => {
     if (yearFilter === '2026') {
@@ -185,6 +198,7 @@ function Schedule() {
   const renderEventRow = (event, isRound = false, roundNum = null) => {
     const isExpanded = expandedEvents.has(event.id)
     const is2026Event = yearFilter === '2026'
+    const canExpand = !isRound && (event.isMultiDay || hasPlayerScores(event))
 
     return (
       <div
@@ -193,14 +207,14 @@ function Schedule() {
           isPastEvent(event.date) && !event.teamScore && !is2026Event ? 'opacity-60' : ''
         } ${is2026Event ? 'bg-gray-50/50 border-l-4 border-edina-green' : ''}`}
       >
-        <div className="p-4 md:p-5">
+        <div
+          className={`p-4 md:p-5 ${canExpand ? 'cursor-pointer' : ''}`}
+          onClick={canExpand ? () => toggleExpand(event.id) : undefined}
+        >
           <div className="flex flex-col md:flex-row md:items-center gap-4">
-            {/* Expand button for multi-day events */}
-            {!isRound && !is2026Event && (event.isMultiDay || getEventPlayers(event.id).length > 0) && (
-              <button
-                onClick={() => toggleExpand(event.id)}
-                className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors md:order-first"
-              >
+            {/* Expand button */}
+            {canExpand && (
+              <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full md:order-first">
                 <svg
                   className={`w-5 h-5 text-gray-500 transition-transform ${isExpanded ? 'rotate-90' : ''}`}
                   fill="none"
@@ -209,7 +223,7 @@ function Schedule() {
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
-              </button>
+              </div>
             )}
 
             {/* Date */}
@@ -296,112 +310,117 @@ function Schedule() {
           </div>
         </div>
 
-        {/* Expanded rounds */}
-        {event.isMultiDay && isExpanded && !isRound && (
-          <div className="border-t border-gray-100 bg-gray-50/50 p-4 space-y-3">
-            <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Round Scores</div>
-            {event.rounds?.map((round, idx) => (
-              <div
-                key={idx}
-                className="flex items-center justify-between p-3 bg-white rounded-lg border border-gray-100"
-              >
-                <div className="flex items-center gap-4">
-                  <span className="w-8 h-8 flex items-center justify-center bg-edina-green/10 text-edina-green font-bold rounded-full text-sm">
-                    R{round.round}
-                  </span>
-                  <div>
-                    <div className="font-medium text-gray-900">{round.course}</div>
-                    <div className="text-sm text-gray-500">
-                      {round.dateFormatted} {round.par && `• Par ${round.par}`}
-                    </div>
-                  </div>
-                </div>
-                <div className={`font-semibold ${
-                  round.teamScore?.includes('(-') ? 'text-red-600' : 'text-gray-700'
-                }`}>
-                  {round.teamScore || '-'}
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-
-        {/* Expanded player scores */}
-        {isExpanded && !isRound && getEventPlayers(event.id).length > 0 && (
-          <div className="border-t border-gray-100 bg-gray-50/50 p-4">
-            <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Individual Scores</div>
-            {event.isMultiDay && event.rounds && event.rounds.length > 0 && (
-              <div className="grid gap-0 mb-1" style={{ gridTemplateColumns: `auto 1fr repeat(${event.rounds.length + 2}, minmax(60px, 80px))` }}>
-                <div className="px-2 py-1"></div>
-                <div className="px-2 py-1"></div>
-                {event.rounds.map((r, ri) => (
-                  <div key={ri} className="px-2 py-1 text-center text-xs font-semibold text-gray-500">R{r.round}</div>
-                ))}
-                <div className="px-2 py-1 text-center text-xs font-semibold text-gray-500">Total</div>
-                <div className="px-2 py-1 text-center text-xs font-semibold text-gray-500">Finish</div>
-              </div>
-            )}
-            {!event.isMultiDay && (
-              <div className="grid gap-0 mb-1" style={{ gridTemplateColumns: 'auto 1fr 80px 80px' }}>
-                <div className="px-2 py-1"></div>
-                <div className="px-2 py-1"></div>
-                <div className="px-2 py-1 text-center text-xs font-semibold text-gray-500">Score</div>
-                <div className="px-2 py-1 text-center text-xs font-semibold text-gray-500">Finish</div>
-              </div>
-            )}
-            <div className="space-y-1">
-              {getEventPlayers(event.id)
-                .sort((a, b) => a.score - b.score)
-                .map((player, idx) => {
-                  const roundScores = event.isMultiDay ? getPlayerRoundScores(player.name, event) : null
-                  const totalPar = event.isMultiDay && event.rounds ? event.rounds.reduce((sum, r) => sum + (r.par || 72), 0) : (event.par || 72)
-                  const cols = event.isMultiDay && event.rounds
-                    ? `auto 1fr repeat(${event.rounds.length + 2}, minmax(60px, 80px))`
-                    : 'auto 1fr 80px 80px'
-                  return (
-                    <div key={idx} className="grid gap-0 items-center p-2 bg-white rounded-lg border border-gray-100" style={{ gridTemplateColumns: cols }}>
-                      <span className="w-6 text-center text-sm font-medium text-gray-400 px-2">{idx + 1}</span>
-                      <div className="px-2">
-                        <span className="font-medium text-gray-900 text-sm">{player.name}</span>
-                        {player.grade && <span className="text-xs text-gray-400 ml-1">({player.grade})</span>}
+        {/* Expanded content */}
+        {isExpanded && !isRound && (() => {
+          const scores = getEventScores(event)
+          return (
+            <div className="border-t border-gray-100 bg-gray-50/50 p-4 space-y-3">
+              {/* Round breakdown for multi-day events */}
+              {event.isMultiDay && event.rounds && (
+                <>
+                  <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Round Scores</div>
+                  {event.rounds.map((round, idx) => (
+                    <div
+                      key={idx}
+                      className="flex items-center justify-between p-3 bg-white rounded-lg border border-gray-100"
+                    >
+                      <div className="flex items-center gap-4">
+                        <span className="w-8 h-8 flex items-center justify-center bg-edina-green/10 text-edina-green font-bold rounded-full text-sm">
+                          R{round.round}
+                        </span>
+                        <div>
+                          <div className="font-medium text-gray-900">{round.course}</div>
+                          <div className="text-sm text-gray-500">
+                            {round.dateFormatted} {round.par && `• Par ${round.par}`}
+                          </div>
+                        </div>
                       </div>
-                      {event.isMultiDay && event.rounds ? (
-                        <>
-                          {event.rounds.map((round, ri) => {
-                            const rs = roundScores && roundScores[ri]
-                            const score = rs ? rs.score : null
-                            const par = round.par || 72
-                            return (
-                              <div key={ri} className="px-2 text-center">
-                                {score ? (
-                                  <span className="text-sm font-medium text-gray-700">{score}<span className="text-xs text-gray-400">({formatScoreToPar(score, par)})</span></span>
-                                ) : <span className="text-gray-300">-</span>}
-                              </div>
-                            )
-                          })}
-                          <div className="px-2 text-center">
-                            <span className="text-sm font-semibold text-gray-900">{player.score}<span className="text-xs text-gray-400">({formatScoreToPar(player.score, totalPar)})</span></span>
-                          </div>
-                          <div className="px-2 text-center">
-                            <span className="text-xs font-medium text-gray-600 bg-gray-100 px-1.5 py-0.5 rounded">{player.position || ''}</span>
-                          </div>
-                        </>
-                      ) : (
-                        <>
-                          <div className="px-2 text-center">
-                            <span className="text-sm font-semibold text-gray-900">{player.score}<span className="text-xs text-gray-400">({formatScoreToPar(player.score, event.par || 72)})</span></span>
-                          </div>
-                          <div className="px-2 text-center">
-                            {player.position && <span className="text-xs font-medium text-gray-600 bg-gray-100 px-1.5 py-0.5 rounded">{player.position}</span>}
-                          </div>
-                        </>
-                      )}
+                      <div className={`font-semibold ${
+                        round.teamScore?.includes('(-') ? 'text-red-600' : 'text-gray-700'
+                      }`}>
+                        {round.teamScore || '-'}
+                      </div>
                     </div>
-                  )
-                })}
+                  ))}
+                </>
+              )}
+
+              {/* Individual player scores */}
+              {scores.length > 0 && (
+                <>
+                  <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2 mt-3">Individual Scores</div>
+                  <div className="bg-white rounded-lg border border-gray-100 overflow-hidden">
+                    <table className="w-full text-sm">
+                      <thead className="bg-gray-50 border-b border-gray-100">
+                        <tr>
+                          <th className="px-3 py-2 text-left text-xs font-semibold text-gray-500">Player</th>
+                          {event.isMultiDay && event.rounds?.map((r, i) => (
+                            <th key={i} className="px-2 py-2 text-center text-xs font-semibold text-gray-500">R{r.round}</th>
+                          ))}
+                          <th className="px-3 py-2 text-center text-xs font-semibold text-gray-500">{event.isMultiDay ? 'Total' : 'Score'}</th>
+                          <th className="px-2 py-2 text-center text-xs font-semibold text-gray-500">+/-</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-gray-50">
+                        {scores.map((s, idx) => {
+                          if (event.isMultiDay) {
+                            const toPar = s.totalPar ? s.total - s.totalPar : null
+                            const toParStr = toPar === null ? '' : toPar === 0 ? 'E' : toPar > 0 ? `+${toPar}` : `${toPar}`
+                            const isUnderPar = toPar !== null && toPar < 0
+                            return (
+                              <tr key={idx}>
+                                <td className="px-3 py-1.5 font-medium text-gray-900">{s.name}</td>
+                                {s.rounds.map((r, i) => {
+                                  const rPar = s.pars[i]
+                                  const rUnder = r !== null && rPar && r < rPar
+                                  return (
+                                    <td key={i} className="px-2 py-1.5 text-center">
+                                      <span className={`font-medium ${rUnder ? 'text-red-600' : 'text-gray-700'}`}>
+                                        {r !== null ? r : '-'}
+                                      </span>
+                                    </td>
+                                  )
+                                })}
+                                <td className="px-3 py-1.5 text-center">
+                                  <span className={`font-bold ${isUnderPar ? 'text-red-600' : 'text-gray-900'}`}>
+                                    {s.total || '-'}
+                                  </span>
+                                </td>
+                                <td className="px-2 py-1.5 text-center">
+                                  <span className={`text-sm ${isUnderPar ? 'text-red-600' : 'text-gray-500'}`}>
+                                    {toParStr}
+                                  </span>
+                                </td>
+                              </tr>
+                            )
+                          }
+
+                          const toParStr = s.toPar === null ? '' : s.toPar === 0 ? 'E' : s.toPar > 0 ? `+${s.toPar}` : `${s.toPar}`
+                          const isUnderPar = s.toPar !== null && s.toPar < 0
+                          return (
+                            <tr key={idx}>
+                              <td className="px-3 py-1.5 font-medium text-gray-900">{s.name}</td>
+                              <td className="px-3 py-1.5 text-center">
+                                <span className={`font-bold ${isUnderPar ? 'text-red-600' : 'text-gray-900'}`}>
+                                  {s.score}
+                                </span>
+                              </td>
+                              <td className="px-2 py-1.5 text-center">
+                                <span className={`text-sm ${isUnderPar ? 'text-red-600' : 'text-gray-500'}`}>
+                                  {toParStr}
+                                </span>
+                              </td>
+                            </tr>
+                          )
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
+                </>
+              )}
             </div>
-          </div>
-        )}
+          )
+        })()}
       </div>
     )
   }
@@ -523,33 +542,6 @@ function Schedule() {
             </button>
           </div>
 
-        {/* Season Filter - only show for 2025 */}
-        {yearFilter === '2025' && (
-          <div className="flex space-x-1 bg-gray-100 p-1 rounded-lg">
-            <button
-              onClick={() => setSeasonFilter('regular')}
-              className={`px-3 md:px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                seasonFilter === 'regular'
-                  ? 'bg-white text-edina-green shadow-sm'
-                  : 'text-gray-600 hover:text-gray-900'
-              }`}
-            >
-              <span className="md:hidden">Regular</span>
-              <span className="hidden md:inline">Regular Season</span>
-            </button>
-            <button
-              onClick={() => setSeasonFilter('postseason')}
-              className={`px-3 md:px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                seasonFilter === 'postseason'
-                  ? 'bg-white text-edina-green shadow-sm'
-                  : 'text-gray-600 hover:text-gray-900'
-              }`}
-            >
-              <span className="md:hidden">Post</span>
-              <span className="hidden md:inline">Post Season</span>
-            </button>
-          </div>
-        )}
       </div>
 
       {/* Schedule List */}
@@ -585,7 +577,7 @@ function Schedule() {
               </span>
               <span className="inline-flex items-center gap-2">
                 <span className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-gray-100 text-gray-600">2-Day</span>
-                <span className="text-gray-500">Click to expand details</span>
+                <span className="text-gray-500">Click to expand scores</span>
               </span>
               <span className="inline-flex items-center gap-2">
                 <span className="text-red-600 font-medium">283 (-5)</span>
