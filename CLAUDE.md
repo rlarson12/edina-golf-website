@@ -28,7 +28,7 @@ Google Sheet: https://docs.google.com/spreadsheets/d/13zHq2VRQ0939iPrdSl0-D2fS4k
 - src/scripts/importFromSheets.js — Google Sheets import
 - src/scripts/validateData.js — Data validation
 - IWANAMAKER-WORKFLOW.md — iWanamaker scraping instructions
-- UPDATE-WORKFLOW.md — Google Sheets workflow
+- SITE-MANAGEMENT.md — Full site management guide (setup, scoring, data schema, troubleshooting)
 
 ## NPM Scripts
 - npm run dev — Local dev server
