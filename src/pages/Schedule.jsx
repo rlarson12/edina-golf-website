@@ -1,10 +1,35 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, Fragment } from 'react'
 import golfData from '../data/golfData.json'
+import Scorecard from '../components/Scorecard'
 
 function Schedule() {
   const [yearFilter, setYearFilter] = useState('2026')
   const [levelFilter, setLevelFilter] = useState('all')
   const [expandedEvents, setExpandedEvents] = useState(new Set())
+  const [expandedScorecards, setExpandedScorecards] = useState(new Set())
+
+  // Build scorecard lookup: "playerName::eventDate" → scorecard data
+  const scorecardMap = useMemo(() => {
+    const map = {}
+    ;(golfData.scorecards2026 || []).forEach(sc => {
+      map[`${sc.playerName}::${sc.eventDate}`] = sc
+    })
+    return map
+  }, [])
+
+  const getScorecard = (playerName, eventDate) => {
+    return scorecardMap[`${playerName}::${eventDate}`] || null
+  }
+
+  const toggleScorecard = (playerName, eventDate) => {
+    const key = `${playerName}::${eventDate}`
+    setExpandedScorecards(prev => {
+      const next = new Set(prev)
+      if (next.has(key)) next.delete(key)
+      else next.add(key)
+      return next
+    })
+  }
 
   // 2026 Schedule (Varsity and JV events)
   const schedule2026 = [
@@ -367,31 +392,68 @@ function Schedule() {
                             const toPar = s.totalPar ? s.total - s.totalPar : null
                             const toParStr = toPar === null ? '' : toPar === 0 ? 'E' : toPar > 0 ? `+${toPar}` : `${toPar}`
                             const isUnderPar = toPar !== null && toPar < 0
+                            const colCount = (event.rounds?.length || 0) + 3
                             return (
-                              <tr key={idx}>
-                                <td className="px-3 py-1.5 font-medium text-gray-900">{s.name}</td>
-                                {s.rounds.map((r, i) => {
-                                  const rPar = s.pars[i]
-                                  const rUnder = r !== null && rPar && r < rPar
+                              <Fragment key={idx}>
+                                <tr>
+                                  <td className="px-3 py-1.5 font-medium text-gray-900">{s.name}</td>
+                                  {s.rounds.map((r, i) => {
+                                    const rPar = s.pars[i]
+                                    const rUnder = r !== null && rPar && r < rPar
+                                    const roundDate = event.rounds[i]?.date
+                                    const sc = roundDate ? getScorecard(s.name, roundDate) : null
+                                    return (
+                                      <td key={i} className="px-2 py-1.5 text-center">
+                                        <span className={`font-medium ${rUnder ? 'text-red-600' : 'text-gray-700'}`}>
+                                          {r !== null ? r : '-'}
+                                        </span>
+                                        {sc && (
+                                          <button
+                                            onClick={(e) => { e.stopPropagation(); toggleScorecard(s.name, roundDate) }}
+                                            className={`ml-1 inline-flex items-center justify-center w-5 h-5 rounded transition-colors ${
+                                              expandedScorecards.has(`${s.name}::${roundDate}`)
+                                                ? 'text-edina-green bg-edina-green/10'
+                                                : 'text-gray-400 hover:text-edina-green'
+                                            }`}
+                                            title="View hole-by-hole scorecard"
+                                          >
+                                            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                                            </svg>
+                                          </button>
+                                        )}
+                                      </td>
+                                    )
+                                  })}
+                                  <td className="px-3 py-1.5 text-center">
+                                    <span className={`font-bold ${isUnderPar ? 'text-red-600' : 'text-gray-900'}`}>
+                                      {s.total || '-'}
+                                    </span>
+                                  </td>
+                                  <td className="px-2 py-1.5 text-center">
+                                    <span className={`text-sm ${isUnderPar ? 'text-red-600' : 'text-gray-500'}`}>
+                                      {toParStr}
+                                    </span>
+                                  </td>
+                                </tr>
+                                {event.rounds.map((round, i) => {
+                                  const sc = getScorecard(s.name, round.date)
+                                  if (!sc || !expandedScorecards.has(`${s.name}::${round.date}`)) return null
                                   return (
-                                    <td key={i} className="px-2 py-1.5 text-center">
-                                      <span className={`font-medium ${rUnder ? 'text-red-600' : 'text-gray-700'}`}>
-                                        {r !== null ? r : '-'}
-                                      </span>
-                                    </td>
+                                    <tr key={`sc-${idx}-${i}`}>
+                                      <td colSpan={colCount} className="p-0 bg-gray-50">
+                                        <Scorecard
+                                          par={sc.par}
+                                          scores={sc.scores}
+                                          courseName={sc.courseName}
+                                          playerName={sc.playerName}
+                                          round={sc.round}
+                                        />
+                                      </td>
+                                    </tr>
                                   )
                                 })}
-                                <td className="px-3 py-1.5 text-center">
-                                  <span className={`font-bold ${isUnderPar ? 'text-red-600' : 'text-gray-900'}`}>
-                                    {s.total || '-'}
-                                  </span>
-                                </td>
-                                <td className="px-2 py-1.5 text-center">
-                                  <span className={`text-sm ${isUnderPar ? 'text-red-600' : 'text-gray-500'}`}>
-                                    {toParStr}
-                                  </span>
-                                </td>
-                              </tr>
+                              </Fragment>
                             )
                           }
 
