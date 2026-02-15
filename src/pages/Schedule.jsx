@@ -195,10 +195,8 @@ function Schedule() {
   // Summary stats
   const stats = useMemo(() => {
     if (yearFilter === '2026') {
-      const multiDay = schedule.filter(e => e.isMultiDay).length
       return {
         total: schedule.length,
-        multiDay,
         is2026: true,
       }
     }
@@ -272,11 +270,6 @@ function Schedule() {
                     event.level === 'Varsity' ? 'bg-edina-green/10 text-edina-green' : 'bg-blue-100 text-blue-700'
                   }`}>
                     {event.level}
-                  </span>
-                )}
-                {!isRound && event.isMultiDay && (
-                  <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-600">
-                    2-Day
                   </span>
                 )}
               </div>
@@ -512,14 +505,10 @@ function Schedule() {
         {/* Stats Summary as floating cards */}
         <div className="relative -mt-12 mb-8">
           {stats.is2026 ? (
-            <div className="grid grid-cols-2 gap-4 max-w-md mx-auto">
+            <div className="max-w-xs mx-auto">
               <div className="card p-4 text-center shadow-lg">
                 <div className="text-2xl font-bold text-edina-green">{stats.total}</div>
                 <div className="text-sm text-gray-600">Total Events</div>
-              </div>
-              <div className="card p-4 text-center shadow-lg">
-                <div className="text-2xl font-bold text-edina-green">{stats.multiDay}</div>
-                <div className="text-sm text-gray-600">2-Day Events</div>
               </div>
             </div>
           ) : (
@@ -626,20 +615,12 @@ function Schedule() {
                 <span className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-edina-green/10 text-edina-green border border-edina-green/30">Upcoming</span>
                 <span className="text-gray-500">Scheduled event</span>
               </span>
-              <span className="inline-flex items-center gap-2">
-                <span className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-gray-100 text-gray-600">2-Day</span>
-                <span className="text-gray-500">Multi-day tournament</span>
-              </span>
             </>
           ) : (
             <>
               <span className="inline-flex items-center gap-2">
                 <span className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-edina-gold/20 text-edina-gold-dark border border-edina-gold">1st</span>
                 <span className="text-gray-500">Win</span>
-              </span>
-              <span className="inline-flex items-center gap-2">
-                <span className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-gray-100 text-gray-600">2-Day</span>
-                <span className="text-gray-500">Click to expand scores</span>
               </span>
               <span className="inline-flex items-center gap-2">
                 <span className="text-red-600 font-medium">283 (-5)</span>
