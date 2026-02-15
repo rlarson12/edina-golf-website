@@ -492,16 +492,22 @@ function Roster() {
                                 <div className="flex items-center gap-2">
                                   <span className="text-xs font-medium text-edina-green whitespace-nowrap">{s.date}</span>
                                   <span className="text-sm text-gray-700 truncate">{s.event}</span>
-                                  {s.isMultiRound && (
-                                    <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-gray-200 text-gray-600">2-Day</span>
-                                  )}
                                 </div>
                               </div>
                               <div className="flex items-center gap-2 flex-shrink-0">
                                 {s.isMultiRound ? (
                                   <>
-                                    <span className="text-sm text-gray-500">
-                                      {s.rounds[0] ?? '-'}-{s.rounds[1] ?? '-'}
+                                    <span className="text-sm">
+                                      {s.rounds.map((r, i) => {
+                                        const rPar = s.roundPars?.[i]
+                                        const rUnder = r !== null && rPar && r < rPar
+                                        return (
+                                          <span key={i}>
+                                            {i > 0 && <span className="text-gray-400">-</span>}
+                                            <span className={rUnder ? 'text-red-600 font-medium' : 'text-gray-500'}>{r ?? '-'}</span>
+                                          </span>
+                                        )
+                                      })}
                                     </span>
                                     <span className={`font-bold text-lg ${isUnderPar ? 'text-red-600' : 'text-gray-900'}`}>
                                       {s.score}

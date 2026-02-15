@@ -4,7 +4,6 @@ import golfData from '../data/golfData.json'
 function Schedule() {
   const [yearFilter, setYearFilter] = useState('2026')
   const [levelFilter, setLevelFilter] = useState('all')
-  const [seasonFilter, setSeasonFilter] = useState('all')
   const [expandedEvents, setExpandedEvents] = useState(new Set())
 
   // 2026 Schedule (Varsity and JV events)
@@ -59,24 +58,7 @@ function Schedule() {
     return [...jvSchedule].sort((a, b) => new Date(b.date) - new Date(a.date))
   }, [yearFilter, levelFilter, yearSchedule, varsitySchedule, jvSchedule])
 
-  // Filter by regular/post season
-  const schedule = useMemo(() => {
-    if (seasonFilter === 'all') return levelFiltered
-    if (seasonFilter === 'postseason') {
-      return levelFiltered.filter(e =>
-        e.event.toLowerCase().includes('section') ||
-        e.event.toLowerCase().includes('state') ||
-        e.event.toLowerCase().includes('conference champ') ||
-        e.type === 'tournament'
-      )
-    }
-    // Regular season - exclude postseason events
-    return levelFiltered.filter(e =>
-      !e.event.toLowerCase().includes('section') &&
-      !e.event.toLowerCase().includes('state') &&
-      e.type !== 'tournament'
-    )
-  }, [levelFiltered, seasonFilter])
+  const schedule = levelFiltered
 
   const toggleExpand = (eventId) => {
     setExpandedEvents(prev => {
@@ -560,33 +542,6 @@ function Schedule() {
             </button>
           </div>
 
-        {/* Season Filter - only show for 2025 */}
-        {yearFilter === '2025' && (
-          <div className="flex space-x-1 bg-gray-100 p-1 rounded-lg">
-            <button
-              onClick={() => setSeasonFilter('regular')}
-              className={`px-3 md:px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                seasonFilter === 'regular'
-                  ? 'bg-white text-edina-green shadow-sm'
-                  : 'text-gray-600 hover:text-gray-900'
-              }`}
-            >
-              <span className="md:hidden">Regular</span>
-              <span className="hidden md:inline">Regular Season</span>
-            </button>
-            <button
-              onClick={() => setSeasonFilter('postseason')}
-              className={`px-3 md:px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                seasonFilter === 'postseason'
-                  ? 'bg-white text-edina-green shadow-sm'
-                  : 'text-gray-600 hover:text-gray-900'
-              }`}
-            >
-              <span className="md:hidden">Post</span>
-              <span className="hidden md:inline">Post Season</span>
-            </button>
-          </div>
-        )}
       </div>
 
       {/* Schedule List */}
