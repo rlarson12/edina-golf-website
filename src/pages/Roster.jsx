@@ -93,49 +93,105 @@ function Roster() {
     development: players.filter(p => p.team === 'development').length,
   }), [players])
 
-  // Get player scores from heatmap data
+  // Format MM/DD date string to readable format
+  const formatHeatmapDate = (header) => {
+    const dateMatch = header.match(/^(\d{2})\/(\d{2})/)
+    if (!dateMatch) return ''
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    return `${months[parseInt(dateMatch[1], 10) - 1]} ${parseInt(dateMatch[2], 10)}`
+  }
+
+  // Look up event info (par, holes) by event name
+  const lookupEventInfo = (eventName) => {
+    const eventNameLower = eventName.toLowerCase()
+    let eventInfo = eventInfoMap[eventNameLower]
+    if (!eventInfo) {
+      const matchingKey = Object.keys(eventInfoMap).find(key =>
+        key.startsWith(eventNameLower) || eventNameLower.startsWith(key)
+      )
+      eventInfo = matchingKey ? eventInfoMap[matchingKey] : { par: 72, holes: 18 }
+    }
+    return eventInfo
+  }
+
+  // Get player scores from heatmap data, combining multi-round events
   const getPlayerScores = (playerName) => {
     const playerData = golfData.heatmap?.playerScores?.find(p => p.name === playerName)
     const eventHeaders = golfData.heatmap?.eventHeaders || []
 
     if (!playerData) return []
 
-    return playerData.scores
-      .map((score, idx) => {
-        const header = eventHeaders[idx] || ''
-        // Extract date (e.g., "04/22" from "04/22 - Lake Conference Opener")
-        const dateMatch = header.match(/^(\d{2})\/(\d{2})/)
-        const dateFormatted = dateMatch ?
-          `${['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][parseInt(dateMatch[1], 10) - 1]} ${parseInt(dateMatch[2], 10)}` : ''
+    // Build raw scores with metadata
+    const rawScores = playerData.scores.map((score, idx) => {
+      const header = eventHeaders[idx] || ''
+      const eventName = header.replace(/^\d{2}\/\d{2} - /, '') || `Event ${idx + 1}`
+      const eventInfo = lookupEventInfo(eventName)
+      return {
+        idx,
+        date: formatHeatmapDate(header),
+        event: eventName,
+        score,
+        par: eventInfo.par,
+        holes: eventInfo.holes,
+        toPar: (score && eventInfo.par) ? score - eventInfo.par : null
+      }
+    })
 
-        // Extract event name
-        const eventName = header.replace(/^\d{2}\/\d{2} - /, '') || `Event ${idx + 1}`
-        const eventNameLower = eventName.toLowerCase()
+    // Combine "Day 1" + "Final" pairs into single entries
+    const combined = []
+    const consumed = new Set()
 
-        // Find event info - try exact match first, then partial match
-        let eventInfo = eventInfoMap[eventNameLower]
-        if (!eventInfo) {
-          // Try partial match (e.g., "Holy Family JV" matches "Holy Family JV Event A")
-          const matchingKey = Object.keys(eventInfoMap).find(key =>
-            key.startsWith(eventNameLower) || eventNameLower.startsWith(key)
-          )
-          eventInfo = matchingKey ? eventInfoMap[matchingKey] : { par: 72, holes: 18 }
+    for (let i = 0; i < rawScores.length; i++) {
+      if (consumed.has(i)) continue
+      const s = rawScores[i]
+
+      if (s.event.endsWith('Day 1')) {
+        const baseName = s.event.replace(/ Day 1$/, '')
+        // Look for matching "Final" in subsequent entries
+        const finalIdx = rawScores.findIndex((f, j) =>
+          j > i && !consumed.has(j) && f.event === `${baseName} Final`
+        )
+
+        if (finalIdx !== -1) {
+          const f = rawScores[finalIdx]
+          consumed.add(finalIdx)
+
+          const r1 = s.score
+          const r2 = f.score
+          const hasR1 = r1 !== null
+          const hasR2 = r2 !== null
+
+          if (!hasR1 && !hasR2) {
+            // Both null, skip entirely
+            continue
+          }
+
+          const totalScore = (hasR1 ? r1 : 0) + (hasR2 ? r2 : 0)
+          const totalPar = (s.par || 0) + (f.par || 0)
+          const totalHoles = (s.holes || 0) + (f.holes || 0)
+
+          combined.push({
+            date: `${s.date}`,
+            event: baseName,
+            score: totalScore,
+            rounds: [r1, r2],
+            roundPars: [s.par, f.par],
+            par: totalPar,
+            holes: totalHoles,
+            toPar: totalPar ? totalScore - totalPar : null,
+            isMultiRound: true
+          })
+          continue
         }
+      }
 
-        const par = eventInfo.par
-        const holes = eventInfo.holes
+      // Single-round event (or unmatched Day 1 / Final)
+      if (s.score !== null) {
+        combined.push(s)
+      }
+    }
 
-        return {
-          date: dateFormatted,
-          event: eventName,
-          score: score,
-          par: par,
-          holes: holes,
-          toPar: (score && par) ? score - par : null
-        }
-      })
-      .filter(s => s.score !== null)
-      .reverse()
+    return combined.reverse()
   }
 
   // Calculate weighted 18-hole average from scores
@@ -436,12 +492,26 @@ function Roster() {
                                 <div className="flex items-center gap-2">
                                   <span className="text-xs font-medium text-edina-green whitespace-nowrap">{s.date}</span>
                                   <span className="text-sm text-gray-700 truncate">{s.event}</span>
+                                  {s.isMultiRound && (
+                                    <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-gray-200 text-gray-600">2-Day</span>
+                                  )}
                                 </div>
                               </div>
                               <div className="flex items-center gap-2 flex-shrink-0">
-                                <span className={`font-bold text-lg ${isUnderPar ? 'text-red-600' : 'text-gray-900'}`}>
-                                  {s.score}
-                                </span>
+                                {s.isMultiRound ? (
+                                  <>
+                                    <span className="text-sm text-gray-500">
+                                      {s.rounds[0] ?? '-'}-{s.rounds[1] ?? '-'}
+                                    </span>
+                                    <span className={`font-bold text-lg ${isUnderPar ? 'text-red-600' : 'text-gray-900'}`}>
+                                      {s.score}
+                                    </span>
+                                  </>
+                                ) : (
+                                  <span className={`font-bold text-lg ${isUnderPar ? 'text-red-600' : 'text-gray-900'}`}>
+                                    {s.score}
+                                  </span>
+                                )}
                                 <span className={`text-sm font-medium ${isUnderPar ? 'text-red-600' : 'text-gray-500'}`}>
                                   ({toParStr})
                                 </span>
