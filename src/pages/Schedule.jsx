@@ -55,8 +55,8 @@ function Schedule() {
       return yearSchedule
     }
     if (levelFilter === 'all') return yearSchedule
-    if (levelFilter === 'varsity') return varsitySchedule
-    return jvSchedule
+    if (levelFilter === 'varsity') return [...varsitySchedule].sort((a, b) => new Date(b.date) - new Date(a.date))
+    return [...jvSchedule].sort((a, b) => new Date(b.date) - new Date(a.date))
   }, [yearFilter, levelFilter, yearSchedule, varsitySchedule, jvSchedule])
 
   // Filter by regular/post season
