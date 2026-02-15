@@ -76,6 +76,7 @@ function Home() {
   }, [])
 
   // Dynamically calculate leaderboard from playerStats scores
+  const rankingsOrder = (golfData.rankings || []).map(r => r.name)
   const calculateLeaderboard = (stats, team) => {
     return stats
       .filter(p => p.team === team && p.scores?.length > 0)
@@ -84,7 +85,21 @@ function Home() {
         const rounds = p.scores.length
         return { name: p.name, average: totalStrokes / rounds }
       })
-      .sort((a, b) => a.average - b.average)
+      .sort((a, b) => {
+        const roundA = Math.round(a.average * 10)
+        const roundB = Math.round(b.average * 10)
+        if (roundA !== roundB) return roundA - roundB
+        // Tiebreaker 1: rankings order
+        const idxA = rankingsOrder.indexOf(a.name)
+        const idxB = rankingsOrder.indexOf(b.name)
+        if (idxA !== -1 && idxB !== -1) return idxA - idxB
+        if (idxA !== -1) return -1
+        if (idxB !== -1) return 1
+        // Tiebreaker 2: alphabetical by last name
+        const lastA = a.name.split(' ').slice(-1)[0]
+        const lastB = b.name.split(' ').slice(-1)[0]
+        return lastA.localeCompare(lastB)
+      })
       .slice(0, 5)
   }
 
