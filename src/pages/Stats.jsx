@@ -50,7 +50,7 @@ function Stats() {
     return matchingKey ? eventInfoMap[matchingKey].holes : 18
   }
 
-  // Calculate weighted 18-hole average: (total strokes ÷ total holes) × 18
+  // Calculate weighted 18-hole average: (total strokes Ã· total holes) Ã 18
   const calculateWeightedAverage = (scores) => {
     let totalStrokes = 0
     let totalHoles = 0
@@ -103,7 +103,16 @@ function Stats() {
         average: calculateWeightedAverage(p.scores),
       }))
       .filter(p => p.average !== null)
-      .sort((a, b) => a.average - b.average)
+      .sort((a, b) => {
+        const roundA = Math.round(a.average * 10)
+        const roundB = Math.round(b.average * 10)
+        if (roundA !== roundB) return roundA - roundB
+        const rankingsOrder = (golfData.rankings || []).map(r => r.name)
+        const idxA = rankingsOrder.indexOf(a.name)
+        const idxB = rankingsOrder.indexOf(b.name)
+        if (idxA !== -1 && idxB !== -1) return idxA - idxB
+        return a.average - b.average
+      })
   }, [eventInfoMap])
 
   // Filter by team
@@ -148,7 +157,7 @@ function Stats() {
 
   // Get event info (par and holes) from actual course data
   const getEventInfo = (eventHeader) => {
-    // Extract event name from header (e.g., "05/12 - Oak Ridge Day 1" → "Oak Ridge Day 1")
+    // Extract event name from header (e.g., "05/12 - Oak Ridge Day 1" â "Oak Ridge Day 1")
     const eventName = eventHeader?.replace(/^\d{2}\/\d{2} - /, '') || ''
     const eventNameLower = eventName.toLowerCase()
 

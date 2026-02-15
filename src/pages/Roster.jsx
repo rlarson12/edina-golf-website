@@ -24,6 +24,21 @@ function Roster() {
     return map
   }, [])
 
+  const playerPositionMap = useMemo(() => {
+    const map = {}
+    const allEvents = [...(golfData.events || []), ...(golfData.jvEvents || [])]
+    allEvents.forEach(event => {
+      if (event.id && event.players) {
+        map[event.id] = {}
+        event.players.forEach(p => {
+          map[event.id][p.name] = p.position || null
+        })
+      }
+    })
+    return map
+  }, [])
+
+
   // Get holes for an event header
   const getEventHoles = (eventHeader) => {
     const eventName = eventHeader?.replace(/^\d{2}\/\d{2} - /, '') || ''
@@ -110,6 +125,20 @@ function Roster() {
 
         // Extract event name
         const eventName = header.replace(/^\d{2}\/\d{2} - /, '') || `Event ${idx + 1}`
+        const dateM = header.match(/^(\d{2})\/(\d{2})/)
+        let matchedEventId = null
+        if (dateM) {
+          const allEvts = [...(golfData.events || []), ...(golfData.jvEvents || [])]
+          const evMatch = allEvts.find(e => {
+            if (!e.id) return false
+            const p = e.id.match(/(\d{4})-(\d{2})-(\d{2})/)
+            return p && p[2] === dateM[1] && p[3] === dateM[2]
+          })
+          matchedEventId = evMatch?.id || null
+        }
+        const position = matchedEventId && playerPositionMap[matchedEventId]
+          ? playerPositionMap[matchedEventId][playerName] || null
+          : null
         const eventNameLower = eventName.toLowerCase()
 
         // Find event info - try exact match first, then partial match
@@ -131,7 +160,8 @@ function Roster() {
           score: score,
           par: par,
           holes: holes,
-          toPar: (score && par) ? score - par : null
+          toPar: (score && par) ? score - par : null,
+                    position: position
         }
       })
       .filter(s => s.score !== null)
@@ -445,6 +475,11 @@ function Roster() {
                                 <span className={`text-sm font-medium ${isUnderPar ? 'text-red-600' : 'text-gray-500'}`}>
                                   ({toParStr})
                                 </span>
+                                {s.position && (
+                                                    <span className="text-xs text-gray-500 bg-gray-100 px-1.5 py-0.5 rounded ml-1">
+                                                      {s.position}
+                                                    </span>
+                                                  )}
                               </div>
                             </div>
                           )

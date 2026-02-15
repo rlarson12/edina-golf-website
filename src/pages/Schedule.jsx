@@ -31,6 +31,48 @@ function Schedule() {
   const varsitySchedule = golfData.schedule || []
   const jvSchedule = golfData.jvSchedule || []
 
+  const eventPlayersMap = useMemo(() => {
+    const map = {}
+    const allEvents = [...(golfData.events || []), ...(golfData.jvEvents || [])]
+    allEvents.forEach(event => {
+      if (event.id && event.players) {
+        map[event.id] = event.players
+      }
+    })
+    return map
+  }, [])
+
+  const getEventPlayers = (eventId) => eventPlayersMap[eventId] || []
+
+  const playerStatsMap = useMemo(() => {
+    const map = {}
+    ;[...(golfData.playerStats || [])].forEach(player => {
+      if (player.scores) {
+        map[player.name] = {}
+        player.scores.forEach(s => {
+          if (s && s.eventId) map[player.name][s.eventId] = s.score
+        })
+      }
+    })
+    return map
+  }, [])
+
+  const getPlayerRoundScores = (playerName, event) => {
+    if (!event.rounds || !playerStatsMap[playerName]) return null
+    return event.rounds.map(round => ({
+      score: playerStatsMap[playerName][round.date + '-VAR'] || null,
+      par: round.par || 72
+    }))
+  }
+
+  const formatScoreToPar = (score, par) => {
+    if (!score || !par) return ''
+    const diff = score - par
+    if (diff === 0) return 'E'
+    return diff > 0 ? '+' + diff : String(diff)
+  }
+
+
   // Combine and tag events by level (2025)
   const allCombined2025 = useMemo(() => {
     const varsityTagged = varsitySchedule.map(e => ({ ...e, level: 'Varsity' }))
@@ -154,7 +196,7 @@ function Schedule() {
         <div className="p-4 md:p-5">
           <div className="flex flex-col md:flex-row md:items-center gap-4">
             {/* Expand button for multi-day events */}
-            {event.isMultiDay && !isRound && (
+            {!isRound && !is2026Event && (event.isMultiDay || getEventPlayers(event.id).length > 0) && (
               <button
                 onClick={() => toggleExpand(event.id)}
                 className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors md:order-first"
@@ -216,9 +258,6 @@ function Schedule() {
                     </svg>
                     {event.time}
                   </span>
-                )}
-                {event.par && (
-                  <span className="text-gray-400">Par {event.par}</span>
                 )}
               </div>
             </div>
@@ -284,6 +323,83 @@ function Schedule() {
                 </div>
               </div>
             ))}
+          </div>
+        )}
+
+        {/* Expanded player scores */}
+        {isExpanded && !isRound && getEventPlayers(event.id).length > 0 && (
+          <div className="border-t border-gray-100 bg-gray-50/50 p-4">
+            <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Individual Scores</div>
+            {event.isMultiDay && event.rounds && event.rounds.length > 0 && (
+              <div className="grid gap-0 mb-1" style={{ gridTemplateColumns: `auto 1fr repeat(${event.rounds.length + 2}, minmax(60px, 80px))` }}>
+                <div className="px-2 py-1"></div>
+                <div className="px-2 py-1"></div>
+                {event.rounds.map((r, ri) => (
+                  <div key={ri} className="px-2 py-1 text-center text-xs font-semibold text-gray-500">R{r.round}</div>
+                ))}
+                <div className="px-2 py-1 text-center text-xs font-semibold text-gray-500">Total</div>
+                <div className="px-2 py-1 text-center text-xs font-semibold text-gray-500">Finish</div>
+              </div>
+            )}
+            {!event.isMultiDay && (
+              <div className="grid gap-0 mb-1" style={{ gridTemplateColumns: 'auto 1fr 80px 80px' }}>
+                <div className="px-2 py-1"></div>
+                <div className="px-2 py-1"></div>
+                <div className="px-2 py-1 text-center text-xs font-semibold text-gray-500">Score</div>
+                <div className="px-2 py-1 text-center text-xs font-semibold text-gray-500">Finish</div>
+              </div>
+            )}
+            <div className="space-y-1">
+              {getEventPlayers(event.id)
+                .sort((a, b) => a.score - b.score)
+                .map((player, idx) => {
+                  const roundScores = event.isMultiDay ? getPlayerRoundScores(player.name, event) : null
+                  const totalPar = event.isMultiDay && event.rounds ? event.rounds.reduce((sum, r) => sum + (r.par || 72), 0) : (event.par || 72)
+                  const cols = event.isMultiDay && event.rounds
+                    ? `auto 1fr repeat(${event.rounds.length + 2}, minmax(60px, 80px))`
+                    : 'auto 1fr 80px 80px'
+                  return (
+                    <div key={idx} className="grid gap-0 items-center p-2 bg-white rounded-lg border border-gray-100" style={{ gridTemplateColumns: cols }}>
+                      <span className="w-6 text-center text-sm font-medium text-gray-400 px-2">{idx + 1}</span>
+                      <div className="px-2">
+                        <span className="font-medium text-gray-900 text-sm">{player.name}</span>
+                        {player.grade && <span className="text-xs text-gray-400 ml-1">({player.grade})</span>}
+                      </div>
+                      {event.isMultiDay && event.rounds ? (
+                        <>
+                          {event.rounds.map((round, ri) => {
+                            const rs = roundScores && roundScores[ri]
+                            const score = rs ? rs.score : null
+                            const par = round.par || 72
+                            return (
+                              <div key={ri} className="px-2 text-center">
+                                {score ? (
+                                  <span className="text-sm font-medium text-gray-700">{score}<span className="text-xs text-gray-400">({formatScoreToPar(score, par)})</span></span>
+                                ) : <span className="text-gray-300">-</span>}
+                              </div>
+                            )
+                          })}
+                          <div className="px-2 text-center">
+                            <span className="text-sm font-semibold text-gray-900">{player.score}<span className="text-xs text-gray-400">({formatScoreToPar(player.score, totalPar)})</span></span>
+                          </div>
+                          <div className="px-2 text-center">
+                            <span className="text-xs font-medium text-gray-600 bg-gray-100 px-1.5 py-0.5 rounded">{player.position || ''}</span>
+                          </div>
+                        </>
+                      ) : (
+                        <>
+                          <div className="px-2 text-center">
+                            <span className="text-sm font-semibold text-gray-900">{player.score}<span className="text-xs text-gray-400">({formatScoreToPar(player.score, event.par || 72)})</span></span>
+                          </div>
+                          <div className="px-2 text-center">
+                            {player.position && <span className="text-xs font-medium text-gray-600 bg-gray-100 px-1.5 py-0.5 rounded">{player.position}</span>}
+                          </div>
+                        </>
+                      )}
+                    </div>
+                  )
+                })}
+            </div>
           </div>
         )}
       </div>
@@ -469,7 +585,7 @@ function Schedule() {
               </span>
               <span className="inline-flex items-center gap-2">
                 <span className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-gray-100 text-gray-600">2-Day</span>
-                <span className="text-gray-500">Click to expand rounds</span>
+                <span className="text-gray-500">Click to expand details</span>
               </span>
               <span className="inline-flex items-center gap-2">
                 <span className="text-red-600 font-medium">283 (-5)</span>
