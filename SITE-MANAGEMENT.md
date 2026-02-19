@@ -6,7 +6,7 @@ This is the single reference doc for managing edinaboysgolf.com. It covers pre-s
 
 ## Tools
 
-- **Claude Code:** Code changes, data formatting, bug fixes, anything that touches local files. Open Terminal, cd into ~/Desktop/edina-golf-website, type `claude`.
+- **Claude Code:** Code changes, data formatting, bug fixes, anything that touches local files. Open Terminal, cd into ~/Projects/edina-golf-website, type `claude`.
 - **Cowork:** iWanamaker scraping (requires browser to navigate the site). Also useful for verifying deploy previews visually.
 - **Claude Chat:** Strategy, planning, prompt writing, reviewing screenshots. Cannot edit files or push code.
 
@@ -22,7 +22,7 @@ This is the single reference doc for managing edinaboysgolf.com. It covers pre-s
 
 ```bash
 # Standard workflow for changes:
-cd ~/Desktop/edina-golf-website
+cd ~/Projects/edina-golf-website
 git checkout main
 git pull                          # Always pull latest before starting
 git checkout -b branch-name       # Create feature branch
