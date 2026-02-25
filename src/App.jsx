@@ -9,6 +9,7 @@ import SupportTeam from './pages/SupportTeam'
 import TeamInfo from './pages/TeamInfo'
 import History from './pages/History'
 import Photos from './pages/Photos'
+import Recaps from './pages/Recaps'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/stats" element={<Stats />} />
         <Route path="/schedule" element={<Schedule />} />
+        <Route path="/recaps" element={<Recaps />} />
         <Route path="/roster" element={<Roster />} />
         <Route path="/coaches" element={<Coaches />} />
         <Route path="/support-team" element={<SupportTeam />} />

@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom'
 const navigation = [
   { name: 'Home', href: '/' },
   { name: 'Schedule', href: '/schedule' },
+  { name: 'Recaps', href: '/recaps' },
   { name: 'Roster', href: '/roster' },
   { name: 'Stats', href: '/stats' },
   { name: 'Coaches', href: '/coaches' },
@@ -143,6 +144,7 @@ function Layout({ children }) {
               <ul className="space-y-2 text-sm text-green-100">
                 <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
                 <li><Link to="/schedule" className="hover:text-white transition-colors">Schedule</Link></li>
+                <li><Link to="/recaps" className="hover:text-white transition-colors">Recaps</Link></li>
                 <li><Link to="/stats" className="hover:text-white transition-colors">Stats</Link></li>
                 <li><Link to="/roster" className="hover:text-white transition-colors">Roster</Link></li>
               </ul>
