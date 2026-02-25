@@ -404,28 +404,24 @@ function Home() {
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-edina-gold/10 rounded-lg flex items-center justify-center">
                   <svg className="w-6 h-6 text-edina-gold-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
                 </div>
                 <div className="flex-grow">
                   <div className="flex flex-wrap items-center gap-2 mb-1">
-                    <h3 className="font-bold text-gray-900">Team Apparel Store</h3>
-                    <span className="text-xs font-semibold text-edina-gold-dark bg-edina-gold/20 px-2 py-0.5 rounded">Through Feb 5</span>
+                    <h3 className="font-bold text-gray-900">Fundraiser Night at Hilltop</h3>
+                    <span className="text-xs font-semibold text-edina-gold-dark bg-edina-gold/20 px-2 py-0.5 rounded">Mon, Mar 2 · 4–9 PM</span>
                   </div>
                   <p className="text-sm text-gray-600">
-                    Shop for Hornet golf apparel for players, families, and spectators. Not a fundraiser - just a convenient way to get branded gear. Items ship directly to you.
+                    Enjoy a night off cooking at Hilltop Restaurant and support Edina Boys Golf! Mention <span className="font-semibold">"Edina Boys Golf"</span> when ordering and a portion of the proceeds comes back to the team. Dine-in only. Coaching staff will be on-site to connect with families. Gift card sales also count — just indicate "Edina Boys Golf" at purchase.
                   </p>
-                  <a
-                    href="https://bsnteamsports.com/shop/pYCFYRrYzT"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-sm font-medium text-edina-green hover:underline mt-2"
-                  >
-                    Shop Now
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  <div className="flex items-center gap-1 text-xs text-gray-500 mt-2">
+                    <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
-                  </a>
+                    5101 Arcadia Ave, Edina MN 55436 — reservations recommended
+                  </div>
                 </div>
               </div>
             </div>
