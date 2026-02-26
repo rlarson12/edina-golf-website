@@ -34,21 +34,28 @@ function Schedule() {
   // 2026 Schedule (Varsity and JV events)
   const schedule2026 = [
     // Varsity Events
-    { id: '2026-V1', date: '2026-04-20', dateFormatted: 'Apr 20', event: 'Lake Conference Tournament #1', course: 'Chaska Town Course', level: 'Varsity', time: '1:30 PM' },
-    { id: '2026-V2', date: '2026-04-22', dateFormatted: 'Apr 22', event: 'East Ridge Invitational', course: 'Stoneridge Golf Club', level: 'Varsity' },
-    { id: '2026-V3', date: '2026-04-23', dateFormatted: 'Apr 23', event: 'Lake Conference Meet', course: 'Pioneer Creek Golf Course', level: 'Varsity' },
-    { id: '2026-V4', date: '2026-04-24', dateFormatted: 'Apr 24-25', event: 'The Preview', course: 'Edinburgh Golf Course', level: 'Varsity', isMultiDay: true },
-    { id: '2026-V5', date: '2026-04-27', dateFormatted: 'Apr 27', event: 'Lake Conference Meet', course: 'Oak Ridge Country Club', level: 'Varsity' },
-    { id: '2026-V6', date: '2026-05-01', dateFormatted: 'May 1-2', event: 'Lakeville South Invitational', course: 'Dacotah Ridge Golf Club', level: 'Varsity', isMultiDay: true },
-    { id: '2026-V7', date: '2026-05-04', dateFormatted: 'May 4', event: 'Spring Lake Park Invitational', course: 'TPC Twin Cities', level: 'Varsity' },
-    { id: '2026-V8', date: '2026-05-08', dateFormatted: 'May 8-9', event: 'Northwest Classic', course: 'Detroit Lakes Country Club', level: 'Varsity', isMultiDay: true },
-    { id: '2026-V9', date: '2026-05-11', dateFormatted: 'May 11-12', event: 'Edina Invitational', course: 'Oak Ridge Country Club', level: 'Varsity', isMultiDay: true },
-    { id: '2026-V10', date: '2026-05-19', dateFormatted: 'May 19', event: 'Lake Conference Championship', course: 'Fox Hollow Golf Club', level: 'Varsity' },
-    { id: '2026-V11', date: '2026-05-26', dateFormatted: 'May 26-27', event: 'MSHSL Boys 6AAA Section Tournament', course: 'Meadows at Mystic Lake', level: 'Varsity', isMultiDay: true },
-    { id: '2026-V12', date: '2026-06-09', dateFormatted: 'Jun 9-10', event: 'MSHSL Boys AAA State Tournament', course: 'Bunker Hills Golf Course', level: 'Varsity', isMultiDay: true },
+    { id: '2026-V1',  date: '2026-04-20', dateFormatted: 'Apr 20',    event: 'Lake Conference Tournament #1',      course: 'Chaska Town Course',        level: 'Varsity', time: '1:30 PM' },
+    { id: '2026-V2',  date: '2026-04-22', dateFormatted: 'Apr 22',    event: 'East Ridge Invitational',            course: 'Stoneridge Golf Club',       level: 'Varsity' },
+    { id: '2026-V3',  date: '2026-04-23', dateFormatted: 'Apr 23',    event: 'Lake Conference Meet #2',            course: 'Pioneer Creek Golf Course',  level: 'Varsity' },
+    { id: '2026-V4',  date: '2026-04-24', dateFormatted: 'Apr 24-25', event: 'The Preview',                        course: 'Edinburgh Golf Course',      level: 'Varsity', isMultiDay: true },
+    { id: '2026-V5',  date: '2026-04-27', dateFormatted: 'Apr 27',    event: 'Lake Conference Meet #3',            course: 'Oak Ridge Country Club',     level: 'Varsity' },
+    { id: '2026-V6',  date: '2026-05-01', dateFormatted: 'May 1-2',   event: 'Lakeville South Invitational',       course: 'Dacotah Ridge Golf Club',    level: 'Varsity', isMultiDay: true },
+    { id: '2026-V7',  date: '2026-05-04', dateFormatted: 'May 4',     event: 'Spring Lake Park Invitational',      course: 'TPC Twin Cities',            level: 'Varsity' },
+    { id: '2026-V8',  date: '2026-05-04', dateFormatted: 'May 4',     event: 'Lake Conference Meet #4',            course: 'Medina CC',                  level: 'Varsity' },
+    { id: '2026-V9',  date: '2026-05-04', dateFormatted: 'May 4',     event: 'Boys Varsity Invitational',          course: 'Oak Ridge Country Club',     level: 'Varsity' },
+    { id: '2026-V10', date: '2026-05-08', dateFormatted: 'May 8-9',   event: 'Northwest Classic',                  course: 'Detroit Country Club',       level: 'Varsity', isMultiDay: true },
+    { id: '2026-V11', date: '2026-05-11', dateFormatted: 'May 11-12', event: 'Edina Invitational',                 course: 'Oak Ridge Country Club',     level: 'Varsity', isMultiDay: true },
+    { id: '2026-V12', date: '2026-05-19', dateFormatted: 'May 19',    event: 'Lake Conference Championship',       course: 'Fox Hollow Golf Club',       level: 'Varsity' },
+    { id: '2026-V13', date: '2026-05-26', dateFormatted: 'May 26-27', event: 'Section 6AAA Championship',          course: 'Meadows at Mystic Lake',     level: 'Varsity', isMultiDay: true },
+    { id: '2026-V14', date: '2026-06-09', dateFormatted: 'Jun 9-10',  event: 'MSHSL AAA State Tournament',         course: 'Bunker Hills Golf Course',   level: 'Varsity', isMultiDay: true },
     // JV Events
-    { id: '2026-JV1', date: '2026-04-20', dateFormatted: 'Apr 20', event: 'JV Lake Conference Match #1', course: 'Bluff Creek Golf Course', level: 'JV', time: '12:00 PM' },
-    { id: '2026-JV2', date: '2026-04-27', dateFormatted: 'Apr 27', event: 'Eden Prairie JV Invite', course: 'Bluff Creek Golf Course', level: 'JV', time: '9:00 AM' },
+    { id: '2026-JV1', date: '2026-04-20', dateFormatted: 'Apr 20',    event: 'Lake Conference JV Opener',          course: 'Burl Oaks GC',               level: 'JV' },
+    { id: '2026-JV2', date: '2026-04-22', dateFormatted: 'Apr 22',    event: 'Boys JV Tournament',                 course: 'Clifton Highlands GC',       level: 'JV' },
+    { id: '2026-JV3', date: '2026-04-27', dateFormatted: 'Apr 27',    event: 'Lake Conference JV Meet',            course: 'Bluff Creek Golf Course',    level: 'JV' },
+    { id: '2026-JV4', date: '2026-05-11', dateFormatted: 'May 11-12', event: 'Boys JV Conference Meet',            course: 'Wild Marsh GC',              level: 'JV', isMultiDay: true },
+    { id: '2026-JV5', date: '2026-05-13', dateFormatted: 'May 13',    event: 'Boys JV Conference Meet',            course: 'Riverwood National GC',      level: 'JV' },
+    { id: '2026-JV6', date: '2026-05-14', dateFormatted: 'May 14',    event: 'Boys JV Game',                       course: 'Shamrock GC',                level: 'JV' },
+    { id: '2026-JV7', date: '2026-05-20', dateFormatted: 'May 20',    event: 'Boys JV Invitational',               course: 'Dahlgreen GC',               level: 'JV' },
   ]
 
   // Use schedule data from JSON (2025)
