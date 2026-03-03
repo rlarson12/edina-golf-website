@@ -4,9 +4,33 @@ function Photos() {
   const [selectedAlbum, setSelectedAlbum] = useState(null)
   const [lightboxImage, setLightboxImage] = useState(null)
 
-  const albums = [
+  const albums2026 = [
     {
-      id: 1,
+      id: '2026-1',
+      title: 'Team Photos',
+      date: '2026 Season',
+      cover: null,
+      photos: [],
+    },
+    {
+      id: '2026-2',
+      title: 'Tournament Action',
+      date: '2026 Season',
+      cover: null,
+      photos: [],
+    },
+    {
+      id: '2026-3',
+      title: 'Off Course',
+      date: '2026 Season',
+      cover: null,
+      photos: [],
+    },
+  ]
+
+  const albums2025 = [
+    {
+      id: '2025-1',
       title: 'Team Photos',
       date: '2025 Season',
       cover: '/images/Team1.jpeg',
@@ -25,7 +49,7 @@ function Photos() {
       ],
     },
     {
-      id: 2,
+      id: '2025-2',
       title: 'Tournament Action',
       date: 'Spring 2025',
       cover: '/images/Action1.jpeg',
@@ -47,7 +71,7 @@ function Photos() {
       ],
     },
     {
-      id: 3,
+      id: '2025-3',
       title: 'Off Course',
       date: '2025 Season',
       cover: '/images/OffCourse1.jpeg',
@@ -75,9 +99,53 @@ function Photos() {
     setLightboxImage(selectedAlbum.photos[nextIndex])
   }
 
+  const AlbumCard = ({ album }) => {
+    const isEmpty = album.photos.length === 0
+    return (
+      <button
+        key={album.id}
+        onClick={() => !isEmpty && setSelectedAlbum(album)}
+        className={`card overflow-hidden text-left transition-shadow group ${isEmpty ? 'cursor-default opacity-80' : 'hover:shadow-lg'}`}
+      >
+        {/* Album Cover */}
+        <div className="h-48 bg-gray-200 relative overflow-hidden">
+          {album.cover ? (
+            <>
+              <img
+                src={album.cover}
+                alt={album.title}
+                className="w-full h-full img-cover group-hover:scale-105 transition-transform duration-300"
+                onError={(e) => { e.target.style.display = 'none' }}
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors"></div>
+            </>
+          ) : (
+            <div className="w-full h-full flex flex-col items-center justify-center bg-edina-green/5 border-2 border-dashed border-edina-green/20">
+              <svg className="w-10 h-10 text-edina-green/30 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              <p className="text-sm text-edina-green/50 font-medium">Photos coming soon</p>
+            </div>
+          )}
+        </div>
+
+        {/* Album Info */}
+        <div className="p-4">
+          <h3 className={`font-semibold text-gray-900 mb-1 ${!isEmpty ? 'group-hover:text-edina-green transition-colors' : ''}`}>
+            {album.title}
+          </h3>
+          <div className="flex items-center justify-between text-sm text-gray-500">
+            <span>{album.date}</span>
+            <span>{isEmpty ? 'Coming soon' : `${album.photos.length} photos`}</span>
+          </div>
+        </div>
+      </button>
+    )
+  }
+
   return (
     <div>
-      {/* Hero Section with Photo Collage Background */}
+      {/* Hero Section */}
       <div className="relative h-[200px] md:h-[280px] overflow-hidden">
         <img
           src="/images/Team1.jpeg"
@@ -91,116 +159,105 @@ function Photos() {
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-2" style={{ fontFamily: "'Oswald', sans-serif" }}>
               PHOTO GALLERY
             </h1>
-            <p className="text-green-200 text-lg">Memories from the 2025 Season</p>
           </div>
         </div>
       </div>
 
       <div className="page-container">
-        {/* Album Grid or Photo View */}
-      {!selectedAlbum ? (
-        <>
-          {/* Albums Grid */}
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {albums.map((album) => (
-              <button
-                key={album.id}
-                onClick={() => setSelectedAlbum(album)}
-                className="card overflow-hidden text-left hover:shadow-lg transition-shadow group"
-              >
-                {/* Album Cover */}
-                <div className="h-48 bg-gray-200 relative overflow-hidden">
+        {!selectedAlbum ? (
+          <>
+            {/* 2026 Albums */}
+            <div className="mb-10">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6" style={{ fontFamily: "'Oswald', sans-serif" }}>
+                2026 Season
+              </h2>
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {albums2026.map((album) => (
+                  <AlbumCard key={album.id} album={album} />
+                ))}
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div className="border-t border-gray-200 mb-10"></div>
+
+            {/* 2025 Albums */}
+            <div className="mb-10">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6" style={{ fontFamily: "'Oswald', sans-serif" }}>
+                2025 Season
+              </h2>
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {albums2025.map((album) => (
+                  <AlbumCard key={album.id} album={album} />
+                ))}
+              </div>
+            </div>
+
+            {/* Submit Photos CTA */}
+            <div className="mt-4 bg-gray-100 rounded-xl p-6 md:p-8">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Have Photos to Share?</h3>
+              <p className="text-gray-600 mb-4">
+                Parents and players are encouraged to submit photos from matches and events to be featured on the website. Email your photos to{' '}
+                <a href="mailto:photos@edinaboysgolf.com" className="text-edina-green font-medium hover:underline">
+                  photos@edinaboysgolf.com
+                </a>{' '}
+                and include the following in your message:
+              </p>
+              <ul className="text-gray-600 space-y-1 mb-4 ml-4 list-disc">
+                <li>Event name and date</li>
+                <li>Names of the players pictured</li>
+                <li>Any context you'd like to share</li>
+              </ul>
+              <p className="text-gray-600">
+                High-resolution photos preferred. We'll add approved submissions to the website throughout the season.
+              </p>
+            </div>
+          </>
+        ) : (
+          <>
+            {/* Back Button */}
+            <button
+              onClick={() => setSelectedAlbum(null)}
+              className="flex items-center gap-2 text-gray-600 hover:text-edina-green mb-6 transition-colors"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              Back to Albums
+            </button>
+
+            {/* Album Header */}
+            <div className="mb-6">
+              <h2 className="text-2xl font-bold text-gray-900">{selectedAlbum.title}</h2>
+              <p className="text-gray-600">{selectedAlbum.date} • {selectedAlbum.photos.length} photos</p>
+            </div>
+
+            {/* Photos Grid */}
+            <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+              {selectedAlbum.photos.map((photo, index) => (
+                <button
+                  key={index}
+                  onClick={() => setLightboxImage(photo)}
+                  className="aspect-square bg-gray-100 rounded-lg overflow-hidden relative group"
+                >
                   <img
-                    src={album.cover}
-                    alt={album.title}
+                    src={photo.src}
+                    alt={photo.caption}
                     className="w-full h-full img-cover group-hover:scale-105 transition-transform duration-300"
                     onError={(e) => {
+                      e.target.src = ''
                       e.target.style.display = 'none'
                     }}
                   />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors"></div>
-                </div>
-
-                {/* Album Info */}
-                <div className="p-4">
-                  <h3 className="font-semibold text-gray-900 mb-1 group-hover:text-edina-green transition-colors">
-                    {album.title}
-                  </h3>
-                  <div className="flex items-center justify-between text-sm text-gray-500">
-                    <span>{album.date}</span>
-                    <span>{album.photos.length} photos</span>
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                    <p className="text-white text-xs truncate">{photo.caption}</p>
                   </div>
-                </div>
-              </button>
-            ))}
-          </div>
-
-          {/* Upload CTA */}
-          <div className="mt-12 bg-gray-100 rounded-xl p-6 md:p-8">
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Have Photos to Share?</h3>
-            <p className="text-gray-600 mb-4">
-              Parents and players are encouraged to submit photos from matches and events to be featured on the website. Email your photos to{' '}
-              <a href="mailto:photos@edinaboysgolf.com" className="text-edina-green font-medium hover:underline">
-                photos@edinaboysgolf.com
-              </a>{' '}
-              and include the following in your message:
-            </p>
-            <ul className="text-gray-600 space-y-1 mb-4 ml-4 list-disc">
-              <li>Event name and date</li>
-              <li>Names of the players pictured</li>
-              <li>Any context you'd like to share</li>
-            </ul>
-            <p className="text-gray-600">
-              High-resolution photos preferred. We'll add approved submissions to the website throughout the season.
-            </p>
-          </div>
-        </>
-      ) : (
-        <>
-          {/* Back Button */}
-          <button
-            onClick={() => setSelectedAlbum(null)}
-            className="flex items-center gap-2 text-gray-600 hover:text-edina-green mb-6 transition-colors"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-            Back to Albums
-          </button>
-
-          {/* Album Header */}
-          <div className="mb-6">
-            <h2 className="text-2xl font-bold text-gray-900">{selectedAlbum.title}</h2>
-            <p className="text-gray-600">{selectedAlbum.date} • {selectedAlbum.photos.length} photos</p>
-          </div>
-
-          {/* Photos Grid */}
-          <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {selectedAlbum.photos.map((photo, index) => (
-              <button
-                key={index}
-                onClick={() => setLightboxImage(photo)}
-                className="aspect-square bg-gray-100 rounded-lg overflow-hidden relative group"
-              >
-                <img
-                  src={photo.src}
-                  alt={photo.caption}
-                  className="w-full h-full img-cover group-hover:scale-105 transition-transform duration-300"
-                  onError={(e) => {
-                    e.target.src = ''
-                    e.target.style.display = 'none'
-                  }}
-                />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                  <p className="text-white text-xs truncate">{photo.caption}</p>
-                </div>
-              </button>
-            ))}
-          </div>
-        </>
-      )}
-
+                </button>
+              ))}
+            </div>
+          </>
+        )}
       </div>
 
       {/* Lightbox */}
@@ -209,7 +266,6 @@ function Photos() {
           className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
           onClick={() => setLightboxImage(null)}
         >
-          {/* Close button */}
           <button
             className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-10"
             onClick={() => setLightboxImage(null)}
@@ -219,7 +275,6 @@ function Photos() {
             </svg>
           </button>
 
-          {/* Previous button */}
           <button
             className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors z-10 p-2"
             onClick={handlePrevImage}
@@ -229,7 +284,6 @@ function Photos() {
             </svg>
           </button>
 
-          {/* Next button */}
           <button
             className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors z-10 p-2"
             onClick={handleNextImage}
