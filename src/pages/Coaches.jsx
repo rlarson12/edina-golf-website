@@ -36,11 +36,10 @@ function Coaches() {
 
   const jvCoaches = [
     {
-      name: 'TBD',
+      name: 'Cole Johnson',
       title: 'JV Head Coach',
-      photo: null,
+      photo: '/images/Coach-ColeJohnson.jpg',
       credentials: [],
-      placeholder: true,
     },
     {
       name: 'TBD',
