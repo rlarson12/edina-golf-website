@@ -24,7 +24,7 @@ function SupportTeam() {
       name: 'Caitlin Sidey',
       role: 'Treasurer',
       photo: '/images/Treasuer - Caitlin.jpg',
-      email: 'caitlin.sidey@gmail.com',
+      email: 'treasurer@edinaboysgolf.com',
       phone: '612-859-0923',
       venmo: '@Caitlin-Sidey',
     },
@@ -168,7 +168,7 @@ function SupportTeam() {
             Interested in supporting Edina Boys Golf? Whether through sponsorship, donations, or volunteering, we'd love to hear from you.
           </p>
           <a
-            href="mailto:caitlin.sidey@gmail.com?subject=Supporting%20Edina%20Boys%20Golf"
+            href="mailto:info@edinaboysgolf.com?subject=Supporting%20Edina%20Boys%20Golf"
             className="inline-flex items-center gap-2 bg-edina-green hover:bg-edina-green-dark text-white font-medium py-2 px-5 rounded-lg transition-colors"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

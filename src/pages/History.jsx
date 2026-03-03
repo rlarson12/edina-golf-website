@@ -231,7 +231,7 @@ function History() {
               Help us keep this list updated. Contact us with information about Edina alumni playing collegiate golf.
             </p>
             <a
-              href="mailto:rlarson12@gmail.com?subject=Edina%20Golf%20Alumni%20Update"
+              href="mailto:info@edinaboysgolf.com?subject=Edina%20Golf%20Alumni%20Update"
               className="inline-flex items-center gap-2 bg-edina-green hover:bg-edina-green-dark text-white font-medium py-2 px-5 rounded-lg transition-colors"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
