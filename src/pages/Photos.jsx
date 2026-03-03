@@ -136,23 +136,23 @@ function Photos() {
           </div>
 
           {/* Upload CTA */}
-          <div className="mt-12 bg-gray-100 rounded-xl p-6 md:p-8 text-center">
-            <svg className="w-12 h-12 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
-            </svg>
+          <div className="mt-12 bg-gray-100 rounded-xl p-6 md:p-8">
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Have Photos to Share?</h3>
-            <p className="text-gray-600 mb-4 max-w-md mx-auto">
-              Parents and players can submit photos from matches and events to be featured in our gallery.
+            <p className="text-gray-600 mb-4">
+              Parents and players are encouraged to submit photos from matches and events to be featured on the website. Email your photos to{' '}
+              <a href="mailto:photos@edinaboysgolf.com" className="text-edina-green font-medium hover:underline">
+                photos@edinaboysgolf.com
+              </a>{' '}
+              and include the following in your message:
             </p>
-            <a
-              href="mailto:rlarson12@gmail.com"
-              className="btn-primary inline-flex items-center gap-2"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-              Submit Photos
-            </a>
+            <ul className="text-gray-600 space-y-1 mb-4 ml-4 list-disc">
+              <li>Event name and date</li>
+              <li>Names of the players pictured</li>
+              <li>Any context you'd like to share</li>
+            </ul>
+            <p className="text-gray-600">
+              High-resolution photos preferred. We'll add approved submissions to the website throughout the season.
+            </p>
           </div>
         </>
       ) : (

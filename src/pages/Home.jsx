@@ -399,33 +399,6 @@ function Home() {
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8" style={{ fontFamily: "'Oswald', sans-serif" }}>Upcoming Events</h2>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {/* Hilltop Fundraiser */}
-            <div className="bg-white rounded-xl p-5 md:p-6 shadow-sm border-l-4 border-edina-gold">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-edina-gold/10 rounded-lg flex items-center justify-center">
-                  <svg className="w-6 h-6 text-edina-gold-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                </div>
-                <div className="flex-grow">
-                  <div className="flex flex-wrap items-center gap-2 mb-1">
-                    <h3 className="font-bold text-gray-900">Fundraiser Night at Hilltop</h3>
-                    <span className="text-xs font-semibold text-edina-gold-dark bg-edina-gold/20 px-2 py-0.5 rounded">Mon, Mar 2 · 4–9 PM</span>
-                  </div>
-                  <p className="text-sm text-gray-600">
-                    Enjoy a night off cooking at Hilltop Restaurant and support Edina Boys Golf! Mention <span className="font-semibold">"Edina Boys Golf"</span> when ordering and a portion of the proceeds comes back to the team. Dine-in only. Coaching staff will be on-site to connect with families. Gift card sales also count — just indicate "Edina Boys Golf" at purchase.
-                  </p>
-                  <div className="flex items-center gap-1 text-xs text-gray-500 mt-2">
-                    <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    5101 Arcadia Ave, Edina MN 55436 — reservations recommended
-                  </div>
-                </div>
-              </div>
-            </div>
-
             {/* Captain's Practices */}
             <div className="bg-white rounded-xl p-5 md:p-6 shadow-sm border-l-4 border-gray-400">
               <div className="flex items-start gap-4">
