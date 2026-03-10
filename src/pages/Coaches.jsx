@@ -4,33 +4,38 @@ function Coaches() {
       name: 'Tim Vernon',
       title: 'Varsity Head Coach',
       photo: '/images/Coach Vernon .jpeg',
-      credentials: [],
+      credentials: ['PGA', 'MN Section Golf Executive of the Year 2025'],
       email: 'TVernon@yamahagu.com',
       phone: '612-206-6499',
+      bio: '36-year PGA Professional in the Minnesota Section and current officer on the Minnesota Section PGA Board. Played in four Michigan state championships and competed at Michigan State University. A lifelong member of the Edina golf community, Tim sponsors the Minnesota State Opens and the MN PGA Junior Tours.',
     },
     {
       name: 'Marty Lass',
       title: 'Assistant Coach',
       photo: '/images/Coach Lass.jpeg',
       credentials: ['PGA'],
+      bio: 'Retired after 35 years as Head Golf Professional at Edina Country Club. Played at Ferris State University, competing in two national championships, before earning his PGA membership in 1984. Widely regarded throughout the Minnesota section as one of the premier short game instructors in the state.',
     },
     {
       name: 'Dave Podas',
       title: 'Assistant Coach',
       photo: '/images/Coach Podas.webp',
-      credentials: ['PGA'],
+      credentials: ['PGA', 'PGA Tour', 'Ryder Cup Official'],
+      bio: 'Retired Director of Golf at Bel-Air Country Club and member of the PGA of America Rules Committee, where he officiates major tour events including the Ryder Cup. Has competed on the PGA Tour and PGA Tour Champions across a 40-year professional career.',
     },
     {
       name: 'Dick Blooston',
       title: 'Assistant Coach',
       photo: '/images/Coach Blooston.svg',
       credentials: ['MN Golf Hall of Fame'],
+      bio: 'Minnesota Golf Hall of Fame inductee with a competitive career spanning over 60 years. Played for the Gophers in 1963–64 and won the Big Ten title in 1963. Known to generations of Edina families as a legendary hockey coach, he now brings that same championship standard to the golf program.',
     },
     {
       name: 'Jim Deutsch',
       title: 'Assistant Coach',
       photo: '/images/Coach Deutsch.jpeg',
       credentials: ['PGA'],
+      bio: '36-year PGA Professional and rules official for the Minnesota PGA Section. Completed a 13-year head coaching career at St. Thomas University, where the program competed in multiple national championships. Has been playing competitive golf professionally and collegiately for over 60 years.',
     },
   ]
 
@@ -40,20 +45,14 @@ function Coaches() {
       title: 'JV Head Coach',
       photo: '/images/Coach-ColeJohnson.jpg',
       credentials: [],
+      bio: 'Returning for his second season with the Hornets. Based in St. Louis Park and works at OfficeGolf. Played high school golf at West Fargo Sheyenne before continuing his career at the University of North Dakota.',
     },
     {
-      name: 'TBD',
+      name: 'Mitch Cowger',
       title: 'Assistant Coach',
-      photo: null,
+      photo: '/images/Coach-MitchCowger.jpg',
       credentials: [],
-      placeholder: true,
-    },
-    {
-      name: 'TBD',
-      title: 'Assistant Coach',
-      photo: null,
-      credentials: [],
-      placeholder: true,
+      bio: 'Returning assistant coach who brings a versatile coaching background across multiple sports. Coach Cowger focuses on the full development of each athlete — on the course and beyond it.',
     },
   ]
 
@@ -104,6 +103,11 @@ function Coaches() {
               </span>
             ))}
           </div>
+        )}
+
+        {/* Bio */}
+        {coach.bio && (
+          <p className="text-sm text-gray-600 mt-3 text-center leading-relaxed">{coach.bio}</p>
         )}
 
         {/* Contact */}
