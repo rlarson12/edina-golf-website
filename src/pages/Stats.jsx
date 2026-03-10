@@ -4,6 +4,14 @@ import golfData from '../data/golfData.json'
 function Stats() {
   const [activeTab, setActiveTab] = useState('matrix')
   const [teamFilter, setTeamFilter] = useState('all')
+  const [showArchive, setShowArchive] = useState(false)
+
+  // 2026 season data
+  const seasonResults2026 = golfData.seasonResults2026 || []
+  const hasSeason2026Results = seasonResults2026.length > 0
+
+  // 2025 archive data
+  const seasonResults2025 = golfData.seasonResults || []
 
   // Get event headers from heatmap data
   const allEventHeaders = golfData.heatmap.eventHeaders || []
@@ -16,7 +24,6 @@ function Stats() {
   // Check if an event name matches any JV event (exact or partial match)
   const isJVEvent = (eventName) => {
     const nameLower = eventName.toLowerCase()
-    // Exact match or partial match (e.g., "holy family jv" matches "holy family jv event a")
     return jvEventNames.some(jvName =>
       jvName === nameLower || jvName.startsWith(nameLower) || nameLower.startsWith(jvName)
     )
@@ -50,7 +57,7 @@ function Stats() {
     return matchingKey ? eventInfoMap[matchingKey].holes : 18
   }
 
-  // Calculate weighted 18-hole average: (total strokes Ã· total holes) Ã 18
+  // Calculate weighted 18-hole average: (total strokes ÷ total holes) × 18
   const calculateWeightedAverage = (scores) => {
     let totalStrokes = 0
     let totalHoles = 0
@@ -82,9 +89,7 @@ function Stats() {
     const indices = []
 
     allEventHeaders.forEach((header, index) => {
-      // Extract event name from header (e.g., "05/08 - Duel vs Southwest Christian" -> "duel vs southwest christian")
       const eventName = header.replace(/^\d{2}\/\d{2} - /, '')
-      // Check if this event is in the JV events list
       const headerIsJV = isJVEvent(eventName)
       if (isJV === headerIsJV) {
         filtered.push(header)
@@ -115,20 +120,23 @@ function Stats() {
       })
   }, [eventInfoMap])
 
-  // Filter by team
+  // Filter by team — in archive/2025 mode use players (2025 data),
+  // in live 2026 mode use players2026
   const filteredPlayers = useMemo(() => {
     if (teamFilter === 'all') return playerData
 
-    const teamPlayers = golfData.players
+    const sourceList = (hasSeason2026Results && !showArchive)
+      ? (golfData.players2026 || [])
+      : (golfData.players || [])
+
+    const teamPlayers = sourceList
       .filter(p => p.team === teamFilter)
       .map(p => p.name)
 
     return playerData.filter(p => teamPlayers.includes(p.name))
-  }, [playerData, teamFilter])
+  }, [playerData, teamFilter, showArchive, hasSeason2026Results])
 
   // Calculate scoring round players per event for highlighting
-  // Holy Family JV has top 8 (2 teams), all others have top 4
-  // Ties at the cutoff position are included
   const scoringPlayersPerEvent = useMemo(() => {
     const result = []
     for (let i = 0; i < eventIndices.length; i++) {
@@ -139,13 +147,11 @@ function Stats() {
 
       const scoresForEvent = filteredPlayers
         .map(p => ({ name: p.name, score: p.scores[originalIndex] }))
-        .filter(s => s.score !== null && s.score > 30) // Allow 9-hole scores (>30)
+        .filter(s => s.score !== null && s.score > 30)
         .sort((a, b) => a.score - b.score)
 
-      // Get the cutoff score (the score at position scoringCount-1)
       const cutoffScore = scoresForEvent[scoringCount - 1]?.score
 
-      // Include all players with score <= cutoff (handles ties)
       const scoringPlayers = scoresForEvent
         .filter(s => cutoffScore && s.score <= cutoffScore)
         .map(s => s.name)
@@ -157,26 +163,22 @@ function Stats() {
 
   // Get event info (par and holes) from actual course data
   const getEventInfo = (eventHeader) => {
-    // Extract event name from header (e.g., "05/12 - Oak Ridge Day 1" â "Oak Ridge Day 1")
     const eventName = eventHeader?.replace(/^\d{2}\/\d{2} - /, '') || ''
     const eventNameLower = eventName.toLowerCase()
 
-    // Try exact match first
     if (eventInfoMap[eventNameLower]) return eventInfoMap[eventNameLower]
 
-    // Try partial match (e.g., "Holy Family JV" matches "Holy Family JV Event A")
     const matchingKey = Object.keys(eventInfoMap).find(key =>
       key.startsWith(eventNameLower) || eventNameLower.startsWith(key)
     )
     return matchingKey ? eventInfoMap[matchingKey] : { par: 72, holes: 18 }
   }
 
-  // Season results for team view
-  const seasonResults = golfData.seasonResults || []
-
-  // Season records
+  // Season records — always show 2026 data (zeros pre-season)
   const seasonRecords = useMemo(() => {
-    const teamScores = seasonResults
+    const results = seasonResults2026
+
+    const teamScores = results
       .filter(r => r.teamScore)
       .map(r => {
         const match = r.teamScore.match(/(\d+)/)
@@ -186,11 +188,11 @@ function Stats() {
 
     const avgTeamScore = teamScores.length > 0
       ? Math.round(teamScores.reduce((a, b) => a + b, 0) / teamScores.length)
-      : '-'
+      : 0
 
-    const lowTeamScore = teamScores.length > 0 ? Math.min(...teamScores) : '-'
+    const lowTeamScore = teamScores.length > 0 ? Math.min(...teamScores) : 0
 
-    const wins = seasonResults.filter(r =>
+    const wins = results.filter(r =>
       r.finish && (r.finish.startsWith('1st') || r.finish.toLowerCase().includes('win'))
     ).length
 
@@ -198,9 +200,12 @@ function Stats() {
       { label: 'Team Scoring Avg', value: avgTeamScore },
       { label: 'Low Team Round', value: lowTeamScore },
       { label: 'Tournament Wins', value: wins },
-      { label: 'Events Played', value: seasonResults.length },
+      { label: 'Events Played', value: results.length },
     ]
-  }, [seasonResults])
+  }, [])
+
+  // Which season results to show in Team Results tab
+  const activeSeasonResults = showArchive ? seasonResults2025 : seasonResults2026
 
   return (
     <div>
@@ -218,13 +223,13 @@ function Stats() {
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-2" style={{ fontFamily: "'Oswald', sans-serif" }}>
               STATS & LEADERBOARD
             </h1>
-            <p className="text-green-200 text-lg">2025 Season Performance</p>
+            <p className="text-green-200 text-lg">2026 Season Performance</p>
           </div>
         </div>
       </div>
 
       <div className="page-container">
-        {/* Season Records - Floating Cards */}
+        {/* Season Records - Floating Cards (always 2026 data) */}
         <div className="relative -mt-12 mb-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {seasonRecords.map((record) => (
@@ -236,257 +241,303 @@ function Stats() {
           </div>
         </div>
 
-      {/* Tabs */}
-      <div className="flex flex-wrap gap-2 mb-6">
-        <div className="flex space-x-1 bg-gray-100 p-1 rounded-lg">
-          <button
-            onClick={() => setActiveTab('matrix')}
-            className={`py-2 px-4 rounded-md text-sm font-medium transition-colors ${
-              activeTab === 'matrix'
-                ? 'bg-white text-edina-green shadow-sm'
-                : 'text-gray-600 hover:text-gray-900'
-            }`}
-          >
-            Score Matrix
-          </button>
-          <button
-            onClick={() => setActiveTab('leaderboard')}
-            className={`py-2 px-4 rounded-md text-sm font-medium transition-colors ${
-              activeTab === 'leaderboard'
-                ? 'bg-white text-edina-green shadow-sm'
-                : 'text-gray-600 hover:text-gray-900'
-            }`}
-          >
-            Leaderboard
-          </button>
-          <button
-            onClick={() => setActiveTab('team')}
-            className={`py-2 px-4 rounded-md text-sm font-medium transition-colors ${
-              activeTab === 'team'
-                ? 'bg-white text-edina-green shadow-sm'
-                : 'text-gray-600 hover:text-gray-900'
-            }`}
-          >
-            Team Results
-          </button>
+        {/* Tabs */}
+        <div className="flex flex-wrap gap-2 mb-6">
+          <div className="flex space-x-1 bg-gray-100 p-1 rounded-lg">
+            <button
+              onClick={() => setActiveTab('matrix')}
+              className={`py-2 px-4 rounded-md text-sm font-medium transition-colors ${
+                activeTab === 'matrix'
+                  ? 'bg-white text-edina-green shadow-sm'
+                  : 'text-gray-600 hover:text-gray-900'
+              }`}
+            >
+              Score Matrix
+            </button>
+            <button
+              onClick={() => setActiveTab('leaderboard')}
+              className={`py-2 px-4 rounded-md text-sm font-medium transition-colors ${
+                activeTab === 'leaderboard'
+                  ? 'bg-white text-edina-green shadow-sm'
+                  : 'text-gray-600 hover:text-gray-900'
+              }`}
+            >
+              Leaderboard
+            </button>
+            <button
+              onClick={() => setActiveTab('team')}
+              className={`py-2 px-4 rounded-md text-sm font-medium transition-colors ${
+                activeTab === 'team'
+                  ? 'bg-white text-edina-green shadow-sm'
+                  : 'text-gray-600 hover:text-gray-900'
+              }`}
+            >
+              Team Results
+            </button>
+          </div>
+
+          {/* Legend for scoring round */}
+          {activeTab === 'matrix' && (showArchive || hasSeason2026Results) && (
+            <div className="flex items-center gap-2 text-sm text-gray-600">
+              <span className="w-4 h-4 bg-edina-green/20 rounded"></span>
+              <span>Scoring Round</span>
+            </div>
+          )}
+
+          {activeTab !== 'team' && (showArchive || hasSeason2026Results) && (
+            <div className="flex space-x-1 bg-gray-100 p-1 rounded-lg ml-auto">
+              {[
+                { value: 'all', label: 'All' },
+                { value: 'varsity', label: 'Varsity' },
+                { value: 'jv', label: 'JV' },
+              ].map((option) => (
+                <button
+                  key={option.value}
+                  onClick={() => setTeamFilter(option.value)}
+                  className={`py-2 px-3 rounded-md text-sm font-medium transition-colors ${
+                    teamFilter === option.value
+                      ? 'bg-white text-edina-green shadow-sm'
+                      : 'text-gray-600 hover:text-gray-900'
+                  }`}
+                >
+                  {option.label}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
 
-        {/* Legend for scoring round */}
-        {activeTab === 'matrix' && (
-          <div className="flex items-center gap-2 text-sm text-gray-600">
-            <span className="w-4 h-4 bg-edina-green/20 rounded"></span>
-            <span>Scoring Round</span>
+        {/* ── PRE-SEASON STATE ── */}
+        {!hasSeason2026Results && !showArchive ? (
+          <div className="card p-10 text-center">
+            <div className="mb-4">
+              <svg className="w-16 h-16 mx-auto text-edina-green/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h2 className="text-xl font-bold text-gray-900 mb-2">Season not started</h2>
+            <p className="text-gray-600 mb-6">
+              The 2026 season begins <span className="font-semibold text-edina-green">April 20</span> at Chaska Town Course.
+            </p>
+            <button
+              onClick={() => setShowArchive(true)}
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-edina-green text-white font-medium rounded-lg hover:bg-edina-green-dark transition-colors"
+            >
+              View 2025 Stats
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
           </div>
+        ) : (
+          <>
+            {/* ── 2025 ARCHIVE BANNER ── */}
+            {showArchive && (
+              <div className="flex items-center justify-between bg-amber-50 border border-amber-200 rounded-xl px-5 py-3 mb-6">
+                <span className="text-amber-800 font-medium text-sm">
+                  📂 Showing 2025 Season
+                </span>
+                <button
+                  onClick={() => setShowArchive(false)}
+                  className="text-sm font-medium text-edina-green hover:underline"
+                >
+                  ← Back to 2026
+                </button>
+              </div>
+            )}
+
+            {/* Score Matrix */}
+            {activeTab === 'matrix' && (
+              <div className="card overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-gray-50 border-b border-gray-200">
+                      <tr>
+                        <th className="sticky left-0 bg-gray-50 px-2 pt-2 pb-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider z-10 w-24 md:w-32 align-bottom">
+                          Player
+                        </th>
+                        <th className="px-2 pt-2 pb-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider whitespace-nowrap w-12 align-bottom">
+                          Avg
+                        </th>
+                        {eventHeaders.map((event, i) => {
+                          let fullName = event.replace(/^\d{2}\/\d{2} - /, '')
+                          fullName = fullName.replace(/\bFinal\b/gi, 'Day 2')
+                          return (
+                            <th
+                              key={i}
+                              className="h-32 md:h-40 w-9 md:w-10 px-1 py-1 pb-3 align-bottom"
+                              title={fullName}
+                            >
+                              <div className="flex justify-center">
+                                <div
+                                  className="whitespace-nowrap text-xs md:text-sm font-semibold text-gray-600"
+                                  style={{
+                                    writingMode: 'vertical-rl',
+                                    transform: 'rotate(180deg)',
+                                  }}
+                                >
+                                  {fullName}
+                                </div>
+                              </div>
+                            </th>
+                          )
+                        })}
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-gray-100">
+                      {filteredPlayers.map((player) => (
+                        <tr key={player.name} className="hover:bg-gray-50 transition-colors">
+                          <td className="sticky left-0 bg-white px-2 py-2 font-medium text-gray-900 z-10 text-xs md:text-sm w-24 md:w-32 truncate">
+                            {player.name}
+                          </td>
+                          <td className="px-2 py-2 text-center font-semibold text-gray-900 whitespace-nowrap text-sm w-12">
+                            {player.average?.toFixed(1)}
+                          </td>
+                          {eventIndices.map((originalIdx, i) => {
+                            const score = player.scores[originalIdx]
+                            const isScoring = score && scoringPlayersPerEvent[i]?.includes(player.name)
+                            const eventInfo = getEventInfo(eventHeaders[i])
+                            const isUnderPar = score && eventInfo.par && score < eventInfo.par
+
+                            return (
+                              <td
+                                key={originalIdx}
+                                className={`px-1 py-2 text-center whitespace-nowrap w-9 md:w-10 text-xs md:text-sm ${
+                                  isScoring ? 'bg-edina-green/20' : ''
+                                }`}
+                              >
+                                {score !== null ? (
+                                  <span className={`font-medium ${isUnderPar ? 'text-red-600' : 'text-gray-700'}`}>
+                                    {score}
+                                  </span>
+                                ) : (
+                                  <span className="text-gray-300">-</span>
+                                )}
+                              </td>
+                            )
+                          })}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
+
+            {/* Leaderboard */}
+            {activeTab === 'leaderboard' && (
+              <div className="card overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead className="bg-gray-50 border-b border-gray-200">
+                      <tr>
+                        <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Player</th>
+                        <th className="px-4 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">Avg</th>
+                        <th className="px-4 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">Low</th>
+                        <th className="px-4 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">Rounds</th>
+                        <th className="px-4 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider hidden sm:table-cell">Last 3</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-gray-100">
+                      {filteredPlayers.map((player) => {
+                        const validScores = player.scores.filter(s => s !== null && s > 50)
+                        const lowRound = validScores.length > 0 ? Math.min(...validScores) : '-'
+
+                        return (
+                          <tr key={player.name} className="hover:bg-gray-50 transition-colors">
+                            <td className="px-4 py-4 font-medium text-gray-900">{player.name}</td>
+                            <td className="px-4 py-4 text-center font-semibold text-gray-900">{player.average?.toFixed(1)}</td>
+                            <td className="px-4 py-4 text-center">
+                              <span className={`font-medium ${lowRound < 72 ? 'text-red-600' : 'text-edina-green'}`}>
+                                {lowRound}
+                              </span>
+                            </td>
+                            <td className="px-4 py-4 text-center text-gray-600">{validScores.length}</td>
+                            <td className="px-4 py-4 text-center text-gray-600 hidden sm:table-cell">
+                              {player.last3Avg?.toFixed(1) || '-'}
+                            </td>
+                          </tr>
+                        )
+                      })}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
+
+            {/* Team Results Table */}
+            {activeTab === 'team' && (
+              <div className="card overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead className="bg-gray-50 border-b border-gray-200">
+                      <tr>
+                        <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Date</th>
+                        <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Event</th>
+                        <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider hidden sm:table-cell">Course</th>
+                        <th className="px-4 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">Score</th>
+                        <th className="px-4 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">Finish</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-gray-100">
+                      {activeSeasonResults.length > 0 ? (
+                        activeSeasonResults.map((result, index) => (
+                          <tr key={index} className="hover:bg-gray-50 transition-colors">
+                            <td className="px-4 py-4 text-sm text-gray-600 whitespace-nowrap">{result.dateFormatted}</td>
+                            <td className="px-4 py-4 font-medium text-gray-900">{result.event}</td>
+                            <td className="px-4 py-4 text-gray-600 hidden sm:table-cell">{result.course}</td>
+                            <td className="px-4 py-4 text-center">
+                              <span className={`font-semibold ${
+                                result.teamScore?.includes('-') ? 'text-red-600' : 'text-gray-900'
+                              }`}>
+                                {result.teamScore || '-'}
+                              </span>
+                            </td>
+                            <td className="px-4 py-4 text-center">
+                              <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
+                                result.finish?.startsWith('1st') ? 'bg-edina-gold/20 text-edina-gold-dark border border-edina-gold' :
+                                result.finish?.startsWith('2nd') ? 'bg-gray-200 text-gray-800' :
+                                result.finish?.startsWith('3rd') ? 'bg-orange-100 text-orange-800' :
+                                'bg-gray-50 text-gray-600'
+                              }`}>
+                                {result.finish || '-'}
+                              </span>
+                            </td>
+                          </tr>
+                        ))
+                      ) : (
+                        <tr>
+                          <td colSpan={5} className="px-4 py-8 text-center text-gray-500">
+                            No results yet. Season starts April 20.
+                          </td>
+                        </tr>
+                      )}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
+
+            {/* Legend */}
+            <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+              <h3 className="font-semibold text-gray-900 mb-3">Legend</h3>
+              <div className="flex flex-wrap gap-4 text-sm text-gray-600">
+                <div className="flex items-center gap-2">
+                  <span className="w-4 h-4 bg-edina-green/20 rounded"></span>
+                  <span>Scoring Round</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-red-600 font-medium">69</span>
+                  <span>Under Par</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-gray-300">-</span>
+                  <span>Did Not Play</span>
+                </div>
+              </div>
+            </div>
+          </>
         )}
-
-        {activeTab !== 'team' && (
-          <div className="flex space-x-1 bg-gray-100 p-1 rounded-lg ml-auto">
-            {[
-              { value: 'all', label: 'All' },
-              { value: 'varsity', label: 'Varsity' },
-              { value: 'jv', label: 'JV' },
-            ].map((option) => (
-              <button
-                key={option.value}
-                onClick={() => setTeamFilter(option.value)}
-                className={`py-2 px-3 rounded-md text-sm font-medium transition-colors ${
-                  teamFilter === option.value
-                    ? 'bg-white text-edina-green shadow-sm'
-                    : 'text-gray-600 hover:text-gray-900'
-                }`}
-              >
-                {option.label}
-              </button>
-            ))}
-          </div>
-        )}
-      </div>
-
-      {/* Score Matrix */}
-      {activeTab === 'matrix' && (
-        <div className="card overflow-hidden">
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead className="bg-gray-50 border-b border-gray-200">
-                <tr>
-                  <th className="sticky left-0 bg-gray-50 px-2 pt-2 pb-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider z-10 w-24 md:w-32 align-bottom">
-                    Player
-                  </th>
-                  <th className="px-2 pt-2 pb-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider whitespace-nowrap w-12 align-bottom">
-                    Avg
-                  </th>
-                  {eventHeaders.map((event, i) => {
-                    let fullName = event.replace(/^\d{2}\/\d{2} - /, '')
-                    // Change "Final" to "Day 2" for two-day events
-                    fullName = fullName.replace(/\bFinal\b/gi, 'Day 2')
-                    return (
-                      <th
-                        key={i}
-                        className="h-32 md:h-40 w-9 md:w-10 px-1 py-1 pb-3 align-bottom"
-                        title={fullName}
-                      >
-                        <div
-                          className="flex justify-center"
-                        >
-                          <div
-                            className="whitespace-nowrap text-xs md:text-sm font-semibold text-gray-600"
-                            style={{
-                              writingMode: 'vertical-rl',
-                              transform: 'rotate(180deg)',
-                            }}
-                          >
-                            {fullName}
-                          </div>
-                        </div>
-                      </th>
-                    )
-                  })}
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-100">
-                {filteredPlayers.map((player, playerIdx) => (
-                  <tr key={player.name} className="hover:bg-gray-50 transition-colors">
-                    <td className="sticky left-0 bg-white px-2 py-2 font-medium text-gray-900 z-10 text-xs md:text-sm w-24 md:w-32 truncate">
-                      {player.name}
-                    </td>
-                    <td className="px-2 py-2 text-center font-semibold text-gray-900 whitespace-nowrap text-sm w-12">
-                      {player.average?.toFixed(1)}
-                    </td>
-                    {eventIndices.map((originalIdx, i) => {
-                      const score = player.scores[originalIdx]
-                      const isScoring = score && scoringPlayersPerEvent[i]?.includes(player.name)
-                      const eventInfo = getEventInfo(eventHeaders[i])
-                      const isUnderPar = score && eventInfo.par && score < eventInfo.par
-
-                      return (
-                        <td
-                          key={originalIdx}
-                          className={`px-1 py-2 text-center whitespace-nowrap w-9 md:w-10 text-xs md:text-sm ${
-                            isScoring ? 'bg-edina-green/20' : ''
-                          }`}
-                        >
-                          {score !== null ? (
-                            <span className={`font-medium ${isUnderPar ? 'text-red-600' : 'text-gray-700'}`}>
-                              {score}
-                            </span>
-                          ) : (
-                            <span className="text-gray-300">-</span>
-                          )}
-                        </td>
-                      )
-                    })}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      )}
-
-      {/* Leaderboard */}
-      {activeTab === 'leaderboard' && (
-        <div className="card overflow-hidden">
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead className="bg-gray-50 border-b border-gray-200">
-                <tr>
-                  <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Player</th>
-                  <th className="px-4 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">Avg</th>
-                  <th className="px-4 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">Low</th>
-                  <th className="px-4 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">Rounds</th>
-                  <th className="px-4 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider hidden sm:table-cell">Last 3</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-100">
-                {filteredPlayers.map((player, idx) => {
-                  const validScores = player.scores.filter(s => s !== null && s > 50)
-                  const lowRound = validScores.length > 0 ? Math.min(...validScores) : '-'
-
-                  return (
-                    <tr key={player.name} className="hover:bg-gray-50 transition-colors">
-                      <td className="px-4 py-4 font-medium text-gray-900">{player.name}</td>
-                      <td className="px-4 py-4 text-center font-semibold text-gray-900">{player.average?.toFixed(1)}</td>
-                      <td className="px-4 py-4 text-center">
-                        <span className={`font-medium ${lowRound < 72 ? 'text-red-600' : 'text-edina-green'}`}>
-                          {lowRound}
-                        </span>
-                      </td>
-                      <td className="px-4 py-4 text-center text-gray-600">{validScores.length}</td>
-                      <td className="px-4 py-4 text-center text-gray-600 hidden sm:table-cell">
-                        {player.last3Avg?.toFixed(1) || '-'}
-                      </td>
-                    </tr>
-                  )
-                })}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      )}
-
-      {/* Team Results Table */}
-      {activeTab === 'team' && (
-        <div className="card overflow-hidden">
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead className="bg-gray-50 border-b border-gray-200">
-                <tr>
-                  <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Date</th>
-                  <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Event</th>
-                  <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider hidden sm:table-cell">Course</th>
-                  <th className="px-4 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">Score</th>
-                  <th className="px-4 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">Finish</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-100">
-                {seasonResults.map((result, index) => (
-                  <tr key={index} className="hover:bg-gray-50 transition-colors">
-                    <td className="px-4 py-4 text-sm text-gray-600 whitespace-nowrap">{result.dateFormatted}</td>
-                    <td className="px-4 py-4 font-medium text-gray-900">{result.event}</td>
-                    <td className="px-4 py-4 text-gray-600 hidden sm:table-cell">{result.course}</td>
-                    <td className="px-4 py-4 text-center">
-                      <span className={`font-semibold ${
-                        result.teamScore?.includes('-') ? 'text-red-600' : 'text-gray-900'
-                      }`}>
-                        {result.teamScore || '-'}
-                      </span>
-                    </td>
-                    <td className="px-4 py-4 text-center">
-                      <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
-                        result.finish?.startsWith('1st') ? 'bg-edina-gold/20 text-edina-gold-dark border border-edina-gold' :
-                        result.finish?.startsWith('2nd') ? 'bg-gray-200 text-gray-800' :
-                        result.finish?.startsWith('3rd') ? 'bg-orange-100 text-orange-800' :
-                        'bg-gray-50 text-gray-600'
-                      }`}>
-                        {result.finish || '-'}
-                      </span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      )}
-
-      {/* Legend */}
-      <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-        <h3 className="font-semibold text-gray-900 mb-3">Legend</h3>
-        <div className="flex flex-wrap gap-4 text-sm text-gray-600">
-          <div className="flex items-center gap-2">
-            <span className="w-4 h-4 bg-edina-green/20 rounded"></span>
-            <span>Scoring Round</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="text-red-600 font-medium">69</span>
-            <span>Under Par</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="text-gray-300">-</span>
-            <span>Did Not Play</span>
-          </div>
-        </div>
-      </div>
       </div>
     </div>
   )

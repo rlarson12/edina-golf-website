@@ -5,8 +5,13 @@ function Roster() {
   const [filter, setFilter] = useState('all')
   const [selectedPlayer, setSelectedPlayer] = useState(null)
 
-  // Use player data from JSON
-  const players = golfData.players || []
+  // 2026 season transition logic
+  const players2026 = golfData.players2026 || []
+  const isPreSeason = players2026.length === 0
+
+  // Use 2026 players if available, fall back to 2025 for archive display
+  const players = isPreSeason ? (golfData.players || []) : players2026
+
   const allEventHeaders = golfData.heatmap?.eventHeaders || []
 
   // Build event info map for holes lookup
@@ -35,7 +40,7 @@ function Roster() {
     return matchingKey ? eventInfoMap[matchingKey].holes : 18
   }
 
-  // Calculate weighted averages for all players: (total strokes ÷ total holes) × 18
+  // Calculate weighted averages for all players (2025 heatmap data)
   const playerAveragesMap = useMemo(() => {
     const map = {}
     golfData.heatmap?.playerScores?.forEach(player => {
@@ -57,6 +62,23 @@ function Roster() {
     })
     return map
   }, [eventInfoMap, allEventHeaders])
+
+  // Generate 20 placeholder cards for pre-season: 10 Varsity + 10 JV
+  const placeholderPlayers = useMemo(() => {
+    const cards = []
+    for (let i = 0; i < 10; i++) {
+      cards.push({ id: `varsity-${i}`, team: 'varsity' })
+    }
+    for (let i = 0; i < 10; i++) {
+      cards.push({ id: `jv-${i}`, team: 'jv' })
+    }
+    return cards
+  }, [])
+
+  const filteredPlaceholders = useMemo(() => {
+    if (filter === 'all') return placeholderPlayers
+    return placeholderPlayers.filter(p => p.team === filter)
+  }, [placeholderPlayers, filter])
 
   const filteredPlayers = useMemo(() => {
     if (filter === 'all') return players
@@ -86,12 +108,17 @@ function Roster() {
     }
   }
 
-  const teamCounts = useMemo(() => ({
-    all: players.length,
-    varsity: players.filter(p => p.team === 'varsity').length,
-    jv: players.filter(p => p.team === 'jv').length,
-    development: players.filter(p => p.team === 'development').length,
-  }), [players])
+  // Filter button counts
+  const filterCounts = useMemo(() => {
+    if (isPreSeason) {
+      return { all: 20, varsity: 10, jv: 10 }
+    }
+    return {
+      all: players.length,
+      varsity: players.filter(p => p.team === 'varsity').length,
+      jv: players.filter(p => p.team === 'jv').length,
+    }
+  }, [isPreSeason, players])
 
   // Format MM/DD date string to readable format
   const formatHeatmapDate = (header) => {
@@ -121,7 +148,6 @@ function Roster() {
 
     if (!playerData) return []
 
-    // Build raw scores with metadata
     const rawScores = playerData.scores.map((score, idx) => {
       const header = eventHeaders[idx] || ''
       const eventName = header.replace(/^\d{2}\/\d{2} - /, '') || `Event ${idx + 1}`
@@ -137,7 +163,6 @@ function Roster() {
       }
     })
 
-    // Combine "Day 1" + "Final" pairs into single entries
     const combined = []
     const consumed = new Set()
 
@@ -147,7 +172,6 @@ function Roster() {
 
       if (s.event.endsWith('Day 1')) {
         const baseName = s.event.replace(/ Day 1$/, '')
-        // Look for matching "Final" in subsequent entries
         const finalIdx = rawScores.findIndex((f, j) =>
           j > i && !consumed.has(j) && f.event === `${baseName} Final`
         )
@@ -161,10 +185,7 @@ function Roster() {
           const hasR1 = r1 !== null
           const hasR2 = r2 !== null
 
-          if (!hasR1 && !hasR2) {
-            // Both null, skip entirely
-            continue
-          }
+          if (!hasR1 && !hasR2) continue
 
           const totalScore = (hasR1 ? r1 : 0) + (hasR2 ? r2 : 0)
           const totalPar = (s.par || 0) + (f.par || 0)
@@ -185,7 +206,6 @@ function Roster() {
         }
       }
 
-      // Single-round event (or unmatched Day 1 / Final)
       if (s.score !== null) {
         combined.push(s)
       }
@@ -210,12 +230,11 @@ function Roster() {
 
     if (totalHoles === 0) return null
 
-    // Convert to 18-hole equivalent
     const strokesPerHole = totalStrokes / totalHoles
     return strokesPerHole * 18
   }
 
-  // Class breakdown
+  // Class breakdown (only meaningful in live mode)
   const classBreakdown = useMemo(() => {
     const counts = { 12: 0, 11: 0, 10: 0, 9: 0 }
     players.forEach(p => {
@@ -240,9 +259,9 @@ function Roster() {
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12">
           <div className="max-w-7xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-2" style={{ fontFamily: "'Oswald', sans-serif" }}>
-              2025 ROSTER
+              2026 ROSTER
             </h1>
-            <p className="text-green-200 text-lg">{players.length} Players • Varsity & JV</p>
+            <p className="text-green-200 text-lg">10 Varsity · 10 JV — Announced April 10</p>
           </div>
         </div>
       </div>
@@ -281,116 +300,162 @@ function Roster() {
         </div>
 
         {/* Filter Buttons */}
-      <div className="flex flex-wrap gap-2 mb-6">
-        {[
-          { value: 'all', label: 'All' },
-          { value: 'varsity', label: 'Varsity' },
-          { value: 'jv', label: 'JV' },
-        ].map((option) => (
-          <button
-            key={option.value}
-            onClick={() => setFilter(option.value)}
-            className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-              filter === option.value
-                ? 'bg-edina-green text-white'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-            }`}
-          >
-            {option.label} ({teamCounts[option.value]})
-          </button>
-        ))}
-      </div>
-
-      {/* Roster Grid */}
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {filteredPlayers.map((player, index) => {
-          const weightedAvg = playerAveragesMap[player.name]
-
-          return (
+        <div className="flex flex-wrap gap-2 mb-6">
+          {[
+            { value: 'all', label: 'All' },
+            { value: 'varsity', label: 'Varsity' },
+            { value: 'jv', label: 'JV' },
+          ].map((option) => (
             <button
-              key={index}
-              onClick={() => setSelectedPlayer(player)}
-              className="card p-5 hover:shadow-lg transition-shadow text-left w-full"
+              key={option.value}
+              onClick={() => setFilter(option.value)}
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                filter === option.value
+                  ? 'bg-edina-green text-white'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              }`}
             >
-              <div className="flex items-start gap-4">
-                {/* Avatar */}
-                <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-edina-green/20 to-edina-green/10 rounded-full flex items-center justify-center border-2 border-edina-green/30">
-                  <span className="text-xl font-bold text-edina-green">
-                    {player.name.split(' ').map(n => n[0]).join('')}
-                  </span>
-                </div>
+              {option.label} ({filterCounts[option.value]})
+            </button>
+          ))}
+        </div>
 
-                {/* Info */}
-                <div className="flex-grow min-w-0">
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <h3 className="font-semibold text-gray-900 truncate">{player.name}</h3>
+        {/* ── PRE-SEASON PLACEHOLDER GRID ── */}
+        {isPreSeason ? (
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {filteredPlaceholders.map((placeholder) => (
+              <div
+                key={placeholder.id}
+                className="card p-5 text-left w-full opacity-60"
+              >
+                <div className="flex items-start gap-4">
+                  {/* Placeholder Avatar */}
+                  <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-gray-200 to-gray-100 rounded-full flex items-center justify-center border-2 border-gray-200">
+                    <svg className="w-7 h-7 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
                   </div>
-                  <div className="text-sm text-gray-600 mt-1">
-                    {getGradeLabel(player.grade)} • Class of {player.gradYear}
-                  </div>
-                  <div className="flex items-center gap-3 mt-2">
-                    <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${getTeamBadge(player.team)}`}>
-                      {player.team === 'jv' ? 'JV' : player.team.charAt(0).toUpperCase() + player.team.slice(1)}
-                    </span>
-                    {weightedAvg && (
-                      <span className="text-xs text-gray-500">
-                        Avg: <span className="font-medium text-gray-700">{weightedAvg.toFixed(1)}</span>
+
+                  {/* Info */}
+                  <div className="flex-grow min-w-0">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <h3 className="font-semibold text-gray-400">TBD</h3>
+                    </div>
+                    <div className="text-sm text-gray-400 mt-1">
+                      Announced April 10
+                    </div>
+                    <div className="flex items-center gap-3 mt-2">
+                      <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${getTeamBadge(placeholder.team)}`}>
+                        {placeholder.team === 'jv' ? 'JV' : 'Varsity'}
                       </span>
-                    )}
+                    </div>
                   </div>
                 </div>
               </div>
-            </button>
-          )
-        })}
-      </div>
+            ))}
+          </div>
+        ) : (
+          /* ── LIVE ROSTER GRID ── */
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {filteredPlayers.map((player, index) => {
+              const weightedAvg = playerAveragesMap[player.name]
 
-      {/* Team Summary */}
-      <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div className="card p-4 text-center">
-          <div className="text-2xl font-bold text-edina-green">{teamCounts.varsity}</div>
-          <div className="text-sm text-gray-600">Varsity</div>
-        </div>
-        <div className="card p-4 text-center">
-          <div className="text-2xl font-bold text-blue-600">{teamCounts.jv}</div>
-          <div className="text-sm text-gray-600">Junior Varsity</div>
-        </div>
-        <div className="card p-4 text-center">
-          <div className="text-2xl font-bold text-gray-600">{classBreakdown[12]}</div>
-          <div className="text-sm text-gray-600">Seniors</div>
-        </div>
-        <div className="card p-4 text-center">
-          <div className="text-2xl font-bold text-gray-600">{classBreakdown[11] + classBreakdown[10] + classBreakdown[9]}</div>
-          <div className="text-sm text-gray-600">Underclassmen</div>
-        </div>
-      </div>
+              return (
+                <button
+                  key={index}
+                  onClick={() => setSelectedPlayer(player)}
+                  className="card p-5 hover:shadow-lg transition-shadow text-left w-full"
+                >
+                  <div className="flex items-start gap-4">
+                    {/* Avatar */}
+                    <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-edina-green/20 to-edina-green/10 rounded-full flex items-center justify-center border-2 border-edina-green/30">
+                      <span className="text-xl font-bold text-edina-green">
+                        {player.name.split(' ').map(n => n[0]).join('')}
+                      </span>
+                    </div>
 
-      {/* Class Breakdown */}
-      <div className="mt-6 card p-6">
-        <h3 className="font-semibold text-gray-900 mb-4">Class Breakdown</h3>
-        <div className="grid grid-cols-4 gap-4">
-          <div className="text-center">
-            <div className="text-lg font-bold text-gray-900">{classBreakdown[12]}</div>
-            <div className="text-xs text-gray-500">Seniors</div>
-            <div className="text-xs text-gray-400">Class of 2025</div>
+                    {/* Info */}
+                    <div className="flex-grow min-w-0">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <h3 className="font-semibold text-gray-900 truncate">{player.name}</h3>
+                      </div>
+                      <div className="text-sm text-gray-600 mt-1">
+                        {getGradeLabel(player.grade)} • Class of {player.gradYear}
+                      </div>
+                      <div className="flex items-center gap-3 mt-2">
+                        <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${getTeamBadge(player.team)}`}>
+                          {player.team === 'jv' ? 'JV' : player.team.charAt(0).toUpperCase() + player.team.slice(1)}
+                        </span>
+                        {weightedAvg && (
+                          <span className="text-xs text-gray-500">
+                            Avg: <span className="font-medium text-gray-700">{weightedAvg.toFixed(1)}</span>
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </button>
+              )
+            })}
           </div>
-          <div className="text-center">
-            <div className="text-lg font-bold text-gray-900">{classBreakdown[11]}</div>
-            <div className="text-xs text-gray-500">Juniors</div>
-            <div className="text-xs text-gray-400">Class of 2026</div>
+        )}
+
+        {/* Team Summary */}
+        <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="card p-4 text-center">
+            <div className="text-2xl font-bold text-edina-green">
+              {isPreSeason ? 10 : filterCounts.varsity}
+            </div>
+            <div className="text-sm text-gray-600">Varsity</div>
           </div>
-          <div className="text-center">
-            <div className="text-lg font-bold text-gray-900">{classBreakdown[10]}</div>
-            <div className="text-xs text-gray-500">Sophomores</div>
-            <div className="text-xs text-gray-400">Class of 2027</div>
+          <div className="card p-4 text-center">
+            <div className="text-2xl font-bold text-blue-600">
+              {isPreSeason ? 10 : filterCounts.jv}
+            </div>
+            <div className="text-sm text-gray-600">Junior Varsity</div>
           </div>
-          <div className="text-center">
-            <div className="text-lg font-bold text-gray-900">{classBreakdown[9]}</div>
-            <div className="text-xs text-gray-500">Freshmen</div>
-            <div className="text-xs text-gray-400">Class of 2028</div>
+          <div className="card p-4 text-center">
+            <div className="text-2xl font-bold text-gray-600">
+              {isPreSeason ? 'TBD' : classBreakdown[12]}
+            </div>
+            <div className="text-sm text-gray-600">Seniors</div>
+          </div>
+          <div className="card p-4 text-center">
+            <div className="text-2xl font-bold text-gray-600">
+              {isPreSeason ? 'TBD' : (classBreakdown[11] + classBreakdown[10] + classBreakdown[9])}
+            </div>
+            <div className="text-sm text-gray-600">Underclassmen</div>
           </div>
         </div>
-      </div>
+
+        {/* Class Breakdown — hidden in pre-season */}
+        {!isPreSeason && (
+          <div className="mt-6 card p-6">
+            <h3 className="font-semibold text-gray-900 mb-4">Class Breakdown</h3>
+            <div className="grid grid-cols-4 gap-4">
+              <div className="text-center">
+                <div className="text-lg font-bold text-gray-900">{classBreakdown[12]}</div>
+                <div className="text-xs text-gray-500">Seniors</div>
+                <div className="text-xs text-gray-400">Class of 2026</div>
+              </div>
+              <div className="text-center">
+                <div className="text-lg font-bold text-gray-900">{classBreakdown[11]}</div>
+                <div className="text-xs text-gray-500">Juniors</div>
+                <div className="text-xs text-gray-400">Class of 2027</div>
+              </div>
+              <div className="text-center">
+                <div className="text-lg font-bold text-gray-900">{classBreakdown[10]}</div>
+                <div className="text-xs text-gray-500">Sophomores</div>
+                <div className="text-xs text-gray-400">Class of 2028</div>
+              </div>
+              <div className="text-center">
+                <div className="text-lg font-bold text-gray-900">{classBreakdown[9]}</div>
+                <div className="text-xs text-gray-500">Freshmen</div>
+                <div className="text-xs text-gray-400">Class of 2029</div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Action Photos Strip */}
@@ -410,8 +475,8 @@ function Roster() {
         </div>
       </div>
 
-      {/* Player Stats Modal */}
-      {selectedPlayer && (
+      {/* Player Stats Modal — only in live mode */}
+      {!isPreSeason && selectedPlayer && (
         <div
           className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
           onClick={() => setSelectedPlayer(null)}
