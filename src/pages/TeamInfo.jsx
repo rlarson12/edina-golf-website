@@ -53,6 +53,27 @@ function TeamInfo() {
               </div>
             </div>
 
+            {/* Optional Spring Break Practice */}
+            <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+              <div className="flex-shrink-0">
+                <span className="inline-flex items-center justify-center w-10 h-10 bg-blue-400 text-white rounded-full">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                </span>
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-900">Optional Spring Break Practice — March 16–19</h3>
+                <p className="text-gray-600 mt-1">No official practice during spring break week, but optional sessions are available at OfficeGolf for fully registered players with an up-to-date physical.</p>
+                <ul className="mt-2 space-y-1 text-sm text-gray-600">
+                  <li>📅 Monday–Thursday, March 16–19</li>
+                  <li>🕓 Tee time blocks available 4:00–7:00 PM</li>
+                  <li>📍 OfficeGolf — 5600 W 83rd St, Bloomington</li>
+                </ul>
+                <p className="text-sm text-gray-500 mt-2 italic">Sign-up form sent separately by Coach Vernon. Open to registered players only.</p>
+              </div>
+            </div>
+
             {/* Practice Start */}
             <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4 p-4 bg-gray-50 rounded-lg">
               <div className="flex-shrink-0">
@@ -78,27 +99,6 @@ function TeamInfo() {
                   </svg>
                   Get Directions
                 </a>
-              </div>
-            </div>
-
-            {/* Optional Spring Break Practice */}
-            <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-              <div className="flex-shrink-0">
-                <span className="inline-flex items-center justify-center w-10 h-10 bg-blue-400 text-white rounded-full">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                </span>
-              </div>
-              <div>
-                <h3 className="font-semibold text-gray-900">Optional Spring Break Practice — March 16–19</h3>
-                <p className="text-gray-600 mt-1">No official practice during spring break week, but optional sessions are available at OfficeGolf for fully registered players with an up-to-date physical.</p>
-                <ul className="mt-2 space-y-1 text-sm text-gray-600">
-                  <li>📅 Monday–Thursday, March 16–19</li>
-                  <li>🕓 Tee time blocks available 4:00–7:00 PM</li>
-                  <li>📍 OfficeGolf — 5600 W 83rd St, Bloomington</li>
-                </ul>
-                <p className="text-sm text-gray-500 mt-2 italic">Sign-up form sent separately by Coach Vernon. Open to registered players only.</p>
               </div>
             </div>
 
