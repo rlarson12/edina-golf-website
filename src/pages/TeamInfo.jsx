@@ -117,21 +117,39 @@ function TeamInfo() {
                 </span>
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900">Tryout Dates</h3>
-                <p className="text-gray-600">April 6-9 at Braemar Golf Course</p>
-                <p className="text-sm text-gray-500 mt-1">6364 John Harris Dr, Edina, MN 55439</p>
-                <a
-                  href="https://maps.google.com/?q=Braemar+Golf+Course+6364+John+Harris+Dr+Edina+MN"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-sm text-edina-green hover:underline mt-1"
-                >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                  Get Directions
-                </a>
+                <h3 className="font-semibold text-gray-900">Tryout Dates — April 6–9</h3>
+                <ul className="mt-2 space-y-2 text-sm text-gray-600">
+                  <li>📅 <span className="font-medium">Mon Apr 6 & Tue Apr 7</span> — Minimum 9-hole shotgun at Braemar, 4:00 PM</li>
+                  <li>📅 <span className="font-medium">Wed Apr 8</span> — 18 holes at Edina Country Club, tee times from 3:00 PM</li>
+                  <li>📅 <span className="font-medium">Thu Apr 9</span> — Braemar or Edina Country Club (weather contingency)</li>
+                </ul>
+                <p className="text-sm text-gray-500 mt-3">At least 36 holes total. Ideal format: 9 holes Mon & Tue, 18 holes Wed & Thu.</p>
+                <div className="flex flex-wrap gap-4 mt-3">
+                  <a
+                    href="https://maps.google.com/?q=Braemar+Golf+Course+6364+John+Harris+Dr+Edina+MN"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-sm text-edina-green hover:underline"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    Braemar Golf Course
+                  </a>
+                  <a
+                    href="https://maps.google.com/?q=Edina+Country+Club+5100+Londonderry+Rd+Edina+MN"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-sm text-edina-green hover:underline"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    Edina Country Club
+                  </a>
+                </div>
               </div>
             </div>
 
