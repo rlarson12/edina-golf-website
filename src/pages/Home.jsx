@@ -37,16 +37,14 @@ function Home() {
     return null
   }, [])
 
-  // Calculate quick stats from real data
+  // Calculate quick stats from 2026 season data
   const quickStats = useMemo(() => {
-    const wins = golfData.seasonResults?.filter(r =>
-      r.finish?.startsWith('1st')
-    ).length || 0
+    const results2026 = golfData.seasonResults2026 || []
+    const wins = results2026.filter(r => r.finish?.startsWith('1st')).length
+    const totalEvents = results2026.length
 
-    const totalEvents = golfData.seasonResults?.length || 0
-
-    // Calculate low avg dynamically from playerStats (normalize 9-hole scores)
-    const allAverages = (golfData.playerStats || [])
+    // Calculate low avg dynamically from 2026 playerStats (normalize 9-hole scores)
+    const allAverages = (golfData.playerStats2026 || [])
       .filter(p => p.scores?.length > 0)
       .map(p => {
         const total = p.scores.reduce((sum, s) => sum + (s.score < 50 ? s.score * 2 : s.score), 0)
@@ -57,7 +55,7 @@ function Home() {
     return [
       { label: 'Tournament Wins', value: wins.toString() },
       { label: 'Events Played', value: totalEvents.toString() },
-      { label: 'Team Members', value: golfData.players?.length?.toString() || '0' },
+      { label: 'Team Members', value: 'TBD' },
       { label: 'Low Avg', value: lowAvg ? lowAvg.toFixed(1) : '-' },
     ]
   }, [])
@@ -115,6 +113,33 @@ function Home() {
   // Get JV players for leaderboard
   const jvPlayers = useMemo(() => {
     return calculateLeaderboard(golfData.playerStats || [], 'jv')
+  }, [])
+
+  // Transition logic: show pre-season layout until 2026 results exist
+  const hasSeason2026Results = (golfData.seasonResults2026 || []).length > 0
+
+  // Next 4 upcoming varsity events
+  const upcomingVarsity = useMemo(() => {
+    const today = new Date()
+    today.setHours(0, 0, 0, 0)
+    return schedule2026.filter(e => {
+      const [year, month, day] = e.date.split('-').map(Number)
+      return new Date(year, month - 1, day) >= today
+    }).slice(0, 4)
+  }, [])
+
+  // Next 4 upcoming JV events
+  const upcomingJV = useMemo(() => {
+    const today = new Date()
+    today.setHours(0, 0, 0, 0)
+    return (golfData.jvSchedule2026 || [])
+      .filter(e => {
+        const dateStr = e.dateISO || (e.date ? e.date.substring(0, 10) : null)
+        if (!dateStr) return false
+        const [year, month, day] = dateStr.split('-').map(Number)
+        return new Date(year, month - 1, day) >= today
+      })
+      .slice(0, 4)
   }, [])
 
   return (
@@ -230,167 +255,253 @@ function Home() {
         </section>
       )}
 
-      {/* Results & Leaderboards - 2x2 Grid */}
+      {/* Results & Leaderboards - 2x2 Grid (toggles based on season data) */}
       <section className="page-container">
-        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-          {/* Top Left - Recent Varsity Results */}
-          <div className="card p-4 md:p-6">
-            <div className="flex items-center justify-between mb-4 md:mb-6">
-              <h2 className="text-lg md:text-xl font-bold text-gray-900" style={{ fontFamily: "'Oswald', sans-serif" }}>2025 Varsity Results</h2>
-              <Link to="/schedule" className="text-edina-green font-medium text-sm hover:underline">
-                View All
-              </Link>
-            </div>
-            <div className="space-y-3">
-              {recentVarsityResults.length > 0 ? (
-                recentVarsityResults.map((result, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
-                  >
-                    <div className="flex-shrink-0 w-14 text-center">
-                      <div className="text-xs md:text-sm font-bold text-edina-green">{result.dateFormatted}</div>
-                    </div>
-                    <div className="ml-3 flex-grow min-w-0">
-                      <div className="font-semibold text-gray-900 text-sm md:text-base truncate">{result.event}</div>
-                    </div>
-                    <div className="text-right flex-shrink-0 ml-2">
-                      <div className={`font-semibold text-sm md:text-base ${
-                        result.teamScore?.includes('(-') ? 'text-red-600' : 'text-gray-700'
-                      }`}>
-                        {result.teamScore}
+        {hasSeason2026Results ? (
+          /* Live-season layout: results + leaderboards */
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+            {/* Top Left - Recent Varsity Results */}
+            <div className="card p-4 md:p-6">
+              <div className="flex items-center justify-between mb-4 md:mb-6">
+                <h2 className="text-lg md:text-xl font-bold text-gray-900" style={{ fontFamily: "'Oswald', sans-serif" }}>2026 Varsity Results</h2>
+                <Link to="/schedule" className="text-edina-green font-medium text-sm hover:underline">
+                  View All
+                </Link>
+              </div>
+              <div className="space-y-3">
+                {recentVarsityResults.length > 0 ? (
+                  recentVarsityResults.map((result, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                    >
+                      <div className="flex-shrink-0 w-14 text-center">
+                        <div className="text-xs md:text-sm font-bold text-edina-green">{result.dateFormatted}</div>
                       </div>
-                      {result.teamFinish && (
-                        <div className={`text-xs font-medium ${
-                          result.teamFinish?.startsWith('1st') ? 'text-edina-gold-dark' : 'text-gray-500'
-                        }`}>
-                          {result.teamFinish}
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                ))
-              ) : (
-                <div className="text-center text-gray-500 py-6">
-                  No results yet.
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* Top Right - Recent JV Results */}
-          <div className="card p-4 md:p-6">
-            <div className="flex items-center justify-between mb-4 md:mb-6">
-              <h2 className="text-lg md:text-xl font-bold text-gray-900" style={{ fontFamily: "'Oswald', sans-serif" }}>2025 JV Results</h2>
-              <Link to="/schedule" className="text-edina-green font-medium text-sm hover:underline">
-                View All
-              </Link>
-            </div>
-            <div className="space-y-3">
-              {recentJVResults.length > 0 ? (
-                recentJVResults.map((result, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
-                  >
-                    <div className="flex-shrink-0 w-14 text-center">
-                      <div className="text-xs md:text-sm font-bold text-edina-green">{result.dateFormatted}</div>
-                    </div>
-                    <div className="ml-3 flex-grow min-w-0">
-                      <div className="font-semibold text-gray-900 text-sm md:text-base truncate">{result.event}</div>
-                    </div>
-                    <div className="text-right flex-shrink-0 ml-2">
-                      <div className={`font-semibold text-sm md:text-base ${
-                        result.teamScore?.includes('(-') ? 'text-red-600' : 'text-gray-700'
-                      }`}>
-                        {result.teamScore}
+                      <div className="ml-3 flex-grow min-w-0">
+                        <div className="font-semibold text-gray-900 text-sm md:text-base truncate">{result.event}</div>
                       </div>
-                      {result.teamFinish && (
-                        <div className={`text-xs font-medium ${
-                          result.teamFinish?.startsWith('1st') ? 'text-edina-gold-dark' : 'text-gray-500'
+                      <div className="text-right flex-shrink-0 ml-2">
+                        <div className={`font-semibold text-sm md:text-base ${
+                          result.teamScore?.includes('(-') ? 'text-red-600' : 'text-gray-700'
                         }`}>
-                          {result.teamFinish}
+                          {result.teamScore}
                         </div>
-                      )}
+                        {result.teamFinish && (
+                          <div className={`text-xs font-medium ${
+                            result.teamFinish?.startsWith('1st') ? 'text-edina-gold-dark' : 'text-gray-500'
+                          }`}>
+                            {result.teamFinish}
+                          </div>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                ))
-              ) : (
-                <div className="text-center text-gray-500 py-6">
-                  No results yet.
-                </div>
-              )}
+                  ))
+                ) : (
+                  <div className="text-center text-gray-500 py-6">No results yet.</div>
+                )}
+              </div>
             </div>
-          </div>
 
-          {/* Bottom Left - Varsity Leaderboard */}
-          <div className="card p-4 md:p-6">
-            <div className="flex items-center justify-between mb-4 md:mb-6">
-              <h2 className="text-lg md:text-xl font-bold text-gray-900" style={{ fontFamily: "'Oswald', sans-serif" }}>2025 Varsity Leaderboard</h2>
-              <Link to="/stats" className="text-edina-green font-medium text-sm hover:underline">
-                Full Stats
-              </Link>
-            </div>
-            <div className="space-y-2">
-              {varsityPlayers.length > 0 ? (
-                varsityPlayers.map((player, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center p-2 md:p-3 bg-gray-50 rounded-lg"
-                  >
-                    <div className="flex-grow">
-                      <div className="font-semibold text-gray-900 text-sm md:text-base">{player.name}</div>
+            {/* Top Right - Recent JV Results */}
+            <div className="card p-4 md:p-6">
+              <div className="flex items-center justify-between mb-4 md:mb-6">
+                <h2 className="text-lg md:text-xl font-bold text-gray-900" style={{ fontFamily: "'Oswald', sans-serif" }}>2026 JV Results</h2>
+                <Link to="/schedule" className="text-edina-green font-medium text-sm hover:underline">
+                  View All
+                </Link>
+              </div>
+              <div className="space-y-3">
+                {recentJVResults.length > 0 ? (
+                  recentJVResults.map((result, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                    >
+                      <div className="flex-shrink-0 w-14 text-center">
+                        <div className="text-xs md:text-sm font-bold text-edina-green">{result.dateFormatted}</div>
+                      </div>
+                      <div className="ml-3 flex-grow min-w-0">
+                        <div className="font-semibold text-gray-900 text-sm md:text-base truncate">{result.event}</div>
+                      </div>
+                      <div className="text-right flex-shrink-0 ml-2">
+                        <div className={`font-semibold text-sm md:text-base ${
+                          result.teamScore?.includes('(-') ? 'text-red-600' : 'text-gray-700'
+                        }`}>
+                          {result.teamScore}
+                        </div>
+                        {result.teamFinish && (
+                          <div className={`text-xs font-medium ${
+                            result.teamFinish?.startsWith('1st') ? 'text-edina-gold-dark' : 'text-gray-500'
+                          }`}>
+                            {result.teamFinish}
+                          </div>
+                        )}
+                      </div>
                     </div>
-                    <div className="text-right">
-                      <span className="font-bold text-edina-green text-base md:text-lg">
-                        {player.average?.toFixed(1)}
-                      </span>
-                      <span className="text-xs text-gray-500 ml-1">avg</span>
-                    </div>
-                  </div>
-                ))
-              ) : (
-                <div className="text-center text-gray-500 py-6">
-                  No data yet.
-                </div>
-              )}
+                  ))
+                ) : (
+                  <div className="text-center text-gray-500 py-6">No results yet.</div>
+                )}
+              </div>
             </div>
-          </div>
 
-          {/* Bottom Right - JV Leaderboard */}
-          <div className="card p-4 md:p-6">
-            <div className="flex items-center justify-between mb-4 md:mb-6">
-              <h2 className="text-lg md:text-xl font-bold text-gray-900" style={{ fontFamily: "'Oswald', sans-serif" }}>2025 JV Leaderboard</h2>
-              <Link to="/stats" className="text-edina-green font-medium text-sm hover:underline">
-                Full Stats
-              </Link>
+            {/* Bottom Left - Varsity Leaderboard */}
+            <div className="card p-4 md:p-6">
+              <div className="flex items-center justify-between mb-4 md:mb-6">
+                <h2 className="text-lg md:text-xl font-bold text-gray-900" style={{ fontFamily: "'Oswald', sans-serif" }}>2026 Varsity Leaderboard</h2>
+                <Link to="/stats" className="text-edina-green font-medium text-sm hover:underline">
+                  Full Stats
+                </Link>
+              </div>
+              <div className="space-y-2">
+                {varsityPlayers.length > 0 ? (
+                  varsityPlayers.map((player, index) => (
+                    <div key={index} className="flex items-center p-2 md:p-3 bg-gray-50 rounded-lg">
+                      <div className="flex-grow">
+                        <div className="font-semibold text-gray-900 text-sm md:text-base">{player.name}</div>
+                      </div>
+                      <div className="text-right">
+                        <span className="font-bold text-edina-green text-base md:text-lg">{player.average?.toFixed(1)}</span>
+                        <span className="text-xs text-gray-500 ml-1">avg</span>
+                      </div>
+                    </div>
+                  ))
+                ) : (
+                  <div className="text-center text-gray-500 py-6">No data yet.</div>
+                )}
+              </div>
             </div>
-            <div className="space-y-2">
-              {jvPlayers.length > 0 ? (
-                jvPlayers.map((player, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center p-2 md:p-3 bg-gray-50 rounded-lg"
-                  >
-                    <div className="flex-grow">
-                      <div className="font-semibold text-gray-900 text-sm md:text-base">{player.name}</div>
+
+            {/* Bottom Right - JV Leaderboard */}
+            <div className="card p-4 md:p-6">
+              <div className="flex items-center justify-between mb-4 md:mb-6">
+                <h2 className="text-lg md:text-xl font-bold text-gray-900" style={{ fontFamily: "'Oswald', sans-serif" }}>2026 JV Leaderboard</h2>
+                <Link to="/stats" className="text-edina-green font-medium text-sm hover:underline">
+                  Full Stats
+                </Link>
+              </div>
+              <div className="space-y-2">
+                {jvPlayers.length > 0 ? (
+                  jvPlayers.map((player, index) => (
+                    <div key={index} className="flex items-center p-2 md:p-3 bg-gray-50 rounded-lg">
+                      <div className="flex-grow">
+                        <div className="font-semibold text-gray-900 text-sm md:text-base">{player.name}</div>
+                      </div>
+                      <div className="text-right">
+                        <span className="font-bold text-edina-green text-base md:text-lg">{player.average?.toFixed(1)}</span>
+                        <span className="text-xs text-gray-500 ml-1">avg</span>
+                      </div>
                     </div>
-                    <div className="text-right">
-                      <span className="font-bold text-edina-green text-base md:text-lg">
-                        {player.average?.toFixed(1)}
-                      </span>
-                      <span className="text-xs text-gray-500 ml-1">avg</span>
-                    </div>
-                  </div>
-                ))
-              ) : (
-                <div className="text-center text-gray-500 py-6">
-                  No data yet.
-                </div>
-              )}
+                  ))
+                ) : (
+                  <div className="text-center text-gray-500 py-6">No data yet.</div>
+                )}
+              </div>
             </div>
           </div>
-        </div>
+        ) : (
+          /* Pre-season layout (Option 4): schedules + 2025 recap + photo teaser */
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+            {/* Top Left - Upcoming Varsity Schedule */}
+            <div className="card p-4 md:p-6">
+              <div className="flex items-center justify-between mb-4 md:mb-6">
+                <h2 className="text-lg md:text-xl font-bold text-gray-900" style={{ fontFamily: "'Oswald', sans-serif" }}>2026 Varsity Schedule</h2>
+                <Link to="/schedule" className="text-edina-green font-medium text-sm hover:underline">
+                  Full Schedule
+                </Link>
+              </div>
+              <div className="space-y-3">
+                {upcomingVarsity.length > 0 ? (
+                  upcomingVarsity.map((event) => (
+                    <div key={event.id} className="flex items-center p-3 bg-gray-50 rounded-lg">
+                      <div className="flex-shrink-0 w-16 text-center">
+                        <div className="text-xs md:text-sm font-bold text-edina-green">{event.dateFormatted}</div>
+                      </div>
+                      <div className="ml-3 flex-grow min-w-0">
+                        <div className="font-semibold text-gray-900 text-sm md:text-base truncate">{event.event}</div>
+                        <div className="text-xs text-gray-500 truncate">{event.course}</div>
+                      </div>
+                    </div>
+                  ))
+                ) : (
+                  <div className="text-center text-gray-500 py-6">Schedule coming soon.</div>
+                )}
+              </div>
+            </div>
+
+            {/* Top Right - Upcoming JV Schedule */}
+            <div className="card p-4 md:p-6">
+              <div className="flex items-center justify-between mb-4 md:mb-6">
+                <h2 className="text-lg md:text-xl font-bold text-gray-900" style={{ fontFamily: "'Oswald', sans-serif" }}>2026 JV Schedule</h2>
+                <Link to="/schedule" className="text-edina-green font-medium text-sm hover:underline">
+                  Full Schedule
+                </Link>
+              </div>
+              <div className="space-y-3">
+                {upcomingJV.length > 0 ? (
+                  upcomingJV.map((event) => (
+                    <div key={event.id} className="flex items-center p-3 bg-gray-50 rounded-lg">
+                      <div className="flex-shrink-0 w-16 text-center">
+                        <div className="text-xs md:text-sm font-bold text-edina-green">{event.dateFormatted}</div>
+                      </div>
+                      <div className="ml-3 flex-grow min-w-0">
+                        <div className="font-semibold text-gray-900 text-sm md:text-base truncate">{event.event}</div>
+                        <div className="text-xs text-gray-500 truncate">{event.course}</div>
+                      </div>
+                    </div>
+                  ))
+                ) : (
+                  <div className="text-center text-gray-500 py-6">Schedule coming soon.</div>
+                )}
+              </div>
+            </div>
+
+            {/* Bottom Left - 2025 Season Recap */}
+            <div className="card p-4 md:p-6 flex flex-col justify-between">
+              <div>
+                <h2 className="text-lg md:text-xl font-bold text-gray-900 mb-3" style={{ fontFamily: "'Oswald', sans-serif" }}>2025 Season Recap</h2>
+                <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                  A strong season for the Hornets — relive the results, scores, and standout performances.
+                </p>
+              </div>
+              <div className="mt-6">
+                <Link
+                  to="/schedule"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-edina-green text-white font-medium rounded-lg hover:bg-edina-green/90 transition-colors text-sm"
+                >
+                  View 2025 Results
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+
+            {/* Bottom Right - Photo Gallery Teaser */}
+            <div className="relative rounded-xl overflow-hidden min-h-[180px] md:min-h-[220px]">
+              <div
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: "url('/images/IMG_9149.jpeg')" }}
+              ></div>
+              <div className="absolute inset-0 bg-black/55"></div>
+              <div className="relative h-full flex flex-col items-center justify-center p-6 text-center min-h-[180px] md:min-h-[220px]">
+                <p className="text-white text-xl md:text-2xl font-extrabold tracking-widest mb-4" style={{ fontFamily: "'Oswald', sans-serif" }}>
+                  VIEW PHOTOS
+                </p>
+                <Link
+                  to="/photos"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 border border-white/60 text-white font-medium rounded-lg hover:bg-white/30 transition-colors text-sm backdrop-blur-sm"
+                >
+                  View Gallery
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+          </div>
+        )}
       </section>
 
       {/* Upcoming Events */}
