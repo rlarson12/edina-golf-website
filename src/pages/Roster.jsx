@@ -276,11 +276,13 @@ function Roster() {
               </span>
             </div>
             <div className="flex-grow">
-              <p className="text-gray-900 font-medium">
-                April 6-9 at Braemar Golf Course. Registration required.
-              </p>
-              <p className="text-gray-600 text-sm mt-1">
-                The 2026 roster (10 Varsity, 10 JV) will be announced April 10th.
+              <div className="text-gray-900 font-medium space-y-1">
+                <div>• Mon Apr 6 &amp; Tue Apr 7: 9-hole shotgun at Braemar, 4:00 PM</div>
+                <div>• Wed Apr 8: 18 holes at Edina Country Club, tee times from 3:00 PM</div>
+                <div>• Thu Apr 9: Braemar or Edina CC (weather contingency)</div>
+              </div>
+              <p className="text-gray-600 text-sm mt-2">
+                At least 36 holes total. Roster (10 Varsity, 10 JV) announced April 10.
               </p>
             </div>
             <div className="flex-shrink-0">

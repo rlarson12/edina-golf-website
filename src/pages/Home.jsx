@@ -577,15 +577,18 @@ function Home() {
                     <h3 className="font-bold text-gray-900">Tryouts</h3>
                     <span className="text-xs font-semibold text-edina-gold-dark bg-edina-gold/20 px-2 py-0.5 rounded">Apr 6–9</span>
                   </div>
-                  <p className="text-sm text-gray-600">
-                    Varsity and JV tryouts at Braemar Golf Course. Teams announced April 10th.
-                  </p>
+                  <div className="text-sm text-gray-600 space-y-1">
+                    <div>• Mon 4/6 &amp; Tue 4/7 — 9-hole shotgun at Braemar, 4:00 PM</div>
+                    <div>• Wed 4/8 — 18 holes at Edina CC, tee times from 3:00 PM</div>
+                    <div>• Thu 4/9 — Braemar or Edina CC (weather backup)</div>
+                    <div className="text-gray-500 pt-0.5">At least 36 holes total. Roster announced April 10.</div>
+                  </div>
                   <div className="flex items-center gap-1 text-xs text-gray-500 mt-2">
                     <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
-                    Braemar Golf Course, 6364 John Harris Dr, Edina
+                    Braemar Golf Course &amp; Edina Country Club
                   </div>
                   <Link to="/team-info" className="inline-flex items-center gap-1 text-sm text-edina-green hover:underline mt-2">
                     More Info
