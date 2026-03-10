@@ -84,20 +84,25 @@ function TeamInfo() {
                 </span>
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900">Practice Start Date</h3>
-                <p className="text-gray-600">March 23rd at Office Golf (indoor facility)</p>
-                <p className="text-sm text-gray-500 mt-1">5600 W 83rd St, Bloomington, MN 55437</p>
+                <h3 className="font-semibold text-gray-900">Official Practice Begins — March 23</h3>
+                <ul className="mt-2 space-y-1 text-sm text-gray-600">
+                  <li>📅 Monday–Thursday, March 23–27</li>
+                  <li>🕓 3:30 PM – 7:30 PM</li>
+                  <li>📍 OfficeGolf (indoor facility)</li>
+                </ul>
+                <p className="text-sm text-gray-500 mt-2">Individual time block assignments will be communicated by Coach Vernon. Conflicts can be accommodated on a case-by-case basis.</p>
+                <p className="text-sm text-gray-500 mt-2 italic">Week of March 30: Same schedule unless courses open early — if we move outdoors to Braemar, revised times will be sent via the Sunday night communication.</p>
                 <a
                   href="https://maps.google.com/?q=Office+Golf+5600+W+83rd+St+Bloomington+MN"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-sm text-edina-green hover:underline mt-1"
+                  className="inline-flex items-center gap-1 text-sm text-edina-green hover:underline mt-3"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
-                  Get Directions
+                  Get Directions to OfficeGolf
                 </a>
               </div>
             </div>
