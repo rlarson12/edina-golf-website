@@ -149,7 +149,7 @@ function Home() {
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover"
-          style={{ backgroundImage: "url('/images/Web 1.jpg')", backgroundPosition: 'center 30%' }}
+          style={{ backgroundImage: "url('/images/Web%201.jpg')", backgroundPosition: 'center 30%' }}
         ></div>
         {/* Green Overlay */}
         <div className="absolute inset-0" style={{ backgroundColor: 'rgba(0, 166, 81, 0.6)' }}></div>
