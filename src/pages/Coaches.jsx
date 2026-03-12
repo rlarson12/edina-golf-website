@@ -146,7 +146,7 @@ function Coaches() {
       {/* Hero Section */}
       <div className="relative h-64 md:h-72 overflow-hidden">
         <img
-          src="/images/Web 5.jpg"
+          src="/images/Web%205.jpg"
           alt="Golf course"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectPosition: 'center 40%' }}

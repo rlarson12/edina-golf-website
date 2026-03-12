@@ -614,7 +614,7 @@ function Home() {
               <img src="/images/IMG_9152.jpeg" alt="Bunker shot" className="w-full h-full img-cover-top hover:scale-105 transition-transform duration-300" />
             </div>
             <div className="relative w-72 h-56 rounded-lg overflow-hidden shadow-lg flex-shrink-0">
-              <img src="/images/Web 10.jpg" alt="Medal winners" className="w-full h-full img-cover-top hover:scale-105 transition-transform duration-300" />
+              <img src="/images/Web%2010.jpg" alt="Medal winners" className="w-full h-full img-cover-top hover:scale-105 transition-transform duration-300" />
             </div>
             <div className="relative w-72 h-56 rounded-lg overflow-hidden shadow-lg flex-shrink-0 hidden md:block">
               <img src="/images/IMG_8248.jpeg" alt="On the course" className="w-full h-full img-cover-top hover:scale-105 transition-transform duration-300" />
@@ -638,16 +638,16 @@ function Home() {
               </div>
             </div>
             <div className="relative rounded-xl overflow-hidden aspect-square">
-              <img src="/images/Web 6.jpg" alt="Team dinner" className="w-full h-full img-cover" />
+              <img src="/images/Web%206.jpg" alt="Team dinner" className="w-full h-full img-cover" />
             </div>
             <div className="relative rounded-xl overflow-hidden aspect-square">
-              <img src="/images/Web 9.jpg" alt="Sunset" className="w-full h-full img-cover-top" />
+              <img src="/images/Web%209.jpg" alt="Sunset" className="w-full h-full img-cover-top" />
             </div>
             <div className="relative rounded-xl overflow-hidden aspect-square">
               <img src="/images/IMG_6742.JPEG" alt="Team by water" className="w-full h-full img-cover" />
             </div>
             <div className="relative rounded-xl overflow-hidden aspect-square">
-              <img src="/images/Web 7.jpg" alt="Team at course" className="w-full h-full img-cover" />
+              <img src="/images/Web%207.jpg" alt="Team at course" className="w-full h-full img-cover" />
             </div>
           </div>
         </div>
