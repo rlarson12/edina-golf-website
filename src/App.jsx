@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
+import { useVersionCheck } from './hooks/useVersionCheck'
 import Layout from './components/Layout'
 import Home from './pages/Home'
 import Stats from './pages/Stats'
@@ -12,6 +13,7 @@ import Photos from './pages/Photos'
 import Recaps from './pages/Recaps'
 
 function App() {
+  useVersionCheck()
   return (
     <Layout>
       <Routes>
