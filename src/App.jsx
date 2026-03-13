@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import { useVersionCheck } from './hooks/useVersionCheck'
+import PushOptIn from './components/PushOptIn'
 import Layout from './components/Layout'
 import Home from './pages/Home'
 import Stats from './pages/Stats'
@@ -15,6 +16,8 @@ import Recaps from './pages/Recaps'
 function App() {
   useVersionCheck()
   return (
+    <>
+    <PushOptIn />
     <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -29,6 +32,7 @@ function App() {
         <Route path="/photos" element={<Photos />} />
       </Routes>
     </Layout>
+    </>
   )
 }
 
