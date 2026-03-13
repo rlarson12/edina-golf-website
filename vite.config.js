@@ -7,6 +7,7 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
+      injectRegister: 'script',
       includeAssets: ['favicon.svg', 'apple-touch-icon.png', 'icon-192.png', 'icon-512.png'],
       manifest: {
         name: 'Edina Boys Golf',
