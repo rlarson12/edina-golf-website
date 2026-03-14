@@ -66,6 +66,14 @@ export function usePushNotifications() {
       })
       .catch((e) => {
         console.warn('OneSignal init failed:', e?.message || e)
+        // SDK may still be usable despite throwing — check and enable banner anyway
+        if (typeof window.OneSignal?.Notifications !== 'undefined') {
+          setIsReady(true)
+          setPermission(Notification.permission)
+          window.OneSignal.Notifications.addEventListener('permissionChange', (granted) => {
+            setPermission(granted ? 'granted' : 'denied')
+          })
+        }
       })
   }, [])
 
