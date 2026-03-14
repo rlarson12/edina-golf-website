@@ -7,16 +7,21 @@ export default function PushOptIn() {
   const { permission, isReady, requestPermission } = usePushNotifications()
   const [dismissed, setDismissed] = useState(false)
   const [clicked, setClicked] = useState(false)
+  const [showBell, setShowBell] = useState(false)
 
   useEffect(() => {
     const wasDismissed = localStorage.getItem(DISMISSED_KEY)
     if (wasDismissed) setDismissed(true)
   }, [])
 
-  // Don't show if: already granted, dismissed, or not ready
-  if (!isReady || permission === 'granted' || permission === 'denied' || dismissed) {
-    return null
-  }
+  // Show bell icon if dismissed or denied but not yet granted
+  useEffect(() => {
+    if ((dismissed || permission === 'denied') && permission !== 'granted') {
+      setShowBell(true)
+    } else {
+      setShowBell(false)
+    }
+  }, [dismissed, permission])
 
   function handleDismiss() {
     localStorage.setItem(DISMISSED_KEY, '1')
@@ -26,6 +31,47 @@ export default function PushOptIn() {
   async function handleEnable() {
     setClicked(true)
     await requestPermission()
+    setClicked(false)
+  }
+
+  function handleBellClick() {
+    localStorage.removeItem(DISMISSED_KEY)
+    setDismissed(false)
+    setShowBell(false)
+  }
+
+  // Bell icon — persistent re-entry point after dismissal
+  if (showBell && isReady && permission !== 'granted') {
+    return (
+      <button
+        onClick={handleBellClick}
+        title="Enable match notifications"
+        style={{
+          position: 'fixed',
+          bottom: 20,
+          right: 20,
+          width: 48,
+          height: 48,
+          borderRadius: '50%',
+          background: '#00A651',
+          border: 'none',
+          cursor: 'pointer',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontSize: 22,
+          zIndex: 1000,
+          boxShadow: '0 4px 16px rgba(0,0,0,0.3)'
+        }}
+      >
+        🔔
+      </button>
+    )
+  }
+
+  // Don't show banner if: already granted, dismissed, or not ready
+  if (!isReady || permission === 'granted' || dismissed) {
+    return null
   }
 
   return (
