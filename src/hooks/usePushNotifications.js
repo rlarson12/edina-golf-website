@@ -79,8 +79,22 @@ export function usePushNotifications() {
 
   async function requestPermission() {
     if (!isReady) return
-    const os = await initOneSignal()
-    await os.Notifications.requestPermission()
+    try {
+      // Try OneSignal first; fall back to native API (required for iOS PWA)
+      const os = window.OneSignal
+      if (os?.Notifications?.requestPermission) {
+        await os.Notifications.requestPermission()
+      } else {
+        const result = await Notification.requestPermission()
+        setPermission(result)
+      }
+    } catch (e) {
+      // Final fallback — native API
+      try {
+        const result = await Notification.requestPermission()
+        setPermission(result)
+      } catch (_) {}
+    }
   }
 
   return { permission, isReady, requestPermission }
