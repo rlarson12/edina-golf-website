@@ -510,60 +510,6 @@ function Home() {
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8" style={{ fontFamily: "'Oswald', sans-serif" }}>Upcoming Events</h2>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {/* Optional Spring Break Practice */}
-            <div className="bg-white rounded-xl p-5 md:p-6 shadow-sm border-l-4 border-blue-400">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center">
-                  <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                  </svg>
-                </div>
-                <div className="flex-grow">
-                  <div className="flex flex-wrap items-center gap-2 mb-1">
-                    <h3 className="font-bold text-gray-900">Optional Practice</h3>
-                    <span className="text-xs font-semibold text-blue-500 bg-blue-50 px-2 py-0.5 rounded">Mar 16–19</span>
-                  </div>
-                  <p className="text-sm text-gray-600">
-                    Optional spring break sessions at OfficeGolf for registered players. Mon–Thu, 4:00–7:00 PM. Sign-up form sent by Coach Vernon.
-                  </p>
-                  <div className="flex items-center gap-1 text-xs text-gray-500 mt-2">
-                    <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    OfficeGolf, 5600 W 83rd St, Bloomington
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Practice Start */}
-            <div className="bg-white rounded-xl p-5 md:p-6 shadow-sm border-l-4 border-edina-green">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-edina-green/10 rounded-lg flex items-center justify-center">
-                  <svg className="w-6 h-6 text-edina-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <div className="flex-grow">
-                  <div className="flex flex-wrap items-center gap-2 mb-1">
-                    <h3 className="font-bold text-gray-900">Practice Begins</h3>
-                    <span className="text-xs font-semibold text-edina-green bg-edina-green/10 px-2 py-0.5 rounded">Mon, Mar 23</span>
-                  </div>
-                  <p className="text-sm text-gray-600">
-                    The 2026 season officially kicks off at Office Golf (indoor facility).
-                  </p>
-                  <div className="flex items-center gap-1 text-xs text-gray-500 mt-2">
-                    <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    5600 W 83rd St, Bloomington, MN 55437
-                  </div>
-                </div>
-              </div>
-            </div>
-
             {/* Tryouts */}
             <div className="bg-white rounded-xl p-5 md:p-6 shadow-sm border-l-4 border-edina-gold">
               <div className="flex items-start gap-4">
