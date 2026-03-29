@@ -65,11 +65,12 @@ function TeamInfo() {
               <div>
                 <h3 className="font-semibold text-gray-900">Tryout Dates — April 6–9</h3>
                 <ul className="mt-2 space-y-2 text-sm text-gray-600">
-                  <li>📅 <span className="font-medium">Mon Apr 6 & Tue Apr 7</span> — Minimum 9-hole shotgun at Braemar, 4:00 PM</li>
-                  <li>📅 <span className="font-medium">Wed Apr 8</span> — 18 holes at Edina Country Club, tee times from 3:00 PM</li>
-                  <li>📅 <span className="font-medium">Thu Apr 9</span> — Braemar or Edina Country Club (weather contingency)</li>
+                  <li>📅 <span className="font-medium">Mon Apr 6</span> — 4:00 PM shotgun at Braemar, back nine</li>
+                  <li>📅 <span className="font-medium">Tue Apr 7</span> — 4:00 PM shotgun at Braemar, front nine</li>
+                  <li>📅 <span className="font-medium">Wed Apr 8</span> — 4:00 PM shotgun at Braemar, back nine</li>
+                  <li>📅 <span className="font-medium">Thu Apr 9</span> — 4:00 PM shotgun at Braemar, front nine</li>
                 </ul>
-                <p className="text-sm text-gray-500 mt-3">At least 36 holes total. Ideal format: 9 holes Mon & Tue, 18 holes Wed & Thu.</p>
+                <p className="text-sm text-gray-500 mt-3">Edina Country Club may be added Wed & Thu if open — select players, 18 holes, tee times from 2:50 PM. Details TBD based on Mon/Tue performance. Roster announced April 10.</p>
                 <div className="flex flex-wrap gap-4 mt-3">
                   <a
                     href="https://maps.google.com/?q=Braemar+Golf+Course+6364+John+Harris+Dr+Edina+MN"
