@@ -10,9 +10,9 @@ import { registerSW } from 'virtual:pwa-register'
 registerSW({
   immediate: true,
   onRegisteredSW(_swScriptUrl, registration) {
-    // Check for updates every hour (catches users who leave tabs open a long time)
+    // Check for updates every 5 minutes (catches users who leave tabs open)
     if (registration) {
-      setInterval(() => registration.update(), 60 * 60 * 1000)
+      setInterval(() => registration.update(), 5 * 60 * 1000)
     }
   },
 })
