@@ -336,10 +336,20 @@ function Roster() {
                 >
                   <div className="flex items-start gap-4">
                     {/* Avatar */}
-                    <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-edina-green/20 to-edina-green/10 rounded-full flex items-center justify-center border-2 border-edina-green/30">
-                      <span className="text-xl font-bold text-edina-green">
-                        {player.name.split(' ').map(n => n[0]).join('')}
-                      </span>
+                    <div className="flex-shrink-0 w-14 h-14 rounded-full overflow-hidden border-2 border-edina-green/30">
+                      {player.photo ? (
+                        <img
+                          src={player.photo}
+                          alt={player.name}
+                          className="w-full h-full object-cover object-top"
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-gradient-to-br from-edina-green/20 to-edina-green/10 flex items-center justify-center">
+                          <span className="text-xl font-bold text-edina-green">
+                            {player.name.split(' ').map(n => n[0]).join('')}
+                          </span>
+                        </div>
+                      )}
                     </div>
 
                     {/* Info */}
@@ -457,10 +467,20 @@ function Roster() {
             <div className="bg-edina-green p-4 text-white">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                    <span className="text-lg font-bold">
-                      {selectedPlayer.name.split(' ').map(n => n[0]).join('')}
-                    </span>
+                  <div className="w-12 h-12 rounded-full overflow-hidden">
+                    {selectedPlayer.photo ? (
+                      <img
+                        src={selectedPlayer.photo}
+                        alt={selectedPlayer.name}
+                        className="w-full h-full object-cover object-top"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-white/20 flex items-center justify-center">
+                        <span className="text-lg font-bold">
+                          {selectedPlayer.name.split(' ').map(n => n[0]).join('')}
+                        </span>
+                      </div>
+                    )}
                   </div>
                   <div>
                     <h2 className="text-xl font-bold">{selectedPlayer.name}</h2>
