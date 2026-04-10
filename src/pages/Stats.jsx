@@ -13,13 +13,21 @@ function Stats() {
   // 2025 archive data
   const seasonResults2025 = golfData.seasonResults || []
 
-  // Get event headers from heatmap data
-  const allEventHeaders = golfData.heatmap.eventHeaders || []
+  // Use 2026 heatmap when season is live, fall back to 2025 for archive
+  const activeHeatmap = (hasSeason2026Results && !showArchive)
+    ? (golfData.heatmap2026 || golfData.heatmap)
+    : golfData.heatmap
+
+  // Get event headers from active heatmap data
+  const allEventHeaders = activeHeatmap?.eventHeaders || []
 
   // Build a list of JV event names from the actual jvEvents data
   const jvEventNames = useMemo(() => {
-    return golfData.jvEvents?.map(e => e.name.toLowerCase()) || []
-  }, [])
+    const events = (hasSeason2026Results && !showArchive)
+      ? (golfData.jvEvents2026 || golfData.jvEvents || [])
+      : (golfData.jvEvents || [])
+    return events.map(e => e.name.toLowerCase())
+  }, [hasSeason2026Results, showArchive])
 
   // Check if an event name matches any JV event (exact or partial match)
   const isJVEvent = (eventName) => {
@@ -32,7 +40,9 @@ function Stats() {
   // Build a map of event names to par and holes (needed for weighted average calc)
   const eventInfoMap = useMemo(() => {
     const map = {}
-    const allEvents = [...(golfData.events || []), ...(golfData.jvEvents || [])]
+    const allEvents = (hasSeason2026Results && !showArchive)
+      ? [...(golfData.events2026 || []), ...(golfData.jvEvents2026 || [])]
+      : [...(golfData.events || []), ...(golfData.jvEvents || [])]
     allEvents.forEach(event => {
       if (event.name) {
         map[event.name.toLowerCase()] = {
@@ -102,7 +112,7 @@ function Stats() {
 
   // Process player scores with dynamically calculated weighted averages
   const playerData = useMemo(() => {
-    return golfData.heatmap.playerScores
+    return (activeHeatmap?.playerScores || [])
       .map(p => ({
         ...p,
         average: calculateWeightedAverage(p.scores),
