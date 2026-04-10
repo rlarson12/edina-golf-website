@@ -37,6 +37,9 @@ export default defineConfig({
         ]
       },
       workbox: {
+        // Force new service worker to take over immediately — no waiting
+        skipWaiting: true,
+        clientsClaim: true,
         // Only precache app shell (JS, CSS, HTML, small assets)
         globPatterns: ['**/*.{js,css,html,ico,svg}'],
         // Network-first for navigation (always get fresh HTML)

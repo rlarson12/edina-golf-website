@@ -5,15 +5,19 @@ import App from './App'
 import './index.css'
 import { registerSW } from 'virtual:pwa-register'
 
-// Auto-update: when a new service worker activates (new deploy detected),
-// reload the page so users always get fresh content — no manual refresh needed.
+// Auto-update: new service worker takes over immediately (skipWaiting + clientsClaim)
+// and we reload the page so parents always see fresh content without manual refresh.
 registerSW({
   immediate: true,
   onRegisteredSW(_swScriptUrl, registration) {
-    // Check for updates every 5 minutes (catches users who leave tabs open)
+    // Poll for updates every 2 minutes
     if (registration) {
-      setInterval(() => registration.update(), 5 * 60 * 1000)
+      setInterval(() => registration.update(), 2 * 60 * 1000)
     }
+  },
+  onNeedRefresh() {
+    // New content available — reload automatically
+    window.location.reload()
   },
 })
 
