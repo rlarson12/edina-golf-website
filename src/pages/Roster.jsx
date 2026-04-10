@@ -261,46 +261,12 @@ function Roster() {
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-2" style={{ fontFamily: "'Oswald', sans-serif" }}>
               2026 ROSTER
             </h1>
-            <p className="text-green-200 text-lg">10 Varsity · 10 JV — Announced April 10</p>
+            <p className="text-green-200 text-lg">10 Varsity · 10 JV</p>
           </div>
         </div>
       </div>
 
       <div className="page-container">
-        {/* 2026 Tryouts Banner */}
-        <div className="bg-edina-green/10 border border-edina-green/30 rounded-xl p-5 md:p-6 mb-8">
-          <div className="flex flex-col md:flex-row md:items-center gap-4">
-            <div className="flex-shrink-0">
-              <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-bold bg-edina-green text-white">
-                2026 TRYOUTS
-              </span>
-            </div>
-            <div className="flex-grow">
-              <div className="text-gray-900 font-medium space-y-1">
-                <div>• Mon Apr 6 &amp; Tue Apr 7: 9-hole shotgun at Braemar, 4:00 PM</div>
-                <div>• Wed Apr 8: 18 holes at Edina Country Club, tee times from 3:00 PM</div>
-                <div>• Thu Apr 9: Braemar or Edina CC (weather contingency)</div>
-              </div>
-              <p className="text-gray-600 text-sm mt-2">
-                At least 36 holes total. Roster (10 Varsity, 10 JV) announced April 10.
-              </p>
-            </div>
-            <div className="flex-shrink-0">
-              <a
-                href="https://edinaathletics.com/register"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2 bg-edina-green text-white font-medium rounded-lg hover:bg-edina-green-dark transition-colors"
-              >
-                Register Now
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
         {/* Filter Buttons */}
         <div className="flex flex-wrap gap-2 mb-6">
           {[
@@ -344,7 +310,7 @@ function Roster() {
                       <h3 className="font-semibold text-gray-400">TBD</h3>
                     </div>
                     <div className="text-sm text-gray-400 mt-1">
-                      Announced April 10
+                      Roster coming soon
                     </div>
                     <div className="flex items-center gap-3 mt-2">
                       <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${getTeamBadge(placeholder.team)}`}>
