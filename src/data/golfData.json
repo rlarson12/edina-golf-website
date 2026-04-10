@@ -35,7 +35,8 @@
       "name": "Max Romslo",
       "gradYear": 2027,
       "grade": 10,
-      "team": "varsity"
+      "team": "varsity",
+      "photo": "/images/players/max-romslo.jpg"
     },
     {
       "name": "Michael Vernon",
@@ -6148,7 +6149,8 @@
       "name": "Max Romslo",
       "grade": 11,
       "gradYear": 2027,
-      "team": "varsity"
+      "team": "varsity",
+      "photo": "/images/players/max-romslo.jpg"
     },
     {
       "name": "Drew Schiena",
