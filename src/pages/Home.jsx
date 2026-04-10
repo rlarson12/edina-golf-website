@@ -55,7 +55,7 @@ function Home() {
     return [
       { label: 'Tournament Wins', value: wins.toString() },
       { label: 'Events Played', value: totalEvents.toString() },
-      { label: 'Team Members', value: 'TBD' },
+      { label: 'Team Members', value: '25' },
       { label: 'Low Avg', value: lowAvg ? lowAvg.toFixed(1) : '-' },
     ]
   }, [])

@@ -38,7 +38,7 @@ function TeamInfo() {
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900">Roster</h3>
-                <p className="text-gray-600">10 Varsity, 10 JV (20 total players)</p>
+                <p className="text-gray-600">13 Varsity, 12 JV (25 total players)</p>
               </div>
             </div>
 

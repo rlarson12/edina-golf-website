@@ -87,6 +87,7 @@ function Roster() {
 
   const getGradeLabel = (grade) => {
     switch (grade) {
+      case 8: return '8th Grade'
       case 9: return 'Freshman'
       case 10: return 'Sophomore'
       case 11: return 'Junior'
@@ -261,7 +262,7 @@ function Roster() {
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-2" style={{ fontFamily: "'Oswald', sans-serif" }}>
               2026 ROSTER
             </h1>
-            <p className="text-green-200 text-lg">10 Varsity · 10 JV</p>
+            <p className="text-green-200 text-lg">13 Varsity · 12 JV</p>
           </div>
         </div>
       </div>

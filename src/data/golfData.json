@@ -6099,7 +6099,160 @@
     }
   ],
   "seasonResults2026": [],
-  "players2026": [],
+  "players2026": [
+    {
+      "name": "Peter Bennett",
+      "grade": 12,
+      "gradYear": 2026,
+      "team": "varsity",
+      "photo": "/images/players/peter-bennett.jpg"
+    },
+    {
+      "name": "David Colby",
+      "grade": 12,
+      "gradYear": 2026,
+      "team": "varsity"
+    },
+    {
+      "name": "Ryan Geyer",
+      "grade": 11,
+      "gradYear": 2027,
+      "team": "varsity"
+    },
+    {
+      "name": "Chase Larson",
+      "grade": 11,
+      "gradYear": 2027,
+      "team": "varsity",
+      "photo": "/images/players/chase-larson.jpg"
+    },
+    {
+      "name": "Charlie Nielsen",
+      "grade": 11,
+      "gradYear": 2027,
+      "team": "varsity"
+    },
+    {
+      "name": "Sander Ohe",
+      "grade": 12,
+      "gradYear": 2026,
+      "team": "varsity"
+    },
+    {
+      "name": "Ty Pankratz",
+      "grade": 12,
+      "gradYear": 2026,
+      "team": "varsity"
+    },
+    {
+      "name": "Max Romslo",
+      "grade": 11,
+      "gradYear": 2027,
+      "team": "varsity"
+    },
+    {
+      "name": "Drew Schiena",
+      "grade": 9,
+      "gradYear": 2029,
+      "team": "varsity"
+    },
+    {
+      "name": "Macallen Smith",
+      "grade": 12,
+      "gradYear": 2026,
+      "team": "varsity"
+    },
+    {
+      "name": "Hudson Strodl",
+      "grade": 12,
+      "gradYear": 2026,
+      "team": "varsity"
+    },
+    {
+      "name": "Michael Vernon",
+      "grade": 10,
+      "gradYear": 2028,
+      "team": "varsity"
+    },
+    {
+      "name": "Elan Winnick",
+      "grade": 11,
+      "gradYear": 2027,
+      "team": "varsity"
+    },
+    {
+      "name": "Henry Applebaum",
+      "grade": 9,
+      "gradYear": 2029,
+      "team": "jv"
+    },
+    {
+      "name": "Mason Catron",
+      "grade": 8,
+      "gradYear": 2030,
+      "team": "jv"
+    },
+    {
+      "name": "Cole Considine",
+      "grade": 10,
+      "gradYear": 2028,
+      "team": "jv"
+    },
+    {
+      "name": "Randy Dann",
+      "grade": 10,
+      "gradYear": 2028,
+      "team": "jv"
+    },
+    {
+      "name": "Henry Freeman",
+      "grade": 11,
+      "gradYear": 2027,
+      "team": "jv"
+    },
+    {
+      "name": "George Heinen",
+      "grade": 11,
+      "gradYear": 2027,
+      "team": "jv"
+    },
+    {
+      "name": "Mason Hughes",
+      "grade": 9,
+      "gradYear": 2029,
+      "team": "jv"
+    },
+    {
+      "name": "Crosby Pote",
+      "grade": 8,
+      "gradYear": 2030,
+      "team": "jv"
+    },
+    {
+      "name": "Ari Prickett",
+      "grade": 11,
+      "gradYear": 2027,
+      "team": "jv"
+    },
+    {
+      "name": "Carter Ringle",
+      "grade": 10,
+      "gradYear": 2028,
+      "team": "jv"
+    },
+    {
+      "name": "Mason Schultes",
+      "grade": 11,
+      "gradYear": 2027,
+      "team": "jv"
+    },
+    {
+      "name": "William Smith",
+      "grade": 11,
+      "gradYear": 2027,
+      "team": "jv"
+    }
+  ],
   "playerStats2026": [],
   "rankings2026": [],
   "heatmap2026": {
