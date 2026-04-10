@@ -12,12 +12,16 @@ function Roster() {
   // Use 2026 players if available, fall back to 2025 for archive display
   const players = isPreSeason ? (golfData.players || []) : players2026
 
-  const allEventHeaders = golfData.heatmap?.eventHeaders || []
+  // Use 2026 heatmap when roster is live, fall back to 2025
+  const activeHeatmap = !isPreSeason ? (golfData.heatmap2026 || golfData.heatmap) : golfData.heatmap
+  const allEventHeaders = activeHeatmap?.eventHeaders || []
 
   // Build event info map for holes lookup
   const eventInfoMap = useMemo(() => {
     const map = {}
-    const allEvents = [...(golfData.events || []), ...(golfData.jvEvents || [])]
+    const allEvents = !isPreSeason
+      ? [...(golfData.events2026 || []), ...(golfData.jvEvents2026 || [])]
+      : [...(golfData.events || []), ...(golfData.jvEvents || [])]
     allEvents.forEach(event => {
       if (event.name) {
         map[event.name.toLowerCase()] = {
@@ -40,10 +44,10 @@ function Roster() {
     return matchingKey ? eventInfoMap[matchingKey].holes : 18
   }
 
-  // Calculate weighted averages for all players (2025 heatmap data)
+  // Calculate weighted averages for all players
   const playerAveragesMap = useMemo(() => {
     const map = {}
-    golfData.heatmap?.playerScores?.forEach(player => {
+    activeHeatmap?.playerScores?.forEach(player => {
       let totalStrokes = 0
       let totalHoles = 0
 
@@ -144,8 +148,8 @@ function Roster() {
 
   // Get player scores from heatmap data, combining multi-round events
   const getPlayerScores = (playerName) => {
-    const playerData = golfData.heatmap?.playerScores?.find(p => p.name === playerName)
-    const eventHeaders = golfData.heatmap?.eventHeaders || []
+    const playerData = activeHeatmap?.playerScores?.find(p => p.name === playerName)
+    const eventHeaders = activeHeatmap?.eventHeaders || []
 
     if (!playerData) return []
 
