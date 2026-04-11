@@ -9,7 +9,6 @@ const navigation = [
   { name: 'Stats', href: '/stats' },
   { name: 'Coaches', href: '/coaches' },
   { name: 'Support Team', href: '/support-team' },
-  { name: 'Team Info', href: '/team-info' },
   { name: 'History', href: '/history' },
   { name: 'Photos', href: '/photos' },
 ]
@@ -156,7 +155,6 @@ function Layout({ children }) {
               <ul className="space-y-2 text-sm text-green-100">
                 <li><Link to="/coaches" className="hover:text-white transition-colors">Coaches</Link></li>
                 <li><Link to="/support-team" className="hover:text-white transition-colors">Support Team</Link></li>
-                <li><Link to="/team-info" className="hover:text-white transition-colors">Team Info</Link></li>
                 <li><Link to="/history" className="hover:text-white transition-colors">History</Link></li>
                 <li><Link to="/photos" className="hover:text-white transition-colors">Photos</Link></li>
               </ul>
