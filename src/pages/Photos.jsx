@@ -74,9 +74,8 @@ function Photos() {
       id: '2025-3',
       title: 'Off Course',
       date: '2025 Season',
-      cover: '/images/OffCourse1.jpeg',
+      cover: '/images/OffCourse2.jpg',
       photos: [
-        { src: '/images/OffCourse1.jpeg', caption: 'Off course' },
         { src: '/images/OffCourse2.jpg', caption: 'Off course' },
         { src: '/images/OffCourse3.jpg', caption: 'Off course' },
       ],
