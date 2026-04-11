@@ -85,29 +85,33 @@ function Stats() {
     return (totalStrokes / totalHoles) * 18
   }
 
-  // Filter event headers based on team filter
+  // Filter event headers based on team filter (reverse for newest-first)
   const { eventHeaders, eventIndices } = useMemo(() => {
+    let headers, indices
+
     if (teamFilter === 'all') {
-      return {
-        eventHeaders: allEventHeaders,
-        eventIndices: allEventHeaders.map((_, i) => i)
-      }
+      headers = [...allEventHeaders]
+      indices = allEventHeaders.map((_, i) => i)
+    } else {
+      const isJV = teamFilter === 'jv'
+      headers = []
+      indices = []
+
+      allEventHeaders.forEach((header, index) => {
+        const eventName = header.replace(/^\d{2}\/\d{2} - /, '')
+        const headerIsJV = isJVEvent(eventName)
+        if (isJV === headerIsJV) {
+          headers.push(header)
+          indices.push(index)
+        }
+      })
     }
 
-    const isJV = teamFilter === 'jv'
-    const filtered = []
-    const indices = []
+    // Reverse so most recent event is first (leftmost column)
+    headers.reverse()
+    indices.reverse()
 
-    allEventHeaders.forEach((header, index) => {
-      const eventName = header.replace(/^\d{2}\/\d{2} - /, '')
-      const headerIsJV = isJVEvent(eventName)
-      if (isJV === headerIsJV) {
-        filtered.push(header)
-        indices.push(index)
-      }
-    })
-
-    return { eventHeaders: filtered, eventIndices: indices }
+    return { eventHeaders: headers, eventIndices: indices }
   }, [allEventHeaders, teamFilter, jvEventNames])
 
   // Process player scores with dynamically calculated weighted averages
@@ -214,8 +218,11 @@ function Stats() {
     ]
   }, [])
 
-  // Which season results to show in Team Results tab
-  const activeSeasonResults = showArchive ? seasonResults2025 : seasonResults2026
+  // Which season results to show in Team Results tab (newest first)
+  const activeSeasonResults = useMemo(() => {
+    const results = showArchive ? seasonResults2025 : seasonResults2026
+    return [...results].reverse()
+  }, [showArchive, seasonResults2025, seasonResults2026])
 
   return (
     <div>
