@@ -2,7 +2,7 @@ function SupportTeam() {
   const captainsParents = [
     {
       name: 'Jeff & Alley Ohe',
-      photo: '/images/Captains Parents - Ohes.jpg',
+      photo: '/images/Captains Parents - Ohes.webp',
       email: 'jeffandalleyohe@gmail.com',
       contacts: [
         { name: 'Alley', phone: '612-670-0322' },
@@ -11,7 +11,7 @@ function SupportTeam() {
     },
     {
       name: 'Steve & Kristi Colby',
-      photo: '/images/Captains Parents - Colbys.jpeg',
+      photo: '/images/Captains Parents - Colbys.webp',
       contacts: [
         { name: 'Kristi', phone: '612-590-2984' },
         { name: 'Steve', phone: '612-910-0708' },
@@ -23,7 +23,7 @@ function SupportTeam() {
     {
       name: 'Caitlin Sidey',
       role: 'Treasurer',
-      photo: '/images/Treasuer - Caitlin.jpg',
+      photo: '/images/Treasuer - Caitlin.webp',
       email: 'treasurer@edinaboysgolf.com',
       phone: '612-859-0923',
       venmo: '@Caitlin-Sidey',
@@ -121,7 +121,7 @@ function SupportTeam() {
       {/* Hero Section */}
       <div className="relative h-[200px] md:h-[280px] overflow-hidden">
         <img
-          src="/images/Team4.JPEG"
+          src="/images/Team4.webp"
           alt="Team photo"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectPosition: 'center 45%' }}

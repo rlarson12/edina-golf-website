@@ -492,7 +492,7 @@ function Schedule() {
       {/* Hero Banner with Action Photo */}
       <div className="relative h-72 md:h-96 overflow-hidden">
         <img
-          src="/images/IMG_9149.jpeg"
+          src="/images/IMG_9149.webp"
           alt="Tournament action"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectPosition: 'center 40%' }}

@@ -255,7 +255,7 @@ function Roster() {
       {/* Hero Section with Team Photo */}
       <div className="relative h-64 md:h-72 overflow-hidden">
         <img
-          src="/images/unnamed.png"
+          src="/images/unnamed.webp"
           alt="Edina Boys Golf Team"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectPosition: 'center 70%' }}
@@ -446,13 +446,13 @@ function Roster() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-3 gap-4">
             <div className="relative aspect-video rounded-lg overflow-hidden">
-              <img src="/images/IMG_9149.jpeg" alt="Action shot" className="w-full h-full img-cover-top" />
+              <img src="/images/IMG_9149.webp" alt="Action shot" className="w-full h-full img-cover-top" />
             </div>
             <div className="relative aspect-video rounded-lg overflow-hidden">
-              <img src="/images/IMG_9152.jpeg" alt="Bunker shot" className="w-full h-full img-cover-top" />
+              <img src="/images/IMG_9152.webp" alt="Bunker shot" className="w-full h-full img-cover-top" />
             </div>
             <div className="relative aspect-video rounded-lg overflow-hidden">
-              <img src="/images/IMG_8248.jpeg" alt="On course" className="w-full h-full img-cover-top" />
+              <img src="/images/IMG_8248.webp" alt="On course" className="w-full h-full img-cover-top" />
             </div>
           </div>
         </div>

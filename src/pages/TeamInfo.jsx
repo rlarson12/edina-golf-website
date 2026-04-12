@@ -4,7 +4,7 @@ function TeamInfo() {
       {/* Hero Section with Sunset Photo */}
       <div className="relative h-80 md:h-96 overflow-hidden">
         <img
-          src="/images/Web%209.jpg"
+          src="/images/Web%209.webp"
           alt="Team bonding"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectPosition: 'center 50%' }}

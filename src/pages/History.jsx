@@ -25,7 +25,7 @@ function History() {
       {/* Hero Section */}
       <div className="relative h-[200px] md:h-[280px] overflow-hidden">
         <img
-          src="/images/School.png"
+          src="/images/School.webp"
           alt="Edina High School"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectPosition: 'center 50%' }}
@@ -48,7 +48,7 @@ function History() {
             {/* MSHSL Logo */}
             <div className="flex justify-center mb-6">
               <img
-                src="/images/mshsl.png"
+                src="/images/mshsl.webp"
                 alt="MSHSL"
                 className="h-24 md:h-32 object-contain"
                 onError={(e) => {
@@ -129,7 +129,7 @@ function History() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
             <div className="relative rounded-xl overflow-hidden shadow-lg group">
               <img
-                src="/images/Torger%20state.jpeg"
+                src="/images/Torger%20state.webp"
                 alt="Torger Ohe at State"
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
               />
@@ -140,7 +140,7 @@ function History() {
             </div>
             <div className="relative rounded-xl overflow-hidden shadow-lg group">
               <img
-                src="/images/Jimmy%20Abdo%20Am.jpeg"
+                src="/images/Jimmy%20Abdo%20Am.webp"
                 alt="Jimmy Abdo"
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
               />
@@ -151,7 +151,7 @@ function History() {
             </div>
             <div className="relative rounded-xl overflow-hidden shadow-lg group">
               <img
-                src="/images/Jack%20state.jpeg"
+                src="/images/Jack%20state.webp"
                 alt="Jack Wetzel at State"
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
               />

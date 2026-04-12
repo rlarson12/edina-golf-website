@@ -31,7 +31,7 @@ function Layout({ children }) {
             <Link to="/" className="flex items-center space-x-3">
               <div className="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden bg-white flex items-center justify-center">
                 <img
-                  src="/images/Hornet.jpeg"
+                  src="/images/Hornet.webp"
                   alt="Edina Hornets"
                   className="w-full h-full object-cover"
                   onError={(e) => {
@@ -119,7 +119,7 @@ function Layout({ children }) {
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-14 h-14 rounded-full overflow-hidden bg-white p-1">
                   <img
-                    src="/images/Hornet.jpeg"
+                    src="/images/Hornet.webp"
                     alt="Edina Hornets"
                     className="w-full h-full object-cover rounded-full"
                   />

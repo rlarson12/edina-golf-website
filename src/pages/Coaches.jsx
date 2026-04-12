@@ -3,7 +3,7 @@ function Coaches() {
     {
       name: 'Tim Vernon',
       title: 'Varsity Head Coach',
-      photo: '/images/Coach Vernon .jpeg',
+      photo: '/images/Coach Vernon .webp',
       credentials: ['PGA', 'MN Section Golf Executive of the Year 2025'],
       email: 'TVernon@yamahagu.com',
       phone: '612-206-6499',
@@ -12,7 +12,7 @@ function Coaches() {
     {
       name: 'Marty Lass',
       title: 'Assistant Coach',
-      photo: '/images/Coach Lass.jpeg',
+      photo: '/images/Coach Lass.webp',
       credentials: ['PGA'],
       bio: 'Retired after 35 years as Head Golf Professional at Edina Country Club. Played at Ferris State University, competing in two national championships, before earning his PGA membership in 1984. Widely regarded throughout the Minnesota section as one of the premier short game instructors in the state.',
     },
@@ -26,14 +26,14 @@ function Coaches() {
     {
       name: 'Dick Blooston',
       title: 'Assistant Coach',
-      photo: '/images/Coach Blooston.svg',
+      photo: '/images/Coach Blooston.webp',
       credentials: ['MN Golf Hall of Fame'],
       bio: 'Minnesota Golf Hall of Fame inductee with a competitive career spanning over 60 years. Played for the Gophers in 1963–64 and won the Big Ten title in 1963. Known to generations of Edina families as a legendary hockey coach, he now brings that same championship standard to the golf program.',
     },
     {
       name: 'Jim Deutsch',
       title: 'Assistant Coach',
-      photo: '/images/Coach Deutsch.jpeg',
+      photo: '/images/Coach Deutsch.webp',
       credentials: ['PGA'],
       bio: '36-year PGA Professional and rules official for the Minnesota PGA Section. Completed a 13-year head coaching career at St. Thomas University, where the program competed in multiple national championships. Has been playing competitive golf professionally and collegiately for over 60 years.',
     },
@@ -43,14 +43,14 @@ function Coaches() {
     {
       name: 'Cole Johnson',
       title: 'JV Head Coach',
-      photo: '/images/Coach-ColeJohnson.jpg',
+      photo: '/images/Coach-ColeJohnson.webp',
       credentials: [],
       bio: 'Returning for his second season with the Hornets. Based in St. Louis Park and works at OfficeGolf. Played high school golf at West Fargo Sheyenne before continuing his career at the University of North Dakota.',
     },
     {
       name: 'Mitch Cowger',
       title: 'Assistant Coach',
-      photo: '/images/Coach-MitchCowger.jpg',
+      photo: '/images/Coach-MitchCowger.webp',
       credentials: [],
       bio: 'Returning assistant coach who brings a versatile coaching background across multiple sports. Coach Cowger focuses on the full development of each athlete — on the course and beyond it.',
     },
@@ -146,7 +146,7 @@ function Coaches() {
       {/* Hero Section */}
       <div className="relative h-64 md:h-72 overflow-hidden">
         <img
-          src="/images/Web%205.jpg"
+          src="/images/Web%205.webp"
           alt="Golf course"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectPosition: 'center 40%' }}

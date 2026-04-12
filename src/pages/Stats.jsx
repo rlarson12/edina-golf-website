@@ -229,7 +229,7 @@ function Stats() {
       {/* Hero Section */}
       <div className="relative h-72 md:h-80 overflow-hidden">
         <img
-          src="/images/Web%203.jpg"
+          src="/images/Web%203.webp"
           alt="Team photo"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectPosition: 'center 30%' }}

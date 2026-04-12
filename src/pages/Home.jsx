@@ -149,7 +149,7 @@ function Home() {
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover"
-          style={{ backgroundImage: "url('/images/Web%201.jpg')", backgroundPosition: 'center 30%' }}
+          style={{ backgroundImage: "url('/images/Web%201.webp')", backgroundPosition: 'center 30%' }}
         ></div>
         {/* Green Overlay */}
         <div className="absolute inset-0" style={{ backgroundColor: 'rgba(0, 166, 81, 0.6)' }}></div>
@@ -482,7 +482,7 @@ function Home() {
             <div className="relative rounded-xl overflow-hidden min-h-[180px] md:min-h-[220px]">
               <div
                 className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: "url('/images/IMG_9149.jpeg')" }}
+                style={{ backgroundImage: "url('/images/IMG_9149.webp')" }}
               ></div>
               <div className="absolute inset-0 bg-black/55"></div>
               <div className="relative h-full flex flex-col items-center justify-center p-6 text-center min-h-[180px] md:min-h-[220px]">
@@ -544,16 +544,16 @@ function Home() {
         <div className="flex gap-4 animate-none">
           <div className="flex gap-4 min-w-full justify-center">
             <div className="relative w-72 h-56 rounded-lg overflow-hidden shadow-lg flex-shrink-0">
-              <img src="/images/IMG_9149.jpeg" alt="Action shot" className="w-full h-full img-cover-top hover:scale-105 transition-transform duration-300" />
+              <img src="/images/IMG_9149.webp" alt="Action shot" className="w-full h-full img-cover-top hover:scale-105 transition-transform duration-300" />
             </div>
             <div className="relative w-72 h-56 rounded-lg overflow-hidden shadow-lg flex-shrink-0">
-              <img src="/images/IMG_9152.jpeg" alt="Bunker shot" className="w-full h-full img-cover-top hover:scale-105 transition-transform duration-300" />
+              <img src="/images/IMG_9152.webp" alt="Bunker shot" className="w-full h-full img-cover-top hover:scale-105 transition-transform duration-300" />
             </div>
             <div className="relative w-72 h-56 rounded-lg overflow-hidden shadow-lg flex-shrink-0">
-              <img src="/images/Web%2010.jpg" alt="Medal winners" className="w-full h-full img-cover-top hover:scale-105 transition-transform duration-300" />
+              <img src="/images/Web%2010.webp" alt="Medal winners" className="w-full h-full img-cover-top hover:scale-105 transition-transform duration-300" />
             </div>
             <div className="relative w-72 h-56 rounded-lg overflow-hidden shadow-lg flex-shrink-0 hidden md:block">
-              <img src="/images/IMG_8248.jpeg" alt="On the course" className="w-full h-full img-cover-top hover:scale-105 transition-transform duration-300" />
+              <img src="/images/IMG_8248.webp" alt="On the course" className="w-full h-full img-cover-top hover:scale-105 transition-transform duration-300" />
             </div>
           </div>
         </div>
@@ -567,23 +567,23 @@ function Home() {
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
             <div className="col-span-2 row-span-2 relative rounded-xl overflow-hidden">
-              <img src="/images/unnamed.png" alt="Team photo" className="w-full h-full img-cover" />
+              <img src="/images/unnamed.webp" alt="Team photo" className="w-full h-full img-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               <div className="absolute bottom-4 left-4 text-white">
                 <p className="text-lg font-bold" style={{ fontFamily: "'Oswald', sans-serif" }}>BROTHERHOOD</p>
               </div>
             </div>
             <div className="relative rounded-xl overflow-hidden aspect-square">
-              <img src="/images/Web%206.jpg" alt="Team dinner" className="w-full h-full img-cover" />
+              <img src="/images/Web%206.webp" alt="Team dinner" className="w-full h-full img-cover" />
             </div>
             <div className="relative rounded-xl overflow-hidden aspect-square">
-              <img src="/images/Web%209.jpg" alt="Sunset" className="w-full h-full img-cover-top" />
+              <img src="/images/Web%209.webp" alt="Sunset" className="w-full h-full img-cover-top" />
             </div>
             <div className="relative rounded-xl overflow-hidden aspect-square">
-              <img src="/images/IMG_6742.JPEG" alt="Team by water" className="w-full h-full img-cover" />
+              <img src="/images/IMG_6742.webp" alt="Team by water" className="w-full h-full img-cover" />
             </div>
             <div className="relative rounded-xl overflow-hidden aspect-square">
-              <img src="/images/Web%207.jpg" alt="Team at course" className="w-full h-full img-cover" />
+              <img src="/images/Web%207.webp" alt="Team at course" className="w-full h-full img-cover" />
             </div>
           </div>
         </div>
