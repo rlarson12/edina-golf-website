@@ -5716,7 +5716,8 @@
       "par": 72,
       "teamScore": null,
       "teamFinish": null,
-      "event": "Lake Conference Tournament #1"
+      "event": "Lake Conference Tournament #1",
+      "startTimeUtc": null
     },
     {
       "id": "2026-2026-04-22-VAR-2",
@@ -5730,7 +5731,8 @@
       "par": 72,
       "teamScore": null,
       "teamFinish": null,
-      "event": "East Ridge Invitational"
+      "event": "East Ridge Invitational",
+      "startTimeUtc": null
     },
     {
       "id": "2026-2026-04-23-VAR-3",
@@ -5744,7 +5746,8 @@
       "par": 72,
       "teamScore": null,
       "teamFinish": null,
-      "event": "Lake Conference Meet #2"
+      "event": "Lake Conference Meet #2",
+      "startTimeUtc": null
     },
     {
       "id": "2026-2026-04-24-VAR-4",
@@ -5758,7 +5761,8 @@
       "par": 72,
       "teamScore": null,
       "teamFinish": null,
-      "event": "The Preview Day 1"
+      "event": "The Preview Day 1",
+      "startTimeUtc": null
     },
     {
       "id": "2026-2026-04-25-VAR-5",
@@ -5772,7 +5776,8 @@
       "par": 72,
       "teamScore": null,
       "teamFinish": null,
-      "event": "The Preview Day 2"
+      "event": "The Preview Day 2",
+      "startTimeUtc": null
     },
     {
       "id": "2026-2026-04-27-VAR-6",
@@ -5786,7 +5791,8 @@
       "par": 70,
       "teamScore": null,
       "teamFinish": null,
-      "event": "Lake Conference Meet #3"
+      "event": "Lake Conference Meet #3",
+      "startTimeUtc": null
     },
     {
       "id": "2026-2026-05-01-VAR-8",
@@ -5800,7 +5806,8 @@
       "par": 72,
       "teamScore": null,
       "teamFinish": null,
-      "event": "Lakeville South Invitational Day 1"
+      "event": "Lakeville South Invitational Day 1",
+      "startTimeUtc": null
     },
     {
       "id": "2026-2026-05-02-VAR-9",
@@ -5814,7 +5821,8 @@
       "par": 72,
       "teamScore": null,
       "teamFinish": null,
-      "event": "Lakeville South Invitational Day 2"
+      "event": "Lakeville South Invitational Day 2",
+      "startTimeUtc": null
     },
     {
       "id": "2026-2026-05-04-VAR-10",
@@ -5828,7 +5836,8 @@
       "par": 72,
       "teamScore": null,
       "teamFinish": null,
-      "event": "Spring Lake Park Invitational"
+      "event": "Spring Lake Park Invitational",
+      "startTimeUtc": null
     },
     {
       "id": "2026-2026-05-04-VAR-LC4",
@@ -5842,7 +5851,8 @@
       "par": 72,
       "teamScore": null,
       "teamFinish": null,
-      "event": "Lake Conference Meet #4"
+      "event": "Lake Conference Meet #4",
+      "startTimeUtc": null
     },
     {
       "id": "2026-2026-05-04-VAR-OAK",
@@ -5856,7 +5866,8 @@
       "par": 70,
       "teamScore": null,
       "teamFinish": null,
-      "event": "Boys Varsity Invitational"
+      "event": "Boys Varsity Invitational",
+      "startTimeUtc": null
     },
     {
       "id": "2026-2026-05-08-VAR-11",
@@ -5870,7 +5881,8 @@
       "par": 71,
       "teamScore": null,
       "teamFinish": null,
-      "event": "Northwest Classic Day 1"
+      "event": "Northwest Classic Day 1",
+      "startTimeUtc": null
     },
     {
       "id": "2026-2026-05-09-VAR-12",
@@ -5884,7 +5896,8 @@
       "par": 71,
       "teamScore": null,
       "teamFinish": null,
-      "event": "Northwest Classic Day 2"
+      "event": "Northwest Classic Day 2",
+      "startTimeUtc": null
     },
     {
       "id": "2026-2026-05-11-VAR-13",
@@ -5898,7 +5911,8 @@
       "par": 70,
       "teamScore": null,
       "teamFinish": null,
-      "event": "Edina Invitational Day 1"
+      "event": "Edina Invitational Day 1",
+      "startTimeUtc": null
     },
     {
       "id": "2026-2026-05-12-VAR-14",
@@ -5912,7 +5926,8 @@
       "par": 70,
       "teamScore": null,
       "teamFinish": null,
-      "event": "Edina Invitational Day 2"
+      "event": "Edina Invitational Day 2",
+      "startTimeUtc": null
     },
     {
       "id": "2026-2026-05-19-VAR-15",
@@ -5926,7 +5941,8 @@
       "par": 72,
       "teamScore": null,
       "teamFinish": null,
-      "event": "Lake Conference Championship"
+      "event": "Lake Conference Championship",
+      "startTimeUtc": null
     },
     {
       "id": "2026-2026-05-26-VAR-16",
@@ -5940,7 +5956,8 @@
       "par": 72,
       "teamScore": null,
       "teamFinish": null,
-      "event": "MSHSL Boys 6AAA Section Tournament Day 1"
+      "event": "MSHSL Boys 6AAA Section Tournament Day 1",
+      "startTimeUtc": null
     },
     {
       "id": "2026-2026-05-27-VAR-17",
@@ -5954,7 +5971,8 @@
       "par": 72,
       "teamScore": null,
       "teamFinish": null,
-      "event": "MSHSL Boys 6AAA Section Tournament Day 2"
+      "event": "MSHSL Boys 6AAA Section Tournament Day 2",
+      "startTimeUtc": null
     },
     {
       "id": "2026-2026-06-09-VAR-18",
@@ -5968,7 +5986,8 @@
       "par": 72,
       "teamScore": null,
       "teamFinish": null,
-      "event": "MSHSL AAA State Tournament Day 1"
+      "event": "MSHSL AAA State Tournament Day 1",
+      "startTimeUtc": null
     },
     {
       "id": "2026-2026-06-10-VAR-19",
@@ -5982,7 +6001,8 @@
       "par": 72,
       "teamScore": null,
       "teamFinish": null,
-      "event": "MSHSL AAA State Tournament Day 2"
+      "event": "MSHSL AAA State Tournament Day 2",
+      "startTimeUtc": null
     }
   ],
   "jvSchedule2026": [
@@ -5998,7 +6018,8 @@
       "par": 72,
       "teamScore": null,
       "teamFinish": null,
-      "event": "Lake Conference JV Opener"
+      "event": "Lake Conference JV Opener",
+      "startTimeUtc": null
     },
     {
       "id": "2026-2026-04-22-JV-1",
@@ -6012,7 +6033,8 @@
       "par": 72,
       "teamScore": null,
       "teamFinish": null,
-      "event": "Boys JV Tournament"
+      "event": "Boys JV Tournament",
+      "startTimeUtc": null
     },
     {
       "id": "2026-2026-04-27-JV-7",
@@ -6026,7 +6048,8 @@
       "par": 72,
       "teamScore": null,
       "teamFinish": null,
-      "event": "Lake Conference JV Meet"
+      "event": "Lake Conference JV Meet",
+      "startTimeUtc": null
     },
     {
       "id": "2026-2026-05-11-JV-WM1",
@@ -6040,7 +6063,8 @@
       "par": 72,
       "teamScore": null,
       "teamFinish": null,
-      "event": "Boys JV Conference Meet Day 1"
+      "event": "Boys JV Conference Meet Day 1",
+      "startTimeUtc": null
     },
     {
       "id": "2026-2026-05-12-JV-WM2",
@@ -6054,7 +6078,8 @@
       "par": 72,
       "teamScore": null,
       "teamFinish": null,
-      "event": "Boys JV Conference Meet Day 2"
+      "event": "Boys JV Conference Meet Day 2",
+      "startTimeUtc": null
     },
     {
       "id": "2026-2026-05-13-JV-RW",
@@ -6068,7 +6093,8 @@
       "par": 72,
       "teamScore": null,
       "teamFinish": null,
-      "event": "Boys JV Conference Meet"
+      "event": "Boys JV Conference Meet",
+      "startTimeUtc": null
     },
     {
       "id": "2026-2026-05-14-JV-SH",
@@ -6082,7 +6108,8 @@
       "par": 72,
       "teamScore": null,
       "teamFinish": null,
-      "event": "Boys JV Game"
+      "event": "Boys JV Game",
+      "startTimeUtc": null
     },
     {
       "id": "2026-2026-05-20-JV-DG",
@@ -6096,7 +6123,8 @@
       "par": 72,
       "teamScore": null,
       "teamFinish": null,
-      "event": "Boys JV Invitational"
+      "event": "Boys JV Invitational",
+      "startTimeUtc": null
     }
   ],
   "seasonResults2026": [],
