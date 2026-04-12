@@ -11,7 +11,9 @@
     "update-from-sheets": "node src/scripts/importFromSheets.js",
     "update-from-sheets-with-roster": "node src/scripts/importFromSheets.js --include-roster",
     "validate": "node src/scripts/validateData.js",
-    "update-and-validate": "npm run update-from-sheets && npm run validate"
+    "update-and-validate": "npm run update-from-sheets && npm run validate",
+    "predeploy": "bash scripts/pre-deploy-check.sh",
+    "deploy": "npm run predeploy && npm run build && bash scripts/pre-deploy-check.sh"
   },
   "dependencies": {
     "react": "^18.2.0",
