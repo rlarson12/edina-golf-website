@@ -6209,13 +6209,15 @@
       "name": "Macallan Smith",
       "grade": 12,
       "gradYear": 2026,
-      "team": "varsity"
+      "team": "varsity",
+      "photo": "/images/players/macallan-smith.webp"
     },
     {
       "name": "Hudson Strodl",
       "grade": 12,
       "gradYear": 2026,
-      "team": "varsity"
+      "team": "varsity",
+      "photo": "/images/players/hudson-strodl.webp"
     },
     {
       "name": "Michael Vernon",
