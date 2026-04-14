@@ -5451,7 +5451,8 @@
       "holes": 18,
       "par": 72,
       "teamScore": null,
-      "teamFinish": null
+      "teamFinish": null,
+      "time": "1:30 PM"
     },
     {
       "id": "2026-2026-04-22-VAR-2",
@@ -5464,7 +5465,8 @@
       "holes": 18,
       "par": 72,
       "teamScore": null,
-      "teamFinish": null
+      "teamFinish": null,
+      "time": "9:00 AM"
     },
     {
       "id": "2026-2026-04-23-VAR-3",
@@ -5477,7 +5479,8 @@
       "holes": 18,
       "par": 72,
       "teamScore": null,
-      "teamFinish": null
+      "teamFinish": null,
+      "time": "1:30 PM"
     },
     {
       "id": "2026-2026-04-24-VAR-4",
@@ -5490,7 +5493,8 @@
       "holes": 18,
       "par": 72,
       "teamScore": null,
-      "teamFinish": null
+      "teamFinish": null,
+      "time": "7:00 AM"
     },
     {
       "id": "2026-2026-04-25-VAR-5",
@@ -5503,7 +5507,8 @@
       "holes": 18,
       "par": 72,
       "teamScore": null,
-      "teamFinish": null
+      "teamFinish": null,
+      "time": "7:00 AM"
     },
     {
       "id": "2026-2026-04-27-VAR-6",
@@ -5516,7 +5521,8 @@
       "holes": 18,
       "par": 70,
       "teamScore": null,
-      "teamFinish": null
+      "teamFinish": null,
+      "time": "1:30 PM"
     },
     {
       "id": "2026-2026-05-01-VAR-8",
@@ -5555,7 +5561,8 @@
       "holes": 18,
       "par": 72,
       "teamScore": null,
-      "teamFinish": null
+      "teamFinish": null,
+      "time": "TBD"
     },
     {
       "id": "2026-2026-05-08-VAR-11",
@@ -5687,7 +5694,8 @@
       "holes": 18,
       "par": 72,
       "teamScore": null,
-      "teamFinish": null
+      "teamFinish": null,
+      "time": "12:00 PM"
     },
     {
       "id": "2026-2026-04-27-JV-7",
@@ -5700,7 +5708,8 @@
       "holes": 18,
       "par": 72,
       "teamScore": null,
-      "teamFinish": null
+      "teamFinish": null,
+      "time": "9:00 AM"
     }
   ],
   "schedule2026": [
@@ -5717,7 +5726,8 @@
       "teamScore": null,
       "teamFinish": null,
       "event": "Lake Conference Tournament #1",
-      "startTimeUtc": null
+      "startTimeUtc": null,
+      "time": "1:30 PM"
     },
     {
       "id": "2026-2026-04-22-VAR-2",
@@ -5732,7 +5742,8 @@
       "teamScore": null,
       "teamFinish": null,
       "event": "East Ridge Invitational",
-      "startTimeUtc": null
+      "startTimeUtc": null,
+      "time": "9:00 AM"
     },
     {
       "id": "2026-2026-04-23-VAR-3",
@@ -5747,7 +5758,8 @@
       "teamScore": null,
       "teamFinish": null,
       "event": "Lake Conference Meet #2",
-      "startTimeUtc": null
+      "startTimeUtc": null,
+      "time": "1:30 PM"
     },
     {
       "id": "2026-2026-04-24-VAR-4",
@@ -5762,7 +5774,8 @@
       "teamScore": null,
       "teamFinish": null,
       "event": "The Preview Day 1",
-      "startTimeUtc": null
+      "startTimeUtc": null,
+      "time": "7:00 AM"
     },
     {
       "id": "2026-2026-04-25-VAR-5",
@@ -5777,7 +5790,8 @@
       "teamScore": null,
       "teamFinish": null,
       "event": "The Preview Day 2",
-      "startTimeUtc": null
+      "startTimeUtc": null,
+      "time": "7:00 AM"
     },
     {
       "id": "2026-2026-04-27-VAR-6",
@@ -5792,7 +5806,8 @@
       "teamScore": null,
       "teamFinish": null,
       "event": "Lake Conference Meet #3",
-      "startTimeUtc": null
+      "startTimeUtc": null,
+      "time": "1:30 PM"
     },
     {
       "id": "2026-2026-05-01-VAR-8",
@@ -5837,7 +5852,8 @@
       "teamScore": null,
       "teamFinish": null,
       "event": "Spring Lake Park Invitational",
-      "startTimeUtc": null
+      "startTimeUtc": null,
+      "time": "TBD"
     },
     {
       "id": "2026-2026-05-04-VAR-LC4",
@@ -5852,7 +5868,8 @@
       "teamScore": null,
       "teamFinish": null,
       "event": "Lake Conference Meet #4",
-      "startTimeUtc": null
+      "startTimeUtc": null,
+      "time": "1:00 PM"
     },
     {
       "id": "2026-2026-05-04-VAR-OAK",
