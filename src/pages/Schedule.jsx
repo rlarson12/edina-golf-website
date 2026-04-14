@@ -37,16 +37,22 @@ function Schedule() {
     { id: '2026-V1',  date: '2026-04-20', dateFormatted: 'Apr 20',    event: 'Lake Conference Tournament #1',      course: 'Chaska Town Course',        level: 'Varsity', time: '1:30 PM' },
     { id: '2026-V2',  date: '2026-04-22', dateFormatted: 'Apr 22',    event: 'East Ridge Invitational',            course: 'Stoneridge Golf Club',       level: 'Varsity', time: '9:00 AM' },
     { id: '2026-V3',  date: '2026-04-23', dateFormatted: 'Apr 23',    event: 'Lake Conference Meet #2',            course: 'Pioneer Creek Golf Course',  level: 'Varsity', time: '1:57 PM' },
-    { id: '2026-V4',  date: '2026-04-24', dateFormatted: 'Apr 24',    event: 'The Preview Day 1',                  course: 'Edinburgh USA Golf Course',  level: 'Varsity', time: '7:00 AM' },
-    { id: '2026-V4b', date: '2026-04-25', dateFormatted: 'Apr 25',    event: 'The Preview Day 2',                  course: 'Edinburgh USA Golf Course',  level: 'Varsity', time: '11:30 AM' },
+    { id: '2026-V4',  date: '2026-04-24', dateFormatted: 'Apr 24-25', event: 'The Preview',                        course: 'Edinburgh USA Golf Course',  level: 'Varsity', isMultiDay: true, time: '7:00 AM', rounds: [
+      { round: 1, date: '2026-04-24', dateFormatted: 'Apr 24', course: 'Edinburgh USA Golf Course', time: '7:00 AM' },
+      { round: 2, date: '2026-04-25', dateFormatted: 'Apr 25', course: 'Edinburgh USA Golf Course', time: '11:30 AM' },
+    ]},
     { id: '2026-V5',  date: '2026-04-27', dateFormatted: 'Apr 27',    event: 'Lake Conference Meet #3',            course: 'Oak Ridge Country Club',     level: 'Varsity', time: '1:30 PM' },
-    { id: '2026-V6',  date: '2026-05-01', dateFormatted: 'May 1',     event: 'Lakeville South Invitational Day 1', course: 'Dacotah Ridge Golf Club',    level: 'Varsity', time: '12:00 PM' },
-    { id: '2026-V6b', date: '2026-05-02', dateFormatted: 'May 2',     event: 'Lakeville South Invitational Day 2', course: 'Dacotah Ridge Golf Club',    level: 'Varsity', time: '8:30 AM' },
+    { id: '2026-V6',  date: '2026-05-01', dateFormatted: 'May 1-2',   event: 'Lakeville South Invitational',       course: 'Dacotah Ridge Golf Club',    level: 'Varsity', isMultiDay: true, time: '12:00 PM', rounds: [
+      { round: 1, date: '2026-05-01', dateFormatted: 'May 1', course: 'Dacotah Ridge Golf Club', time: '12:00 PM' },
+      { round: 2, date: '2026-05-02', dateFormatted: 'May 2', course: 'Dacotah Ridge Golf Club', time: '8:30 AM' },
+    ]},
     { id: '2026-V9',  date: '2026-05-04', dateFormatted: 'May 4',     event: 'Boys Varsity Invitational',          course: 'Oak Ridge Country Club',     level: 'Varsity', time: '10:00 AM' },
     { id: '2026-V7',  date: '2026-05-04', dateFormatted: 'May 4',     event: 'Spring Lake Park Invitational',      course: 'TPC Twin Cities',            level: 'Varsity', time: '12:00 PM' },
     { id: '2026-V8',  date: '2026-05-04', dateFormatted: 'May 4',     event: 'Lake Conference Meet #4',            course: 'Medina Country Club',        level: 'Varsity', time: '1:00 PM' },
-    { id: '2026-V10', date: '2026-05-08', dateFormatted: 'May 8',     event: 'Northwest Classic Day 1',            course: 'Detroit Country Club',       level: 'Varsity', time: '12:00 PM' },
-    { id: '2026-V10b',date: '2026-05-09', dateFormatted: 'May 9',     event: 'Northwest Classic Day 2',            course: 'Detroit Country Club',       level: 'Varsity', time: '9:00 AM' },
+    { id: '2026-V10', date: '2026-05-08', dateFormatted: 'May 8-9',   event: 'Northwest Classic',                  course: 'Detroit Country Club',       level: 'Varsity', isMultiDay: true, time: '12:00 PM', rounds: [
+      { round: 1, date: '2026-05-08', dateFormatted: 'May 8', course: 'Detroit Country Club', time: '12:00 PM' },
+      { round: 2, date: '2026-05-09', dateFormatted: 'May 9', course: 'Detroit Country Club', time: '9:00 AM' },
+    ]},
     { id: '2026-V11', date: '2026-05-11', dateFormatted: 'May 11-12', event: 'Edina Invitational',                 course: 'Oak Ridge Country Club',     level: 'Varsity', isMultiDay: true },
     { id: '2026-V12', date: '2026-05-19', dateFormatted: 'May 19',    event: 'Lake Conference Championship',       course: 'Fox Hollow Golf Club',       level: 'Varsity', time: '8:00 AM' },
     { id: '2026-V13', date: '2026-05-26', dateFormatted: 'May 26-27', event: 'Section 6AAA Championship',          course: 'Meadows at Mystic Lake',     level: 'Varsity', isMultiDay: true },
@@ -56,8 +62,10 @@ function Schedule() {
     { id: '2026-JV2', date: '2026-04-22', dateFormatted: 'Apr 22',    event: 'Boys JV Tournament',                 course: 'Clifton Highlands',          level: 'JV', time: '1:00 PM' },
     { id: '2026-JV3', date: '2026-04-27', dateFormatted: 'Apr 27',    event: 'Eden Prairie JV Invite',             course: 'Bluff Creek Golf Course',    level: 'JV', time: '9:00 AM' },
     { id: '2026-JV0b',date: '2026-04-28', dateFormatted: 'Apr 28',    event: 'JV Invitational',                    course: 'Heritage Links Golf Course', level: 'JV', time: '10:30 AM' },
-    { id: '2026-JV4', date: '2026-05-08', dateFormatted: 'May 8',     event: 'JV Invitational Day 1',              course: 'Minnewaska Golf Club',       level: 'JV', time: '1:30 PM' },
-    { id: '2026-JV4b',date: '2026-05-09', dateFormatted: 'May 9',     event: 'JV Invitational Day 2',              course: 'Minnewaska Golf Club',       level: 'JV', time: '8:30 AM' },
+    { id: '2026-JV4', date: '2026-05-08', dateFormatted: 'May 8-9',   event: 'JV Invitational',                    course: 'Minnewaska Golf Club',       level: 'JV', isMultiDay: true, time: '1:30 PM', rounds: [
+      { round: 1, date: '2026-05-08', dateFormatted: 'May 8', course: 'Minnewaska Golf Club', time: '1:30 PM' },
+      { round: 2, date: '2026-05-09', dateFormatted: 'May 9', course: 'Minnewaska Golf Club', time: '8:30 AM' },
+    ]},
     { id: '2026-JV6', date: '2026-05-14', dateFormatted: 'May 14',    event: 'Boys JV Game',                       course: 'Shamrock Golf Course',       level: 'JV', time: '8:30 AM' },
     { id: '2026-JV7', date: '2026-05-20', dateFormatted: 'May 20',    event: 'Boys JV Invitational',               course: 'Dahlgreen Golf Course',      level: 'JV', time: '8:00 AM' },
   ]
@@ -360,7 +368,7 @@ function Schedule() {
                         <div>
                           <div className="font-medium text-gray-900">{round.course}</div>
                           <div className="text-sm text-gray-500">
-                            {round.dateFormatted} {round.par && `• Par ${round.par}`}
+                            {round.dateFormatted}{round.time && ` • ${round.time}`}{round.par && ` • Par ${round.par}`}
                           </div>
                         </div>
                       </div>
