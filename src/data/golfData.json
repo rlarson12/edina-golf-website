@@ -121,13 +121,15 @@
       "name": "Hudson Strodl",
       "gradYear": 2026,
       "grade": 11,
-      "team": "jv"
+      "team": "jv",
+      "photo": "/images/players/hudson-strodl.webp"
     },
     {
       "name": "Macallan Smith",
       "gradYear": 2026,
       "grade": 11,
-      "team": "jv"
+      "team": "jv",
+      "photo": "/images/players/macallan-smith.webp"
     },
     {
       "name": "Nash Paine",
