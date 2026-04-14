@@ -6172,7 +6172,8 @@
       "grade": 11,
       "gradYear": 2027,
       "team": "varsity",
-      "photo": "/images/players/chase-larson.webp"
+      "photo": "/images/players/chase-larson.webp",
+      "photoPosition": "center 30%"
     },
     {
       "name": "Charlie Nielsen",

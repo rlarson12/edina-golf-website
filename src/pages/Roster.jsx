@@ -346,7 +346,8 @@ function Roster() {
                         <img
                           src={player.photo}
                           alt={player.name}
-                          className="w-full h-full object-cover object-top"
+                          className="w-full h-full object-cover"
+                          style={{ objectPosition: player.photoPosition || 'center top' }}
                         />
                       ) : (
                         <div className="w-full h-full bg-gradient-to-br from-edina-green/20 to-edina-green/10 flex items-center justify-center">
@@ -477,7 +478,8 @@ function Roster() {
                       <img
                         src={selectedPlayer.photo}
                         alt={selectedPlayer.name}
-                        className="w-full h-full object-cover object-top"
+                        className="w-full h-full object-cover"
+                        style={{ objectPosition: selectedPlayer.photoPosition || 'center top' }}
                       />
                     ) : (
                       <div className="w-full h-full bg-white/20 flex items-center justify-center">
