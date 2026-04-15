@@ -4,7 +4,8 @@
       "name": "Charlie Nielsen",
       "gradYear": 2027,
       "grade": 10,
-      "team": "varsity"
+      "team": "varsity",
+      "photo": "/images/players/charlie-nielsen.webp"
     },
     {
       "name": "Chase Larson",
@@ -6180,7 +6181,8 @@
       "name": "Charlie Nielsen",
       "grade": 11,
       "gradYear": 2027,
-      "team": "varsity"
+      "team": "varsity",
+      "photo": "/images/players/charlie-nielsen.webp"
     },
     {
       "name": "Sander Ohe",
