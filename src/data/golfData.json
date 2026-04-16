@@ -6233,7 +6233,22 @@
       "teamFinish": null
     }
   ],
-  "seasonResults2026": [],
+  "seasonResults2026": [
+    {
+      "id": "2026-JV-APR16",
+      "date": "2026-04-16T00:00:00.000Z",
+      "dateFormatted": "Apr 16",
+      "dateISO": "2026-04-16",
+      "event": "Dev Match @ Heritage Links",
+      "course": "Heritage Links Golf Club",
+      "level": "JV",
+      "format": "matchplay",
+      "teamScore": null,
+      "teamResult": "Win",
+      "teamRecord": "4-0",
+      "finish": "1st"
+    }
+  ],
   "players2026": [
     {
       "name": "Peter Bennett",

@@ -50,7 +50,10 @@ function Home() {
   // Calculate quick stats from 2026 season data
   const quickStats = useMemo(() => {
     const results2026 = golfData.seasonResults2026 || []
-    const wins = results2026.filter(r => r.finish?.startsWith('1st')).length
+    const wins = results2026.filter(r =>
+      r.finish?.startsWith('1st') ||
+      r.teamResult?.toLowerCase() === 'win'
+    ).length
     const totalEvents = results2026.length
 
     // Calculate low avg dynamically from 2026 playerStats (normalize 9-hole scores)
