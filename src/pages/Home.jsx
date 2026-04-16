@@ -120,12 +120,12 @@ function Home() {
 
   // Get varsity players for leaderboard
   const varsityPlayers = useMemo(() => {
-    return calculateLeaderboard(golfData.playerStats || [], 'varsity')
+    return calculateLeaderboard(golfData.playerStats2026 || [], 'varsity')
   }, [])
 
   // Get JV players for leaderboard
   const jvPlayers = useMemo(() => {
-    return calculateLeaderboard(golfData.playerStats || [], 'jv')
+    return calculateLeaderboard(golfData.playerStats2026 || [], 'jv')
   }, [])
 
   // Transition logic: show pre-season layout until 2026 results exist
