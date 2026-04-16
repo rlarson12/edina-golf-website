@@ -6039,9 +6039,38 @@
       "teamScore": null,
       "teamFinish": null,
       "format": "matchplay",
-      "teamResult": "TBD",
-      "teamRecord": "TBD",
-      "matches": []
+      "teamResult": "Win",
+      "teamRecord": "4-0",
+      "matches": [
+        {
+          "pair": [
+            "Mason Catron",
+            "Randy Dann"
+          ],
+          "result": "Won 3&2"
+        },
+        {
+          "pair": [
+            "Ari Prickett",
+            "Mason Schultes"
+          ],
+          "result": "Won 4&2"
+        },
+        {
+          "pair": [
+            "Mason Hughes",
+            "Crosby Pote"
+          ],
+          "result": "Won 5&4"
+        },
+        {
+          "pair": [
+            "Henry Applebaum",
+            "Henry Freeman"
+          ],
+          "result": "Won 5&4"
+        }
+      ]
     },
     {
       "id": "2026-JV-APR20",
