@@ -58,7 +58,7 @@ function Schedule() {
     { id: '2026-V13', date: '2026-05-26', dateFormatted: 'May 26-27', event: 'Section 6AAA Championship',          course: 'Meadows at Mystic Lake',     level: 'Varsity', isMultiDay: true },
     { id: '2026-V14', date: '2026-06-09', dateFormatted: 'Jun 9-10',  event: 'MSHSL AAA State Tournament',         course: 'Bunker Hills Golf Course',   level: 'Varsity', isMultiDay: true },
     // JV Events
-    { id: '2026-JV-APR16', date: '2026-04-16', dateFormatted: 'Apr 16',  event: 'Dev Match @ Heritage Links',         course: 'Heritage Links Golf Club',   level: 'JV', time: '4:12 PM' },
+    { id: '2026-JV-APR16', date: '2026-04-16', dateFormatted: 'Apr 16',  event: 'Dev Match @ Heritage Links',         course: 'Heritage Links Golf Club',   level: 'JV', time: '4:12 PM', format: 'matchplay', teamResult: 'TBD', teamRecord: 'TBD', matches: [] },
     { id: '2026-JV-APR20', date: '2026-04-20', dateFormatted: 'Apr 20',  event: 'JV Lake Conference @ Bluff Creek',   course: 'Bluff Creek Golf Course',    level: 'JV', time: '12:00 PM' },
     { id: '2026-JV0', date: '2026-04-21', dateFormatted: 'Apr 21',    event: 'JV Invitational',                    course: 'Heritage Links Golf Course', level: 'JV', time: '10:30 AM' },
     { id: '2026-JV2', date: '2026-04-22', dateFormatted: 'Apr 22',    event: 'Boys JV Tournament',                 course: 'Clifton Highlands',          level: 'JV', time: '1:00 PM' },
@@ -143,13 +143,13 @@ function Schedule() {
     return new Date(dateStr) < new Date()
   }
 
-  // Build player scores lookup by event ID
+  // Build player scores lookup by event ID (merge 2025 + 2026 data)
   const playerScoresByEvent = useMemo(() => {
     const map = {}
-    ;(golfData.playerStats || []).forEach(player => {
+    ;[...(golfData.playerStats || []), ...(golfData.playerStats2026 || [])].forEach(player => {
       player.scores.forEach(s => {
         if (!map[s.eventId]) map[s.eventId] = []
-        map[s.eventId].push({ name: player.name, score: s.score })
+        map[s.eventId].push({ name: player.name, score: s.score, individualFinish: s.individualFinish || null })
       })
     })
     Object.values(map).forEach(scores => scores.sort((a, b) => a.score - b.score))
@@ -177,13 +177,14 @@ function Schedule() {
         const info = eventInfoMap[eventId] || {}
         scores.forEach(s => {
           if (!playerMap[s.name]) {
-            playerMap[s.name] = { name: s.name, rounds: new Array(event.rounds.length).fill(null), pars: new Array(event.rounds.length).fill(null), total: 0, totalPar: 0, hasAny: false }
+            playerMap[s.name] = { name: s.name, rounds: new Array(event.rounds.length).fill(null), pars: new Array(event.rounds.length).fill(null), total: 0, totalPar: 0, hasAny: false, individualFinish: null }
           }
           playerMap[s.name].rounds[roundIdx] = s.score
           playerMap[s.name].pars[roundIdx] = info.par
           playerMap[s.name].total += s.score
           playerMap[s.name].totalPar += info.par || 0
           playerMap[s.name].hasAny = true
+          if (s.individualFinish) playerMap[s.name].individualFinish = s.individualFinish
         })
       })
 
@@ -203,9 +204,13 @@ function Schedule() {
       name: s.name,
       score: s.score,
       par: info.par,
-      toPar: info.par ? s.score - info.par : null
+      toPar: info.par ? s.score - info.par : null,
+      individualFinish: s.individualFinish || null
     }))
   }
+
+  // Check if event can be expanded
+  const isMatchPlay = (event) => event.format === 'matchplay'
 
   // Check if event has individual scores
   const hasPlayerScores = (event) => {
@@ -245,7 +250,7 @@ function Schedule() {
   const renderEventRow = (event, isRound = false, roundNum = null) => {
     const isExpanded = expandedEvents.has(event.id)
     const is2026Event = yearFilter === '2026'
-    const canExpand = !isRound && (event.isMultiDay || hasPlayerScores(event))
+    const canExpand = !isRound && (event.isMultiDay || hasPlayerScores(event) || isMatchPlay(event))
 
     return (
       <div
@@ -320,14 +325,27 @@ function Schedule() {
 
             {/* Result */}
             <div className="flex-shrink-0 flex items-center gap-3">
-              {event.teamScore && (
+              {/* Match play: show teamResult badge if not TBD */}
+              {!isRound && isMatchPlay(event) && event.teamResult && event.teamResult !== 'TBD' && (
+                <span className={`inline-flex items-center px-3 py-1 rounded-lg text-sm font-medium ${
+                  event.teamResult.toLowerCase().includes('win') || event.teamResult.toLowerCase().includes('won')
+                    ? 'bg-green-100 text-green-800'
+                    : event.teamResult.toLowerCase().includes('loss') || event.teamResult.toLowerCase().includes('lost')
+                    ? 'bg-red-100 text-red-800'
+                    : 'bg-gray-100 text-gray-700'
+                }`}>
+                  {event.teamResult}
+                </span>
+              )}
+              {/* Stroke play score + finish */}
+              {!isMatchPlay(event) && event.teamScore && (
                 <span className={`font-semibold ${
                   event.teamScore.includes('(-') ? 'text-red-600' : 'text-gray-700'
                 }`}>
                   {event.teamScore}
                 </span>
               )}
-              {!isRound && event.teamFinish ? (
+              {!isRound && !isMatchPlay(event) && event.teamFinish ? (
                 <span className={`inline-flex items-center px-3 py-1 rounded-lg text-sm font-medium ${
                   event.teamFinish.startsWith('1st')
                     ? 'bg-edina-gold/20 text-edina-gold-dark border border-edina-gold'
@@ -339,7 +357,7 @@ function Schedule() {
                 }`}>
                   {event.teamFinish}
                 </span>
-              ) : !isRound && !event.teamScore && (
+              ) : !isRound && !isMatchPlay(event) && !event.teamScore && (
                 <span className={`inline-flex items-center px-3 py-1 rounded-lg text-sm font-medium ${
                   is2026Event
                     ? 'bg-edina-green/10 text-edina-green border border-edina-green/30'
@@ -348,12 +366,60 @@ function Schedule() {
                   {is2026Event ? 'Upcoming' : (isPastEvent(event.date) ? 'No Result' : 'Upcoming')}
                 </span>
               )}
+              {/* Match play: show Upcoming when TBD */}
+              {!isRound && isMatchPlay(event) && (!event.teamResult || event.teamResult === 'TBD') && (
+                <span className={`inline-flex items-center px-3 py-1 rounded-lg text-sm font-medium ${
+                  is2026Event
+                    ? 'bg-edina-green/10 text-edina-green border border-edina-green/30'
+                    : 'bg-gray-50 text-gray-400'
+                }`}>
+                  {is2026Event ? 'Upcoming' : 'No Result'}
+                </span>
+              )}
             </div>
           </div>
         </div>
 
         {/* Expanded content */}
         {isExpanded && !isRound && (() => {
+          // Match play expanded view
+          if (isMatchPlay(event)) {
+            return (
+              <div className="border-t border-gray-100 bg-gray-50/50 p-4 space-y-3">
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-purple-100 text-purple-800 uppercase tracking-wider">Match Play</span>
+                  {event.teamRecord && event.teamRecord !== 'TBD' && (
+                    <span className="text-sm text-gray-600">Record: <span className="font-medium">{event.teamRecord}</span></span>
+                  )}
+                </div>
+                {event.matches && event.matches.length > 0 ? (
+                  <div className="bg-white rounded-lg border border-gray-100 overflow-hidden">
+                    <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider px-3 py-2 bg-gray-50 border-b border-gray-100">Individual Matches</div>
+                    <div className="divide-y divide-gray-50">
+                      {event.matches.map((match, idx) => {
+                        const resultLower = match.result?.toLowerCase() || ''
+                        const isWin = resultLower.startsWith('won') || resultLower.includes(' win')
+                        const isLoss = resultLower.startsWith('lost') || resultLower.includes(' loss')
+                        return (
+                          <div key={idx} className="flex items-center justify-between px-3 py-2.5">
+                            <span className="font-medium text-gray-900 text-sm">{match.player}</span>
+                            <span className={`text-sm font-medium ${
+                              isWin ? 'text-green-700' : isLoss ? 'text-red-600' : 'text-gray-500'
+                            }`}>
+                              {match.result}
+                            </span>
+                          </div>
+                        )
+                      })}
+                    </div>
+                  </div>
+                ) : (
+                  <p className="text-sm text-gray-400 italic">Match results will appear here after the event.</p>
+                )}
+              </div>
+            )
+          }
+
           const scores = getEventScores(event)
           return (
             <div className="border-t border-gray-100 bg-gray-50/50 p-4 space-y-3">
@@ -401,6 +467,7 @@ function Schedule() {
                           ))}
                           <th className="px-3 py-2 text-center text-xs font-semibold text-gray-500">{event.isMultiDay ? 'Total' : 'Score'}</th>
                           <th className="px-2 py-2 text-center text-xs font-semibold text-gray-500">+/-</th>
+                          <th className="px-2 py-2 text-center text-xs font-semibold text-gray-500">Finish</th>
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-gray-50">
@@ -452,6 +519,11 @@ function Schedule() {
                                       {toParStr}
                                     </span>
                                   </td>
+                                  <td className="px-2 py-1.5 text-center">
+                                    {s.individualFinish && (
+                                      <span className="text-xs text-gray-500 whitespace-nowrap">{s.individualFinish}</span>
+                                    )}
+                                  </td>
                                 </tr>
                                 {event.rounds.map((round, i) => {
                                   const sc = getScorecard(s.name, round.date)
@@ -488,6 +560,11 @@ function Schedule() {
                                 <span className={`text-sm ${isUnderPar ? 'text-red-600' : 'text-gray-500'}`}>
                                   {toParStr}
                                 </span>
+                              </td>
+                              <td className="px-2 py-1.5 text-center">
+                                {s.individualFinish && (
+                                  <span className="text-xs text-gray-500 whitespace-nowrap">{s.individualFinish}</span>
+                                )}
                               </td>
                             </tr>
                           )

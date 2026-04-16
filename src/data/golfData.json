@@ -6037,7 +6037,11 @@
       "holes": 9,
       "time": "4:12 PM",
       "teamScore": null,
-      "teamFinish": null
+      "teamFinish": null,
+      "format": "matchplay",
+      "teamResult": "TBD",
+      "teamRecord": "TBD",
+      "matches": []
     },
     {
       "id": "2026-JV-APR20",

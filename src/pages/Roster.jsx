@@ -133,6 +133,32 @@ function Roster() {
     return `${months[parseInt(dateMatch[1], 10) - 1]} ${parseInt(dateMatch[2], 10)}`
   }
 
+  // Build supplemental lookup from playerStats2026 for individualFinish + matchResult
+  const playerStats2026Extra = useMemo(() => {
+    // Map eventId → MM/DD using both schedule lists
+    const eventDateMap = {}
+    ;[...(golfData.schedule2026 || []), ...(golfData.jvSchedule2026 || [])].forEach(e => {
+      if (e.id && e.dateISO) {
+        const parts = e.dateISO.split('-')
+        eventDateMap[e.id] = `${parts[1]}/${parts[2]}`
+      }
+    })
+
+    const map = {}
+    ;(golfData.playerStats2026 || []).forEach(player => {
+      player.scores.forEach(s => {
+        const mmdd = eventDateMap[s.eventId]
+        if (!mmdd) return
+        const key = `${player.name}::${mmdd}`
+        map[key] = {
+          individualFinish: s.individualFinish || null,
+          matchResult: s.matchResult || null,
+        }
+      })
+    })
+    return map
+  }, [])
+
   // Look up event info (par, holes) by event name
   const lookupEventInfo = (eventName) => {
     const eventNameLower = eventName.toLowerCase()
@@ -157,6 +183,8 @@ function Roster() {
       const header = eventHeaders[idx] || ''
       const eventName = header.replace(/^\d{2}\/\d{2} - /, '') || `Event ${idx + 1}`
       const eventInfo = lookupEventInfo(eventName)
+      const mmdd = header.match(/^(\d{2}\/\d{2})/)?.[1] || null
+      const extra = mmdd ? (playerStats2026Extra[`${playerName}::${mmdd}`] || {}) : {}
       return {
         idx,
         date: formatHeatmapDate(header),
@@ -164,7 +192,10 @@ function Roster() {
         score,
         par: eventInfo.par,
         holes: eventInfo.holes,
-        toPar: (score && eventInfo.par) ? score - eventInfo.par : null
+        toPar: (score && eventInfo.par) ? score - eventInfo.par : null,
+        individualFinish: extra.individualFinish || null,
+        matchResult: extra.matchResult || null,
+        mmdd,
       }
     })
 
@@ -205,14 +236,16 @@ function Roster() {
             par: totalPar,
             holes: totalHoles,
             toPar: totalPar ? totalScore - totalPar : null,
-            isMultiRound: true
+            isMultiRound: true,
+            individualFinish: s.individualFinish || f.individualFinish || null,
+            matchResult: s.matchResult || f.matchResult || null,
           })
           continue
         }
       }
 
       if (s.score !== null) {
-        combined.push(s)
+        combined.push({ ...s })
       }
     }
 
@@ -543,45 +576,63 @@ function Roster() {
                             s.toPar > 0 ? `+${s.toPar}` : `${s.toPar}`
                           const isUnderPar = s.toPar < 0
 
+                          // Match result badge color
+                          const matchResultLower = s.matchResult?.toLowerCase() || ''
+                          const isMatchWin = matchResultLower.startsWith('won')
+                          const isMatchLoss = matchResultLower.startsWith('lost')
+
                           return (
-                            <div
-                              key={idx}
-                              className="flex items-center justify-between p-3 bg-gray-50 rounded-lg"
-                            >
-                              <div className="flex-grow min-w-0 mr-3">
-                                <div className="flex items-center gap-2">
-                                  <span className="text-xs font-medium text-edina-green whitespace-nowrap">{s.date}</span>
-                                  <span className="text-sm text-gray-700 truncate">{s.event}</span>
+                            <div key={idx} className="rounded-lg overflow-hidden">
+                              <div className="flex items-center justify-between p-3 bg-gray-50">
+                                <div className="flex-grow min-w-0 mr-3">
+                                  <div className="flex items-center gap-2">
+                                    <span className="text-xs font-medium text-edina-green whitespace-nowrap">{s.date}</span>
+                                    <span className="text-sm text-gray-700 truncate">{s.event}</span>
+                                  </div>
                                 </div>
-                              </div>
-                              <div className="flex items-center gap-2 flex-shrink-0">
-                                {s.isMultiRound ? (
-                                  <>
-                                    <span className="text-sm">
-                                      {s.rounds.map((r, i) => {
-                                        const rPar = s.roundPars?.[i]
-                                        const rUnder = r !== null && rPar && r < rPar
-                                        return (
-                                          <span key={i}>
-                                            {i > 0 && <span className="text-gray-400">-</span>}
-                                            <span className={rUnder ? 'text-red-600 font-medium' : 'text-gray-500'}>{r ?? '-'}</span>
-                                          </span>
-                                        )
-                                      })}
-                                    </span>
+                                <div className="flex items-center gap-2 flex-shrink-0">
+                                  {s.isMultiRound ? (
+                                    <>
+                                      <span className="text-sm">
+                                        {s.rounds.map((r, i) => {
+                                          const rPar = s.roundPars?.[i]
+                                          const rUnder = r !== null && rPar && r < rPar
+                                          return (
+                                            <span key={i}>
+                                              {i > 0 && <span className="text-gray-400">-</span>}
+                                              <span className={rUnder ? 'text-red-600 font-medium' : 'text-gray-500'}>{r ?? '-'}</span>
+                                            </span>
+                                          )
+                                        })}
+                                      </span>
+                                      <span className={`font-bold text-lg ${isUnderPar ? 'text-red-600' : 'text-gray-900'}`}>
+                                        {s.score}
+                                      </span>
+                                    </>
+                                  ) : (
                                     <span className={`font-bold text-lg ${isUnderPar ? 'text-red-600' : 'text-gray-900'}`}>
                                       {s.score}
                                     </span>
-                                  </>
-                                ) : (
-                                  <span className={`font-bold text-lg ${isUnderPar ? 'text-red-600' : 'text-gray-900'}`}>
-                                    {s.score}
+                                  )}
+                                  <span className={`text-sm font-medium ${isUnderPar ? 'text-red-600' : 'text-gray-500'}`}>
+                                    ({toParStr})
                                   </span>
-                                )}
-                                <span className={`text-sm font-medium ${isUnderPar ? 'text-red-600' : 'text-gray-500'}`}>
-                                  ({toParStr})
-                                </span>
+                                  {s.individualFinish && (
+                                    <span className="text-xs text-gray-400 whitespace-nowrap">{s.individualFinish}</span>
+                                  )}
+                                </div>
                               </div>
+                              {s.matchResult && (
+                                <div className="px-3 py-1.5 bg-gray-50 border-t border-gray-100 flex items-center gap-2">
+                                  <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${
+                                    isMatchWin ? 'bg-green-100 text-green-800'
+                                    : isMatchLoss ? 'bg-red-100 text-red-700'
+                                    : 'bg-gray-200 text-gray-600'
+                                  }`}>
+                                    {s.matchResult}
+                                  </span>
+                                </div>
+                              )}
                             </div>
                           )
                         })}
