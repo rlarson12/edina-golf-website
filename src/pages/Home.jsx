@@ -545,31 +545,30 @@ function Home() {
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8" style={{ fontFamily: "'Oswald', sans-serif" }}>Upcoming Events</h2>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {/* First event placeholder - will be populated with season schedule */}
-            <div className="bg-white rounded-xl p-5 md:p-6 shadow-sm border-l-4 border-edina-green">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-edina-green/10 rounded-lg flex items-center justify-center">
-                  <svg className="w-6 h-6 text-edina-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <div className="flex-grow">
-                  <div className="flex flex-wrap items-center gap-2 mb-1">
-                    <h3 className="font-bold text-gray-900">Season Opener</h3>
-                    <span className="text-xs font-semibold text-edina-green bg-edina-green/10 px-2 py-0.5 rounded">Apr 20</span>
-                  </div>
-                  <div className="text-sm text-gray-600 space-y-1">
-                    <div>First match of the 2026 season at Braemar Golf Course</div>
-                  </div>
-                  <Link to="/schedule" className="inline-flex items-center gap-1 text-sm text-edina-green hover:underline mt-2">
-                    Full Schedule
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            {upcomingVarsity.slice(0, 3).map((event) => (
+              <div key={event.id} className="bg-white rounded-xl p-5 md:p-6 shadow-sm border-l-4 border-edina-green">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-edina-green/10 rounded-lg flex items-center justify-center">
+                    <svg className="w-6 h-6 text-edina-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
-                  </Link>
+                  </div>
+                  <div className="flex-grow">
+                    <div className="flex flex-wrap items-center gap-2 mb-1">
+                      <h3 className="font-bold text-gray-900">{event.event}</h3>
+                      <span className="text-xs font-semibold text-edina-green bg-edina-green/10 px-2 py-0.5 rounded">{event.dateFormatted}</span>
+                    </div>
+                    <div className="text-sm text-gray-600">{event.course}</div>
+                    <Link to="/schedule" className="inline-flex items-center gap-1 text-sm text-edina-green hover:underline mt-2">
+                      Full Schedule
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
