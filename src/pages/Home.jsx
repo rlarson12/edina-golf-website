@@ -4,6 +4,7 @@ import golfData from '../data/golfData.json'
 
 // 2026 Varsity Schedule (for Up Next feature - varsity events only)
 const schedule2026 = [
+  { id: '2026-0',  date: '2026-04-16', dateFormatted: 'Apr 16',    event: 'Dev Match @ Heritage Links',          course: 'Heritage Links Golf Club', isJV: true },
   { id: '2026-1',  date: '2026-04-20', dateFormatted: 'Apr 20',    event: 'Lake Conference Tournament #1',       course: 'Chaska Town Course' },
   { id: '2026-2',  date: '2026-04-22', dateFormatted: 'Apr 22',    event: 'East Ridge Invitational',             course: 'Stoneridge' },
   { id: '2026-3',  date: '2026-04-23', dateFormatted: 'Apr 23',    event: 'Lake Conference Meet',                course: 'Pioneer Creek' },
@@ -127,11 +128,12 @@ function Home() {
   // Transition logic: show pre-season layout until 2026 results exist
   const hasSeason2026Results = (golfData.seasonResults2026 || []).length > 0
 
-  // Next 4 upcoming varsity events
+  // Next 4 upcoming varsity events (exclude JV/dev events)
   const upcomingVarsity = useMemo(() => {
     const today = new Date()
     today.setHours(0, 0, 0, 0)
     return schedule2026.filter(e => {
+      if (e.isJV) return false
       const [year, month, day] = e.date.split('-').map(Number)
       return new Date(year, month - 1, day) >= today
     }).slice(0, 4)
