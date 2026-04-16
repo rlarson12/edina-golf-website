@@ -5718,6 +5718,22 @@
   ],
   "schedule2026": [
     {
+      "id": "2026-2026-04-16-DEV-205430",
+      "date": "2026-04-16T00:00:00.000Z",
+      "dateFormatted": "Apr 16",
+      "dateISO": "2026-04-16",
+      "name": "Heritage Links Dev Match",
+      "level": "JV",
+      "course": "Heritage Links Golf Club",
+      "holes": 9,
+      "par": null,
+      "teamScore": null,
+      "teamFinish": null,
+      "event": "Heritage Links Dev Match",
+      "startTimeUtc": null,
+      "time": "4:12 PM"
+    },
+    {
       "id": "2026-2026-04-20-VAR-0",
       "date": "2026-04-20T00:00:00.000Z",
       "dateFormatted": "Apr 20",
@@ -5734,6 +5750,38 @@
       "time": "1:30 PM"
     },
     {
+      "id": "2026-2026-04-20-JV-BLUFF",
+      "date": "2026-04-20T00:00:00.000Z",
+      "dateFormatted": "Apr 20",
+      "dateISO": "2026-04-20",
+      "name": "JV Lake Conference @ Bluff Creek",
+      "level": "JV",
+      "course": "Bluff Creek Golf Course",
+      "holes": 9,
+      "par": null,
+      "teamScore": null,
+      "teamFinish": null,
+      "event": "JV Lake Conference @ Bluff Creek",
+      "startTimeUtc": null,
+      "time": "12:00 PM"
+    },
+    {
+      "id": "2026-2026-04-21-JV-HERITAGE",
+      "date": "2026-04-21T00:00:00.000Z",
+      "dateFormatted": "Apr 21",
+      "dateISO": "2026-04-21",
+      "name": "JV Invite @ Heritage Links",
+      "level": "JV",
+      "course": "Heritage Links Golf Club",
+      "holes": 18,
+      "par": null,
+      "teamScore": null,
+      "teamFinish": null,
+      "event": "JV Invite @ Heritage Links",
+      "startTimeUtc": null,
+      "time": "10:30 AM"
+    },
+    {
       "id": "2026-2026-04-22-VAR-2",
       "date": "2026-04-22T00:00:00.000Z",
       "dateFormatted": "Apr 22",
@@ -5748,6 +5796,22 @@
       "event": "East Ridge Invitational",
       "startTimeUtc": null,
       "time": "9:00 AM"
+    },
+    {
+      "id": "2026-2026-04-22-JV-CLIFTON",
+      "date": "2026-04-22T00:00:00.000Z",
+      "dateFormatted": "Apr 22",
+      "dateISO": "2026-04-22",
+      "name": "JV Invite @ Clifton Highlands",
+      "level": "JV",
+      "course": "Clifton Highlands",
+      "holes": 18,
+      "par": null,
+      "teamScore": null,
+      "teamFinish": null,
+      "event": "JV Invite @ Clifton Highlands",
+      "startTimeUtc": null,
+      "time": "1:00 PM"
     },
     {
       "id": "2026-2026-04-23-VAR-3",
@@ -5812,6 +5876,38 @@
       "event": "Lake Conference Meet #3",
       "startTimeUtc": null,
       "time": "1:30 PM"
+    },
+    {
+      "id": "2026-2026-04-27-JV-BLUFF",
+      "date": "2026-04-27T00:00:00.000Z",
+      "dateFormatted": "Apr 27",
+      "dateISO": "2026-04-27",
+      "name": "JV Invite @ Bluff Creek",
+      "level": "JV",
+      "course": "Bluff Creek Golf Course",
+      "holes": 18,
+      "par": null,
+      "teamScore": null,
+      "teamFinish": null,
+      "event": "JV Invite @ Bluff Creek",
+      "startTimeUtc": null,
+      "time": "All Day"
+    },
+    {
+      "id": "2026-2026-04-28-JV-HERITAGE",
+      "date": "2026-04-28T00:00:00.000Z",
+      "dateFormatted": "Apr 28",
+      "dateISO": "2026-04-28",
+      "name": "JV Invite @ Heritage Links",
+      "level": "JV",
+      "course": "Heritage Links Golf Club",
+      "holes": 18,
+      "par": null,
+      "teamScore": null,
+      "teamFinish": null,
+      "event": "JV Invite @ Heritage Links",
+      "startTimeUtc": null,
+      "time": "10:30 AM"
     },
     {
       "id": "2026-2026-05-01-VAR-8",
@@ -5906,6 +6002,21 @@
       "startTimeUtc": null
     },
     {
+      "id": "2026-2026-05-08-JV-MINNEWASKA",
+      "date": "2026-05-08T00:00:00.000Z",
+      "dateFormatted": "May 8",
+      "dateISO": "2026-05-08",
+      "name": "Minnewaska Invite Day 1",
+      "level": "JV",
+      "course": "Minnewaska Golf Club",
+      "holes": 18,
+      "par": null,
+      "teamScore": null,
+      "teamFinish": null,
+      "event": "Minnewaska Invite Day 1",
+      "startTimeUtc": null
+    },
+    {
       "id": "2026-2026-05-09-VAR-12",
       "date": "2026-05-09T00:00:00.000Z",
       "dateFormatted": "May 9",
@@ -5918,6 +6029,21 @@
       "teamScore": null,
       "teamFinish": null,
       "event": "Northwest Classic Day 2",
+      "startTimeUtc": null
+    },
+    {
+      "id": "2026-2026-05-09-JV-MINNEWASKA",
+      "date": "2026-05-09T00:00:00.000Z",
+      "dateFormatted": "May 9",
+      "dateISO": "2026-05-09",
+      "name": "Minnewaska Invite Day 2",
+      "level": "JV",
+      "course": "Minnewaska Golf Club",
+      "holes": 18,
+      "par": null,
+      "teamScore": null,
+      "teamFinish": null,
+      "event": "Minnewaska Invite Day 2",
       "startTimeUtc": null
     },
     {
@@ -5936,6 +6062,22 @@
       "startTimeUtc": null
     },
     {
+      "id": "2026-2026-05-11-JV-WILDMARSH",
+      "date": "2026-05-11T00:00:00.000Z",
+      "dateFormatted": "May 11",
+      "dateISO": "2026-05-11",
+      "name": "JV Lake Conference @ Wild Marsh",
+      "level": "JV",
+      "course": "Wild Marsh Golf Club",
+      "holes": 18,
+      "par": null,
+      "teamScore": null,
+      "teamFinish": null,
+      "event": "JV Lake Conference @ Wild Marsh",
+      "startTimeUtc": null,
+      "time": "10:00 AM"
+    },
+    {
       "id": "2026-2026-05-12-VAR-14",
       "date": "2026-05-12T00:00:00.000Z",
       "dateFormatted": "May 12",
@@ -5951,6 +6093,38 @@
       "startTimeUtc": null
     },
     {
+      "id": "2026-2026-05-13-JV-RIVERWOOD",
+      "date": "2026-05-13T00:00:00.000Z",
+      "dateFormatted": "May 13",
+      "dateISO": "2026-05-13",
+      "name": "JV Conference @ Riverwood",
+      "level": "JV",
+      "course": "Riverwood Golf Course",
+      "holes": 18,
+      "par": null,
+      "teamScore": null,
+      "teamFinish": null,
+      "event": "JV Conference @ Riverwood",
+      "startTimeUtc": null,
+      "time": "10:00 AM"
+    },
+    {
+      "id": "2026-2026-05-14-JV-SHAMROCK",
+      "date": "2026-05-14T00:00:00.000Z",
+      "dateFormatted": "May 14",
+      "dateISO": "2026-05-14",
+      "name": "JV Conference @ Shamrock",
+      "level": "JV",
+      "course": "Shamrock Golf Club",
+      "holes": 9,
+      "par": null,
+      "teamScore": null,
+      "teamFinish": null,
+      "event": "JV Conference @ Shamrock",
+      "startTimeUtc": null,
+      "time": "8:30 AM"
+    },
+    {
       "id": "2026-2026-05-19-VAR-15",
       "date": "2026-05-19T00:00:00.000Z",
       "dateFormatted": "May 19",
@@ -5964,6 +6138,38 @@
       "teamFinish": null,
       "event": "Lake Conference Championship",
       "startTimeUtc": null
+    },
+    {
+      "id": "2026-2026-05-20-JV-DAHLGREN",
+      "date": "2026-05-20T00:00:00.000Z",
+      "dateFormatted": "May 20",
+      "dateISO": "2026-05-20",
+      "name": "JV Invite @ Dahlgren",
+      "level": "JV",
+      "course": "Dahlgren Golf Course",
+      "holes": 18,
+      "par": null,
+      "teamScore": null,
+      "teamFinish": null,
+      "event": "JV Invite @ Dahlgren",
+      "startTimeUtc": null,
+      "time": "8:00 AM"
+    },
+    {
+      "id": "2026-2026-05-22-JV-PIONEER",
+      "date": "2026-05-22T00:00:00.000Z",
+      "dateFormatted": "May 22",
+      "dateISO": "2026-05-22",
+      "name": "JV Conference @ Pioneer Creek",
+      "level": "JV",
+      "course": "Pioneer Creek Golf Course",
+      "holes": 18,
+      "par": null,
+      "teamScore": null,
+      "teamFinish": null,
+      "event": "JV Conference @ Pioneer Creek",
+      "startTimeUtc": null,
+      "time": "2:30 PM"
     },
     {
       "id": "2026-2026-05-26-VAR-16",
