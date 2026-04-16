@@ -127,7 +127,7 @@
       "photo": "/images/players/hudson-strodl.webp"
     },
     {
-      "name": "Macallan Smith",
+      "name": "Macallen Smith",
       "gradYear": 2026,
       "grade": 11,
       "team": "jv",
@@ -3055,7 +3055,7 @@
     },
     {
       "id": "MSMITH",
-      "name": "Macallan Smith",
+      "name": "Macallen Smith",
       "gradYear": 2026,
       "team": "jv",
       "grade": 11,
@@ -3899,7 +3899,7 @@
       ]
     },
     {
-      "name": "Macallan Smith",
+      "name": "Macallen Smith",
       "average": 76.86,
       "trend": "",
       "last3Avg": 76,
@@ -4977,7 +4977,7 @@
         ]
       },
       {
-        "name": "Macallan Smith",
+        "name": "Macallen Smith",
         "scores": [
           81,
           null,
@@ -6417,7 +6417,7 @@
       "team": "varsity"
     },
     {
-      "name": "Macallan Smith",
+      "name": "Macallen Smith",
       "grade": 12,
       "gradYear": 2026,
       "team": "varsity",
