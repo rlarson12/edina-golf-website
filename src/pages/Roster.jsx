@@ -134,6 +134,7 @@ function Roster() {
   }
 
   // Build supplemental lookup from playerStats2026 for individualFinish + matchResult
+  // Also resolves Four-Ball pair results: each player in a pair inherits the pair's result
   const playerStats2026Extra = useMemo(() => {
     // Map eventId → MM/DD using both schedule lists
     const eventDateMap = {}
@@ -144,6 +145,29 @@ function Roster() {
       }
     })
 
+    // Build a player → mmdd → matchResult map from match play pair data in schedule
+    // Covers Four-Ball: { pair: ["A", "B"], result: "Won 3&2" }
+    const pairResultMap = {} // key: `playerName::mmdd` → result string
+    ;[...(golfData.schedule2026 || []), ...(golfData.jvSchedule2026 || [])].forEach(e => {
+      if (e.format !== 'matchplay' || !e.matches?.length || !e.dateISO) return
+      const parts = e.dateISO.split('-')
+      const mmdd = `${parts[1]}/${parts[2]}`
+      e.matches.forEach(match => {
+        const result = match.result || null
+        if (!result) return
+        // Pair format: { pair: ["A", "B"], result }
+        if (Array.isArray(match.pair)) {
+          match.pair.forEach(playerName => {
+            pairResultMap[`${playerName}::${mmdd}`] = result
+          })
+        }
+        // Legacy individual format: { player: "A", result }
+        if (match.player) {
+          pairResultMap[`${match.player}::${mmdd}`] = result
+        }
+      })
+    })
+
     const map = {}
     ;(golfData.playerStats2026 || []).forEach(player => {
       player.scores.forEach(s => {
@@ -152,10 +176,19 @@ function Roster() {
         const key = `${player.name}::${mmdd}`
         map[key] = {
           individualFinish: s.individualFinish || null,
-          matchResult: s.matchResult || null,
+          // Prefer explicit matchResult on score entry; fall back to pair lookup
+          matchResult: s.matchResult || pairResultMap[key] || null,
         }
       })
     })
+
+    // Also inject pair results for players whose score entries may not have matchResult
+    // (e.g. match play events with no stroke score recorded)
+    Object.entries(pairResultMap).forEach(([key, result]) => {
+      if (!map[key]) map[key] = { individualFinish: null, matchResult: result }
+      else if (!map[key].matchResult) map[key].matchResult = result
+    })
+
     return map
   }, [])
 

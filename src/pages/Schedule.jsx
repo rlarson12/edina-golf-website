@@ -394,15 +394,18 @@ function Schedule() {
                 </div>
                 {event.matches && event.matches.length > 0 ? (
                   <div className="bg-white rounded-lg border border-gray-100 overflow-hidden">
-                    <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider px-3 py-2 bg-gray-50 border-b border-gray-100">Individual Matches</div>
+                    <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider px-3 py-2 bg-gray-50 border-b border-gray-100">Pair Results</div>
                     <div className="divide-y divide-gray-50">
                       {event.matches.map((match, idx) => {
                         const resultLower = match.result?.toLowerCase() || ''
                         const isWin = resultLower.startsWith('won') || resultLower.includes(' win')
                         const isLoss = resultLower.startsWith('lost') || resultLower.includes(' loss')
+                        const pairLabel = Array.isArray(match.pair)
+                          ? match.pair.join(' / ')
+                          : (match.player || '')
                         return (
                           <div key={idx} className="flex items-center justify-between px-3 py-2.5">
-                            <span className="font-medium text-gray-900 text-sm">{match.player}</span>
+                            <span className="font-medium text-gray-900 text-sm">{pairLabel}</span>
                             <span className={`text-sm font-medium ${
                               isWin ? 'text-green-700' : isLoss ? 'text-red-600' : 'text-gray-500'
                             }`}>
