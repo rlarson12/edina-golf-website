@@ -66,7 +66,7 @@ function Home() {
     const lowAvg = allAverages.length > 0 ? Math.min(...allAverages) : null
 
     return [
-      { label: 'Tournament Wins', value: wins.toString() },
+      { label: 'Events Won', value: wins.toString() },
       { label: 'Events Played', value: totalEvents.toString() },
       { label: 'Team Members', value: '25' },
       { label: 'Low Avg', value: lowAvg ? lowAvg.toFixed(1) : '-' },
