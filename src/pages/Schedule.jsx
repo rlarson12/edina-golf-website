@@ -59,10 +59,10 @@ function Schedule() {
     { id: '2026-V14', date: '2026-06-09', dateFormatted: 'Jun 9-10',  event: 'MSHSL AAA State Tournament',         course: 'Bunker Hills Golf Course',   level: 'Varsity', isMultiDay: true },
     // JV Events
     { id: '2026-JV-APR16', date: '2026-04-16', dateFormatted: 'Apr 16',  event: 'Dev Match @ Heritage Links',         course: 'Heritage Links Golf Club',   level: 'JV', time: '4:12 PM', format: 'matchplay', teamResult: 'Win', teamRecord: '4-0', matches: [
-      { pair: ['Mason Catron', 'Randy Dann'], result: 'Won 3&2' },
-      { pair: ['Ari Prickett', 'Mason Schultes'], result: 'Won 4&2' },
-      { pair: ['Mason Hughes', 'Crosby Pote'], result: 'Won 5&4' },
-      { pair: ['Henry Applebaum', 'Henry Freeman'], result: 'Won 5&4' },
+      { pair: ['Mason Catron', 'Randy Dann'], opponent: ['Landon Rowles', 'Walter Anderson'], result: 'Won 3&2' },
+      { pair: ['Ari Prickett', 'Mason Schultes'], opponent: ['Evan Ketelsen', 'Olen Pederson'], result: 'Won 4&2' },
+      { pair: ['Mason Hughes', 'Crosby Pote'], opponent: ['Grant Lamoreaux', 'Jack Stier'], result: 'Won 5&4' },
+      { pair: ['Henry Applebaum', 'Henry Freeman'], opponent: ['Bennett Wevers', 'Grant Ketelsen'], result: 'Won 5&4' },
     ] },
     { id: '2026-JV-APR20', date: '2026-04-20', dateFormatted: 'Apr 20',  event: 'JV Lake Conference @ Bluff Creek',   course: 'Bluff Creek Golf Course',    level: 'JV', time: '12:00 PM' },
     { id: '2026-JV0', date: '2026-04-21', dateFormatted: 'Apr 21',    event: 'JV Invitational',                    course: 'Heritage Links Golf Course', level: 'JV', time: '10:30 AM' },
@@ -408,10 +408,18 @@ function Schedule() {
                         const pairLabel = Array.isArray(match.pair)
                           ? match.pair.join(' / ')
                           : (match.player || '')
+                        const opponentLabel = Array.isArray(match.opponent)
+                          ? match.opponent.join(' / ')
+                          : null
                         return (
-                          <div key={idx} className="flex items-center justify-between px-3 py-2.5">
-                            <span className="font-medium text-gray-900 text-sm">{pairLabel}</span>
-                            <span className={`text-sm font-medium ${
+                          <div key={idx} className="flex items-center justify-between px-3 py-2.5 gap-3">
+                            <div className="flex flex-col min-w-0">
+                              <span className="font-medium text-gray-900 text-sm">{pairLabel}</span>
+                              {opponentLabel && (
+                                <span className="text-xs text-gray-400">vs. {opponentLabel}</span>
+                              )}
+                            </div>
+                            <span className={`text-sm font-medium flex-shrink-0 ${
                               isWin ? 'text-green-700' : isLoss ? 'text-red-600' : 'text-gray-500'
                             }`}>
                               {match.result}

@@ -6047,12 +6047,20 @@
             "Mason Catron",
             "Randy Dann"
           ],
+          "opponent": [
+            "Landon Rowles",
+            "Walter Anderson"
+          ],
           "result": "Won 3&2"
         },
         {
           "pair": [
             "Ari Prickett",
             "Mason Schultes"
+          ],
+          "opponent": [
+            "Evan Ketelsen",
+            "Olen Pederson"
           ],
           "result": "Won 4&2"
         },
@@ -6061,12 +6069,20 @@
             "Mason Hughes",
             "Crosby Pote"
           ],
+          "opponent": [
+            "Grant Lamoreaux",
+            "Jack Stier"
+          ],
           "result": "Won 5&4"
         },
         {
           "pair": [
             "Henry Applebaum",
             "Henry Freeman"
+          ],
+          "opponent": [
+            "Bennett Wevers",
+            "Grant Ketelsen"
           ],
           "result": "Won 5&4"
         }
