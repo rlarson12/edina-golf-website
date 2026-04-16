@@ -4,18 +4,21 @@ import golfData from '../data/golfData.json'
 
 // 2026 Varsity Schedule (for Up Next feature - varsity events only)
 const schedule2026 = [
-  { id: '2026-1', date: '2026-04-20', dateFormatted: 'Apr 20', event: 'Lake Conference Tournament #1', course: 'Chaska Town Course' },
-  { id: '2026-2', date: '2026-04-22', dateFormatted: 'Apr 22', event: 'East Ridge Invitational', course: 'Stoneridge' },
-  { id: '2026-3', date: '2026-04-23', dateFormatted: 'Apr 23', event: 'Lake Conference Meet', course: 'Pioneer Creek' },
-  { id: '2026-4', date: '2026-04-24', dateFormatted: 'Apr 24-25', event: 'The Preview', course: 'Edinburgh Golf Course', isMultiDay: true },
-  { id: '2026-5', date: '2026-04-27', dateFormatted: 'Apr 27', event: 'Lake Conference Meet', course: 'Oak Ridge CC' },
-  { id: '2026-6', date: '2026-05-01', dateFormatted: 'May 1-2', event: 'Lakeville South Invitational', course: 'Dacotah Ridge', isMultiDay: true },
-  { id: '2026-7', date: '2026-05-04', dateFormatted: 'May 4', event: 'Spring Lake Park Invitational', course: 'TPC Twin Cities' },
-  { id: '2026-8', date: '2026-05-08', dateFormatted: 'May 8-9', event: 'Northwest Classic', course: 'Detroit Lakes', isMultiDay: true },
-  { id: '2026-9', date: '2026-05-11', dateFormatted: 'May 11-12', event: 'Edina Invitational', course: 'Oak Ridge', isMultiDay: true },
-  { id: '2026-10', date: '2026-05-19', dateFormatted: 'May 19', event: 'Lake Conference Championship', course: 'Fox Hollow' },
+  { id: '2026-0',  date: '2026-04-16', dateFormatted: 'Apr 16',    event: 'Dev Match @ Heritage Links',          course: 'Heritage Links Golf Club' },
+  { id: '2026-1',  date: '2026-04-20', dateFormatted: 'Apr 20',    event: 'Lake Conference Tournament #1',       course: 'Chaska Town Course' },
+  { id: '2026-2',  date: '2026-04-22', dateFormatted: 'Apr 22',    event: 'East Ridge Invitational',             course: 'Stoneridge' },
+  { id: '2026-3',  date: '2026-04-23', dateFormatted: 'Apr 23',    event: 'Lake Conference Meet',                course: 'Pioneer Creek' },
+  { id: '2026-4',  date: '2026-04-24', dateFormatted: 'Apr 24-25', event: 'The Preview',                        course: 'Edinburgh Golf Course', isMultiDay: true },
+  { id: '2026-5',  date: '2026-04-27', dateFormatted: 'Apr 27',    event: 'Lake Conference Meet',                course: 'Oak Ridge CC' },
+  { id: '2026-6',  date: '2026-05-01', dateFormatted: 'May 1-2',   event: 'Lakeville South Invitational',       course: 'Dacotah Ridge', isMultiDay: true },
+  { id: '2026-7a', date: '2026-05-04', dateFormatted: 'May 4',     event: 'Boys Varsity Invitational',          course: 'Oak Ridge CC' },
+  { id: '2026-7b', date: '2026-05-04', dateFormatted: 'May 4',     event: 'Spring Lake Park Invitational',      course: 'TPC Twin Cities' },
+  { id: '2026-7c', date: '2026-05-04', dateFormatted: 'May 4',     event: 'Lake Conference Meet #4',            course: 'Medina CC' },
+  { id: '2026-8',  date: '2026-05-08', dateFormatted: 'May 8-9',   event: 'Northwest Classic',                  course: 'Detroit Lakes', isMultiDay: true },
+  { id: '2026-9',  date: '2026-05-11', dateFormatted: 'May 11-12', event: 'Edina Invitational',                 course: 'Oak Ridge', isMultiDay: true },
+  { id: '2026-10', date: '2026-05-19', dateFormatted: 'May 19',    event: 'Lake Conference Championship',       course: 'Fox Hollow' },
   { id: '2026-11', date: '2026-05-26', dateFormatted: 'May 26-27', event: 'MSHSL Boys 6AAA Section Tournament', course: 'Meadows at Mystic Lake', isMultiDay: true },
-  { id: '2026-12', date: '2026-06-09', dateFormatted: 'Jun 9-10', event: 'MSHSL Boys AAA State Tournament', course: 'Bunker Hills', isMultiDay: true },
+  { id: '2026-12', date: '2026-06-09', dateFormatted: 'Jun 9-10',  event: 'MSHSL Boys AAA State Tournament',    course: 'Bunker Hills', isMultiDay: true },
 ]
 
 function Home() {
@@ -229,10 +232,10 @@ function Home() {
                   {/* Countdown */}
                   <div className="flex-shrink-0 text-right">
                     <div className="text-3xl md:text-4xl font-bold text-edina-green">
-                      {nextEvent.daysUntil}
+                      {nextEvent.daysUntil === 0 ? '🏌️' : nextEvent.daysUntil}
                     </div>
                     <div className="text-sm text-gray-500">
-                      {nextEvent.daysUntil === 1 ? 'day away' : 'days away'}
+                      {nextEvent.daysUntil === 0 ? 'Today' : nextEvent.daysUntil === 1 ? 'day away' : 'days away'}
                     </div>
                   </div>
 
