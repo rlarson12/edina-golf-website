@@ -22,22 +22,29 @@ const schedule2026 = [
 ]
 
 function Home() {
-  // Find next upcoming event from 2026 schedule
-  const nextEvent = useMemo(() => {
+  // Find all events on the next upcoming date from 2026 schedule
+  const nextEvents = useMemo(() => {
     const today = new Date()
     today.setHours(0, 0, 0, 0)
 
+    // Find the earliest upcoming date
+    let nextDate = null
+    let daysUntil = null
     for (const event of schedule2026) {
-      // Parse date parts to avoid timezone issues
       const [year, month, day] = event.date.split('-').map(Number)
       const eventDate = new Date(year, month - 1, day)
       if (eventDate >= today) {
-        const diffTime = eventDate - today
-        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
-        return { ...event, daysUntil: diffDays }
+        nextDate = event.date
+        daysUntil = Math.ceil((eventDate - today) / (1000 * 60 * 60 * 24))
+        break
       }
     }
-    return null
+    if (!nextDate) return []
+
+    // Return all events on that same date
+    return schedule2026
+      .filter(e => e.date === nextDate)
+      .map(e => ({ ...e, daysUntil }))
   }, [])
 
   // Calculate quick stats from 2026 season data
@@ -194,48 +201,52 @@ function Home() {
       </section>
 
       {/* Up Next - 2026 Season */}
-      {nextEvent && (
+      {nextEvents.length > 0 && (
         <section className="bg-gray-50 py-8 md:py-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-white rounded-xl shadow-lg border-l-4 border-edina-green overflow-hidden">
               <div className="p-5 md:p-6">
-                <div className="flex flex-col md:flex-row md:items-center gap-4">
+                <div className="flex flex-col md:flex-row md:items-start gap-4">
                   {/* Up Next Badge */}
-                  <div className="flex-shrink-0">
+                  <div className="flex-shrink-0 pt-1">
                     <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-bold bg-edina-green text-white">
                       UP NEXT
                     </span>
                   </div>
 
-                  {/* Event Info */}
+                  {/* Event Info — one row per event */}
                   <div className="flex-grow">
-                    <h3 className="text-xl md:text-2xl font-bold text-gray-900" style={{ fontFamily: "'Oswald', sans-serif" }}>
-                      {nextEvent.event}
-                    </h3>
-                    <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-1 text-gray-600">
-                      <span className="flex items-center gap-1">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
-                        {nextEvent.dateFormatted}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
-                        {nextEvent.course}
-                      </span>
-                    </div>
+                    {nextEvents.map((ev, idx) => (
+                      <div key={ev.id} className={idx > 0 ? 'mt-3 pt-3 border-t border-gray-100' : ''}>
+                        <h3 className="text-xl md:text-2xl font-bold text-gray-900" style={{ fontFamily: "'Oswald', sans-serif" }}>
+                          {ev.event}
+                        </h3>
+                        <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-1 text-gray-600">
+                          <span className="flex items-center gap-1">
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            {ev.dateFormatted}
+                          </span>
+                          <span className="flex items-center gap-1">
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            {ev.course}
+                          </span>
+                        </div>
+                      </div>
+                    ))}
                   </div>
 
-                  {/* Countdown */}
+                  {/* Countdown — shared across all events on same day */}
                   <div className="flex-shrink-0 text-right">
                     <div className="text-3xl md:text-4xl font-bold text-edina-green">
-                      {nextEvent.daysUntil === 0 ? '🏌️' : nextEvent.daysUntil}
+                      {nextEvents[0].daysUntil === 0 ? '🏌️' : nextEvents[0].daysUntil}
                     </div>
                     <div className="text-sm text-gray-500">
-                      {nextEvent.daysUntil === 0 ? 'Today' : nextEvent.daysUntil === 1 ? 'day away' : 'days away'}
+                      {nextEvents[0].daysUntil === 0 ? 'Today' : nextEvents[0].daysUntil === 1 ? 'day away' : 'days away'}
                     </div>
                   </div>
 
