@@ -146,8 +146,13 @@ function Stats() {
         ...p,
         average: calculateWeightedAverage(p.scores),
       }))
-      .filter(p => p.average !== null)
+      .filter(p => p.average !== null || p.isMatchPlayOnly)
       .sort((a, b) => {
+        // Match-play-only players sort to the bottom
+        if (a.isMatchPlayOnly && !b.isMatchPlayOnly) return 1
+        if (!a.isMatchPlayOnly && b.isMatchPlayOnly) return -1
+        if (a.average === null) return 1
+        if (b.average === null) return -1
         const roundA = Math.round(a.average * 10)
         const roundB = Math.round(b.average * 10)
         if (roundA !== roundB) return roundA - roundB
@@ -183,7 +188,7 @@ function Stats() {
 
   // Sorted leaderboard players
   const sortedPlayers = useMemo(() => {
-    return [...filteredPlayers].sort((a, b) => {
+    return [...filteredPlayers].filter(p => !p.isMatchPlayOnly).sort((a, b) => {
       const getValidScores = (p) => p.scores.filter(s => s !== null && s > 50)
 
       if (sortCol === 'player') {

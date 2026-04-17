@@ -67,7 +67,7 @@ function Schedule() {
     { id: '2026-V13', date: '2026-05-26', dateFormatted: 'May 26-27', event: 'Section 6AAA Championship',          course: 'Meadows at Mystic Lake',     level: 'Varsity', isMultiDay: true },
     { id: '2026-V14', date: '2026-06-09', dateFormatted: 'Jun 9-10',  event: 'MSHSL AAA State Tournament',         course: 'Bunker Hills Golf Course',   level: 'Varsity', isMultiDay: true },
     // JV Events
-    { id: '2026-JV-APR16', date: '2026-04-16', dateFormatted: 'Apr 16',  event: 'Dev Match @ Heritage Links',         course: 'Heritage Links Golf Club',   level: 'JV', time: '4:12 PM', format: 'matchplay', teamResult: 'Win', teamRecord: '4-0', matches: [
+    { id: '2026-JV-APR16', date: '2026-04-16', dateFormatted: 'Apr 16',  event: 'Match Play @ Heritage Links',         course: 'Heritage Links Golf Club',   level: 'JV', time: '4:12 PM', format: 'matchplay', teamResult: 'Win', teamRecord: '4-0', matches: [
       { pair: ['Mason Catron', 'Randy Dann'], opponent: ['Landon Rowles', 'Walter Anderson'], result: 'Won 3&2' },
       { pair: ['Ari Prickett', 'Mason Schultes'], opponent: ['Evan Ketelsen', 'Olen Pederson'], result: 'Won 4&2' },
       { pair: ['Mason Hughes', 'Crosby Pote'], opponent: ['Grant Lamoreaux', 'Jack Stier'], result: 'Won 5&4' },
