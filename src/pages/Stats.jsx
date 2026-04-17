@@ -136,8 +136,26 @@ function Stats() {
     headers.reverse()
     indices.reverse()
 
-    return { eventHeaders: headers, eventIndices: indices }
-  }, [allEventHeaders, teamFilter, jvEventNames])
+    // Option 4: only show events where at least one player has a score
+    const playerScores = activeHeatmap?.playerScores || []
+    const played = new Set()
+    playerScores.forEach(p => {
+      p.scores.forEach((s, i) => {
+        if (s !== null && s !== undefined) played.add(i)
+      })
+    })
+
+    const filteredHeaders = []
+    const filteredIndices = []
+    indices.forEach((originalIdx, i) => {
+      if (played.has(originalIdx)) {
+        filteredHeaders.push(headers[i])
+        filteredIndices.push(originalIdx)
+      }
+    })
+
+    return { eventHeaders: filteredHeaders, eventIndices: filteredIndices }
+  }, [allEventHeaders, teamFilter, jvEventNames, activeHeatmap])
 
   // Process player scores with dynamically calculated weighted averages
   const playerData = useMemo(() => {
