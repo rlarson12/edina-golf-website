@@ -1,10 +1,39 @@
 import { useState, useMemo } from 'react'
 import golfData from '../data/golfData.json'
 
+// Abbreviate event headers for matrix column display
+const abbreviateEvent = (header) => {
+  const name = header.replace(/^\d{2}\/\d{2} - /, '')
+  const abbrevs = {
+    'Lake Conference': 'LC',
+    'Tournament': 'Tourn.',
+    'Invitational': 'Inv.',
+    'Conference': 'Conf.',
+    'Section': 'Sect.',
+    'Championship': 'Champ.',
+    'MSHSL': 'MSHSL',
+    'Boys': '',
+    'Varsity': '',
+  }
+  let abbrev = name
+  Object.entries(abbrevs).forEach(([full, short]) => {
+    abbrev = abbrev.replace(new RegExp(full, 'gi'), short).trim()
+  })
+  return abbrev.length > 12 ? abbrev.substring(0, 11) + '…' : abbrev
+}
+
+// Sort indicator arrow
+const SortArrow = ({ col, sortCol, sortDir }) => {
+  if (sortCol !== col) return <span className="ml-1 text-gray-300">↕</span>
+  return <span className="ml-1">{sortDir === 'asc' ? '↑' : '↓'}</span>
+}
+
 function Stats() {
-  const [activeTab, setActiveTab] = useState('matrix')
+  const [activeTab, setActiveTab] = useState('leaderboard')
   const [teamFilter, setTeamFilter] = useState('all')
   const [showArchive, setShowArchive] = useState(false)
+  const [sortCol, setSortCol] = useState('avg')
+  const [sortDir, setSortDir] = useState('asc')
 
   // 2026 season data
   const seasonResults2026 = golfData.seasonResults2026 || []
@@ -30,7 +59,6 @@ function Stats() {
   }, [hasSeason2026Results, showArchive])
 
   // Check if an event name matches any JV event (exact or partial match)
-  // Header format is 'MM/DD - Event Name', so strip the date prefix first
   const isJVEvent = (eventName) => {
     const stripped = eventName.replace(/^\d{2}\/\d{2} - /, '').toLowerCase()
     const nameLower = eventName.toLowerCase()
@@ -40,7 +68,7 @@ function Stats() {
     )
   }
 
-  // Build a map of event names to par and holes (needed for weighted average calc)
+  // Build a map of event names to par and holes
   const eventInfoMap = useMemo(() => {
     const map = {}
     const allEvents = (hasSeason2026Results && !showArchive)
@@ -61,20 +89,17 @@ function Stats() {
   const getEventHoles = (eventHeader) => {
     const eventName = eventHeader?.replace(/^\d{2}\/\d{2} - /, '') || ''
     const eventNameLower = eventName.toLowerCase()
-
     if (eventInfoMap[eventNameLower]) return eventInfoMap[eventNameLower].holes
-
     const matchingKey = Object.keys(eventInfoMap).find(key =>
       key.startsWith(eventNameLower) || eventNameLower.startsWith(key)
     )
     return matchingKey ? eventInfoMap[matchingKey].holes : 18
   }
 
-  // Calculate weighted 18-hole average: (total strokes ÷ total holes) × 18
+  // Calculate weighted 18-hole average
   const calculateWeightedAverage = (scores) => {
     let totalStrokes = 0
     let totalHoles = 0
-
     scores.forEach((score, idx) => {
       if (score !== null && score > 0) {
         const eventHeader = allEventHeaders[idx] || ''
@@ -83,7 +108,6 @@ function Stats() {
         totalHoles += holes
       }
     })
-
     if (totalHoles === 0) return null
     return (totalStrokes / totalHoles) * 18
   }
@@ -99,7 +123,6 @@ function Stats() {
       const isJV = teamFilter === 'jv'
       headers = []
       indices = []
-
       allEventHeaders.forEach((header, index) => {
         const eventName = header.replace(/^\d{2}\/\d{2} - /, '')
         const headerIsJV = isJVEvent(eventName)
@@ -110,7 +133,6 @@ function Stats() {
       })
     }
 
-    // Reverse so most recent event is first (leftmost column)
     headers.reverse()
     indices.reverse()
 
@@ -137,23 +159,78 @@ function Stats() {
       })
   }, [eventInfoMap])
 
-  // Filter by team — in archive/2025 mode use players (2025 data),
-  // in live 2026 mode use players2026
+  // Filter by team
   const filteredPlayers = useMemo(() => {
     if (teamFilter === 'all') return playerData
-
     const sourceList = (hasSeason2026Results && !showArchive)
       ? (golfData.players2026 || [])
       : (golfData.players || [])
-
     const teamPlayers = sourceList
       .filter(p => p.team === teamFilter)
       .map(p => p.name)
-
     return playerData.filter(p => teamPlayers.includes(p.name))
   }, [playerData, teamFilter, showArchive, hasSeason2026Results])
 
-  // Calculate scoring round players per event for highlighting
+  // Sort handler
+  const handleSort = (col) => {
+    if (sortCol === col) {
+      setSortDir(d => d === 'asc' ? 'desc' : 'asc')
+    } else {
+      setSortCol(col)
+      setSortDir('asc')
+    }
+  }
+
+  // Sorted leaderboard players
+  const sortedPlayers = useMemo(() => {
+    return [...filteredPlayers].sort((a, b) => {
+      const getValidScores = (p) => p.scores.filter(s => s !== null && s > 50)
+
+      if (sortCol === 'player') {
+        return sortDir === 'asc'
+          ? a.name.localeCompare(b.name)
+          : b.name.localeCompare(a.name)
+      }
+      if (sortCol === 'avg') {
+        const va = a.average || 999
+        const vb = b.average || 999
+        return sortDir === 'asc' ? va - vb : vb - va
+      }
+      if (sortCol === 'low') {
+        const sa = getValidScores(a)
+        const sb = getValidScores(b)
+        const va = sa.length > 0 ? Math.min(...sa) : 999
+        const vb = sb.length > 0 ? Math.min(...sb) : 999
+        return sortDir === 'asc' ? va - vb : vb - va
+      }
+      if (sortCol === 'rounds') {
+        const va = getValidScores(a).length
+        const vb = getValidScores(b).length
+        return sortDir === 'asc' ? va - vb : vb - va
+      }
+      return 0
+    })
+  }, [filteredPlayers, sortCol, sortDir])
+
+  // CSV Export
+  const exportCSV = () => {
+    const headers = ['Rank', 'Player', 'Team', 'Avg', 'Low Round', 'Rounds']
+    const rows = sortedPlayers.map((player, i) => {
+      const validScores = player.scores.filter(s => s !== null && s > 50)
+      const lowRound = validScores.length > 0 ? Math.min(...validScores) : ''
+      return [i + 1, player.name, player.team || '', player.average?.toFixed(1) || '', lowRound, validScores.length]
+    })
+    const csv = [headers, ...rows].map(r => r.join(',')).join('\n')
+    const blob = new Blob([csv], { type: 'text/csv' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `edina-golf-stats-2026.csv`
+    a.click()
+    URL.revokeObjectURL(url)
+  }
+
+  // Calculate scoring round players per event for matrix highlighting
   const scoringPlayersPerEvent = useMemo(() => {
     const result = []
     for (let i = 0; i < eventIndices.length; i++) {
@@ -178,24 +255,36 @@ function Stats() {
     return result
   }, [filteredPlayers, eventIndices, allEventHeaders])
 
-  // Get event info (par and holes) from actual course data
+  // Get event info (par and holes)
   const getEventInfo = (eventHeader) => {
     const eventName = eventHeader?.replace(/^\d{2}\/\d{2} - /, '') || ''
     const eventNameLower = eventName.toLowerCase()
-
     if (eventInfoMap[eventNameLower]) return eventInfoMap[eventNameLower]
-
     const matchingKey = Object.keys(eventInfoMap).find(key =>
       key.startsWith(eventNameLower) || eventNameLower.startsWith(key)
     )
     return matchingKey ? eventInfoMap[matchingKey] : { par: 72, holes: 18 }
   }
 
+  // Context-aware top stat cards (3D)
+  const statsCards = useMemo(() => {
+    const varsityStrokePlayed = (golfData.schedule2026 || [])
+      .filter(r => r.teamScore && !r.isJV && r.format !== 'matchplay').length
+
+    if (varsityStrokePlayed < 3) {
+      return [
+        { label: 'State Titles', value: '10×', sub: 'All-Time' },
+        { label: 'Program History', value: '70+', sub: 'Years' },
+        { label: 'Titles Since 2014', value: '4', sub: 'Recent Era' },
+        { label: 'Roster Size', value: '25', sub: '2026 Season' },
+      ]
+    }
+    return null
+  }, [])
+
   // Season records — always show 2026 data (zeros pre-season)
   const seasonRecords = useMemo(() => {
     const results = seasonResults2026
-
-    // Exclude match play events from stroke average calculations
     const teamScores = results
       .filter(r => r.teamScore && r.format !== 'matchplay')
       .map(r => {
@@ -250,31 +339,24 @@ function Stats() {
       </div>
 
       <div className="page-container">
-        {/* Season Records */}
+        {/* Season Records / Context-aware top cards (3D) */}
         <div className="relative mb-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {seasonRecords.map((record) => (
+            {(statsCards || seasonRecords).map((record) => (
               <div key={record.label} className="card p-5 md:p-6 text-center bg-white shadow-lg">
                 <div className="text-2xl md:text-3xl font-bold text-edina-green">{record.value}</div>
                 <div className="text-sm text-gray-600 mt-1">{record.label}</div>
+                {record.sub && (
+                  <div className="text-xs text-gray-400 mt-0.5">{record.sub}</div>
+                )}
               </div>
             ))}
           </div>
         </div>
 
-        {/* Tabs */}
+        {/* Tabs — order: Leaderboard | Score Matrix | Team Results (3A) */}
         <div className="flex flex-wrap gap-2 mb-6">
           <div className="flex space-x-1 bg-gray-100 p-1 rounded-lg">
-            <button
-              onClick={() => setActiveTab('matrix')}
-              className={`py-2 px-4 rounded-md text-sm font-medium transition-colors ${
-                activeTab === 'matrix'
-                  ? 'bg-white text-edina-green shadow-sm'
-                  : 'text-gray-600 hover:text-gray-900'
-              }`}
-            >
-              Score Matrix
-            </button>
             <button
               onClick={() => setActiveTab('leaderboard')}
               className={`py-2 px-4 rounded-md text-sm font-medium transition-colors ${
@@ -284,6 +366,16 @@ function Stats() {
               }`}
             >
               Leaderboard
+            </button>
+            <button
+              onClick={() => setActiveTab('matrix')}
+              className={`py-2 px-4 rounded-md text-sm font-medium transition-colors ${
+                activeTab === 'matrix'
+                  ? 'bg-white text-edina-green shadow-sm'
+                  : 'text-gray-600 hover:text-gray-900'
+              }`}
+            >
+              Score Matrix
             </button>
             <button
               onClick={() => setActiveTab('team')}
@@ -367,126 +459,214 @@ function Stats() {
               </div>
             )}
 
-            {/* Score Matrix */}
-            {activeTab === 'matrix' && (
+            {/* ── LEADERBOARD (3B) ── */}
+            {activeTab === 'leaderboard' && (
               <div className="card overflow-hidden">
+                <div className="flex items-center justify-between p-4 border-b border-gray-200">
+                  <h2 className="text-base font-semibold text-gray-900">Player Leaderboard</h2>
+                  {/* CSV Export button (3E) */}
+                  <button
+                    onClick={exportCSV}
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-600 hover:text-edina-green border border-gray-300 hover:border-edina-green rounded-lg px-3 py-1.5 transition-colors"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    Export CSV
+                  </button>
+                </div>
                 <div className="overflow-x-auto">
-                  <table className="w-full text-sm">
+                  <table className="w-full">
                     <thead className="bg-gray-50 border-b border-gray-200">
                       <tr>
-                        <th className="sticky left-0 bg-gray-50 px-2 pt-2 pb-3 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider z-10 w-24 md:w-32 align-bottom">
-                          Player
+                        <th className="px-3 py-3 text-center text-xs font-semibold text-gray-500 uppercase tracking-wider w-12">
+                          Rank
                         </th>
-                        <th className="px-2 pt-2 pb-3 text-center text-sm font-semibold text-gray-700 uppercase tracking-wider whitespace-nowrap w-12 align-bottom">
-                          Avg
+                        <th
+                          className="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider cursor-pointer hover:text-edina-green select-none"
+                          onClick={() => handleSort('player')}
+                        >
+                          Player <SortArrow col="player" sortCol={sortCol} sortDir={sortDir} />
                         </th>
-                        {eventHeaders.map((event, i) => {
-                          let fullName = event.replace(/^\d{2}\/\d{2} - /, '')
-                          fullName = fullName.replace(/\bFinal\b/gi, 'Day 2')
-                          return (
-                            <th
-                              key={i}
-                              className="h-32 md:h-40 w-9 md:w-10 px-1 py-1 pb-3 align-bottom"
-                              title={fullName}
-                            >
-                              <div className="flex justify-center">
-                                <div
-                                  className="whitespace-nowrap text-sm font-semibold text-gray-700"
-                                  style={{
-                                    writingMode: 'vertical-rl',
-                                    transform: 'rotate(180deg)',
-                                  }}
-                                >
-                                  {fullName}
-                                </div>
-                              </div>
-                            </th>
-                          )
-                        })}
+                        <th
+                          className="px-4 py-3 text-center text-xs font-semibold text-gray-700 uppercase tracking-wider cursor-pointer hover:text-edina-green select-none"
+                          onClick={() => handleSort('avg')}
+                        >
+                          Avg <SortArrow col="avg" sortCol={sortCol} sortDir={sortDir} />
+                        </th>
+                        <th
+                          className="px-4 py-3 text-center text-xs font-semibold text-gray-700 uppercase tracking-wider cursor-pointer hover:text-edina-green select-none"
+                          onClick={() => handleSort('low')}
+                        >
+                          Low Round <SortArrow col="low" sortCol={sortCol} sortDir={sortDir} />
+                        </th>
+                        <th
+                          className="px-4 py-3 text-center text-xs font-semibold text-gray-700 uppercase tracking-wider cursor-pointer hover:text-edina-green select-none"
+                          onClick={() => handleSort('rounds')}
+                        >
+                          Rounds <SortArrow col="rounds" sortCol={sortCol} sortDir={sortDir} />
+                        </th>
+                        <th className="px-4 py-3 text-center text-xs font-semibold text-gray-700 uppercase tracking-wider hidden sm:table-cell">
+                          Trend
+                        </th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-100">
-                      {filteredPlayers.map((player) => (
-                        <tr key={player.name} className="hover:bg-gray-50 transition-colors">
-                          <td className="sticky left-0 bg-white px-2 py-2 font-medium text-gray-900 z-10 text-xs md:text-sm w-24 md:w-32 truncate">
-                            {player.name}
+                      {sortedPlayers.length === 0 ? (
+                        <tr>
+                          <td colSpan={6} className="px-4 py-12 text-center">
+                            <p className="text-gray-500 font-medium">No scoring data yet.</p>
+                            <p className="text-gray-400 text-sm mt-1">Leaderboard updates automatically after each event.</p>
                           </td>
-                          <td className="px-2 py-2 text-center font-semibold text-gray-900 whitespace-nowrap text-sm w-12">
-                            {player.average?.toFixed(1)}
-                          </td>
-                          {eventIndices.map((originalIdx, i) => {
-                            const score = player.scores[originalIdx]
-                            const isScoring = score && scoringPlayersPerEvent[i]?.includes(player.name)
-                            const eventInfo = getEventInfo(eventHeaders[i])
-                            const isUnderPar = score && eventInfo.par && score < eventInfo.par
+                        </tr>
+                      ) : (
+                        sortedPlayers.map((player, index) => {
+                          const rank = index + 1
+                          const validScores = player.scores.filter(s => s !== null && s > 50)
+                          const lowRound = validScores.length > 0 ? Math.min(...validScores) : null
+                          const last3 = validScores.slice(-3)
 
-                            return (
-                              <td
-                                key={originalIdx}
-                                className={`px-1 py-2 text-center whitespace-nowrap w-9 md:w-10 text-xs md:text-sm ${
-                                  isScoring ? 'bg-edina-green/20' : ''
-                                }`}
-                              >
-                                {score !== null ? (
-                                  <span className={`font-medium ${isUnderPar ? 'text-red-600' : 'text-gray-700'}`}>
-                                    {score}
+                          return (
+                            <tr key={player.name} className="hover:bg-gray-50 transition-colors">
+                              {/* Rank (3B) */}
+                              <td className={`px-3 py-4 text-center font-bold ${rank === 1 ? 'text-edina-gold text-lg' : 'text-gray-500 text-sm'}`}>
+                                {rank === 1 ? '🏅' : rank}
+                              </td>
+                              <td className="px-4 py-4 font-medium text-gray-900">{player.name}</td>
+                              <td className="px-4 py-4 text-center font-semibold text-gray-900">
+                                {player.average?.toFixed(1)}
+                              </td>
+                              <td className="px-4 py-4 text-center">
+                                {lowRound !== null ? (
+                                  <span className={`font-medium ${lowRound < 72 ? 'text-green-600' : lowRound > 72 ? 'text-red-500' : 'text-gray-500'}`}>
+                                    {lowRound}
                                   </span>
                                 ) : (
                                   <span className="text-gray-300">-</span>
                                 )}
                               </td>
+                              <td className="px-4 py-4 text-center text-gray-600">{validScores.length}</td>
+                              {/* Trend — last 3 scores as colored pills (3B) */}
+                              <td className="px-4 py-4 text-center hidden sm:table-cell">
+                                {last3.length > 0 ? (
+                                  <span className="inline-flex items-center gap-1">
+                                    {last3.map((score, i) => (
+                                      <span
+                                        key={i}
+                                        className={`text-xs font-semibold px-1.5 py-0.5 rounded ${
+                                          score < 72
+                                            ? 'bg-green-50 text-green-700'
+                                            : score > 72
+                                            ? 'bg-red-50 text-red-600'
+                                            : 'bg-gray-100 text-gray-500'
+                                        }`}
+                                      >
+                                        {score}
+                                      </span>
+                                    ))}
+                                  </span>
+                                ) : (
+                                  <span className="text-gray-300 text-xs">-</span>
+                                )}
+                              </td>
+                            </tr>
+                          )
+                        })
+                      )}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
+
+            {/* ── SCORE MATRIX (3C) ── */}
+            {activeTab === 'matrix' && (
+              <>
+                {/* Mobile scroll hint (3F) */}
+                <div className="lg:hidden bg-edina-green-light border border-edina-green/20 rounded-lg px-4 py-2 mb-4 text-sm text-edina-green-dark">
+                  Scroll horizontally to see all events →
+                </div>
+
+                <div className="card overflow-hidden">
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm border-collapse" style={{ minWidth: '600px' }}>
+                      <thead className="bg-gray-50 border-b border-gray-200">
+                        <tr>
+                          {/* Sticky player name header */}
+                          <th className="sticky left-0 bg-gray-50 px-3 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider z-10 border-r border-gray-200">
+                            Player
+                          </th>
+                          <th className="px-2 py-3 text-center text-xs font-semibold text-gray-700 uppercase tracking-wider whitespace-nowrap w-12">
+                            Avg
+                          </th>
+                          {eventHeaders.map((event, i) => {
+                            let fullName = event.replace(/^\d{2}\/\d{2} - /, '')
+                            fullName = fullName.replace(/\bFinal\b/gi, 'Day 2')
+                            const abbrev = abbreviateEvent(event)
+                            return (
+                              <th
+                                key={i}
+                                className="px-1 py-3 text-center text-xs font-semibold text-gray-700 whitespace-nowrap w-10"
+                                title={fullName}
+                              >
+                                {abbrev}
+                              </th>
                             )
                           })}
                         </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            )}
-
-            {/* Leaderboard */}
-            {activeTab === 'leaderboard' && (
-              <div className="card overflow-hidden">
-                <div className="overflow-x-auto">
-                  <table className="w-full">
-                    <thead className="bg-gray-50 border-b border-gray-200">
-                      <tr>
-                        <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">Player</th>
-                        <th className="px-4 py-3 text-center text-sm font-semibold text-gray-700 uppercase tracking-wider">Avg</th>
-                        <th className="px-4 py-3 text-center text-sm font-semibold text-gray-700 uppercase tracking-wider">Low</th>
-                        <th className="px-4 py-3 text-center text-sm font-semibold text-gray-700 uppercase tracking-wider">Rounds</th>
-                        <th className="px-4 py-3 text-center text-sm font-semibold text-gray-700 uppercase tracking-wider hidden sm:table-cell">Last 3</th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-gray-100">
-                      {filteredPlayers.map((player) => {
-                        const validScores = player.scores.filter(s => s !== null && s > 50)
-                        const lowRound = validScores.length > 0 ? Math.min(...validScores) : '-'
-
-                        return (
-                          <tr key={player.name} className="hover:bg-gray-50 transition-colors">
-                            <td className="px-4 py-4 font-medium text-gray-900">{player.name}</td>
-                            <td className="px-4 py-4 text-center font-semibold text-gray-900">{player.average?.toFixed(1)}</td>
-                            <td className="px-4 py-4 text-center">
-                              <span className={`font-medium ${lowRound < 72 ? 'text-red-600' : 'text-edina-green'}`}>
-                                {lowRound}
-                              </span>
-                            </td>
-                            <td className="px-4 py-4 text-center text-gray-600">{validScores.length}</td>
-                            <td className="px-4 py-4 text-center text-gray-600 hidden sm:table-cell">
-                              {player.last3Avg?.toFixed(1) || '-'}
+                      </thead>
+                      <tbody className="divide-y divide-gray-100">
+                        {filteredPlayers.length === 0 ? (
+                          <tr>
+                            <td colSpan={2 + eventHeaders.length} className="px-4 py-12 text-center">
+                              <p className="text-gray-500 font-medium">No scoring data yet.</p>
+                              <p className="text-gray-400 text-sm mt-1">Matrix updates automatically after each event.</p>
                             </td>
                           </tr>
-                        )
-                      })}
-                    </tbody>
-                  </table>
+                        ) : (
+                          filteredPlayers.map((player) => (
+                            <tr key={player.name} className="hover:bg-gray-50 transition-colors">
+                              {/* Sticky player name cell */}
+                              <td className="sticky left-0 bg-white z-10 px-3 py-2 font-medium text-gray-900 border-r border-gray-200 text-xs md:text-sm">
+                                {player.name}
+                              </td>
+                              <td className="px-2 py-2 text-center font-semibold text-gray-900 whitespace-nowrap text-sm w-12">
+                                {player.average?.toFixed(1)}
+                              </td>
+                              {eventIndices.map((originalIdx, i) => {
+                                const score = player.scores[originalIdx]
+                                const isScoring = score && scoringPlayersPerEvent[i]?.includes(player.name)
+                                const eventInfo = getEventInfo(eventHeaders[i])
+                                const isUnderPar = score && eventInfo.par && score < eventInfo.par
+
+                                return (
+                                  <td
+                                    key={originalIdx}
+                                    className={`px-1 py-2 text-center whitespace-nowrap w-10 text-xs md:text-sm ${
+                                      isScoring ? 'bg-edina-green/20' : ''
+                                    }`}
+                                  >
+                                    {score !== null ? (
+                                      <span className={`font-medium ${isUnderPar ? 'text-red-600' : 'text-gray-700'}`}>
+                                        {score}
+                                      </span>
+                                    ) : (
+                                      <span className="text-gray-300">-</span>
+                                    )}
+                                  </td>
+                                )
+                              })}
+                            </tr>
+                          ))
+                        )}
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
-              </div>
+              </>
             )}
 
-            {/* Team Results Table */}
+            {/* ── TEAM RESULTS ── */}
             {activeTab === 'team' && (
               <div className="card overflow-hidden">
                 <div className="overflow-x-auto">
