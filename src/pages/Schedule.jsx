@@ -332,11 +332,12 @@ function Schedule() {
                 )}
                 {!isRound && (() => {
                   const { label, color } = getEventType(event)
-                  return (
+                  if (label === 'Home') return (
                     <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${color}`}>
                       {label}
                     </span>
                   )
+                  return null
                 })()}
               </div>
               <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-gray-600">
@@ -776,8 +777,8 @@ function Schedule() {
           eventsWithSeparators.map((item, idx) => {
             if (item.type === 'separator') {
               return (
-                <div key={`sep-${item.month}-${idx}`} className="sticky top-[48px] z-20 -mx-4 px-4 py-2 bg-edina-forest/95 backdrop-blur-sm">
-                  <span className="text-xs font-bold tracking-widest text-edina-green" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+                <div key={`sep-${item.month}-${idx}`} className="sticky top-[48px] z-20 -mx-4 px-4 py-3 bg-edina-forest/95 backdrop-blur-sm">
+                  <span className="text-base font-bold tracking-widest text-white" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
                     {item.month}
                   </span>
                 </div>
