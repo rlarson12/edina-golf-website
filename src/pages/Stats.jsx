@@ -705,7 +705,9 @@ function Stats() {
                             <td className="px-4 py-4 text-center">
                               {result.format === 'matchplay' ? (
                                 <span className="font-semibold text-gray-600">
-                                  {result.teamResult && result.teamResult !== 'TBD' ? result.teamResult : <span className="text-gray-400">—</span>}
+                                  {result.teamResult && result.teamResult !== 'TBD'
+                                    ? `${result.teamResult}${result.teamRecord ? ' ' + result.teamRecord : ''}`
+                                    : <span className="text-gray-400">—</span>}
                                 </span>
                               ) : (
                                 <span className={`font-semibold ${
@@ -717,7 +719,7 @@ function Stats() {
                             </td>
                             <td className="px-4 py-4 text-center">
                               {result.format === 'matchplay' ? (
-                                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800">
+                                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-edina-gold/20 text-edina-gold-dark">
                                   Match Play
                                 </span>
                               ) : (
