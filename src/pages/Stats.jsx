@@ -601,11 +601,8 @@ function Stats() {
                     <table className="w-full text-sm border-collapse">
                       <thead className="bg-gray-50 border-b border-gray-200">
                         <tr>
-                          <th className="sticky left-0 bg-gray-50 px-3 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider z-10 border-r border-gray-200">
-                            Player
-                          </th>
-                          <th className="px-2 py-3 text-center text-xs font-semibold text-gray-700 uppercase tracking-wider whitespace-nowrap w-12">
-                            Avg
+                          <th className="sticky left-0 bg-gray-50 px-3 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider z-10 border-r border-gray-200 whitespace-nowrap">
+                            Player / Avg
                           </th>
                           {eventHeaders.map((event, i) => {
                             let fullName = event.replace(/^\d{2}\/\d{2} - /, '')
@@ -633,7 +630,7 @@ function Stats() {
                       <tbody className="divide-y divide-gray-100">
                         {filteredPlayers.length === 0 ? (
                           <tr>
-                            <td colSpan={2 + eventHeaders.length} className="px-4 py-12 text-center">
+                            <td colSpan={1 + eventHeaders.length} className="px-4 py-12 text-center">
                               <p className="text-gray-500 font-medium">No scoring data yet.</p>
                               <p className="text-gray-400 text-sm mt-1">Matrix updates automatically after each event.</p>
                             </td>
@@ -641,12 +638,12 @@ function Stats() {
                         ) : (
                           filteredPlayers.map((player) => (
                             <tr key={player.name} className="hover:bg-gray-50 transition-colors">
-                              {/* Sticky player name cell */}
-                              <td className="sticky left-0 bg-white z-10 px-3 py-2 font-medium text-gray-900 border-r border-gray-200 text-xs md:text-sm">
-                                {player.name}
-                              </td>
-                              <td className="px-2 py-2 text-center font-semibold text-gray-900 whitespace-nowrap text-sm w-12">
-                                {player.average?.toFixed(1)}
+                              {/* Sticky player name + avg cell */}
+                              <td className="sticky left-0 bg-white z-10 px-3 py-2 border-r border-gray-200 text-xs md:text-sm whitespace-nowrap">
+                                <div className="font-medium text-gray-900">{player.name}</div>
+                                {player.average != null && (
+                                  <div className="text-xs text-edina-green font-semibold">{player.average.toFixed(1)}</div>
+                                )}
                               </td>
                               {eventIndices.map((originalIdx, i) => {
                                 const score = player.scores[originalIdx]
