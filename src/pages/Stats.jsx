@@ -241,7 +241,7 @@ function Stats() {
         <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-edina-green/30 to-transparent"></div>
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12">
           <div className="max-w-7xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-2" style={{ fontFamily: "'Oswald', sans-serif" }}>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-2" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
               STATS & LEADERBOARD
             </h1>
             <p className="text-green-200 text-lg">2026 Season Performance</p>
@@ -354,7 +354,7 @@ function Stats() {
           <>
             {/* ── 2025 ARCHIVE BANNER ── */}
             {showArchive && (
-              <div className="flex items-center justify-between bg-amber-50 border border-amber-200 rounded-xl px-5 py-3 mb-6">
+              <div className="flex items-center justify-between bg-amber-50 border border-amber-200 rounded-lg px-5 py-3 mb-6">
                 <span className="text-amber-800 font-medium text-sm">
                   📂 Showing 2025 Season
                 </span>

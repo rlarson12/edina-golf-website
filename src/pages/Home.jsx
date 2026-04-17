@@ -160,17 +160,21 @@ function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-edina-green">
+      <section className="relative bg-edina-forest">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover"
-          style={{ backgroundImage: "url('/images/Web%201.webp')", backgroundPosition: 'center 30%' }}
+          style={{ backgroundImage: "url('/images/unnamed.webp')", backgroundPosition: 'center 30%' }}
         ></div>
-        {/* Green Overlay */}
-        <div className="absolute inset-0" style={{ backgroundColor: 'rgba(0, 166, 81, 0.6)' }}></div>
+        {/* Dark gradient only — no color tint */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 lg:py-32">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4" style={{ fontFamily: "'Oswald', sans-serif" }}>
+            {/* Gold state champion eyebrow badge */}
+            <div className="inline-flex items-center gap-2 bg-edina-gold/20 border border-edina-gold/50 rounded-lg px-3 py-1.5 mb-3">
+              <span className="text-edina-gold text-sm font-bold tracking-wide" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>🏆 10× MINNESOTA STATE CHAMPIONS</span>
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
               Edina Boys Golf
             </h1>
             <p className="text-xl md:text-2xl text-green-100 mb-8 max-w-2xl mx-auto">
@@ -216,7 +220,7 @@ function Home() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               {/* Varsity Column */}
-              <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+              <div className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
                 <div className="px-4 py-2.5 bg-edina-green/10 border-b border-edina-green/15">
                   <span className="text-sm font-bold text-edina-green uppercase tracking-wider">Varsity</span>
                 </div>
@@ -239,7 +243,7 @@ function Home() {
               </div>
 
               {/* JV Column */}
-              <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+              <div className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
                 <div className="px-4 py-2.5 bg-edina-green/10 border-b border-edina-green/15">
                   <span className="text-sm font-bold text-edina-green uppercase tracking-wider">JV</span>
                 </div>
@@ -284,7 +288,7 @@ function Home() {
             {/* Top Left - Recent Varsity Results */}
             <div className="card p-4 md:p-6">
               <div className="flex items-center justify-between mb-4 md:mb-6">
-                <h2 className="text-lg md:text-xl font-bold text-gray-900" style={{ fontFamily: "'Oswald', sans-serif" }}>2026 Varsity Results</h2>
+                <h2 className="text-lg md:text-xl font-bold text-gray-900" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>2026 Varsity Results</h2>
                 <Link to="/schedule" className="text-edina-green font-medium text-sm hover:underline">
                   View All
                 </Link>
@@ -327,7 +331,7 @@ function Home() {
             {/* Top Right - Recent JV Results */}
             <div className="card p-4 md:p-6">
               <div className="flex items-center justify-between mb-4 md:mb-6">
-                <h2 className="text-lg md:text-xl font-bold text-gray-900" style={{ fontFamily: "'Oswald', sans-serif" }}>2026 JV Results</h2>
+                <h2 className="text-lg md:text-xl font-bold text-gray-900" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>2026 JV Results</h2>
                 <Link to="/schedule" className="text-edina-green font-medium text-sm hover:underline">
                   View All
                 </Link>
@@ -386,7 +390,7 @@ function Home() {
             {/* Bottom Left - Varsity Leaderboard */}
             <div className="card p-4 md:p-6">
               <div className="flex items-center justify-between mb-4 md:mb-6">
-                <h2 className="text-lg md:text-xl font-bold text-gray-900" style={{ fontFamily: "'Oswald', sans-serif" }}>2026 Varsity Leaderboard</h2>
+                <h2 className="text-lg md:text-xl font-bold text-gray-900" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>2026 Varsity Leaderboard</h2>
                 <Link to="/stats" className="text-edina-green font-medium text-sm hover:underline">
                   Full Stats
                 </Link>
@@ -413,7 +417,7 @@ function Home() {
             {/* Bottom Right - JV Leaderboard */}
             <div className="card p-4 md:p-6">
               <div className="flex items-center justify-between mb-4 md:mb-6">
-                <h2 className="text-lg md:text-xl font-bold text-gray-900" style={{ fontFamily: "'Oswald', sans-serif" }}>2026 JV Leaderboard</h2>
+                <h2 className="text-lg md:text-xl font-bold text-gray-900" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>2026 JV Leaderboard</h2>
                 <Link to="/stats" className="text-edina-green font-medium text-sm hover:underline">
                   Full Stats
                 </Link>
@@ -443,7 +447,7 @@ function Home() {
             {/* Top Left - Upcoming Varsity Schedule */}
             <div className="card p-4 md:p-6">
               <div className="flex items-center justify-between mb-4 md:mb-6">
-                <h2 className="text-lg md:text-xl font-bold text-gray-900" style={{ fontFamily: "'Oswald', sans-serif" }}>2026 Varsity Schedule</h2>
+                <h2 className="text-lg md:text-xl font-bold text-gray-900" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>2026 Varsity Schedule</h2>
                 <Link to="/schedule" className="text-edina-green font-medium text-sm hover:underline">
                   Full Schedule
                 </Link>
@@ -470,7 +474,7 @@ function Home() {
             {/* Top Right - Upcoming JV Schedule */}
             <div className="card p-4 md:p-6">
               <div className="flex items-center justify-between mb-4 md:mb-6">
-                <h2 className="text-lg md:text-xl font-bold text-gray-900" style={{ fontFamily: "'Oswald', sans-serif" }}>2026 JV Schedule</h2>
+                <h2 className="text-lg md:text-xl font-bold text-gray-900" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>2026 JV Schedule</h2>
                 <Link to="/schedule" className="text-edina-green font-medium text-sm hover:underline">
                   Full Schedule
                 </Link>
@@ -497,7 +501,7 @@ function Home() {
             {/* Bottom Left - 2025 Season Recap */}
             <div className="card p-4 md:p-6 flex flex-col justify-between">
               <div>
-                <h2 className="text-lg md:text-xl font-bold text-gray-900 mb-3" style={{ fontFamily: "'Oswald', sans-serif" }}>2025 Season Recap</h2>
+                <h2 className="text-lg md:text-xl font-bold text-gray-900 mb-3" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>2025 Season Recap</h2>
                 <p className="text-gray-600 text-sm md:text-base leading-relaxed">
                   A strong season for the Hornets — relive the results, scores, and standout performances.
                 </p>
@@ -516,14 +520,14 @@ function Home() {
             </div>
 
             {/* Bottom Right - Photo Gallery Teaser */}
-            <div className="relative rounded-xl overflow-hidden min-h-[180px] md:min-h-[220px]">
+            <div className="relative rounded-lg overflow-hidden min-h-[180px] md:min-h-[220px]">
               <div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{ backgroundImage: "url('/images/IMG_9149.webp')" }}
               ></div>
               <div className="absolute inset-0 bg-black/55"></div>
               <div className="relative h-full flex flex-col items-center justify-center p-6 text-center min-h-[180px] md:min-h-[220px]">
-                <p className="text-white text-xl md:text-2xl font-extrabold tracking-widest mb-4" style={{ fontFamily: "'Oswald', sans-serif" }}>
+                <p className="text-white text-xl md:text-2xl font-extrabold tracking-widest mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
                   VIEW PHOTOS
                 </p>
                 <Link
@@ -544,12 +548,12 @@ function Home() {
       {/* From the Fairway - News & Recaps */}
       <section className="bg-edina-green/5 border-y border-edina-green/20 py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8" style={{ fontFamily: "'Oswald', sans-serif" }}>From the Fairway</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>From the Fairway</h2>
 
           {(golfData.news2026 || []).length > 0 ? (
             <div className="grid md:grid-cols-3 gap-6">
               {(golfData.news2026 || []).slice(0, 3).map((item) => (
-                <div key={item.id} className="bg-white rounded-xl p-5 md:p-6 shadow-sm border-l-4 border-edina-green flex flex-col">
+                <div key={item.id} className="bg-white rounded-lg p-5 md:p-6 shadow-sm border-l-4 border-edina-green flex flex-col">
                   <div className="flex items-center gap-2 mb-3">
                     <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${
                       item.type === 'recap' ? 'bg-edina-green/10 text-edina-green' :
@@ -586,27 +590,27 @@ function Home() {
       {/* Team Culture Collage */}
       <section className="py-12 md:py-16 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-8" style={{ fontFamily: "'Oswald', sans-serif" }}>
+          <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-8" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
             More Than A Team
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-            <div className="col-span-2 row-span-2 relative rounded-xl overflow-hidden">
+            <div className="col-span-2 row-span-2 relative rounded-lg overflow-hidden">
               <img src="/images/unnamed.webp" alt="Team photo" className="w-full h-full img-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               <div className="absolute bottom-4 left-4 text-white">
-                <p className="text-lg font-bold" style={{ fontFamily: "'Oswald', sans-serif" }}>BROTHERHOOD</p>
+                <p className="text-lg font-bold" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>BROTHERHOOD</p>
               </div>
             </div>
-            <div className="relative rounded-xl overflow-hidden aspect-square">
+            <div className="relative rounded-lg overflow-hidden aspect-square">
               <img src="/images/Web%206.webp" alt="Team dinner" className="w-full h-full img-cover" />
             </div>
-            <div className="relative rounded-xl overflow-hidden aspect-square">
+            <div className="relative rounded-lg overflow-hidden aspect-square">
               <img src="/images/Web%209.webp" alt="Sunset" className="w-full h-full img-cover-top" />
             </div>
-            <div className="relative rounded-xl overflow-hidden aspect-square">
+            <div className="relative rounded-lg overflow-hidden aspect-square">
               <img src="/images/IMG_6742.webp" alt="Team by water" className="w-full h-full img-cover" />
             </div>
-            <div className="relative rounded-xl overflow-hidden aspect-square">
+            <div className="relative rounded-lg overflow-hidden aspect-square">
               <img src="/images/Web%207.webp" alt="Team at course" className="w-full h-full img-cover" />
             </div>
           </div>
@@ -616,7 +620,7 @@ function Home() {
       {/* CTA Section */}
       <section className="bg-gray-900 py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4" style={{ fontFamily: "'Oswald', sans-serif" }}>
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
             Go Hornets!
           </h2>
           <p className="text-gray-600 max-w-xl mx-auto">

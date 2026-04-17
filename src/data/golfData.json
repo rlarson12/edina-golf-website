@@ -6467,7 +6467,8 @@
       "name": "David Colby",
       "grade": 12,
       "gradYear": 2026,
-      "team": "varsity"
+      "team": "varsity",
+      "isCaptain": true
     },
     {
       "name": "Ryan Geyer",
@@ -6495,6 +6496,7 @@
       "grade": 12,
       "gradYear": 2026,
       "team": "varsity",
+      "isCaptain": true,
       "photo": "/images/players/sander-ohe.webp"
     },
     {

@@ -610,7 +610,7 @@ function Schedule() {
         <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/30 to-transparent"></div>
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12">
           <div className="max-w-7xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-2" style={{ fontFamily: "'Oswald', sans-serif" }}>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-2" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
               {yearFilter} SCHEDULE
             </h1>
             <p className="text-green-200 text-lg">{yearFilter === '2026' ? 'Upcoming Season' : 'Season Results'}</p>

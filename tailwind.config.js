@@ -7,14 +7,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        'edina-green': '#00A651',
-        'edina-green-dark': '#008542',
-        'edina-green-light': '#00C95F',
-        'edina-gold': '#FFD700',
-        'edina-gold-dark': '#E6C200',
+        'edina-forest':      '#0F3A25',
+        'edina-green':       '#00A651',
+        'edina-green-dark':  '#007A3D',
+        'edina-green-light': '#E8F5EC',
+        'edina-gold':        '#D4A437',
+        'edina-gold-dark':   '#B8892A',
       },
       fontFamily: {
-        heading: ['Oswald', 'sans-serif'],
+        heading: ['Barlow Condensed', 'sans-serif'],
         body: ['Inter', 'sans-serif'],
       },
     },

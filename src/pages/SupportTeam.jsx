@@ -129,7 +129,7 @@ function SupportTeam() {
         <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/30 to-transparent"></div>
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12">
           <div className="max-w-7xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-2" style={{ fontFamily: "'Oswald', sans-serif" }}>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-2" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
               SUPPORT TEAM
             </h1>
             <p className="text-green-200 text-lg">The families behind Edina Boys Golf</p>
@@ -141,7 +141,7 @@ function SupportTeam() {
         {/* Captains Parents */}
         <div className="mb-12">
           <div className="mb-6">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900" style={{ fontFamily: "'Oswald', sans-serif" }}>Captains Parents</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>Captains Parents</h2>
             <div className="w-20 h-1 bg-edina-green mt-2 rounded-full"></div>
           </div>
         <div className="grid gap-6 md:grid-cols-2">
@@ -152,7 +152,7 @@ function SupportTeam() {
       {/* Finance */}
       <div>
         <div className="mb-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900" style={{ fontFamily: "'Oswald', sans-serif" }}>Finance</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>Finance</h2>
           <div className="w-16 h-1 bg-edina-green mt-2 rounded-full"></div>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -163,7 +163,7 @@ function SupportTeam() {
       {/* Support the Program */}
       <div className="mt-12">
         <div className="card-static p-6 md:p-8 bg-gray-50">
-          <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-3" style={{ fontFamily: "'Oswald', sans-serif" }}>Support the Program</h2>
+          <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-3" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>Support the Program</h2>
           <p className="text-gray-600 mb-6">
             Interested in supporting Edina Boys Golf? Whether through sponsorship, donations, or volunteering, we'd love to hear from you.
           </p>

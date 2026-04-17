@@ -5,7 +5,7 @@ function RecapCard({ recap }) {
   const paragraphsJV = recap.jvBody.split('\n\n')
 
   return (
-    <article className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+    <article className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
       {/* Article Header */}
       <div className="bg-edina-green px-6 py-5">
         <div className="flex flex-wrap items-center gap-2 mb-2">
@@ -15,7 +15,7 @@ function RecapCard({ recap }) {
           <span className="text-green-300 text-xs">·</span>
           <span className="text-sm text-green-200">Week of {recap.weekOf}</span>
         </div>
-        <h2 className="text-xl md:text-2xl font-bold text-white" style={{ fontFamily: "'Oswald', sans-serif" }}>
+        <h2 className="text-xl md:text-2xl font-bold text-white" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
           {recap.title}
         </h2>
       </div>
@@ -25,7 +25,7 @@ function RecapCard({ recap }) {
 
         {/* Varsity Section */}
         <section>
-          <h3 className="text-lg md:text-xl font-bold text-gray-900 border-l-4 border-edina-green pl-3 mb-4" style={{ fontFamily: "'Oswald', sans-serif" }}>
+          <h3 className="text-lg md:text-xl font-bold text-gray-900 border-l-4 border-edina-green pl-3 mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
             {recap.varsityHeadline}
           </h3>
           <div className="space-y-3">
@@ -39,7 +39,7 @@ function RecapCard({ recap }) {
 
         {/* JV Section */}
         <section>
-          <h3 className="text-lg md:text-xl font-bold text-gray-900 border-l-4 border-edina-gold pl-3 mb-4" style={{ fontFamily: "'Oswald', sans-serif" }}>
+          <h3 className="text-lg md:text-xl font-bold text-gray-900 border-l-4 border-edina-gold pl-3 mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
             {recap.jvHeadline}
           </h3>
           <div className="space-y-3">
@@ -71,7 +71,7 @@ function Recaps() {
           <div className="flex items-end gap-4">
             <div>
               <p className="text-edina-gold text-xs font-bold uppercase tracking-widest mb-1">Edina Boys Golf</p>
-              <h1 className="text-3xl md:text-5xl font-extrabold text-white" style={{ fontFamily: "'Oswald', sans-serif" }}>
+              <h1 className="text-3xl md:text-5xl font-extrabold text-white" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
                 The Hornet Fairway
               </h1>
               <p className="text-green-100 mt-2 text-sm md:text-base">

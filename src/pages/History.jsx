@@ -33,7 +33,7 @@ function History() {
         <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/30 to-transparent"></div>
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12">
           <div className="max-w-7xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-2" style={{ fontFamily: "'Oswald', sans-serif" }}>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-2" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
               PROGRAM HISTORY
             </h1>
             <p className="text-green-200 text-lg">A Legacy of Excellence</p>
@@ -61,7 +61,7 @@ function History() {
             <div className="inline-block">
               <h2
                 className="text-3xl md:text-4xl lg:text-5xl font-bold text-edina-green mb-2"
-                style={{ fontFamily: "'Oswald', sans-serif" }}
+                style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
               >
                 10x State Champions
               </h2>
@@ -77,7 +77,7 @@ function History() {
                 className="relative group"
               >
                 <div className="bg-gradient-to-br from-edina-gold to-yellow-600 text-white font-bold text-lg md:text-xl px-5 py-3 md:px-6 md:py-4 rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
-                  style={{ fontFamily: "'Oswald', sans-serif" }}
+                  style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
                 >
                   {year}
                 </div>
@@ -94,19 +94,19 @@ function History() {
           {/* Championship Stats */}
           <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
             <div className="card p-4 text-center">
-              <div className="text-3xl font-bold text-edina-gold" style={{ fontFamily: "'Oswald', sans-serif" }}>10</div>
+              <div className="text-3xl font-bold text-edina-gold" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>10</div>
               <div className="text-sm text-gray-600">State Titles</div>
             </div>
             <div className="card p-4 text-center">
-              <div className="text-3xl font-bold text-edina-green" style={{ fontFamily: "'Oswald', sans-serif" }}>70</div>
+              <div className="text-3xl font-bold text-edina-green" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>70</div>
               <div className="text-sm text-gray-600">Years of History</div>
             </div>
             <div className="card p-4 text-center">
-              <div className="text-3xl font-bold text-edina-green" style={{ fontFamily: "'Oswald', sans-serif" }}>4</div>
+              <div className="text-3xl font-bold text-edina-green" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>4</div>
               <div className="text-sm text-gray-600">Titles Since 2014</div>
             </div>
             <div className="card p-4 text-center">
-              <div className="text-3xl font-bold text-edina-green" style={{ fontFamily: "'Oswald', sans-serif" }}>2</div>
+              <div className="text-3xl font-bold text-edina-green" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>2</div>
               <div className="text-sm text-gray-600">Back-to-Back ('22-'23)</div>
             </div>
           </div>
@@ -117,7 +117,7 @@ function History() {
           <div className="mb-8">
             <h2
               className="text-2xl md:text-3xl font-bold text-gray-900"
-              style={{ fontFamily: "'Oswald', sans-serif" }}
+              style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
             >
               Hornets Playing at the Next Level
             </h2>
@@ -127,7 +127,7 @@ function History() {
 
           {/* Featured Photos */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
-            <div className="relative rounded-xl overflow-hidden shadow-lg group">
+            <div className="relative rounded-lg overflow-hidden shadow-lg group">
               <img
                 src="/images/Torger%20state.webp"
                 alt="Torger Ohe at State"
@@ -138,7 +138,7 @@ function History() {
                 <p className="text-green-200 text-sm">University of Minnesota</p>
               </div>
             </div>
-            <div className="relative rounded-xl overflow-hidden shadow-lg group">
+            <div className="relative rounded-lg overflow-hidden shadow-lg group">
               <img
                 src="/images/Jimmy%20Abdo%20Am.webp"
                 alt="Jimmy Abdo"
@@ -149,7 +149,7 @@ function History() {
                 <p className="text-green-200 text-sm">Gustavus Adolphus College</p>
               </div>
             </div>
-            <div className="relative rounded-xl overflow-hidden shadow-lg group">
+            <div className="relative rounded-lg overflow-hidden shadow-lg group">
               <img
                 src="/images/Jack%20state.webp"
                 alt="Jack Wetzel at State"
@@ -225,7 +225,7 @@ function History() {
           </div>
 
           {/* Call to Action */}
-          <div className="mt-10 bg-gray-50 rounded-xl p-6 md:p-8 text-center">
+          <div className="mt-10 bg-gray-50 rounded-lg p-6 md:p-8 text-center">
             <h3 className="text-lg font-semibold text-gray-900 mb-2">Know a Hornet playing college golf?</h3>
             <p className="text-gray-600 mb-4">
               Help us keep this list updated. Contact us with information about Edina alumni playing collegiate golf.

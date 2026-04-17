@@ -12,7 +12,7 @@ function TeamInfo() {
         <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent"></div>
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12">
           <div className="max-w-7xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-2" style={{ fontFamily: "'Oswald', sans-serif" }}>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-2" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
               TEAM INFO
             </h1>
             <p className="text-orange-200 text-lg">Everything you need to know for the 2026 season</p>
@@ -24,7 +24,7 @@ function TeamInfo() {
         <div className="max-w-4xl mx-auto space-y-8">
         {/* 2026 Season Info */}
         <section className="card p-6 md:p-8">
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6" style={{ fontFamily: "'Oswald', sans-serif" }}>2026 Season</h1>
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>2026 Season</h1>
 
           <div className="space-y-4">
             {/* Roster Size */}

@@ -155,7 +155,7 @@ function Photos() {
         <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/30 to-transparent"></div>
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12">
           <div className="max-w-7xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-2" style={{ fontFamily: "'Oswald', sans-serif" }}>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-2" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
               PHOTO GALLERY
             </h1>
           </div>
@@ -167,7 +167,7 @@ function Photos() {
           <>
             {/* 2026 Albums */}
             <div className="mb-10">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6" style={{ fontFamily: "'Oswald', sans-serif" }}>
+              <h2 className="text-2xl font-bold text-gray-900 mb-6" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
                 2026 Season
               </h2>
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -182,7 +182,7 @@ function Photos() {
 
             {/* 2025 Albums */}
             <div className="mb-10">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6" style={{ fontFamily: "'Oswald', sans-serif" }}>
+              <h2 className="text-2xl font-bold text-gray-900 mb-6" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
                 2025 Season
               </h2>
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -193,7 +193,7 @@ function Photos() {
             </div>
 
             {/* Submit Photos CTA */}
-            <div className="mt-4 bg-gray-100 rounded-xl p-6 md:p-8">
+            <div className="mt-4 bg-gray-100 rounded-lg p-6 md:p-8">
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Have Photos to Share?</h3>
               <p className="text-gray-600 mb-4">
                 Parents and players are encouraged to submit photos from matches and events to be featured on the website. Email your photos to{' '}
