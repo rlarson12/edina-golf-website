@@ -177,11 +177,12 @@ function Home() {
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover"
-          style={{ backgroundImage: "url('/images/unnamed.webp')", backgroundPosition: 'center 25%' }}
+          style={{ backgroundImage: "url('/images/unnamed.webp')", backgroundPosition: 'center 60%' }}
         ></div>
         {/* Dark gradient — top for text legibility, bottom edge only for transition */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-transparent" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 lg:py-32">
+        {/* NOTE: Hero is aspect-ratio sensitive — source photo is 4:3. Min-height set to ~680px on desktop so background-position is not load-bearing. Do not reduce hero height or the crop will break. */}
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 lg:py-32 lg:min-h-[680px] flex flex-col justify-center">
           <div className="text-center">
             {/* Gold state champion eyebrow badge */}
             <div className="inline-flex items-center gap-2 bg-edina-forest border border-edina-gold/60 rounded-lg px-3 py-1.5 mb-3">
