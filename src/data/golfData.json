@@ -6624,7 +6624,9 @@
       "name": "William Smith",
       "grade": 11,
       "gradYear": 2027,
-      "team": "jv"
+      "team": "jv",
+      "photo": "/images/william-smith.webp",
+      "photoPosition": "center 15%"
     }
   ],
   "playerStats2026": [],
