@@ -194,14 +194,7 @@ function Home() {
             <p className="text-lg md:text-2xl text-green-100 mb-8 max-w-2xl mx-auto">
               2026 Season • Tradition. Excellence. Championship Golf.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/stats" className="btn-primary">
-                View Stats
-              </Link>
-              <Link to="/schedule" className="bg-edina-forest hover:bg-black/40 text-white border-2 border-white/50 hover:border-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200">
-                Season Schedule
-              </Link>
-            </div>
+
           </div>
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-gray-50 to-transparent"></div>
