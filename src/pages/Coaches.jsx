@@ -151,7 +151,7 @@ function Coaches() {
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectPosition: 'center 40%' }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12">
           <div className="max-w-7xl mx-auto">
             <span className="text-edina-gold text-sm font-bold tracking-widest uppercase block mb-1" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>COACHING STAFF</span>

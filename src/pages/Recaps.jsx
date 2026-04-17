@@ -73,7 +73,7 @@ function Recaps() {
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectPosition: 'center 50%' }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12">
           <div className="max-w-7xl mx-auto">
             <div className="text-edina-gold text-sm font-bold tracking-widest uppercase mb-2" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>THE HORNET FAIRWAY</div>

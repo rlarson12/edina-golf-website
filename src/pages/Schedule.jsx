@@ -1,6 +1,109 @@
-import { useState, useMemo, Fragment } from 'react'
+import { useState, useMemo, Fragment, useRef, useEffect } from 'react'
 import golfData from '../data/golfData.json'
 import Scorecard from '../components/Scorecard'
+
+// ── Add to Calendar component ──
+function AddToCalendar({ event }) {
+  const [open, setOpen] = useState(false)
+  const ref = useRef(null)
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    if (!open) return
+    const handler = (e) => {
+      if (ref.current && !ref.current.contains(e.target)) setOpen(false)
+    }
+    document.addEventListener('mousedown', handler)
+    return () => document.removeEventListener('mousedown', handler)
+  }, [open])
+
+  const title = encodeURIComponent(event.event)
+  const location = encodeURIComponent(event.course || '')
+
+  // Build date strings — handle multi-day vs single-day
+  const startDate = event.date ? event.date.replace(/-/g, '') : ''
+  const endDate = event.isMultiDay && event.rounds
+    ? event.rounds[event.rounds.length - 1].date.replace(/-/g, '')
+    : startDate
+  // For all-day events Google/Outlook want YYYYMMDD; end date is exclusive so add 1 day
+  const nextDay = (dateStr) => {
+    const d = new Date(dateStr.substring(0,4) + '-' + dateStr.substring(4,6) + '-' + dateStr.substring(6,8))
+    d.setDate(d.getDate() + 1)
+    return d.toISOString().slice(0,10).replace(/-/g,'')
+  }
+
+  const googleUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startDate}/${nextDay(endDate)}&location=${location}&details=${encodeURIComponent('Edina Boys Golf — ' + (event.event || ''))}`
+
+  const outlookUrl = `https://outlook.live.com/calendar/0/deeplink/compose?subject=${title}&startdt=${event.date}&enddt=${event.isMultiDay && event.rounds ? event.rounds[event.rounds.length-1].date : event.date}&location=${location}&body=${encodeURIComponent('Edina Boys Golf')}&allday=true`
+
+  const downloadIcs = (e) => {
+    e.stopPropagation()
+    const ics = [
+      'BEGIN:VCALENDAR',
+      'VERSION:2.0',
+      'PRODID:-//Edina Boys Golf//EN',
+      'BEGIN:VEVENT',
+      `DTSTART;VALUE=DATE:${startDate}`,
+      `DTEND;VALUE=DATE:${nextDay(endDate)}`,
+      `SUMMARY:${event.event}`,
+      `LOCATION:${event.course || ''}`,
+      `DESCRIPTION:Edina Boys Golf${event.time ? ' — ' + event.time : ''}`,
+      'END:VEVENT',
+      'END:VCALENDAR',
+    ].join('\r\n')
+    const blob = new Blob([ics], { type: 'text/calendar' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `${event.event.replace(/[^a-z0-9]/gi, '-')}.ics`
+    a.click()
+    URL.revokeObjectURL(url)
+    setOpen(false)
+  }
+
+  return (
+    <div ref={ref} className="relative" onClick={(e) => e.stopPropagation()}>
+      <button
+        onClick={() => setOpen(o => !o)}
+        className="inline-flex items-center gap-1 text-xs text-gray-400 hover:text-edina-green border border-gray-200 hover:border-edina-green/40 rounded px-2 py-1 transition-colors"
+        title="Add to calendar"
+      >
+        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+        <span className="hidden sm:inline">Add</span>
+      </button>
+      {open && (
+        <div className="absolute right-0 top-full mt-1 z-30 bg-white border border-gray-200 rounded-lg shadow-lg py-1 min-w-[160px]">
+          <a
+            href={googleUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50"
+            onClick={() => setOpen(false)}
+          >
+            <span>📅</span> Google Calendar
+          </a>
+          <a
+            href={outlookUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50"
+            onClick={() => setOpen(false)}
+          >
+            <span>📆</span> Outlook
+          </a>
+          <button
+            onClick={downloadIcs}
+            className="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50"
+          >
+            <span>⬇️</span> Download .ics
+          </button>
+        </div>
+      )}
+    </div>
+  )
+}
 
 const getEventType = (event) => {
   if (event.isHome) return { label: 'Home', color: 'bg-edina-green/10 text-edina-green' }
@@ -308,7 +411,7 @@ function Schedule() {
             )}
 
             {/* Date */}
-            <div className="flex-shrink-0 w-20 md:w-24">
+            <div className="flex-shrink-0 w-16 md:w-20">
               <div className="text-lg font-bold text-edina-green">
                 {isRound ? `R${roundNum}` : formatDateDisplay(event.date, event.dateFormatted)}
               </div>
@@ -320,7 +423,7 @@ function Schedule() {
             {/* Event Info */}
             <div className="flex-grow">
               <div className="flex flex-wrap items-center gap-2 mb-1">
-                <h3 className="font-semibold text-gray-900">
+                <h3 className="font-semibold text-gray-900 line-clamp-2">
                   {isRound ? event.course : event.event}
                 </h3>
                 {!isRound && event.level && levelFilter === 'all' && (
@@ -353,8 +456,9 @@ function Schedule() {
               </div>
             </div>
 
-            {/* Result */}
-            <div className="flex-shrink-0 flex items-center gap-3">
+            {/* Calendar + Result */}
+            <div className="flex-shrink-0 flex items-center gap-2">
+              {!isRound && yearFilter === '2026' && <AddToCalendar event={event} />}
               {/* Match play: show teamResult badge if not TBD */}
               {!isRound && isMatchPlay(event) && event.teamResult && event.teamResult !== 'TBD' && (
                 <span className={`inline-flex items-center px-3 py-1 rounded-lg text-sm font-medium ${
@@ -654,7 +758,7 @@ function Schedule() {
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectPosition: 'center 40%' }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 via-gray-900/30 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
         <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8">
           <div className="max-w-7xl mx-auto">
             <span className="text-edina-gold text-xs font-bold tracking-widest uppercase block mb-0.5" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>2026 SEASON</span>

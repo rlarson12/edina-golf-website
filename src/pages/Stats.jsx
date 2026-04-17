@@ -350,7 +350,7 @@ function Stats() {
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectPosition: 'center 30%' }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 via-gray-900/30 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
         <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8">
           <div className="max-w-7xl mx-auto">
             <span className="text-edina-gold text-xs font-bold tracking-widest uppercase block mb-0.5" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>PERFORMANCE DATA</span>
@@ -364,7 +364,8 @@ function Stats() {
       <div className="page-container">
 
         {/* Tabs — order: Leaderboard | Score Matrix | Team Results (3A) */}
-        <div className="flex flex-wrap gap-2 mb-6">
+        <div className="overflow-x-auto -mx-4 px-4 mb-6">
+          <div className="flex gap-2 min-w-max pb-1">
           <div className="flex space-x-1 bg-gray-100 p-1 rounded-lg">
             <button
               onClick={() => setActiveTab('leaderboard')}
@@ -407,7 +408,7 @@ function Stats() {
           )}
 
           {activeTab !== 'team' && (showArchive || hasSeason2026Results) && (
-            <div className="flex space-x-1 bg-gray-100 p-1 rounded-lg ml-auto">
+            <div className="flex space-x-1 bg-gray-100 p-1 rounded-lg">
               {[
                 { value: 'all', label: 'All' },
                 { value: 'varsity', label: 'Varsity' },
@@ -427,6 +428,7 @@ function Stats() {
               ))}
             </div>
           )}
+          </div>
         </div>
 
         {/* ── PRE-SEASON STATE ── */}
@@ -524,8 +526,7 @@ function Stats() {
                       {sortedPlayers.length === 0 ? (
                         <tr>
                           <td colSpan={6} className="px-4 py-12 text-center">
-                            <p className="text-gray-500 font-medium">No scoring data yet.</p>
-                            <p className="text-gray-400 text-sm mt-1">Leaderboard updates automatically after each event.</p>
+                            <p className="text-gray-500 font-medium">First tee 4/20 at Chaska Town Course — leaderboard lights up after Round 1.</p>
                           </td>
                         </tr>
                       ) : (
@@ -634,8 +635,7 @@ function Stats() {
                         {filteredPlayers.length === 0 ? (
                           <tr>
                             <td colSpan={1 + eventHeaders.length} className="px-4 py-12 text-center">
-                              <p className="text-gray-500 font-medium">No scoring data yet.</p>
-                              <p className="text-gray-400 text-sm mt-1">Matrix updates automatically after each event.</p>
+                              <p className="text-gray-500 font-medium">Score matrix fills in after the season opens April 20.</p>
                             </td>
                           </tr>
                         ) : (
@@ -743,7 +743,7 @@ function Stats() {
                       ) : (
                         <tr>
                           <td colSpan={5} className="px-4 py-8 text-center text-gray-500">
-                            No results yet. Season starts April 20.
+                            Season results post after each event. First up: Lake Conference Tournament #1 on April 20.
                           </td>
                         </tr>
                       )}

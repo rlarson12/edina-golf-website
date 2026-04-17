@@ -30,7 +30,7 @@ function History() {
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectPosition: 'center 50%' }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 via-gray-900/30 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
         <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8">
           <div className="max-w-7xl mx-auto">
             <span className="text-edina-gold text-xs font-bold tracking-widest uppercase block mb-0.5" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>PROGRAM HISTORY</span>

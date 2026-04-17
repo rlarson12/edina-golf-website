@@ -178,8 +178,8 @@ function Home() {
           className="absolute inset-0 bg-cover"
           style={{ backgroundImage: "url('/images/unnamed.webp')", backgroundPosition: 'center 60%' }}
         ></div>
-        {/* Dark gradient — top for text legibility, bottom edge only for transition */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-transparent" />
+        {/* Dark gradient — stronger for text legibility on mobile */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/30 to-transparent" />
         {/* NOTE: Hero is aspect-ratio sensitive — source photo is 4:3. Min-height set to ~680px on desktop so background-position is not load-bearing. Do not reduce hero height or the crop will break. */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16 md:pt-20 md:pb-24 lg:min-h-[680px] flex flex-col justify-start">
           <div className="text-center">
@@ -188,32 +188,18 @@ function Home() {
               <span className="text-edina-gold text-sm font-bold tracking-wide" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>🏆 10× MINNESOTA STATE CHAMPIONS</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
-              Edina Boys Golf
+              Chasing 11.
             </h1>
-            <p className="text-lg md:text-2xl text-green-100 mb-8 max-w-2xl mx-auto">
-              2026 Season • Tradition. Excellence. Championship Golf.
+            <p className="text-base md:text-2xl text-green-100 mb-8 max-w-2xl mx-auto hidden md:block">
+              10× Minnesota State Champions • Est. 1954
+            </p>
+            <p className="text-base text-green-100 mb-8 md:hidden">
+              Tradition. Excellence.
             </p>
 
           </div>
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-gray-50 to-transparent"></div>
-      </section>
-
-      {/* Quick Stats */}
-      <section className="py-12 md:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-3 gap-6 md:gap-8">
-            {quickStats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-edina-green mb-1">
-                  {stat.value}
-                </div>
-                <div className="text-sm md:text-base text-gray-600">{stat.label}</div>
-                {stat.sublabel && <div className="text-xs text-green-200 mt-0.5" style={{ color: '#6b8f6b' }}>{stat.sublabel}</div>}
-              </div>
-            ))}
-          </div>
-        </div>
       </section>
 
       {/* Up Next - 2026 Season */}
@@ -463,6 +449,23 @@ function Home() {
             </a>
           </div>
         )}
+      </section>
+
+      {/* Quick Stats */}
+      <section className="py-12 md:py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-3 gap-6 md:gap-8">
+            {quickStats.map((stat) => (
+              <div key={stat.label} className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-edina-green mb-1">
+                  {stat.value}
+                </div>
+                <div className="text-sm md:text-base text-gray-600">{stat.label}</div>
+                {stat.sublabel && <div className="text-xs text-green-200 mt-0.5" style={{ color: '#6b8f6b' }}>{stat.sublabel}</div>}
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* From the Fairway - News & Recaps */}
