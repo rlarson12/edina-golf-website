@@ -6484,7 +6484,7 @@
       "gradYear": 2027,
       "team": "varsity",
       "photo": "/images/players/chase-larson.webp",
-      "photoPosition": "center 34%"
+      "photoPosition": "center 30%"
     },
     {
       "name": "Charlie Nielsen",
@@ -6612,7 +6612,7 @@
       "gradYear": 2028,
       "team": "jv",
       "photo": "/images/carter-ringle.webp",
-      "photoPosition": "center 5%"
+      "photoPosition": "center top"
     },
     {
       "name": "Mason Schultes",
