@@ -288,7 +288,7 @@ function Schedule() {
               <div className="text-lg font-bold text-edina-green">
                 {isRound ? `R${roundNum}` : formatDateDisplay(event.date, event.dateFormatted)}
               </div>
-              <div className="text-sm text-gray-500">
+              <div className="text-sm text-gray-600">
                 {isRound ? formatDateDisplay(event.date, event.dateFormatted) : getDayOfWeek(event.date)}
               </div>
             </div>
@@ -531,7 +531,7 @@ function Schedule() {
                                     </span>
                                   </td>
                                   <td className="px-2 py-1.5 text-center">
-                                    <span className={`text-sm ${isUnderPar ? 'text-red-600' : 'text-gray-500'}`}>
+                                    <span className={`text-sm ${isUnderPar ? 'text-red-600' : 'text-gray-600'}`}>
                                       {toParStr}
                                     </span>
                                   </td>
@@ -573,7 +573,7 @@ function Schedule() {
                                 </span>
                               </td>
                               <td className="px-2 py-1.5 text-center">
-                                <span className={`text-sm ${isUnderPar ? 'text-red-600' : 'text-gray-500'}`}>
+                                <span className={`text-sm ${isUnderPar ? 'text-red-600' : 'text-gray-600'}`}>
                                   {toParStr}
                                 </span>
                               </td>

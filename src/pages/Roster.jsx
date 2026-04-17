@@ -378,9 +378,9 @@ function Roster() {
                   {/* Info */}
                   <div className="flex-grow min-w-0">
                     <div className="flex items-center gap-2 flex-wrap">
-                      <h3 className="font-semibold text-gray-400">TBD</h3>
+                      <h3 className="font-semibold text-gray-500">TBD</h3>
                     </div>
-                    <div className="text-sm text-gray-400 mt-1">
+                    <div className="text-sm text-gray-500 mt-1">
                       Roster coming soon
                     </div>
                     <div className="flex items-center gap-3 mt-2">
@@ -633,7 +633,7 @@ function Roster() {
                                           return (
                                             <span key={i}>
                                               {i > 0 && <span className="text-gray-400">-</span>}
-                                              <span className={rUnder ? 'text-red-600 font-medium' : 'text-gray-500'}>{r ?? '-'}</span>
+                                              <span className={rUnder ? 'text-red-600 font-medium' : 'text-gray-600'}>{r ?? '-'}</span>
                                             </span>
                                           )
                                         })}
@@ -647,7 +647,7 @@ function Roster() {
                                       {s.score}
                                     </span>
                                   )}
-                                  <span className={`text-sm font-medium ${isUnderPar ? 'text-red-600' : 'text-gray-500'}`}>
+                                  <span className={`text-sm font-medium ${isUnderPar ? 'text-red-600' : 'text-gray-600'}`}>
                                     ({toParStr})
                                   </span>
                                   {s.individualFinish && (

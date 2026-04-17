@@ -208,7 +208,7 @@ function History() {
               <div key={index} className="card p-4">
                 <div className="flex justify-between items-start mb-2">
                   <span className="font-semibold text-gray-900">{golfer.player}</span>
-                  <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">
+                  <span className="text-sm text-gray-600 bg-gray-100 px-2 py-1 rounded">
                     {golfer.gradYear}
                   </span>
                 </div>

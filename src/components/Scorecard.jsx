@@ -44,7 +44,7 @@ function Scorecard({ par, scores, courseName, playerName, round }) {
     const hasBorder = score !== holePar
     return (
       <td key={idx} className="p-0.5 text-center">
-        <span className={`inline-flex items-center justify-center ${hasBorder ? 'w-7 h-7' : ''} text-xs font-semibold ${decoration}`}>
+        <span className={`inline-flex items-center justify-center ${hasBorder ? 'w-7 h-7' : ''} text-sm font-semibold ${decoration}`}>
           {score}
         </span>
       </td>
@@ -54,7 +54,7 @@ function Scorecard({ par, scores, courseName, playerName, round }) {
   // Desktop: full 18-hole table
   const renderDesktopTable = () => (
     <div className="hidden md:block overflow-x-auto">
-      <table className="w-full text-xs border-collapse">
+      <table className="w-full text-sm border-collapse">
         <thead>
           <tr className="bg-edina-green text-white">
             <th className="px-2 py-1.5 text-left font-semibold w-14">HOLE</th>
@@ -100,7 +100,7 @@ function Scorecard({ par, scores, courseName, playerName, round }) {
     <div className="md:hidden space-y-1">
       {/* Front 9 */}
       <div className="overflow-x-auto">
-        <table className="w-full text-xs border-collapse">
+        <table className="w-full text-sm border-collapse">
           <thead>
             <tr className="bg-edina-green text-white">
               <th className="px-2 py-1.5 text-left font-semibold w-14">HOLE</th>
@@ -128,7 +128,7 @@ function Scorecard({ par, scores, courseName, playerName, round }) {
       </div>
       {/* Back 9 */}
       <div className="overflow-x-auto">
-        <table className="w-full text-xs border-collapse">
+        <table className="w-full text-sm border-collapse">
           <thead>
             <tr className="bg-edina-green text-white">
               <th className="px-2 py-1.5 text-left font-semibold w-14">HOLE</th>
