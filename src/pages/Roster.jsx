@@ -321,7 +321,7 @@ function Roster() {
       {/* Hero Section with Team Photo */}
       <div className="relative h-64 md:h-72 overflow-hidden">
         <img
-          src="/images/unnamed.webp"
+          src="/images/Team1.webp"
           alt="Edina Boys Golf Team"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectPosition: 'center 70%' }}

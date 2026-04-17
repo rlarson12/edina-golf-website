@@ -177,7 +177,7 @@ function Home() {
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover"
-          style={{ backgroundImage: "url('/images/Team1.webp')", backgroundPosition: 'center 65%' }}
+          style={{ backgroundImage: "url('/images/unnamed.webp')", backgroundPosition: 'center 60%' }}
         ></div>
         {/* Dark gradient only — no color tint */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
