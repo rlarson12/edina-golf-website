@@ -610,16 +610,18 @@ function Stats() {
                             return (
                               <th
                                 key={i}
-                                className="px-1 text-center text-xs font-semibold text-gray-600 w-8"
+                                className="text-center text-xs font-semibold text-gray-600 w-8"
                                 style={{ height: '120px', verticalAlign: 'bottom' }}
                               >
                                 <div style={{
                                   writingMode: 'vertical-rl',
                                   transform: 'rotate(180deg)',
                                   whiteSpace: 'nowrap',
-                                  paddingBottom: '4px',
                                   fontSize: '13px',
-                                  textAlign: 'center'
+                                  display: 'flex',
+                                  justifyContent: 'center',
+                                  margin: '0 auto',
+                                  paddingBottom: '4px',
                                 }}>
                                   {fullName}
                                 </div>
