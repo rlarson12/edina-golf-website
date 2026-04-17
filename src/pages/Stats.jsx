@@ -30,10 +30,13 @@ function Stats() {
   }, [hasSeason2026Results, showArchive])
 
   // Check if an event name matches any JV event (exact or partial match)
+  // Header format is 'MM/DD - Event Name', so strip the date prefix first
   const isJVEvent = (eventName) => {
+    const stripped = eventName.replace(/^\d{2}\/\d{2} - /, '').toLowerCase()
     const nameLower = eventName.toLowerCase()
     return jvEventNames.some(jvName =>
-      jvName === nameLower || jvName.startsWith(nameLower) || nameLower.startsWith(jvName)
+      jvName === stripped || jvName === nameLower ||
+      jvName.startsWith(stripped) || stripped.startsWith(jvName)
     )
   }
 
