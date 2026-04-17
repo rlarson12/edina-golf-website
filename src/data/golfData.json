@@ -6468,7 +6468,9 @@
       "grade": 12,
       "gradYear": 2026,
       "team": "varsity",
-      "isCaptain": true
+      "isCaptain": true,
+      "photo": "/images/david-colby.webp",
+      "photoPosition": "center 20%"
     },
     {
       "name": "Ryan Geyer",
