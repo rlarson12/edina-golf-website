@@ -6476,7 +6476,9 @@
       "name": "Ryan Geyer",
       "grade": 11,
       "gradYear": 2027,
-      "team": "varsity"
+      "team": "varsity",
+      "photo": "/images/ryan-guyer.webp",
+      "photoPosition": "center 20%"
     },
     {
       "name": "Chase Larson",
