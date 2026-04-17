@@ -177,10 +177,10 @@ function Home() {
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover"
-          style={{ backgroundImage: "url('/images/unnamed.webp')", backgroundPosition: 'center 30%' }}
+          style={{ backgroundImage: "url('/images/unnamed.webp')", backgroundPosition: 'center 20%' }}
         ></div>
         {/* Dark gradient only — no color tint */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 lg:py-32">
           <div className="text-center">
             {/* Gold state champion eyebrow badge */}
@@ -190,7 +190,7 @@ function Home() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
               Edina Boys Golf
             </h1>
-            <p className="text-xl md:text-2xl text-green-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg md:text-2xl text-green-100 mb-8 max-w-2xl mx-auto">
               2026 Season • Tradition. Excellence. Championship Golf.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -293,6 +293,36 @@ function Home() {
           </div>
         </section>
       )}
+
+      {/* Team Culture Collage — front-loads culture before empty data states */}
+      <section className="py-12 md:py-16 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-8" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+            More Than A Team
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+            <div className="col-span-2 row-span-2 relative rounded-lg overflow-hidden">
+              <img src="/images/unnamed.webp" alt="Team photo" className="w-full h-full img-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+              <div className="absolute bottom-4 left-4 text-white">
+                <p className="text-lg font-bold" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>BROTHERHOOD</p>
+              </div>
+            </div>
+            <div className="relative rounded-lg overflow-hidden aspect-square">
+              <img src="/images/Web%206.webp" alt="Team dinner" className="w-full h-full img-cover" />
+            </div>
+            <div className="relative rounded-lg overflow-hidden aspect-square">
+              <img src="/images/Web%209.webp" alt="Sunset" className="w-full h-full img-cover-top" />
+            </div>
+            <div className="relative rounded-lg overflow-hidden aspect-square">
+              <img src="/images/IMG_6742.webp" alt="Team by water" className="w-full h-full img-cover" />
+            </div>
+            <div className="relative rounded-lg overflow-hidden aspect-square">
+              <img src="/images/Web%207.webp" alt="Team at course" className="w-full h-full img-cover" />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Results & Leaderboards - 2x2 Grid (toggles based on season data) */}
       <section className="page-container">
@@ -503,44 +533,27 @@ function Home() {
               ))}
             </div>
           ) : (
-            <div className="card p-10 text-center">
-              <img src="/images/Hornet.webp" className="w-16 h-16 object-contain opacity-70 mx-auto mb-4" alt="Edina Hornet" />
-              <h3 className="text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>From the Fairway</h3>
-              <p className="text-gray-600">Season coverage begins after our first event. First edition drops following the Lake Conference Tournament #1 on April 20.</p>
+            <div className="card p-6">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full overflow-hidden bg-edina-forest/10 flex items-center justify-center">
+                  <img src="/images/Coach Vernon .webp" alt="Coach Vernon" className="w-full h-full object-cover" onError={(e) => { e.target.style.display='none' }} />
+                </div>
+                <div className="flex-grow">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-xs font-bold text-edina-green uppercase tracking-wider">Preview</span>
+                    <span className="text-xs text-gray-400">Apr 20</span>
+                  </div>
+                  <h3 className="font-bold text-gray-900 text-base leading-snug mb-1">Season Opener: Hornets Take the Tee at Chaska Town Course</h3>
+                  <p className="text-sm text-gray-600">Coach Vernon previews the 2026 squad as Edina opens conference play. First edition of The Hornet Fairway drops after the results are in.</p>
+                  <p className="text-xs text-gray-400 mt-2">By Coach Vernon • First edition coming Apr 20</p>
+                </div>
+              </div>
             </div>
           )}
         </div>
       </section>
 
-      {/* Team Culture Collage */}
-      <section className="py-12 md:py-16 bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-8" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
-            More Than A Team
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-            <div className="col-span-2 row-span-2 relative rounded-lg overflow-hidden">
-              <img src="/images/unnamed.webp" alt="Team photo" className="w-full h-full img-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-              <div className="absolute bottom-4 left-4 text-white">
-                <p className="text-lg font-bold" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>BROTHERHOOD</p>
-              </div>
-            </div>
-            <div className="relative rounded-lg overflow-hidden aspect-square">
-              <img src="/images/Web%206.webp" alt="Team dinner" className="w-full h-full img-cover" />
-            </div>
-            <div className="relative rounded-lg overflow-hidden aspect-square">
-              <img src="/images/Web%209.webp" alt="Sunset" className="w-full h-full img-cover-top" />
-            </div>
-            <div className="relative rounded-lg overflow-hidden aspect-square">
-              <img src="/images/IMG_6742.webp" alt="Team by water" className="w-full h-full img-cover" />
-            </div>
-            <div className="relative rounded-lg overflow-hidden aspect-square">
-              <img src="/images/Web%207.webp" alt="Team at course" className="w-full h-full img-cover" />
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* Action Photo Strip */}
       <section className="py-8 bg-white overflow-hidden">

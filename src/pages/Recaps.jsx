@@ -7,7 +7,7 @@ function RecapCard({ recap }) {
   return (
     <article className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
       {/* Article Header */}
-      <div className="bg-edina-green px-6 py-5">
+      <div className="bg-edina-forest px-6 py-5">
         <div className="flex flex-wrap items-center gap-2 mb-2">
           <span className="text-xs font-bold text-edina-gold uppercase tracking-widest">
             The Hornet Fairway

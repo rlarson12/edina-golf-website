@@ -339,20 +339,6 @@ function Stats() {
       </div>
 
       <div className="page-container">
-        {/* Season Records / Context-aware top cards (3D) */}
-        <div className="relative mb-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {(statsCards || seasonRecords).map((record) => (
-              <div key={record.label} className="card p-5 md:p-6 text-center bg-white shadow-lg">
-                <div className="text-2xl md:text-3xl font-bold text-edina-green">{record.value}</div>
-                <div className="text-sm text-gray-600 mt-1">{record.label}</div>
-                {record.sub && (
-                  <div className="text-xs text-gray-400 mt-0.5">{record.sub}</div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
 
         {/* Tabs — order: Leaderboard | Score Matrix | Team Results (3A) */}
         <div className="flex flex-wrap gap-2 mb-6">
