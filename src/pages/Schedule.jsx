@@ -330,15 +330,7 @@ function Schedule() {
                     {event.level}
                   </span>
                 )}
-                {!isRound && (() => {
-                  const { label, color } = getEventType(event)
-                  if (label === 'Home') return (
-                    <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${color}`}>
-                      {label}
-                    </span>
-                  )
-                  return null
-                })()}
+
               </div>
               <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-gray-600">
                 {!isRound && (
