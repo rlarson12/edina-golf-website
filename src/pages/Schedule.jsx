@@ -364,7 +364,7 @@ function Schedule() {
                     ? 'bg-red-100 text-red-800'
                     : 'bg-gray-100 text-gray-700'
                 }`}>
-                  {event.teamResult}
+                  {event.teamResult}{event.teamRecord ? ` ${event.teamRecord}` : ''}
                 </span>
               )}
               {/* Stroke play score + finish */}
