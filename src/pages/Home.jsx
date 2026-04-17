@@ -206,69 +206,71 @@ function Home() {
       </section>
 
       {/* Up Next - 2026 Season */}
-      {nextEvents.length > 0 && (
+      {(upcomingVarsity.length > 0 || upcomingJV.length > 0) && (
         <section className="bg-gray-50 py-8 md:py-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-white rounded-xl shadow-lg border-l-4 border-edina-green overflow-hidden">
-              <div className="p-5 md:p-6">
-                <div className="flex flex-col md:flex-row md:items-start gap-4">
-                  {/* Up Next Badge */}
-                  <div className="flex-shrink-0 pt-1">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-bold bg-edina-green text-white">
-                      UP NEXT
-                    </span>
-                  </div>
-
-                  {/* Event Info — one row per event */}
-                  <div className="flex-grow">
-                    {nextEvents.map((ev, idx) => (
-                      <div key={ev.id} className={idx > 0 ? 'mt-3 pt-3 border-t border-gray-100' : ''}>
-                        <h3 className="text-xl md:text-2xl font-bold text-gray-900" style={{ fontFamily: "'Oswald', sans-serif" }}>
-                          {ev.event}
-                        </h3>
-                        <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-1 text-gray-600">
-                          <span className="flex items-center gap-1">
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                            </svg>
-                            {ev.dateFormatted}
-                          </span>
-                          <span className="flex items-center gap-1">
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                            </svg>
-                            {ev.course}
-                          </span>
-                        </div>
+            <div className="flex items-center gap-3 mb-5">
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-bold bg-edina-green text-white">
+                UP NEXT
+              </span>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+              {/* Varsity Column */}
+              <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                <div className="px-4 py-2.5 bg-edina-green/10 border-b border-edina-green/15">
+                  <span className="text-xs font-bold text-edina-green uppercase tracking-wider">Varsity</span>
+                </div>
+                <div className="divide-y divide-gray-50">
+                  {upcomingVarsity.slice(0, 2).map((ev) => (
+                    <div key={ev.id} className="flex items-center gap-3 px-4 py-3">
+                      <div className="flex-shrink-0 w-14 text-center">
+                        <div className="text-xs font-bold text-edina-green bg-edina-green/10 rounded-md px-2 py-1">{ev.dateFormatted}</div>
                       </div>
-                    ))}
-                  </div>
-
-                  {/* Countdown — shared across all events on same day */}
-                  <div className="flex-shrink-0 text-right">
-                    <div className="text-3xl md:text-4xl font-bold text-edina-green">
-                      {nextEvents[0].daysUntil === 0 ? '🏌️' : nextEvents[0].daysUntil}
+                      <div className="flex-grow min-w-0">
+                        <div className="font-semibold text-gray-900 text-sm truncate">{ev.event}</div>
+                        <div className="text-xs text-gray-500 truncate">{ev.course}</div>
+                      </div>
                     </div>
-                    <div className="text-sm text-gray-500">
-                      {nextEvents[0].daysUntil === 0 ? 'Today' : nextEvents[0].daysUntil === 1 ? 'day away' : 'days away'}
-                    </div>
-                  </div>
-
-                  {/* View Schedule Link */}
-                  <div className="flex-shrink-0">
-                    <Link
-                      to="/schedule"
-                      className="inline-flex items-center gap-2 px-4 py-2 bg-edina-green/10 text-edina-green font-medium rounded-lg hover:bg-edina-green/20 transition-colors"
-                    >
-                      Full Schedule
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </Link>
-                  </div>
+                  ))}
+                  {upcomingVarsity.length === 0 && (
+                    <div className="px-4 py-6 text-sm text-gray-400 text-center">No upcoming events.</div>
+                  )}
                 </div>
               </div>
+
+              {/* JV Column */}
+              <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                <div className="px-4 py-2.5 bg-edina-green/10 border-b border-edina-green/15">
+                  <span className="text-xs font-bold text-edina-green uppercase tracking-wider">JV</span>
+                </div>
+                <div className="divide-y divide-gray-50">
+                  {upcomingJV.slice(0, 2).map((ev) => (
+                    <div key={ev.id} className="flex items-center gap-3 px-4 py-3">
+                      <div className="flex-shrink-0 w-14 text-center">
+                        <div className="text-xs font-bold text-edina-green bg-edina-green/10 rounded-md px-2 py-1">{ev.dateFormatted}</div>
+                      </div>
+                      <div className="flex-grow min-w-0">
+                        <div className="font-semibold text-gray-900 text-sm truncate">{ev.event}</div>
+                        <div className="text-xs text-gray-500 truncate">{ev.course}</div>
+                      </div>
+                    </div>
+                  ))}
+                  {upcomingJV.length === 0 && (
+                    <div className="px-4 py-6 text-sm text-gray-400 text-center">No upcoming events.</div>
+                  )}
+                </div>
+              </div>
+            </div>
+            <div className="text-center mt-5">
+              <Link
+                to="/schedule"
+                className="inline-flex items-center gap-1.5 text-edina-green font-medium text-sm hover:underline"
+              >
+                Full Schedule
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
             </div>
           </div>
         </section>
@@ -539,57 +541,45 @@ function Home() {
         )}
       </section>
 
-      {/* Upcoming Events */}
+      {/* From the Fairway - News & Recaps */}
       <section className="bg-edina-green/5 border-y border-edina-green/20 py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8" style={{ fontFamily: "'Oswald', sans-serif" }}>Upcoming Events</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8" style={{ fontFamily: "'Oswald', sans-serif" }}>From the Fairway</h2>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {upcomingVarsity.slice(0, 3).map((event) => (
-              <div key={event.id} className="bg-white rounded-xl p-5 md:p-6 shadow-sm border-l-4 border-edina-green">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-edina-green/10 rounded-lg flex items-center justify-center">
-                    <svg className="w-6 h-6 text-edina-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          {(golfData.news2026 || []).length > 0 ? (
+            <div className="grid md:grid-cols-3 gap-6">
+              {(golfData.news2026 || []).slice(0, 3).map((item) => (
+                <div key={item.id} className="bg-white rounded-xl p-5 md:p-6 shadow-sm border-l-4 border-edina-green flex flex-col">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${
+                      item.type === 'recap' ? 'bg-edina-green/10 text-edina-green' :
+                      item.type === 'preview' ? 'bg-blue-50 text-blue-700' :
+                      'bg-gray-100 text-gray-600'
+                    }`}>
+                      {item.type === 'recap' ? 'Recap' : item.type === 'preview' ? 'Preview' : 'Article'}
+                    </span>
+                    <span className="text-xs text-gray-400">{item.dateFormatted}</span>
+                  </div>
+                  <h3 className="font-bold text-gray-900 mb-2 leading-snug">{item.title}</h3>
+                  <p className="text-sm text-gray-600 flex-grow line-clamp-3">{item.summary}</p>
+                  <Link to="/schedule" className="inline-flex items-center gap-1 text-sm text-edina-green hover:underline mt-4 font-medium">
+                    Read more
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
-                  </div>
-                  <div className="flex-grow">
-                    <div className="flex flex-wrap items-center gap-2 mb-1">
-                      <h3 className="font-bold text-gray-900">{event.event}</h3>
-                      <span className="text-xs font-semibold text-edina-green bg-edina-green/10 px-2 py-0.5 rounded">{event.dateFormatted}</span>
-                    </div>
-                    <div className="text-sm text-gray-600">{event.course}</div>
-                    <Link to="/schedule" className="inline-flex items-center gap-1 text-sm text-edina-green hover:underline mt-2">
-                      Full Schedule
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </Link>
-                  </div>
+                  </Link>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Action Photo Strip */}
-      <section className="py-8 bg-white overflow-hidden">
-        <div className="flex gap-4 animate-none">
-          <div className="flex gap-4 min-w-full justify-center">
-            <div className="relative w-72 h-56 rounded-lg overflow-hidden shadow-lg flex-shrink-0">
-              <img src="/images/IMG_9149.webp" alt="Action shot" className="w-full h-full img-cover-top hover:scale-105 transition-transform duration-300" />
+              ))}
             </div>
-            <div className="relative w-72 h-56 rounded-lg overflow-hidden shadow-lg flex-shrink-0">
-              <img src="/images/IMG_9152.webp" alt="Bunker shot" className="w-full h-full img-cover-top hover:scale-105 transition-transform duration-300" />
+          ) : (
+            <div className="text-center py-12 text-gray-500">
+              <svg className="w-10 h-10 mx-auto mb-3 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+              </svg>
+              <p className="font-medium text-gray-600">Season coverage coming soon.</p>
+              <p className="text-sm mt-1">Check back after our first event.</p>
             </div>
-            <div className="relative w-72 h-56 rounded-lg overflow-hidden shadow-lg flex-shrink-0">
-              <img src="/images/Web%2010.webp" alt="Medal winners" className="w-full h-full img-cover-top hover:scale-105 transition-transform duration-300" />
-            </div>
-            <div className="relative w-72 h-56 rounded-lg overflow-hidden shadow-lg flex-shrink-0 hidden md:block">
-              <img src="/images/IMG_8248.webp" alt="On the course" className="w-full h-full img-cover-top hover:scale-105 transition-transform duration-300" />
-            </div>
-          </div>
+          )}
         </div>
       </section>
 
@@ -632,6 +622,26 @@ function Home() {
           <p className="text-gray-400 max-w-xl mx-auto">
             Follow the Edina Boys Golf team throughout the 2026 season as we compete for conference and state championships.
           </p>
+        </div>
+      </section>
+
+      {/* Action Photo Strip */}
+      <section className="py-8 bg-white overflow-hidden">
+        <div className="flex gap-4 animate-none">
+          <div className="flex gap-4 min-w-full justify-center">
+            <div className="relative w-72 h-56 rounded-lg overflow-hidden shadow-lg flex-shrink-0">
+              <img src="/images/IMG_9149.webp" alt="Action shot" className="w-full h-full img-cover-top hover:scale-105 transition-transform duration-300" />
+            </div>
+            <div className="relative w-72 h-56 rounded-lg overflow-hidden shadow-lg flex-shrink-0">
+              <img src="/images/IMG_9152.webp" alt="Bunker shot" className="w-full h-full img-cover-top hover:scale-105 transition-transform duration-300" />
+            </div>
+            <div className="relative w-72 h-56 rounded-lg overflow-hidden shadow-lg flex-shrink-0">
+              <img src="/images/Web%2010.webp" alt="Medal winners" className="w-full h-full img-cover-top hover:scale-105 transition-transform duration-300" />
+            </div>
+            <div className="relative w-72 h-56 rounded-lg overflow-hidden shadow-lg flex-shrink-0 hidden md:block">
+              <img src="/images/IMG_8248.webp" alt="On the course" className="w-full h-full img-cover-top hover:scale-105 transition-transform duration-300" />
+            </div>
+          </div>
         </div>
       </section>
     </div>
