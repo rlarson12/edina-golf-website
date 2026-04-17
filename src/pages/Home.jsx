@@ -50,6 +50,9 @@ function Home() {
   // Calculate quick stats from 2026 season data
   const quickStats = useMemo(() => {
     const results2026 = golfData.seasonResults2026 || []
+    const varsityStrokePlayed = (golfData.schedule2026 || [])
+      .filter(r => r.teamScore && !r.isJV && r.format !== 'matchplay').length
+
     const wins = results2026.filter(r =>
       r.finish?.startsWith('1st') ||
       r.teamResult?.toLowerCase() === 'win'
@@ -65,11 +68,21 @@ function Home() {
       })
     const lowAvg = allAverages.length > 0 ? Math.min(...allAverages) : null
 
+    // Before 3 varsity stroke play events: show program history stats
+    if (varsityStrokePlayed < 3) {
+      return [
+        { label: 'State Champions', value: '10×', sublabel: 'All-Time' },
+        { label: 'Years of History', value: '70+', sublabel: 'Est. 1956' },
+        { label: 'State Titles', value: '4', sublabel: 'Since 2014' },
+        { label: 'Team Members', value: '25', sublabel: '2026 Roster' },
+      ]
+    }
+
     return [
-      { label: 'Events Won', value: wins.toString() },
-      { label: 'Events Played', value: totalEvents.toString() },
-      { label: 'Team Members', value: '25' },
-      { label: 'Low Avg', value: lowAvg ? lowAvg.toFixed(1) : '-' },
+      { label: 'Events Won', value: wins.toString(), sublabel: '2026 Season' },
+      { label: 'Events Played', value: totalEvents.toString(), sublabel: '2026 Season' },
+      { label: 'Team Members', value: '25', sublabel: '2026 Roster' },
+      { label: 'Low Avg', value: lowAvg ? lowAvg.toFixed(1) : '-', sublabel: 'Season' },
     ]
   }, [])
 
@@ -199,10 +212,11 @@ function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             {quickStats.map((stat) => (
               <div key={stat.label} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-edina-green mb-2">
+                <div className="text-3xl md:text-4xl font-bold text-edina-green mb-1">
                   {stat.value}
                 </div>
                 <div className="text-sm md:text-base text-gray-600">{stat.label}</div>
+                {stat.sublabel && <div className="text-xs text-green-200 mt-0.5" style={{ color: '#6b8f6b' }}>{stat.sublabel}</div>}
               </div>
             ))}
           </div>
@@ -442,105 +456,18 @@ function Home() {
             </div>
           </div>
         ) : (
-          /* Pre-season layout (Option 4): schedules + 2025 recap + photo teaser */
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-            {/* Top Left - Upcoming Varsity Schedule */}
-            <div className="card p-4 md:p-6">
-              <div className="flex items-center justify-between mb-4 md:mb-6">
-                <h2 className="text-lg md:text-xl font-bold text-gray-900" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>2026 Varsity Schedule</h2>
-                <Link to="/schedule" className="text-edina-green font-medium text-sm hover:underline">
-                  Full Schedule
-                </Link>
-              </div>
-              <div className="space-y-3">
-                {upcomingVarsity.length > 0 ? (
-                  upcomingVarsity.map((event) => (
-                    <div key={event.id} className="flex items-center p-3 bg-gray-50 rounded-lg">
-                      <div className="flex-shrink-0 w-16 text-center">
-                        <div className="text-sm font-bold text-edina-green">{event.dateFormatted}</div>
-                      </div>
-                      <div className="ml-3 flex-grow min-w-0">
-                        <div className="font-semibold text-gray-900 text-base truncate">{event.event}</div>
-                        <div className="text-sm text-gray-600 truncate">{event.course}</div>
-                      </div>
-                    </div>
-                  ))
-                ) : (
-                  <div className="text-center text-gray-500 py-6">Schedule coming soon.</div>
-                )}
-              </div>
+          /* Pre-season / no-results layout: season kickoff module */
+          <div className="card p-10 text-center">
+            <div className="w-16 h-16 bg-edina-green/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg className="w-8 h-8 text-edina-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
             </div>
-
-            {/* Top Right - Upcoming JV Schedule */}
-            <div className="card p-4 md:p-6">
-              <div className="flex items-center justify-between mb-4 md:mb-6">
-                <h2 className="text-lg md:text-xl font-bold text-gray-900" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>2026 JV Schedule</h2>
-                <Link to="/schedule" className="text-edina-green font-medium text-sm hover:underline">
-                  Full Schedule
-                </Link>
-              </div>
-              <div className="space-y-3">
-                {upcomingJV.length > 0 ? (
-                  upcomingJV.map((event) => (
-                    <div key={event.id} className="flex items-center p-3 bg-gray-50 rounded-lg">
-                      <div className="flex-shrink-0 w-16 text-center">
-                        <div className="text-sm font-bold text-edina-green">{event.dateFormatted}</div>
-                      </div>
-                      <div className="ml-3 flex-grow min-w-0">
-                        <div className="font-semibold text-gray-900 text-base truncate">{event.event}</div>
-                        <div className="text-sm text-gray-600 truncate">{event.course}</div>
-                      </div>
-                    </div>
-                  ))
-                ) : (
-                  <div className="text-center text-gray-500 py-6">Schedule coming soon.</div>
-                )}
-              </div>
-            </div>
-
-            {/* Bottom Left - 2025 Season Recap */}
-            <div className="card p-4 md:p-6 flex flex-col justify-between">
-              <div>
-                <h2 className="text-lg md:text-xl font-bold text-gray-900 mb-3" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>2025 Season Recap</h2>
-                <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-                  A strong season for the Hornets — relive the results, scores, and standout performances.
-                </p>
-              </div>
-              <div className="mt-6">
-                <Link
-                  to="/schedule"
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-edina-green text-white font-medium rounded-lg hover:bg-edina-green/90 transition-colors text-sm"
-                >
-                  View 2025 Results
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
-              </div>
-            </div>
-
-            {/* Bottom Right - Photo Gallery Teaser */}
-            <div className="relative rounded-lg overflow-hidden min-h-[180px] md:min-h-[220px]">
-              <div
-                className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: "url('/images/IMG_9149.webp')" }}
-              ></div>
-              <div className="absolute inset-0 bg-black/55"></div>
-              <div className="relative h-full flex flex-col items-center justify-center p-6 text-center min-h-[180px] md:min-h-[220px]">
-                <p className="text-white text-xl md:text-2xl font-extrabold tracking-widest mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
-                  VIEW PHOTOS
-                </p>
-                <Link
-                  to="/photos"
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 border border-white/60 text-white font-medium rounded-lg hover:bg-white/30 transition-colors text-sm backdrop-blur-sm"
-                >
-                  View Gallery
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
-              </div>
-            </div>
+            <h3 className="text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>Season Kicks Off Apr 20</h3>
+            <p className="text-gray-600">Results and leaderboards update automatically after each event. Check back after the Lake Conference Tournament #1 at Chaska Town Course.</p>
+            <a href="/schedule" className="inline-flex items-center gap-1 text-edina-green font-semibold hover:underline mt-4">
+              View Full Schedule →
+            </a>
           </div>
         )}
       </section>
@@ -576,12 +503,10 @@ function Home() {
               ))}
             </div>
           ) : (
-            <div className="text-center py-12 text-gray-500">
-              <svg className="w-10 h-10 mx-auto mb-3 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-              </svg>
-              <p className="font-medium text-gray-600">Season coverage coming soon.</p>
-              <p className="text-sm mt-1">Check back after our first event.</p>
+            <div className="card p-10 text-center">
+              <img src="/images/Hornet.webp" className="w-16 h-16 object-contain opacity-70 mx-auto mb-4" alt="Edina Hornet" />
+              <h3 className="text-xl font-bold text-gray-900 mb-2" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>From the Fairway</h3>
+              <p className="text-gray-600">Season coverage begins after our first event. First edition drops following the Lake Conference Tournament #1 on April 20.</p>
             </div>
           )}
         </div>

@@ -144,18 +144,19 @@ function Coaches() {
   return (
     <div>
       {/* Hero Section */}
-      <div className="relative h-64 md:h-72 overflow-hidden">
+      <div className="relative h-[40vh] md:h-[50vh] overflow-hidden">
         <img
           src="/images/Web%205.webp"
           alt="Golf course"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectPosition: 'center 40%' }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/30 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12">
           <div className="max-w-7xl mx-auto">
+            <span className="text-edina-gold text-sm font-bold tracking-widest uppercase block mb-1" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>COACHING STAFF</span>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-2" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
-              COACHING STAFF
+              The Leaders Behind the Hornets
             </h1>
             <p className="text-green-200 text-lg">The leaders behind Edina Boys Golf</p>
           </div>

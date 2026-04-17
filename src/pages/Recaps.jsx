@@ -66,21 +66,26 @@ function Recaps() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-edina-green py-10 md:py-14">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-end gap-4">
-            <div>
-              <p className="text-edina-gold text-xs font-bold uppercase tracking-widest mb-1">Edina Boys Golf</p>
-              <h1 className="text-3xl md:text-5xl font-extrabold text-white" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
-                The Hornet Fairway
-              </h1>
-              <p className="text-green-100 mt-2 text-sm md:text-base">
-                Weekly recaps from the 2026 season — scores, standouts, and a healthy amount of Hornet pride.
-              </p>
-            </div>
+      <div className="relative h-[40vh] md:h-[50vh] overflow-hidden">
+        <img
+          src="/images/Web%209.webp"
+          alt="Season recaps"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ objectPosition: 'center 50%' }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-edina-gold text-sm font-bold tracking-widest uppercase mb-2" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>THE HORNET FAIRWAY</div>
+            <h1 className="text-3xl md:text-5xl font-extrabold text-white" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+              Season Recaps
+            </h1>
+            <p className="text-green-100 mt-2 text-sm md:text-base">
+              Weekly recaps from the 2026 season — scores, standouts, and a healthy amount of Hornet pride.
+            </p>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Recaps Feed */}
       <section className="page-container">

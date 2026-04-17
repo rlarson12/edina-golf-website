@@ -23,20 +23,20 @@ function History() {
   return (
     <div>
       {/* Hero Section */}
-      <div className="relative h-[200px] md:h-[280px] overflow-hidden">
+      <div className="relative h-32 md:h-40 overflow-hidden">
         <img
           src="/images/School.webp"
           alt="Edina High School"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectPosition: 'center 50%' }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/30 to-transparent"></div>
-        <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12">
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 via-gray-900/30 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8">
           <div className="max-w-7xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-2" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
-              PROGRAM HISTORY
+            <span className="text-edina-gold text-xs font-bold tracking-widest uppercase block mb-0.5" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>PROGRAM HISTORY</span>
+            <h1 className="text-3xl md:text-4xl font-bold text-white" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+              A Legacy of Excellence
             </h1>
-            <p className="text-green-200 text-lg">A Legacy of Excellence</p>
           </div>
         </div>
       </div>

@@ -600,27 +600,27 @@ function Schedule() {
   return (
     <div>
       {/* Hero Banner with Action Photo */}
-      <div className="relative h-72 md:h-96 overflow-hidden">
+      <div className="relative h-32 md:h-40 overflow-hidden">
         <img
           src="/images/IMG_9149.webp"
           alt="Tournament action"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectPosition: 'center 40%' }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/30 to-transparent"></div>
-        <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12">
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 via-gray-900/30 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8">
           <div className="max-w-7xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-2" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+            <span className="text-edina-gold text-xs font-bold tracking-widest uppercase block mb-0.5" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>2026 SEASON</span>
+            <h1 className="text-3xl md:text-4xl font-bold text-white" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
               {yearFilter} SCHEDULE
             </h1>
-            <p className="text-green-200 text-lg">{yearFilter === '2026' ? 'Upcoming Season' : 'Season Results'}</p>
           </div>
         </div>
       </div>
 
       <div className="page-container">
-        {/* Stats Summary as floating cards */}
-        <div className="relative -mt-12 mb-8">
+        {/* Stats Summary */}
+        <div className="relative mb-8">
           {stats.is2026 ? (
             <div className="max-w-xs mx-auto">
               <div className="card p-4 text-center shadow-lg">

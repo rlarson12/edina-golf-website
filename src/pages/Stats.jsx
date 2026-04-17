@@ -231,27 +231,27 @@ function Stats() {
   return (
     <div>
       {/* Hero Section */}
-      <div className="relative h-72 md:h-80 overflow-hidden">
+      <div className="relative h-32 md:h-40 overflow-hidden">
         <img
           src="/images/Web%203.webp"
           alt="Team photo"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectPosition: 'center 30%' }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-edina-green/30 to-transparent"></div>
-        <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12">
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 via-gray-900/30 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8">
           <div className="max-w-7xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-2" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+            <span className="text-edina-gold text-xs font-bold tracking-widest uppercase block mb-0.5" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>PERFORMANCE DATA</span>
+            <h1 className="text-3xl md:text-4xl font-bold text-white" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
               STATS & LEADERBOARD
             </h1>
-            <p className="text-green-200 text-lg">2026 Season Performance</p>
           </div>
         </div>
       </div>
 
       <div className="page-container">
-        {/* Season Records - Floating Cards (always 2026 data) */}
-        <div className="relative -mt-12 mb-8">
+        {/* Season Records */}
+        <div className="relative mb-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {seasonRecords.map((record) => (
               <div key={record.label} className="card p-5 md:p-6 text-center bg-white shadow-lg">
