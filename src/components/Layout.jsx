@@ -167,7 +167,6 @@ function Layout({ children }) {
                 <li><Link to="/schedule" className="hover:text-white transition-colors">Schedule</Link></li>
                 <li><Link to="/recaps" className="hover:text-white transition-colors">Recaps</Link></li>
                 <li><Link to="/stats" className="hover:text-white transition-colors">Stats</Link></li>
-                <li><Link to="/roster" className="hover:text-white transition-colors">Roster</Link></li>
               </ul>
             </div>
 
@@ -175,6 +174,7 @@ function Layout({ children }) {
             <div>
               <h3 className="font-bold text-lg mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>Team</h3>
               <ul className="space-y-2 text-sm text-green-100">
+                <li><Link to="/roster" className="hover:text-white transition-colors">Roster</Link></li>
                 <li><Link to="/coaches" className="hover:text-white transition-colors">Coaches</Link></li>
                 <li><Link to="/support-team" className="hover:text-white transition-colors">Support Team</Link></li>
                 <li><Link to="/history" className="hover:text-white transition-colors">History</Link></li>

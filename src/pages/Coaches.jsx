@@ -60,7 +60,7 @@ function Coaches() {
     <div key={index} className={`card p-6 ${coach.placeholder ? 'opacity-60' : ''}`}>
       <div className="flex flex-col items-center text-center">
         {/* Photo */}
-        <div className="w-28 h-28 md:w-36 md:h-36 rounded-full overflow-hidden bg-gray-100 mb-4 shadow-lg ring-2 ring-edina-green ring-offset-2">
+        <div className="w-28 h-28 md:w-36 md:h-36 rounded-full overflow-hidden bg-gray-100 mb-4 shadow-lg ring-[3px] ring-edina-green ring-offset-2 ring-offset-white">
           {coach.photo ? (
             <>
               <img

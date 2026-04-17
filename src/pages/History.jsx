@@ -107,7 +107,7 @@ function History() {
             </div>
             <div className="card p-4 md:p-6 min-h-[100px] text-center flex flex-col items-center justify-center">
               <div className="text-3xl font-bold text-edina-green" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>2</div>
-              <div className="text-sm text-gray-600 break-words">Back-to-Back ('22-'23)</div>
+              <div className="text-sm text-gray-600 break-words">Back-to-Back Titles</div>
             </div>
           </div>
         </div>

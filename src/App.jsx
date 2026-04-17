@@ -27,6 +27,7 @@ function App() {
         <Route path="/roster" element={<Roster />} />
         <Route path="/coaches" element={<Coaches />} />
         <Route path="/support-team" element={<SupportTeam />} />
+        <Route path="/support" element={<SupportTeam />} />
         <Route path="/team-info" element={<TeamInfo />} />
         <Route path="/history" element={<History />} />
         <Route path="/photos" element={<Photos />} />
