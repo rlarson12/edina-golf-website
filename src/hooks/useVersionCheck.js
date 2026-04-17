@@ -1,24 +1,22 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 
-const CHECK_INTERVAL_MS = 15 * 60 * 1000 // 15 minutes
+const CHECK_INTERVAL_MS = 60 * 1000 // 60 seconds — catches score updates promptly
 
 export function useVersionCheck() {
-  useEffect(() => {
-    // Capture the build time that was baked in at page load
-    let currentBuildTime = null
+  const currentBuildTime = useRef(null)
 
+  useEffect(() => {
     async function checkVersion() {
       try {
-        // Cache-bust the fetch so we always get the real current version
         const res = await fetch(`/version.json?t=${Date.now()}`, { cache: 'no-store' })
         if (!res.ok) return
         const { buildTime } = await res.json()
 
-        if (currentBuildTime === null) {
-          // First check — record the version we loaded with
-          currentBuildTime = buildTime
-        } else if (buildTime !== currentBuildTime) {
-          // New deploy detected — hard reload to pick up the new bundle
+        if (currentBuildTime.current === null) {
+          // First check — store the version we loaded with
+          currentBuildTime.current = buildTime
+        } else if (buildTime !== currentBuildTime.current) {
+          // New deploy detected — reload to pick up fresh scores/content
           window.location.reload(true)
         }
       } catch {
@@ -26,9 +24,23 @@ export function useVersionCheck() {
       }
     }
 
-    // Check immediately on mount, then every 5 minutes
+    // Check immediately on mount
     checkVersion()
+
+    // Poll every 60 seconds
     const interval = setInterval(checkVersion, CHECK_INTERVAL_MS)
-    return () => clearInterval(interval)
+
+    // Also recheck when tab/app comes back into focus (critical for iOS home screen)
+    function onVisibilityChange() {
+      if (document.visibilityState === 'visible') {
+        checkVersion()
+      }
+    }
+    document.addEventListener('visibilitychange', onVisibilityChange)
+
+    return () => {
+      clearInterval(interval)
+      document.removeEventListener('visibilitychange', onVisibilityChange)
+    }
   }, [])
 }
