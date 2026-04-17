@@ -618,7 +618,8 @@ function Stats() {
                                   transform: 'rotate(180deg)',
                                   whiteSpace: 'nowrap',
                                   paddingBottom: '4px',
-                                  fontSize: '11px'
+                                  fontSize: '13px',
+                                  textAlign: 'center'
                                 }}>
                                   {fullName}
                                 </div>
@@ -636,7 +637,12 @@ function Stats() {
                             </td>
                           </tr>
                         ) : (
-                          filteredPlayers.map((player) => (
+                          [...filteredPlayers].sort((a, b) => {
+                              if (a.average == null && b.average == null) return a.name.localeCompare(b.name)
+                              if (a.average == null) return 1
+                              if (b.average == null) return -1
+                              return a.average - b.average
+                            }).map((player) => (
                             <tr key={player.name} className="hover:bg-gray-50 transition-colors">
                               {/* Sticky player name + avg cell */}
                               <td className="sticky left-0 bg-white z-10 px-3 py-2 border-r border-gray-200 text-xs md:text-sm whitespace-nowrap">
