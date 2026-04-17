@@ -6610,7 +6610,9 @@
       "name": "Carter Ringle",
       "grade": 10,
       "gradYear": 2028,
-      "team": "jv"
+      "team": "jv",
+      "photo": "/images/carter-ringle.webp",
+      "photoPosition": "center 15%"
     },
     {
       "name": "Mason Schultes",
