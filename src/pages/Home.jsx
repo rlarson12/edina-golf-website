@@ -183,20 +183,16 @@ function Home() {
         {/* NOTE: Hero is aspect-ratio sensitive — source photo is 4:3. Min-height set to ~680px on desktop so background-position is not load-bearing. Do not reduce hero height or the crop will break. */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16 md:pt-20 md:pb-24 lg:min-h-[680px] flex flex-col justify-start">
           <div className="text-center">
-            {/* Gold state champion eyebrow badge */}
-            <div className="inline-flex items-center gap-2 bg-edina-forest border border-edina-gold/60 rounded-lg px-3 py-1.5 mb-3">
-              <span className="text-edina-gold text-sm font-bold tracking-wide" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>🏆 10× MINNESOTA STATE CHAMPIONS</span>
-            </div>
+            {/* Subtitle above the statement — setup-and-payoff structure */}
+            <p className="text-lg md:text-xl text-green-100 mb-3 max-w-2xl mx-auto font-medium tracking-wide" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.5)' }}>
+              10× Minnesota State Champions • Est. 1954
+            </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
               Chasing 11.
             </h1>
-            <p className="text-base md:text-2xl text-green-100 mb-8 max-w-2xl mx-auto hidden md:block">
-              10× Minnesota State Champions • Est. 1954
-            </p>
             <p className="text-base text-green-100 mb-8 md:hidden">
               Tradition. Excellence.
             </p>
-
           </div>
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-gray-50 to-transparent"></div>

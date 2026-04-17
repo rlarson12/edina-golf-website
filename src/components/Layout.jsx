@@ -47,8 +47,8 @@ function Layout({ children }) {
                 />
               </div>
               <div className="text-white" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
-                <div className="font-bold text-sm md:text-lg leading-tight">Edina High School</div>
-                <div className={`text-xs md:text-sm text-green-100 leading-tight ${scrolled ? 'hidden' : ''}`}>Boys Golf</div>
+                <div className="font-bold text-base md:text-xl leading-tight tracking-wide">Edina High School</div>
+                <div className={`text-sm md:text-sm text-green-100 leading-tight ${scrolled ? 'hidden' : ''}`}>Boys Golf</div>
               </div>
             </Link>
 
