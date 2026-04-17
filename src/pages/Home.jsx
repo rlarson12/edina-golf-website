@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useMemo } from 'react'
 import golfData from '../data/golfData.json'
+import recapsData from '../data/recaps.json'
 
 // 2026 Varsity Schedule (for Up Next feature - varsity events only)
 const schedule2026 = [
@@ -469,51 +470,40 @@ function Home() {
       {/* From the Fairway - News & Recaps */}
       <section className="bg-edina-green/5 border-y border-edina-green/20 py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>From the Fairway</h2>
-
-          {(golfData.news2026 || []).length > 0 ? (
-            <div className="grid md:grid-cols-3 gap-6">
-              {(golfData.news2026 || []).slice(0, 3).map((item) => (
-                <div key={item.id} className="bg-white rounded-lg p-5 md:p-6 shadow-sm border-l-4 border-edina-green flex flex-col">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${
-                      item.type === 'recap' ? 'bg-edina-green/10 text-edina-green' :
-                      item.type === 'preview' ? 'bg-blue-50 text-blue-700' :
-                      'bg-gray-100 text-gray-600'
-                    }`}>
-                      {item.type === 'recap' ? 'Recap' : item.type === 'preview' ? 'Preview' : 'Article'}
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>From the Fairway</h2>
+            <Link to="/recaps" className="text-sm font-medium text-edina-green hover:underline">All articles →</Link>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            {[...recapsData.recaps]
+              .sort((a, b) => new Date(b.publishedDate) - new Date(a.publishedDate))
+              .slice(0, 2)
+              .map((recap) => (
+                <Link
+                  key={recap.id}
+                  to="/recaps"
+                  className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow flex flex-col"
+                >
+                  <div className="bg-edina-forest px-5 py-4">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="text-xs font-bold text-edina-gold uppercase tracking-widest">The Hornet Fairway</span>
+                      <span className="text-green-300 text-xs">·</span>
+                      <span className="text-xs text-green-200">{recap.weekOf}</span>
+                    </div>
+                    <h3 className="text-base font-bold text-white leading-snug" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>{recap.title}</h3>
+                  </div>
+                  <div className="p-5 flex-grow">
+                    <p className="text-sm text-gray-600 line-clamp-3">{recap.varsityBody.split('\n\n')[0]}</p>
+                    <span className="inline-flex items-center gap-1 text-sm text-edina-green font-medium mt-4">
+                      Read more
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
                     </span>
-                    <span className="text-xs text-gray-400">{item.dateFormatted}</span>
                   </div>
-                  <h3 className="font-bold text-gray-900 mb-2 leading-snug">{item.title}</h3>
-                  <p className="text-sm text-gray-600 flex-grow line-clamp-3">{item.summary}</p>
-                  <Link to="/schedule" className="inline-flex items-center gap-1 text-sm text-edina-green hover:underline mt-4 font-medium">
-                    Read more
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </Link>
-                </div>
+                </Link>
               ))}
-            </div>
-          ) : (
-            <div className="card p-6">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full overflow-hidden bg-edina-forest/10 flex items-center justify-center">
-                  <img src="/images/Coach Vernon .webp" alt="Coach Vernon" className="w-full h-full object-cover" onError={(e) => { e.target.style.display='none' }} />
-                </div>
-                <div className="flex-grow">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="text-xs font-bold text-edina-green uppercase tracking-wider">Preview</span>
-                    <span className="text-xs text-gray-400">Apr 20</span>
-                  </div>
-                  <h3 className="font-bold text-gray-900 text-base leading-snug mb-1">Season Opener: Hornets Take the Tee at Chaska Town Course</h3>
-                  <p className="text-sm text-gray-600">Coach Vernon previews the 2026 squad as Edina opens conference play. First edition of The Hornet Fairway drops after the results are in.</p>
-                  <p className="text-xs text-gray-400 mt-2">By Coach Vernon • First edition coming Apr 20</p>
-                </div>
-              </div>
-            </div>
-          )}
+          </div>
         </div>
       </section>
 
