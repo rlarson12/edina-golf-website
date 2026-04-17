@@ -177,10 +177,10 @@ function Home() {
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover"
-          style={{ backgroundImage: "url('/images/unnamed.webp')", backgroundPosition: 'center 60%' }}
+          style={{ backgroundImage: "url('/images/unnamed.webp')", backgroundPosition: 'center 25%' }}
         ></div>
-        {/* Dark gradient only — no color tint */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
+        {/* Dark gradient — top for text legibility, bottom edge only for transition */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-transparent" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 lg:py-32">
           <div className="text-center">
             {/* Gold state champion eyebrow badge */}
@@ -203,7 +203,7 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-gray-50 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-gray-50 to-transparent"></div>
       </section>
 
       {/* Quick Stats */}
