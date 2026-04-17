@@ -142,7 +142,7 @@ function SupportTeam() {
         {/* Captains Parents */}
         <div className="mb-12">
           <div className="mb-6">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>Captains Parents</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>Captains' Parents</h2>
             <div className="w-20 h-1 bg-edina-green mt-2 rounded-full"></div>
           </div>
         <div className="grid gap-6 md:grid-cols-2">
