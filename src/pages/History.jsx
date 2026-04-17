@@ -93,21 +93,21 @@ function History() {
 
           {/* Championship Stats */}
           <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
-            <div className="card p-4 text-center">
+            <div className="card p-4 md:p-6 min-h-[100px] text-center flex flex-col items-center justify-center">
               <div className="text-3xl font-bold text-edina-gold" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>10</div>
-              <div className="text-sm text-gray-600">State Titles</div>
+              <div className="text-sm text-gray-600 break-words">State Titles</div>
             </div>
-            <div className="card p-4 text-center">
+            <div className="card p-4 md:p-6 min-h-[100px] text-center flex flex-col items-center justify-center">
               <div className="text-3xl font-bold text-edina-green" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>70</div>
-              <div className="text-sm text-gray-600">Years of History</div>
+              <div className="text-sm text-gray-600 break-words">Years of History</div>
             </div>
-            <div className="card p-4 text-center">
+            <div className="card p-4 md:p-6 min-h-[100px] text-center flex flex-col items-center justify-center">
               <div className="text-3xl font-bold text-edina-green" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>4</div>
-              <div className="text-sm text-gray-600">Titles Since 2014</div>
+              <div className="text-sm text-gray-600 break-words">Titles Since 2014</div>
             </div>
-            <div className="card p-4 text-center">
+            <div className="card p-4 md:p-6 min-h-[100px] text-center flex flex-col items-center justify-center">
               <div className="text-3xl font-bold text-edina-green" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>2</div>
-              <div className="text-sm text-gray-600">Back-to-Back ('22-'23)</div>
+              <div className="text-sm text-gray-600 break-words">Back-to-Back ('22-'23)</div>
             </div>
           </div>
         </div>

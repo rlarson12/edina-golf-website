@@ -2,6 +2,15 @@ import { useState, useMemo, Fragment } from 'react'
 import golfData from '../data/golfData.json'
 import Scorecard from '../components/Scorecard'
 
+const getEventType = (event) => {
+  if (event.isHome) return { label: 'Home', color: 'bg-edina-green/10 text-edina-green' }
+  const name = (event.name || event.event || '').toLowerCase()
+  if (/invitational|tournament|classic|preview|championship|section|state/.test(name)) {
+    return { label: 'Tournament', color: 'bg-purple-100 text-purple-700' }
+  }
+  return { label: 'Away', color: 'bg-gray-100 text-gray-600' }
+}
+
 function Schedule() {
   const [yearFilter, setYearFilter] = useState('2026')
   const [levelFilter, setLevelFilter] = useState('all')
@@ -113,6 +122,21 @@ function Schedule() {
   }, [yearFilter, levelFilter, yearSchedule, varsitySchedule, jvSchedule])
 
   const schedule = levelFiltered
+
+  const eventsWithSeparators = useMemo(() => {
+    const items = []
+    let lastMonth = null
+    schedule.forEach(event => {
+      const d = new Date((event.date || '') + 'T12:00:00')
+      const month = d.toLocaleDateString('en-US', { month: 'long', year: 'numeric' }).toUpperCase()
+      if (month !== lastMonth) {
+        items.push({ type: 'separator', month })
+        lastMonth = month
+      }
+      items.push({ type: 'event', event })
+    })
+    return items
+  }, [schedule])
 
   const toggleExpand = (eventId) => {
     setExpandedEvents(prev => {
@@ -271,7 +295,7 @@ function Schedule() {
           <div className="flex flex-col md:flex-row md:items-center gap-4">
             {/* Expand button */}
             {canExpand && (
-              <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full md:order-first">
+              <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full md:order-first pointer-events-none">
                 <svg
                   className={`w-5 h-5 text-gray-500 transition-transform ${isExpanded ? 'rotate-90' : ''}`}
                   fill="none"
@@ -306,6 +330,14 @@ function Schedule() {
                     {event.level}
                   </span>
                 )}
+                {!isRound && (() => {
+                  const { label, color } = getEventType(event)
+                  return (
+                    <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${color}`}>
+                      {label}
+                    </span>
+                  )
+                })()}
               </div>
               <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-gray-600">
                 {!isRound && (
@@ -439,6 +471,28 @@ function Schedule() {
           const scores = getEventScores(event)
           return (
             <div className="border-t border-gray-100 bg-gray-50/50 p-4 space-y-3">
+              {/* Directions + Course Metadata */}
+              <div className="flex flex-wrap items-center gap-4">
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(event.course)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-sm text-edina-green hover:underline font-medium"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  Directions to {event.course}
+                </a>
+                {(eventInfoMap[event.id]?.par || eventInfoMap[event.id]?.holes) && (
+                  <div className="flex items-center gap-4 text-sm text-gray-600">
+                    {eventInfoMap[event.id]?.holes && <span>⛳ {eventInfoMap[event.id].holes} holes</span>}
+                    {eventInfoMap[event.id]?.par && <span>Par {eventInfoMap[event.id].par}</span>}
+                  </div>
+                )}
+              </div>
               {/* Round breakdown for multi-day events */}
               {event.isMultiDay && event.rounds && (
                 <>
@@ -719,7 +773,18 @@ function Schedule() {
             No events found.
           </div>
         ) : (
-          schedule.map((event) => renderEventRow(event))
+          eventsWithSeparators.map((item, idx) => {
+            if (item.type === 'separator') {
+              return (
+                <div key={`sep-${item.month}-${idx}`} className="sticky top-[48px] z-20 -mx-4 px-4 py-2 bg-edina-forest/95 backdrop-blur-sm">
+                  <span className="text-xs font-bold tracking-widest text-edina-green" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+                    {item.month}
+                  </span>
+                </div>
+              )
+            }
+            return renderEventRow(item.event)
+          })
         )}
       </div>
 

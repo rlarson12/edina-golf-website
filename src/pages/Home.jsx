@@ -542,18 +542,6 @@ function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-gray-900 py-12 md:py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
-            Go Hornets!
-          </h2>
-          <p className="text-gray-600 max-w-xl mx-auto">
-            Follow the Edina Boys Golf team throughout the 2026 season as we compete for conference and state championships.
-          </p>
-        </div>
-      </section>
-
       {/* Action Photo Strip */}
       <section className="py-8 bg-white overflow-hidden">
         <div className="flex gap-4 animate-none">
