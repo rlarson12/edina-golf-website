@@ -6,7 +6,7 @@ const getEventType = (event) => {
   if (event.isHome) return { label: 'Home', color: 'bg-edina-green/10 text-edina-green' }
   const name = (event.name || event.event || '').toLowerCase()
   if (/invitational|tournament|classic|preview|championship|section|state/.test(name)) {
-    return { label: 'Tournament', color: 'bg-purple-100 text-purple-700' }
+    return { label: 'Tournament', color: 'bg-edina-gold/20 text-edina-gold-dark font-semibold' }
   }
   return { label: 'Away', color: 'bg-gray-100 text-gray-600' }
 }
@@ -424,7 +424,7 @@ function Schedule() {
             return (
               <div className="border-t border-gray-100 bg-gray-50/50 p-4 space-y-3">
                 <div className="flex items-center gap-3 mb-2">
-                  <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-purple-100 text-purple-800 uppercase tracking-wider">Match Play</span>
+                  <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-edina-gold/20 text-edina-gold-dark uppercase tracking-wider">Match Play</span>
                   {event.teamRecord && event.teamRecord !== 'TBD' && (
                     <span className="text-sm text-gray-600">Record: <span className="font-medium">{event.teamRecord}</span></span>
                   )}

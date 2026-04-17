@@ -177,14 +177,14 @@ function Home() {
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover"
-          style={{ backgroundImage: "url('/images/unnamed.webp')", backgroundPosition: 'center 20%' }}
+          style={{ backgroundImage: "url('/images/Team1.webp')", backgroundPosition: 'center 65%' }}
         ></div>
         {/* Dark gradient only — no color tint */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 lg:py-32">
           <div className="text-center">
             {/* Gold state champion eyebrow badge */}
-            <div className="inline-flex items-center gap-2 bg-edina-gold/20 border border-edina-gold/50 rounded-lg px-3 py-1.5 mb-3">
+            <div className="inline-flex items-center gap-2 bg-edina-forest border border-edina-gold/60 rounded-lg px-3 py-1.5 mb-3">
               <span className="text-edina-gold text-sm font-bold tracking-wide" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>🏆 10× MINNESOTA STATE CHAMPIONS</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
