@@ -6505,7 +6505,9 @@
       "name": "Ty Pankratz",
       "grade": 12,
       "gradYear": 2026,
-      "team": "varsity"
+      "team": "varsity",
+      "photo": "/images/ty-pankratz.webp",
+      "photoPosition": "center 20%"
     },
     {
       "name": "Max Romslo",
