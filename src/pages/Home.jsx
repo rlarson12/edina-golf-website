@@ -223,36 +223,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Team Culture Collage — front-loads culture before empty data states */}
-      <section className="py-12 md:py-16 bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-8" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
-            More Than A Team
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-            <div className="col-span-2 row-span-2 relative rounded-lg overflow-hidden">
-              <img src="/images/unnamed.webp" alt="Team photo" className="w-full h-full img-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-              <div className="absolute bottom-4 left-4 text-white">
-                <p className="text-lg font-bold" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>BROTHERHOOD</p>
-              </div>
-            </div>
-            <div className="relative rounded-lg overflow-hidden aspect-square">
-              <img src="/images/Web%206.webp" alt="Team dinner" className="w-full h-full img-cover" />
-            </div>
-            <div className="relative rounded-lg overflow-hidden aspect-square">
-              <img src="/images/Web%209.webp" alt="Sunset" className="w-full h-full img-cover-top" />
-            </div>
-            <div className="relative rounded-lg overflow-hidden aspect-square">
-              <img src="/images/IMG_6742.webp" alt="Team by water" className="w-full h-full img-cover" />
-            </div>
-            <div className="relative rounded-lg overflow-hidden aspect-square">
-              <img src="/images/Web%207.webp" alt="Team at course" className="w-full h-full img-cover" />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Up Next - 2026 Season */}
       {(upcomingVarsity.length > 0 || upcomingJV.length > 0) && (
         <section className="bg-gray-50 py-8 md:py-10">
@@ -554,6 +524,36 @@ function Home() {
       </section>
 
 
+
+      {/* Team Culture Collage */}
+      <section className="py-12 md:py-16 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-8" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+            More Than A Team
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+            <div className="col-span-2 row-span-2 relative rounded-lg overflow-hidden">
+              <img src="/images/unnamed.webp" alt="Team photo" className="w-full h-full img-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+              <div className="absolute bottom-4 left-4 text-white">
+                <p className="text-lg font-bold" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>BROTHERHOOD</p>
+              </div>
+            </div>
+            <div className="relative rounded-lg overflow-hidden aspect-square">
+              <img src="/images/Web%206.webp" alt="Team dinner" className="w-full h-full img-cover" />
+            </div>
+            <div className="relative rounded-lg overflow-hidden aspect-square">
+              <img src="/images/Web%209.webp" alt="Sunset" className="w-full h-full img-cover-top" />
+            </div>
+            <div className="relative rounded-lg overflow-hidden aspect-square">
+              <img src="/images/IMG_6742.webp" alt="Team by water" className="w-full h-full img-cover" />
+            </div>
+            <div className="relative rounded-lg overflow-hidden aspect-square">
+              <img src="/images/Web%207.webp" alt="Team at course" className="w-full h-full img-cover" />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Action Photo Strip */}
       <section className="py-8 bg-white overflow-hidden">

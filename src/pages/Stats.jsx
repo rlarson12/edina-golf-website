@@ -575,10 +575,9 @@ function Stats() {
 
                 <div className="card overflow-hidden">
                   <div className="overflow-x-auto">
-                    <table className="w-full text-sm border-collapse" style={{ minWidth: '600px' }}>
+                    <table className="w-full text-sm border-collapse">
                       <thead className="bg-gray-50 border-b border-gray-200">
                         <tr>
-                          {/* Sticky player name header */}
                           <th className="sticky left-0 bg-gray-50 px-3 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider z-10 border-r border-gray-200">
                             Player
                           </th>
@@ -588,14 +587,21 @@ function Stats() {
                           {eventHeaders.map((event, i) => {
                             let fullName = event.replace(/^\d{2}\/\d{2} - /, '')
                             fullName = fullName.replace(/\bFinal\b/gi, 'Day 2')
-                            const abbrev = abbreviateEvent(event)
                             return (
                               <th
                                 key={i}
-                                className="px-1 py-3 text-center text-xs font-semibold text-gray-700 whitespace-nowrap w-10"
-                                title={fullName}
+                                className="px-1 text-center text-xs font-semibold text-gray-600 w-8"
+                                style={{ height: '120px', verticalAlign: 'bottom' }}
                               >
-                                {abbrev}
+                                <div style={{
+                                  writingMode: 'vertical-rl',
+                                  transform: 'rotate(180deg)',
+                                  whiteSpace: 'nowrap',
+                                  paddingBottom: '4px',
+                                  fontSize: '11px'
+                                }}>
+                                  {fullName}
+                                </div>
                               </th>
                             )
                           })}
