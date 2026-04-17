@@ -6596,7 +6596,9 @@
       "name": "Crosby Pote",
       "grade": 8,
       "gradYear": 2030,
-      "team": "jv"
+      "team": "jv",
+      "photo": "/images/crosby-pote.webp",
+      "photoPosition": "center 15%"
     },
     {
       "name": "Ari Prickett",
