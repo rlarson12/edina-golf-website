@@ -324,7 +324,7 @@ function Roster() {
           src="/images/Team1.webp"
           alt="Edina Boys Golf Team"
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ objectPosition: 'center 70%' }}
+          style={{ objectPosition: 'center 20%' }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent"></div>
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12">
