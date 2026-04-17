@@ -218,17 +218,17 @@ function Home() {
               {/* Varsity Column */}
               <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
                 <div className="px-4 py-2.5 bg-edina-green/10 border-b border-edina-green/15">
-                  <span className="text-xs font-bold text-edina-green uppercase tracking-wider">Varsity</span>
+                  <span className="text-sm font-bold text-edina-green uppercase tracking-wider">Varsity</span>
                 </div>
                 <div className="divide-y divide-gray-50">
                   {upcomingVarsity.slice(0, 2).map((ev) => (
                     <div key={ev.id} className="flex items-center gap-3 px-4 py-3">
                       <div className="flex-shrink-0 w-14 text-center">
-                        <div className="text-xs font-bold text-edina-green bg-edina-green/10 rounded-md px-2 py-1">{ev.dateFormatted}</div>
+                        <div className="text-sm font-bold text-edina-green bg-edina-green/10 rounded-md px-3 py-1.5">{ev.dateFormatted}</div>
                       </div>
                       <div className="flex-grow min-w-0">
-                        <div className="font-semibold text-gray-900 text-sm truncate">{ev.event}</div>
-                        <div className="text-xs text-gray-500 truncate">{ev.course}</div>
+                        <div className="font-bold text-gray-900 text-base truncate">{ev.event}</div>
+                        <div className="text-sm text-gray-600 truncate">{ev.course}</div>
                       </div>
                     </div>
                   ))}
@@ -241,17 +241,17 @@ function Home() {
               {/* JV Column */}
               <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
                 <div className="px-4 py-2.5 bg-edina-green/10 border-b border-edina-green/15">
-                  <span className="text-xs font-bold text-edina-green uppercase tracking-wider">JV</span>
+                  <span className="text-sm font-bold text-edina-green uppercase tracking-wider">JV</span>
                 </div>
                 <div className="divide-y divide-gray-50">
                   {upcomingJV.slice(0, 2).map((ev) => (
                     <div key={ev.id} className="flex items-center gap-3 px-4 py-3">
                       <div className="flex-shrink-0 w-14 text-center">
-                        <div className="text-xs font-bold text-edina-green bg-edina-green/10 rounded-md px-2 py-1">{ev.dateFormatted}</div>
+                        <div className="text-sm font-bold text-edina-green bg-edina-green/10 rounded-md px-3 py-1.5">{ev.dateFormatted}</div>
                       </div>
                       <div className="flex-grow min-w-0">
-                        <div className="font-semibold text-gray-900 text-sm truncate">{ev.event}</div>
-                        <div className="text-xs text-gray-500 truncate">{ev.course}</div>
+                        <div className="font-bold text-gray-900 text-base truncate">{ev.event}</div>
+                        <div className="text-sm text-gray-600 truncate">{ev.course}</div>
                       </div>
                     </div>
                   ))}
@@ -297,19 +297,19 @@ function Home() {
                       className="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
                     >
                       <div className="flex-shrink-0 w-14 text-center">
-                        <div className="text-xs md:text-sm font-bold text-edina-green">{result.dateFormatted}</div>
+                        <div className="text-sm font-semibold text-edina-green">{result.dateFormatted}</div>
                       </div>
                       <div className="ml-3 flex-grow min-w-0">
-                        <div className="font-semibold text-gray-900 text-sm md:text-base truncate">{result.event}</div>
+                        <div className="font-semibold text-gray-900 text-base truncate">{result.event}</div>
                       </div>
                       <div className="text-right flex-shrink-0 ml-2">
-                        <div className={`font-semibold text-sm md:text-base ${
+                        <div className={`font-bold text-base ${
                           result.teamScore?.includes('(-') ? 'text-red-600' : 'text-gray-700'
                         }`}>
                           {result.teamScore}
                         </div>
                         {result.teamFinish && (
-                          <div className={`text-xs font-medium ${
+                          <div className={`text-sm font-semibold ${
                             result.teamFinish?.startsWith('1st') ? 'text-edina-gold-dark' : 'text-gray-500'
                           }`}>
                             {result.teamFinish}
@@ -340,33 +340,33 @@ function Home() {
                       className="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
                     >
                       <div className="flex-shrink-0 w-14 text-center">
-                        <div className="text-xs md:text-sm font-bold text-edina-green">{result.dateFormatted}</div>
+                        <div className="text-sm font-semibold text-edina-green">{result.dateFormatted}</div>
                       </div>
                       <div className="ml-3 flex-grow min-w-0">
-                        <div className="font-semibold text-gray-900 text-sm md:text-base truncate">{result.event || result.name}</div>
+                        <div className="font-semibold text-gray-900 text-base truncate">{result.event || result.name}</div>
                       </div>
                       <div className="text-right flex-shrink-0 ml-2">
                         {result.format === 'matchplay' ? (
                           <>
-                            <div className={`font-semibold text-sm md:text-base ${
+                            <div className={`font-bold text-base ${
                               result.teamResult?.toLowerCase() === 'win' ? 'text-green-700' :
                               result.teamResult?.toLowerCase() === 'loss' ? 'text-red-600' : 'text-gray-700'
                             }`}>
                               {result.teamResult}
                             </div>
                             {result.teamRecord && (
-                              <div className="text-xs text-gray-500">{result.teamRecord}</div>
+                              <div className="text-sm text-gray-600">{result.teamRecord}</div>
                             )}
                           </>
                         ) : (
                           <>
-                            <div className={`font-semibold text-sm md:text-base ${
+                            <div className={`font-bold text-base ${
                               result.teamScore?.includes('(-') ? 'text-red-600' : 'text-gray-700'
                             }`}>
                               {result.teamScore}
                             </div>
                             {result.teamFinish && (
-                              <div className={`text-xs font-medium ${
+                              <div className={`text-sm font-semibold ${
                                 result.teamFinish?.startsWith('1st') ? 'text-edina-gold-dark' : 'text-gray-500'
                               }`}>
                                 {result.teamFinish}
@@ -453,11 +453,11 @@ function Home() {
                   upcomingVarsity.map((event) => (
                     <div key={event.id} className="flex items-center p-3 bg-gray-50 rounded-lg">
                       <div className="flex-shrink-0 w-16 text-center">
-                        <div className="text-xs md:text-sm font-bold text-edina-green">{event.dateFormatted}</div>
+                        <div className="text-sm font-bold text-edina-green">{event.dateFormatted}</div>
                       </div>
                       <div className="ml-3 flex-grow min-w-0">
-                        <div className="font-semibold text-gray-900 text-sm md:text-base truncate">{event.event}</div>
-                        <div className="text-xs text-gray-500 truncate">{event.course}</div>
+                        <div className="font-semibold text-gray-900 text-base truncate">{event.event}</div>
+                        <div className="text-sm text-gray-600 truncate">{event.course}</div>
                       </div>
                     </div>
                   ))
@@ -480,11 +480,11 @@ function Home() {
                   upcomingJV.map((event) => (
                     <div key={event.id} className="flex items-center p-3 bg-gray-50 rounded-lg">
                       <div className="flex-shrink-0 w-16 text-center">
-                        <div className="text-xs md:text-sm font-bold text-edina-green">{event.dateFormatted}</div>
+                        <div className="text-sm font-bold text-edina-green">{event.dateFormatted}</div>
                       </div>
                       <div className="ml-3 flex-grow min-w-0">
-                        <div className="font-semibold text-gray-900 text-sm md:text-base truncate">{event.event}</div>
-                        <div className="text-xs text-gray-500 truncate">{event.course}</div>
+                        <div className="font-semibold text-gray-900 text-base truncate">{event.event}</div>
+                        <div className="text-sm text-gray-600 truncate">{event.course}</div>
                       </div>
                     </div>
                   ))
@@ -619,7 +619,7 @@ function Home() {
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4" style={{ fontFamily: "'Oswald', sans-serif" }}>
             Go Hornets!
           </h2>
-          <p className="text-gray-400 max-w-xl mx-auto">
+          <p className="text-gray-600 max-w-xl mx-auto">
             Follow the Edina Boys Golf team throughout the 2026 season as we compete for conference and state championships.
           </p>
         </div>

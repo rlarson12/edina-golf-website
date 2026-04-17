@@ -371,10 +371,10 @@ function Stats() {
                   <table className="w-full text-sm">
                     <thead className="bg-gray-50 border-b border-gray-200">
                       <tr>
-                        <th className="sticky left-0 bg-gray-50 px-2 pt-2 pb-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider z-10 w-24 md:w-32 align-bottom">
+                        <th className="sticky left-0 bg-gray-50 px-2 pt-2 pb-3 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider z-10 w-24 md:w-32 align-bottom">
                           Player
                         </th>
-                        <th className="px-2 pt-2 pb-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider whitespace-nowrap w-12 align-bottom">
+                        <th className="px-2 pt-2 pb-3 text-center text-sm font-semibold text-gray-700 uppercase tracking-wider whitespace-nowrap w-12 align-bottom">
                           Avg
                         </th>
                         {eventHeaders.map((event, i) => {
@@ -388,7 +388,7 @@ function Stats() {
                             >
                               <div className="flex justify-center">
                                 <div
-                                  className="whitespace-nowrap text-xs md:text-sm font-semibold text-gray-600"
+                                  className="whitespace-nowrap text-sm font-semibold text-gray-700"
                                   style={{
                                     writingMode: 'vertical-rl',
                                     transform: 'rotate(180deg)',
@@ -449,11 +449,11 @@ function Stats() {
                   <table className="w-full">
                     <thead className="bg-gray-50 border-b border-gray-200">
                       <tr>
-                        <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Player</th>
-                        <th className="px-4 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">Avg</th>
-                        <th className="px-4 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">Low</th>
-                        <th className="px-4 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">Rounds</th>
-                        <th className="px-4 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider hidden sm:table-cell">Last 3</th>
+                        <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">Player</th>
+                        <th className="px-4 py-3 text-center text-sm font-semibold text-gray-700 uppercase tracking-wider">Avg</th>
+                        <th className="px-4 py-3 text-center text-sm font-semibold text-gray-700 uppercase tracking-wider">Low</th>
+                        <th className="px-4 py-3 text-center text-sm font-semibold text-gray-700 uppercase tracking-wider">Rounds</th>
+                        <th className="px-4 py-3 text-center text-sm font-semibold text-gray-700 uppercase tracking-wider hidden sm:table-cell">Last 3</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-100">
@@ -490,11 +490,11 @@ function Stats() {
                   <table className="w-full">
                     <thead className="bg-gray-50 border-b border-gray-200">
                       <tr>
-                        <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Date</th>
-                        <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Event</th>
-                        <th className="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider hidden sm:table-cell">Course</th>
-                        <th className="px-4 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">Score</th>
-                        <th className="px-4 py-3 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">Finish</th>
+                        <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">Date</th>
+                        <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">Event</th>
+                        <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider hidden sm:table-cell">Course</th>
+                        <th className="px-4 py-3 text-center text-sm font-semibold text-gray-700 uppercase tracking-wider">Score</th>
+                        <th className="px-4 py-3 text-center text-sm font-semibold text-gray-700 uppercase tracking-wider">Finish</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-100">

@@ -169,7 +169,7 @@ function Layout({ children }) {
                 </svg>
               </a>
               <p className="text-green-100 text-sm mt-2">@edina_boysgolf</p>
-              <p className="text-green-100 text-xs mt-4">
+              <p className="text-green-100 text-sm mt-4">
                 Edina High School<br />
                 6754 Valley View Road<br />
                 Edina, MN 55439

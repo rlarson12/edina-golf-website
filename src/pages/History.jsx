@@ -167,16 +167,16 @@ function History() {
             <table className="w-full">
               <thead className="bg-gray-50 border-b border-gray-200">
                 <tr>
-                  <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">
                     Grad Year
                   </th>
-                  <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">
                     Player
                   </th>
-                  <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">
                     College
                   </th>
-                  <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">
                     Notes
                   </th>
                 </tr>
@@ -184,7 +184,7 @@ function History() {
               <tbody className="divide-y divide-gray-100">
                 {collegeGolfers.map((golfer, index) => (
                   <tr key={index} className="hover:bg-gray-50 transition-colors">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
                       {golfer.gradYear}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
@@ -193,7 +193,7 @@ function History() {
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-edina-green font-medium">
                       {golfer.college}
                     </td>
-                    <td className="px-6 py-4 text-sm text-gray-500 italic">
+                    <td className="px-6 py-4 text-sm text-gray-600 italic">
                       {golfer.notes && `*${golfer.notes}`}
                     </td>
                   </tr>
@@ -216,7 +216,7 @@ function History() {
                   {golfer.college}
                 </div>
                 {golfer.notes && (
-                  <div className="text-xs text-gray-500 italic">
+                  <div className="text-sm text-gray-600 italic">
                     *{golfer.notes}
                   </div>
                 )}

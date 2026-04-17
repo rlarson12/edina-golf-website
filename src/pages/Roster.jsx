@@ -437,7 +437,7 @@ function Roster() {
                           {player.team === 'jv' ? 'JV' : player.team.charAt(0).toUpperCase() + player.team.slice(1)}
                         </span>
                         {weightedAvg && (
-                          <span className="text-xs text-gray-500">
+                          <span className="text-sm text-gray-600">
                             Avg: <span className="font-medium text-gray-700">{weightedAvg.toFixed(1)}</span>
                           </span>
                         )}
@@ -485,23 +485,23 @@ function Roster() {
             <div className="grid grid-cols-4 gap-4">
               <div className="text-center">
                 <div className="text-lg font-bold text-gray-900">{classBreakdown[12]}</div>
-                <div className="text-xs text-gray-500">Seniors</div>
-                <div className="text-xs text-gray-400">Class of 2026</div>
+                <div className="text-sm text-gray-600">Seniors</div>
+                <div className="text-sm text-gray-600">Class of 2026</div>
               </div>
               <div className="text-center">
                 <div className="text-lg font-bold text-gray-900">{classBreakdown[11]}</div>
-                <div className="text-xs text-gray-500">Juniors</div>
-                <div className="text-xs text-gray-400">Class of 2027</div>
+                <div className="text-sm text-gray-600">Juniors</div>
+                <div className="text-sm text-gray-600">Class of 2027</div>
               </div>
               <div className="text-center">
                 <div className="text-lg font-bold text-gray-900">{classBreakdown[10]}</div>
-                <div className="text-xs text-gray-500">Sophomores</div>
-                <div className="text-xs text-gray-400">Class of 2028</div>
+                <div className="text-sm text-gray-600">Sophomores</div>
+                <div className="text-sm text-gray-600">Class of 2028</div>
               </div>
               <div className="text-center">
                 <div className="text-lg font-bold text-gray-900">{classBreakdown[9]}</div>
-                <div className="text-xs text-gray-500">Freshmen</div>
-                <div className="text-xs text-gray-400">Class of 2029</div>
+                <div className="text-sm text-gray-600">Freshmen</div>
+                <div className="text-sm text-gray-600">Class of 2029</div>
               </div>
             </div>
           </div>
@@ -587,15 +587,15 @@ function Roster() {
                       <div className="text-2xl font-bold text-edina-green">
                         {weightedAvg?.toFixed(1) || '-'}
                       </div>
-                      <div className="text-xs text-gray-500">Average</div>
+                      <div className="text-sm text-gray-600">Average</div>
                     </div>
                     <div className="text-center">
                       <div className="text-2xl font-bold text-gray-900">{lowRound}</div>
-                      <div className="text-xs text-gray-500">Low Round</div>
+                      <div className="text-sm text-gray-600">Low Round</div>
                     </div>
                     <div className="text-center">
                       <div className="text-2xl font-bold text-gray-900">{validScores.length}</div>
-                      <div className="text-xs text-gray-500">Rounds</div>
+                      <div className="text-sm text-gray-600">Rounds</div>
                     </div>
                   </div>
 
@@ -619,7 +619,7 @@ function Roster() {
                               <div className="flex items-center justify-between p-3 bg-gray-50">
                                 <div className="flex-grow min-w-0 mr-3">
                                   <div className="flex items-center gap-2">
-                                    <span className="text-xs font-medium text-edina-green whitespace-nowrap">{s.date}</span>
+                                    <span className="text-sm font-medium text-edina-green whitespace-nowrap">{s.date}</span>
                                     <span className="text-sm text-gray-700 truncate">{s.event}</span>
                                   </div>
                                 </div>
@@ -651,7 +651,7 @@ function Roster() {
                                     ({toParStr})
                                   </span>
                                   {s.individualFinish && (
-                                    <span className="text-xs text-gray-400 whitespace-nowrap">{s.individualFinish}</span>
+                                    <span className="text-sm text-gray-600 whitespace-nowrap">{s.individualFinish}</span>
                                   )}
                                 </div>
                               </div>

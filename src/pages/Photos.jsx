@@ -133,7 +133,7 @@ function Photos() {
           <h3 className={`font-semibold text-gray-900 mb-1 ${!isEmpty ? 'group-hover:text-edina-green transition-colors' : ''}`}>
             {album.title}
           </h3>
-          <div className="flex items-center justify-between text-sm text-gray-500">
+          <div className="flex items-center justify-between text-sm text-gray-600">
             <span>{album.date}</span>
             <span>{isEmpty ? 'Coming soon' : `${album.photos.length} photos`}</span>
           </div>

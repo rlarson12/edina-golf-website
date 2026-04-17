@@ -13,7 +13,7 @@ function RecapCard({ recap }) {
             The Hornet Fairway
           </span>
           <span className="text-green-300 text-xs">·</span>
-          <span className="text-xs text-green-200">Week of {recap.weekOf}</span>
+          <span className="text-sm text-green-200">Week of {recap.weekOf}</span>
         </div>
         <h2 className="text-xl md:text-2xl font-bold text-white" style={{ fontFamily: "'Oswald', sans-serif" }}>
           {recap.title}
@@ -52,7 +52,7 @@ function RecapCard({ recap }) {
         <hr className="border-gray-100" />
 
         {/* Closing Line */}
-        <p className="text-sm text-gray-500 italic">{recap.closingLine}</p>
+        <p className="text-sm text-gray-600 italic">{recap.closingLine}</p>
       </div>
     </article>
   )

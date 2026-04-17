@@ -163,8 +163,8 @@ function Scorecard({ par, scores, courseName, playerName, round }) {
   return (
     <div className="bg-white border border-gray-200 rounded-lg overflow-hidden my-2 mx-1">
       <div className="flex items-center justify-between px-3 py-2 bg-gray-50 border-b border-gray-200">
-        <span className="text-xs font-semibold text-gray-700">{playerName} — Round {round}</span>
-        <span className="text-xs text-gray-500">{courseName}</span>
+        <span className="text-sm font-semibold text-gray-700">{playerName} — Round {round}</span>
+        <span className="text-sm text-gray-600">{courseName}</span>
       </div>
       {renderDesktopTable()}
       {renderMobileTable()}

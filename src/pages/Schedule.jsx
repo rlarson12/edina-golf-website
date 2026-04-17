@@ -399,7 +399,7 @@ function Schedule() {
                 </div>
                 {event.matches && event.matches.length > 0 ? (
                   <div className="bg-white rounded-lg border border-gray-100 overflow-hidden">
-                    <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider px-3 py-2 bg-gray-50 border-b border-gray-100">Pair Results</div>
+                    <div className="text-sm font-semibold text-gray-700 uppercase tracking-wider px-3 py-2 bg-gray-50 border-b border-gray-100">Pair Results</div>
                     <div className="divide-y divide-gray-50">
                       {event.matches.map((match, idx) => {
                         const resultLower = match.result?.toLowerCase() || ''
@@ -416,7 +416,7 @@ function Schedule() {
                             <div className="flex flex-col min-w-0">
                               <span className="font-medium text-gray-900 text-sm">{pairLabel}</span>
                               {opponentLabel && (
-                                <span className="text-xs text-gray-400">vs. {opponentLabel}</span>
+                                <span className="text-sm text-gray-600">vs. {opponentLabel}</span>
                               )}
                             </div>
                             <span className={`text-sm font-medium flex-shrink-0 ${
@@ -430,7 +430,7 @@ function Schedule() {
                     </div>
                   </div>
                 ) : (
-                  <p className="text-sm text-gray-400 italic">Match results will appear here after the event.</p>
+                  <p className="text-sm text-gray-500 italic">Match results will appear here after the event.</p>
                 )}
               </div>
             )
@@ -442,7 +442,7 @@ function Schedule() {
               {/* Round breakdown for multi-day events */}
               {event.isMultiDay && event.rounds && (
                 <>
-                  <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Round Scores</div>
+                  <div className="text-sm font-semibold text-gray-700 uppercase tracking-wider mb-2">Round Scores</div>
                   {event.rounds.map((round, idx) => (
                     <div
                       key={idx}
@@ -454,7 +454,7 @@ function Schedule() {
                         </span>
                         <div>
                           <div className="font-medium text-gray-900">{round.course}</div>
-                          <div className="text-sm text-gray-500">
+                          <div className="text-sm text-gray-600">
                             {round.dateFormatted}{round.time && ` • ${round.time}`}{round.par && ` • Par ${round.par}`}
                           </div>
                         </div>
@@ -472,18 +472,18 @@ function Schedule() {
               {/* Individual player scores */}
               {scores.length > 0 && (
                 <>
-                  <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2 mt-3">Individual Scores</div>
+                  <div className="text-sm font-semibold text-gray-700 uppercase tracking-wider mb-2 mt-3">Individual Scores</div>
                   <div className="bg-white rounded-lg border border-gray-100 overflow-hidden">
                     <table className="w-full text-sm">
                       <thead className="bg-gray-50 border-b border-gray-100">
                         <tr>
-                          <th className="px-3 py-2 text-left text-xs font-semibold text-gray-500">Player</th>
+                          <th className="px-3 py-2 text-left text-sm font-semibold text-gray-700">Player</th>
                           {event.isMultiDay && event.rounds?.map((r, i) => (
-                            <th key={i} className="px-2 py-2 text-center text-xs font-semibold text-gray-500">R{r.round}</th>
+                            <th key={i} className="px-2 py-2 text-center text-sm font-semibold text-gray-700">R{r.round}</th>
                           ))}
-                          <th className="px-3 py-2 text-center text-xs font-semibold text-gray-500">{event.isMultiDay ? 'Total' : 'Score'}</th>
-                          <th className="px-2 py-2 text-center text-xs font-semibold text-gray-500">+/-</th>
-                          <th className="px-2 py-2 text-center text-xs font-semibold text-gray-500">Finish</th>
+                          <th className="px-3 py-2 text-center text-sm font-semibold text-gray-700">{event.isMultiDay ? 'Total' : 'Score'}</th>
+                          <th className="px-2 py-2 text-center text-sm font-semibold text-gray-700">+/-</th>
+                          <th className="px-2 py-2 text-center text-sm font-semibold text-gray-700">Finish</th>
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-gray-50">
@@ -537,7 +537,7 @@ function Schedule() {
                                   </td>
                                   <td className="px-2 py-1.5 text-center">
                                     {s.individualFinish && (
-                                      <span className="text-xs text-gray-500 whitespace-nowrap">{s.individualFinish}</span>
+                                      <span className="text-sm text-gray-600 whitespace-nowrap">{s.individualFinish}</span>
                                     )}
                                   </td>
                                 </tr>
@@ -579,7 +579,7 @@ function Schedule() {
                               </td>
                               <td className="px-2 py-1.5 text-center">
                                 {s.individualFinish && (
-                                  <span className="text-xs text-gray-500 whitespace-nowrap">{s.individualFinish}</span>
+                                  <span className="text-sm text-gray-600 whitespace-nowrap">{s.individualFinish}</span>
                                 )}
                               </td>
                             </tr>
