@@ -5454,9 +5454,48 @@
       "course": "Chaska Town Course",
       "holes": 18,
       "par": 72,
-      "teamScore": null,
-      "teamFinish": null,
-      "time": "1:30 PM"
+      "teamScore": "288 (E)",
+      "teamFinish": "1st of 8",
+      "time": "1:30 PM",
+      "TEST_DATA": true,
+      "players": [
+        {
+          "name": "Sander Ohe",
+          "grade": "JR",
+          "score": 70,
+          "position": 1
+        },
+        {
+          "name": "Chase Larson",
+          "grade": "SO",
+          "score": 71,
+          "position": 2
+        },
+        {
+          "name": "Charlie Nielsen",
+          "grade": "SO",
+          "score": 73,
+          "position": 4
+        },
+        {
+          "name": "Peter Bennett",
+          "grade": "JR",
+          "score": 74,
+          "position": 6
+        },
+        {
+          "name": "Michael Vernon",
+          "grade": "FR",
+          "score": 76,
+          "position": 9
+        },
+        {
+          "name": "David Colby",
+          "grade": "SR",
+          "score": 77,
+          "position": 12
+        }
+      ]
     },
     {
       "id": "2026-2026-04-22-VAR-2",
@@ -5684,6 +5723,59 @@
       "par": 72,
       "teamScore": null,
       "teamFinish": null
+    },
+    {
+      "id": "2026-2026-04-20-JV-0",
+      "date": "2026-04-20T00:00:00.000Z",
+      "dateFormatted": "Apr 20",
+      "dateISO": "2026-04-20",
+      "name": "Lake Conference JV Tournament #1",
+      "level": "JV",
+      "course": "Bluff Creek Golf Course",
+      "holes": 18,
+      "par": 72,
+      "teamScore": "312 (+24)",
+      "teamFinish": "2nd of 7",
+      "time": "12:00 PM",
+      "TEST_DATA": true,
+      "players": [
+        {
+          "name": "Drew Schiena",
+          "grade": "FR",
+          "score": 76,
+          "position": 3
+        },
+        {
+          "name": "Elan Winnick",
+          "grade": "JR",
+          "score": 77,
+          "position": 5
+        },
+        {
+          "name": "Ty Pankratz",
+          "grade": "JR",
+          "score": 79,
+          "position": 8
+        },
+        {
+          "name": "Mac Smith",
+          "grade": "JR",
+          "score": 80,
+          "position": 11
+        },
+        {
+          "name": "Hudson Strodl",
+          "grade": "JR",
+          "score": 82,
+          "position": 14
+        },
+        {
+          "name": "Ryan Geyer",
+          "grade": "SO",
+          "score": 84,
+          "position": 17
+        }
+      ]
     }
   ],
   "jvEvents2026": [
