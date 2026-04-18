@@ -129,7 +129,7 @@ function Recaps() {
 
   return (
     <div>
-      <SEO title="Recaps" description="The Hornet Fairway — weekly recaps from the Edina Boys Golf 2026 season. Results, storylines, and what to watch next." path="/recaps" />
+      <SEO title="Recaps" description="The Hornet Fairway — weekly recaps from the 2026 Edina Boys Golf season. Scores, results, and analysis after every event." path="/recaps" />
       {/* Hero */}
       <div className="relative h-[40vh] md:h-[50vh] overflow-hidden">
         <img

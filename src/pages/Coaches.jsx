@@ -144,7 +144,7 @@ function Coaches() {
 
   return (
     <div>
-      <SEO title="Coaches" description="Meet the Edina Boys Golf coaching staff — the experienced team behind 10x Minnesota state champions." path="/coaches" />
+      <SEO title="Coaches" description="Meet the Edina Boys Golf coaching staff — Head Coach Tim Vernon and assistants leading a 10x Minnesota state championship program." path="/coaches" />
       {/* Hero Section */}
       <div className="relative h-[40vh] md:h-[50vh] overflow-hidden">
         <img
