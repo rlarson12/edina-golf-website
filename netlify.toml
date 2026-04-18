@@ -32,9 +32,7 @@
     Cache-Control = "public, max-age=31536000, immutable"
 
 # SPA fallback — all routes serve index.html
-# EXCEPT for bots: the prerender extension intercepts crawlers before this rule applies
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-  conditions = { User-agent = ["!Googlebot", "!Bingbot", "!Slurp", "!DuckDuckBot", "!Baiduspider", "!YandexBot", "!Applebot"] }

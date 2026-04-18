@@ -2,11 +2,8 @@ headersOrigin = "config"
 redirectsOrigin = "config"
 plugins = []
 
-[functions]
-
-[functions."*"]
-
 [build]
+edge_functions = "/Users/reedlarson/.openclaw/workspace/projects/edina-boys-golf/repo/netlify/edge-functions"
 publish = "/Users/reedlarson/.openclaw/workspace/projects/edina-boys-golf/repo/dist"
 publishOrigin = "config"
 commandOrigin = "config"
@@ -25,6 +22,10 @@ command = "npm run build"
 [build.processing.js]
 
 [build.services]
+
+[functions]
+
+[functions."*"]
 
 [[headers]]
 for = "/index.html"
