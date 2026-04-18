@@ -1,5 +1,24 @@
 import recapsData from '../data/recaps.json'
 
+// Renders inline markdown: [text](url) links and **bold**
+function renderInline(text) {
+  const parts = []
+  const regex = /\[([^\]]+)\]\(([^)]+)\)|\*\*([^*]+)\*\*/g
+  let last = 0
+  let match
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > last) parts.push(text.slice(last, match.index))
+    if (match[1] && match[2]) {
+      parts.push(<a key={match.index} href={match[2]} target="_blank" rel="noopener noreferrer" className="text-edina-green underline hover:text-edina-forest">{match[1]}</a>)
+    } else if (match[3]) {
+      parts.push(<strong key={match.index}>{match[3]}</strong>)
+    }
+    last = match.index + match[0].length
+  }
+  if (last < text.length) parts.push(text.slice(last))
+  return parts
+}
+
 function RecapCard({ recap }) {
   const paragraphsVarsity = recap.varsityBody.split('\n\n')
   const paragraphsJV = recap.jvBody.split('\n\n')
@@ -30,7 +49,9 @@ function RecapCard({ recap }) {
           </h3>
           <div className="space-y-3">
             {paragraphsVarsity.map((p, i) => (
-              <p key={i} className="text-gray-700 leading-relaxed text-sm md:text-base">{p}</p>
+              p.startsWith('**') && p.endsWith('**')
+                ? <h4 key={i} className="font-bold text-gray-900 text-base md:text-lg mt-2">{p.slice(2, -2)}</h4>
+                : <p key={i} className="text-gray-700 leading-relaxed text-sm md:text-base">{renderInline(p)}</p>
             ))}
           </div>
         </section>
@@ -44,7 +65,9 @@ function RecapCard({ recap }) {
           </h3>
           <div className="space-y-3">
             {paragraphsJV.map((p, i) => (
-              <p key={i} className="text-gray-700 leading-relaxed text-sm md:text-base">{p}</p>
+              p.startsWith('**') && p.endsWith('**')
+                ? <h4 key={i} className="font-bold text-gray-900 text-base md:text-lg mt-2">{p.slice(2, -2)}</h4>
+                : <p key={i} className="text-gray-700 leading-relaxed text-sm md:text-base">{renderInline(p)}</p>
             ))}
           </div>
         </section>
