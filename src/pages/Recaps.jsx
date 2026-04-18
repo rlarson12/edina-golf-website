@@ -19,12 +19,47 @@ function renderInline(text) {
   return parts
 }
 
+function renderParagraphs(body) {
+  return body.split('\n\n').map((p, i) => {
+    // **Heading** on its own line
+    if (p.startsWith('**') && p.endsWith('**')) {
+      return (
+        <h4 key={i} className="font-bold text-gray-900 text-lg md:text-xl mt-6 mb-1" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+          {p.slice(2, -2)}
+        </h4>
+      )
+    }
+    return (
+      <p key={i} className="text-gray-700 leading-relaxed text-sm md:text-base">
+        {renderInline(p)}
+      </p>
+    )
+  })
+}
+
 function RecapCard({ recap }) {
-  const paragraphsVarsity = recap.varsityBody.split('\n\n')
-  const paragraphsJV = recap.jvBody.split('\n\n')
+  // Single-body articles: use varsityBody as the full article body, skip section headers
+  const isSingleBody = recap.singleBody === true
 
   return (
     <article className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
+      {/* Hero image if present */}
+      {recap.heroImage && (
+        <div className="relative h-48 md:h-64 overflow-hidden">
+          <img
+            src={recap.heroImage}
+            alt={recap.heroCaption || recap.title}
+            className="w-full h-full object-cover"
+            style={{ objectPosition: 'center 40%' }}
+          />
+          {recap.heroCaption && (
+            <div className="absolute bottom-0 left-0 right-0 bg-black/50 px-4 py-2">
+              <p className="text-white text-xs italic">{recap.heroCaption}</p>
+            </div>
+          )}
+        </div>
+      )}
+
       {/* Article Header */}
       <div className="bg-edina-forest px-6 py-5">
         <div className="flex flex-wrap items-center gap-2 mb-2">
@@ -32,7 +67,7 @@ function RecapCard({ recap }) {
             The Hornet Fairway
           </span>
           <span className="text-green-300 text-xs">·</span>
-          <span className="text-sm text-green-200">Week of {recap.weekOf}</span>
+          <span className="text-sm text-green-200">{recap.weekOf}</span>
         </div>
         <h2 className="text-xl md:text-2xl font-bold text-white" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
           {recap.title}
@@ -40,42 +75,47 @@ function RecapCard({ recap }) {
       </div>
 
       {/* Article Body */}
-      <div className="p-6 md:p-8 space-y-8">
-
-        {/* Varsity Section */}
-        <section>
-          <h3 className="text-lg md:text-xl font-bold text-gray-900 border-l-4 border-edina-green pl-3 mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
-            {recap.varsityHeadline}
-          </h3>
-          <div className="space-y-3">
-            {paragraphsVarsity.map((p, i) => (
-              p.startsWith('**') && p.endsWith('**')
-                ? <h4 key={i} className="font-bold text-gray-900 text-base md:text-lg mt-2">{p.slice(2, -2)}</h4>
-                : <p key={i} className="text-gray-700 leading-relaxed text-sm md:text-base">{renderInline(p)}</p>
-            ))}
+      <div className="p-6 md:p-8">
+        {isSingleBody ? (
+          // Single continuous article
+          <div className="space-y-4">
+            {renderParagraphs(recap.varsityBody)}
+            {recap.closingLine && (
+              <>
+                <hr className="border-gray-100 my-6" />
+                <p className="text-sm text-gray-600 italic">{recap.closingLine}</p>
+              </>
+            )}
+            <p className="font-bold text-edina-green mt-6">Go Hornets.</p>
           </div>
-        </section>
+        ) : (
+          // Two-section varsity/JV layout
+          <div className="space-y-8">
+            <section>
+              <h3 className="text-lg md:text-xl font-bold text-gray-900 border-l-4 border-edina-green pl-3 mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+                {recap.varsityHeadline}
+              </h3>
+              <div className="space-y-3">
+                {renderParagraphs(recap.varsityBody)}
+              </div>
+            </section>
 
-        <hr className="border-gray-100" />
+            <hr className="border-gray-100" />
 
-        {/* JV Section */}
-        <section>
-          <h3 className="text-lg md:text-xl font-bold text-gray-900 border-l-4 border-edina-gold pl-3 mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
-            {recap.jvHeadline}
-          </h3>
-          <div className="space-y-3">
-            {paragraphsJV.map((p, i) => (
-              p.startsWith('**') && p.endsWith('**')
-                ? <h4 key={i} className="font-bold text-gray-900 text-base md:text-lg mt-2">{p.slice(2, -2)}</h4>
-                : <p key={i} className="text-gray-700 leading-relaxed text-sm md:text-base">{renderInline(p)}</p>
-            ))}
+            <section>
+              <h3 className="text-lg md:text-xl font-bold text-gray-900 border-l-4 border-edina-gold pl-3 mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+                {recap.jvHeadline}
+              </h3>
+              <div className="space-y-3">
+                {renderParagraphs(recap.jvBody)}
+              </div>
+            </section>
+
+            <hr className="border-gray-100" />
+
+            <p className="text-sm text-gray-600 italic">{recap.closingLine}</p>
           </div>
-        </section>
-
-        <hr className="border-gray-100" />
-
-        {/* Closing Line */}
-        <p className="text-sm text-gray-600 italic">{recap.closingLine}</p>
+        )}
       </div>
     </article>
   )
