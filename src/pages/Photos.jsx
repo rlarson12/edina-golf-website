@@ -16,8 +16,10 @@ function Photos() {
       id: '2026-2',
       title: 'Tournament Action',
       date: '2026 Season',
-      cover: null,
-      photos: [],
+      cover: '/images/tryouts-braemar-2026.webp',
+      photos: [
+        { src: '/images/tryouts-braemar-2026.webp', caption: 'Tryouts at Braemar — 60+ players competing for roster spots to open the 2026 season.' },
+      ],
     },
     {
       id: '2026-3',
