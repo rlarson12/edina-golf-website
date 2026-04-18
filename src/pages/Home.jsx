@@ -444,23 +444,6 @@ function Home() {
         )}
       </section>
 
-      {/* Quick Stats */}
-      <section className="py-12 md:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="hidden md:grid grid-cols-3 gap-6 md:gap-8">
-            {quickStats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-edina-green mb-1">
-                  {stat.value}
-                </div>
-                <div className="text-sm md:text-base text-gray-600">{stat.label}</div>
-                {stat.sublabel && <div className="text-xs text-green-200 mt-0.5" style={{ color: '#6b8f6b' }}>{stat.sublabel}</div>}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* From the Fairway - News & Recaps */}
       <section className="bg-edina-green/5 border-y border-edina-green/20 py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
