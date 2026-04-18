@@ -311,7 +311,7 @@ function Home() {
                     </div>
                   ))
                 ) : (
-                  <div className="text-center text-gray-500 py-6">No results yet.</div>
+                  <div className="text-center text-gray-500 py-6">Season results post after April 20 at Chaska Town Course.</div>
                 )}
               </div>
             </div>
@@ -370,7 +370,7 @@ function Home() {
                     </div>
                   ))
                 ) : (
-                  <div className="text-center text-gray-500 py-6">No results yet.</div>
+                  <div className="text-center text-gray-500 py-6">Season results post after April 20 at Chaska Town Course.</div>
                 )}
               </div>
             </div>

@@ -383,7 +383,7 @@ function Roster() {
                       <h3 className="font-semibold text-gray-500">TBD</h3>
                     </div>
                     <div className="text-sm text-gray-500 mt-1">
-                      Roster coming soon
+                      Photo coming soon
                     </div>
                     <div className="flex items-center gap-3 mt-2">
                       <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${getTeamBadge(placeholder.team)}`}>
