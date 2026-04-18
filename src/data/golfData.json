@@ -12,7 +12,7 @@
       "gradYear": 2027,
       "grade": 10,
       "team": "varsity",
-      "photo": "/images/players/chase-larson.webp"
+      "photo": "/images/players/chase-larson.jpg"
     },
     {
       "name": "David Colby",
@@ -6576,8 +6576,7 @@
       "grade": 11,
       "gradYear": 2027,
       "team": "varsity",
-      "photo": "/images/players/chase-larson.webp",
-      "photoPosition": "center 30%"
+      "photo": "/images/players/chase-larson.jpg"
     },
     {
       "name": "Charlie Nielsen",
