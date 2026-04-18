@@ -1,3 +1,4 @@
+import SEO from '../components/SEO'
 function Coaches() {
   const varsityCoaches = [
     {
@@ -143,6 +144,7 @@ function Coaches() {
 
   return (
     <div>
+      <SEO title="Coaches" description="Meet the Edina Boys Golf coaching staff — the experienced team behind 10x Minnesota state champions." path="/coaches" />
       {/* Hero Section */}
       <div className="relative h-[40vh] md:h-[50vh] overflow-hidden">
         <img

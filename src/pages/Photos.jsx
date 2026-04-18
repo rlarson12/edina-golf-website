@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import SEO from '../components/SEO'
 
 function Photos() {
   const [selectedAlbum, setSelectedAlbum] = useState(null)
@@ -146,6 +147,7 @@ function Photos() {
 
   return (
     <div>
+      <SEO title="Photos" description="Photos from the Edina Boys Golf 2026 season and program archives." path="/photos" />
       {/* Hero Section */}
       <div className="relative h-[200px] md:h-[280px] overflow-hidden">
         <img

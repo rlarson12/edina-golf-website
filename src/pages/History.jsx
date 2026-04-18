@@ -1,3 +1,4 @@
+import SEO from '../components/SEO'
 function History() {
   const championshipYears = [2023, 2022, 2019, 2014, 1987, 1978, 1977, 1973, 1970, 1954]
 
@@ -22,6 +23,7 @@ function History() {
 
   return (
     <div>
+      <SEO title="History" description="Edina Boys Golf history — 10 Minnesota state championships, decades of excellence, and a legacy built at Braemar." path="/history" />
       {/* Hero Section */}
       <div className="relative h-32 md:h-40 overflow-hidden">
         <img

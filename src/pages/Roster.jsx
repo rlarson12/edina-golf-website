@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
 import golfData from '../data/golfData.json'
+import SEO from '../components/SEO'
 
 function Roster() {
   const [filter, setFilter] = useState('all')
@@ -318,6 +319,7 @@ function Roster() {
 
   return (
     <div>
+      <SEO title="Roster" description="Meet the 2026 Edina Boys Golf roster — 13 varsity and 12 JV Hornets competing for a state title." path="/roster" />
       {/* Hero Section with Team Photo */}
       <div className="relative h-64 md:h-72 overflow-hidden">
         <img

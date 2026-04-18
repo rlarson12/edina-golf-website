@@ -1,3 +1,4 @@
+import SEO from '../components/SEO'
 function SupportTeam() {
   const captainsParents = [
     {
@@ -118,6 +119,7 @@ function SupportTeam() {
 
   return (
     <div>
+      <SEO title="Support Team" description="The families and volunteers behind Edina Boys Golf — captains' parents and program supporters." path="/support-team" />
       {/* Hero Section */}
       <div className="relative h-[40vh] md:h-[50vh] overflow-hidden">
         <img

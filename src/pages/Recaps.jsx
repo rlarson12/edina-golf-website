@@ -1,4 +1,5 @@
 import recapsData from '../data/recaps.json'
+import SEO from '../components/SEO'
 
 // Renders inline markdown: [text](url) links and **bold**
 function renderInline(text) {
@@ -128,6 +129,7 @@ function Recaps() {
 
   return (
     <div>
+      <SEO title="Recaps" description="The Hornet Fairway — weekly recaps from the Edina Boys Golf 2026 season. Results, storylines, and what to watch next." path="/recaps" />
       {/* Hero */}
       <div className="relative h-[40vh] md:h-[50vh] overflow-hidden">
         <img

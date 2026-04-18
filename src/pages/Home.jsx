@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { useMemo } from 'react'
 import golfData from '../data/golfData.json'
 import recapsData from '../data/recaps.json'
+import SEO from '../components/SEO'
 
 // 2026 Varsity Schedule (for Up Next feature - varsity events only)
 const schedule2026 = [
@@ -171,6 +172,7 @@ function Home() {
 
   return (
     <div>
+      <SEO path="/" />
       {/* Hero Section */}
       <section className="relative bg-edina-forest">
         {/* Background Image */}

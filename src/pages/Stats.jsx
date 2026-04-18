@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
 import golfData from '../data/golfData.json'
+import SEO from '../components/SEO'
 
 // Abbreviate event headers for matrix column display
 const abbreviateEvent = (header) => {
@@ -342,6 +343,7 @@ function Stats() {
 
   return (
     <div>
+      <SEO title="Stats" description="2026 Edina Boys Golf stats — individual scoring averages, team leaderboard, and score matrix updated after every event." path="/stats" />
       {/* Hero Section */}
       <div className="relative h-32 md:h-40 overflow-hidden">
         <img

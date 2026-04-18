@@ -1,6 +1,7 @@
 import { useState, useMemo, Fragment, useRef, useEffect } from 'react'
 import golfData from '../data/golfData.json'
 import Scorecard from '../components/Scorecard'
+import SEO from '../components/SEO'
 
 // ── Add to Calendar component ──
 function AddToCalendar({ event }) {
@@ -63,6 +64,7 @@ function AddToCalendar({ event }) {
 
   return (
     <div ref={ref} className="relative" onClick={(e) => e.stopPropagation()}>
+      <SEO title="Schedule" description="Edina Boys Golf 2026 schedule — varsity and JV events, dates, courses, and results all season long." path="/schedule" />
       <button
         onClick={() => setOpen(o => !o)}
         className="inline-flex items-center gap-1 text-xs text-gray-400 hover:text-edina-green border border-gray-200 hover:border-edina-green/40 rounded px-2 py-1 transition-colors"

@@ -1,6 +1,8 @@
+import SEO from '../components/SEO'
 function TeamInfo() {
   return (
     <div>
+      <SEO title="Team Info" description="Edina Boys Golf team information — program details, tryouts, and how to get involved." path="/team-info" />
       {/* Hero Section with Sunset Photo */}
       <div className="relative h-80 md:h-96 overflow-hidden">
         <img
