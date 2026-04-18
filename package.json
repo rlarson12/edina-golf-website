@@ -13,7 +13,33 @@
     "validate": "node src/scripts/validateData.js",
     "update-and-validate": "npm run update-from-sheets && npm run validate",
     "predeploy": "bash scripts/pre-deploy-check.sh",
-    "deploy": "npm run predeploy && npm run build && bash scripts/pre-deploy-check.sh"
+    "deploy": "npm run predeploy && npm run build && bash scripts/pre-deploy-check.sh",
+    "postbuild": "echo 'Prerendering handled by Netlify'"
+  },
+  "reactSnap": {
+    "source": "dist",
+    "destination": "dist",
+    "crawl": false,
+    "include": [
+      "/",
+      "/schedule",
+      "/roster",
+      "/stats",
+      "/recaps",
+      "/coaches",
+      "/history",
+      "/photos",
+      "/support-team",
+      "/team-info"
+    ],
+    "minifyHtml": {
+      "collapseWhitespace": false,
+      "removeComments": false
+    },
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ]
   },
   "dependencies": {
     "react": "^18.2.0",
