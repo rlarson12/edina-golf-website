@@ -5460,27 +5460,39 @@
       "players": [
         {
           "name": "Sander Ohe",
-          "grade": "JR"
+          "grade": "JR",
+          "score": 0,
+          "position": 1
         },
         {
           "name": "Chase Larson",
-          "grade": "SO"
+          "grade": "SO",
+          "score": 0,
+          "position": 2
         },
         {
           "name": "Charlie Nielsen",
-          "grade": "SO"
+          "grade": "SO",
+          "score": 0,
+          "position": 3
         },
         {
           "name": "Peter Bennett",
-          "grade": "JR"
+          "grade": "JR",
+          "score": 0,
+          "position": 4
         },
         {
           "name": "Michael Vernon",
-          "grade": "FR"
+          "grade": "FR",
+          "score": 0,
+          "position": 5
         },
         {
           "name": "David Colby",
-          "grade": "SR"
+          "grade": "SR",
+          "score": 0,
+          "position": 6
         }
       ]
     },
@@ -5727,27 +5739,39 @@
       "players": [
         {
           "name": "Drew Schiena",
-          "grade": "FR"
+          "grade": "FR",
+          "score": 0,
+          "position": 1
         },
         {
           "name": "Elan Winnick",
-          "grade": "JR"
+          "grade": "JR",
+          "score": 0,
+          "position": 2
         },
         {
           "name": "Ty Pankratz",
-          "grade": "JR"
+          "grade": "JR",
+          "score": 0,
+          "position": 3
         },
         {
           "name": "Mac Smith",
-          "grade": "JR"
+          "grade": "JR",
+          "score": 0,
+          "position": 4
         },
         {
           "name": "Hudson Strodl",
-          "grade": "JR"
+          "grade": "JR",
+          "score": 0,
+          "position": 5
         },
         {
           "name": "Ryan Geyer",
-          "grade": "SO"
+          "grade": "SO",
+          "score": 0,
+          "position": 6
         }
       ]
     }
