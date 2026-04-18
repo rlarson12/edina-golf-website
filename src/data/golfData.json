@@ -43,7 +43,8 @@
       "name": "Michael Vernon",
       "gradYear": 2028,
       "grade": 9,
-      "team": "varsity"
+      "team": "varsity",
+      "photo": "/images/players/michael-vernon.jpg"
     },
     {
       "name": "Peter Bennett",
@@ -6634,7 +6635,8 @@
       "name": "Michael Vernon",
       "grade": 10,
       "gradYear": 2028,
-      "team": "varsity"
+      "team": "varsity",
+      "photo": "/images/players/michael-vernon.jpg"
     },
     {
       "name": "Elan Winnick",
