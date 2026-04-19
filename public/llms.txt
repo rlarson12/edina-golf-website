@@ -1,0 +1,31 @@
+# Edina Boys Golf
+
+Official website of Edina High School Boys Golf — one of the most decorated high school golf programs in Minnesota history with 10 state championships.
+
+## About This Site
+
+This site provides schedules, scores, rosters, stats, and season recaps for the Edina Hornets boys golf program. Data is updated throughout the season.
+
+## Team
+
+- School: Edina High School, Edina, Minnesota
+- Conference: Lake Conference
+- Sport: Golf (Boys)
+- Season: Spring
+
+## Featured Athletes
+
+Chase Larson — Class of 2027 varsity golfer. Junior competing on the AJGA and JGS junior golf circuits. Instagram: https://www.instagram.com/chaselarsongolf/
+
+## Pages
+
+- /roster — Full varsity and JV roster with scoring averages and player profiles
+- /schedule — Season schedule with results
+- /scores — Leaderboards and individual scores by event
+- /stats — Season statistics and individual performance
+- /history — Program history and state championship records
+- /photos — Season photo galleries
+
+## Contact
+
+For program inquiries, visit edinaboysgolf.com

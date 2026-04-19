@@ -6576,7 +6576,9 @@
       "grade": 11,
       "gradYear": 2027,
       "team": "varsity",
-      "photo": "/images/players/chase-larson.jpg"
+      "photo": "/images/players/chase-larson.jpg",
+      "instagram": "chaselarsongolf",
+      "ajgaUrl": "https://www.ajga.org/players/chase-larson"
     },
     {
       "name": "Charlie Nielsen",
