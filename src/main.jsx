@@ -16,6 +16,7 @@ if ('serviceWorker' in navigator) {
   }
 }
 
+
 const rootElement = document.getElementById('root')
 const app = (
   <React.StrictMode>

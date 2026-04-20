@@ -2,27 +2,25 @@
   publish = "dist"
   command = "npm run build"
 
-# Never cache the service worker or entry point — browsers must always re-fetch
-# these to detect new deploys
+# Root path — the actual URL users request. This is the critical rule.
+# Previously only /index.html was targeted, which never matched because
+# browsers request / not /index.html. Fixed April 2026.
 [[headers]]
-  for = "/sw.js"
+  for = "/"
   [headers.values]
     Cache-Control = "no-cache, no-store, must-revalidate"
 
-[[headers]]
-  for = "/registerSW.js"
-  [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
-
+# Also target /index.html for SPA deep-link redirects that resolve this path
 [[headers]]
   for = "/index.html"
   [headers.values]
     Cache-Control = "no-cache, no-store, must-revalidate"
 
+# version.json — must never be cached, used for auto-reload detection
 [[headers]]
-  for = "/manifest.webmanifest"
+  for = "/version.json"
   [headers.values]
-    Cache-Control = "no-cache, max-age=0, must-revalidate"
+    Cache-Control = "no-cache, no-store, must-revalidate"
 
 # Hashed assets (JS/CSS bundles) are safe to cache forever —
 # Vite gives each build a unique filename, so stale cache is never an issue

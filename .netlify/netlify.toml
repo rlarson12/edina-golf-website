@@ -40,13 +40,7 @@ for = "/version.json"
 Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
-for = "/sw.js"
-
-[headers.values]
-Cache-Control = "no-cache, no-store, must-revalidate"
-
-[[headers]]
-for = "/registerSW.js"
+for = "/"
 
 [headers.values]
 Cache-Control = "no-cache, no-store, must-revalidate"
@@ -58,10 +52,10 @@ for = "/index.html"
 Cache-Control = "no-cache, no-store, must-revalidate"
 
 [[headers]]
-for = "/manifest.webmanifest"
+for = "/version.json"
 
 [headers.values]
-Cache-Control = "no-cache, max-age=0, must-revalidate"
+Cache-Control = "no-cache, no-store, must-revalidate"
 
 [[headers]]
 for = "/assets/*"
