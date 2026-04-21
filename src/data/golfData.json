@@ -5804,7 +5804,7 @@
           "individualFinish": "T11"
         },
         {
-          "name": "MacAllen Smith",
+          "name": "Macallen Smith",
           "grade": "SR",
           "score": 80,
           "position": 6,
@@ -5823,13 +5823,45 @@
       "course": "Heritage Links Golf Course",
       "holes": 18,
       "par": 72,
-      "teamScore": null,
-      "teamFinish": null,
+      "teamScore": 318,
+      "teamFinish": "2nd of 6",
       "time": "10:30 AM",
       "format": "stroke",
       "teamResult": null,
       "teamRecord": null,
-      "isJV": true
+      "isJV": true,
+      "players": [
+        {
+          "name": "Cole Considine",
+          "score": 72,
+          "position": 1,
+          "individualFinish": "1st"
+        },
+        {
+          "name": "Henry Applebaum",
+          "score": 81,
+          "position": 2,
+          "individualFinish": "T10"
+        },
+        {
+          "name": "Randy Dann",
+          "score": 82,
+          "position": 3,
+          "individualFinish": "T12"
+        },
+        {
+          "name": "Mason Catron",
+          "score": 83,
+          "position": 4,
+          "individualFinish": "T14"
+        },
+        {
+          "name": "Mason Hughes",
+          "score": 85,
+          "position": 5,
+          "individualFinish": "T19"
+        }
+      ]
     },
     {
       "id": "2026-2026-04-22-JV-3",
@@ -6959,6 +6991,72 @@
       "roundsPlayed": 1,
       "low": 80,
       "team": "varsity"
+    },
+    {
+      "name": "Macallen Smith",
+      "team": "varsity",
+      "scores": [
+        {
+          "eventId": "2026-JV-APR20",
+          "score": 80,
+          "individualFinish": "T11"
+        }
+      ]
+    },
+    {
+      "name": "Cole Considine",
+      "team": "jv",
+      "scores": [
+        {
+          "eventId": "2026-JV0",
+          "score": 72,
+          "individualFinish": "1st"
+        }
+      ]
+    },
+    {
+      "name": "Henry Applebaum",
+      "team": "jv",
+      "scores": [
+        {
+          "eventId": "2026-JV0",
+          "score": 81,
+          "individualFinish": "T10"
+        }
+      ]
+    },
+    {
+      "name": "Randy Dann",
+      "team": "jv",
+      "scores": [
+        {
+          "eventId": "2026-JV0",
+          "score": 82,
+          "individualFinish": "T12"
+        }
+      ]
+    },
+    {
+      "name": "Mason Catron",
+      "team": "jv",
+      "scores": [
+        {
+          "eventId": "2026-JV0",
+          "score": 83,
+          "individualFinish": "T14"
+        }
+      ]
+    },
+    {
+      "name": "Mason Hughes",
+      "team": "jv",
+      "scores": [
+        {
+          "eventId": "2026-JV0",
+          "score": 85,
+          "individualFinish": "T19"
+        }
+      ]
     }
   ],
   "rankings2026": [
@@ -7547,7 +7645,7 @@
           null,
           null,
           null,
-          null,
+          81,
           null,
           null,
           null,
@@ -7586,7 +7684,7 @@
           null,
           null,
           null,
-          null,
+          83,
           null,
           null,
           null,
@@ -7625,7 +7723,7 @@
           null,
           null,
           null,
-          null,
+          72,
           null,
           null,
           null,
@@ -7664,7 +7762,7 @@
           null,
           null,
           null,
-          null,
+          82,
           null,
           null,
           null,
@@ -7781,7 +7879,7 @@
           null,
           null,
           null,
-          null,
+          85,
           null,
           null,
           null,
@@ -8817,6 +8915,246 @@
         4
       ],
       "total": 80
+    },
+    {
+      "playerName": "Cole Considine",
+      "eventDate": "2026-04-21",
+      "eventName": "JV Invitational @ Heritage Links",
+      "round": 1,
+      "courseName": "Heritage Links Golf Club",
+      "par": [
+        4,
+        5,
+        4,
+        3,
+        5,
+        4,
+        3,
+        4,
+        4,
+        4,
+        3,
+        4,
+        4,
+        3,
+        4,
+        5,
+        4,
+        4
+      ],
+      "scores": [
+        3,
+        4,
+        4,
+        3,
+        4,
+        4,
+        3,
+        5,
+        5,
+        5,
+        3,
+        4,
+        4,
+        3,
+        4,
+        6,
+        4,
+        4
+      ],
+      "total": 72
+    },
+    {
+      "playerName": "Henry Applebaum",
+      "eventDate": "2026-04-21",
+      "eventName": "JV Invitational @ Heritage Links",
+      "round": 1,
+      "courseName": "Heritage Links Golf Club",
+      "par": [
+        4,
+        5,
+        4,
+        3,
+        5,
+        4,
+        3,
+        4,
+        4,
+        4,
+        3,
+        4,
+        4,
+        3,
+        4,
+        5,
+        4,
+        4
+      ],
+      "scores": [
+        5,
+        5,
+        5,
+        3,
+        5,
+        5,
+        5,
+        5,
+        4,
+        6,
+        2,
+        4,
+        4,
+        3,
+        4,
+        6,
+        5,
+        5
+      ],
+      "total": 81
+    },
+    {
+      "playerName": "Randy Dann",
+      "eventDate": "2026-04-21",
+      "eventName": "JV Invitational @ Heritage Links",
+      "round": 1,
+      "courseName": "Heritage Links Golf Club",
+      "par": [
+        4,
+        5,
+        4,
+        3,
+        5,
+        4,
+        3,
+        4,
+        4,
+        4,
+        3,
+        4,
+        4,
+        3,
+        4,
+        5,
+        4,
+        4
+      ],
+      "scores": [
+        4,
+        6,
+        4,
+        3,
+        7,
+        4,
+        4,
+        4,
+        3,
+        5,
+        3,
+        4,
+        8,
+        4,
+        4,
+        5,
+        5,
+        5
+      ],
+      "total": 82
+    },
+    {
+      "playerName": "Mason Catron",
+      "eventDate": "2026-04-21",
+      "eventName": "JV Invitational @ Heritage Links",
+      "round": 1,
+      "courseName": "Heritage Links Golf Club",
+      "par": [
+        4,
+        5,
+        4,
+        3,
+        5,
+        4,
+        3,
+        4,
+        4,
+        4,
+        3,
+        4,
+        4,
+        3,
+        4,
+        5,
+        4,
+        4
+      ],
+      "scores": [
+        6,
+        6,
+        5,
+        3,
+        5,
+        4,
+        4,
+        4,
+        5,
+        4,
+        2,
+        5,
+        4,
+        3,
+        5,
+        8,
+        5,
+        5
+      ],
+      "total": 83
+    },
+    {
+      "playerName": "Mason Hughes",
+      "eventDate": "2026-04-21",
+      "eventName": "JV Invitational @ Heritage Links",
+      "round": 1,
+      "courseName": "Heritage Links Golf Club",
+      "par": [
+        4,
+        5,
+        4,
+        3,
+        5,
+        4,
+        3,
+        4,
+        4,
+        4,
+        3,
+        4,
+        4,
+        3,
+        4,
+        5,
+        4,
+        4
+      ],
+      "scores": [
+        4,
+        5,
+        6,
+        3,
+        7,
+        4,
+        4,
+        5,
+        4,
+        5,
+        4,
+        4,
+        4,
+        3,
+        7,
+        7,
+        4,
+        5
+      ],
+      "total": 85
     }
   ],
   "news2026": []
