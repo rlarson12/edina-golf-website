@@ -148,7 +148,7 @@ function Schedule() {
   // 2026 Schedule (Varsity and JV events)
   const schedule2026 = [
     // Varsity Events
-    { id: '2026-V1',  date: '2026-04-20', dateFormatted: 'Apr 20',    event: 'Lake Conference Tournament #1',      course: 'Chaska Town Course',        level: 'Varsity', time: '1:30 PM' },
+    { id: '2026-V1',  date: '2026-04-20', dateFormatted: 'Apr 20',    event: 'Lake Conference Tournament #1',      course: 'Chaska Town Course',        level: 'Varsity', time: '1:30 PM', par: 72, holes: 18 },
     { id: '2026-V2',  date: '2026-04-22', dateFormatted: 'Apr 22',    event: 'East Ridge Invitational',            course: 'Stoneridge Golf Club',       level: 'Varsity', time: '9:00 AM' },
     { id: '2026-V3',  date: '2026-04-23', dateFormatted: 'Apr 23',    event: 'Lake Conference Meet #2',            course: 'Pioneer Creek Golf Course',  level: 'Varsity', time: '1:57 PM' },
     { id: '2026-V4',  date: '2026-04-24', dateFormatted: 'Apr 24-25', event: 'The Preview',                        course: 'Edinburgh USA Golf Course',  level: 'Varsity', isMultiDay: true, time: '7:00 AM', rounds: [
@@ -178,7 +178,7 @@ function Schedule() {
       { pair: ['Mason Hughes', 'Crosby Pote'], opponent: ['Grant Lamoreaux', 'Jack Stier'], result: 'Won 5&4' },
       { pair: ['Henry Applebaum', 'Henry Freeman'], opponent: ['Bennett Wevers', 'Grant Ketelsen'], result: 'Won 5&4' },
     ] },
-    { id: '2026-JV-APR20', date: '2026-04-20', dateFormatted: 'Apr 20',  event: 'JV Lake Conference @ Bluff Creek',   course: 'Bluff Creek Golf Course',    level: 'JV', time: '12:00 PM' },
+    { id: '2026-JV-APR20', date: '2026-04-20', dateFormatted: 'Apr 20',  event: 'JV Lake Conference @ Bluff Creek',   course: 'Bluff Creek Golf Course',    level: 'JV', time: '12:00 PM', par: 72, holes: 18 },
     { id: '2026-JV0', date: '2026-04-21', dateFormatted: 'Apr 21',    event: 'JV Invitational',                    course: 'Heritage Links Golf Course', level: 'JV', time: '10:30 AM' },
     { id: '2026-JV2', date: '2026-04-22', dateFormatted: 'Apr 22',    event: 'Boys JV Tournament',                 course: 'Clifton Highlands',          level: 'JV', time: '1:00 PM' },
     { id: '2026-JV3', date: '2026-04-27', dateFormatted: 'Apr 27',    event: 'Eden Prairie JV Invite',             course: 'Bluff Creek Golf Course',    level: 'JV', time: '9:00 AM' },
@@ -293,8 +293,17 @@ function Schedule() {
   // Build event info map (par, holes) by event ID
   const eventInfoMap = useMemo(() => {
     const map = {}
-    ;[...(golfData.events || []), ...(golfData.jvEvents || [])].forEach(event => {
+    ;[
+      ...(golfData.events || []),
+      ...(golfData.jvEvents || []),
+      ...(golfData.events2026 || []),
+      ...(golfData.jvEvents2026 || []),
+    ].forEach(event => {
       map[event.id] = { par: event.par, holes: event.holes }
+    })
+    // Also index schedule2026 entries directly by their id
+    schedule2026.forEach(e => {
+      if (e.par) map[e.id] = { par: e.par, holes: e.holes }
     })
     return map
   }, [])
@@ -653,7 +662,7 @@ function Schedule() {
                                   {s.rounds.map((r, i) => {
                                     const rPar = s.pars[i]
                                     const rUnder = r !== null && rPar && r < rPar
-                                    const roundDate = event.rounds?.[i]?.date || event.dateISO
+                                    const roundDate = event.rounds?.[i]?.date || event.dateISO || (event.date ? event.date.substring(0, 10) : null)
                                     const sc = roundDate ? getScorecard(s.name, roundDate) : null
                                     return (
                                       <td key={i} className="px-2 py-1.5 text-center">
@@ -694,8 +703,8 @@ function Schedule() {
                                     )}
                                   </td>
                                 </tr>
-                                {(event.rounds || [{ date: event.dateISO }]).map((round, i) => {
-                                  const roundDate = round.date || event.dateISO
+                                {(event.rounds || [{ date: event.dateISO || (event.date ? event.date.substring(0, 10) : null) }]).map((round, i) => {
+                                  const roundDate = round.date || event.dateISO || (event.date ? event.date.substring(0, 10) : null)
                                   const sc = getScorecard(s.name, roundDate)
                                   if (!sc || !expandedScorecards.has(`${s.name}::${roundDate}`)) return null
                                   return (
