@@ -272,7 +272,7 @@ function Stats() {
       const isHolyFamilyJV = eventHeader.toLowerCase().includes('holy family jv')
       const scoringCount = isHolyFamilyJV ? 8 : 4
 
-      const scoresForEvent = filteredPlayers
+      const scoresForEvent = matrixPlayers
         .map(p => ({ name: p.name, score: p.scores[originalIndex] }))
         .filter(s => s.score !== null && s.score > 30)
         .sort((a, b) => a.score - b.score)
@@ -286,7 +286,7 @@ function Stats() {
       result.push(scoringPlayers)
     }
     return result
-  }, [filteredPlayers, eventIndices, allEventHeaders])
+  }, [matrixPlayers, eventIndices, allEventHeaders])
 
   // Get event info (par and holes)
   const getEventInfo = (eventHeader) => {
