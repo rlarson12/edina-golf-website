@@ -88,7 +88,7 @@ function Home() {
 
   // Get recent varsity results (most recent first) — 2026 season
   const recentVarsityResults = useMemo(() => {
-    return (golfData.schedule2026 || [])
+    return (golfData.events2026 || [])
       .filter(r => r.teamScore)
       .slice(-3)
       .reverse()
@@ -96,7 +96,7 @@ function Home() {
 
   // Get recent JV results (most recent first) — 2026 season
   const recentJVResults = useMemo(() => {
-    return (golfData.jvSchedule2026 || [])
+    return (golfData.jvEvents2026 || [])
       .filter(r => r.teamScore || r.teamResult)
       .slice(-3)
       .reverse()
@@ -292,11 +292,11 @@ function Home() {
                         <div className="text-sm font-semibold text-edina-green">{result.dateFormatted}</div>
                       </div>
                       <div className="ml-3 flex-grow min-w-0">
-                        <div className="font-semibold text-gray-900 text-base truncate">{result.event}</div>
+                        <div className="font-semibold text-gray-900 text-base truncate">{result.event || result.name}</div>
                       </div>
                       <div className="text-right flex-shrink-0 ml-2">
                         <div className={`font-bold text-base ${
-                          result.teamScore?.includes('(-') ? 'text-red-600' : 'text-gray-700'
+                          String(result.teamScore || '').includes('(-') ? 'text-red-600' : 'text-gray-700'
                         }`}>
                           {result.teamScore}
                         </div>
@@ -353,7 +353,7 @@ function Home() {
                         ) : (
                           <>
                             <div className={`font-bold text-base ${
-                              result.teamScore?.includes('(-') ? 'text-red-600' : 'text-gray-700'
+                              String(result.teamScore || '').includes('(-') ? 'text-red-600' : 'text-gray-700'
                             }`}>
                               {result.teamScore}
                             </div>

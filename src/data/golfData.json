@@ -5761,7 +5761,7 @@
       "holes": 18,
       "par": 72,
       "teamScore": 304,
-      "teamFinish": "1st of 7",
+      "teamFinish": "1st of 6",
       "time": "12:00 PM",
       "format": "stroke",
       "teamResult": null,
@@ -5810,7 +5810,8 @@
           "position": 6,
           "individualFinish": "T11"
         }
-      ]
+      ],
+      "event": "JV Lake Conference @ Bluff Creek"
     },
     {
       "id": "2026-2026-04-21-JV-2",
