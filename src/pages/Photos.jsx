@@ -10,8 +10,10 @@ function Photos() {
       id: '2026-1',
       title: 'Team Photos',
       date: '2026 Season',
-      cover: null,
-      photos: [],
+      cover: '/images/action/varsity-team-chaska.webp',
+      photos: [
+        { src: '/images/action/varsity-team-chaska.webp', caption: 'Varsity — Lake Conference Tournament #1, Apr 20.' },
+      ],
     },
     {
       id: '2026-2',
@@ -20,6 +22,7 @@ function Photos() {
       cover: '/images/action/chase-larson-chaska-swing.webp',
       photos: [
         { src: '/images/tryouts-braemar-2026.webp', caption: 'Tryouts at Braemar — 60+ players competing for roster spots to open the 2026 season.' },
+        { src: '/images/action/charlie-nielsen-medalist-chaska.webp', caption: 'Charlie Nielsen — Co-Medalist, Lake Conference Tournament #1, Apr 20.' },
         { src: '/images/action/charlie-nielsen-chaska-action.webp', caption: 'Charlie Nielsen — Lake Conference Tournament #1, Apr 20.' },
         { src: '/images/action/chase-larson-chaska-swing.webp', caption: 'Chase Larson — Lake Conference Tournament #1, Apr 20.' },
         { src: '/images/action/chase-larson-chaska-putt.webp', caption: 'Chase Larson — Lake Conference Tournament #1, Apr 20.' },
