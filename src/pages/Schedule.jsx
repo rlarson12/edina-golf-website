@@ -727,25 +727,57 @@ function Schedule() {
 
                           const toParStr = s.toPar === null ? '' : s.toPar === 0 ? 'E' : s.toPar > 0 ? `+${s.toPar}` : `${s.toPar}`
                           const isUnderPar = s.toPar !== null && s.toPar < 0
+                          const singleDayDate = event.date ? event.date.substring(0, 10) : null
+                          const singleDaySc = singleDayDate ? getScorecard(s.name, singleDayDate) : null
                           return (
-                            <tr key={idx}>
-                              <td className="px-3 py-1.5 font-medium text-gray-900">{s.name}</td>
-                              <td className="px-3 py-1.5 text-center">
-                                <span className={`font-bold ${isUnderPar ? 'text-red-600' : 'text-gray-900'}`}>
-                                  {s.score}
-                                </span>
-                              </td>
-                              <td className="px-2 py-1.5 text-center">
-                                <span className={`text-sm ${isUnderPar ? 'text-red-600' : 'text-gray-600'}`}>
-                                  {toParStr}
-                                </span>
-                              </td>
-                              <td className="px-2 py-1.5 text-center">
-                                {s.individualFinish && (
-                                  <span className="text-sm text-gray-600 whitespace-nowrap">{s.individualFinish}</span>
-                                )}
-                              </td>
-                            </tr>
+                            <Fragment key={idx}>
+                              <tr>
+                                <td className="px-3 py-1.5 font-medium text-gray-900">{s.name}</td>
+                                <td className="px-3 py-1.5 text-center">
+                                  <span className={`font-bold ${isUnderPar ? 'text-red-600' : 'text-gray-900'}`}>
+                                    {s.score}
+                                  </span>
+                                  {singleDaySc && (
+                                    <button
+                                      onClick={(e) => { e.stopPropagation(); toggleScorecard(s.name, singleDayDate) }}
+                                      className={`ml-1 inline-flex items-center justify-center w-5 h-5 rounded transition-colors ${
+                                        expandedScorecards.has(`${s.name}::${singleDayDate}`)
+                                          ? 'text-edina-green bg-edina-green/10'
+                                          : 'text-gray-400 hover:text-edina-green'
+                                      }`}
+                                      title="View hole-by-hole scorecard"
+                                    >
+                                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                                      </svg>
+                                    </button>
+                                  )}
+                                </td>
+                                <td className="px-2 py-1.5 text-center">
+                                  <span className={`text-sm ${isUnderPar ? 'text-red-600' : 'text-gray-600'}`}>
+                                    {toParStr}
+                                  </span>
+                                </td>
+                                <td className="px-2 py-1.5 text-center">
+                                  {s.individualFinish && (
+                                    <span className="text-sm text-gray-600 whitespace-nowrap">{s.individualFinish}</span>
+                                  )}
+                                </td>
+                              </tr>
+                              {singleDaySc && expandedScorecards.has(`${s.name}::${singleDayDate}`) && (
+                                <tr key={`sc-single-${idx}`}>
+                                  <td colSpan={4} className="p-0 bg-gray-50">
+                                    <Scorecard
+                                      par={singleDaySc.par}
+                                      scores={singleDaySc.scores}
+                                      courseName={singleDaySc.courseName}
+                                      playerName={singleDaySc.playerName}
+                                      round={singleDaySc.round}
+                                    />
+                                  </td>
+                                </tr>
+                              )}
+                            </Fragment>
                           )
                         })}
                       </tbody>
