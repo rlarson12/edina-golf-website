@@ -6743,7 +6743,8 @@
       ],
       "average": 72.0,
       "roundsPlayed": 1,
-      "low": 72
+      "low": 72,
+      "team": "varsity"
     },
     {
       "name": "Sander Ohe",
@@ -6761,7 +6762,8 @@
       ],
       "average": 74.0,
       "roundsPlayed": 1,
-      "low": 74
+      "low": 74,
+      "team": "varsity"
     },
     {
       "name": "Peter Bennett",
@@ -6779,7 +6781,8 @@
       ],
       "average": 75.0,
       "roundsPlayed": 1,
-      "low": 75
+      "low": 75,
+      "team": "varsity"
     },
     {
       "name": "Chase Larson",
@@ -6797,7 +6800,8 @@
       ],
       "average": 79.0,
       "roundsPlayed": 1,
-      "low": 79
+      "low": 79,
+      "team": "varsity"
     },
     {
       "name": "Michael Vernon",
@@ -6815,7 +6819,8 @@
       ],
       "average": 81.0,
       "roundsPlayed": 1,
-      "low": 81
+      "low": 81,
+      "team": "varsity"
     },
     {
       "name": "David Colby",
@@ -6833,7 +6838,8 @@
       ],
       "average": 81.0,
       "roundsPlayed": 1,
-      "low": 81
+      "low": 81,
+      "team": "varsity"
     },
     {
       "name": "Drew Schiena",
@@ -6851,7 +6857,8 @@
       ],
       "average": 72.0,
       "roundsPlayed": 1,
-      "low": 72
+      "low": 72,
+      "team": "jv"
     },
     {
       "name": "Hudson Strodl",
@@ -6869,7 +6876,8 @@
       ],
       "average": 74.0,
       "roundsPlayed": 1,
-      "low": 74
+      "low": 74,
+      "team": "jv"
     },
     {
       "name": "Ryan Geyer",
@@ -6887,7 +6895,8 @@
       ],
       "average": 79.0,
       "roundsPlayed": 1,
-      "low": 79
+      "low": 79,
+      "team": "jv"
     },
     {
       "name": "Ty Pankratz",
@@ -6905,7 +6914,8 @@
       ],
       "average": 79.0,
       "roundsPlayed": 1,
-      "low": 79
+      "low": 79,
+      "team": "jv"
     },
     {
       "name": "Elan Winnick",
@@ -6923,7 +6933,8 @@
       ],
       "average": 80.0,
       "roundsPlayed": 1,
-      "low": 80
+      "low": 80,
+      "team": "jv"
     },
     {
       "name": "MacAllen Smith",
@@ -6941,7 +6952,8 @@
       ],
       "average": 80.0,
       "roundsPlayed": 1,
-      "low": 80
+      "low": 80,
+      "team": "jv"
     }
   ],
   "rankings2026": [
