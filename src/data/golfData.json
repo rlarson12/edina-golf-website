@@ -6882,7 +6882,7 @@
       "average": 72.0,
       "roundsPlayed": 1,
       "low": 72,
-      "team": "jv"
+      "team": "varsity"
     },
     {
       "name": "Hudson Strodl",
@@ -7405,7 +7405,7 @@
       },
       {
         "name": "Drew Schiena",
-        "team": "jv",
+        "team": "varsity",
         "scores": [
           null,
           null,
@@ -8034,6 +8034,45 @@
           null,
           null,
           null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "MacAllen Smith",
+        "team": "jv",
+        "scores": [
+          null,
+          null,
+          80,
           null,
           null,
           null,

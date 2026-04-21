@@ -492,9 +492,6 @@ function Stats() {
                   <table className="w-full">
                     <thead className="bg-gray-50 border-b border-gray-200">
                       <tr>
-                        <th className="px-3 py-3 text-center text-xs font-semibold text-gray-500 uppercase tracking-wider w-12">
-                          Rank
-                        </th>
                         <th
                           className="px-4 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider cursor-pointer hover:text-edina-green select-none"
                           onClick={() => handleSort('player')}
@@ -540,10 +537,6 @@ function Stats() {
 
                           return (
                             <tr key={player.name} className="hover:bg-gray-50 transition-colors">
-                              {/* Rank (3B) */}
-                              <td className={`px-3 py-4 text-center font-bold ${rank === 1 ? 'text-edina-gold text-lg' : 'text-gray-500 text-sm'}`}>
-                                {rank === 1 ? '🏅' : rank}
-                              </td>
                               <td className="px-4 py-4 font-medium text-gray-900">{player.name}</td>
                               <td className="px-4 py-4 text-center font-semibold text-gray-900">
                                 {player.average?.toFixed(1)}
