@@ -657,33 +657,32 @@ function Schedule() {
                             const colCount = (event.rounds?.length || 0) + 3
                             return (
                               <Fragment key={idx}>
-                                <tr>
-                                  <td className="px-3 py-1.5 font-medium text-gray-900">{s.name}</td>
+                                <tr
+                                  onClick={() => {
+                                    // For multi-day, clicking the row toggles R1 scorecard if available
+                                    const firstRoundDate = event.rounds?.[0]?.date
+                                    const firstSc = firstRoundDate ? getScorecard(s.name, firstRoundDate) : null
+                                    if (firstSc) toggleScorecard(s.name, firstRoundDate)
+                                  }}
+                                  className="cursor-pointer hover:bg-edina-green/5 transition-colors"
+                                >
+                                  <td className="px-3 py-1.5 font-medium text-gray-900">
+                                    <span className="flex items-center gap-1.5">
+                                      {s.name}
+                                      <svg className="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                      </svg>
+                                    </span>
+                                  </td>
                                   {s.rounds.map((r, i) => {
                                     const rPar = s.pars[i]
                                     const rUnder = r !== null && rPar && r < rPar
                                     const roundDate = event.rounds?.[i]?.date || event.dateISO || (event.date ? event.date.substring(0, 10) : null)
-                                    const sc = roundDate ? getScorecard(s.name, roundDate) : null
                                     return (
                                       <td key={i} className="px-2 py-1.5 text-center">
                                         <span className={`font-medium ${rUnder ? 'text-red-600' : 'text-gray-700'}`}>
                                           {r !== null ? r : '-'}
                                         </span>
-                                        {sc && (
-                                          <button
-                                            onClick={(e) => { e.stopPropagation(); toggleScorecard(s.name, roundDate) }}
-                                            className={`ml-1 inline-flex items-center justify-center w-5 h-5 rounded transition-colors ${
-                                              expandedScorecards.has(`${s.name}::${roundDate}`)
-                                                ? 'text-edina-green bg-edina-green/10'
-                                                : 'text-gray-400 hover:text-edina-green'
-                                            }`}
-                                            title="View hole-by-hole scorecard"
-                                          >
-                                            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 10h16M4 14h16M4 18h16" />
-                                            </svg>
-                                          </button>
-                                        )}
                                       </td>
                                     )
                                   })}
