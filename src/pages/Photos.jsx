@@ -20,11 +20,11 @@ function Photos() {
       cover: '/images/action/chase-larson-chaska-swing.webp',
       photos: [
         { src: '/images/tryouts-braemar-2026.webp', caption: 'Tryouts at Braemar — 60+ players competing for roster spots to open the 2026 season.' },
-        { src: '/images/action/charlie-nielsen-chaska-action.webp', caption: 'Charlie Nielsen on the green at Chaska Town Course — Lake Conference Tournament #1, Apr 20.' },
-        { src: '/images/action/chase-larson-chaska-swing.webp', caption: 'Chase Larson mid-swing at Chaska Town Course — Lake Conference Tournament #1, Apr 20.' },
-        { src: '/images/action/chase-larson-chaska-putt.webp', caption: 'Chase Larson reading a putt at Chaska Town Course — Lake Conference Tournament #1, Apr 20.' },
-        { src: '/images/action/peter-bennett-chaska-swing.webp', caption: 'Peter Bennett on the green at Chaska Town Course — Lake Conference Tournament #1, Apr 20.' },
-        { src: '/images/action/peter-bennett-chaska-putt.webp', caption: 'Peter Bennett setting up a putt at Chaska Town Course — Lake Conference Tournament #1, Apr 20.' },
+        { src: '/images/action/charlie-nielsen-chaska-action.webp', caption: 'Charlie Nielsen — Lake Conference Tournament #1, Apr 20.' },
+        { src: '/images/action/chase-larson-chaska-swing.webp', caption: 'Chase Larson — Lake Conference Tournament #1, Apr 20.' },
+        { src: '/images/action/chase-larson-chaska-putt.webp', caption: 'Chase Larson — Lake Conference Tournament #1, Apr 20.' },
+        { src: '/images/action/peter-bennett-chaska-swing.webp', caption: 'Peter Bennett — Lake Conference Tournament #1, Apr 20.' },
+        { src: '/images/action/peter-bennett-chaska-putt.webp', caption: 'Peter Bennett — Lake Conference Tournament #1, Apr 20.' },
       ],
     },
     {
