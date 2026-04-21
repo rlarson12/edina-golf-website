@@ -5455,45 +5455,51 @@
       "course": "Chaska Town Course",
       "holes": 18,
       "par": 72,
-      "teamScore": null,
-      "teamFinish": null,
+      "teamScore": 300,
+      "teamFinish": "1st of 8",
       "time": "1:30 PM",
       "players": [
         {
+          "name": "Charlie Nielsen",
+          "grade": "JR",
+          "score": 72,
+          "position": 1,
+          "individualFinish": "T1"
+        },
+        {
           "name": "Sander Ohe",
           "grade": "JR",
-          "score": 0,
-          "position": 1
-        },
-        {
-          "name": "Chase Larson",
-          "grade": "SO",
-          "score": 0,
-          "position": 2
-        },
-        {
-          "name": "Charlie Nielsen",
-          "grade": "SO",
-          "score": 0,
-          "position": 3
+          "score": 74,
+          "position": 2,
+          "individualFinish": "3rd"
         },
         {
           "name": "Peter Bennett",
+          "grade": "SR",
+          "score": 75,
+          "position": 3,
+          "individualFinish": "4th"
+        },
+        {
+          "name": "Chase Larson",
           "grade": "JR",
-          "score": 0,
-          "position": 4
+          "score": 79,
+          "position": 4,
+          "individualFinish": "T7"
         },
         {
           "name": "Michael Vernon",
           "grade": "FR",
-          "score": 0,
-          "position": 5
+          "score": 81,
+          "position": 5,
+          "individualFinish": "T15"
         },
         {
           "name": "David Colby",
           "grade": "SR",
-          "score": 0,
-          "position": 6
+          "score": 81,
+          "position": 6,
+          "individualFinish": "T15"
         }
       ]
     },
@@ -5723,58 +5729,6 @@
       "par": 72,
       "teamScore": null,
       "teamFinish": null
-    },
-    {
-      "id": "2026-2026-04-20-JV-0",
-      "date": "2026-04-20T00:00:00.000Z",
-      "dateFormatted": "Apr 20",
-      "dateISO": "2026-04-20",
-      "name": "Lake Conference JV Tournament #1",
-      "level": "JV",
-      "course": "Bluff Creek Golf Course",
-      "holes": 18,
-      "par": 72,
-      "teamScore": null,
-      "teamFinish": null,
-      "time": "12:00 PM",
-      "players": [
-        {
-          "name": "Drew Schiena",
-          "grade": "FR",
-          "score": 0,
-          "position": 1
-        },
-        {
-          "name": "Elan Winnick",
-          "grade": "JR",
-          "score": 0,
-          "position": 2
-        },
-        {
-          "name": "Ty Pankratz",
-          "grade": "JR",
-          "score": 0,
-          "position": 3
-        },
-        {
-          "name": "Mac Smith",
-          "grade": "JR",
-          "score": 0,
-          "position": 4
-        },
-        {
-          "name": "Hudson Strodl",
-          "grade": "JR",
-          "score": 0,
-          "position": 5
-        },
-        {
-          "name": "Ryan Geyer",
-          "grade": "SO",
-          "score": 0,
-          "position": 6
-        }
-      ]
     }
   ],
   "jvEvents2026": [
@@ -5806,13 +5760,57 @@
       "course": "Bluff Creek Golf Course",
       "holes": 18,
       "par": 72,
-      "teamScore": null,
-      "teamFinish": null,
+      "teamScore": 304,
+      "teamFinish": "1st of 7",
       "time": "12:00 PM",
       "format": "stroke",
       "teamResult": null,
       "teamRecord": null,
-      "isJV": true
+      "isJV": true,
+      "players": [
+        {
+          "name": "Drew Schiena",
+          "grade": "FR",
+          "score": 72,
+          "position": 1,
+          "individualFinish": "1st"
+        },
+        {
+          "name": "Hudson Strodl",
+          "grade": "SR",
+          "score": 74,
+          "position": 2,
+          "individualFinish": "3rd"
+        },
+        {
+          "name": "Ryan Geyer",
+          "grade": "JR",
+          "score": 79,
+          "position": 3,
+          "individualFinish": "T6"
+        },
+        {
+          "name": "Ty Pankratz",
+          "grade": "JR",
+          "score": 79,
+          "position": 4,
+          "individualFinish": "T6"
+        },
+        {
+          "name": "Elan Winnick",
+          "grade": "JR",
+          "score": 80,
+          "position": 5,
+          "individualFinish": "T11"
+        },
+        {
+          "name": "MacAllen Smith",
+          "grade": "SR",
+          "score": 80,
+          "position": 6,
+          "individualFinish": "T11"
+        }
+      ]
     },
     {
       "id": "2026-2026-04-21-JV-2",
@@ -6028,6 +6026,7 @@
       "teamFinish": null,
       "event": "Lake Conference Tournament #1",
       "startTimeUtc": null,
+      "teeTime": "13:30",
       "time": "1:30 PM"
     },
     {
@@ -6076,6 +6075,7 @@
       "teamFinish": null,
       "event": "The Preview Day 1",
       "startTimeUtc": null,
+      "teeTime": "07:00",
       "time": "7:00 AM"
     },
     {
@@ -6092,6 +6092,7 @@
       "teamFinish": null,
       "event": "The Preview Day 2",
       "startTimeUtc": null,
+      "teeTime": "07:00",
       "time": "7:00 AM"
     },
     {
@@ -6567,7 +6568,7 @@
       "name": "Ryan Geyer",
       "grade": 11,
       "gradYear": 2027,
-      "team": "varsity",
+      "team": "jv",
       "photo": "/images/ryan-guyer.webp",
       "photoPosition": "center 20%"
     },
@@ -6576,9 +6577,7 @@
       "grade": 11,
       "gradYear": 2027,
       "team": "varsity",
-      "photo": "/images/players/chase-larson.jpg",
-      "instagram": "chaselarsongolf",
-      "ajgaUrl": "https://www.ajga.org/players/chase-larson"
+      "photo": "/images/players/chase-larson.jpg"
     },
     {
       "name": "Charlie Nielsen",
@@ -6599,7 +6598,7 @@
       "name": "Ty Pankratz",
       "grade": 12,
       "gradYear": 2026,
-      "team": "varsity",
+      "team": "jv",
       "photo": "/images/ty-pankratz.webp",
       "photoPosition": "center 20%"
     },
@@ -6614,7 +6613,7 @@
       "name": "Drew Schiena",
       "grade": 9,
       "gradYear": 2029,
-      "team": "varsity",
+      "team": "jv",
       "photo": "/images/drew-schiena.webp",
       "photoPosition": "center 20%"
     },
@@ -6622,14 +6621,14 @@
       "name": "Macallen Smith",
       "grade": 12,
       "gradYear": 2026,
-      "team": "varsity",
+      "team": "jv",
       "photo": "/images/players/macallan-smith.webp"
     },
     {
       "name": "Hudson Strodl",
       "grade": 12,
       "gradYear": 2026,
-      "team": "varsity",
+      "team": "jv",
       "photo": "/images/players/hudson-strodl.webp"
     },
     {
@@ -6643,7 +6642,7 @@
       "name": "Elan Winnick",
       "grade": 11,
       "gradYear": 2027,
-      "team": "varsity",
+      "team": "jv",
       "photo": "/images/players/elan-winnick.webp"
     },
     {
@@ -6726,8 +6725,298 @@
       "photoPosition": "center 15%"
     }
   ],
-  "playerStats2026": [],
-  "rankings2026": [],
+  "playerStats2026": [
+    {
+      "name": "Charlie Nielsen",
+      "scores": [
+        {
+          "score": 72,
+          "event": "Lake Conference Tournament #1",
+          "eventDate": "2026-04-20",
+          "holes": 18,
+          "par": 72,
+          "eventId": "2026-V1",
+          "individualFinish": "T1",
+          "toPar": 0
+        }
+      ],
+      "average": 72.0,
+      "roundsPlayed": 1,
+      "low": 72
+    },
+    {
+      "name": "Sander Ohe",
+      "scores": [
+        {
+          "score": 74,
+          "event": "Lake Conference Tournament #1",
+          "eventDate": "2026-04-20",
+          "holes": 18,
+          "par": 72,
+          "eventId": "2026-V1",
+          "individualFinish": "3rd",
+          "toPar": 2
+        }
+      ],
+      "average": 74.0,
+      "roundsPlayed": 1,
+      "low": 74
+    },
+    {
+      "name": "Peter Bennett",
+      "scores": [
+        {
+          "score": 75,
+          "event": "Lake Conference Tournament #1",
+          "eventDate": "2026-04-20",
+          "holes": 18,
+          "par": 72,
+          "eventId": "2026-V1",
+          "individualFinish": "4th",
+          "toPar": 3
+        }
+      ],
+      "average": 75.0,
+      "roundsPlayed": 1,
+      "low": 75
+    },
+    {
+      "name": "Chase Larson",
+      "scores": [
+        {
+          "score": 79,
+          "event": "Lake Conference Tournament #1",
+          "eventDate": "2026-04-20",
+          "holes": 18,
+          "par": 72,
+          "eventId": "2026-V1",
+          "individualFinish": "T7",
+          "toPar": 7
+        }
+      ],
+      "average": 79.0,
+      "roundsPlayed": 1,
+      "low": 79
+    },
+    {
+      "name": "Michael Vernon",
+      "scores": [
+        {
+          "score": 81,
+          "event": "Lake Conference Tournament #1",
+          "eventDate": "2026-04-20",
+          "holes": 18,
+          "par": 72,
+          "eventId": "2026-V1",
+          "individualFinish": "T15",
+          "toPar": 9
+        }
+      ],
+      "average": 81.0,
+      "roundsPlayed": 1,
+      "low": 81
+    },
+    {
+      "name": "David Colby",
+      "scores": [
+        {
+          "score": 81,
+          "event": "Lake Conference Tournament #1",
+          "eventDate": "2026-04-20",
+          "holes": 18,
+          "par": 72,
+          "eventId": "2026-V1",
+          "individualFinish": "T15",
+          "toPar": 9
+        }
+      ],
+      "average": 81.0,
+      "roundsPlayed": 1,
+      "low": 81
+    },
+    {
+      "name": "Drew Schiena",
+      "scores": [
+        {
+          "score": 72,
+          "event": "Lake Conference JV Tournament #1",
+          "eventDate": "2026-04-20",
+          "holes": 18,
+          "par": 72,
+          "eventId": "2026-JV-APR20",
+          "individualFinish": "1st",
+          "toPar": 0
+        }
+      ],
+      "average": 72.0,
+      "roundsPlayed": 1,
+      "low": 72
+    },
+    {
+      "name": "Hudson Strodl",
+      "scores": [
+        {
+          "score": 74,
+          "event": "Lake Conference JV Tournament #1",
+          "eventDate": "2026-04-20",
+          "holes": 18,
+          "par": 72,
+          "eventId": "2026-JV-APR20",
+          "individualFinish": "3rd",
+          "toPar": 2
+        }
+      ],
+      "average": 74.0,
+      "roundsPlayed": 1,
+      "low": 74
+    },
+    {
+      "name": "Ryan Geyer",
+      "scores": [
+        {
+          "score": 79,
+          "event": "Lake Conference JV Tournament #1",
+          "eventDate": "2026-04-20",
+          "holes": 18,
+          "par": 72,
+          "eventId": "2026-JV-APR20",
+          "individualFinish": "T6",
+          "toPar": 7
+        }
+      ],
+      "average": 79.0,
+      "roundsPlayed": 1,
+      "low": 79
+    },
+    {
+      "name": "Ty Pankratz",
+      "scores": [
+        {
+          "score": 79,
+          "event": "Lake Conference JV Tournament #1",
+          "eventDate": "2026-04-20",
+          "holes": 18,
+          "par": 72,
+          "eventId": "2026-JV-APR20",
+          "individualFinish": "T6",
+          "toPar": 7
+        }
+      ],
+      "average": 79.0,
+      "roundsPlayed": 1,
+      "low": 79
+    },
+    {
+      "name": "Elan Winnick",
+      "scores": [
+        {
+          "score": 80,
+          "event": "Lake Conference JV Tournament #1",
+          "eventDate": "2026-04-20",
+          "holes": 18,
+          "par": 72,
+          "eventId": "2026-JV-APR20",
+          "individualFinish": "T11",
+          "toPar": 8
+        }
+      ],
+      "average": 80.0,
+      "roundsPlayed": 1,
+      "low": 80
+    },
+    {
+      "name": "MacAllen Smith",
+      "scores": [
+        {
+          "score": 80,
+          "event": "Lake Conference JV Tournament #1",
+          "eventDate": "2026-04-20",
+          "holes": 18,
+          "par": 72,
+          "eventId": "2026-JV-APR20",
+          "individualFinish": "T11",
+          "toPar": 8
+        }
+      ],
+      "average": 80.0,
+      "roundsPlayed": 1,
+      "low": 80
+    }
+  ],
+  "rankings2026": [
+    {
+      "name": "Charlie Nielsen",
+      "average": 72.0,
+      "roundsPlayed": 1,
+      "low": 72
+    },
+    {
+      "name": "Drew Schiena",
+      "average": 72.0,
+      "roundsPlayed": 1,
+      "low": 72
+    },
+    {
+      "name": "Sander Ohe",
+      "average": 74.0,
+      "roundsPlayed": 1,
+      "low": 74
+    },
+    {
+      "name": "Hudson Strodl",
+      "average": 74.0,
+      "roundsPlayed": 1,
+      "low": 74
+    },
+    {
+      "name": "Peter Bennett",
+      "average": 75.0,
+      "roundsPlayed": 1,
+      "low": 75
+    },
+    {
+      "name": "Chase Larson",
+      "average": 79.0,
+      "roundsPlayed": 1,
+      "low": 79
+    },
+    {
+      "name": "Ryan Geyer",
+      "average": 79.0,
+      "roundsPlayed": 1,
+      "low": 79
+    },
+    {
+      "name": "Ty Pankratz",
+      "average": 79.0,
+      "roundsPlayed": 1,
+      "low": 79
+    },
+    {
+      "name": "Elan Winnick",
+      "average": 80.0,
+      "roundsPlayed": 1,
+      "low": 80
+    },
+    {
+      "name": "MacAllen Smith",
+      "average": 80.0,
+      "roundsPlayed": 1,
+      "low": 80
+    },
+    {
+      "name": "Michael Vernon",
+      "average": 81.0,
+      "roundsPlayed": 1,
+      "low": 81
+    },
+    {
+      "name": "David Colby",
+      "average": 81.0,
+      "roundsPlayed": 1,
+      "low": 81
+    }
+  ],
   "heatmap2026": {
     "eventHeaders": [
       "04/16 - Match Play @ Heritage Links",
@@ -6766,11 +7055,11 @@
     ],
     "playerScores": [
       {
-        "name": "Mason Catron",
-        "team": "jv",
+        "name": "Peter Bennett",
+        "team": "varsity",
         "scores": [
-          "W 3&2",
           null,
+          75,
           null,
           null,
           null,
@@ -6802,16 +7091,14 @@
           null,
           null,
           null
-        ],
-        "average": null,
-        "isMatchPlayOnly": true
+        ]
       },
       {
-        "name": "Randy Dann",
-        "team": "jv",
+        "name": "David Colby",
+        "team": "varsity",
         "scores": [
-          "W 3&2",
           null,
+          81,
           null,
           null,
           null,
@@ -6843,17 +7130,15 @@
           null,
           null,
           null
-        ],
-        "average": null,
-        "isMatchPlayOnly": true
+        ]
       },
       {
-        "name": "Ari Prickett",
+        "name": "Ryan Geyer",
         "team": "jv",
         "scores": [
-          "W 4&2",
           null,
           null,
+          79,
           null,
           null,
           null,
@@ -6884,16 +7169,14 @@
           null,
           null,
           null
-        ],
-        "average": null,
-        "isMatchPlayOnly": true
+        ]
       },
       {
-        "name": "Mason Schultes",
-        "team": "jv",
+        "name": "Chase Larson",
+        "team": "varsity",
         "scores": [
-          "W 4&2",
           null,
+          79,
           null,
           null,
           null,
@@ -6925,16 +7208,14 @@
           null,
           null,
           null
-        ],
-        "average": null,
-        "isMatchPlayOnly": true
+        ]
       },
       {
-        "name": "Mason Hughes",
-        "team": "jv",
+        "name": "Charlie Nielsen",
+        "team": "varsity",
         "scores": [
-          "W 5&4",
           null,
+          72,
           null,
           null,
           null,
@@ -6966,15 +7247,91 @@
           null,
           null,
           null
-        ],
-        "average": null,
-        "isMatchPlayOnly": true
+        ]
       },
       {
-        "name": "Crosby Pote",
+        "name": "Sander Ohe",
+        "team": "varsity",
+        "scores": [
+          null,
+          74,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Ty Pankratz",
         "team": "jv",
         "scores": [
-          "W 5&4",
+          null,
+          null,
+          79,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Max Romslo",
+        "team": "varsity",
+        "scores": [
+          null,
           null,
           null,
           null,
@@ -7007,15 +7364,208 @@
           null,
           null,
           null
-        ],
-        "average": null,
-        "isMatchPlayOnly": true
+        ]
+      },
+      {
+        "name": "Drew Schiena",
+        "team": "jv",
+        "scores": [
+          null,
+          null,
+          72,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Macallen Smith",
+        "team": "jv",
+        "scores": [
+          null,
+          null,
+          80,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Hudson Strodl",
+        "team": "jv",
+        "scores": [
+          null,
+          null,
+          74,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Michael Vernon",
+        "team": "varsity",
+        "scores": [
+          null,
+          81,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Elan Winnick",
+        "team": "jv",
+        "scores": [
+          null,
+          null,
+          80,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
       },
       {
         "name": "Henry Applebaum",
         "team": "jv",
         "scores": [
-          "W 5&4",
+          null,
           null,
           null,
           null,
@@ -7048,15 +7598,130 @@
           null,
           null,
           null
-        ],
-        "average": null,
-        "isMatchPlayOnly": true
+        ]
+      },
+      {
+        "name": "Mason Catron",
+        "team": "jv",
+        "scores": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Cole Considine",
+        "team": "jv",
+        "scores": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Randy Dann",
+        "team": "jv",
+        "scores": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
       },
       {
         "name": "Henry Freeman",
         "team": "jv",
         "scores": [
-          "W 5&4",
+          null,
           null,
           null,
           null,
@@ -7089,9 +7754,280 @@
           null,
           null,
           null
-        ],
-        "average": null,
-        "isMatchPlayOnly": true
+        ]
+      },
+      {
+        "name": "George Heinen",
+        "team": "jv",
+        "scores": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Mason Hughes",
+        "team": "jv",
+        "scores": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Crosby Pote",
+        "team": "jv",
+        "scores": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Ari Prickett",
+        "team": "jv",
+        "scores": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Carter Ringle",
+        "team": "jv",
+        "scores": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "Mason Schultes",
+        "team": "jv",
+        "scores": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "name": "William Smith",
+        "team": "jv",
+        "scores": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
       }
     ]
   },
@@ -7287,6 +8223,294 @@
         6
       ],
       "total": 73
+    },
+    {
+      "playerName": "Charlie Nielsen",
+      "eventDate": "2026-04-20",
+      "eventName": "Lake Conference Tournament #1",
+      "round": 1,
+      "courseName": "Chaska Town Course",
+      "par": [
+        4,
+        4,
+        4,
+        3,
+        4,
+        3,
+        5,
+        4,
+        5,
+        4,
+        4,
+        3,
+        4,
+        3,
+        5,
+        4,
+        4,
+        5
+      ],
+      "scores": [
+        4,
+        5,
+        4,
+        3,
+        4,
+        4,
+        4,
+        5,
+        4,
+        5,
+        4,
+        2,
+        4,
+        2,
+        6,
+        3,
+        4,
+        5
+      ],
+      "total": 72
+    },
+    {
+      "playerName": "Sander Ohe",
+      "eventDate": "2026-04-20",
+      "eventName": "Lake Conference Tournament #1",
+      "round": 1,
+      "courseName": "Chaska Town Course",
+      "par": [
+        4,
+        4,
+        4,
+        3,
+        4,
+        3,
+        5,
+        4,
+        5,
+        4,
+        4,
+        3,
+        4,
+        3,
+        5,
+        4,
+        4,
+        5
+      ],
+      "scores": [
+        4,
+        5,
+        4,
+        3,
+        6,
+        6,
+        3,
+        4,
+        5,
+        4,
+        6,
+        3,
+        4,
+        2,
+        5,
+        3,
+        3,
+        4
+      ],
+      "total": 74
+    },
+    {
+      "playerName": "Peter Bennett",
+      "eventDate": "2026-04-20",
+      "eventName": "Lake Conference Tournament #1",
+      "round": 1,
+      "courseName": "Chaska Town Course",
+      "par": [
+        4,
+        4,
+        4,
+        3,
+        4,
+        3,
+        5,
+        4,
+        5,
+        4,
+        4,
+        3,
+        4,
+        3,
+        5,
+        4,
+        4,
+        5
+      ],
+      "scores": [
+        5,
+        4,
+        5,
+        3,
+        5,
+        3,
+        5,
+        4,
+        5,
+        4,
+        4,
+        3,
+        3,
+        3,
+        6,
+        3,
+        5,
+        5
+      ],
+      "total": 75
+    },
+    {
+      "playerName": "Chase Larson",
+      "eventDate": "2026-04-20",
+      "eventName": "Lake Conference Tournament #1",
+      "round": 1,
+      "courseName": "Chaska Town Course",
+      "par": [
+        4,
+        4,
+        4,
+        3,
+        4,
+        3,
+        5,
+        4,
+        5,
+        4,
+        4,
+        3,
+        4,
+        3,
+        5,
+        4,
+        4,
+        5
+      ],
+      "scores": [
+        5,
+        4,
+        3,
+        4,
+        6,
+        2,
+        5,
+        6,
+        4,
+        5,
+        5,
+        3,
+        5,
+        4,
+        4,
+        4,
+        4,
+        6
+      ],
+      "total": 79
+    },
+    {
+      "playerName": "Michael Vernon",
+      "eventDate": "2026-04-20",
+      "eventName": "Lake Conference Tournament #1",
+      "round": 1,
+      "courseName": "Chaska Town Course",
+      "par": [
+        4,
+        4,
+        4,
+        3,
+        4,
+        3,
+        5,
+        4,
+        5,
+        4,
+        4,
+        3,
+        4,
+        3,
+        5,
+        4,
+        4,
+        5
+      ],
+      "scores": [
+        3,
+        6,
+        4,
+        3,
+        6,
+        5,
+        4,
+        5,
+        6,
+        5,
+        4,
+        4,
+        6,
+        4,
+        4,
+        3,
+        4,
+        5
+      ],
+      "total": 81
+    },
+    {
+      "playerName": "David Colby",
+      "eventDate": "2026-04-20",
+      "eventName": "Lake Conference Tournament #1",
+      "round": 1,
+      "courseName": "Chaska Town Course",
+      "par": [
+        4,
+        4,
+        4,
+        3,
+        4,
+        3,
+        5,
+        4,
+        5,
+        4,
+        4,
+        3,
+        4,
+        3,
+        5,
+        4,
+        4,
+        5
+      ],
+      "scores": [
+        4,
+        4,
+        3,
+        5,
+        4,
+        4,
+        4,
+        4,
+        5,
+        5,
+        4,
+        6,
+        7,
+        5,
+        5,
+        3,
+        4,
+        5
+      ],
+      "total": 81
     }
   ],
   "news2026": []
