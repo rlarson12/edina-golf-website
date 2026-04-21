@@ -44,9 +44,41 @@ for = "/"
 
 [headers.values]
 Cache-Control = "no-cache, no-store, must-revalidate"
+Pragma = "no-cache"
 
 [[headers]]
 for = "/index.html"
+
+[headers.values]
+Cache-Control = "no-cache, no-store, must-revalidate"
+Pragma = "no-cache"
+
+[[headers]]
+for = "/schedule"
+
+[headers.values]
+Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
+for = "/roster"
+
+[headers.values]
+Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
+for = "/photos"
+
+[headers.values]
+Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
+for = "/stats"
+
+[headers.values]
+Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
+for = "/recaps"
 
 [headers.values]
 Cache-Control = "no-cache, no-store, must-revalidate"

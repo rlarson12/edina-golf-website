@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 
-const CHECK_INTERVAL_MS = 60 * 1000 // 60 seconds — catches score updates promptly
+const CHECK_INTERVAL_MS = 30 * 1000 // 30 seconds — catches score updates promptly
 
 export function useVersionCheck() {
   const currentBuildTime = useRef(null)

@@ -2,17 +2,42 @@
   publish = "dist"
   command = "npm run build"
 
-# Root path — the actual URL users request. This is the critical rule.
-# Previously only /index.html was targeted, which never matched because
-# browsers request / not /index.html. Fixed April 2026.
+# All HTML routes must never be cached — SPA serves index.html for all routes
 [[headers]]
   for = "/"
   [headers.values]
     Cache-Control = "no-cache, no-store, must-revalidate"
+    Pragma = "no-cache"
 
-# Also target /index.html for SPA deep-link redirects that resolve this path
 [[headers]]
   for = "/index.html"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+    Pragma = "no-cache"
+
+# All page routes (schedule, roster, photos, etc) — same as root
+[[headers]]
+  for = "/schedule"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
+  for = "/roster"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
+  for = "/photos"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
+  for = "/stats"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
+  for = "/recaps"
   [headers.values]
     Cache-Control = "no-cache, no-store, must-revalidate"
 
