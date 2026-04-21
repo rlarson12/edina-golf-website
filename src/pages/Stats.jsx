@@ -195,6 +195,15 @@ function Stats() {
     return playerData.filter(p => teamPlayers.includes(p.name))
   }, [playerData, teamFilter, showArchive, hasSeason2026Results])
 
+  // For the score matrix: show any player who has at least one score in the filtered event columns
+  // This lets varsity players appear in the JV tab when they played a JV event
+  const matrixPlayers = useMemo(() => {
+    if (teamFilter === 'all') return playerData
+    return playerData.filter(p =>
+      eventIndices.some(i => p.scores[i] !== null && p.scores[i] !== undefined)
+    )
+  }, [playerData, teamFilter, eventIndices])
+
   // Sort handler
   const handleSort = (col) => {
     if (sortCol === col) {
@@ -627,14 +636,14 @@ function Stats() {
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-gray-100">
-                        {filteredPlayers.length === 0 ? (
+                        {matrixPlayers.length === 0 ? (
                           <tr>
                             <td colSpan={1 + eventHeaders.length} className="px-4 py-12 text-center">
                               <p className="text-gray-500 font-medium">Score matrix fills in after the season opens April 20.</p>
                             </td>
                           </tr>
                         ) : (
-                          [...filteredPlayers].sort((a, b) => {
+                          [...matrixPlayers].sort((a, b) => {
                               if (a.average == null && b.average == null) return a.name.localeCompare(b.name)
                               if (a.average == null) return 1
                               if (b.average == null) return -1
