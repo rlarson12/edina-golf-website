@@ -653,7 +653,7 @@ function Schedule() {
                                   {s.rounds.map((r, i) => {
                                     const rPar = s.pars[i]
                                     const rUnder = r !== null && rPar && r < rPar
-                                    const roundDate = event.rounds[i]?.date
+                                    const roundDate = event.rounds?.[i]?.date || event.dateISO
                                     const sc = roundDate ? getScorecard(s.name, roundDate) : null
                                     return (
                                       <td key={i} className="px-2 py-1.5 text-center">
@@ -694,9 +694,10 @@ function Schedule() {
                                     )}
                                   </td>
                                 </tr>
-                                {event.rounds.map((round, i) => {
-                                  const sc = getScorecard(s.name, round.date)
-                                  if (!sc || !expandedScorecards.has(`${s.name}::${round.date}`)) return null
+                                {(event.rounds || [{ date: event.dateISO }]).map((round, i) => {
+                                  const roundDate = round.date || event.dateISO
+                                  const sc = getScorecard(s.name, roundDate)
+                                  if (!sc || !expandedScorecards.has(`${s.name}::${roundDate}`)) return null
                                   return (
                                     <tr key={`sc-${idx}-${i}`}>
                                       <td colSpan={colCount} className="p-0 bg-gray-50">
