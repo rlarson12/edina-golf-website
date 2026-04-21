@@ -6546,6 +6546,30 @@
       "teamResult": "Win",
       "teamRecord": "4-0",
       "finish": "1st"
+    },
+    {
+      "id": "2026-V1",
+      "date": "2026-04-20T00:00:00.000Z",
+      "dateFormatted": "Apr 20",
+      "dateISO": "2026-04-20",
+      "event": "Lake Conference Tournament #1",
+      "course": "Chaska Town Course",
+      "level": "Varsity",
+      "format": "stroke",
+      "teamScore": "300",
+      "finish": "1st of 8"
+    },
+    {
+      "id": "2026-JV-APR20",
+      "date": "2026-04-20T00:00:00.000Z",
+      "dateFormatted": "Apr 20",
+      "dateISO": "2026-04-20",
+      "event": "JV Lake Conference @ Bluff Creek",
+      "course": "Bluff Creek Golf Course",
+      "level": "JV",
+      "format": "stroke",
+      "teamScore": "304",
+      "finish": "1st of 6"
     }
   ],
   "players2026": [
@@ -6569,7 +6593,7 @@
       "name": "Ryan Geyer",
       "grade": 11,
       "gradYear": 2027,
-      "team": "jv",
+      "team": "varsity",
       "photo": "/images/ryan-guyer.webp",
       "photoPosition": "center 20%"
     },
@@ -6599,7 +6623,7 @@
       "name": "Ty Pankratz",
       "grade": 12,
       "gradYear": 2026,
-      "team": "jv",
+      "team": "varsity",
       "photo": "/images/ty-pankratz.webp",
       "photoPosition": "center 20%"
     },
@@ -6622,14 +6646,14 @@
       "name": "Macallen Smith",
       "grade": 12,
       "gradYear": 2026,
-      "team": "jv",
+      "team": "varsity",
       "photo": "/images/players/macallan-smith.webp"
     },
     {
       "name": "Hudson Strodl",
       "grade": 12,
       "gradYear": 2026,
-      "team": "jv",
+      "team": "varsity",
       "photo": "/images/players/hudson-strodl.webp"
     },
     {
@@ -6643,7 +6667,7 @@
       "name": "Elan Winnick",
       "grade": 11,
       "gradYear": 2027,
-      "team": "jv",
+      "team": "varsity",
       "photo": "/images/players/elan-winnick.webp"
     },
     {
@@ -6662,7 +6686,7 @@
       "name": "Cole Considine",
       "grade": 10,
       "gradYear": 2028,
-      "team": "jv",
+      "team": "varsity",
       "photo": "/images/players/cole-considine.webp"
     },
     {

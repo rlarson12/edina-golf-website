@@ -148,7 +148,7 @@ function Schedule() {
   // 2026 Schedule (Varsity and JV events)
   const schedule2026 = [
     // Varsity Events
-    { id: '2026-V1',  date: '2026-04-20', dateFormatted: 'Apr 20',    event: 'Lake Conference Tournament #1',      course: 'Chaska Town Course',        level: 'Varsity', time: '1:30 PM', par: 72, holes: 18 },
+    { id: '2026-V1',  date: '2026-04-20', dateFormatted: 'Apr 20',    event: 'Lake Conference Tournament #1',      course: 'Chaska Town Course',        level: 'Varsity', time: '1:30 PM', par: 72, holes: 18, teamScore: '300', teamFinish: '1st of 8' },
     { id: '2026-V2',  date: '2026-04-22', dateFormatted: 'Apr 22',    event: 'East Ridge Invitational',            course: 'Stoneridge Golf Club',       level: 'Varsity', time: '9:00 AM' },
     { id: '2026-V3',  date: '2026-04-23', dateFormatted: 'Apr 23',    event: 'Lake Conference Meet #2',            course: 'Pioneer Creek Golf Course',  level: 'Varsity', time: '1:57 PM' },
     { id: '2026-V4',  date: '2026-04-24', dateFormatted: 'Apr 24-25', event: 'The Preview',                        course: 'Edinburgh USA Golf Course',  level: 'Varsity', isMultiDay: true, time: '7:00 AM', rounds: [
@@ -178,7 +178,7 @@ function Schedule() {
       { pair: ['Mason Hughes', 'Crosby Pote'], opponent: ['Grant Lamoreaux', 'Jack Stier'], result: 'Won 5&4' },
       { pair: ['Henry Applebaum', 'Henry Freeman'], opponent: ['Bennett Wevers', 'Grant Ketelsen'], result: 'Won 5&4' },
     ] },
-    { id: '2026-JV-APR20', date: '2026-04-20', dateFormatted: 'Apr 20',  event: 'JV Lake Conference @ Bluff Creek',   course: 'Bluff Creek Golf Course',    level: 'JV', time: '12:00 PM', par: 72, holes: 18 },
+    { id: '2026-JV-APR20', date: '2026-04-20', dateFormatted: 'Apr 20',  event: 'JV Lake Conference @ Bluff Creek',   course: 'Bluff Creek Golf Course',    level: 'JV', time: '12:00 PM', par: 72, holes: 18, teamScore: '304', teamFinish: '1st of 6' },
     { id: '2026-JV0', date: '2026-04-21', dateFormatted: 'Apr 21',    event: 'JV Invitational',                    course: 'Heritage Links Golf Course', level: 'JV', time: '10:30 AM' },
     { id: '2026-JV2', date: '2026-04-22', dateFormatted: 'Apr 22',    event: 'Boys JV Tournament',                 course: 'Clifton Highlands',          level: 'JV', time: '1:00 PM' },
     { id: '2026-JV3', date: '2026-04-27', dateFormatted: 'Apr 27',    event: 'Eden Prairie JV Invite',             course: 'Bluff Creek Golf Course',    level: 'JV', time: '9:00 AM' },
