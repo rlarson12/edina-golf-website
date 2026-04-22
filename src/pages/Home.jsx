@@ -52,8 +52,8 @@ function Home() {
   // Calculate quick stats from 2026 season data
   const quickStats = useMemo(() => {
     const results2026 = golfData.seasonResults2026 || []
-    const varsityStrokePlayed = (golfData.schedule2026 || [])
-      .filter(r => r.teamScore && !r.isJV && r.format !== 'matchplay').length
+    const varsityStrokePlayed = (golfData.events2026 || [])
+      .filter(r => r.teamScore && r.level !== 'JV' && r.format !== 'matchplay').length
 
     const wins = results2026.filter(r =>
       r.finish?.startsWith('1st') ||
@@ -70,8 +70,8 @@ function Home() {
       })
     const lowAvg = allAverages.length > 0 ? Math.min(...allAverages) : null
 
-    // Before 3 varsity stroke play events: show program history stats
-    if (varsityStrokePlayed < 3) {
+    // Before first varsity stroke play event: show program history stats
+    if (varsityStrokePlayed < 1) {
       return [
         { label: 'State Champions', value: '10×', sublabel: 'All-Time' },
         { label: 'Years of History', value: '70+', sublabel: 'Est. 1956' },

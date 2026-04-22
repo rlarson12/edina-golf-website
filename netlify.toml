@@ -2,59 +2,7 @@
   publish = "dist"
   command = "npm run build"
 
-# All HTML routes must never be cached — SPA serves index.html for all routes
-[[headers]]
-  for = "/"
-  [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
-    Pragma = "no-cache"
-
-[[headers]]
-  for = "/index.html"
-  [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
-    Pragma = "no-cache"
-
-# All page routes (schedule, roster, photos, etc) — same as root
-[[headers]]
-  for = "/schedule"
-  [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
-
-[[headers]]
-  for = "/roster"
-  [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
-
-[[headers]]
-  for = "/photos"
-  [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
-
-[[headers]]
-  for = "/stats"
-  [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
-
-[[headers]]
-  for = "/recaps"
-  [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
-
-# version.json — must never be cached, used for auto-reload detection
-[[headers]]
-  for = "/version.json"
-  [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
-
-# Hashed assets (JS/CSS bundles) are safe to cache forever —
-# Vite gives each build a unique filename, so stale cache is never an issue
-[[headers]]
-  for = "/assets/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-# SPA fallback — all routes serve index.html
+# SPA fallback - all routes serve index.html
 [[redirects]]
   from = "/*"
   to = "/index.html"
