@@ -5513,9 +5513,54 @@
       "course": "Stoneridge Golf Club",
       "holes": 18,
       "par": 72,
-      "teamScore": null,
-      "teamFinish": null,
-      "time": "9:00 AM"
+      "teamScore": 300,
+      "teamFinish": "5th of 20",
+      "time": "9:00 AM",
+      "iWanaMakerId": 197484,
+      "players": [
+        {
+          "name": "Chase Larson",
+          "grade": "JR",
+          "score": 72,
+          "position": 1,
+          "individualFinish": "T10"
+        },
+        {
+          "name": "Sander Ohe",
+          "grade": "SR",
+          "score": 74,
+          "position": 2,
+          "individualFinish": "T18"
+        },
+        {
+          "name": "Charlie Nielsen",
+          "grade": "JR",
+          "score": 77,
+          "position": 3,
+          "individualFinish": "T32"
+        },
+        {
+          "name": "Peter Bennett",
+          "grade": "SR",
+          "score": 77,
+          "position": 4,
+          "individualFinish": "T32"
+        },
+        {
+          "name": "Michael Vernon",
+          "grade": "SO",
+          "score": 77,
+          "position": 5,
+          "individualFinish": "T32"
+        },
+        {
+          "name": "Max Romslo",
+          "grade": "JR",
+          "score": 78,
+          "position": 6,
+          "individualFinish": "T39"
+        }
+      ]
     },
     {
       "id": "2026-2026-04-23-VAR-3",
@@ -6077,7 +6122,8 @@
       "teamFinish": null,
       "event": "East Ridge Invitational",
       "startTimeUtc": null,
-      "time": "9:00 AM"
+      "time": "9:00 AM",
+      "iWanaMakerId": 197484
     },
     {
       "id": "2026-2026-04-23-VAR-3",
@@ -6593,6 +6639,18 @@
       "finish": "1st of 8"
     },
     {
+      "id": "2026-V2",
+      "date": "2026-04-22T00:00:00.000Z",
+      "dateFormatted": "Apr 22",
+      "dateISO": "2026-04-22",
+      "event": "East Ridge Invitational",
+      "course": "Stoneridge Golf Club",
+      "level": "Varsity",
+      "format": "stroke",
+      "teamScore": "300",
+      "finish": "5th of 20"
+    },
+    {
       "id": "2026-JV-APR20",
       "date": "2026-04-20T00:00:00.000Z",
       "dateFormatted": "Apr 20",
@@ -6796,10 +6854,20 @@
           "eventId": "2026-V1",
           "individualFinish": "T1",
           "toPar": 0
+        },
+        {
+          "score": 77,
+          "event": "East Ridge Invitational",
+          "eventDate": "2026-04-22",
+          "holes": 18,
+          "par": 72,
+          "eventId": "2026-V2",
+          "individualFinish": "T32",
+          "toPar": 5
         }
       ],
-      "average": 72.0,
-      "roundsPlayed": 1,
+      "average": 74.5,
+      "roundsPlayed": 2,
       "low": 72,
       "team": "varsity"
     },
@@ -6815,10 +6883,20 @@
           "eventId": "2026-V1",
           "individualFinish": "3rd",
           "toPar": 2
+        },
+        {
+          "score": 74,
+          "event": "East Ridge Invitational",
+          "eventDate": "2026-04-22",
+          "holes": 18,
+          "par": 72,
+          "eventId": "2026-V2",
+          "individualFinish": "T18",
+          "toPar": 2
         }
       ],
       "average": 74.0,
-      "roundsPlayed": 1,
+      "roundsPlayed": 2,
       "low": 74,
       "team": "varsity"
     },
@@ -6834,10 +6912,20 @@
           "eventId": "2026-V1",
           "individualFinish": "4th",
           "toPar": 3
+        },
+        {
+          "score": 77,
+          "event": "East Ridge Invitational",
+          "eventDate": "2026-04-22",
+          "holes": 18,
+          "par": 72,
+          "eventId": "2026-V2",
+          "individualFinish": "T32",
+          "toPar": 5
         }
       ],
-      "average": 75.0,
-      "roundsPlayed": 1,
+      "average": 76.0,
+      "roundsPlayed": 2,
       "low": 75,
       "team": "varsity"
     },
@@ -6853,11 +6941,21 @@
           "eventId": "2026-V1",
           "individualFinish": "T7",
           "toPar": 7
+        },
+        {
+          "score": 72,
+          "event": "East Ridge Invitational",
+          "eventDate": "2026-04-22",
+          "holes": 18,
+          "par": 72,
+          "eventId": "2026-V2",
+          "individualFinish": "T10",
+          "toPar": 0
         }
       ],
-      "average": 79.0,
-      "roundsPlayed": 1,
-      "low": 79,
+      "average": 75.5,
+      "roundsPlayed": 2,
+      "low": 72,
       "team": "varsity"
     },
     {
@@ -6872,11 +6970,21 @@
           "eventId": "2026-V1",
           "individualFinish": "T15",
           "toPar": 9
+        },
+        {
+          "score": 77,
+          "event": "East Ridge Invitational",
+          "eventDate": "2026-04-22",
+          "holes": 18,
+          "par": 72,
+          "eventId": "2026-V2",
+          "individualFinish": "T32",
+          "toPar": 5
         }
       ],
-      "average": 81.0,
-      "roundsPlayed": 1,
-      "low": 81,
+      "average": 79.0,
+      "roundsPlayed": 2,
+      "low": 77,
       "team": "varsity"
     },
     {
@@ -7058,6 +7166,25 @@
           "individualFinish": "T19"
         }
       ]
+    },
+    {
+      "name": "Max Romslo",
+      "scores": [
+        {
+          "score": 78,
+          "event": "East Ridge Invitational",
+          "eventDate": "2026-04-22",
+          "holes": 18,
+          "par": 72,
+          "eventId": "2026-V2",
+          "individualFinish": "T39",
+          "toPar": 6
+        }
+      ],
+      "average": 78.0,
+      "roundsPlayed": 1,
+      "low": 78,
+      "team": "varsity"
     }
   ],
   "rankings2026": [
@@ -7179,7 +7306,7 @@
           75,
           null,
           null,
-          null,
+          77,
           null,
           null,
           null,
@@ -7296,7 +7423,7 @@
           79,
           null,
           null,
-          null,
+          72,
           null,
           null,
           null,
@@ -7335,7 +7462,7 @@
           72,
           null,
           null,
-          null,
+          77,
           null,
           null,
           null,
@@ -7374,7 +7501,7 @@
           74,
           null,
           null,
-          null,
+          74,
           null,
           null,
           null,
@@ -7452,7 +7579,7 @@
           null,
           null,
           null,
-          null,
+          78,
           null,
           null,
           null,
@@ -7569,7 +7696,7 @@
           81,
           null,
           null,
-          null,
+          77,
           null,
           null,
           null,
