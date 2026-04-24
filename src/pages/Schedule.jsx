@@ -397,6 +397,14 @@ function Schedule() {
     const isCancelled = event.status === 'cancelled'
     const isPostponed = event.status === 'postponed'
     const isInactive = isRainedOut || isCancelled
+    const isInProgressMultiDay = !isRound && event.isMultiDay && Array.isArray(event.rounds) && event.rounds.length > 0 && !event.teamScore && !isInactive && !isPostponed && (() => {
+      const today = new Date()
+      today.setHours(0, 0, 0, 0)
+      const roundDates = event.rounds.map(r => new Date(`${r.date}T00:00:00`))
+      const firstRound = new Date(Math.min(...roundDates.map(d => d.getTime())))
+      const lastRound = new Date(Math.max(...roundDates.map(d => d.getTime())))
+      return today >= firstRound && today <= lastRound
+    })()
     const canExpand = !isRound && !isInactive && (event.isMultiDay || hasPlayerScores(event) || isMatchPlay(event))
 
     return (
@@ -524,21 +532,25 @@ function Schedule() {
                 </span>
               ) : !isRound && !isInactive && !isMatchPlay(event) && !event.teamScore && !isPostponed && (
                 <span className={`inline-flex items-center px-3 py-1 rounded-lg text-sm font-medium ${
-                  is2026Event
+                  isInProgressMultiDay
+                    ? 'bg-sky-100 text-sky-800 border border-sky-200'
+                    : is2026Event
                     ? 'bg-edina-green/10 text-edina-green border border-edina-green/30'
                     : 'bg-gray-50 text-gray-400'
                 }`}>
-                  {is2026Event ? 'Upcoming' : (isPastEvent(event.date) ? 'No Result' : 'Upcoming')}
+                  {isInProgressMultiDay ? 'In Progress' : (is2026Event ? 'Upcoming' : (isPastEvent(event.date) ? 'No Result' : 'Upcoming'))}
                 </span>
               )}
-              {/* Match play: show Upcoming when TBD */}
+              {/* Match play: show Upcoming / In Progress when TBD */}
               {!isRound && !isInactive && isMatchPlay(event) && (!event.teamResult || event.teamResult === 'TBD') && (
                 <span className={`inline-flex items-center px-3 py-1 rounded-lg text-sm font-medium ${
-                  is2026Event
+                  isInProgressMultiDay
+                    ? 'bg-sky-100 text-sky-800 border border-sky-200'
+                    : is2026Event
                     ? 'bg-edina-green/10 text-edina-green border border-edina-green/30'
                     : 'bg-gray-50 text-gray-400'
                 }`}>
-                  {is2026Event ? 'Upcoming' : 'No Result'}
+                  {isInProgressMultiDay ? 'In Progress' : (is2026Event ? 'Upcoming' : 'No Result')}
                 </span>
               )}
             </div>
