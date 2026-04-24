@@ -150,7 +150,7 @@ function Schedule() {
     // Varsity Events
     { id: '2026-V1',  date: '2026-04-20', dateFormatted: 'Apr 20',    event: 'Lake Conference Tournament #1',      course: 'Chaska Town Course',        level: 'Varsity', time: '1:30 PM', par: 72, holes: 18, teamScore: '300', teamFinish: '1st of 8' },
     { id: '2026-V2',  date: '2026-04-22', dateFormatted: 'Apr 22',    event: 'East Ridge Invitational',            course: 'Stoneridge Golf Club',       level: 'Varsity', time: '9:00 AM', par: 72, holes: 18, teamScore: '300', teamFinish: '5th of 20' },
-    { id: '2026-V3',  date: '2026-04-23', dateFormatted: 'Apr 23',    event: 'Lake Conference Meet #2',            course: 'Pioneer Creek Golf Course',  level: 'Varsity', time: '1:30 PM', status: 'rained_out' },
+    { id: '2026-V3',  date: '2026-05-06', dateFormatted: 'May 6',     event: 'Lake Conference Meet #2',            course: 'Pioneer Creek Golf Course',  level: 'Varsity', time: '1:30 PM', iWanaMakerId: 204214, rescheduledFrom: '2026-04-23', statusNote: 'Rescheduled from April 23 (weather)' },
     { id: '2026-V4',  date: '2026-04-24', dateFormatted: 'Apr 24-25', event: 'The Preview',                        course: 'Edinburgh USA Golf Course',  level: 'Varsity', isMultiDay: true, time: '7:00 AM', iWanaMakerId: 184513, par: 72, holes: 18, rounds: [
       { round: 1, id: '2026-2026-04-24-VAR-4', date: '2026-04-24', dateFormatted: 'Apr 24', course: 'Edinburgh USA Golf Course', time: '7:00 AM', par: 72, teamScore: '287 (-1)' },
       { round: 2, id: '2026-2026-04-25-VAR-5', date: '2026-04-25', dateFormatted: 'Apr 25', course: 'Edinburgh USA Golf Course', time: '11:30 AM', par: 72 },

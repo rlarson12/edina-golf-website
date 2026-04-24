@@ -9,7 +9,7 @@ const schedule2026 = [
   { id: '2026-0',  date: '2026-04-16', dateFormatted: 'Apr 16',    event: 'Match Play @ Heritage Links',          course: 'Heritage Links Golf Club', isJV: true },
   { id: '2026-1',  date: '2026-04-20', dateFormatted: 'Apr 20',    event: 'Lake Conference Tournament #1',       course: 'Chaska Town Course' },
   { id: '2026-2',  date: '2026-04-22', dateFormatted: 'Apr 22',    event: 'East Ridge Invitational',             course: 'Stoneridge' },
-  { id: '2026-3',  date: '2026-04-23', dateFormatted: 'Apr 23',    event: 'Lake Conference Meet #2',             course: 'Pioneer Creek Golf Course', status: 'rained_out' },
+  { id: '2026-3',  date: '2026-05-06', dateFormatted: 'May 6',     event: 'Lake Conference Meet #2',             course: 'Pioneer Creek Golf Course', rescheduledFrom: '2026-04-23', statusNote: 'Rescheduled from April 23 (weather)' },
   { id: '2026-4',  date: '2026-04-24', dateFormatted: 'Apr 24-25', event: 'The Preview',                        course: 'Edinburgh Golf Course', isMultiDay: true },
   { id: '2026-5',  date: '2026-04-27', dateFormatted: 'Apr 27',    event: 'Lake Conference Meet',                course: 'Oak Ridge CC' },
   { id: '2026-6',  date: '2026-05-01', dateFormatted: 'May 1-2',   event: 'Lakeville South Invitational',       course: 'Dacotah Ridge', isMultiDay: true },
