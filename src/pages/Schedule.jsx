@@ -151,9 +151,9 @@ function Schedule() {
     { id: '2026-V1',  date: '2026-04-20', dateFormatted: 'Apr 20',    event: 'Lake Conference Tournament #1',      course: 'Chaska Town Course',        level: 'Varsity', time: '1:30 PM', par: 72, holes: 18, teamScore: '300', teamFinish: '1st of 8' },
     { id: '2026-V2',  date: '2026-04-22', dateFormatted: 'Apr 22',    event: 'East Ridge Invitational',            course: 'Stoneridge Golf Club',       level: 'Varsity', time: '9:00 AM', par: 72, holes: 18, teamScore: '300', teamFinish: '5th of 20' },
     { id: '2026-V3',  date: '2026-04-23', dateFormatted: 'Apr 23',    event: 'Lake Conference Meet #2',            course: 'Pioneer Creek Golf Course',  level: 'Varsity', time: '1:30 PM', status: 'rained_out' },
-    { id: '2026-V4',  date: '2026-04-24', dateFormatted: 'Apr 24-25', event: 'The Preview',                        course: 'Edinburgh USA Golf Course',  level: 'Varsity', isMultiDay: true, time: '7:00 AM', iWanaMakerId: 184513, rounds: [
-      { round: 1, date: '2026-04-24', dateFormatted: 'Apr 24', course: 'Edinburgh USA Golf Course', time: '7:00 AM' },
-      { round: 2, date: '2026-04-25', dateFormatted: 'Apr 25', course: 'Edinburgh USA Golf Course', time: '11:30 AM' },
+    { id: '2026-V4',  date: '2026-04-24', dateFormatted: 'Apr 24-25', event: 'The Preview',                        course: 'Edinburgh USA Golf Course',  level: 'Varsity', isMultiDay: true, time: '7:00 AM', iWanaMakerId: 184513, par: 72, holes: 18, rounds: [
+      { round: 1, id: '2026-2026-04-24-VAR-4', date: '2026-04-24', dateFormatted: 'Apr 24', course: 'Edinburgh USA Golf Course', time: '7:00 AM', par: 72, teamScore: '287 (-1)' },
+      { round: 2, id: '2026-2026-04-25-VAR-5', date: '2026-04-25', dateFormatted: 'Apr 25', course: 'Edinburgh USA Golf Course', time: '11:30 AM', par: 72 },
     ]},
     { id: '2026-V5',  date: '2026-04-27', dateFormatted: 'Apr 27',    event: 'Lake Conference Meet #3',            course: 'Oak Ridge Country Club',     level: 'Varsity', time: '1:30 PM' },
     { id: '2026-V6',  date: '2026-05-01', dateFormatted: 'May 1-2',   event: 'Lakeville South Invitational',       course: 'Dacotah Ridge Golf Club',    level: 'Varsity', isMultiDay: true, time: '12:00 PM', rounds: [
@@ -312,12 +312,12 @@ function Schedule() {
   const getEventScores = (event) => {
     if (event.isMultiDay && event.rounds) {
       const suffix = event.id.replace(/^\d{4}-\d{2}-\d{2}-/, '')
-      const roundEventIds = event.rounds.map(r => `${r.date}-${suffix}`)
+      const roundEventIds = event.rounds.map(r => r.id || `${r.date}-${suffix}`)
 
       const playerMap = {}
       roundEventIds.forEach((eventId, roundIdx) => {
         const scores = playerScoresByEvent[eventId] || []
-        const info = eventInfoMap[eventId] || {}
+        const info = eventInfoMap[eventId] || { par: event.rounds[roundIdx].par }
         scores.forEach(s => {
           if (!playerMap[s.name]) {
             playerMap[s.name] = { name: s.name, rounds: new Array(event.rounds.length).fill(null), pars: new Array(event.rounds.length).fill(null), total: 0, totalPar: 0, hasAny: false, individualFinish: null }
@@ -359,7 +359,7 @@ function Schedule() {
   const hasPlayerScores = (event) => {
     if (event.isMultiDay && event.rounds) {
       const suffix = event.id.replace(/^\d{4}-\d{2}-\d{2}-/, '')
-      return event.rounds.some(r => (playerScoresByEvent[`${r.date}-${suffix}`] || []).length > 0)
+      return event.rounds.some(r => (playerScoresByEvent[r.id || `${r.date}-${suffix}`] || []).length > 0)
     }
     return (playerScoresByEvent[event.id] || []).length > 0
   }
