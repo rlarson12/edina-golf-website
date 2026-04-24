@@ -175,6 +175,9 @@ function Stats() {
         const roundA = Math.round(a.average * 10)
         const roundB = Math.round(b.average * 10)
         if (roundA !== roundB) return roundA - roundB
+        // Tiebreaker: Chase Larson wins display-tied-to-tenth ties
+        if (a.name === 'Chase Larson' && b.name !== 'Chase Larson') return -1
+        if (b.name === 'Chase Larson' && a.name !== 'Chase Larson') return 1
         const rankingsOrder = (golfData.rankings || []).map(r => r.name)
         const idxA = rankingsOrder.indexOf(a.name)
         const idxB = rankingsOrder.indexOf(b.name)
@@ -225,9 +228,17 @@ function Stats() {
           : b.name.localeCompare(a.name)
       }
       if (sortCol === 'avg') {
-        const va = a.average || 999
-        const vb = b.average || 999
-        return sortDir === 'asc' ? va - vb : vb - va
+        const va = a.average ?? 999
+        const vb = b.average ?? 999
+        const roundA = Math.round(va * 10)
+        const roundB = Math.round(vb * 10)
+        if (roundA !== roundB) return sortDir === 'asc' ? roundA - roundB : roundB - roundA
+        // Tiebreaker: Chase Larson wins display-tied-to-tenth ties (asc only; desc keeps natural order)
+        if (sortDir === 'asc') {
+          if (a.name === 'Chase Larson' && b.name !== 'Chase Larson') return -1
+          if (b.name === 'Chase Larson' && a.name !== 'Chase Larson') return 1
+        }
+        return 0
       }
       if (sortCol === 'low') {
         const sa = getValidScores(a)
@@ -635,6 +646,12 @@ function Stats() {
                               if (a.average == null && b.average == null) return a.name.localeCompare(b.name)
                               if (a.average == null) return 1
                               if (b.average == null) return -1
+                              const roundA = Math.round(a.average * 10)
+                              const roundB = Math.round(b.average * 10)
+                              if (roundA !== roundB) return roundA - roundB
+                              // Tiebreaker: Chase Larson wins display-tied-to-tenth ties
+                              if (a.name === 'Chase Larson' && b.name !== 'Chase Larson') return -1
+                              if (b.name === 'Chase Larson' && a.name !== 'Chase Larson') return 1
                               return a.average - b.average
                             }).map((player) => (
                             <tr key={player.name} className="hover:bg-gray-50 transition-colors">

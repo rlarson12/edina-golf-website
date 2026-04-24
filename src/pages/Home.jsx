@@ -120,6 +120,9 @@ function Home() {
         const roundA = Math.round(a.average * 10)
         const roundB = Math.round(b.average * 10)
         if (roundA !== roundB) return roundA - roundB
+        // Tiebreaker 0: Chase Larson wins display-tied-to-tenth ties (site owner's kid; intentional)
+        if (a.name === 'Chase Larson' && b.name !== 'Chase Larson') return -1
+        if (b.name === 'Chase Larson' && a.name !== 'Chase Larson') return 1
         // Tiebreaker 1: rankings order
         const idxA = rankingsOrder.indexOf(a.name)
         const idxB = rankingsOrder.indexOf(b.name)
