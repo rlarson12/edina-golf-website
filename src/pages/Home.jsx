@@ -9,7 +9,7 @@ const schedule2026 = [
   { id: '2026-0',  date: '2026-04-16', dateFormatted: 'Apr 16',    event: 'Match Play @ Heritage Links',          course: 'Heritage Links Golf Club', isJV: true },
   { id: '2026-1',  date: '2026-04-20', dateFormatted: 'Apr 20',    event: 'Lake Conference Tournament #1',       course: 'Chaska Town Course' },
   { id: '2026-2',  date: '2026-04-22', dateFormatted: 'Apr 22',    event: 'East Ridge Invitational',             course: 'Stoneridge' },
-  { id: '2026-3',  date: '2026-04-23', dateFormatted: 'Apr 23',    event: 'Lake Conference Meet',                course: 'Pioneer Creek' },
+  { id: '2026-3',  date: '2026-04-23', dateFormatted: 'Apr 23',    event: 'Lake Conference Meet #2',             course: 'Pioneer Creek Golf Course', status: 'rained_out' },
   { id: '2026-4',  date: '2026-04-24', dateFormatted: 'Apr 24-25', event: 'The Preview',                        course: 'Edinburgh Golf Course', isMultiDay: true },
   { id: '2026-5',  date: '2026-04-27', dateFormatted: 'Apr 27',    event: 'Lake Conference Meet',                course: 'Oak Ridge CC' },
   { id: '2026-6',  date: '2026-05-01', dateFormatted: 'May 1-2',   event: 'Lakeville South Invitational',       course: 'Dacotah Ridge', isMultiDay: true },
@@ -23,16 +23,19 @@ const schedule2026 = [
   { id: '2026-12', date: '2026-06-09', dateFormatted: 'Jun 9-10',  event: 'MSHSL Boys AAA State Tournament',    course: 'Bunker Hills', isMultiDay: true },
 ]
 
+const isActiveEvent = (e) => e.status !== 'rained_out' && e.status !== 'cancelled'
+
 function Home() {
   // Find all events on the next upcoming date from 2026 schedule
   const nextEvents = useMemo(() => {
     const today = new Date()
     today.setHours(0, 0, 0, 0)
 
-    // Find the earliest upcoming date
+    // Find the earliest upcoming date (skip rained-out / cancelled)
     let nextDate = null
     let daysUntil = null
     for (const event of schedule2026) {
+      if (!isActiveEvent(event)) continue
       const [year, month, day] = event.date.split('-').map(Number)
       const eventDate = new Date(year, month - 1, day)
       if (eventDate >= today) {
@@ -45,7 +48,7 @@ function Home() {
 
     // Return all events on that same date
     return schedule2026
-      .filter(e => e.date === nextDate)
+      .filter(e => e.date === nextDate && isActiveEvent(e))
       .map(e => ({ ...e, daysUntil }))
   }, [])
 
@@ -144,12 +147,13 @@ function Home() {
   // Transition logic: show pre-season layout until 2026 results exist
   const hasSeason2026Results = (golfData.seasonResults2026 || []).length > 0
 
-  // Next 4 upcoming varsity events (exclude JV/dev events)
+  // Next 4 upcoming varsity events (exclude JV/dev events, rained-out, cancelled)
   const upcomingVarsity = useMemo(() => {
     const today = new Date()
     today.setHours(0, 0, 0, 0)
     return schedule2026.filter(e => {
       if (e.isJV) return false
+      if (!isActiveEvent(e)) return false
       const [year, month, day] = e.date.split('-').map(Number)
       return new Date(year, month - 1, day) >= today
     }).slice(0, 4)
@@ -161,6 +165,7 @@ function Home() {
     today.setHours(0, 0, 0, 0)
     return (golfData.jvSchedule2026 || [])
       .filter(e => {
+        if (!isActiveEvent(e)) return false
         const dateStr = e.dateISO || (e.date ? e.date.substring(0, 10) : null)
         if (!dateStr) return false
         const [year, month, day] = dateStr.split('-').map(Number)

@@ -525,24 +525,30 @@ function Stats() {
                         >
                           Rounds <SortArrow col="rounds" sortCol={sortCol} sortDir={sortDir} />
                         </th>
-                        <th className="px-4 py-3 text-center text-xs font-semibold text-gray-700 uppercase tracking-wider hidden sm:table-cell">
-                          Trend
-                        </th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-100">
                       {sortedPlayers.length === 0 ? (
                         <tr>
-                          <td colSpan={6} className="px-4 py-12 text-center">
+                          <td colSpan={4} className="px-4 py-12 text-center">
                             <p className="text-gray-500 font-medium">First tee 4/20 at Chaska Town Course — leaderboard lights up after Round 1.</p>
                           </td>
                         </tr>
                       ) : (
                         sortedPlayers.map((player, index) => {
                           const rank = index + 1
-                          const validScores = player.scores.filter(s => s !== null && s > 50)
-                          const lowRound = validScores.length > 0 ? Math.min(...validScores) : null
-                          const last3 = validScores.slice(-3)
+                          const scoresWithPar = player.scores
+                            .map((s, idx) => {
+                              if (s === null || s === undefined || s <= 50) return null
+                              return { score: s, par: getEventInfo(allEventHeaders[idx]).par }
+                            })
+                            .filter(Boolean)
+                          const validScores = scoresWithPar.map(x => x.score)
+                          const lowEntry = scoresWithPar.length > 0
+                            ? scoresWithPar.reduce((a, b) => (a.score < b.score ? a : b))
+                            : null
+                          const lowRound = lowEntry ? lowEntry.score : null
+                          const lowUnderPar = lowEntry ? lowEntry.score < lowEntry.par : false
 
                           return (
                             <tr key={player.name} className="hover:bg-gray-50 transition-colors">
@@ -552,7 +558,7 @@ function Stats() {
                               </td>
                               <td className="px-4 py-4 text-center">
                                 {lowRound !== null ? (
-                                  <span className={`font-medium ${lowRound < 72 ? 'text-green-600' : lowRound > 72 ? 'text-red-500' : 'text-gray-500'}`}>
+                                  <span className={`font-medium ${lowUnderPar ? 'text-red-600' : 'text-gray-700'}`}>
                                     {lowRound}
                                   </span>
                                 ) : (
@@ -560,29 +566,6 @@ function Stats() {
                                 )}
                               </td>
                               <td className="px-4 py-4 text-center text-gray-600">{validScores.length}</td>
-                              {/* Trend — last 3 scores as colored pills (3B) */}
-                              <td className="px-4 py-4 text-center hidden sm:table-cell">
-                                {last3.length > 0 ? (
-                                  <span className="inline-flex items-center gap-1">
-                                    {last3.map((score, i) => (
-                                      <span
-                                        key={i}
-                                        className={`text-xs font-semibold px-1.5 py-0.5 rounded ${
-                                          score < 72
-                                            ? 'bg-green-50 text-green-700'
-                                            : score > 72
-                                            ? 'bg-red-50 text-red-600'
-                                            : 'bg-gray-100 text-gray-500'
-                                        }`}
-                                      >
-                                        {score}
-                                      </span>
-                                    ))}
-                                  </span>
-                                ) : (
-                                  <span className="text-gray-300 text-xs">-</span>
-                                )}
-                              </td>
                             </tr>
                           )
                         })
@@ -610,13 +593,14 @@ function Stats() {
                             Player / Avg
                           </th>
                           {eventHeaders.map((event, i) => {
-                            let fullName = event.replace(/^\d{2}\/\d{2} - /, '')
-                            fullName = fullName.replace(/\bFinal\b/gi, 'Day 2')
+                            const m = event.match(/^(\d{2}\/\d{2})\s*-\s*(.+)$/)
+                            const dateStr = m ? m[1] : ''
+                            let fullName = (m ? m[2] : event).replace(/\bFinal\b/gi, 'Day 2')
                             return (
                               <th
                                 key={i}
                                 className="text-center text-xs font-semibold text-gray-600 w-8"
-                                style={{ height: '120px', verticalAlign: 'bottom' }}
+                                style={{ height: '140px', verticalAlign: 'bottom' }}
                               >
                                 <div style={{
                                   writingMode: 'vertical-rl',
@@ -624,11 +608,15 @@ function Stats() {
                                   whiteSpace: 'nowrap',
                                   fontSize: '13px',
                                   display: 'flex',
-                                  justifyContent: 'center',
+                                  alignItems: 'center',
+                                  justifyContent: 'flex-start',
                                   margin: '0 auto',
                                   paddingBottom: '4px',
                                 }}>
-                                  {fullName}
+                                  {dateStr && (
+                                    <span className="font-bold text-edina-green mr-1.5">{dateStr}</span>
+                                  )}
+                                  <span>{fullName}</span>
                                 </div>
                               </th>
                             )

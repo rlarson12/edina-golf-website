@@ -150,7 +150,7 @@ function Schedule() {
     // Varsity Events
     { id: '2026-V1',  date: '2026-04-20', dateFormatted: 'Apr 20',    event: 'Lake Conference Tournament #1',      course: 'Chaska Town Course',        level: 'Varsity', time: '1:30 PM', par: 72, holes: 18, teamScore: '300', teamFinish: '1st of 8' },
     { id: '2026-V2',  date: '2026-04-22', dateFormatted: 'Apr 22',    event: 'East Ridge Invitational',            course: 'Stoneridge Golf Club',       level: 'Varsity', time: '9:00 AM', par: 72, holes: 18, teamScore: '300', teamFinish: '5th of 20' },
-    { id: '2026-V3',  date: '2026-04-23', dateFormatted: 'Apr 23',    event: 'Lake Conference Meet #2',            course: 'Pioneer Creek Golf Course',  level: 'Varsity', time: '1:57 PM' },
+    { id: '2026-V3',  date: '2026-04-23', dateFormatted: 'Apr 23',    event: 'Lake Conference Meet #2',            course: 'Pioneer Creek Golf Course',  level: 'Varsity', time: '1:30 PM', status: 'rained_out' },
     { id: '2026-V4',  date: '2026-04-24', dateFormatted: 'Apr 24-25', event: 'The Preview',                        course: 'Edinburgh USA Golf Course',  level: 'Varsity', isMultiDay: true, time: '7:00 AM', rounds: [
       { round: 1, date: '2026-04-24', dateFormatted: 'Apr 24', course: 'Edinburgh USA Golf Course', time: '7:00 AM' },
       { round: 2, date: '2026-04-25', dateFormatted: 'Apr 25', course: 'Edinburgh USA Golf Course', time: '11:30 AM' },
@@ -179,8 +179,8 @@ function Schedule() {
       { pair: ['Henry Applebaum', 'Henry Freeman'], opponent: ['Bennett Wevers', 'Grant Ketelsen'], result: 'Won 5&4' },
     ] },
     { id: '2026-JV-APR20', date: '2026-04-20', dateFormatted: 'Apr 20',  event: 'JV Lake Conference @ Bluff Creek',   course: 'Bluff Creek Golf Course',    level: 'JV', time: '12:00 PM', par: 72, holes: 18, teamScore: '304', teamFinish: '1st of 6' },
-    { id: '2026-JV0', date: '2026-04-21', dateFormatted: 'Apr 21',    event: 'JV Invitational',                    course: 'Heritage Links Golf Course', level: 'JV', time: '10:30 AM' },
-    { id: '2026-JV2', date: '2026-04-22', dateFormatted: 'Apr 22',    event: 'Boys JV Tournament',                 course: 'Clifton Highlands',          level: 'JV', time: '1:00 PM' },
+    { id: '2026-JV0', date: '2026-04-21', dateFormatted: 'Apr 21',    event: 'JV Invitational',                    course: 'Heritage Links Golf Course', level: 'JV', time: '10:30 AM', par: 72, holes: 18, teamScore: '318', teamFinish: '2nd of 6' },
+    { id: '2026-JV2', date: '2026-04-22', dateFormatted: 'Apr 22',    event: 'Boys JV Tournament',                 course: 'Clifton Highlands',          level: 'JV', time: '1:00 PM', par: 72, holes: 18, teamScore: '312', teamFinish: '1st of 24' },
     { id: '2026-JV3', date: '2026-04-27', dateFormatted: 'Apr 27',    event: 'Eden Prairie JV Invite',             course: 'Bluff Creek Golf Course',    level: 'JV', time: '9:00 AM' },
     { id: '2026-JV0b',date: '2026-04-28', dateFormatted: 'Apr 28',    event: 'JV Invitational',                    course: 'Heritage Links Golf Course', level: 'JV', time: '10:30 AM' },
     { id: '2026-JV4', date: '2026-05-08', dateFormatted: 'May 8-9',   event: 'JV Invitational',                    course: 'Minnewaska Golf Club',       level: 'JV', isMultiDay: true, time: '1:30 PM', rounds: [
@@ -393,14 +393,18 @@ function Schedule() {
   const renderEventRow = (event, isRound = false, roundNum = null) => {
     const isExpanded = expandedEvents.has(event.id)
     const is2026Event = yearFilter === '2026'
-    const canExpand = !isRound && (event.isMultiDay || hasPlayerScores(event) || isMatchPlay(event))
+    const isRainedOut = event.status === 'rained_out'
+    const isCancelled = event.status === 'cancelled'
+    const isPostponed = event.status === 'postponed'
+    const isInactive = isRainedOut || isCancelled
+    const canExpand = !isRound && !isInactive && (event.isMultiDay || hasPlayerScores(event) || isMatchPlay(event))
 
     return (
       <div
         key={isRound ? `${event.id}-r${roundNum}` : event.id}
         className={`card ${isRound ? 'ml-6 border-l-4 border-edina-green/30' : ''} ${
           isPastEvent(event.date) && !event.teamScore && !is2026Event ? 'opacity-60' : ''
-        } ${is2026Event ? 'bg-gray-50/50 border-l-4 border-edina-green' : ''}`}
+        } ${is2026Event ? 'bg-gray-50/50 border-l-4 border-edina-green' : ''} ${isInactive ? 'opacity-70' : ''}`}
       >
         <div
           className={`p-4 md:p-5 ${canExpand ? 'cursor-pointer' : ''}`}
@@ -469,9 +473,25 @@ function Schedule() {
 
             {/* Calendar + Result */}
             <div className="flex-shrink-0 flex items-center gap-2">
-              {!isRound && yearFilter === '2026' && <AddToCalendar event={event} />}
+              {!isRound && yearFilter === '2026' && !isInactive && <AddToCalendar event={event} />}
+              {/* Rained out / Cancelled — short-circuit other pills */}
+              {!isRound && isInactive && (
+                <span className={`inline-flex items-center px-3 py-1 rounded-lg text-sm font-medium ${
+                  isRainedOut
+                    ? 'bg-amber-100 text-amber-800 border border-amber-200'
+                    : 'bg-gray-200 text-gray-600 border border-gray-300'
+                }`}>
+                  {isRainedOut ? 'Rained Out' : 'Cancelled'}
+                </span>
+              )}
+              {/* Postponed with makeup date */}
+              {!isRound && isPostponed && event.rescheduledTo && (
+                <span className="inline-flex items-center px-3 py-1 rounded-lg text-sm font-medium bg-blue-100 text-blue-800 border border-blue-200">
+                  Postponed → {formatDateDisplay(event.rescheduledTo)}
+                </span>
+              )}
               {/* Match play: show teamResult badge if not TBD */}
-              {!isRound && isMatchPlay(event) && event.teamResult && event.teamResult !== 'TBD' && (
+              {!isRound && !isInactive && isMatchPlay(event) && event.teamResult && event.teamResult !== 'TBD' && (
                 <span className={`inline-flex items-center px-3 py-1 rounded-lg text-sm font-medium ${
                   event.teamResult.toLowerCase().includes('win') || event.teamResult.toLowerCase().includes('won')
                     ? 'bg-green-100 text-green-800'
@@ -483,14 +503,14 @@ function Schedule() {
                 </span>
               )}
               {/* Stroke play score + finish */}
-              {!isMatchPlay(event) && event.teamScore && (
+              {!isInactive && !isMatchPlay(event) && event.teamScore && (
                 <span className={`font-semibold ${
                   event.teamScore.includes('(-') ? 'text-red-600' : 'text-gray-700'
                 }`}>
                   {event.teamScore}
                 </span>
               )}
-              {!isRound && !isMatchPlay(event) && event.teamFinish ? (
+              {!isRound && !isInactive && !isMatchPlay(event) && event.teamFinish ? (
                 <span className={`inline-flex items-center px-3 py-1 rounded-lg text-sm font-medium ${
                   event.teamFinish.startsWith('1st')
                     ? 'bg-edina-gold/20 text-edina-gold-dark border border-edina-gold'
@@ -502,7 +522,7 @@ function Schedule() {
                 }`}>
                   {event.teamFinish}
                 </span>
-              ) : !isRound && !isMatchPlay(event) && !event.teamScore && (
+              ) : !isRound && !isInactive && !isMatchPlay(event) && !event.teamScore && !isPostponed && (
                 <span className={`inline-flex items-center px-3 py-1 rounded-lg text-sm font-medium ${
                   is2026Event
                     ? 'bg-edina-green/10 text-edina-green border border-edina-green/30'
@@ -512,7 +532,7 @@ function Schedule() {
                 </span>
               )}
               {/* Match play: show Upcoming when TBD */}
-              {!isRound && isMatchPlay(event) && (!event.teamResult || event.teamResult === 'TBD') && (
+              {!isRound && !isInactive && isMatchPlay(event) && (!event.teamResult || event.teamResult === 'TBD') && (
                 <span className={`inline-flex items-center px-3 py-1 rounded-lg text-sm font-medium ${
                   is2026Event
                     ? 'bg-edina-green/10 text-edina-green border border-edina-green/30'
