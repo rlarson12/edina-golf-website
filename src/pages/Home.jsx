@@ -10,8 +10,8 @@ const schedule2026 = [
   { id: '2026-1',  date: '2026-04-20', dateFormatted: 'Apr 20',    event: 'Lake Conference Tournament #1',       course: 'Chaska Town Course' },
   { id: '2026-2',  date: '2026-04-22', dateFormatted: 'Apr 22',    event: 'East Ridge Invitational',             course: 'Stoneridge' },
   { id: '2026-3',  date: '2026-05-06', dateFormatted: 'May 6',     event: 'Lake Conference Meet #2',             course: 'Pioneer Creek Golf Course', rescheduledFrom: '2026-04-23', statusNote: 'Rescheduled from April 23 (weather)' },
-  { id: '2026-4',  date: '2026-04-24', dateFormatted: 'Apr 24-25', event: 'The Preview',                        course: 'Edinburgh Golf Course', isMultiDay: true },
-  { id: '2026-5',  date: '2026-04-27', dateFormatted: 'Apr 27',    event: 'Lake Conference Meet',                course: 'Oak Ridge CC' },
+  { id: '2026-4',  date: '2026-04-24', endDate: '2026-04-25', dateFormatted: 'Apr 24-25', event: 'The Preview',                        course: 'Edinburgh Golf Course', isMultiDay: true, status: 'completed' },
+  { id: '2026-5',  date: '2026-04-27', dateFormatted: 'Apr 27',    event: 'Lake Conference Meet #3',             course: 'Oak Ridge CC' },
   { id: '2026-6',  date: '2026-05-01', dateFormatted: 'May 1-2',   event: 'Lakeville South Invitational',       course: 'Dacotah Ridge', isMultiDay: true },
   { id: '2026-7a', date: '2026-05-04', dateFormatted: 'May 4',     event: 'Boys Varsity Invitational',          course: 'Oak Ridge CC' },
   { id: '2026-7b', date: '2026-05-04', dateFormatted: 'May 4',     event: 'Spring Lake Park Invitational',      course: 'TPC Twin Cities' },
@@ -154,12 +154,19 @@ function Home() {
   const upcomingVarsity = useMemo(() => {
     const today = new Date()
     today.setHours(0, 0, 0, 0)
-    return schedule2026.filter(e => {
-      if (e.isJV) return false
-      if (!isActiveEvent(e)) return false
-      const [year, month, day] = e.date.split('-').map(Number)
-      return new Date(year, month - 1, day) >= today
-    }).slice(0, 4)
+    return schedule2026
+      .filter(e => {
+        if (e.isJV) return false
+        if (!isActiveEvent(e)) return false
+        if (e.status === 'completed') return false
+        // For multi-day events, use endDate (or last round date) for the cutoff so finished
+        // multi-day events fall off Up Next after the final round.
+        const cutoffStr = e.endDate || e.date
+        const [year, month, day] = cutoffStr.split('-').map(Number)
+        return new Date(year, month - 1, day) >= today
+      })
+      .sort((a, b) => a.date.localeCompare(b.date))
+      .slice(0, 4)
   }, [])
 
   // Next 4 upcoming JV events
@@ -169,12 +176,18 @@ function Home() {
     return (golfData.jvSchedule2026 || [])
       .filter(e => {
         if (!isActiveEvent(e)) return false
+        if (e.status === 'completed') return false
         const dateStr = e.dateISO || (e.date ? e.date.substring(0, 10) : null)
         if (!dateStr) return false
         const [year, month, day] = dateStr.split('-').map(Number)
         return new Date(year, month - 1, day) >= today
       })
       .map(e => ({ ...e, event: e.event || e.name }))
+      .sort((a, b) => {
+        const aStr = a.dateISO || (a.date ? a.date.substring(0, 10) : '')
+        const bStr = b.dateISO || (b.date ? b.date.substring(0, 10) : '')
+        return aStr.localeCompare(bStr)
+      })
       .slice(0, 4)
   }, [])
 
