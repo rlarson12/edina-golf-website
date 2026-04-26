@@ -14,15 +14,20 @@ ERRORS=0
 
 echo "🔍 Pre-deploy check..."
 
-# 0. Recap hero aspect-ratio check (must be ~3:1)
+# 0. Image quality gate (aspect, resolution, sharpness, format, size)
 echo ""
-echo "=== Recap Hero Aspect Check ==="
-if command -v python3 >/dev/null 2>&1 && [ -f "$HOME/.openclaw/scripts/recap-hero-check.py" ]; then
+echo "=== Image Quality Gate ==="
+if command -v python3 >/dev/null 2>&1 && [ -f "$HOME/.openclaw/scripts/image-quality-gate.py" ]; then
+    if ! python3 "$HOME/.openclaw/scripts/image-quality-gate.py" --repo "$REPO_ROOT"; then
+        ERRORS=$((ERRORS + 1))
+    fi
+elif [ -f "$HOME/.openclaw/scripts/recap-hero-check.py" ]; then
+    # fallback to legacy recap-only check
     if ! python3 "$HOME/.openclaw/scripts/recap-hero-check.py" --repo "$REPO_ROOT"; then
         ERRORS=$((ERRORS + 1))
     fi
 else
-    echo "⚠️  recap-hero-check.py not found — skipping (install at ~/.openclaw/scripts/)"
+    echo "⚠️  image-quality-gate.py not found — skipping (install at ~/.openclaw/scripts/)"
 fi
 
 # 1. Check for non-WebP images (except SVG which is ok)
