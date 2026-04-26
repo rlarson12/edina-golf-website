@@ -14,6 +14,17 @@ ERRORS=0
 
 echo "🔍 Pre-deploy check..."
 
+# 0. Recap hero aspect-ratio check (must be ~3:1)
+echo ""
+echo "=== Recap Hero Aspect Check ==="
+if command -v python3 >/dev/null 2>&1 && [ -f "$HOME/.openclaw/scripts/recap-hero-check.py" ]; then
+    if ! python3 "$HOME/.openclaw/scripts/recap-hero-check.py" --repo "$REPO_ROOT"; then
+        ERRORS=$((ERRORS + 1))
+    fi
+else
+    echo "⚠️  recap-hero-check.py not found — skipping (install at ~/.openclaw/scripts/)"
+fi
+
 # 1. Check for non-WebP images (except SVG which is ok)
 echo ""
 echo "=== Image Format Check ==="

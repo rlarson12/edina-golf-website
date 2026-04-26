@@ -44,14 +44,14 @@ function RecapCard({ recap }) {
 
   return (
     <article className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
-      {/* Hero image if present */}
+      {/* Hero image if present — image is pre-cropped to 3:1, container matches */}
       {recap.heroImage && (
-        <div className="relative h-48 md:h-64 overflow-hidden">
+        <div className="relative w-full overflow-hidden" style={{ aspectRatio: '3 / 1' }}>
           <img
             src={recap.heroImage}
             alt={recap.heroCaption || recap.title}
             className="w-full h-full object-cover"
-            style={{ objectPosition: recap.heroImagePosition || 'center 40%' }}
+            style={{ objectPosition: recap.heroImagePosition || 'center center' }}
           />
           {recap.heroCaption && (
             <div className="absolute bottom-0 left-0 right-0 bg-black/50 px-4 py-2">
