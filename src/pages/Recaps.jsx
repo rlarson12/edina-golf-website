@@ -51,7 +51,7 @@ function RecapCard({ recap }) {
             src={recap.heroImage}
             alt={recap.heroCaption || recap.title}
             className="w-full h-full object-cover"
-            style={{ objectPosition: 'center 40%' }}
+            style={{ objectPosition: recap.heroImagePosition || 'center 40%' }}
           />
           {recap.heroCaption && (
             <div className="absolute bottom-0 left-0 right-0 bg-black/50 px-4 py-2">
