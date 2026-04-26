@@ -10,8 +10,9 @@ function Photos() {
       id: '2026-1',
       title: 'Team Photos',
       date: '2026 Season',
-      cover: '/images/action/varsity-team-chaska.webp',
+      cover: '/images/2026/team-edinburgh-medals.webp',
       photos: [
+        { src: '/images/2026/team-edinburgh-medals.webp', caption: 'Michael Vernon, Peter Bennett, Sander Ohe, Chase Larson, Charlie Nielsen — 1st place at The Preview, Edinburgh USA, Apr 24-25.' },
         { src: '/images/action/varsity-team-chaska.webp', caption: 'Sander Ohe, David Colby, Michael Vernon, Charlie Nielsen, Chase Larson, Peter Bennett — Lake Conference Tournament #1, Apr 20.' },
       ],
     },
@@ -31,6 +32,9 @@ function Photos() {
       
         { src: '/images/2026/19db63543d9b377b_image0.jpeg', caption: '' },
         { src: '/images/2026/19db63543d9b377b_image1.jpeg', caption: '' },
+        { src: '/images/2026/peter-edinburgh-day1-putt.webp', caption: 'Peter Bennett — Round 1, The Preview at Edinburgh USA, Apr 24.' },
+        { src: '/images/2026/chase-edinburgh-day2.webp', caption: 'Chase Larson — Round 2, The Preview at Edinburgh USA, Apr 25.' },
+        { src: '/images/2026/chase-colby-edinburgh-fairway.webp', caption: 'Chase Larson and David Colby walking the fairway — The Preview at Edinburgh USA, Apr 24-25.' },
       ],
     },
     {
