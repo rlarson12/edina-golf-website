@@ -5501,8 +5501,7 @@
           "position": 6,
           "individualFinish": "T15"
         }
-      ],
-      "fieldSize": 48
+      ]
     },
     {
       "id": "2026-2026-04-22-VAR-2",
@@ -5622,7 +5621,7 @@
           "score": 81
         }
       ],
-      "fieldSize": 79,
+      "fieldSize": 100,
       "multiDayFinalId": "2026-2026-04-25-VAR-5"
     },
     {
@@ -5666,7 +5665,7 @@
           "score": 77
         }
       ],
-      "fieldSize": 79,
+      "fieldSize": 100,
       "multiDayFinalId": "2026-2026-04-25-VAR-5"
     },
     {
@@ -5839,6 +5838,27 @@
       "par": 72,
       "teamScore": null,
       "teamFinish": null
+    },
+    {
+      "id": "2026-JV-APR20",
+      "date": "2026-04-20T00:00:00.000Z",
+      "dateISO": "2026-04-20",
+      "name": "JV Lake Conference @ Bluff Creek",
+      "level": "JV"
+    },
+    {
+      "id": "2026-JV0",
+      "date": "2026-04-21T00:00:00.000Z",
+      "dateISO": "2026-04-21",
+      "name": "JV Invitational @ Heritage Links",
+      "level": "JV"
+    },
+    {
+      "id": "2026-JV2",
+      "date": "2026-04-22T00:00:00.000Z",
+      "dateISO": "2026-04-22",
+      "name": "Boys JV Tournament",
+      "level": "JV"
     }
   ],
   "jvEvents2026": [
@@ -7012,7 +7032,7 @@
           "par": 72,
           "eventId": "2026-2026-04-24-VAR-4",
           "toPar": 1,
-          "individualFinish": "T28"
+          "individualFinish": "T11"
         },
         {
           "score": 77,
@@ -7061,7 +7081,7 @@
           "par": 72,
           "eventId": "2026-2026-04-24-VAR-4",
           "toPar": -2,
-          "individualFinish": "1st"
+          "individualFinish": "T2"
         },
         {
           "score": 67,
@@ -7110,7 +7130,7 @@
           "par": 72,
           "eventId": "2026-2026-04-24-VAR-4",
           "toPar": -3,
-          "individualFinish": "2nd"
+          "individualFinish": "1st"
         },
         {
           "score": 70,
@@ -7159,7 +7179,7 @@
           "par": 72,
           "eventId": "2026-2026-04-24-VAR-4",
           "toPar": 3,
-          "individualFinish": "T12"
+          "individualFinish": "T20"
         },
         {
           "score": 71,
@@ -7208,7 +7228,7 @@
           "par": 72,
           "eventId": "2026-2026-04-24-VAR-4",
           "toPar": 9,
-          "individualFinish": "T50"
+          "individualFinish": "T60"
         },
         {
           "score": 77,
