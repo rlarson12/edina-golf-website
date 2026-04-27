@@ -146,6 +146,18 @@ function Roster() {
       }
     })
 
+    // Map eventId → { fieldSize, multiDayFinalId } from events2026
+    // multiDayFinalId: when present, finish only displays on the final day
+    const eventMetaMap = {}
+    ;(golfData.events2026 || []).forEach(e => {
+      if (e.id) {
+        eventMetaMap[e.id] = {
+          fieldSize: e.fieldSize || null,
+          multiDayFinalId: e.multiDayFinalId || null,
+        }
+      }
+    })
+
     // Build a player → mmdd → matchResult map from match play pair data in schedule
     // Covers Four-Ball: { pair: ["A", "B"], result: "Won 3&2" }
     const pairResultMap = {} // key: `playerName::mmdd` → result string
@@ -175,8 +187,12 @@ function Roster() {
         const mmdd = eventDateMap[s.eventId]
         if (!mmdd) return
         const key = `${player.name}::${mmdd}`
+        const meta = eventMetaMap[s.eventId] || {}
+        // For multi-day events, only the final day shows the finish
+        const isMultiDayNonFinal = !!(meta.multiDayFinalId && meta.multiDayFinalId !== s.eventId)
         map[key] = {
-          individualFinish: s.individualFinish || null,
+          individualFinish: isMultiDayNonFinal ? null : (s.individualFinish || null),
+          fieldSize: meta.fieldSize || null,
           // Prefer explicit matchResult on score entry; fall back to pair lookup
           matchResult: s.matchResult || pairResultMap[key] || null,
         }
@@ -228,6 +244,7 @@ function Roster() {
         holes: eventInfo.holes,
         toPar: (score && eventInfo.par) ? score - eventInfo.par : null,
         individualFinish: extra.individualFinish || null,
+        fieldSize: extra.fieldSize || null,
         matchResult: extra.matchResult || null,
         mmdd,
       }
@@ -272,6 +289,7 @@ function Roster() {
             toPar: totalPar ? totalScore - totalPar : null,
             isMultiRound: true,
             individualFinish: s.individualFinish || f.individualFinish || null,
+            fieldSize: f.fieldSize || s.fieldSize || null,
             matchResult: s.matchResult || f.matchResult || null,
           })
           continue
@@ -762,7 +780,9 @@ function Roster() {
                                     ({toParStr})
                                   </span>
                                   {s.individualFinish && (
-                                    <span className="text-sm text-gray-600 whitespace-nowrap">{s.individualFinish}</span>
+                                    <span className="text-sm text-gray-600 whitespace-nowrap">
+                                      ({s.individualFinish}{s.fieldSize ? ` of ${s.fieldSize}` : ''})
+                                    </span>
                                   )}
                                 </div>
                               </div>

@@ -5501,7 +5501,8 @@
           "position": 6,
           "individualFinish": "T15"
         }
-      ]
+      ],
+      "fieldSize": 48
     },
     {
       "id": "2026-2026-04-22-VAR-2",
@@ -5560,7 +5561,8 @@
           "position": 6,
           "individualFinish": "T39"
         }
-      ]
+      ],
+      "fieldSize": 120
     },
     {
       "id": "2026-2026-05-06-VAR-3",
@@ -5619,7 +5621,9 @@
           "grade": "SO",
           "score": 81
         }
-      ]
+      ],
+      "fieldSize": 79,
+      "multiDayFinalId": "2026-2026-04-25-VAR-5"
     },
     {
       "id": "2026-2026-04-25-VAR-5",
@@ -5661,7 +5665,9 @@
           "grade": "SO",
           "score": 77
         }
-      ]
+      ],
+      "fieldSize": 79,
+      "multiDayFinalId": "2026-2026-04-25-VAR-5"
     },
     {
       "id": "2026-2026-04-27-VAR-6",
@@ -6984,7 +6990,7 @@
           "eventDate": "2026-04-20",
           "holes": 18,
           "par": 72,
-          "eventId": "2026-V1",
+          "eventId": "2026-2026-04-20-VAR-0",
           "individualFinish": "T1",
           "toPar": 0
         },
@@ -6994,7 +7000,7 @@
           "eventDate": "2026-04-22",
           "holes": 18,
           "par": 72,
-          "eventId": "2026-V2",
+          "eventId": "2026-2026-04-22-VAR-2",
           "individualFinish": "T32",
           "toPar": 5
         },
@@ -7033,7 +7039,7 @@
           "eventDate": "2026-04-20",
           "holes": 18,
           "par": 72,
-          "eventId": "2026-V1",
+          "eventId": "2026-2026-04-20-VAR-0",
           "individualFinish": "3rd",
           "toPar": 2
         },
@@ -7043,7 +7049,7 @@
           "eventDate": "2026-04-22",
           "holes": 18,
           "par": 72,
-          "eventId": "2026-V2",
+          "eventId": "2026-2026-04-22-VAR-2",
           "individualFinish": "T18",
           "toPar": 2
         },
@@ -7082,7 +7088,7 @@
           "eventDate": "2026-04-20",
           "holes": 18,
           "par": 72,
-          "eventId": "2026-V1",
+          "eventId": "2026-2026-04-20-VAR-0",
           "individualFinish": "4th",
           "toPar": 3
         },
@@ -7092,7 +7098,7 @@
           "eventDate": "2026-04-22",
           "holes": 18,
           "par": 72,
-          "eventId": "2026-V2",
+          "eventId": "2026-2026-04-22-VAR-2",
           "individualFinish": "T32",
           "toPar": 5
         },
@@ -7131,7 +7137,7 @@
           "eventDate": "2026-04-20",
           "holes": 18,
           "par": 72,
-          "eventId": "2026-V1",
+          "eventId": "2026-2026-04-20-VAR-0",
           "individualFinish": "T7",
           "toPar": 7
         },
@@ -7141,7 +7147,7 @@
           "eventDate": "2026-04-22",
           "holes": 18,
           "par": 72,
-          "eventId": "2026-V2",
+          "eventId": "2026-2026-04-22-VAR-2",
           "individualFinish": "T10",
           "toPar": 0
         },
@@ -7180,7 +7186,7 @@
           "eventDate": "2026-04-20",
           "holes": 18,
           "par": 72,
-          "eventId": "2026-V1",
+          "eventId": "2026-2026-04-20-VAR-0",
           "individualFinish": "T15",
           "toPar": 9
         },
@@ -7190,7 +7196,7 @@
           "eventDate": "2026-04-22",
           "holes": 18,
           "par": 72,
-          "eventId": "2026-V2",
+          "eventId": "2026-2026-04-22-VAR-2",
           "individualFinish": "T32",
           "toPar": 5
         },
@@ -7229,7 +7235,7 @@
           "eventDate": "2026-04-20",
           "holes": 18,
           "par": 72,
-          "eventId": "2026-V1",
+          "eventId": "2026-2026-04-20-VAR-0",
           "individualFinish": "T15",
           "toPar": 9
         }
@@ -7414,7 +7420,7 @@
           "eventDate": "2026-04-22",
           "holes": 18,
           "par": 72,
-          "eventId": "2026-V2",
+          "eventId": "2026-2026-04-22-VAR-2",
           "individualFinish": "T39",
           "toPar": 6
         }
