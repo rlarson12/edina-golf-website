@@ -5680,7 +5680,9 @@
       "par": 70,
       "teamScore": null,
       "teamFinish": null,
-      "time": "1:30 PM"
+      "time": "1:30 PM",
+      "status": "rained_out",
+      "statusNote": "Rained out \u2014 no makeup scheduled"
     },
     {
       "id": "2026-2026-05-01-VAR-8",
@@ -6067,13 +6069,58 @@
       "course": "Bluff Creek Golf Course",
       "holes": 18,
       "par": 72,
-      "teamScore": null,
-      "teamFinish": null,
+      "teamScore": 304,
+      "teamFinish": "1st of 13",
       "time": "9:00 AM",
       "format": "stroke",
       "teamResult": null,
       "teamRecord": null,
-      "isJV": true
+      "isJV": true,
+      "iWanaMakerId": 184509,
+      "players": [
+        {
+          "name": "George Heinen",
+          "grade": "JR",
+          "score": 75,
+          "position": 3,
+          "individualFinish": "T3"
+        },
+        {
+          "name": "William Smith",
+          "grade": "JR",
+          "score": 76,
+          "position": 6,
+          "individualFinish": "T6"
+        },
+        {
+          "name": "Ari Prickett",
+          "grade": "JR",
+          "score": 76,
+          "position": 6,
+          "individualFinish": "T6"
+        },
+        {
+          "name": "Cole Considine",
+          "grade": "SO",
+          "score": 77,
+          "position": 9,
+          "individualFinish": "9th"
+        },
+        {
+          "name": "Mason Schultes",
+          "grade": "JR",
+          "score": 85,
+          "position": 41,
+          "individualFinish": "T41"
+        },
+        {
+          "name": "Henry Applebaum",
+          "grade": "FR",
+          "score": 91,
+          "position": 67,
+          "individualFinish": "T67"
+        }
+      ]
     },
     {
       "id": "2026-2026-04-28-JV-5",
@@ -6324,7 +6371,9 @@
       "teamFinish": null,
       "event": "Lake Conference Meet #3",
       "startTimeUtc": null,
-      "time": "1:30 PM"
+      "time": "1:30 PM",
+      "status": "rained_out",
+      "statusNote": "Rained out \u2014 no makeup scheduled"
     },
     {
       "id": "2026-2026-05-01-VAR-8",
@@ -6647,8 +6696,7 @@
       "course": "Bluff Creek Golf Course",
       "holes": 18,
       "time": "9:00 AM",
-      "teamScore": null,
-      "teamFinish": null
+      "iWanaMakerId": 184509
     },
     {
       "id": "2026-JV0b",
@@ -6820,6 +6868,15 @@
       "level": "Varsity",
       "teamScore": "572",
       "finish": "1st of 15"
+    },
+    {
+      "id": "2026-JV-EPINVITE",
+      "event": "Eden Prairie JV Invite",
+      "dateFormatted": "Apr 27",
+      "course": "Bluff Creek Golf Course",
+      "teamScore": "304",
+      "finish": "1st of 13",
+      "level": "JV"
     }
   ],
   "players2026": [
@@ -7384,6 +7441,11 @@
           "eventId": "2026-JV2",
           "score": 74,
           "individualFinish": "T1"
+        },
+        {
+          "eventId": "2026-JV3",
+          "score": 77,
+          "individualFinish": "9th"
         }
       ]
     },
@@ -7395,6 +7457,11 @@
           "eventId": "2026-JV0",
           "score": 81,
           "individualFinish": "T10"
+        },
+        {
+          "eventId": "2026-JV3",
+          "score": 91,
+          "individualFinish": "T67"
         }
       ]
     },
@@ -7458,6 +7525,11 @@
           "eventId": "2026-JV2",
           "score": 74,
           "individualFinish": "T1"
+        },
+        {
+          "eventId": "2026-JV3",
+          "score": 75,
+          "individualFinish": "T3"
         }
       ]
     },
@@ -7469,6 +7541,11 @@
           "eventId": "2026-JV2",
           "score": 81,
           "individualFinish": "8th"
+        },
+        {
+          "eventId": "2026-JV3",
+          "score": 76,
+          "individualFinish": "T6"
         }
       ]
     },
@@ -7502,6 +7579,28 @@
           "eventId": "2026-JV2",
           "score": 88,
           "individualFinish": "54th"
+        }
+      ]
+    },
+    {
+      "name": "Ari Prickett",
+      "team": "jv",
+      "scores": [
+        {
+          "eventId": "2026-JV3",
+          "score": 76,
+          "individualFinish": "T6"
+        }
+      ]
+    },
+    {
+      "name": "Mason Schultes",
+      "team": "jv",
+      "scores": [
+        {
+          "eventId": "2026-JV3",
+          "score": 85,
+          "individualFinish": "T41"
         }
       ]
     }
@@ -8098,7 +8197,7 @@
           null,
           null,
           null,
-          null,
+          91,
           null,
           null,
           null,
@@ -8176,7 +8275,7 @@
           null,
           null,
           null,
-          null,
+          77,
           null,
           null,
           null,
@@ -8293,7 +8392,7 @@
           null,
           null,
           null,
-          null,
+          75,
           null,
           null,
           null,
@@ -8410,7 +8509,7 @@
           null,
           null,
           null,
-          null,
+          76,
           null,
           null,
           null,
@@ -8488,7 +8587,7 @@
           null,
           null,
           null,
-          null,
+          85,
           null,
           null,
           null,
@@ -8527,7 +8626,7 @@
           null,
           null,
           null,
-          null,
+          76,
           null,
           null,
           null,
