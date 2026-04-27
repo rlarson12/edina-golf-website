@@ -743,49 +743,76 @@ function Roster() {
                           const isMatchWin = matchResultLower.startsWith('won')
                           const isMatchLoss = matchResultLower.startsWith('lost')
 
+                          // Finish display split into two parts so columns can stack:
+                          //   placeStr  ("1st", "T18", "3rd")  right-aligned
+                          //   ofStr     ("of 100", "of 120", or '')  left-aligned
+                          const placeStr = s.individualFinish || ''
+                          const ofStr = s.individualFinish && s.fieldSize ? `of ${s.fieldSize}` : ''
+                          const finishStr = s.individualFinish
+                            ? `${s.individualFinish}${s.fieldSize ? ` of ${s.fieldSize}` : ''}`
+                            : ''
+
+                          // Multi-round score breakdown shown beneath event name
+                          const roundBreakdown = s.isMultiRound ? (
+                            <span className="text-xs text-gray-500 tabular-nums">
+                              {s.rounds.map((r, i) => {
+                                const rPar = s.roundPars?.[i]
+                                const rUnder = r !== null && rPar && r < rPar
+                                return (
+                                  <span key={i}>
+                                    {i > 0 && <span className="text-gray-300 mx-0.5">+</span>}
+                                    <span className={rUnder ? 'text-red-600 font-medium' : ''}>{r ?? '-'}</span>
+                                  </span>
+                                )
+                              })}
+                            </span>
+                          ) : null
+
                           return (
                             <div key={idx} className="rounded-lg overflow-hidden">
-                              <div className="flex items-center justify-between p-3 bg-gray-50">
-                                <div className="flex-grow min-w-0 mr-3">
-                                  <div className="flex items-center gap-2">
-                                    <span className="text-sm font-medium text-edina-green whitespace-nowrap">{s.date}</span>
-                                    <span className="text-sm text-gray-700 truncate">{s.event}</span>
-                                  </div>
+                              <div
+                                className="grid items-center gap-x-3 p-3 bg-gray-50"
+                                style={{ gridTemplateColumns: 'auto minmax(0, 1fr) auto auto auto auto' }}
+                              >
+                                {/* date */}
+                                <span className="text-sm font-medium text-edina-green whitespace-nowrap">{s.date}</span>
+                                {/* event name + (optional) round breakdown */}
+                                <div className="min-w-0">
+                                  <div className="text-sm text-gray-700 truncate">{s.event}</div>
+                                  {roundBreakdown}
                                 </div>
-                                <div className="flex items-center gap-2 flex-shrink-0">
-                                  {s.isMultiRound ? (
-                                    <>
-                                      <span className="text-sm">
-                                        {s.rounds.map((r, i) => {
-                                          const rPar = s.roundPars?.[i]
-                                          const rUnder = r !== null && rPar && r < rPar
-                                          return (
-                                            <span key={i}>
-                                              {i > 0 && <span className="text-gray-400">-</span>}
-                                              <span className={rUnder ? 'text-red-600 font-medium' : 'text-gray-600'}>{r ?? '-'}</span>
-                                            </span>
-                                          )
-                                        })}
-                                      </span>
-                                      <span className={`font-bold text-lg ${isUnderPar ? 'text-red-600' : 'text-gray-900'}`}>
-                                        {s.score}
-                                      </span>
-                                    </>
-                                  ) : (
-                                    <span className={`font-bold text-lg ${isUnderPar ? 'text-red-600' : 'text-gray-900'}`}>
-                                      {s.score}
+                                {/* score */}
+                                <span className={`font-bold text-lg tabular-nums text-right tabular-num w-[2.25rem] ${isUnderPar ? 'text-red-600' : 'text-gray-900'}`}>
+                                  {s.score}
+                                </span>
+                                {/* to-par */}
+                                <span className={`text-sm font-medium tabular-nums w-[2.5rem] text-left ${isUnderPar ? 'text-red-600' : 'text-gray-600'}`}>
+                                  {toParStr}
+                                </span>
+                                {/* finish split: place right-aligned in its column, "of N" left-aligned in next column.
+                                    Tight gap between them so they read as one unit. Em-dash right-aligned to match place column. */}
+                                {placeStr ? (
+                                  <>
+                                    <span className="hidden sm:block text-xs text-gray-500 whitespace-nowrap tabular-nums w-[2.25rem] text-right -mr-2">
+                                      {placeStr}
                                     </span>
-                                  )}
-                                  <span className={`text-sm font-medium ${isUnderPar ? 'text-red-600' : 'text-gray-600'}`}>
-                                    ({toParStr})
-                                  </span>
-                                  {s.individualFinish && (
-                                    <span className="text-sm text-gray-600 whitespace-nowrap">
-                                      ({s.individualFinish}{s.fieldSize ? ` of ${s.fieldSize}` : ''})
+                                    <span className="hidden sm:block text-xs text-gray-400 whitespace-nowrap tabular-nums w-[3rem] text-left">
+                                      {ofStr}
                                     </span>
-                                  )}
-                                </div>
+                                  </>
+                                ) : (
+                                  <>
+                                    <span className="hidden sm:block text-xs text-gray-300 tabular-nums w-[2.25rem] text-right -mr-2">—</span>
+                                    <span className="hidden sm:block w-[3rem]">{'\u00A0'}</span>
+                                  </>
+                                )}
                               </div>
+                              {/* mobile-only finish line, full width below */}
+                              {finishStr && (
+                                <div className="sm:hidden px-3 pb-2 -mt-1 text-xs text-gray-500 tabular-nums">
+                                  {finishStr}
+                                </div>
+                              )}
                               {s.matchResult && (
                                 <div className="px-3 py-1.5 bg-gray-50 border-t border-gray-100 flex items-center gap-2">
                                   <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${
