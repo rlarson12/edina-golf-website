@@ -98,6 +98,17 @@ if [ -d "$DIST_DIR/assets" ]; then
     fi
 fi
 
+# 6. Schedule consistency check (catches inline Schedule.jsx vs golfData.json divergence)
+echo ""
+echo "=== Schedule Consistency Check ==="
+if [ -f "$HOME/.openclaw/scripts/edina-schedule-consistency-check.py" ]; then
+    if ! python3 "$HOME/.openclaw/scripts/edina-schedule-consistency-check.py" --repo "$REPO_ROOT"; then
+        ERRORS=$((ERRORS + 1))
+    fi
+else
+    echo "⚠️  edina-schedule-consistency-check.py not found — skipping"
+fi
+
 echo ""
 if [ "$ERRORS" -gt 0 ]; then
     echo "❌ PRE-DEPLOY CHECK FAILED ($ERRORS errors)"

@@ -182,7 +182,7 @@ function Schedule() {
     { id: '2026-JV0', date: '2026-04-21', dateFormatted: 'Apr 21',    event: 'JV Invitational',                    course: 'Heritage Links Golf Course', level: 'JV', time: '10:30 AM', par: 72, holes: 18, teamScore: '318', teamFinish: '2nd of 6' },
     { id: '2026-JV2', date: '2026-04-22', dateFormatted: 'Apr 22',    event: 'Boys JV Tournament',                 course: 'Clifton Highlands',          level: 'JV', time: '1:00 PM', par: 72, holes: 18, teamScore: '312', teamFinish: '1st of 24' },
     { id: '2026-JV3', date: '2026-04-27', dateFormatted: 'Apr 27',    event: 'Eden Prairie JV Invite',             course: 'Bluff Creek Golf Course',    level: 'JV', time: '9:00 AM', teamScore: '304', teamFinish: '1st of 13' },
-    { id: '2026-JV0b',date: '2026-04-28', dateFormatted: 'Apr 28',    event: 'JV Invitational',                    course: 'Heritage Links Golf Course', level: 'JV', time: '10:30 AM' },
+    { id: '2026-JV0b',date: '2026-04-28', dateFormatted: 'Apr 28',    event: 'JV Invitational',                    course: 'Heritage Links Golf Course', level: 'JV', time: '10:30 AM', par: 72, holes: 18, teamScore: '317', teamFinish: '3rd of 8' },
     { id: '2026-JV4', date: '2026-05-08', dateFormatted: 'May 8-9',   event: 'JV Invitational',                    course: 'Minnewaska Golf Club',       level: 'JV', isMultiDay: true, time: '1:30 PM', rounds: [
       { round: 1, date: '2026-05-08', dateFormatted: 'May 8', course: 'Minnewaska Golf Club', time: '1:30 PM' },
       { round: 2, date: '2026-05-09', dateFormatted: 'May 9', course: 'Minnewaska Golf Club', time: '8:30 AM' },
