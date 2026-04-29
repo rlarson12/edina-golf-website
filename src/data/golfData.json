@@ -6132,13 +6132,58 @@
       "course": "Heritage Links Golf Course",
       "holes": 18,
       "par": 72,
-      "teamScore": null,
-      "teamFinish": null,
+      "teamScore": 317,
+      "teamFinish": "3rd of 8",
       "time": "10:30 AM",
       "format": "stroke",
       "teamResult": null,
       "teamRecord": null,
-      "isJV": true
+      "isJV": true,
+      "iWanaMakerId": 209318,
+      "players": [
+        {
+          "name": "Mason Catron",
+          "grade": "8",
+          "score": 75,
+          "position": 3,
+          "individualFinish": "3rd"
+        },
+        {
+          "name": "Carter Ringle",
+          "grade": "10",
+          "score": 79,
+          "position": 7,
+          "individualFinish": "7th"
+        },
+        {
+          "name": "Randy Dann",
+          "grade": "10",
+          "score": 80,
+          "position": 10,
+          "individualFinish": "10th"
+        },
+        {
+          "name": "Crosby Pote",
+          "grade": "8",
+          "score": 83,
+          "position": 18,
+          "individualFinish": "T18"
+        },
+        {
+          "name": "Henry Freeman",
+          "grade": "11",
+          "score": 84,
+          "position": 24,
+          "individualFinish": "T24"
+        },
+        {
+          "name": "Mason Schultes",
+          "grade": "11",
+          "score": 85,
+          "position": 26,
+          "individualFinish": "T26"
+        }
+      ]
     },
     {
       "id": "2026-2026-05-08-JV-6",
@@ -6708,7 +6753,8 @@
       "holes": 18,
       "time": "10:30 AM",
       "teamScore": null,
-      "teamFinish": null
+      "teamFinish": null,
+      "iWanaMakerId": 209318
     },
     {
       "id": "2026-JV4-D1",
@@ -6877,6 +6923,13 @@
       "teamScore": "304",
       "finish": "1st of 13",
       "level": "JV"
+    },
+    {
+      "event": "JV Invitational (JV) @ Heritage Links",
+      "dateFormatted": "Apr 28",
+      "course": "Heritage Links Golf Course",
+      "teamScore": "317",
+      "finish": "3rd of 8"
     }
   ],
   "players2026": [
@@ -7473,6 +7526,11 @@
           "eventId": "2026-JV0",
           "score": 82,
           "individualFinish": "T12"
+        },
+        {
+          "eventId": "2026-JV0b",
+          "score": 80,
+          "individualFinish": "10th"
         }
       ]
     },
@@ -7484,6 +7542,11 @@
           "eventId": "2026-JV0",
           "score": 83,
           "individualFinish": "T14"
+        },
+        {
+          "eventId": "2026-JV0b",
+          "score": 75,
+          "individualFinish": "3rd"
         }
       ]
     },
@@ -7557,6 +7620,11 @@
           "eventId": "2026-JV2",
           "score": 83,
           "individualFinish": "24th"
+        },
+        {
+          "eventId": "2026-JV0b",
+          "score": 84,
+          "individualFinish": "T24"
         }
       ]
     },
@@ -7568,6 +7636,11 @@
           "eventId": "2026-JV2",
           "score": 87,
           "individualFinish": "47th"
+        },
+        {
+          "eventId": "2026-JV0b",
+          "score": 83,
+          "individualFinish": "T18"
         }
       ]
     },
@@ -7579,6 +7652,11 @@
           "eventId": "2026-JV2",
           "score": 88,
           "individualFinish": "54th"
+        },
+        {
+          "eventId": "2026-JV0b",
+          "score": 79,
+          "individualFinish": "7th"
         }
       ]
     },
@@ -7601,6 +7679,11 @@
           "eventId": "2026-JV3",
           "score": 85,
           "individualFinish": "T41"
+        },
+        {
+          "eventId": "2026-JV0b",
+          "score": 85,
+          "individualFinish": "T26"
         }
       ]
     }
@@ -8237,7 +8320,7 @@
           null,
           null,
           null,
-          null,
+          75,
           null,
           null,
           null,
@@ -8315,7 +8398,7 @@
           null,
           null,
           null,
-          null,
+          80,
           null,
           null,
           null,
@@ -8354,7 +8437,7 @@
           null,
           null,
           null,
-          null,
+          84,
           null,
           null,
           null,
@@ -8471,7 +8554,7 @@
           null,
           null,
           null,
-          null,
+          83,
           null,
           null,
           null,
@@ -8549,7 +8632,7 @@
           null,
           null,
           null,
-          null,
+          79,
           null,
           null,
           null,
@@ -8588,7 +8671,7 @@
           null,
           null,
           85,
-          null,
+          85,
           null,
           null,
           null,
