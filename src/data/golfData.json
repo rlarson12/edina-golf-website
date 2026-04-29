@@ -12,7 +12,7 @@
       "gradYear": 2027,
       "grade": 10,
       "team": "varsity",
-      "photo": "/images/players/chase-larson.jpg"
+      "photo": "/images/players/chase-larson.webp"
     },
     {
       "name": "David Colby",
@@ -44,7 +44,7 @@
       "gradYear": 2028,
       "grade": 9,
       "team": "varsity",
-      "photo": "/images/players/michael-vernon.jpg"
+      "photo": "/images/players/michael-vernon.webp"
     },
     {
       "name": "Peter Bennett",
@@ -6962,7 +6962,7 @@
       "grade": 11,
       "gradYear": 2027,
       "team": "varsity",
-      "photo": "/images/players/chase-larson.jpg"
+      "photo": "/images/players/chase-larson.webp"
     },
     {
       "name": "Charlie Nielsen",
@@ -7021,7 +7021,7 @@
       "grade": 10,
       "gradYear": 2028,
       "team": "varsity",
-      "photo": "/images/players/michael-vernon.jpg"
+      "photo": "/images/players/michael-vernon.webp"
     },
     {
       "name": "Elan Winnick",

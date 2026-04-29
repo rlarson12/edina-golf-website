@@ -36,6 +36,7 @@ function Photos() {
         { src: '/images/2026/sander-ohe-preview-medalist.webp', caption: 'Sander Ohe — Medalist (137, -7), The Preview at Edinburgh USA, Apr 24-25.' },
         { src: '/images/2026/peter-edinburgh-day1-putt.webp', caption: 'Peter Bennett — Round 1, The Preview at Edinburgh USA, Apr 24.' },
         { src: '/images/2026/chase-edinburgh-day2.webp', caption: 'Chase Larson — Round 2, The Preview at Edinburgh USA, Apr 25.' },
+        { src: '/images/2026/chase-edinburgh-day2-action.webp', caption: 'Chase Larson — Round 2, The Preview at Edinburgh USA, Apr 25.' },
         { src: '/images/2026/chase-colby-edinburgh-fairway.webp', caption: 'Chase Larson and David Colby walking the fairway — The Preview at Edinburgh USA, Apr 24-25.' },
       ],
     },
