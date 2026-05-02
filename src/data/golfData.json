@@ -5694,8 +5694,43 @@
       "course": "Dacotah Ridge Golf Club",
       "holes": 18,
       "par": 72,
-      "teamScore": null,
-      "teamFinish": null
+      "teamScore": 289,
+      "teamFinish": "2nd of 18 (R1)",
+      "iWanaMakerId": 209320,
+      "fieldSize": 18,
+      "multiDayFinalId": "2026-2026-05-02-VAR-9",
+      "players": [
+        {
+          "name": "Sander Ohe",
+          "grade": "SR",
+          "score": 67
+        },
+        {
+          "name": "Chase Larson",
+          "grade": "JR",
+          "score": 72
+        },
+        {
+          "name": "Michael Vernon",
+          "grade": "SO",
+          "score": 74
+        },
+        {
+          "name": "Peter Bennett",
+          "grade": "SR",
+          "score": 76
+        },
+        {
+          "name": "Charlie Nielsen",
+          "grade": "JR",
+          "score": 76
+        },
+        {
+          "name": "David Colby",
+          "grade": "SR",
+          "score": 80
+        }
+      ]
     },
     {
       "id": "2026-2026-05-02-VAR-9",
@@ -5707,8 +5742,43 @@
       "course": "Dacotah Ridge Golf Club",
       "holes": 18,
       "par": 72,
-      "teamScore": null,
-      "teamFinish": null
+      "teamScore": 295,
+      "teamFinish": "2nd of 18",
+      "iWanaMakerId": 209320,
+      "fieldSize": 18,
+      "multiDayFinalId": "2026-2026-05-02-VAR-9",
+      "players": [
+        {
+          "name": "Peter Bennett",
+          "grade": "SR",
+          "score": 70
+        },
+        {
+          "name": "Sander Ohe",
+          "grade": "SR",
+          "score": 74
+        },
+        {
+          "name": "Charlie Nielsen",
+          "grade": "JR",
+          "score": 75
+        },
+        {
+          "name": "Chase Larson",
+          "grade": "JR",
+          "score": 76
+        },
+        {
+          "name": "David Colby",
+          "grade": "SR",
+          "score": 80
+        },
+        {
+          "name": "Michael Vernon",
+          "grade": "SO",
+          "score": 81
+        }
+      ]
     },
     {
       "id": "2026-2026-05-04-VAR-10",
@@ -6310,6 +6380,23 @@
       "teamResult": null,
       "teamRecord": null,
       "isJV": true
+    },
+    {
+      "id": "2026-JV0b",
+      "date": "2026-04-28T00:00:00.000Z",
+      "dateFormatted": "Apr 28",
+      "dateISO": "2026-04-28",
+      "name": "JV Invitational",
+      "level": "JV",
+      "course": "Heritage Links Golf Course",
+      "holes": 18,
+      "par": 72,
+      "teamScore": 317,
+      "teamFinish": "3rd of 8",
+      "time": "10:30 AM",
+      "iWanaMakerId": 209318,
+      "isJV": true,
+      "players": []
     }
   ],
   "schedule2026": [
@@ -6433,7 +6520,8 @@
       "teamScore": null,
       "teamFinish": null,
       "event": "Lakeville South Invitational Day 1",
-      "startTimeUtc": null
+      "startTimeUtc": null,
+      "iWanaMakerId": 209320
     },
     {
       "id": "2026-2026-05-02-VAR-9",
@@ -6448,7 +6536,8 @@
       "teamScore": null,
       "teamFinish": null,
       "event": "Lakeville South Invitational Day 2",
-      "startTimeUtc": null
+      "startTimeUtc": null,
+      "iWanaMakerId": 209320
     },
     {
       "id": "2026-2026-05-04-VAR-10",
@@ -6752,8 +6841,6 @@
       "course": "Heritage Links Golf Course",
       "holes": 18,
       "time": "10:30 AM",
-      "teamScore": 317,
-      "teamFinish": "3rd of 8",
       "iWanaMakerId": 209318
     },
     {
@@ -6930,6 +7017,17 @@
       "course": "Heritage Links Golf Course",
       "teamScore": "317",
       "finish": "3rd of 8"
+    },
+    {
+      "id": "2026-V-LSINVITE",
+      "date": "2026-05-01T00:00:00.000Z",
+      "dateFormatted": "May 1-2",
+      "dateISO": "2026-05-01",
+      "event": "Lakeville South Invitational",
+      "course": "Dacotah Ridge Golf Club",
+      "level": "Varsity",
+      "teamScore": "584",
+      "finish": "2nd of 18"
     }
   ],
   "players2026": [
@@ -7153,10 +7251,29 @@
           "eventId": "2026-2026-04-25-VAR-5",
           "toPar": 5,
           "individualFinish": "T28"
+        },
+        {
+          "score": 76,
+          "event": "Lakeville South Invitational Day 1",
+          "eventDate": "2026-05-01",
+          "holes": 18,
+          "par": 72,
+          "eventId": "2026-2026-05-01-VAR-8",
+          "toPar": 4
+        },
+        {
+          "score": 75,
+          "event": "Lakeville South Invitational Day 2",
+          "eventDate": "2026-05-02",
+          "holes": 18,
+          "par": 72,
+          "eventId": "2026-2026-05-02-VAR-9",
+          "toPar": 3,
+          "individualFinish": "T14"
         }
       ],
-      "average": 74.75,
-      "roundsPlayed": 3,
+      "average": 75.0,
+      "roundsPlayed": 6,
       "low": 72,
       "team": "varsity"
     },
@@ -7202,11 +7319,30 @@
           "eventId": "2026-2026-04-25-VAR-5",
           "toPar": -5,
           "individualFinish": "1st"
+        },
+        {
+          "score": 67,
+          "event": "Lakeville South Invitational Day 1",
+          "eventDate": "2026-05-01",
+          "holes": 18,
+          "par": 72,
+          "eventId": "2026-2026-05-01-VAR-8",
+          "toPar": -5
+        },
+        {
+          "score": 74,
+          "event": "Lakeville South Invitational Day 2",
+          "eventDate": "2026-05-02",
+          "holes": 18,
+          "par": 72,
+          "eventId": "2026-2026-05-02-VAR-9",
+          "toPar": 2,
+          "individualFinish": "T2"
         }
       ],
-      "average": 71.25,
-      "roundsPlayed": 3,
-      "low": 70,
+      "average": 71.0,
+      "roundsPlayed": 6,
+      "low": 67,
       "team": "varsity"
     },
     {
@@ -7251,10 +7387,29 @@
           "eventId": "2026-2026-04-25-VAR-5",
           "toPar": -2,
           "individualFinish": "2nd"
+        },
+        {
+          "score": 76,
+          "event": "Lakeville South Invitational Day 1",
+          "eventDate": "2026-05-01",
+          "holes": 18,
+          "par": 72,
+          "eventId": "2026-2026-05-01-VAR-8",
+          "toPar": 4
+        },
+        {
+          "score": 70,
+          "event": "Lakeville South Invitational Day 2",
+          "eventDate": "2026-05-02",
+          "holes": 18,
+          "par": 72,
+          "eventId": "2026-2026-05-02-VAR-9",
+          "toPar": -2,
+          "individualFinish": "T5"
         }
       ],
-      "average": 72.75,
-      "roundsPlayed": 3,
+      "average": 72.83,
+      "roundsPlayed": 6,
       "low": 69,
       "team": "varsity"
     },
@@ -7300,11 +7455,30 @@
           "eventId": "2026-2026-04-25-VAR-5",
           "toPar": -1,
           "individualFinish": "T12"
+        },
+        {
+          "score": 72,
+          "event": "Lakeville South Invitational Day 1",
+          "eventDate": "2026-05-01",
+          "holes": 18,
+          "par": 72,
+          "eventId": "2026-2026-05-01-VAR-8",
+          "toPar": 0
+        },
+        {
+          "score": 76,
+          "event": "Lakeville South Invitational Day 2",
+          "eventDate": "2026-05-02",
+          "holes": 18,
+          "par": 72,
+          "eventId": "2026-2026-05-02-VAR-9",
+          "toPar": 4,
+          "individualFinish": "T8"
         }
       ],
-      "average": 74.25,
-      "roundsPlayed": 3,
-      "low": 72,
+      "average": 74.17,
+      "roundsPlayed": 6,
+      "low": 71,
       "team": "varsity"
     },
     {
@@ -7349,11 +7523,30 @@
           "eventId": "2026-2026-04-25-VAR-5",
           "toPar": 5,
           "individualFinish": "T50"
+        },
+        {
+          "score": 74,
+          "event": "Lakeville South Invitational Day 1",
+          "eventDate": "2026-05-01",
+          "holes": 18,
+          "par": 72,
+          "eventId": "2026-2026-05-01-VAR-8",
+          "toPar": 2
+        },
+        {
+          "score": 81,
+          "event": "Lakeville South Invitational Day 2",
+          "eventDate": "2026-05-02",
+          "holes": 18,
+          "par": 72,
+          "eventId": "2026-2026-05-02-VAR-9",
+          "toPar": 9,
+          "individualFinish": "T26"
         }
       ],
-      "average": 79.0,
-      "roundsPlayed": 3,
-      "low": 77,
+      "average": 78.5,
+      "roundsPlayed": 6,
+      "low": 74,
       "team": "varsity"
     },
     {
@@ -7368,11 +7561,30 @@
           "eventId": "2026-V1",
           "individualFinish": "T15",
           "toPar": 9
+        },
+        {
+          "score": 80,
+          "event": "Lakeville South Invitational Day 1",
+          "eventDate": "2026-05-01",
+          "holes": 18,
+          "par": 72,
+          "eventId": "2026-2026-05-01-VAR-8",
+          "toPar": 8
+        },
+        {
+          "score": 80,
+          "event": "Lakeville South Invitational Day 2",
+          "eventDate": "2026-05-02",
+          "holes": 18,
+          "par": 72,
+          "eventId": "2026-2026-05-02-VAR-9",
+          "toPar": 8,
+          "individualFinish": "T51"
         }
       ],
-      "average": 81.0,
-      "roundsPlayed": 1,
-      "low": 81,
+      "average": 80.33,
+      "roundsPlayed": 3,
+      "low": 80,
       "team": "varsity"
     },
     {
@@ -7814,7 +8026,7 @@
           null,
           null,
           null,
-          null,
+          76,
           null,
           null,
           null,
@@ -7853,7 +8065,7 @@
           null,
           null,
           null,
-          null,
+          80,
           null,
           null,
           null,
@@ -7931,7 +8143,7 @@
           null,
           null,
           null,
-          null,
+          72,
           null,
           null,
           null,
@@ -7970,7 +8182,7 @@
           null,
           null,
           null,
-          null,
+          76,
           null,
           null,
           null,
@@ -8009,7 +8221,7 @@
           null,
           null,
           null,
-          null,
+          67,
           null,
           null,
           null,
@@ -8204,7 +8416,7 @@
           null,
           null,
           null,
-          null,
+          74,
           null,
           null,
           null,
