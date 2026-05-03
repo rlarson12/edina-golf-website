@@ -156,9 +156,9 @@ function Schedule() {
       { round: 2, id: '2026-2026-04-25-VAR-5', date: '2026-04-25', dateFormatted: 'Apr 25', course: 'Edinburgh USA Golf Course', time: '11:30 AM', par: 72, teamScore: '285 (-3)' },
     ]},
     { id: '2026-V5',  date: '2026-04-27', dateFormatted: 'Apr 27',    event: 'Lake Conference Meet #3',            course: 'Oak Ridge Country Club',     level: 'Varsity', time: '1:30 PM', status: 'rained_out', statusNote: 'Rained out — no makeup scheduled' },
-    { id: '2026-V6',  date: '2026-05-01', dateFormatted: 'May 1-2',   event: 'Lakeville South Invitational',       course: 'Dacotah Ridge Golf Club',    level: 'Varsity', isMultiDay: true, time: '12:00 PM', rounds: [
-      { round: 1, date: '2026-05-01', dateFormatted: 'May 1', course: 'Dacotah Ridge Golf Club', time: '12:00 PM' },
-      { round: 2, date: '2026-05-02', dateFormatted: 'May 2', course: 'Dacotah Ridge Golf Club', time: '8:30 AM' },
+    { id: '2026-V6',  date: '2026-05-01', dateFormatted: 'May 1-2',   event: 'Lakeville South Invitational',       course: 'Dacotah Ridge Golf Club',    level: 'Varsity', isMultiDay: true, time: '12:00 PM', iWanaMakerId: 209320, par: 72, holes: 18, teamScore: '584 (+8)', teamFinish: '2nd of 18', rounds: [
+      { round: 1, id: '2026-2026-05-01-VAR-8', date: '2026-05-01', dateFormatted: 'May 1', course: 'Dacotah Ridge Golf Club', time: '12:00 PM', par: 72, teamScore: '289 (+1)' },
+      { round: 2, id: '2026-2026-05-02-VAR-9', date: '2026-05-02', dateFormatted: 'May 2', course: 'Dacotah Ridge Golf Club', time: '8:30 AM', par: 72, teamScore: '295 (+7)' },
     ]},
     { id: '2026-V9',  date: '2026-05-04', dateFormatted: 'May 4',     event: 'Boys Varsity Invitational',          course: 'Oak Ridge Country Club',     level: 'Varsity', time: '10:00 AM' },
     { id: '2026-V7',  date: '2026-05-04', dateFormatted: 'May 4',     event: 'Spring Lake Park Invitational',      course: 'TPC Twin Cities',            level: 'Varsity', time: '12:00 PM' },
