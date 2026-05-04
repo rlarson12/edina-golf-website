@@ -37,7 +37,6 @@
       "collapseWhitespace": false,
       "removeComments": false
     },
-    "puppeteerExecutablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
     "puppeteerArgs": [
       "--no-sandbox",
       "--disable-setuid-sandbox"
