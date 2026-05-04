@@ -14,33 +14,7 @@
     "update-and-validate": "npm run update-from-sheets && npm run validate",
     "predeploy": "bash scripts/pre-deploy-check.sh",
     "deploy": "npm run predeploy && npm run build && bash scripts/pre-deploy-check.sh",
-    "postbuild": "react-snap",
     "prerender": "npm run build"
-  },
-  "reactSnap": {
-    "source": "dist",
-    "destination": "dist",
-    "crawl": false,
-    "include": [
-      "/",
-      "/schedule",
-      "/roster",
-      "/stats",
-      "/recaps",
-      "/coaches",
-      "/history",
-      "/photos",
-      "/support-team",
-      "/team-info"
-    ],
-    "minifyHtml": {
-      "collapseWhitespace": false,
-      "removeComments": false
-    },
-    "puppeteerArgs": [
-      "--no-sandbox",
-      "--disable-setuid-sandbox"
-    ]
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -48,7 +22,6 @@
     "react-helmet-async": "^3.0.0",
     "react-onesignal": "^3.5.1",
     "react-router-dom": "^6.20.0",
-    "react-snap": "^1.23.0",
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
