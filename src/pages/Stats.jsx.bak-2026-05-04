@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from 'react'
+import { useState, useMemo } from 'react'
 import golfData from '../data/golfData.json'
 import SEO from '../components/SEO'
 
@@ -29,30 +29,12 @@ const SortArrow = ({ col, sortCol, sortDir }) => {
   return <span className="ml-1">{sortDir === 'asc' ? '↑' : '↓'}</span>
 }
 
-// Format a numeric differential as a signed string: +1.8 / E / -0.5
-const formatDiff = (val) => {
-  if (val === null || val === undefined) return '—'
-  const rounded = Math.round(val * 10) / 10
-  if (rounded === 0) return 'E'
-  return rounded > 0 ? `+${rounded.toFixed(1)}` : `${rounded.toFixed(1)}`
-}
-
 function Stats() {
   const [activeTab, setActiveTab] = useState('leaderboard')
   const [teamFilter, setTeamFilter] = useState('all')
   const [showArchive, setShowArchive] = useState(false)
-  const [sortCol, setSortCol] = useState('diff')
+  const [sortCol, setSortCol] = useState('avg')
   const [sortDir, setSortDir] = useState('asc')
-  const [minRounds, setMinRounds] = useState(3)
-
-  // Reset minRounds to sensible defaults when team filter changes
-  useEffect(() => {
-    if (teamFilter === 'jv') {
-      setMinRounds(1)
-    } else {
-      setMinRounds(3)
-    }
-  }, [teamFilter])
 
   // 2026 season data
   const seasonResults2026 = golfData.seasonResults2026 || []
@@ -104,17 +86,6 @@ function Stats() {
     return map
   }, [])
 
-  // Get par for an event header
-  const getEventPar = (eventHeader) => {
-    const eventName = eventHeader?.replace(/^\d{2}\/\d{2} - /, '') || ''
-    const eventNameLower = eventName.toLowerCase()
-    if (eventInfoMap[eventNameLower]) return eventInfoMap[eventNameLower].par
-    const matchingKey = Object.keys(eventInfoMap).find(key =>
-      key.startsWith(eventNameLower) || eventNameLower.startsWith(key)
-    )
-    return matchingKey ? eventInfoMap[matchingKey].par : 72
-  }
-
   // Get holes for an event header
   const getEventHoles = (eventHeader) => {
     const eventName = eventHeader?.replace(/^\d{2}\/\d{2} - /, '') || ''
@@ -124,22 +95,6 @@ function Stats() {
       key.startsWith(eventNameLower) || eventNameLower.startsWith(key)
     )
     return matchingKey ? eventInfoMap[matchingKey].holes : 18
-  }
-
-  // Calculate differential: average score-to-par per round (negative = under par = better)
-  const calculateDiff = (scores) => {
-    let totalToPar = 0
-    let totalRounds = 0
-    scores.forEach((score, idx) => {
-      if (score !== null && score > 0) {
-        const eventHeader = allEventHeaders[idx] || ''
-        const par = getEventPar(eventHeader)
-        totalToPar += score - par
-        totalRounds++
-      }
-    })
-    if (totalRounds === 0) return null
-    return totalToPar / totalRounds
   }
 
   // Calculate weighted 18-hole average
@@ -203,13 +158,12 @@ function Stats() {
     return { eventHeaders: filteredHeaders, eventIndices: filteredIndices }
   }, [allEventHeaders, teamFilter, jvEventNames, activeHeatmap])
 
-  // Process player scores with dynamically calculated weighted averages and diff
+  // Process player scores with dynamically calculated weighted averages
   const playerData = useMemo(() => {
     return (activeHeatmap?.playerScores || [])
       .map(p => ({
         ...p,
         average: calculateWeightedAverage(p.scores),
-        diff: calculateDiff(p.scores),
       }))
       .filter(p => p.average !== null || p.isMatchPlayOnly)
       .sort((a, b) => {
@@ -263,65 +217,52 @@ function Stats() {
     }
   }
 
-  // Sorted leaderboard players (with minRounds filter)
+  // Sorted leaderboard players
   const sortedPlayers = useMemo(() => {
-    const getValidScores = (p) => p.scores.filter(s => s !== null && s > 50)
-    return [...filteredPlayers]
-      .filter(p => !p.isMatchPlayOnly)
-      .filter(p => getValidScores(p).length >= minRounds)
-      .sort((a, b) => {
-        if (sortCol === 'player') {
-          return sortDir === 'asc'
-            ? a.name.localeCompare(b.name)
-            : b.name.localeCompare(a.name)
-        }
-        if (sortCol === 'diff') {
-          const va = a.diff ?? 999
-          const vb = b.diff ?? 999
-          return sortDir === 'asc' ? va - vb : vb - va
-        }
-        if (sortCol === 'avgVsPar') {
-          const va = a.average !== null ? a.average - 72 : 999
-          const vb = b.average !== null ? b.average - 72 : 999
-          return sortDir === 'asc' ? va - vb : vb - va
-        }
-        if (sortCol === 'avg') {
-          const va = a.average ?? 999
-          const vb = b.average ?? 999
-          const roundA = Math.round(va * 10)
-          const roundB = Math.round(vb * 10)
-          if (roundA !== roundB) return sortDir === 'asc' ? roundA - roundB : roundB - roundA
-          // Tiebreaker: Chase Larson wins display-tied-to-tenth ties (asc only; desc keeps natural order)
-          if (sortDir === 'asc') {
-            if (a.name === 'Chase Larson' && b.name !== 'Chase Larson') return -1
-            if (b.name === 'Chase Larson' && a.name !== 'Chase Larson') return 1
-          }
-          return 0
-        }
-        if (sortCol === 'low') {
-          const sa = getValidScores(a)
-          const sb = getValidScores(b)
-          const va = sa.length > 0 ? Math.min(...sa) : 999
-          const vb = sb.length > 0 ? Math.min(...sb) : 999
-          return sortDir === 'asc' ? va - vb : vb - va
-        }
-        if (sortCol === 'rounds') {
-          const va = getValidScores(a).length
-          const vb = getValidScores(b).length
-          return sortDir === 'asc' ? va - vb : vb - va
+    return [...filteredPlayers].filter(p => !p.isMatchPlayOnly).sort((a, b) => {
+      const getValidScores = (p) => p.scores.filter(s => s !== null && s > 50)
+
+      if (sortCol === 'player') {
+        return sortDir === 'asc'
+          ? a.name.localeCompare(b.name)
+          : b.name.localeCompare(a.name)
+      }
+      if (sortCol === 'avg') {
+        const va = a.average ?? 999
+        const vb = b.average ?? 999
+        const roundA = Math.round(va * 10)
+        const roundB = Math.round(vb * 10)
+        if (roundA !== roundB) return sortDir === 'asc' ? roundA - roundB : roundB - roundA
+        // Tiebreaker: Chase Larson wins display-tied-to-tenth ties (asc only; desc keeps natural order)
+        if (sortDir === 'asc') {
+          if (a.name === 'Chase Larson' && b.name !== 'Chase Larson') return -1
+          if (b.name === 'Chase Larson' && a.name !== 'Chase Larson') return 1
         }
         return 0
-      })
-  }, [filteredPlayers, sortCol, sortDir, minRounds])
+      }
+      if (sortCol === 'low') {
+        const sa = getValidScores(a)
+        const sb = getValidScores(b)
+        const va = sa.length > 0 ? Math.min(...sa) : 999
+        const vb = sb.length > 0 ? Math.min(...sb) : 999
+        return sortDir === 'asc' ? va - vb : vb - va
+      }
+      if (sortCol === 'rounds') {
+        const va = getValidScores(a).length
+        const vb = getValidScores(b).length
+        return sortDir === 'asc' ? va - vb : vb - va
+      }
+      return 0
+    })
+  }, [filteredPlayers, sortCol, sortDir])
 
   // CSV Export
   const exportCSV = () => {
-    const headers = ['Rank', 'Player', 'Team', 'Diff', 'Avg vs Par', 'Scoring Avg', 'Low Round', 'Rounds']
+    const headers = ['Rank', 'Player', 'Team', 'Avg', 'Low Round', 'Rounds']
     const rows = sortedPlayers.map((player, i) => {
       const validScores = player.scores.filter(s => s !== null && s > 50)
       const lowRound = validScores.length > 0 ? Math.min(...validScores) : ''
-      const avgVsPar = player.average !== null ? player.average - 72 : null
-      return [i + 1, player.name, player.team || '', formatDiff(player.diff), formatDiff(avgVsPar), player.average?.toFixed(1) || '', lowRound, validScores.length]
+      return [i + 1, player.name, player.team || '', player.average?.toFixed(1) || '', lowRound, validScores.length]
     })
     const csv = [headers, ...rows].map(r => r.join(',')).join('\n')
     const blob = new Blob([csv], { type: 'text/csv' })
@@ -554,39 +495,18 @@ function Stats() {
             {/* ── LEADERBOARD (3B) ── */}
             {activeTab === 'leaderboard' && (
               <div className="card overflow-hidden">
-                <div className="flex flex-wrap items-center justify-between gap-3 p-4 border-b border-gray-200">
+                <div className="flex items-center justify-between p-4 border-b border-gray-200">
                   <h2 className="text-base font-semibold text-gray-900">Player Leaderboard</h2>
-                  <div className="flex items-center gap-3 flex-wrap">
-                    {/* Min Rounds filter */}
-                    <div className="flex items-center gap-1">
-                      <span className="text-xs text-gray-500 font-medium">Min Rounds:</span>
-                      <div className="flex space-x-0.5 bg-gray-100 p-0.5 rounded">
-                        {[1, 3, 5].map(n => (
-                          <button
-                            key={n}
-                            onClick={() => setMinRounds(n)}
-                            className={`px-2.5 py-1 rounded text-xs font-semibold transition-colors ${
-                              minRounds === n
-                                ? 'bg-white text-edina-green shadow-sm'
-                                : 'text-gray-600 hover:text-gray-900'
-                            }`}
-                          >
-                            {n}+
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-                    {/* CSV Export button (3E) */}
-                    <button
-                      onClick={exportCSV}
-                      className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-600 hover:text-edina-green border border-gray-300 hover:border-edina-green rounded-lg px-3 py-1.5 transition-colors"
-                    >
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                      </svg>
-                      Export CSV
-                    </button>
-                  </div>
+                  {/* CSV Export button (3E) */}
+                  <button
+                    onClick={exportCSV}
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-600 hover:text-edina-green border border-gray-300 hover:border-edina-green rounded-lg px-3 py-1.5 transition-colors"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    Export CSV
+                  </button>
                 </div>
                 <div className="overflow-x-auto">
                   <table className="w-full">
@@ -600,21 +520,9 @@ function Stats() {
                         </th>
                         <th
                           className="px-4 py-3 text-center text-xs font-semibold text-gray-700 uppercase tracking-wider cursor-pointer hover:text-edina-green select-none"
-                          onClick={() => handleSort('diff')}
-                        >
-                          Diff <SortArrow col="diff" sortCol={sortCol} sortDir={sortDir} />
-                        </th>
-                        <th
-                          className="px-4 py-3 text-center text-xs font-semibold text-gray-700 uppercase tracking-wider cursor-pointer hover:text-edina-green select-none hidden sm:table-cell"
-                          onClick={() => handleSort('avgVsPar')}
-                        >
-                          Avg vs Par <SortArrow col="avgVsPar" sortCol={sortCol} sortDir={sortDir} />
-                        </th>
-                        <th
-                          className="px-4 py-3 text-center text-xs font-semibold text-gray-700 uppercase tracking-wider cursor-pointer hover:text-edina-green select-none hidden md:table-cell"
                           onClick={() => handleSort('avg')}
                         >
-                          Scoring Avg <SortArrow col="avg" sortCol={sortCol} sortDir={sortDir} />
+                          Avg <SortArrow col="avg" sortCol={sortCol} sortDir={sortDir} />
                         </th>
                         <th
                           className="px-4 py-3 text-center text-xs font-semibold text-gray-700 uppercase tracking-wider cursor-pointer hover:text-edina-green select-none"
@@ -626,15 +534,15 @@ function Stats() {
                           className="px-4 py-3 text-center text-xs font-semibold text-gray-700 uppercase tracking-wider cursor-pointer hover:text-edina-green select-none"
                           onClick={() => handleSort('rounds')}
                         >
-                          Rds <SortArrow col="rounds" sortCol={sortCol} sortDir={sortDir} />
+                          Rounds <SortArrow col="rounds" sortCol={sortCol} sortDir={sortDir} />
                         </th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-100">
                       {sortedPlayers.length === 0 ? (
                         <tr>
-                          <td colSpan={6} className="px-4 py-12 text-center">
-                            <p className="text-gray-500 font-medium">No players meet the minimum rounds threshold. Try lowering the Min Rounds filter.</p>
+                          <td colSpan={4} className="px-4 py-12 text-center">
+                            <p className="text-gray-500 font-medium">First tee 4/20 at Chaska Town Course — leaderboard lights up after Round 1.</p>
                           </td>
                         </tr>
                       ) : (
@@ -652,33 +560,20 @@ function Stats() {
                             : null
                           const lowRound = lowEntry ? lowEntry.score : null
                           const lowUnderPar = lowEntry ? lowEntry.score < lowEntry.par : false
-                          const diffIsNeg = player.diff !== null && player.diff < 0
-                          const avgVsPar = player.average !== null ? player.average - 72 : null
-                          const avgVsParIsNeg = avgVsPar !== null && avgVsPar < 0
 
                           return (
                             <tr key={player.name} className="hover:bg-gray-50 transition-colors">
                               <td className="px-4 py-4 font-medium text-gray-900">{player.name}</td>
-                              <td className="px-4 py-4 text-center font-bold">
-                                <span className={diffIsNeg ? 'text-red-600' : 'text-gray-900'}>
-                                  {formatDiff(player.diff)}
-                                </span>
-                              </td>
-                              <td className="px-4 py-4 text-center hidden sm:table-cell">
-                                <span className={`font-semibold ${avgVsParIsNeg ? 'text-red-600' : 'text-gray-700'}`}>
-                                  {avgVsPar !== null ? formatDiff(avgVsPar) : '—'}
-                                </span>
-                              </td>
-                              <td className="px-4 py-4 text-center text-gray-600 hidden md:table-cell">
-                                {player.average?.toFixed(1) ?? '—'}
+                              <td className="px-4 py-4 text-center font-semibold text-gray-900">
+                                {player.average?.toFixed(1)}
                               </td>
                               <td className="px-4 py-4 text-center">
                                 {lowRound !== null ? (
                                   <span className={`font-medium ${lowUnderPar ? 'text-red-600' : 'text-gray-700'}`}>
-                                    {lowRound}{lowEntry && lowEntry.par ? ` (${lowRound - lowEntry.par > 0 ? '+' : ''}${lowRound === lowEntry.par ? 'E' : lowRound - lowEntry.par})` : ''}
+                                    {lowRound}
                                   </span>
                                 ) : (
-                                  <span className="text-gray-300">—</span>
+                                  <span className="text-gray-300">-</span>
                                 )}
                               </td>
                               <td className="px-4 py-4 text-center text-gray-600">{validScores.length}</td>
@@ -873,19 +768,16 @@ function Stats() {
               <div className="flex flex-wrap gap-4 text-sm text-gray-600">
                 <div className="flex items-center gap-2">
                   <span className="w-4 h-4 bg-edina-green/20 rounded"></span>
-                  <span>Scoring Round (matrix)</span>
+                  <span>Scoring Round</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-red-600 font-medium">69 / -1.0</span>
+                  <span className="text-red-600 font-medium">69</span>
                   <span>Under Par</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-gray-300">—</span>
+                  <span className="text-gray-300">-</span>
                   <span>Did Not Play</span>
                 </div>
-              </div>
-              <div className="mt-3 text-xs text-gray-500 border-t border-gray-200 pt-3">
-                <strong>Diff</strong> = average score relative to par across all rounds played. Negative is better. E means even par.
               </div>
             </div>
           </>
