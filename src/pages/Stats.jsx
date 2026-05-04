@@ -224,7 +224,7 @@ function Stats() {
         // Tiebreaker: Chase Larson wins display-tied-to-tenth ties
         if (a.name === 'Chase Larson' && b.name !== 'Chase Larson') return -1
         if (b.name === 'Chase Larson' && a.name !== 'Chase Larson') return 1
-        const rankingsOrder = (golfData.rankings || []).map(r => r.name)
+        const rankingsOrder = (golfData.rankings2026 || []).map(r => r.name)
         const idxA = rankingsOrder.indexOf(a.name)
         const idxB = rankingsOrder.indexOf(b.name)
         if (idxA !== -1 && idxB !== -1) return idxA - idxB
@@ -280,11 +280,6 @@ function Stats() {
           const vb = b.diff ?? 999
           return sortDir === 'asc' ? va - vb : vb - va
         }
-        if (sortCol === 'avgVsPar') {
-          const va = a.average !== null ? a.average - 72 : 999
-          const vb = b.average !== null ? b.average - 72 : 999
-          return sortDir === 'asc' ? va - vb : vb - va
-        }
         if (sortCol === 'avg') {
           const va = a.average ?? 999
           const vb = b.average ?? 999
@@ -316,12 +311,11 @@ function Stats() {
 
   // CSV Export
   const exportCSV = () => {
-    const headers = ['Rank', 'Player', 'Team', 'Diff', 'Avg vs Par', 'Scoring Avg', 'Low Round', 'Rounds']
+    const headers = ['Rank', 'Player', 'Team', 'Diff', 'Scoring Avg', 'Low Round', 'Rounds']
     const rows = sortedPlayers.map((player, i) => {
       const validScores = player.scores.filter(s => s !== null && s > 50)
       const lowRound = validScores.length > 0 ? Math.min(...validScores) : ''
-      const avgVsPar = player.average !== null ? player.average - 72 : null
-      return [i + 1, player.name, player.team || '', formatDiff(player.diff), formatDiff(avgVsPar), player.average?.toFixed(1) || '', lowRound, validScores.length]
+      return [i + 1, player.name, player.team || '', formatDiff(player.diff), player.average?.toFixed(1) || '', lowRound, validScores.length]
     })
     const csv = [headers, ...rows].map(r => r.join(',')).join('\n')
     const blob = new Blob([csv], { type: 'text/csv' })
@@ -605,12 +599,6 @@ function Stats() {
                           Diff <SortArrow col="diff" sortCol={sortCol} sortDir={sortDir} />
                         </th>
                         <th
-                          className="px-4 py-3 text-center text-xs font-semibold text-gray-700 uppercase tracking-wider cursor-pointer hover:text-edina-green select-none hidden sm:table-cell"
-                          onClick={() => handleSort('avgVsPar')}
-                        >
-                          Avg vs Par <SortArrow col="avgVsPar" sortCol={sortCol} sortDir={sortDir} />
-                        </th>
-                        <th
                           className="px-4 py-3 text-center text-xs font-semibold text-gray-700 uppercase tracking-wider cursor-pointer hover:text-edina-green select-none hidden md:table-cell"
                           onClick={() => handleSort('avg')}
                         >
@@ -633,7 +621,7 @@ function Stats() {
                     <tbody className="divide-y divide-gray-100">
                       {sortedPlayers.length === 0 ? (
                         <tr>
-                          <td colSpan={6} className="px-4 py-12 text-center">
+                          <td colSpan={5} className="px-4 py-12 text-center">
                             <p className="text-gray-500 font-medium">No players meet the minimum rounds threshold. Try lowering the Min Rounds filter.</p>
                           </td>
                         </tr>
@@ -653,20 +641,12 @@ function Stats() {
                           const lowRound = lowEntry ? lowEntry.score : null
                           const lowUnderPar = lowEntry ? lowEntry.score < lowEntry.par : false
                           const diffIsNeg = player.diff !== null && player.diff < 0
-                          const avgVsPar = player.average !== null ? player.average - 72 : null
-                          const avgVsParIsNeg = avgVsPar !== null && avgVsPar < 0
-
                           return (
                             <tr key={player.name} className="hover:bg-gray-50 transition-colors">
                               <td className="px-4 py-4 font-medium text-gray-900">{player.name}</td>
                               <td className="px-4 py-4 text-center font-bold">
                                 <span className={diffIsNeg ? 'text-red-600' : 'text-gray-900'}>
                                   {formatDiff(player.diff)}
-                                </span>
-                              </td>
-                              <td className="px-4 py-4 text-center hidden sm:table-cell">
-                                <span className={`font-semibold ${avgVsParIsNeg ? 'text-red-600' : 'text-gray-700'}`}>
-                                  {avgVsPar !== null ? formatDiff(avgVsPar) : '—'}
                                 </span>
                               </td>
                               <td className="px-4 py-4 text-center text-gray-600 hidden md:table-cell">
