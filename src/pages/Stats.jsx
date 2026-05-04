@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react'
 import golfData from '../data/golfData.json'
 import SEO from '../components/SEO'
+import { computeAdjustedDiff, formatDiff } from '../utils/diff'
 
 // Abbreviate event headers for matrix column display
 const abbreviateEvent = (header) => {
@@ -27,14 +28,6 @@ const abbreviateEvent = (header) => {
 const SortArrow = ({ col, sortCol, sortDir }) => {
   if (sortCol !== col) return <span className="ml-1 text-gray-300">↕</span>
   return <span className="ml-1">{sortDir === 'asc' ? '↑' : '↓'}</span>
-}
-
-// Format a numeric differential as a signed string: +1.8 / E / -0.5
-const formatDiff = (val) => {
-  if (val === null || val === undefined) return '—'
-  const rounded = Math.round(val * 10) / 10
-  if (rounded === 0) return 'E'
-  return rounded > 0 ? `+${rounded.toFixed(1)}` : `${rounded.toFixed(1)}`
 }
 
 function Stats() {
@@ -117,22 +110,6 @@ function Stats() {
     return matchingKey ? eventInfoMap[matchingKey].holes : 18
   }
 
-  // Calculate differential: average score-to-par per round (negative = under par = better)
-  const calculateDiff = (scores) => {
-    let totalToPar = 0
-    let totalRounds = 0
-    scores.forEach((score, idx) => {
-      if (score !== null && score > 0) {
-        const eventHeader = allEventHeaders[idx] || ''
-        const par = getEventPar(eventHeader)
-        totalToPar += score - par
-        totalRounds++
-      }
-    })
-    if (totalRounds === 0) return null
-    return totalToPar / totalRounds
-  }
-
   // Calculate weighted 18-hole average
   const calculateWeightedAverage = (scores) => {
     let totalStrokes = 0
@@ -197,11 +174,20 @@ function Stats() {
   // Process player scores with dynamically calculated weighted averages and diff
   const playerData = useMemo(() => {
     return (activeHeatmap?.playerScores || [])
-      .map(p => ({
-        ...p,
-        average: calculateWeightedAverage(p.scores),
-        diff: calculateDiff(p.scores),
-      }))
+      .map(p => {
+        const { diff, isProvisional, validRoundCount } = computeAdjustedDiff(
+          p.scores,
+          allEventHeaders,
+          getEventPar
+        )
+        return {
+          ...p,
+          average: calculateWeightedAverage(p.scores),
+          diff,
+          isProvisional,
+          validRoundCount,
+        }
+      })
       .filter(p => p.average !== null || p.isMatchPlayOnly)
       .sort((a, b) => {
         // Match-play-only players sort to the bottom
@@ -221,7 +207,7 @@ function Stats() {
         if (idxA !== -1 && idxB !== -1) return idxA - idxB
         return a.average - b.average
       })
-  }, [eventInfoMap])
+  }, [eventInfoMap, allEventHeaders])
 
   // Filter by team
   const filteredPlayers = useMemo(() => {
@@ -254,7 +240,7 @@ function Stats() {
     }
   }
 
-  // Sorted leaderboard players
+  // Sorted leaderboard players — default sort: adjusted Diff ascending (best/lowest first), null to bottom
   const sortedPlayers = useMemo(() => {
     const getValidScores = (p) => p.scores.filter(s => s !== null && s > 50)
     return [...filteredPlayers]
@@ -266,9 +252,11 @@ function Stats() {
             : b.name.localeCompare(a.name)
         }
         if (sortCol === 'diff') {
-          const va = a.diff ?? 999
-          const vb = b.diff ?? 999
-          return sortDir === 'asc' ? va - vb : vb - va
+          // null diff (zero rounds) always sort to bottom regardless of direction
+          if (a.diff === null && b.diff === null) return 0
+          if (a.diff === null) return 1
+          if (b.diff === null) return -1
+          return sortDir === 'asc' ? a.diff - b.diff : b.diff - a.diff
         }
         if (sortCol === 'avg') {
           const va = a.average ?? 999
@@ -305,7 +293,7 @@ function Stats() {
     const rows = sortedPlayers.map((player, i) => {
       const validScores = player.scores.filter(s => s !== null && s > 50)
       const lowRound = validScores.length > 0 ? Math.min(...validScores) : ''
-      return [i + 1, player.name, player.team || '', formatDiff(player.diff), player.average?.toFixed(1) || '', lowRound, validScores.length]
+      return [i + 1, player.name, player.team || '', formatDiff({ diff: player.diff, isProvisional: player.isProvisional }), player.average?.toFixed(1) || '', lowRound, validScores.length]
     })
     const csv = [headers, ...rows].map(r => r.join(',')).join('\n')
     const blob = new Blob([csv], { type: 'text/csv' })
@@ -617,7 +605,7 @@ function Stats() {
                               <td className="px-4 py-4 font-medium text-gray-900">{player.name}</td>
                               <td className="px-4 py-4 text-center font-bold">
                                 <span className={diffIsNeg ? 'text-red-600' : 'text-gray-900'}>
-                                  {formatDiff(player.diff)}
+                                  {formatDiff({ diff: player.diff, isProvisional: player.isProvisional })}
                                 </span>
                               </td>
                               <td className="px-4 py-4 text-center text-gray-600 hidden md:table-cell">
@@ -836,7 +824,7 @@ function Stats() {
                 </div>
               </div>
               <div className="mt-3 text-xs text-gray-500 border-t border-gray-200 pt-3">
-                <strong>Diff</strong> = average score relative to par across all rounds played. Negative is better. E means even par.
+                <strong>Diff</strong> is the average of a player&apos;s best 75% of round differentials (Score &minus; Course Rating &times; 113 &divide; Slope). A lower number means better performance relative to course difficulty. Players with fewer than 4 rounds are marked with ~ and considered provisional.
               </div>
             </div>
           </>
