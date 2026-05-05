@@ -5935,6 +5935,83 @@
       "dateISO": "2026-04-22",
       "name": "Boys JV Tournament",
       "level": "JV"
+    },
+    {
+      "id": "2026-2026-05-04-VAR-LC4",
+      "date": "2026-05-04T00:00:00.000Z",
+      "dateFormatted": "May 4",
+      "dateISO": "2026-05-04",
+      "name": "Lake Conference Match @ Wayzata",
+      "level": "Varsity",
+      "course": "Medina CC",
+      "holes": 18,
+      "par": 72,
+      "teamScore": 309,
+      "teamFinish": "1st of 8",
+      "event": "Lake Conference Meet #4",
+      "startTimeUtc": null,
+      "time": "1:00 PM",
+      "iWanaMakerId": 201049,
+      "players": [
+        {
+          "name": "Hudson Strodl",
+          "grade": "SR",
+          "score": 74,
+          "position": 2,
+          "individualFinish": "T2"
+        },
+        {
+          "name": "Max Romslo",
+          "grade": "JR",
+          "score": 76,
+          "position": 5,
+          "individualFinish": "T5"
+        },
+        {
+          "name": "Drew Schiena",
+          "grade": "FR",
+          "score": 79,
+          "position": 12,
+          "individualFinish": "T12"
+        },
+        {
+          "name": "Ty Pankratz",
+          "grade": "SR",
+          "score": 80,
+          "position": 16,
+          "individualFinish": "T16"
+        },
+        {
+          "name": "Macallen Smith",
+          "grade": "SR",
+          "score": 81,
+          "position": 24,
+          "individualFinish": "T24"
+        },
+        {
+          "name": "Ryan Geyer",
+          "grade": "JR",
+          "score": 82,
+          "position": 29,
+          "individualFinish": "T29"
+        }
+      ]
+    },
+    {
+      "id": "2026-2026-05-04-VAR-OAK",
+      "date": "2026-05-04T00:00:00.000Z",
+      "dateFormatted": "May 4",
+      "dateISO": "2026-05-04",
+      "name": "Holy Family Premier",
+      "level": "Varsity",
+      "course": "Oak Ridge CC",
+      "holes": 18,
+      "par": 70,
+      "teamScore": null,
+      "teamFinish": null,
+      "event": "Boys Varsity Invitational",
+      "startTimeUtc": null,
+      "iWanaMakerId": 210184
     }
   ],
   "jvEvents2026": [
@@ -6564,7 +6641,7 @@
       "date": "2026-05-04T00:00:00.000Z",
       "dateFormatted": "May 4",
       "dateISO": "2026-05-04",
-      "name": "Lake Conference Meet #4",
+      "name": "Lake Conference Match @ Wayzata",
       "level": "Varsity",
       "course": "Medina CC",
       "holes": 18,
@@ -6573,14 +6650,15 @@
       "teamFinish": null,
       "event": "Lake Conference Meet #4",
       "startTimeUtc": null,
-      "time": "1:00 PM"
+      "time": "1:00 PM",
+      "iWanaMakerId": 201049
     },
     {
       "id": "2026-2026-05-04-VAR-OAK",
       "date": "2026-05-04T00:00:00.000Z",
       "dateFormatted": "May 4",
       "dateISO": "2026-05-04",
-      "name": "Boys Varsity Invitational",
+      "name": "Holy Family Premier",
       "level": "Varsity",
       "course": "Oak Ridge CC",
       "holes": 18,
@@ -6588,7 +6666,8 @@
       "teamScore": null,
       "teamFinish": null,
       "event": "Boys Varsity Invitational",
-      "startTimeUtc": null
+      "startTimeUtc": null,
+      "iWanaMakerId": 210184
     },
     {
       "id": "2026-2026-05-08-VAR-11",
@@ -7032,6 +7111,14 @@
       "level": "Varsity",
       "teamScore": "584",
       "finish": "2nd of 18"
+    },
+    {
+      "id": "2026-V-LC4",
+      "event": "Lake Conference Meet #4",
+      "dateFormatted": "May 4",
+      "course": "Medina CC",
+      "teamScore": "309",
+      "finish": "1st of 8"
     }
   ],
   "players2026": [
@@ -7603,6 +7690,11 @@
           "eventId": "2026-JV-APR20",
           "individualFinish": "1st",
           "toPar": 0
+        },
+        {
+          "eventId": "2026-V8",
+          "score": 79,
+          "individualFinish": "T12"
         }
       ],
       "average": 72.0,
@@ -7622,6 +7714,11 @@
           "eventId": "2026-JV-APR20",
           "individualFinish": "3rd",
           "toPar": 2
+        },
+        {
+          "eventId": "2026-V8",
+          "score": 74,
+          "individualFinish": "T2"
         }
       ],
       "average": 74.0,
@@ -7641,6 +7738,11 @@
           "eventId": "2026-JV-APR20",
           "individualFinish": "T6",
           "toPar": 7
+        },
+        {
+          "eventId": "2026-V8",
+          "score": 82,
+          "individualFinish": "T29"
         }
       ],
       "average": 79.0,
@@ -7660,6 +7762,11 @@
           "eventId": "2026-JV-APR20",
           "individualFinish": "T6",
           "toPar": 7
+        },
+        {
+          "eventId": "2026-V8",
+          "score": 80,
+          "individualFinish": "T16"
         }
       ],
       "average": 79.0,
@@ -7694,6 +7801,11 @@
           "eventId": "2026-JV-APR20",
           "score": 80,
           "individualFinish": "T11"
+        },
+        {
+          "eventId": "2026-V8",
+          "score": 81,
+          "individualFinish": "T24"
         }
       ]
     },
@@ -7789,6 +7901,11 @@
           "eventId": "2026-V2",
           "individualFinish": "T39",
           "toPar": 6
+        },
+        {
+          "eventId": "2026-V8",
+          "score": 76,
+          "individualFinish": "T5"
         }
       ],
       "average": 78.0,
@@ -8117,7 +8234,7 @@
           null,
           null,
           null,
-          null,
+          82,
           null,
           null,
           null,
@@ -8273,7 +8390,7 @@
           null,
           null,
           null,
-          null,
+          80,
           null,
           null,
           null,
@@ -8312,7 +8429,7 @@
           null,
           null,
           null,
-          null,
+          76,
           null,
           null,
           null,
@@ -8351,7 +8468,7 @@
           null,
           null,
           null,
-          null,
+          79,
           null,
           null,
           null,
@@ -8390,7 +8507,7 @@
           null,
           null,
           null,
-          null,
+          74,
           null,
           null,
           null,
@@ -8975,7 +9092,7 @@
           null,
           null,
           null,
-          null,
+          81,
           null,
           null,
           null,
@@ -11878,6 +11995,288 @@
         5
       ],
       "total": 74
+    },
+    {
+      "playerName": "Hudson Strodl",
+      "eventDate": "2026-05-04",
+      "courseName": "Medina Golf and Country Club",
+      "par": [
+        4,
+        5,
+        4,
+        3,
+        5,
+        4,
+        4,
+        3,
+        4,
+        4,
+        5,
+        4,
+        3,
+        5,
+        4,
+        4,
+        3,
+        4
+      ],
+      "scores": [
+        3,
+        5,
+        4,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        5,
+        6,
+        4,
+        2,
+        7,
+        3,
+        4,
+        4,
+        4
+      ],
+      "total": 74,
+      "round": 1
+    },
+    {
+      "playerName": "Max Romslo",
+      "eventDate": "2026-05-04",
+      "courseName": "Medina Golf and Country Club",
+      "par": [
+        4,
+        5,
+        4,
+        3,
+        5,
+        4,
+        4,
+        3,
+        4,
+        4,
+        5,
+        4,
+        3,
+        5,
+        4,
+        4,
+        3,
+        4
+      ],
+      "scores": [
+        4,
+        5,
+        4,
+        4,
+        5,
+        3,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5,
+        3,
+        4,
+        4,
+        4,
+        4,
+        5
+      ],
+      "total": 76,
+      "round": 1
+    },
+    {
+      "playerName": "Drew Schiena",
+      "eventDate": "2026-05-04",
+      "courseName": "Medina Golf and Country Club",
+      "par": [
+        4,
+        5,
+        4,
+        3,
+        5,
+        4,
+        4,
+        3,
+        4,
+        4,
+        5,
+        4,
+        3,
+        5,
+        4,
+        4,
+        3,
+        4
+      ],
+      "scores": [
+        4,
+        6,
+        4,
+        3,
+        4,
+        5,
+        4,
+        4,
+        3,
+        4,
+        6,
+        6,
+        3,
+        5,
+        4,
+        6,
+        4,
+        4
+      ],
+      "total": 79,
+      "round": 1
+    },
+    {
+      "playerName": "Ty Pankratz",
+      "eventDate": "2026-05-04",
+      "courseName": "Medina Golf and Country Club",
+      "par": [
+        4,
+        5,
+        4,
+        3,
+        5,
+        4,
+        4,
+        3,
+        4,
+        4,
+        5,
+        4,
+        3,
+        5,
+        4,
+        4,
+        3,
+        4
+      ],
+      "scores": [
+        4,
+        6,
+        4,
+        2,
+        5,
+        5,
+        4,
+        3,
+        6,
+        4,
+        6,
+        4,
+        4,
+        5,
+        4,
+        5,
+        4,
+        5
+      ],
+      "total": 80,
+      "round": 1
+    },
+    {
+      "playerName": "Macallen Smith",
+      "eventDate": "2026-05-04",
+      "courseName": "Medina Golf and Country Club",
+      "par": [
+        4,
+        5,
+        4,
+        3,
+        5,
+        4,
+        4,
+        3,
+        4,
+        4,
+        5,
+        4,
+        3,
+        5,
+        4,
+        4,
+        3,
+        4
+      ],
+      "scores": [
+        5,
+        5,
+        4,
+        4,
+        5,
+        4,
+        5,
+        4,
+        4,
+        4,
+        5,
+        6,
+        4,
+        5,
+        4,
+        6,
+        4,
+        3
+      ],
+      "total": 81,
+      "round": 1
+    },
+    {
+      "playerName": "Ryan Geyer",
+      "eventDate": "2026-05-04",
+      "courseName": "Medina Golf and Country Club",
+      "par": [
+        4,
+        5,
+        4,
+        3,
+        5,
+        4,
+        4,
+        3,
+        4,
+        4,
+        5,
+        4,
+        3,
+        5,
+        4,
+        4,
+        3,
+        4
+      ],
+      "scores": [
+        5,
+        7,
+        6,
+        4,
+        6,
+        4,
+        4,
+        3,
+        4,
+        6,
+        5,
+        4,
+        4,
+        4,
+        3,
+        4,
+        4,
+        5
+      ],
+      "total": 82,
+      "round": 1
     }
   ],
   "news2026": []

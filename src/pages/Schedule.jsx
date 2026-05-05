@@ -162,7 +162,7 @@ function Schedule() {
     ]},
     { id: '2026-V9',  date: '2026-05-04', dateFormatted: 'May 4',     event: 'Boys Varsity Invitational',          course: 'Oak Ridge Country Club',     level: 'Varsity', time: '10:00 AM' },
     { id: '2026-V7',  date: '2026-05-04', dateFormatted: 'May 4',     event: 'Spring Lake Park Invitational',      course: 'TPC Twin Cities',            level: 'Varsity', time: '12:00 PM' },
-    { id: '2026-V8',  date: '2026-05-04', dateFormatted: 'May 4',     event: 'Lake Conference Meet #4',            course: 'Medina Country Club',        level: 'Varsity', time: '1:00 PM' },
+    { id: '2026-V8',  date: '2026-05-04', dateFormatted: 'May 4',     event: 'Lake Conference Meet #4',            course: 'Medina Country Club',        level: 'Varsity', time: '1:00 PM', teamScore: '309 (+21)', teamFinish: '1st of 8' },
     { id: '2026-V10', date: '2026-05-08', dateFormatted: 'May 8-9',   event: 'Northwest Classic',                  course: 'Detroit Country Club',       level: 'Varsity', isMultiDay: true, time: '12:00 PM', rounds: [
       { round: 1, date: '2026-05-08', dateFormatted: 'May 8', course: 'Detroit Country Club', time: '12:00 PM' },
       { round: 2, date: '2026-05-09', dateFormatted: 'May 9', course: 'Detroit Country Club', time: '9:00 AM' },
