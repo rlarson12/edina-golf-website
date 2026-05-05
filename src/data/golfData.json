@@ -6004,14 +6004,58 @@
       "dateISO": "2026-05-04",
       "name": "Holy Family Premier",
       "level": "Varsity",
-      "course": "Oak Ridge CC",
+      "course": "Oak Ridge Country Club",
       "holes": 18,
       "par": 70,
-      "teamScore": null,
-      "teamFinish": null,
+      "teamScore": 307,
+      "teamFinish": "2nd of 9",
       "event": "Boys Varsity Invitational",
       "startTimeUtc": null,
-      "iWanaMakerId": 210184
+      "iWanaMakerId": 210184,
+      "players": [
+        {
+          "name": "Elan Winnick",
+          "grade": "11",
+          "score": 76,
+          "position": 5,
+          "individualFinish": "T5"
+        },
+        {
+          "name": "Ari Prickett",
+          "grade": "11",
+          "score": 77,
+          "position": 8,
+          "individualFinish": "T8"
+        },
+        {
+          "name": "Carter Ringle",
+          "grade": "10",
+          "score": 77,
+          "position": 8,
+          "individualFinish": "T8"
+        },
+        {
+          "name": "Cole Considine",
+          "grade": "10",
+          "score": 77,
+          "position": 8,
+          "individualFinish": "T8"
+        },
+        {
+          "name": "George Heinen",
+          "grade": "11",
+          "score": 84,
+          "position": 43,
+          "individualFinish": "T43"
+        },
+        {
+          "name": "William Smith",
+          "grade": "11",
+          "score": 86,
+          "position": 47,
+          "individualFinish": "T47"
+        }
+      ]
     }
   ],
   "jvEvents2026": [
@@ -7119,6 +7163,17 @@
       "course": "Medina CC",
       "teamScore": "309",
       "finish": "1st of 8"
+    },
+    {
+      "id": "2026-V-HOLYF",
+      "date": "2026-05-04T00:00:00.000Z",
+      "dateFormatted": "May 4",
+      "dateISO": "2026-05-04",
+      "event": "Holy Family Premier",
+      "course": "Oak Ridge Country Club",
+      "level": "Varsity",
+      "teamScore": "307",
+      "finish": "2nd of 9"
     }
   ],
   "players2026": [
@@ -7786,6 +7841,11 @@
           "eventId": "2026-JV-APR20",
           "individualFinish": "T11",
           "toPar": 8
+        },
+        {
+          "eventId": "2026-V9",
+          "score": 76,
+          "individualFinish": "T5"
         }
       ],
       "average": 80.0,
@@ -7827,6 +7887,11 @@
           "eventId": "2026-JV3",
           "score": 77,
           "individualFinish": "9th"
+        },
+        {
+          "eventId": "2026-V9",
+          "score": 77,
+          "individualFinish": "T8"
         }
       ]
     },
@@ -7926,6 +7991,11 @@
           "eventId": "2026-JV3",
           "score": 75,
           "individualFinish": "T3"
+        },
+        {
+          "eventId": "2026-V9",
+          "score": 84,
+          "individualFinish": "T43"
         }
       ]
     },
@@ -7942,6 +8012,11 @@
           "eventId": "2026-JV3",
           "score": 76,
           "individualFinish": "T6"
+        },
+        {
+          "eventId": "2026-V9",
+          "score": 86,
+          "individualFinish": "T47"
         }
       ]
     },
@@ -7990,6 +8065,11 @@
           "eventId": "2026-JV0b",
           "score": 79,
           "individualFinish": "7th"
+        },
+        {
+          "eventId": "2026-V9",
+          "score": 77,
+          "individualFinish": "T8"
         }
       ]
     },
@@ -8001,6 +8081,11 @@
           "eventId": "2026-JV3",
           "score": 76,
           "individualFinish": "T6"
+        },
+        {
+          "eventId": "2026-V9",
+          "score": 77,
+          "individualFinish": "T8"
         }
       ]
     },
@@ -8586,7 +8671,7 @@
           null,
           null,
           null,
-          null,
+          76,
           null,
           null,
           null,
@@ -8703,7 +8788,7 @@
           null,
           null,
           null,
-          null,
+          77,
           null,
           null,
           null,
@@ -8820,7 +8905,7 @@
           null,
           null,
           null,
-          null,
+          84,
           null,
           null,
           null,
@@ -8937,7 +9022,7 @@
           null,
           null,
           null,
-          null,
+          77,
           null,
           null,
           null,
@@ -8976,7 +9061,7 @@
           null,
           null,
           null,
-          null,
+          77,
           null,
           null,
           null,
@@ -9054,7 +9139,7 @@
           null,
           null,
           null,
-          null,
+          86,
           null,
           null,
           null,
