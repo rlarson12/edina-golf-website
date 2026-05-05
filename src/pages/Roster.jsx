@@ -2,14 +2,6 @@ import { useState, useMemo } from 'react'
 import golfData from '../data/golfData.json'
 import SEO from '../components/SEO'
 
-// Format a numeric differential as a signed string: +1.8 / E / -0.5
-const formatDiff = (val) => {
-  if (val === null || val === undefined) return '—'
-  const rounded = Math.round(val * 10) / 10
-  if (rounded === 0) return 'E'
-  return rounded > 0 ? `+${rounded.toFixed(1)}` : `${rounded.toFixed(1)}`
-}
-
 function Roster() {
   const [filter, setFilter] = useState('all')
   const [selectedPlayer, setSelectedPlayer] = useState(null)
@@ -53,54 +45,24 @@ function Roster() {
     return matchingKey ? eventInfoMap[matchingKey].holes : 18
   }
 
-  // Get par for an event header
-  const getEventPar = (eventHeader) => {
-    const eventName = eventHeader?.replace(/^\d{2}\/\d{2} - /, '') || ''
-    const eventNameLower = eventName.toLowerCase()
-    if (eventInfoMap[eventNameLower]) return eventInfoMap[eventNameLower].par
-    const matchingKey = Object.keys(eventInfoMap).find(key =>
-      key.startsWith(eventNameLower) || eventNameLower.startsWith(key)
-    )
-    return matchingKey ? eventInfoMap[matchingKey].par : 72
-  }
-
-  // Calculate weighted averages and diff for all players
+  // Calculate weighted averages for all players
   const playerAveragesMap = useMemo(() => {
     const map = {}
     activeHeatmap?.playerScores?.forEach(player => {
       let totalStrokes = 0
       let totalHoles = 0
-      let totalToPar = 0
-      let totalRounds = 0
 
       player.scores.forEach((score, idx) => {
         if (score !== null && score > 0) {
           const eventHeader = allEventHeaders[idx] || ''
           const holes = getEventHoles(eventHeader)
-          const par = getEventPar(eventHeader)
           totalStrokes += score
           totalHoles += holes
-          totalToPar += score - par
-          totalRounds++
         }
       })
 
-      // Compute low round
-      let lowRound = null
-      player.scores.forEach((score, idx) => {
-        if (score !== null && score > 50) {
-          const par = getEventPar(allEventHeaders[idx] || '')
-          if (lowRound === null || score < lowRound.score) {
-            lowRound = { score, par }
-          }
-        }
-      })
-
-      map[player.name] = {
-        average: totalHoles > 0 ? (totalStrokes / totalHoles) * 18 : null,
-        diff: totalRounds > 0 ? totalToPar / totalRounds : null,
-        rounds: totalRounds,
-        lowRound,
+      if (totalHoles > 0) {
+        map[player.name] = (totalStrokes / totalHoles) * 18
       }
     })
     return map
@@ -184,18 +146,6 @@ function Roster() {
       }
     })
 
-    // Map eventId → { fieldSize, multiDayFinalId } from events2026
-    // multiDayFinalId: when present, finish only displays on the final day
-    const eventMetaMap = {}
-    ;(golfData.events2026 || []).forEach(e => {
-      if (e.id) {
-        eventMetaMap[e.id] = {
-          fieldSize: e.fieldSize || null,
-          multiDayFinalId: e.multiDayFinalId || null,
-        }
-      }
-    })
-
     // Build a player → mmdd → matchResult map from match play pair data in schedule
     // Covers Four-Ball: { pair: ["A", "B"], result: "Won 3&2" }
     const pairResultMap = {} // key: `playerName::mmdd` → result string
@@ -225,12 +175,8 @@ function Roster() {
         const mmdd = eventDateMap[s.eventId]
         if (!mmdd) return
         const key = `${player.name}::${mmdd}`
-        const meta = eventMetaMap[s.eventId] || {}
-        // For multi-day events, only the final day shows the finish
-        const isMultiDayNonFinal = !!(meta.multiDayFinalId && meta.multiDayFinalId !== s.eventId)
         map[key] = {
-          individualFinish: isMultiDayNonFinal ? null : (s.individualFinish || null),
-          fieldSize: meta.fieldSize || null,
+          individualFinish: s.individualFinish || null,
           // Prefer explicit matchResult on score entry; fall back to pair lookup
           matchResult: s.matchResult || pairResultMap[key] || null,
         }
@@ -282,7 +228,6 @@ function Roster() {
         holes: eventInfo.holes,
         toPar: (score && eventInfo.par) ? score - eventInfo.par : null,
         individualFinish: extra.individualFinish || null,
-        fieldSize: extra.fieldSize || null,
         matchResult: extra.matchResult || null,
         mmdd,
       }
@@ -327,7 +272,6 @@ function Roster() {
             toPar: totalPar ? totalScore - totalPar : null,
             isMultiRound: true,
             individualFinish: s.individualFinish || f.individualFinish || null,
-            fieldSize: f.fieldSize || s.fieldSize || null,
             matchResult: s.matchResult || f.matchResult || null,
           })
           continue
@@ -465,15 +409,7 @@ function Roster() {
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
                 {filteredPlayers.filter(p => p.isCaptain).map((player, i) => {
-                  const pStats = playerAveragesMap[player.name]
-                  const hasDiff = pStats && pStats.rounds > 0
-                  const diffVal = hasDiff ? pStats.diff : null
-                  const diffIsNeg = diffVal !== null && diffVal < 0
-                  const low = pStats?.lowRound
-                  const lowToPar = low ? low.score - low.par : null
-                  const lowLabel = low
-                    ? `${low.score} (${lowToPar === 0 ? 'E' : lowToPar > 0 ? '+' + lowToPar : lowToPar})`
-                    : '—'
+                  const weightedAvg = playerAveragesMap[player.name]
                   return (
                     <button
                       key={i}
@@ -490,7 +426,7 @@ function Roster() {
                             </div>
                           )}
                         </div>
-                        <div className="flex-grow">
+                        <div>
                           <div className="flex items-center gap-2 mb-1">
                             <svg className="w-3.5 h-3.5 text-edina-gold" fill="currentColor" viewBox="0 0 24 24">
                               <path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
@@ -499,19 +435,7 @@ function Roster() {
                           </div>
                           <h3 className="text-lg font-bold text-white" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>{player.name}</h3>
                           <p className="text-green-200 text-sm">{getGradeLabel(player.grade)} • Class of {player.gradYear}</p>
-                          {/* Primary stat: Diff */}
-                          <div className="mt-2">
-                            <span className={`text-3xl font-bold min-w-[4rem] inline-block ${
-                              diffIsNeg ? 'text-red-300' : diffVal !== null ? 'text-white' : 'text-green-300/50'
-                            }`}>
-                              {formatDiff(diffVal)}
-                            </span>
-                            <span className="text-xs text-green-300 ml-1 align-bottom">Diff</span>
-                          </div>
-                          <div className="flex gap-3 mt-1 flex-wrap">
-                            <span className="text-xs text-green-300 min-w-[5rem]">Low: {lowLabel}</span>
-                            <span className="text-xs text-green-300 min-w-[3.5rem]">Rds: {pStats?.rounds ?? 0}</span>
-                          </div>
+                          {weightedAvg && <p className="text-green-300 text-sm mt-1">Avg {weightedAvg.toFixed(1)}</p>}
                         </div>
                       </div>
                     </button>
@@ -522,16 +446,7 @@ function Roster() {
           )}
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {filteredPlayers.map((player, index) => {
-              const pStats = playerAveragesMap[player.name]
-              const hasDiff = pStats && pStats.rounds > 0
-              const diffVal = hasDiff ? pStats.diff : null
-              const diffIsNeg = diffVal !== null && diffVal < 0
-              const low = pStats?.lowRound
-              const lowToPar = low ? low.score - low.par : null
-              const lowLabel = low
-                ? `${low.score} (${lowToPar === 0 ? 'E' : lowToPar > 0 ? '+' + lowToPar : lowToPar})`
-                : '—'
-              const rds = pStats?.rounds ?? 0
+              const weightedAvg = playerAveragesMap[player.name]
 
               return (
                 <button
@@ -578,31 +493,15 @@ function Roster() {
                       <div className="text-sm text-gray-600 mt-1">
                         {getGradeLabel(player.grade)} • Class of {player.gradYear}
                       </div>
-                      <div className="flex items-center gap-1.5 mt-2">
+                      <div className="flex items-center gap-3 mt-2">
                         <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${getTeamBadge(player.team)}`}>
                           {player.team === 'jv' ? 'JV' : player.team.charAt(0).toUpperCase() + player.team.slice(1)}
                         </span>
-                      </div>
-                      {/* Stats chips */}
-                      <div className="flex flex-wrap gap-2 mt-2">
-                        {/* Diff chip — primary */}
-                        <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold min-w-[3.5rem] justify-center border ${
-                          diffIsNeg
-                            ? 'bg-red-50 text-red-600 border-red-200'
-                            : diffVal !== null
-                            ? 'bg-gray-100 text-gray-800 border-gray-200'
-                            : 'bg-gray-50 text-gray-400 border-gray-100'
-                        }`}>
-                          {formatDiff(diffVal)}
-                        </span>
-                        {/* Low chip */}
-                        <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium min-w-[5rem] justify-center bg-gray-50 text-gray-600 border border-gray-200">
-                          Low: {lowLabel}
-                        </span>
-                        {/* Rounds chip */}
-                        <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium min-w-[3.5rem] justify-center bg-gray-50 text-gray-600 border border-gray-200">
-                          Rds: {rds}
-                        </span>
+                        {weightedAvg && (
+                          <span className="text-sm text-gray-600">
+                            Avg: <span className="font-medium text-gray-700">{weightedAvg.toFixed(1)}</span>
+                          </span>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -826,76 +725,47 @@ function Roster() {
                           const isMatchWin = matchResultLower.startsWith('won')
                           const isMatchLoss = matchResultLower.startsWith('lost')
 
-                          // Finish display split into two parts so columns can stack:
-                          //   placeStr  ("1st", "T18", "3rd")  right-aligned
-                          //   ofStr     ("of 100", "of 120", or '')  left-aligned
-                          const placeStr = s.individualFinish || ''
-                          const ofStr = s.individualFinish && s.fieldSize ? `of ${s.fieldSize}` : ''
-                          const finishStr = s.individualFinish
-                            ? `${s.individualFinish}${s.fieldSize ? ` of ${s.fieldSize}` : ''}`
-                            : ''
-
-                          // Multi-round score breakdown shown beneath event name
-                          const roundBreakdown = s.isMultiRound ? (
-                            <span className="text-xs text-gray-500 tabular-nums">
-                              {s.rounds.map((r, i) => {
-                                const rPar = s.roundPars?.[i]
-                                const rUnder = r !== null && rPar && r < rPar
-                                return (
-                                  <span key={i}>
-                                    {i > 0 && <span className="text-gray-300 mx-0.5">+</span>}
-                                    <span className={rUnder ? 'text-red-600 font-medium' : ''}>{r ?? '-'}</span>
-                                  </span>
-                                )
-                              })}
-                            </span>
-                          ) : null
-
                           return (
                             <div key={idx} className="rounded-lg overflow-hidden">
-                              <div
-                                className="grid items-center gap-x-3 p-3 bg-gray-50"
-                                style={{ gridTemplateColumns: 'auto minmax(0, 1fr) auto auto auto auto' }}
-                              >
-                                {/* date */}
-                                <span className="text-sm font-medium text-edina-green whitespace-nowrap">{s.date}</span>
-                                {/* event name + (optional) round breakdown */}
-                                <div className="min-w-0">
-                                  <div className="text-sm text-gray-700 truncate">{s.event}</div>
-                                  {roundBreakdown}
+                              <div className="flex items-center justify-between p-3 bg-gray-50">
+                                <div className="flex-grow min-w-0 mr-3">
+                                  <div className="flex items-center gap-2">
+                                    <span className="text-sm font-medium text-edina-green whitespace-nowrap">{s.date}</span>
+                                    <span className="text-sm text-gray-700 truncate">{s.event}</span>
+                                  </div>
                                 </div>
-                                {/* score */}
-                                <span className={`font-bold text-lg tabular-nums text-right tabular-num w-[2.25rem] ${isUnderPar ? 'text-red-600' : 'text-gray-900'}`}>
-                                  {s.score}
-                                </span>
-                                {/* to-par */}
-                                <span className={`text-sm font-medium tabular-nums w-[2.5rem] text-left ${isUnderPar ? 'text-red-600' : 'text-gray-600'}`}>
-                                  {toParStr}
-                                </span>
-                                {/* finish split: place right-aligned in its column, "of N" left-aligned in next column.
-                                    Tight gap between them so they read as one unit. Em-dash right-aligned to match place column. */}
-                                {placeStr ? (
-                                  <>
-                                    <span className="hidden sm:block text-xs text-gray-500 whitespace-nowrap tabular-nums w-[2.25rem] text-right -mr-2">
-                                      {placeStr}
+                                <div className="flex items-center gap-2 flex-shrink-0">
+                                  {s.isMultiRound ? (
+                                    <>
+                                      <span className="text-sm">
+                                        {s.rounds.map((r, i) => {
+                                          const rPar = s.roundPars?.[i]
+                                          const rUnder = r !== null && rPar && r < rPar
+                                          return (
+                                            <span key={i}>
+                                              {i > 0 && <span className="text-gray-400">-</span>}
+                                              <span className={rUnder ? 'text-red-600 font-medium' : 'text-gray-600'}>{r ?? '-'}</span>
+                                            </span>
+                                          )
+                                        })}
+                                      </span>
+                                      <span className={`font-bold text-lg ${isUnderPar ? 'text-red-600' : 'text-gray-900'}`}>
+                                        {s.score}
+                                      </span>
+                                    </>
+                                  ) : (
+                                    <span className={`font-bold text-lg ${isUnderPar ? 'text-red-600' : 'text-gray-900'}`}>
+                                      {s.score}
                                     </span>
-                                    <span className="hidden sm:block text-xs text-gray-400 whitespace-nowrap tabular-nums w-[3rem] text-left">
-                                      {ofStr}
-                                    </span>
-                                  </>
-                                ) : (
-                                  <>
-                                    <span className="hidden sm:block text-xs text-gray-300 tabular-nums w-[2.25rem] text-right -mr-2">—</span>
-                                    <span className="hidden sm:block w-[3rem]">{'\u00A0'}</span>
-                                  </>
-                                )}
+                                  )}
+                                  <span className={`text-sm font-medium ${isUnderPar ? 'text-red-600' : 'text-gray-600'}`}>
+                                    ({toParStr})
+                                  </span>
+                                  {s.individualFinish && (
+                                    <span className="text-sm text-gray-600 whitespace-nowrap">{s.individualFinish}</span>
+                                  )}
+                                </div>
                               </div>
-                              {/* mobile-only finish line, full width below */}
-                              {finishStr && (
-                                <div className="sm:hidden px-3 pb-2 -mt-1 text-xs text-gray-500 tabular-nums">
-                                  {finishStr}
-                                </div>
-                              )}
                               {s.matchResult && (
                                 <div className="px-3 py-1.5 bg-gray-50 border-t border-gray-100 flex items-center gap-2">
                                   <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${
