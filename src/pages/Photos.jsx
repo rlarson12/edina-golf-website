@@ -38,6 +38,7 @@ function Photos() {
         { src: '/images/2026/chase-edinburgh-day2.webp', caption: 'Chase Larson — Round 2, The Preview at Edinburgh USA, Apr 25.' },
         { src: '/images/2026/chase-edinburgh-day2-action.webp', caption: 'Chase Larson — Round 2, The Preview at Edinburgh USA, Apr 25.' },
         { src: '/images/2026/chase-colby-edinburgh-fairway.webp', caption: 'Chase Larson and David Colby walking the fairway — The Preview at Edinburgh USA, Apr 24-25.' },
+        { src: '/images/2026/ryan-geyer-medina-2026-05-04.webp', caption: 'Ryan Geyer — Lake Conference Meet #4 at Medina CC, May 4.' },
       ],
     },
     {
