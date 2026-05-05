@@ -1,7 +1,14 @@
 import { useState, useMemo } from 'react'
 import golfData from '../data/golfData.json'
 import SEO from '../components/SEO'
-import { computeAdjustedDiff, formatDiff } from '../utils/diff'
+
+// Format a numeric differential as a signed string: +1.8 / E / -0.5
+const formatDiff = (val) => {
+  if (val === null || val === undefined) return '—'
+  const rounded = Math.round(val * 10) / 10
+  if (rounded === 0) return 'E'
+  return rounded > 0 ? `+${rounded.toFixed(1)}` : `${rounded.toFixed(1)}`
+}
 
 function Roster() {
   const [filter, setFilter] = useState('all')
@@ -63,22 +70,20 @@ function Roster() {
     activeHeatmap?.playerScores?.forEach(player => {
       let totalStrokes = 0
       let totalHoles = 0
+      let totalToPar = 0
+      let totalRounds = 0
 
       player.scores.forEach((score, idx) => {
         if (score !== null && score > 0) {
           const eventHeader = allEventHeaders[idx] || ''
           const holes = getEventHoles(eventHeader)
+          const par = getEventPar(eventHeader)
           totalStrokes += score
           totalHoles += holes
+          totalToPar += score - par
+          totalRounds++
         }
       })
-
-      // Best-75% adjusted diff
-      const { diff, isProvisional, validRoundCount } = computeAdjustedDiff(
-        player.scores,
-        allEventHeaders,
-        getEventPar
-      )
 
       // Compute low round
       let lowRound = null
@@ -93,9 +98,8 @@ function Roster() {
 
       map[player.name] = {
         average: totalHoles > 0 ? (totalStrokes / totalHoles) * 18 : null,
-        diff,
-        isProvisional,
-        rounds: validRoundCount,
+        diff: totalRounds > 0 ? totalToPar / totalRounds : null,
+        rounds: totalRounds,
         lowRound,
       }
     })
@@ -464,7 +468,6 @@ function Roster() {
                   const pStats = playerAveragesMap[player.name]
                   const hasDiff = pStats && pStats.rounds > 0
                   const diffVal = hasDiff ? pStats.diff : null
-                  const diffIsProvisional = hasDiff ? (pStats.isProvisional ?? false) : false
                   const diffIsNeg = diffVal !== null && diffVal < 0
                   const low = pStats?.lowRound
                   const lowToPar = low ? low.score - low.par : null
@@ -501,7 +504,7 @@ function Roster() {
                             <span className={`text-3xl font-bold min-w-[4rem] inline-block ${
                               diffIsNeg ? 'text-red-300' : diffVal !== null ? 'text-white' : 'text-green-300/50'
                             }`}>
-                              {formatDiff({ diff: diffVal, isProvisional: diffIsProvisional })}
+                              {formatDiff(diffVal)}
                             </span>
                             <span className="text-xs text-green-300 ml-1 align-bottom">Diff</span>
                           </div>
@@ -522,7 +525,6 @@ function Roster() {
               const pStats = playerAveragesMap[player.name]
               const hasDiff = pStats && pStats.rounds > 0
               const diffVal = hasDiff ? pStats.diff : null
-              const diffIsProvisional = hasDiff ? (pStats.isProvisional ?? false) : false
               const diffIsNeg = diffVal !== null && diffVal < 0
               const low = pStats?.lowRound
               const lowToPar = low ? low.score - low.par : null
@@ -591,7 +593,7 @@ function Roster() {
                             ? 'bg-gray-100 text-gray-800 border-gray-200'
                             : 'bg-gray-50 text-gray-400 border-gray-100'
                         }`}>
-                          {formatDiff({ diff: diffVal, isProvisional: diffIsProvisional })}
+                          {formatDiff(diffVal)}
                         </span>
                         {/* Low chip */}
                         <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium min-w-[5rem] justify-center bg-gray-50 text-gray-600 border border-gray-200">
