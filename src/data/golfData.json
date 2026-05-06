@@ -5573,12 +5573,57 @@
       "course": "Pioneer Creek Golf Course",
       "holes": 18,
       "par": 72,
-      "teamScore": null,
-      "teamFinish": null,
+      "teamScore": 325,
+      "teamFinish": "5th of 8",
       "time": "1:30 PM",
       "rescheduledFrom": "2026-04-23",
       "statusNote": "Rescheduled from April 23 (weather)",
-      "iWanaMakerId": 204214
+      "iWanaMakerId": 204214,
+      "players": [
+        {
+          "name": "Drew Schiena",
+          "grade": "FR",
+          "score": 79,
+          "position": 1,
+          "individualFinish": "T10"
+        },
+        {
+          "name": "Elan Winnick",
+          "grade": "JR",
+          "score": 79,
+          "position": 2,
+          "individualFinish": "T10"
+        },
+        {
+          "name": "Hudson Strodl",
+          "grade": "SR",
+          "score": 82,
+          "position": 3,
+          "individualFinish": "T22"
+        },
+        {
+          "name": "Max Romslo",
+          "grade": "JR",
+          "score": 85,
+          "position": 4,
+          "individualFinish": "T34"
+        },
+        {
+          "name": "Ty Pankratz",
+          "grade": "SR",
+          "score": 86,
+          "position": 5,
+          "individualFinish": "T36"
+        },
+        {
+          "name": "Macallen Smith",
+          "grade": "SR",
+          "score": 87,
+          "position": 6,
+          "individualFinish": "T39"
+        }
+      ],
+      "fieldSize": 48
     },
     {
       "id": "2026-2026-04-24-VAR-4",
@@ -7226,6 +7271,13 @@
       "course": "TPC Twin Cities",
       "teamScore": "304",
       "finish": "2nd of 8"
+    },
+    {
+      "event": "Lake Conference Meet #2",
+      "dateFormatted": "May 6",
+      "course": "Pioneer Creek Golf Course",
+      "teamScore": "325",
+      "finish": "5th of 8"
     }
   ],
   "players2026": [
@@ -7862,6 +7914,11 @@
           "eventId": "2026-V8",
           "score": 79,
           "individualFinish": "T12"
+        },
+        {
+          "eventId": "2026-V3",
+          "score": 79,
+          "individualFinish": "T10"
         }
       ],
       "average": 72.0,
@@ -7886,6 +7943,11 @@
           "eventId": "2026-V8",
           "score": 74,
           "individualFinish": "T2"
+        },
+        {
+          "eventId": "2026-V3",
+          "score": 82,
+          "individualFinish": "T22"
         }
       ],
       "average": 74.0,
@@ -7934,6 +7996,11 @@
           "eventId": "2026-V8",
           "score": 80,
           "individualFinish": "T16"
+        },
+        {
+          "eventId": "2026-V3",
+          "score": 86,
+          "individualFinish": "T36"
         }
       ],
       "average": 79.0,
@@ -7958,6 +8025,11 @@
           "eventId": "2026-V9",
           "score": 76,
           "individualFinish": "T5"
+        },
+        {
+          "eventId": "2026-V3",
+          "score": 79,
+          "individualFinish": "T10"
         }
       ],
       "average": 80.0,
@@ -7978,6 +8050,11 @@
           "eventId": "2026-V8",
           "score": 81,
           "individualFinish": "T24"
+        },
+        {
+          "eventId": "2026-V3",
+          "score": 87,
+          "individualFinish": "T39"
         }
       ]
     },
@@ -8083,6 +8160,11 @@
           "eventId": "2026-V8",
           "score": 76,
           "individualFinish": "T5"
+        },
+        {
+          "eventId": "2026-V3",
+          "score": 85,
+          "individualFinish": "T34"
         }
       ],
       "average": 78.0,
@@ -8589,7 +8671,7 @@
           null,
           80,
           null,
-          null,
+          86,
           null,
           null,
           null,
@@ -8628,7 +8710,7 @@
           null,
           76,
           null,
-          null,
+          85,
           null,
           null,
           null,
@@ -8667,7 +8749,7 @@
           null,
           79,
           null,
-          null,
+          79,
           null,
           null,
           null,
@@ -8706,7 +8788,7 @@
           null,
           74,
           null,
-          null,
+          82,
           null,
           null,
           null,
@@ -8784,7 +8866,7 @@
           null,
           null,
           76,
-          null,
+          79,
           null,
           null,
           null,
@@ -9291,7 +9373,7 @@
           null,
           81,
           null,
-          null,
+          87,
           null,
           null,
           null,
