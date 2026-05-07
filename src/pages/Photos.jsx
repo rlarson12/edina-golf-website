@@ -39,6 +39,14 @@ function Photos() {
         { src: '/images/2026/chase-edinburgh-day2-action.webp', caption: 'Chase Larson — Round 2, The Preview at Edinburgh USA, Apr 25.' },
         { src: '/images/2026/chase-colby-edinburgh-fairway.webp', caption: 'Chase Larson and David Colby walking the fairway — The Preview at Edinburgh USA, Apr 24-25.' },
         { src: '/images/2026/ryan-geyer-medina-2026-05-04.webp', caption: 'Ryan Geyer — Lake Conference Meet #4 at Medina CC, May 4.' },
+      
+        { src: '/images/2026/pioneer-may6-action-1.webp', caption: 'Lake Conference Meet #2 at Pioneer Creek, May 6.' },
+        { src: '/images/2026/pioneer-may6-action-2.webp', caption: 'Lake Conference Meet #2 at Pioneer Creek, May 6.' },
+        { src: '/images/2026/pioneer-may6-portrait.webp', caption: 'Lake Conference Meet #2 at Pioneer Creek, May 6.' },
+        { src: '/images/2026/pioneer-may6-action-3.webp', caption: 'Lake Conference Meet #2 at Pioneer Creek, May 6.' },
+        { src: '/images/2026/pioneer-may6-action-4.webp', caption: 'Lake Conference Meet #2 at Pioneer Creek, May 6.' },
+        { src: '/images/2026/pioneer-may6-action-5.webp', caption: 'Lake Conference Meet #2 at Pioneer Creek, May 6.' },
+      
       ],
     },
     {
