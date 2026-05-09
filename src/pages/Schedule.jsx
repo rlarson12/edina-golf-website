@@ -163,9 +163,9 @@ function Schedule() {
     { id: '2026-V9',  date: '2026-05-04', dateFormatted: 'May 4',     event: 'Boys Varsity Invitational',          course: 'Oak Ridge Country Club',     level: 'Varsity', time: '10:00 AM', teamScore: '307 (+27)', teamFinish: '2nd of 9' },
     { id: '2026-V7',  date: '2026-05-04', dateFormatted: 'May 4',     event: 'Spring Lake Park Invitational',      course: 'TPC Twin Cities',            level: 'Varsity', time: '12:00 PM', teamScore: '304 (+16)', teamFinish: '2nd of 8' },
     { id: '2026-V8',  date: '2026-05-04', dateFormatted: 'May 4',     event: 'Lake Conference Meet #4',            course: 'Medina Country Club',        level: 'Varsity', time: '1:00 PM', teamScore: '309 (+21)', teamFinish: '1st of 8' },
-    { id: '2026-V10', date: '2026-05-08', dateFormatted: 'May 8-9',   event: 'Northwest Classic',                  course: 'Detroit Country Club',       level: 'Varsity', isMultiDay: true, time: '9:00 AM', iWanaMakerId: 208202, par: 71, holes: 18, rounds: [
+    { id: '2026-V10', date: '2026-05-08', dateFormatted: 'May 8-9',   event: 'Northwest Classic',                  course: 'Detroit Country Club',       level: 'Varsity', isMultiDay: true, time: '9:00 AM', iWanaMakerId: 208202, par: 71, holes: 18, teamScore: '596 (+28)', teamFinish: '2nd of 16', rounds: [
       { round: 1, id: '2026-2026-05-08-VAR-11', date: '2026-05-08', dateFormatted: 'May 8', course: 'Detroit Country Club', time: '9:00 AM', par: 71, teamScore: '297 (+13)' },
-      { round: 2, id: '2026-2026-05-09-VAR-12', date: '2026-05-09', dateFormatted: 'May 9', course: 'Detroit Country Club', time: '9:00 AM', par: 71 },
+      { round: 2, id: '2026-2026-05-09-VAR-12', date: '2026-05-09', dateFormatted: 'May 9', course: 'Detroit Country Club', time: '9:00 AM', par: 71, teamScore: '299 (+15)' },
     ]},
     { id: '2026-V11', date: '2026-05-11', dateFormatted: 'May 11-12', event: 'Edina Invitational',                 course: 'Oak Ridge Country Club',     level: 'Varsity', isMultiDay: true },
     { id: '2026-V12', date: '2026-05-19', dateFormatted: 'May 19',    event: 'Lake Conference Championship',       course: 'Fox Hollow Golf Club',       level: 'Varsity', time: '8:00 AM' },
@@ -183,17 +183,21 @@ function Schedule() {
     { id: '2026-JV2', date: '2026-04-22', dateFormatted: 'Apr 22',    event: 'Boys JV Tournament',                 course: 'Clifton Highlands',          level: 'JV', time: '1:00 PM', par: 72, holes: 18, teamScore: '312', teamFinish: '1st of 24' },
     { id: '2026-JV3', date: '2026-04-27', dateFormatted: 'Apr 27',    event: 'Eden Prairie JV Invite',             course: 'Bluff Creek Golf Course',    level: 'JV', time: '9:00 AM', teamScore: '304', teamFinish: '1st of 13' },
     { id: '2026-JV0b',date: '2026-04-28', dateFormatted: 'Apr 28',    event: 'JV Invitational',                    course: 'Heritage Links Golf Course', level: 'JV', time: '10:30 AM', par: 72, holes: 18, teamScore: '317', teamFinish: '3rd of 8' },
-    { id: '2026-JV4-D1', date: '2026-05-08', dateFormatted: 'May 8-9', event: 'Northwest Classic JV Invite',         course: 'Wildflower at Fair Hills',   level: 'JV', isMultiDay: true, time: '9:00 AM', iWanaMakerId: 208213, par: 72, holes: 18, rounds: [
+    { id: '2026-JV4-D1', date: '2026-05-08', dateFormatted: 'May 8-9', event: 'Northwest Classic JV Invite',         course: 'Wildflower at Fair Hills',   level: 'JV', isMultiDay: true, time: '9:00 AM', iWanaMakerId: 208213, par: 72, holes: 18, teamScore: '616 (+40)', teamFinish: '1st of 8', rounds: [
       { round: 1, id: '2026-2026-05-08-JV-6', date: '2026-05-08', dateFormatted: 'May 8', course: 'Wildflower at Fair Hills', time: '9:00 AM', par: 72, teamScore: '310 (+22)' },
-      { round: 2, id: '2026-2026-05-09-JV-7', date: '2026-05-09', dateFormatted: 'May 9', course: 'Wildflower at Fair Hills', time: '9:00 AM', par: 72 },
+      { round: 2, id: '2026-2026-05-09-JV-7', date: '2026-05-09', dateFormatted: 'May 9', course: 'Wildflower at Fair Hills', time: '9:00 AM', par: 72, teamScore: '306 (+18)' },
     ]},
-    { id: '2026-JV4', date: '2026-05-08', dateFormatted: 'May 8-9',   event: 'Minnewaska JV Invite',               course: 'Minnewaska Golf Club',       level: 'JV', isMultiDay: true, time: '1:30 PM', iWanaMakerId: 209337, format: 'bestball', formatLabel: '2-Man Best Ball', par: 72, holes: 18, teamScore: '74 / 78 / 79', teamFinish: '2nd, T3rd, T5th of 10', rounds: [
+    { id: '2026-JV4', date: '2026-05-08', dateFormatted: 'May 8-9',   event: 'Minnewaska JV Invite',               course: 'Minnewaska Golf Club',       level: 'JV', isMultiDay: true, time: '1:30 PM', iWanaMakerId: 209337, format: 'bestball', formatLabel: '2-Man Best Ball', par: 72, holes: 18, teamScore: '145 / 151 / 160', teamFinish: '1st, 2nd, 6th of 10', rounds: [
       { round: 1, id: '2026-2026-05-08-JV-MINN', date: '2026-05-08', dateFormatted: 'May 8', course: 'Minnewaska Golf Club', time: '1:30 PM', par: 72, teamScore: '74 / 78 / 79', pairs: [
         { teamName: 'Edina 2', players: ['Billy Smith', 'Henry Applebaum'], pairScore: 74, pairToPar: '+2', individualScores: [79, 86], finish: '2nd of 10' },
         { teamName: 'Edina',   players: ['Carter Ringle', 'Henry Freeman'], pairScore: 78, pairToPar: '+6', individualScores: [84, 92], finish: 'T3rd of 10' },
         { teamName: 'Edina 3', players: ['Mason Schultes', 'Mason Hughes'],  pairScore: 79, pairToPar: '+7', individualScores: [84, 88], finish: 'T5th of 10' },
       ]},
-      { round: 2, id: '2026-2026-05-09-JV-MINN', date: '2026-05-09', dateFormatted: 'May 9', course: 'Minnewaska Golf Club', time: '8:30 AM', par: 72, pairs: [] },
+      { round: 2, id: '2026-2026-05-09-JV-MINN', date: '2026-05-09', dateFormatted: 'May 9', course: 'Minnewaska Golf Club', time: '8:30 AM', par: 72, teamScore: '71 / 73 / 81', pairs: [
+        { teamName: 'Edina 2', players: ['Billy Smith', 'Henry Applebaum'], pairScore: 71, pairToPar: '-1', individualScores: [74, 84], finish: '1st of 10' },
+        { teamName: 'Edina',   players: ['Carter Ringle', 'Henry Freeman'], pairScore: 73, pairToPar: '+1', individualScores: [82, 85], finish: '2nd of 10' },
+        { teamName: 'Edina 3', players: ['Mason Schultes', 'Mason Hughes'],  pairScore: 81, pairToPar: '+9', individualScores: [88, 84], finish: '6th of 10' },
+      ]},
     ]},
     { id: '2026-JV-MAY11', date: '2026-05-11', dateFormatted: 'May 11', event: 'JV Lake Conference @ Wild Marsh',    course: 'Wild Marsh Golf Club',       level: 'JV', time: '10:00 AM' },
     { id: '2026-JV-MAY13', date: '2026-05-13', dateFormatted: 'May 13', event: 'JV Conference @ Riverwood',          course: 'Riverwood Golf Course',      level: 'JV', time: '10:00 AM' },
