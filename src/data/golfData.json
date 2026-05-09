@@ -6708,9 +6708,10 @@
       "formatLabel": "2-Man Best Ball",
       "isMultiDay": true,
       "iWanaMakerId": 209337,
-      "teamScore": "231 (+15)",
+      "teamScore": "74 / 78 / 79",
       "pairs": [
         {
+          "teamName": "Edina 2",
           "players": [
             "Billy Smith",
             "Henry Applebaum"
@@ -6720,9 +6721,12 @@
           "individualScores": [
             79,
             86
-          ]
+          ],
+          "finish": "2nd of 10",
+          "position": 2
         },
         {
+          "teamName": "Edina",
           "players": [
             "Carter Ringle",
             "Henry Freeman"
@@ -6732,9 +6736,12 @@
           "individualScores": [
             84,
             92
-          ]
+          ],
+          "finish": "T3rd of 10",
+          "position": 3
         },
         {
+          "teamName": "Edina 3",
           "players": [
             "Mason Schultes",
             "Mason Hughes"
@@ -6744,7 +6751,9 @@
           "individualScores": [
             84,
             88
-          ]
+          ],
+          "finish": "T5th of 10",
+          "position": 5
         }
       ],
       "players": [
@@ -6761,7 +6770,8 @@
           "toPar": 20
         }
       ],
-      "finish": null
+      "finish": "2nd, T3rd, T5th of 10",
+      "teamFinish": "2nd, T3rd, T5th of 10"
     }
   ],
   "schedule2026": [
@@ -7317,9 +7327,10 @@
           "course": "Minnewaska Golf Club",
           "time": "1:30 PM",
           "par": 72,
-          "teamScore": "231 (+15)",
+          "teamScore": "74 / 78 / 79",
           "pairs": [
             {
+              "teamName": "Edina 2",
               "players": [
                 "Billy Smith",
                 "Henry Applebaum"
@@ -7329,9 +7340,12 @@
               "individualScores": [
                 79,
                 86
-              ]
+              ],
+              "finish": "2nd of 10",
+              "position": 2
             },
             {
+              "teamName": "Edina",
               "players": [
                 "Carter Ringle",
                 "Henry Freeman"
@@ -7341,9 +7355,12 @@
               "individualScores": [
                 84,
                 92
-              ]
+              ],
+              "finish": "T3rd of 10",
+              "position": 3
             },
             {
+              "teamName": "Edina 3",
               "players": [
                 "Mason Schultes",
                 "Mason Hughes"
@@ -7353,7 +7370,9 @@
               "individualScores": [
                 84,
                 88
-              ]
+              ],
+              "finish": "T5th of 10",
+              "position": 5
             }
           ]
         },
@@ -7525,11 +7544,36 @@
     },
     {
       "event": "Minnewaska JV Invite Day 1",
+      "edinaTeamName": "Edina 2",
       "dateFormatted": "May 8",
       "date": "2026-05-08",
       "course": "Minnewaska Golf Club",
-      "teamScore": "231 (BB)",
-      "finish": null,
+      "teamScore": "74 (+2)",
+      "finish": "2nd of 10",
+      "format": "bestball",
+      "level": "JV",
+      "isJV": true
+    },
+    {
+      "event": "Minnewaska JV Invite Day 1",
+      "edinaTeamName": "Edina",
+      "dateFormatted": "May 8",
+      "date": "2026-05-08",
+      "course": "Minnewaska Golf Club",
+      "teamScore": "78 (+6)",
+      "finish": "T3rd of 10",
+      "format": "bestball",
+      "level": "JV",
+      "isJV": true
+    },
+    {
+      "event": "Minnewaska JV Invite Day 1",
+      "edinaTeamName": "Edina 3",
+      "dateFormatted": "May 8",
+      "date": "2026-05-08",
+      "course": "Minnewaska Golf Club",
+      "teamScore": "79 (+7)",
+      "finish": "T5th of 10",
       "format": "bestball",
       "level": "JV",
       "isJV": true

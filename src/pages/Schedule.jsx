@@ -187,11 +187,11 @@ function Schedule() {
       { round: 1, id: '2026-2026-05-08-JV-6', date: '2026-05-08', dateFormatted: 'May 8', course: 'Wildflower at Fair Hills', time: '9:00 AM', par: 72, teamScore: '310 (+22)' },
       { round: 2, id: '2026-2026-05-09-JV-7', date: '2026-05-09', dateFormatted: 'May 9', course: 'Wildflower at Fair Hills', time: '9:00 AM', par: 72 },
     ]},
-    { id: '2026-JV4', date: '2026-05-08', dateFormatted: 'May 8-9',   event: 'Minnewaska JV Invite',               course: 'Minnewaska Golf Club',       level: 'JV', isMultiDay: true, time: '1:30 PM', iWanaMakerId: 209337, format: 'bestball', formatLabel: '2-Man Best Ball', par: 72, holes: 18, rounds: [
-      { round: 1, id: '2026-2026-05-08-JV-MINN', date: '2026-05-08', dateFormatted: 'May 8', course: 'Minnewaska Golf Club', time: '1:30 PM', par: 72, teamScore: '231 (+15)', pairs: [
-        { players: ['Billy Smith', 'Henry Applebaum'], pairScore: 74, pairToPar: '+2', individualScores: [79, 86] },
-        { players: ['Carter Ringle', 'Henry Freeman'], pairScore: 78, pairToPar: '+6', individualScores: [84, 92] },
-        { players: ['Mason Schultes', 'Mason Hughes'],  pairScore: 79, pairToPar: '+7', individualScores: [84, 88] },
+    { id: '2026-JV4', date: '2026-05-08', dateFormatted: 'May 8-9',   event: 'Minnewaska JV Invite',               course: 'Minnewaska Golf Club',       level: 'JV', isMultiDay: true, time: '1:30 PM', iWanaMakerId: 209337, format: 'bestball', formatLabel: '2-Man Best Ball', par: 72, holes: 18, teamScore: '74 / 78 / 79', teamFinish: '2nd, T3rd, T5th of 10', rounds: [
+      { round: 1, id: '2026-2026-05-08-JV-MINN', date: '2026-05-08', dateFormatted: 'May 8', course: 'Minnewaska Golf Club', time: '1:30 PM', par: 72, teamScore: '74 / 78 / 79', pairs: [
+        { teamName: 'Edina 2', players: ['Billy Smith', 'Henry Applebaum'], pairScore: 74, pairToPar: '+2', individualScores: [79, 86], finish: '2nd of 10' },
+        { teamName: 'Edina',   players: ['Carter Ringle', 'Henry Freeman'], pairScore: 78, pairToPar: '+6', individualScores: [84, 92], finish: 'T3rd of 10' },
+        { teamName: 'Edina 3', players: ['Mason Schultes', 'Mason Hughes'],  pairScore: 79, pairToPar: '+7', individualScores: [84, 88], finish: 'T5th of 10' },
       ]},
       { round: 2, id: '2026-2026-05-09-JV-MINN', date: '2026-05-09', dateFormatted: 'May 9', course: 'Minnewaska Golf Club', time: '8:30 AM', par: 72, pairs: [] },
     ]},
@@ -615,7 +615,14 @@ function Schedule() {
                           return (
                             <div key={idx} className="flex items-center justify-between px-3 py-2.5 gap-3">
                               <div className="flex flex-col min-w-0">
-                                <span className="font-medium text-gray-900 text-sm">{players}</span>
+                                <div className="flex items-center gap-2">
+                                  {pair.teamName && (
+                                    <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-edina-green/10 text-edina-green uppercase tracking-wider">
+                                      {pair.teamName}
+                                    </span>
+                                  )}
+                                  <span className="font-medium text-gray-900 text-sm">{players}</span>
+                                </div>
                                 {ind && (
                                   <span className="text-xs text-gray-500">Individual: {ind}</span>
                                 )}
@@ -627,6 +634,17 @@ function Schedule() {
                                     pair.pairToPar.startsWith('-') ? 'text-red-600' :
                                     pair.pairToPar === 'E' ? 'text-gray-500' : 'text-gray-600'
                                   }`}>({pair.pairToPar})</span>
+                                )}
+                                {pair.finish && (
+                                  <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${
+                                    pair.finish.startsWith('1st')
+                                      ? 'bg-edina-gold/20 text-edina-gold-dark border border-edina-gold'
+                                      : pair.finish.startsWith('2nd')
+                                      ? 'bg-gray-200 text-gray-700'
+                                      : pair.finish.startsWith('3rd') || pair.finish.startsWith('T3')
+                                      ? 'bg-orange-100 text-orange-800'
+                                      : 'bg-edina-green/10 text-edina-green'
+                                  }`}>{pair.finish}</span>
                                 )}
                               </div>
                             </div>
