@@ -187,9 +187,13 @@ function Schedule() {
       { round: 1, id: '2026-2026-05-08-JV-6', date: '2026-05-08', dateFormatted: 'May 8', course: 'Wildflower at Fair Hills', time: '9:00 AM', par: 72, teamScore: '310 (+22)' },
       { round: 2, id: '2026-2026-05-09-JV-7', date: '2026-05-09', dateFormatted: 'May 9', course: 'Wildflower at Fair Hills', time: '9:00 AM', par: 72 },
     ]},
-    { id: '2026-JV4', date: '2026-05-08', dateFormatted: 'May 8-9',   event: 'Minnewaska JV Invite',               course: 'Minnewaska Golf Club',       level: 'JV', isMultiDay: true, time: '1:30 PM', iWanaMakerId: 209337, format: 'bestball', formatLabel: '2-Man Best Ball', rounds: [
-      { round: 1, date: '2026-05-08', dateFormatted: 'May 8', course: 'Minnewaska Golf Club', time: '1:30 PM' },
-      { round: 2, date: '2026-05-09', dateFormatted: 'May 9', course: 'Minnewaska Golf Club', time: '8:30 AM' },
+    { id: '2026-JV4', date: '2026-05-08', dateFormatted: 'May 8-9',   event: 'Minnewaska JV Invite',               course: 'Minnewaska Golf Club',       level: 'JV', isMultiDay: true, time: '1:30 PM', iWanaMakerId: 209337, format: 'bestball', formatLabel: '2-Man Best Ball', par: 72, holes: 18, rounds: [
+      { round: 1, id: '2026-2026-05-08-JV-MINN', date: '2026-05-08', dateFormatted: 'May 8', course: 'Minnewaska Golf Club', time: '1:30 PM', par: 72, teamScore: '231 (+15)', pairs: [
+        { players: ['Billy Smith', 'Henry Applebaum'], pairScore: 74, pairToPar: '+2', individualScores: [79, 86] },
+        { players: ['Carter Ringle', 'Henry Freeman'], pairScore: 78, pairToPar: '+6', individualScores: [84, 92] },
+        { players: ['Mason Schultes', 'Mason Hughes'],  pairScore: 79, pairToPar: '+7', individualScores: [84, 88] },
+      ]},
+      { round: 2, id: '2026-2026-05-09-JV-MINN', date: '2026-05-09', dateFormatted: 'May 9', course: 'Minnewaska Golf Club', time: '8:30 AM', par: 72, pairs: [] },
     ]},
     { id: '2026-JV-MAY11', date: '2026-05-11', dateFormatted: 'May 11', event: 'JV Lake Conference @ Wild Marsh',    course: 'Wild Marsh Golf Club',       level: 'JV', time: '10:00 AM' },
     { id: '2026-JV-MAY13', date: '2026-05-13', dateFormatted: 'May 13', event: 'JV Conference @ Riverwood',          course: 'Riverwood Golf Course',      level: 'JV', time: '10:00 AM' },

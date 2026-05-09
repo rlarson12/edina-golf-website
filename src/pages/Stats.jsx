@@ -313,7 +313,7 @@ function Stats() {
   // Context-aware top stat cards (3D)
   const statsCards = useMemo(() => {
     const varsityStrokePlayed = (golfData.schedule2026 || [])
-      .filter(r => r.teamScore && !r.isJV && r.format !== 'matchplay').length
+      .filter(r => r.teamScore && !r.isJV && r.format !== 'matchplay' && r.format !== 'bestball').length
 
     if (varsityStrokePlayed < 3) {
       return [
@@ -330,7 +330,7 @@ function Stats() {
   const seasonRecords = useMemo(() => {
     const results = seasonResults2026
     const teamScores = results
-      .filter(r => r.teamScore && r.format !== 'matchplay')
+      .filter(r => r.teamScore && r.format !== 'matchplay' && r.format !== 'bestball')
       .map(r => {
         const match = r.teamScore.match(/(\d+)/)
         return match ? parseInt(match[1]) : null
