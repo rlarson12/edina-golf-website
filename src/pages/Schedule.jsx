@@ -163,9 +163,9 @@ function Schedule() {
     { id: '2026-V9',  date: '2026-05-04', dateFormatted: 'May 4',     event: 'Boys Varsity Invitational',          course: 'Oak Ridge Country Club',     level: 'Varsity', time: '10:00 AM', teamScore: '307 (+27)', teamFinish: '2nd of 9' },
     { id: '2026-V7',  date: '2026-05-04', dateFormatted: 'May 4',     event: 'Spring Lake Park Invitational',      course: 'TPC Twin Cities',            level: 'Varsity', time: '12:00 PM', teamScore: '304 (+16)', teamFinish: '2nd of 8' },
     { id: '2026-V8',  date: '2026-05-04', dateFormatted: 'May 4',     event: 'Lake Conference Meet #4',            course: 'Medina Country Club',        level: 'Varsity', time: '1:00 PM', teamScore: '309 (+21)', teamFinish: '1st of 8' },
-    { id: '2026-V10', date: '2026-05-08', dateFormatted: 'May 8-9',   event: 'Northwest Classic',                  course: 'Detroit Country Club',       level: 'Varsity', isMultiDay: true, time: '12:00 PM', rounds: [
-      { round: 1, date: '2026-05-08', dateFormatted: 'May 8', course: 'Detroit Country Club', time: '12:00 PM' },
-      { round: 2, date: '2026-05-09', dateFormatted: 'May 9', course: 'Detroit Country Club', time: '9:00 AM' },
+    { id: '2026-V10', date: '2026-05-08', dateFormatted: 'May 8-9',   event: 'Northwest Classic',                  course: 'Detroit Country Club',       level: 'Varsity', isMultiDay: true, time: '9:00 AM', iWanaMakerId: 208202, par: 71, holes: 18, rounds: [
+      { round: 1, id: '2026-2026-05-08-VAR-11', date: '2026-05-08', dateFormatted: 'May 8', course: 'Detroit Country Club', time: '9:00 AM', par: 71, teamScore: '297 (+13)' },
+      { round: 2, id: '2026-2026-05-09-VAR-12', date: '2026-05-09', dateFormatted: 'May 9', course: 'Detroit Country Club', time: '9:00 AM', par: 71 },
     ]},
     { id: '2026-V11', date: '2026-05-11', dateFormatted: 'May 11-12', event: 'Edina Invitational',                 course: 'Oak Ridge Country Club',     level: 'Varsity', isMultiDay: true },
     { id: '2026-V12', date: '2026-05-19', dateFormatted: 'May 19',    event: 'Lake Conference Championship',       course: 'Fox Hollow Golf Club',       level: 'Varsity', time: '8:00 AM' },
@@ -183,7 +183,11 @@ function Schedule() {
     { id: '2026-JV2', date: '2026-04-22', dateFormatted: 'Apr 22',    event: 'Boys JV Tournament',                 course: 'Clifton Highlands',          level: 'JV', time: '1:00 PM', par: 72, holes: 18, teamScore: '312', teamFinish: '1st of 24' },
     { id: '2026-JV3', date: '2026-04-27', dateFormatted: 'Apr 27',    event: 'Eden Prairie JV Invite',             course: 'Bluff Creek Golf Course',    level: 'JV', time: '9:00 AM', teamScore: '304', teamFinish: '1st of 13' },
     { id: '2026-JV0b',date: '2026-04-28', dateFormatted: 'Apr 28',    event: 'JV Invitational',                    course: 'Heritage Links Golf Course', level: 'JV', time: '10:30 AM', par: 72, holes: 18, teamScore: '317', teamFinish: '3rd of 8' },
-    { id: '2026-JV4', date: '2026-05-08', dateFormatted: 'May 8-9',   event: 'JV Invitational',                    course: 'Minnewaska Golf Club',       level: 'JV', isMultiDay: true, time: '1:30 PM', rounds: [
+    { id: '2026-JV4-D1', date: '2026-05-08', dateFormatted: 'May 8-9', event: 'Northwest Classic JV Invite',         course: 'Wildflower at Fair Hills',   level: 'JV', isMultiDay: true, time: '9:00 AM', iWanaMakerId: 208213, par: 72, holes: 18, rounds: [
+      { round: 1, id: '2026-2026-05-08-JV-6', date: '2026-05-08', dateFormatted: 'May 8', course: 'Wildflower at Fair Hills', time: '9:00 AM', par: 72, teamScore: '310 (+22)' },
+      { round: 2, id: '2026-2026-05-09-JV-7', date: '2026-05-09', dateFormatted: 'May 9', course: 'Wildflower at Fair Hills', time: '9:00 AM', par: 72 },
+    ]},
+    { id: '2026-JV4', date: '2026-05-08', dateFormatted: 'May 8-9',   event: 'Minnewaska JV Invite',               course: 'Minnewaska Golf Club',       level: 'JV', isMultiDay: true, time: '1:30 PM', iWanaMakerId: 209337, format: 'bestball', formatLabel: '2-Man Best Ball', rounds: [
       { round: 1, date: '2026-05-08', dateFormatted: 'May 8', course: 'Minnewaska Golf Club', time: '1:30 PM' },
       { round: 2, date: '2026-05-09', dateFormatted: 'May 9', course: 'Minnewaska Golf Club', time: '8:30 AM' },
     ]},
@@ -354,6 +358,7 @@ function Schedule() {
 
   // Check if event can be expanded
   const isMatchPlay = (event) => event.format === 'matchplay'
+  const isBestBall  = (event) => event.format === 'bestball'
 
   // Check if event has individual scores
   const hasPlayerScores = (event) => {
@@ -405,7 +410,7 @@ function Schedule() {
       const lastRound = new Date(Math.max(...roundDates.map(d => d.getTime())))
       return today >= firstRound && today <= lastRound
     })()
-    const canExpand = !isRound && !isInactive && (event.isMultiDay || hasPlayerScores(event) || isMatchPlay(event))
+    const canExpand = !isRound && !isInactive && (event.isMultiDay || hasPlayerScores(event) || isMatchPlay(event) || isBestBall(event))
 
     return (
       <div
@@ -510,7 +515,13 @@ function Schedule() {
                   {event.teamResult}{event.teamRecord ? ` ${event.teamRecord}` : ''}
                 </span>
               )}
-              {/* Stroke play score + finish */}
+              {/* Best Ball: small badge so the format is obvious at a glance */}
+              {!isRound && !isInactive && isBestBall(event) && (
+                <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-edina-gold/20 text-edina-gold-dark uppercase tracking-wider">
+                  {event.formatLabel || 'Best Ball'}
+                </span>
+              )}
+              {/* Stroke play score + finish (also used for best-ball when teamScore is set) */}
               {!isInactive && !isMatchPlay(event) && event.teamScore && (
                 <span className={`font-semibold ${
                   event.teamScore.includes('(-') ? 'text-red-600' : 'text-gray-700'
@@ -559,6 +570,73 @@ function Schedule() {
 
         {/* Expanded content */}
         {isExpanded && !isRound && (() => {
+          // Best Ball expanded view (2-Man Best Ball — pairs[] per round)
+          if (isBestBall(event)) {
+            const rounds = event.isMultiDay && event.rounds
+              ? event.rounds
+              : [{
+                  round: 1,
+                  date: event.date,
+                  dateFormatted: event.dateFormatted,
+                  course: event.course,
+                  par: event.par,
+                  teamScore: event.teamScore,
+                  pairs: event.pairs || []
+                }]
+            return (
+              <div className="border-t border-gray-100 bg-gray-50/50 p-4 space-y-3">
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold bg-edina-gold/20 text-edina-gold-dark uppercase tracking-wider">
+                    {event.formatLabel || '2-Man Best Ball'}
+                  </span>
+                  {event.teamFinish && (
+                    <span className="text-sm text-gray-600">Team Finish: <span className="font-medium">{event.teamFinish}</span></span>
+                  )}
+                </div>
+                {rounds.map((round, rIdx) => (
+                  <div key={rIdx} className="bg-white rounded-lg border border-gray-100 overflow-hidden">
+                    <div className="flex items-center justify-between px-3 py-2 bg-gray-50 border-b border-gray-100">
+                      <div className="text-sm font-semibold text-gray-700 uppercase tracking-wider">
+                        {event.isMultiDay ? `Round ${round.round} \u2014 ${round.dateFormatted || round.date}` : 'Pair Results'}
+                      </div>
+                      <div className="text-sm font-semibold text-gray-700">
+                        Team: {round.teamScore || '\u2014'}
+                      </div>
+                    </div>
+                    {Array.isArray(round.pairs) && round.pairs.length > 0 ? (
+                      <div className="divide-y divide-gray-50">
+                        {round.pairs.map((pair, idx) => {
+                          const players = Array.isArray(pair.players) ? pair.players.join(' / ') : ''
+                          const ind = Array.isArray(pair.individualScores) ? pair.individualScores.join(' / ') : null
+                          return (
+                            <div key={idx} className="flex items-center justify-between px-3 py-2.5 gap-3">
+                              <div className="flex flex-col min-w-0">
+                                <span className="font-medium text-gray-900 text-sm">{players}</span>
+                                {ind && (
+                                  <span className="text-xs text-gray-500">Individual: {ind}</span>
+                                )}
+                              </div>
+                              <div className="flex items-center gap-2 flex-shrink-0">
+                                <span className="text-sm font-semibold text-gray-900">{pair.pairScore ?? '\u2014'}</span>
+                                {pair.pairToPar && (
+                                  <span className={`text-xs ${
+                                    pair.pairToPar.startsWith('-') ? 'text-red-600' :
+                                    pair.pairToPar === 'E' ? 'text-gray-500' : 'text-gray-600'
+                                  }`}>({pair.pairToPar})</span>
+                                )}
+                              </div>
+                            </div>
+                          )
+                        })}
+                      </div>
+                    ) : (
+                      <p className="text-sm text-gray-500 italic px-3 py-3">Pair results will appear here after the event.</p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )
+          }
           // Match play expanded view
           if (isMatchPlay(event)) {
             return (

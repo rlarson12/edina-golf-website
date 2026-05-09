@@ -5895,11 +5895,51 @@
       "dateISO": "2026-05-08",
       "name": "Northwest Classic Day 1",
       "level": "Varsity",
-      "course": "Detroit Lakes Country Club",
+      "course": "Detroit Country Club",
       "holes": 18,
       "par": 71,
-      "teamScore": null,
-      "teamFinish": null
+      "teamScore": 297,
+      "teamFinish": "T1st of 16",
+      "iWanaMakerId": 208202,
+      "time": "9:00 AM",
+      "players": [
+        {
+          "name": "Sander Ohe",
+          "grade": "SR",
+          "score": 70,
+          "toPar": -1
+        },
+        {
+          "name": "Chase Larson",
+          "grade": "JR",
+          "score": 74,
+          "toPar": 3
+        },
+        {
+          "name": "Peter Bennett",
+          "grade": "SR",
+          "score": 76,
+          "toPar": 5
+        },
+        {
+          "name": "Charlie Nielsen",
+          "grade": "JR",
+          "score": 77,
+          "toPar": 6
+        },
+        {
+          "name": "Michael Vernon",
+          "grade": "SO",
+          "score": 78,
+          "toPar": 7
+        },
+        {
+          "name": "David Colby",
+          "grade": "SR",
+          "score": 84,
+          "toPar": 13
+        }
+      ]
     },
     {
       "id": "2026-2026-05-09-VAR-12",
@@ -6475,18 +6515,57 @@
       "date": "2026-05-08T00:00:00.000Z",
       "dateFormatted": "May 8",
       "dateISO": "2026-05-08",
-      "name": "JV Invitational Day 1",
+      "name": "Northwest Classic JV Invite Day 1",
       "level": "JV",
-      "course": "Minnewaska Golf Club",
+      "course": "Wildflower at Fair Hills",
       "holes": 18,
       "par": 72,
-      "teamScore": null,
-      "teamFinish": null,
-      "time": "1:30 PM",
+      "teamScore": 310,
+      "teamFinish": "2nd of 8",
+      "time": "9:00 AM",
       "format": "stroke",
       "teamResult": null,
       "teamRecord": null,
-      "isJV": true
+      "isJV": true,
+      "iWanaMakerId": 208213,
+      "players": [
+        {
+          "name": "Drew Schiena",
+          "grade": "FR",
+          "score": 77,
+          "toPar": 5
+        },
+        {
+          "name": "George Heinen",
+          "grade": "JR",
+          "score": 77,
+          "toPar": 5
+        },
+        {
+          "name": "Max Romslo",
+          "grade": "JR",
+          "score": 78,
+          "toPar": 6
+        },
+        {
+          "name": "Hudson Strodl",
+          "grade": "SR",
+          "score": 78,
+          "toPar": 6
+        },
+        {
+          "name": "Cole Considine",
+          "grade": "SO",
+          "score": 82,
+          "toPar": 10
+        },
+        {
+          "name": "Macallen Smith",
+          "grade": "SR",
+          "score": 86,
+          "toPar": 14
+        }
+      ]
     },
     {
       "id": "2026-2026-05-09-JV-7",
@@ -6612,6 +6691,37 @@
       "iWanaMakerId": 209318,
       "isJV": true,
       "players": []
+    },
+    {
+      "id": "2026-2026-05-08-JV-MINN",
+      "date": "2026-05-08T00:00:00.000Z",
+      "dateFormatted": "May 8",
+      "dateISO": "2026-05-08",
+      "name": "Minnewaska JV Invite Day 1",
+      "level": "JV",
+      "course": "Minnewaska Golf Club",
+      "holes": 18,
+      "par": 72,
+      "format": "bestball",
+      "formatLabel": "2-Man Best Ball",
+      "isMultiDay": true,
+      "iWanaMakerId": 209337,
+      "teamScore": null,
+      "pairs": [],
+      "players": [
+        {
+          "name": "Carter Ringle",
+          "grade": "SO",
+          "score": 84,
+          "toPar": 12
+        },
+        {
+          "name": "Henry Freeman",
+          "grade": "JR",
+          "score": 92,
+          "toPar": 20
+        }
+      ]
     }
   ],
   "schedule2026": [
@@ -6816,7 +6926,8 @@
       "teamScore": null,
       "teamFinish": null,
       "event": "Northwest Classic Day 1",
-      "startTimeUtc": null
+      "startTimeUtc": null,
+      "iWanaMakerId": 208202
     },
     {
       "id": "2026-2026-05-09-VAR-12",
@@ -7064,13 +7175,15 @@
       "id": "2026-JV4-D1",
       "dateISO": "2026-05-08",
       "dateFormatted": "May 8",
-      "name": "JV Invitational Day 1",
+      "name": "Northwest Classic JV Invite Day 1",
       "level": "JV",
-      "course": "Minnewaska Golf Club",
+      "course": "Wildflower at Fair Hills",
       "holes": 18,
       "time": "1:30 PM",
       "teamScore": null,
-      "teamFinish": null
+      "teamFinish": null,
+      "date": "2026-05-08",
+      "iWanaMakerId": 208213
     },
     {
       "id": "2026-JV4-D2",
@@ -7143,6 +7256,16 @@
       "time": "2:30 PM",
       "teamScore": null,
       "teamFinish": null
+    },
+    {
+      "id": "2026-JV4",
+      "date": "2026-05-08",
+      "name": "Minnewaska JV Invite",
+      "course": "Minnewaska Golf Club",
+      "format": "bestball",
+      "formatLabel": "2-Man Best Ball",
+      "isMultiDay": true,
+      "iWanaMakerId": 209337
     }
   ],
   "seasonResults2026": [
@@ -7530,6 +7653,15 @@
           "eventId": "2026-V7",
           "individualFinish": "T23",
           "toPar": 8
+        },
+        {
+          "score": 77,
+          "event": "Northwest Classic Day 1",
+          "eventDate": "2026-05-08",
+          "holes": 18,
+          "par": 71,
+          "eventId": "2026-2026-05-08-VAR-11",
+          "toPar": 6
         }
       ],
       "average": 75.71,
@@ -7608,6 +7740,15 @@
           "eventId": "2026-V7",
           "individualFinish": "T35",
           "toPar": 14
+        },
+        {
+          "score": 70,
+          "event": "Northwest Classic Day 1",
+          "eventDate": "2026-05-08",
+          "holes": 18,
+          "par": 71,
+          "eventId": "2026-2026-05-08-VAR-11",
+          "toPar": -1
         }
       ],
       "average": 73.14,
@@ -7686,6 +7827,15 @@
           "eventId": "2026-V7",
           "individualFinish": "T3",
           "toPar": 2
+        },
+        {
+          "score": 76,
+          "event": "Northwest Classic Day 1",
+          "eventDate": "2026-05-08",
+          "holes": 18,
+          "par": 71,
+          "eventId": "2026-2026-05-08-VAR-11",
+          "toPar": 5
         }
       ],
       "average": 73.0,
@@ -7764,6 +7914,15 @@
           "eventId": "2026-V7",
           "individualFinish": "T11",
           "toPar": 6
+        },
+        {
+          "score": 74,
+          "event": "Northwest Classic Day 1",
+          "eventDate": "2026-05-08",
+          "holes": 18,
+          "par": 71,
+          "eventId": "2026-2026-05-08-VAR-11",
+          "toPar": 3
         }
       ],
       "average": 74.71,
@@ -7842,6 +8001,15 @@
           "eventId": "2026-V7",
           "individualFinish": "T4",
           "toPar": 3
+        },
+        {
+          "score": 78,
+          "event": "Northwest Classic Day 1",
+          "eventDate": "2026-05-08",
+          "holes": 18,
+          "par": 71,
+          "eventId": "2026-2026-05-08-VAR-11",
+          "toPar": 7
         }
       ],
       "average": 78.0,
@@ -7890,6 +8058,15 @@
           "eventId": "2026-V7",
           "individualFinish": "T7",
           "toPar": 5
+        },
+        {
+          "score": 84,
+          "event": "Northwest Classic Day 1",
+          "eventDate": "2026-05-08",
+          "holes": 18,
+          "par": 71,
+          "eventId": "2026-2026-05-08-VAR-11",
+          "toPar": 13
         }
       ],
       "average": 79.5,
@@ -7919,6 +8096,15 @@
           "eventId": "2026-V3",
           "score": 79,
           "individualFinish": "T10"
+        },
+        {
+          "score": 77,
+          "event": "Northwest Classic JV Invite Day 1",
+          "eventDate": "2026-05-08",
+          "holes": 18,
+          "par": 72,
+          "eventId": "2026-2026-05-08-JV-6",
+          "toPar": 5
         }
       ],
       "average": 72.0,
@@ -7948,6 +8134,15 @@
           "eventId": "2026-V3",
           "score": 82,
           "individualFinish": "T22"
+        },
+        {
+          "score": 78,
+          "event": "Northwest Classic JV Invite Day 1",
+          "eventDate": "2026-05-08",
+          "holes": 18,
+          "par": 72,
+          "eventId": "2026-2026-05-08-JV-6",
+          "toPar": 6
         }
       ],
       "average": 74.0,
@@ -8055,6 +8250,15 @@
           "eventId": "2026-V3",
           "score": 87,
           "individualFinish": "T39"
+        },
+        {
+          "score": 86,
+          "event": "Northwest Classic JV Invite Day 1",
+          "eventDate": "2026-05-08",
+          "holes": 18,
+          "par": 72,
+          "eventId": "2026-2026-05-08-JV-6",
+          "toPar": 14
         }
       ]
     },
@@ -8081,6 +8285,15 @@
           "eventId": "2026-V9",
           "score": 77,
           "individualFinish": "T8"
+        },
+        {
+          "score": 82,
+          "event": "Northwest Classic JV Invite Day 1",
+          "eventDate": "2026-05-08",
+          "holes": 18,
+          "par": 72,
+          "eventId": "2026-2026-05-08-JV-6",
+          "toPar": 10
         }
       ]
     },
@@ -8165,6 +8378,15 @@
           "eventId": "2026-V3",
           "score": 85,
           "individualFinish": "T34"
+        },
+        {
+          "score": 78,
+          "event": "Northwest Classic JV Invite Day 1",
+          "eventDate": "2026-05-08",
+          "holes": 18,
+          "par": 72,
+          "eventId": "2026-2026-05-08-JV-6",
+          "toPar": 6
         }
       ],
       "average": 78.0,
@@ -8190,6 +8412,15 @@
           "eventId": "2026-V9",
           "score": 84,
           "individualFinish": "T43"
+        },
+        {
+          "score": 77,
+          "event": "Northwest Classic JV Invite Day 1",
+          "eventDate": "2026-05-08",
+          "holes": 18,
+          "par": 72,
+          "eventId": "2026-2026-05-08-JV-6",
+          "toPar": 5
         }
       ]
     },
@@ -8227,6 +8458,15 @@
           "eventId": "2026-JV0b",
           "score": 84,
           "individualFinish": "T24"
+        },
+        {
+          "score": 92,
+          "event": "Minnewaska JV Invite Day 1",
+          "eventDate": "2026-05-08",
+          "holes": 18,
+          "par": 72,
+          "eventId": "2026-JV4",
+          "toPar": 20
         }
       ]
     },
@@ -8264,6 +8504,15 @@
           "eventId": "2026-V9",
           "score": 77,
           "individualFinish": "T8"
+        },
+        {
+          "score": 84,
+          "event": "Minnewaska JV Invite Day 1",
+          "eventDate": "2026-05-08",
+          "holes": 18,
+          "par": 72,
+          "eventId": "2026-JV4",
+          "toPar": 12
         }
       ]
     },
@@ -8438,7 +8687,7 @@
           null,
           null,
           null,
-          null,
+          76,
           null,
           null,
           null,
@@ -8477,7 +8726,7 @@
           null,
           null,
           null,
-          null,
+          84,
           null,
           null,
           null,
@@ -8555,7 +8804,7 @@
           null,
           null,
           null,
-          null,
+          74,
           null,
           null,
           null,
@@ -8594,7 +8843,7 @@
           null,
           null,
           null,
-          null,
+          77,
           null,
           null,
           null,
@@ -8633,7 +8882,7 @@
           null,
           null,
           null,
-          null,
+          70,
           null,
           null,
           null,
@@ -8712,7 +8961,7 @@
           null,
           85,
           null,
-          null,
+          78,
           null,
           null,
           null,
@@ -8751,7 +9000,7 @@
           null,
           79,
           null,
-          null,
+          77,
           null,
           null,
           null,
@@ -8790,7 +9039,7 @@
           null,
           82,
           null,
-          null,
+          78,
           null,
           null,
           null,
@@ -8828,7 +9077,7 @@
           null,
           null,
           null,
-          null,
+          78,
           null,
           null,
           null,
@@ -8985,7 +9234,7 @@
           77,
           null,
           null,
-          null,
+          82,
           null,
           null,
           null,
@@ -9102,7 +9351,7 @@
           84,
           null,
           null,
-          null,
+          77,
           null,
           null,
           null,
@@ -9375,7 +9624,7 @@
           null,
           87,
           null,
-          null,
+          86,
           null,
           null,
           null,
