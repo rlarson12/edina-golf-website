@@ -109,6 +109,23 @@ else
     echo "⚠️  edina-schedule-consistency-check.py not found — skipping"
 fi
 
+# 7. Smoke test (P2 hard gate, added 2026-05-10)
+# Validates teamScore formats, playerStats team assignments, scorecards shape,
+# date formats, and Homepage data presence. Hard gate: exit 1 fails the deploy.
+echo ""
+echo "=== Smoke Test ==="
+if [ -f "$HOME/.openclaw/scripts/edina/smoke-test.py" ]; then
+    if ! python3 "$HOME/.openclaw/scripts/edina/smoke-test.py" > /dev/null 2>&1; then
+        # Re-run with output so the operator can see what failed
+        python3 "$HOME/.openclaw/scripts/edina/smoke-test.py" || true
+        ERRORS=$((ERRORS + 1))
+    else
+        echo "✅ Smoke test passed"
+    fi
+else
+    echo "⚠️  smoke-test.py not found — skipping"
+fi
+
 echo ""
 if [ "$ERRORS" -gt 0 ]; then
     echo "❌ PRE-DEPLOY CHECK FAILED ($ERRORS errors)"
