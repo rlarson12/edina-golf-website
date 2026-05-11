@@ -7151,7 +7151,8 @@
       "teamScore": null,
       "teamFinish": null,
       "event": "Edina Invitational Day 1",
-      "startTimeUtc": null
+      "startTimeUtc": null,
+      "iWanaMakerId": 212514
     },
     {
       "id": "2026-2026-05-12-VAR-14",
@@ -7166,7 +7167,8 @@
       "teamScore": null,
       "teamFinish": null,
       "event": "Edina Invitational Day 2",
-      "startTimeUtc": null
+      "startTimeUtc": null,
+      "iWanaMakerId": 212514
     },
     {
       "id": "2026-2026-05-19-VAR-15",
@@ -7403,6 +7405,19 @@
       "time": "10:00 AM",
       "teamScore": null,
       "teamFinish": null
+    },
+    {
+      "id": "2026-JV-MAY11-PREP",
+      "dateISO": "2026-05-11",
+      "dateFormatted": "May 11",
+      "name": "Edina JV Prep Invite",
+      "level": "JV",
+      "course": "Oak Ridge Country Club",
+      "holes": 18,
+      "time": "1:30 PM",
+      "teamScore": null,
+      "teamFinish": null,
+      "iWanaMakerId": 212515
     },
     {
       "id": "2026-JV-MAY13",
