@@ -167,7 +167,10 @@ function Schedule() {
       { round: 1, id: '2026-2026-05-08-VAR-11', date: '2026-05-08', dateFormatted: 'May 8', course: 'Detroit Country Club', time: '9:00 AM', par: 71, teamScore: '297 (+13)' },
       { round: 2, id: '2026-2026-05-09-VAR-12', date: '2026-05-09', dateFormatted: 'May 9', course: 'Detroit Country Club', time: '9:00 AM', par: 71, teamScore: '299 (+15)' },
     ]},
-    { id: '2026-V11', date: '2026-05-11', dateFormatted: 'May 11-12', event: 'Edina Invitational',                 course: 'Oak Ridge Country Club',     level: 'Varsity', isMultiDay: true },
+    { id: '2026-V11', date: '2026-05-11', dateFormatted: 'May 11-12', event: 'Edina Invitational',                 course: 'Oak Ridge Country Club',     level: 'Varsity', isMultiDay: true, iWanaMakerId: 212514, par: 70, holes: 18, rounds: [
+      { round: 1, id: '2026-2026-05-11-VAR-13', date: '2026-05-11', dateFormatted: 'May 11', course: 'Oak Ridge Country Club', time: '1:30 PM', par: 70, teamScore: '289 (+9)' },
+      { round: 2, id: '2026-2026-05-12-VAR-14', date: '2026-05-12', dateFormatted: 'May 12', course: 'Oak Ridge Country Club', time: 'TBD', par: 70 },
+    ] },
     { id: '2026-V12', date: '2026-05-19', dateFormatted: 'May 19',    event: 'Lake Conference Championship',       course: 'Fox Hollow Golf Club',       level: 'Varsity', time: '8:00 AM' },
     { id: '2026-V13', date: '2026-05-26', dateFormatted: 'May 26-27', event: 'Section 6AAA Championship',          course: 'Meadows at Mystic Lake',     level: 'Varsity', isMultiDay: true },
     { id: '2026-V14', date: '2026-06-09', dateFormatted: 'Jun 9-10',  event: 'MSHSL AAA State Tournament',         course: 'Bunker Hills Golf Course',   level: 'Varsity', isMultiDay: true },
