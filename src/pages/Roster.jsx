@@ -134,6 +134,41 @@ function Roster() {
     return `${months[parseInt(dateMatch[1], 10) - 1]} ${parseInt(dateMatch[2], 10)}`
   }
 
+  // Build a set of in-progress multi-day events keyed by base event name.
+  // An event is "in-progress" when its Day-1/R1 entry has scores but the Day-2/R2/Final
+  // entry exists and is empty (no teamScore). Used to:
+  //   1. Append "(R1)" suffix to the event label on the player card
+  //   2. Force individualFinish=null on partial results (defense-in-depth vs stale data)
+  // Canonical presentation rule per Alfred 2026-05-12: never imply final result before final.
+  const inProgressMultiDayEvents = useMemo(() => {
+    const allEvents = !isPreSeason
+      ? [...(golfData.events2026 || []), ...(golfData.jvEvents2026 || [])]
+      : [...(golfData.events || []), ...(golfData.jvEvents || [])]
+
+    // Group events by canonical base name (stripped of Day 1/Day 2/Final/R1/R2 suffix)
+    const byBase = {}
+    const stripSuffix = (name) => name.replace(/ (Day [12]|Final|R[12]|Round [12])$/i, '').trim()
+    allEvents.forEach(e => {
+      if (!e.name) return
+      const base = stripSuffix(e.name)
+      if (!byBase[base]) byBase[base] = []
+      byBase[base].push(e)
+    })
+
+    const inProgress = new Set()
+    Object.entries(byBase).forEach(([base, entries]) => {
+      // Multi-day signal: multiple entries OR a single entry with isMultiDay/totalRounds>1
+      const isMulti = entries.length > 1
+        || entries.some(e => e.isMultiDay === true || (e.totalRounds && e.totalRounds > 1))
+      if (!isMulti) return
+      // In-progress = at least one entry has scores AND at least one entry has no teamScore
+      const someScored = entries.some(e => e.teamScore && String(e.teamScore).trim() && String(e.teamScore).toLowerCase() !== 'null')
+      const someEmpty = entries.some(e => !e.teamScore || !String(e.teamScore).trim() || String(e.teamScore).toLowerCase() === 'null')
+      if (someScored && someEmpty) inProgress.add(base)
+    })
+    return inProgress
+  }, [isPreSeason])
+
   // Build supplemental lookup from playerStats2026 for individualFinish + matchResult
   // Also resolves Four-Ball pair results: each player in a pair inherits the pair's result
   const playerStats2026Extra = useMemo(() => {
@@ -240,10 +275,12 @@ function Roster() {
       if (consumed.has(i)) continue
       const s = rawScores[i]
 
+      // Multi-round pair detection: "X Day 1" + ("X Day 2" OR "X Final")
       if (s.event.endsWith('Day 1')) {
         const baseName = s.event.replace(/ Day 1$/, '')
         const finalIdx = rawScores.findIndex((f, j) =>
-          j > i && !consumed.has(j) && f.event === `${baseName} Final`
+          j > i && !consumed.has(j)
+            && (f.event === `${baseName} Final` || f.event === `${baseName} Day 2`)
         )
 
         if (finalIdx !== -1) {
@@ -257,7 +294,32 @@ function Roster() {
 
           if (!hasR1 && !hasR2) continue
 
-          const totalScore = (hasR1 ? r1 : 0) + (hasR2 ? r2 : 0)
+          // In-progress: R1 in, R2 not yet. Render as standalone (R1) with no finish.
+          if (hasR1 && !hasR2) {
+            combined.push({
+              ...s,
+              event: `${baseName} (R1)`,
+              individualFinish: null,
+              matchResult: null,
+              isPartialRound: true,
+            })
+            continue
+          }
+
+          // R1 not yet, R2 in (rare/unusual): render R2 with same partial treatment
+          if (!hasR1 && hasR2) {
+            combined.push({
+              ...f,
+              event: `${baseName} (R2)`,
+              individualFinish: null,
+              matchResult: null,
+              isPartialRound: true,
+            })
+            continue
+          }
+
+          // Both rounds in: collapse to one row with full 36-hole total and final finish
+          const totalScore = r1 + r2
           const totalPar = (s.par || 0) + (f.par || 0)
           const totalHoles = (s.holes || 0) + (f.holes || 0)
 
@@ -276,6 +338,20 @@ function Roster() {
           })
           continue
         }
+      }
+
+      // No Day-1 suffix but event is in-progress multi-day (e.g. "Edina JV Prep Invite"
+      // where the heatmap uses one header for R1 and R2 hasn't been added yet).
+      // Append (R1) and force-null finish so we never imply a final result mid-event.
+      if (s.score !== null && inProgressMultiDayEvents.has(s.event)) {
+        combined.push({
+          ...s,
+          event: `${s.event} (R1)`,
+          individualFinish: null,
+          matchResult: null,
+          isPartialRound: true,
+        })
+        continue
       }
 
       if (s.score !== null) {

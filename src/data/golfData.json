@@ -5729,7 +5729,7 @@
       "teamFinish": null,
       "time": "1:30 PM",
       "status": "rained_out",
-      "statusNote": "Rained out \u2014 no makeup scheduled"
+      "statusNote": "Rained out — no makeup scheduled"
     },
     {
       "id": "2026-2026-05-01-VAR-8",
@@ -6006,7 +6006,7 @@
       "holes": 18,
       "par": 70,
       "teamScore": 289,
-      "teamFinish": "1st of 4",
+      "teamFinish": null,
       "players": [
         {
           "name": "Charlie Nielsen",
@@ -7016,103 +7016,103 @@
       "isJV": true,
       "format": "stroke",
       "teamScore": "297 (+17) / 300 (+20)",
-      "teamFinish": "1st & 2nd of 3 (R1)",
+      "teamFinish": null,
       "teams": [
         {
           "teamName": "Edina",
           "teamScore": 297,
-          "teamFinish": "1st of 3",
+          "teamFinish": null,
           "players": [
             {
               "name": "Max Romslo",
               "grade": "JR",
               "score": 72,
               "toPar": 2,
-              "individualFinish": "1st"
+              "individualFinish": null
             },
             {
               "name": "Ty Pankratz",
               "grade": "SR",
               "score": 74,
               "toPar": 4,
-              "individualFinish": "T4th"
+              "individualFinish": null
             },
             {
               "name": "Cole Considine",
               "grade": "SO",
               "score": 75,
               "toPar": 5,
-              "individualFinish": "T6th"
+              "individualFinish": null
             },
             {
               "name": "George Heinen",
               "grade": "JR",
               "score": 76,
               "toPar": 6,
-              "individualFinish": "T8th"
+              "individualFinish": null
             },
             {
               "name": "Elan Winnick",
               "grade": "JR",
               "score": 81,
               "toPar": 11,
-              "individualFinish": "13th"
+              "individualFinish": null
             },
             {
               "name": "Drew Schiena",
               "grade": "FR",
               "score": 86,
               "toPar": 16,
-              "individualFinish": "18th"
+              "individualFinish": null
             }
           ]
         },
         {
           "teamName": "Edina 2",
           "teamScore": 300,
-          "teamFinish": "2nd of 3",
+          "teamFinish": null,
           "players": [
             {
               "name": "Macallen Smith",
               "grade": "SR",
               "score": 73,
               "toPar": 3,
-              "individualFinish": "T2nd"
+              "individualFinish": null
             },
             {
               "name": "Hudson Strodl",
               "grade": "SR",
               "score": 73,
               "toPar": 3,
-              "individualFinish": "T2nd"
+              "individualFinish": null
             },
             {
               "name": "Ryan Geyer",
               "grade": "JR",
               "score": 74,
               "toPar": 4,
-              "individualFinish": "T4th"
+              "individualFinish": null
             },
             {
               "name": "William Smith",
               "grade": "JR",
               "score": 75,
               "toPar": 5,
-              "individualFinish": "T6th"
+              "individualFinish": null
             },
             {
               "name": "Carter Ringle",
               "grade": "SO",
               "score": 78,
               "toPar": 8,
-              "individualFinish": "T10th"
+              "individualFinish": null
             },
             {
               "name": "Ari Prickett",
               "grade": "JR",
               "score": 79,
               "toPar": 9,
-              "individualFinish": "T11th"
+              "individualFinish": null
             }
           ]
         }
@@ -7123,84 +7123,84 @@
           "grade": "JR",
           "score": 72,
           "toPar": 2,
-          "individualFinish": "1st"
+          "individualFinish": null
         },
         {
           "name": "Ty Pankratz",
           "grade": "SR",
           "score": 74,
           "toPar": 4,
-          "individualFinish": "T4th"
+          "individualFinish": null
         },
         {
           "name": "Cole Considine",
           "grade": "SO",
           "score": 75,
           "toPar": 5,
-          "individualFinish": "T6th"
+          "individualFinish": null
         },
         {
           "name": "George Heinen",
           "grade": "JR",
           "score": 76,
           "toPar": 6,
-          "individualFinish": "T8th"
+          "individualFinish": null
         },
         {
           "name": "Elan Winnick",
           "grade": "JR",
           "score": 81,
           "toPar": 11,
-          "individualFinish": "13th"
+          "individualFinish": null
         },
         {
           "name": "Drew Schiena",
           "grade": "FR",
           "score": 86,
           "toPar": 16,
-          "individualFinish": "18th"
+          "individualFinish": null
         },
         {
           "name": "Macallen Smith",
           "grade": "SR",
           "score": 73,
           "toPar": 3,
-          "individualFinish": "T2nd"
+          "individualFinish": null
         },
         {
           "name": "Hudson Strodl",
           "grade": "SR",
           "score": 73,
           "toPar": 3,
-          "individualFinish": "T2nd"
+          "individualFinish": null
         },
         {
           "name": "Ryan Geyer",
           "grade": "JR",
           "score": 74,
           "toPar": 4,
-          "individualFinish": "T4th"
+          "individualFinish": null
         },
         {
           "name": "William Smith",
           "grade": "JR",
           "score": 75,
           "toPar": 5,
-          "individualFinish": "T6th"
+          "individualFinish": null
         },
         {
           "name": "Carter Ringle",
           "grade": "SO",
           "score": 78,
           "toPar": 8,
-          "individualFinish": "T10th"
+          "individualFinish": null
         },
         {
           "name": "Ari Prickett",
           "grade": "JR",
           "score": 79,
           "toPar": 9,
-          "individualFinish": "T11th"
+          "individualFinish": null
         }
       ],
       "isMultiDay": true,
@@ -7334,7 +7334,7 @@
       "startTimeUtc": null,
       "time": "1:30 PM",
       "status": "rained_out",
-      "statusNote": "Rained out \u2014 no makeup scheduled"
+      "statusNote": "Rained out — no makeup scheduled"
     },
     {
       "id": "2026-2026-05-01-VAR-8",
@@ -8937,7 +8937,7 @@
           "par": 70,
           "score": 86,
           "toPar": 16,
-          "individualFinish": "18th"
+          "individualFinish": null
         }
       ],
       "average": 72.0,
@@ -8996,7 +8996,7 @@
           "par": 70,
           "score": 73,
           "toPar": 3,
-          "individualFinish": "T2nd"
+          "individualFinish": null
         }
       ],
       "average": 74.0,
@@ -9030,7 +9030,7 @@
           "par": 70,
           "score": 74,
           "toPar": 4,
-          "individualFinish": "T4th"
+          "individualFinish": null
         }
       ],
       "average": 79.0,
@@ -9069,7 +9069,7 @@
           "par": 70,
           "score": 74,
           "toPar": 4,
-          "individualFinish": "T4th"
+          "individualFinish": null
         }
       ],
       "average": 79.0,
@@ -9108,7 +9108,7 @@
           "par": 70,
           "score": 81,
           "toPar": 11,
-          "individualFinish": "13th"
+          "individualFinish": null
         }
       ],
       "average": 80.0,
@@ -9163,7 +9163,7 @@
           "par": 70,
           "score": 73,
           "toPar": 3,
-          "individualFinish": "T2nd"
+          "individualFinish": null
         }
       ]
     },
@@ -9219,7 +9219,7 @@
           "par": 70,
           "score": 75,
           "toPar": 5,
-          "individualFinish": "T6th"
+          "individualFinish": null
         }
       ]
     },
@@ -9381,7 +9381,7 @@
           "par": 70,
           "score": 72,
           "toPar": 2,
-          "individualFinish": "1st"
+          "individualFinish": null
         }
       ],
       "average": 78.0,
@@ -9436,7 +9436,7 @@
           "par": 70,
           "score": 76,
           "toPar": 6,
-          "individualFinish": "T8th"
+          "individualFinish": null
         }
       ]
     },
@@ -9467,7 +9467,7 @@
           "par": 70,
           "score": 75,
           "toPar": 5,
-          "individualFinish": "T6th"
+          "individualFinish": null
         }
       ]
     },
@@ -9578,7 +9578,7 @@
           "par": 70,
           "score": 78,
           "toPar": 8,
-          "individualFinish": "T10th"
+          "individualFinish": null
         }
       ]
     },
@@ -9604,7 +9604,7 @@
           "par": 70,
           "score": 79,
           "toPar": 9,
-          "individualFinish": "T11th"
+          "individualFinish": null
         }
       ]
     },
