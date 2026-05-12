@@ -6711,18 +6711,63 @@
       "date": "2026-05-11T00:00:00.000Z",
       "dateFormatted": "May 11",
       "dateISO": "2026-05-11",
-      "name": "JV Lake Conference @ Wild Marsh",
+      "name": "JV Invitational @ Wild Marsh",
       "level": "JV",
       "course": "Wild Marsh Golf Club",
       "holes": 18,
-      "par": 72,
-      "teamScore": null,
-      "teamFinish": null,
+      "par": 71,
+      "teamScore": 303,
+      "teamFinish": "2nd of 8",
       "time": "10:00 AM",
       "format": "stroke",
-      "teamResult": null,
+      "teamResult": "2nd of 8",
       "teamRecord": null,
-      "isJV": true
+      "isJV": true,
+      "iWanaMakerId": 212390,
+      "players": [
+        {
+          "name": "Mason Catron",
+          "grade": "8",
+          "score": 73,
+          "toPar": 2,
+          "individualFinish": "T1st"
+        },
+        {
+          "name": "Randy Dann",
+          "grade": "10",
+          "score": 74,
+          "toPar": 3,
+          "individualFinish": "T4th"
+        },
+        {
+          "name": "Crosby Pote",
+          "grade": "8",
+          "score": 77,
+          "toPar": 6,
+          "individualFinish": "10th"
+        },
+        {
+          "name": "Mason Hughes",
+          "grade": "9",
+          "score": 79,
+          "toPar": 8,
+          "individualFinish": "T16th"
+        },
+        {
+          "name": "Mason Schultes",
+          "grade": "11",
+          "score": 84,
+          "toPar": 13,
+          "individualFinish": "T26th"
+        },
+        {
+          "name": "Henry Applebaum",
+          "grade": "9",
+          "score": 84,
+          "toPar": 13,
+          "individualFinish": "T26th"
+        }
+      ]
     },
     {
       "id": "2026-2026-05-13-JV-9",
@@ -6964,7 +7009,7 @@
       "level": "JV",
       "course": "Oak Ridge Country Club",
       "holes": 18,
-      "par": 72,
+      "par": 70,
       "iWanaMakerId": 212515,
       "isJV": true,
       "format": "stroke",
@@ -6980,42 +7025,42 @@
               "name": "Max Romslo",
               "grade": "JR",
               "score": 72,
-              "toPar": 0,
+              "toPar": 2,
               "individualFinish": "1st"
             },
             {
               "name": "Ty Pankratz",
               "grade": "SR",
               "score": 74,
-              "toPar": 2,
+              "toPar": 4,
               "individualFinish": "T4th"
             },
             {
               "name": "Cole Considine",
               "grade": "SO",
               "score": 75,
-              "toPar": 3,
+              "toPar": 5,
               "individualFinish": "T6th"
             },
             {
               "name": "George Heinen",
               "grade": "JR",
               "score": 76,
-              "toPar": 4,
+              "toPar": 6,
               "individualFinish": "T8th"
             },
             {
               "name": "Elan Winnick",
               "grade": "JR",
               "score": 81,
-              "toPar": 9,
+              "toPar": 11,
               "individualFinish": "13th"
             },
             {
               "name": "Drew Schiena",
               "grade": "FR",
               "score": 86,
-              "toPar": 14,
+              "toPar": 16,
               "individualFinish": "18th"
             }
           ]
@@ -7029,42 +7074,42 @@
               "name": "Macallen Smith",
               "grade": "SR",
               "score": 73,
-              "toPar": 1,
+              "toPar": 3,
               "individualFinish": "T2nd"
             },
             {
               "name": "Hudson Strodl",
               "grade": "SR",
               "score": 73,
-              "toPar": 1,
+              "toPar": 3,
               "individualFinish": "T2nd"
             },
             {
               "name": "Ryan Geyer",
               "grade": "JR",
               "score": 74,
-              "toPar": 2,
+              "toPar": 4,
               "individualFinish": "T4th"
             },
             {
               "name": "William Smith",
               "grade": "JR",
               "score": 75,
-              "toPar": 3,
+              "toPar": 5,
               "individualFinish": "T6th"
             },
             {
               "name": "Carter Ringle",
               "grade": "SO",
               "score": 78,
-              "toPar": 6,
+              "toPar": 8,
               "individualFinish": "T10th"
             },
             {
               "name": "Ari Prickett",
               "grade": "JR",
               "score": 79,
-              "toPar": 7,
+              "toPar": 9,
               "individualFinish": "T11th"
             }
           ]
@@ -7075,84 +7120,84 @@
           "name": "Max Romslo",
           "grade": "JR",
           "score": 72,
-          "toPar": 0,
+          "toPar": 2,
           "individualFinish": "1st"
         },
         {
           "name": "Ty Pankratz",
           "grade": "SR",
           "score": 74,
-          "toPar": 2,
+          "toPar": 4,
           "individualFinish": "T4th"
         },
         {
           "name": "Cole Considine",
           "grade": "SO",
           "score": 75,
-          "toPar": 3,
+          "toPar": 5,
           "individualFinish": "T6th"
         },
         {
           "name": "George Heinen",
           "grade": "JR",
           "score": 76,
-          "toPar": 4,
+          "toPar": 6,
           "individualFinish": "T8th"
         },
         {
           "name": "Elan Winnick",
           "grade": "JR",
           "score": 81,
-          "toPar": 9,
+          "toPar": 11,
           "individualFinish": "13th"
         },
         {
           "name": "Drew Schiena",
           "grade": "FR",
           "score": 86,
-          "toPar": 14,
+          "toPar": 16,
           "individualFinish": "18th"
         },
         {
           "name": "Macallen Smith",
           "grade": "SR",
           "score": 73,
-          "toPar": 1,
+          "toPar": 3,
           "individualFinish": "T2nd"
         },
         {
           "name": "Hudson Strodl",
           "grade": "SR",
           "score": 73,
-          "toPar": 1,
+          "toPar": 3,
           "individualFinish": "T2nd"
         },
         {
           "name": "Ryan Geyer",
           "grade": "JR",
           "score": 74,
-          "toPar": 2,
+          "toPar": 4,
           "individualFinish": "T4th"
         },
         {
           "name": "William Smith",
           "grade": "JR",
           "score": 75,
-          "toPar": 3,
+          "toPar": 5,
           "individualFinish": "T6th"
         },
         {
           "name": "Carter Ringle",
           "grade": "SO",
           "score": 78,
-          "toPar": 6,
+          "toPar": 8,
           "individualFinish": "T10th"
         },
         {
           "name": "Ari Prickett",
           "grade": "JR",
           "score": 79,
-          "toPar": 7,
+          "toPar": 9,
           "individualFinish": "T11th"
         }
       ]
@@ -7639,13 +7684,14 @@
       "id": "2026-JV-MAY11",
       "dateISO": "2026-05-11",
       "dateFormatted": "May 11",
-      "name": "JV Lake Conference @ Wild Marsh",
+      "name": "JV Invitational @ Wild Marsh",
       "level": "JV",
       "course": "Wild Marsh Golf Club",
       "holes": 18,
       "time": "10:00 AM",
       "teamScore": null,
-      "teamFinish": null
+      "teamFinish": null,
+      "iWanaMakerId": 212390
     },
     {
       "id": "2026-JV-MAY11-PREP",
@@ -7983,7 +8029,7 @@
       "dateFormatted": "May 11",
       "date": "2026-05-11",
       "course": "Oak Ridge Country Club",
-      "teamScore": "297 (+9)",
+      "teamScore": "297 (+17)",
       "finish": "1st of 3",
       "level": "JV",
       "isJV": true
@@ -7994,8 +8040,19 @@
       "dateFormatted": "May 11",
       "date": "2026-05-11",
       "course": "Oak Ridge Country Club",
-      "teamScore": "300 (+12)",
+      "teamScore": "300 (+20)",
       "finish": "2nd of 3",
+      "level": "JV",
+      "isJV": true
+    },
+    {
+      "event": "JV Invitational @ Wild Marsh",
+      "edinaTeamName": "Edina",
+      "dateFormatted": "May 11",
+      "date": "2026-05-11",
+      "course": "Wild Marsh Golf Club",
+      "teamScore": "303 (+19)",
+      "finish": "2nd of 8",
       "level": "JV",
       "isJV": true
     }
@@ -8839,9 +8896,9 @@
           "event": "Edina JV Prep Invite",
           "eventDate": "2026-05-11",
           "holes": 18,
-          "par": 72,
+          "par": 70,
           "score": 86,
-          "toPar": 14,
+          "toPar": 16,
           "individualFinish": "18th"
         }
       ],
@@ -8898,9 +8955,9 @@
           "event": "Edina JV Prep Invite",
           "eventDate": "2026-05-11",
           "holes": 18,
-          "par": 72,
+          "par": 70,
           "score": 73,
-          "toPar": 1,
+          "toPar": 3,
           "individualFinish": "T2nd"
         }
       ],
@@ -8932,9 +8989,9 @@
           "event": "Edina JV Prep Invite",
           "eventDate": "2026-05-11",
           "holes": 18,
-          "par": 72,
+          "par": 70,
           "score": 74,
-          "toPar": 2,
+          "toPar": 4,
           "individualFinish": "T4th"
         }
       ],
@@ -8971,9 +9028,9 @@
           "event": "Edina JV Prep Invite",
           "eventDate": "2026-05-11",
           "holes": 18,
-          "par": 72,
+          "par": 70,
           "score": 74,
-          "toPar": 2,
+          "toPar": 4,
           "individualFinish": "T4th"
         }
       ],
@@ -9010,9 +9067,9 @@
           "event": "Edina JV Prep Invite",
           "eventDate": "2026-05-11",
           "holes": 18,
-          "par": 72,
+          "par": 70,
           "score": 81,
-          "toPar": 9,
+          "toPar": 11,
           "individualFinish": "13th"
         }
       ],
@@ -9065,9 +9122,9 @@
           "event": "Edina JV Prep Invite",
           "eventDate": "2026-05-11",
           "holes": 18,
-          "par": 72,
+          "par": 70,
           "score": 73,
-          "toPar": 1,
+          "toPar": 3,
           "individualFinish": "T2nd"
         }
       ]
@@ -9121,9 +9178,9 @@
           "event": "Edina JV Prep Invite",
           "eventDate": "2026-05-11",
           "holes": 18,
-          "par": 72,
+          "par": 70,
           "score": 75,
-          "toPar": 3,
+          "toPar": 5,
           "individualFinish": "T6th"
         }
       ]
@@ -9142,6 +9199,18 @@
           "score": 91,
           "individualFinish": "T67"
         }
+      ],
+      "events": [
+        {
+          "eventId": "2026-2026-05-11-JV-8",
+          "event": "JV Invitational @ Wild Marsh",
+          "eventDate": "2026-05-11",
+          "holes": 18,
+          "par": 71,
+          "score": 84,
+          "toPar": 13,
+          "individualFinish": "T26th"
+        }
       ]
     },
     {
@@ -9157,6 +9226,18 @@
           "eventId": "2026-JV0b",
           "score": 80,
           "individualFinish": "10th"
+        }
+      ],
+      "events": [
+        {
+          "eventId": "2026-2026-05-11-JV-8",
+          "event": "JV Invitational @ Wild Marsh",
+          "eventDate": "2026-05-11",
+          "holes": 18,
+          "par": 71,
+          "score": 74,
+          "toPar": 3,
+          "individualFinish": "T4th"
         }
       ]
     },
@@ -9174,6 +9255,18 @@
           "score": 75,
           "individualFinish": "3rd"
         }
+      ],
+      "events": [
+        {
+          "eventId": "2026-2026-05-11-JV-8",
+          "event": "JV Invitational @ Wild Marsh",
+          "eventDate": "2026-05-11",
+          "holes": 18,
+          "par": 71,
+          "score": 73,
+          "toPar": 2,
+          "individualFinish": "T1st"
+        }
       ]
     },
     {
@@ -9184,6 +9277,18 @@
           "eventId": "2026-JV0",
           "score": 85,
           "individualFinish": "T19"
+        }
+      ],
+      "events": [
+        {
+          "eventId": "2026-2026-05-11-JV-8",
+          "event": "JV Invitational @ Wild Marsh",
+          "eventDate": "2026-05-11",
+          "holes": 18,
+          "par": 71,
+          "score": 79,
+          "toPar": 8,
+          "individualFinish": "T16th"
         }
       ]
     },
@@ -9235,9 +9340,9 @@
           "event": "Edina JV Prep Invite",
           "eventDate": "2026-05-11",
           "holes": 18,
-          "par": 72,
+          "par": 70,
           "score": 72,
-          "toPar": 0,
+          "toPar": 2,
           "individualFinish": "1st"
         }
       ],
@@ -9290,9 +9395,9 @@
           "event": "Edina JV Prep Invite",
           "eventDate": "2026-05-11",
           "holes": 18,
-          "par": 72,
+          "par": 70,
           "score": 76,
-          "toPar": 4,
+          "toPar": 6,
           "individualFinish": "T8th"
         }
       ]
@@ -9321,9 +9426,9 @@
           "event": "Edina JV Prep Invite",
           "eventDate": "2026-05-11",
           "holes": 18,
-          "par": 72,
+          "par": 70,
           "score": 75,
-          "toPar": 3,
+          "toPar": 5,
           "individualFinish": "T6th"
         }
       ]
@@ -9376,6 +9481,18 @@
           "score": 83,
           "individualFinish": "T18"
         }
+      ],
+      "events": [
+        {
+          "eventId": "2026-2026-05-11-JV-8",
+          "event": "JV Invitational @ Wild Marsh",
+          "eventDate": "2026-05-11",
+          "holes": 18,
+          "par": 71,
+          "score": 77,
+          "toPar": 6,
+          "individualFinish": "10th"
+        }
       ]
     },
     {
@@ -9420,9 +9537,9 @@
           "event": "Edina JV Prep Invite",
           "eventDate": "2026-05-11",
           "holes": 18,
-          "par": 72,
+          "par": 70,
           "score": 78,
-          "toPar": 6,
+          "toPar": 8,
           "individualFinish": "T10th"
         }
       ]
@@ -9446,9 +9563,9 @@
           "event": "Edina JV Prep Invite",
           "eventDate": "2026-05-11",
           "holes": 18,
-          "par": 72,
+          "par": 70,
           "score": 79,
-          "toPar": 7,
+          "toPar": 9,
           "individualFinish": "T11th"
         }
       ]
@@ -9466,6 +9583,18 @@
           "eventId": "2026-JV0b",
           "score": 85,
           "individualFinish": "T26"
+        }
+      ],
+      "events": [
+        {
+          "eventId": "2026-2026-05-11-JV-8",
+          "event": "JV Invitational @ Wild Marsh",
+          "eventDate": "2026-05-11",
+          "holes": 18,
+          "par": 71,
+          "score": 84,
+          "toPar": 13,
+          "individualFinish": "T26th"
         }
       ]
     }
@@ -9574,7 +9703,7 @@
       "05/09 - Northwest Classic Day 2",
       "05/09 - JV Invitational Day 2",
       "05/11 - Edina Invitational Day 1",
-      "05/11 - JV Lake Conference @ Wild Marsh",
+      "05/11 - JV Invitational @ Wild Marsh",
       "05/11 - Edina JV Prep Invite",
       "05/12 - Edina Invitational Day 2",
       "05/13 - JV Conference @ Riverwood",
