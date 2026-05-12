@@ -203,7 +203,10 @@ function Schedule() {
       ]},
     ]},
     { id: '2026-JV-MAY11', date: '2026-05-11', dateFormatted: 'May 11', event: 'JV Invitational @ Wild Marsh',    course: 'Wild Marsh Golf Club',       level: 'JV', time: '10:00 AM', par: 71, holes: 18, iWanaMakerId: 212390, teamScore: '303 (+19)', teamFinish: '2nd of 8' },
-    { id: '2026-JV-MAY11-PREP', date: '2026-05-11', dateFormatted: 'May 11', event: 'Edina JV Prep Invite',           course: 'Oak Ridge Country Club',     level: 'JV', time: '1:30 PM', par: 70, holes: 18, iWanaMakerId: 212515, teamScore: '297 (+17) / 300 (+20)', teamFinish: '1st & 2nd of 3' },
+    { id: '2026-JV-MAY11-PREP', date: '2026-05-11', dateFormatted: 'May 11-12', event: 'Edina JV Prep Invite',           course: 'Oak Ridge Country Club',     level: 'JV', isMultiDay: true, iWanaMakerId: 212515, par: 70, holes: 18, rounds: [
+      { round: 1, id: '2026-JV-MAY11-PREP', date: '2026-05-11', dateFormatted: 'May 11', course: 'Oak Ridge Country Club', time: '1:30 PM', par: 70, teamScore: '297 (+17) / 300 (+20)' },
+      { round: 2, id: '2026-JV-MAY12-PREP', date: '2026-05-12', dateFormatted: 'May 12', course: 'Oak Ridge Country Club', time: 'TBD', par: 70 },
+    ] },
     { id: '2026-JV-MAY13', date: '2026-05-13', dateFormatted: 'May 13', event: 'JV Conference @ Riverwood',          course: 'Riverwood Golf Course',      level: 'JV', time: '10:00 AM' },
     { id: '2026-JV6', date: '2026-05-14', dateFormatted: 'May 14',    event: 'Boys JV Game',                       course: 'Shamrock Golf Course',       level: 'JV', time: '8:30 AM' },
     { id: '2026-JV7', date: '2026-05-20', dateFormatted: 'May 20',    event: 'Boys JV Invitational',               course: 'Dahlgreen Golf Course',      level: 'JV', time: '8:00 AM' },

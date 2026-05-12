@@ -7015,8 +7015,8 @@
       "iWanaMakerId": 212515,
       "isJV": true,
       "format": "stroke",
-      "teamScore": "297 / 300",
-      "teamFinish": "1st & 2nd of 3",
+      "teamScore": "297 (+17) / 300 (+20)",
+      "teamFinish": "1st & 2nd of 3 (R1)",
       "teams": [
         {
           "teamName": "Edina",
@@ -7202,7 +7202,30 @@
           "toPar": 9,
           "individualFinish": "T11th"
         }
-      ]
+      ],
+      "isMultiDay": true,
+      "round": 1,
+      "totalRounds": 2,
+      "event": "Edina JV Prep Invite"
+    },
+    {
+      "id": "2026-JV-MAY12-PREP",
+      "date": "2026-05-12T00:00:00.000Z",
+      "dateFormatted": "May 12",
+      "dateISO": "2026-05-12",
+      "name": "Edina JV Prep Invite",
+      "level": "JV",
+      "course": "Oak Ridge Country Club",
+      "holes": 18,
+      "par": 70,
+      "iWanaMakerId": 212515,
+      "isJV": true,
+      "isMultiDay": true,
+      "round": 2,
+      "totalRounds": 2,
+      "format": "stroke",
+      "teamScore": null,
+      "teamFinish": null
     }
   ],
   "schedule2026": [
@@ -7834,6 +7857,19 @@
           "pairs": []
         }
       ]
+    },
+    {
+      "id": "2026-JV-MAY12-PREP",
+      "dateISO": "2026-05-12",
+      "dateFormatted": "May 12",
+      "name": "Edina JV Prep Invite",
+      "level": "JV",
+      "course": "Oak Ridge Country Club",
+      "holes": 18,
+      "time": "TBD",
+      "iWanaMakerId": 212515,
+      "isMultiDay": true,
+      "round": 2
     }
   ],
   "seasonResults2026": [
@@ -8028,22 +8064,22 @@
     {
       "event": "Edina JV Prep Invite",
       "edinaTeamName": "Edina",
-      "dateFormatted": "May 11",
+      "dateFormatted": "May 11 (R1)",
       "date": "2026-05-11",
       "course": "Oak Ridge Country Club",
       "teamScore": "297 (+17)",
-      "finish": "1st of 3",
+      "finish": "1st of 3 (R1)",
       "level": "JV",
       "isJV": true
     },
     {
       "event": "Edina JV Prep Invite",
       "edinaTeamName": "Edina 2",
-      "dateFormatted": "May 11",
+      "dateFormatted": "May 11 (R1)",
       "date": "2026-05-11",
       "course": "Oak Ridge Country Club",
       "teamScore": "300 (+20)",
-      "finish": "2nd of 3",
+      "finish": "2nd of 3 (R1)",
       "level": "JV",
       "isJV": true
     },
