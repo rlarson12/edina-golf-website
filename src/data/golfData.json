@@ -6006,7 +6006,7 @@
       "holes": 18,
       "par": 70,
       "teamScore": 289,
-      "teamFinish": null,
+      "teamFinish": "1st of 4",
       "players": [
         {
           "name": "Charlie Nielsen",
@@ -6045,7 +6045,8 @@
           "toPar": 10
         }
       ],
-      "iWanaMakerId": 212514
+      "iWanaMakerId": 212514,
+      "fieldSize": 4
     },
     {
       "id": "2026-2026-05-12-VAR-14",
@@ -6058,7 +6059,8 @@
       "holes": 18,
       "par": 70,
       "teamScore": null,
-      "teamFinish": null
+      "teamFinish": null,
+      "iWanaMakerId": 212514
     },
     {
       "id": "2026-2026-05-19-VAR-15",
