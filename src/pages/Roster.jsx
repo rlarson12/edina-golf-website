@@ -340,9 +340,64 @@ function Roster() {
         }
       }
 
-      // No Day-1 suffix but event is in-progress multi-day (e.g. "Edina JV Prep Invite"
-      // where the heatmap uses one header for R1 and R2 hasn't been added yet).
-      // Append (R1) and force-null finish so we never imply a final result mid-event.
+      // No Day-1 suffix but the SAME event name appears in a later header column
+      // (e.g. JV Prep Invite at heatmap idx N for R1 and idx N+1 for R2 — both labeled
+      // identically without Day 1/Day 2 suffix). Collapse the pair.
+      const dupIdx = rawScores.findIndex((f, j) =>
+        j > i && !consumed.has(j) && f.event === s.event
+      )
+      if (dupIdx !== -1) {
+        const f = rawScores[dupIdx]
+        const r1 = s.score
+        const r2 = f.score
+        const hasR1 = r1 !== null
+        const hasR2 = r2 !== null
+
+        if (!hasR1 && !hasR2) {
+          consumed.add(dupIdx)
+          continue
+        }
+
+        // Both rounds in — collapse to 36-hole row.
+        if (hasR1 && hasR2) {
+          consumed.add(dupIdx)
+          const totalScore = r1 + r2
+          const totalPar = (s.par || 0) + (f.par || 0)
+          const totalHoles = (s.holes || 0) + (f.holes || 0)
+          combined.push({
+            date: `${s.date}`,
+            event: s.event,
+            score: totalScore,
+            rounds: [r1, r2],
+            roundPars: [s.par, f.par],
+            par: totalPar,
+            holes: totalHoles,
+            toPar: totalPar ? totalScore - totalPar : null,
+            isMultiRound: true,
+            // FINAL finish lives on the Day-2 entry (later date). Prefer f over s.
+            individualFinish: f.individualFinish || s.individualFinish || null,
+            matchResult: f.matchResult || s.matchResult || null,
+          })
+          continue
+        }
+
+        // Only one round has a score — event is still in progress.
+        const present = hasR1 ? s : f
+        const roundLabel = hasR1 ? 'R1' : 'R2'
+        consumed.add(dupIdx)
+        combined.push({
+          ...present,
+          event: `${s.event} (${roundLabel})`,
+          individualFinish: null,
+          matchResult: null,
+          isPartialRound: true,
+        })
+        continue
+      }
+
+      // No Day-1 suffix and no duplicate later — but event is flagged as in-progress
+      // multi-day via events2026/jvEvents2026 metadata (R2 entry exists but no
+      // heatmap header yet). Append (R1) and force-null finish.
       if (s.score !== null && inProgressMultiDayEvents.has(s.event)) {
         combined.push({
           ...s,
