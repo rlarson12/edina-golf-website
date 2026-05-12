@@ -9198,18 +9198,18 @@
           "eventId": "2026-JV3",
           "score": 91,
           "individualFinish": "T67"
-        }
-      ],
-      "events": [
+        },
         {
           "eventId": "2026-2026-05-11-JV-8",
-          "event": "JV Invitational @ Wild Marsh",
           "eventDate": "2026-05-11",
+          "eventName": "JV Invitational @ Wild Marsh",
+          "courseName": "Wild Marsh Golf Club",
           "holes": 18,
           "par": 71,
           "score": 84,
           "toPar": 13,
-          "individualFinish": "T26th"
+          "individualFinish": "T26th",
+          "counting": true
         }
       ]
     },
@@ -9226,18 +9226,18 @@
           "eventId": "2026-JV0b",
           "score": 80,
           "individualFinish": "10th"
-        }
-      ],
-      "events": [
+        },
         {
           "eventId": "2026-2026-05-11-JV-8",
-          "event": "JV Invitational @ Wild Marsh",
           "eventDate": "2026-05-11",
+          "eventName": "JV Invitational @ Wild Marsh",
+          "courseName": "Wild Marsh Golf Club",
           "holes": 18,
           "par": 71,
           "score": 74,
           "toPar": 3,
-          "individualFinish": "T4th"
+          "individualFinish": "T4th",
+          "counting": true
         }
       ]
     },
@@ -9254,18 +9254,18 @@
           "eventId": "2026-JV0b",
           "score": 75,
           "individualFinish": "3rd"
-        }
-      ],
-      "events": [
+        },
         {
           "eventId": "2026-2026-05-11-JV-8",
-          "event": "JV Invitational @ Wild Marsh",
           "eventDate": "2026-05-11",
+          "eventName": "JV Invitational @ Wild Marsh",
+          "courseName": "Wild Marsh Golf Club",
           "holes": 18,
           "par": 71,
           "score": 73,
           "toPar": 2,
-          "individualFinish": "T1st"
+          "individualFinish": "T1st",
+          "counting": true
         }
       ]
     },
@@ -9277,18 +9277,18 @@
           "eventId": "2026-JV0",
           "score": 85,
           "individualFinish": "T19"
-        }
-      ],
-      "events": [
+        },
         {
           "eventId": "2026-2026-05-11-JV-8",
-          "event": "JV Invitational @ Wild Marsh",
           "eventDate": "2026-05-11",
+          "eventName": "JV Invitational @ Wild Marsh",
+          "courseName": "Wild Marsh Golf Club",
           "holes": 18,
           "par": 71,
           "score": 79,
           "toPar": 8,
-          "individualFinish": "T16th"
+          "individualFinish": "T16th",
+          "counting": true
         }
       ]
     },
@@ -9480,18 +9480,18 @@
           "eventId": "2026-JV0b",
           "score": 83,
           "individualFinish": "T18"
-        }
-      ],
-      "events": [
+        },
         {
           "eventId": "2026-2026-05-11-JV-8",
-          "event": "JV Invitational @ Wild Marsh",
           "eventDate": "2026-05-11",
+          "eventName": "JV Invitational @ Wild Marsh",
+          "courseName": "Wild Marsh Golf Club",
           "holes": 18,
           "par": 71,
           "score": 77,
           "toPar": 6,
-          "individualFinish": "10th"
+          "individualFinish": "10th",
+          "counting": true
         }
       ]
     },
@@ -9583,18 +9583,18 @@
           "eventId": "2026-JV0b",
           "score": 85,
           "individualFinish": "T26"
-        }
-      ],
-      "events": [
+        },
         {
           "eventId": "2026-2026-05-11-JV-8",
-          "event": "JV Invitational @ Wild Marsh",
           "eventDate": "2026-05-11",
+          "eventName": "JV Invitational @ Wild Marsh",
+          "courseName": "Wild Marsh Golf Club",
           "holes": 18,
           "par": 71,
           "score": 84,
           "toPar": 13,
-          "individualFinish": "T26th"
+          "individualFinish": "T26th",
+          "counting": true
         }
       ]
     }
