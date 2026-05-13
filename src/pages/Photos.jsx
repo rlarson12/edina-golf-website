@@ -10,8 +10,9 @@ function Photos() {
       id: '2026-1',
       title: 'Team Photos',
       date: '2026 Season',
-      cover: '/images/2026/may-team-portrait-6.webp',
+      cover: '/images/2026/senior-night-2026.webp',
       photos: [
+        { src: '/images/2026/senior-night-2026.webp', caption: 'Seniors on Senior Night — 2026.' },
         { src: '/images/2026/may-team-portrait-6.webp', caption: 'Team portrait — 2026 season.' },
         { src: '/images/2026/team-edinburgh-medals-landscape.webp', caption: 'Michael Vernon, Peter Bennett, Sander Ohe, Chase Larson, Charlie Nielsen — 1st place at The Preview, Edinburgh USA, Apr 24-25.' },
         { src: '/images/2026/team-edinburgh-medals.webp', caption: 'Michael Vernon, Peter Bennett, Sander Ohe, Chase Larson, Charlie Nielsen — 1st place at The Preview, Edinburgh USA, Apr 24-25.' },
