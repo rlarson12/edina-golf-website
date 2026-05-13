@@ -16,6 +16,7 @@ function Photos() {
         { src: '/images/2026/team-edinburgh-medals.webp', caption: 'Michael Vernon, Peter Bennett, Sander Ohe, Chase Larson, Charlie Nielsen — 1st place at The Preview, Edinburgh USA, Apr 24-25.' },
         { src: '/images/action/varsity-team-chaska.webp', caption: 'Sander Ohe, David Colby, Michael Vernon, Charlie Nielsen, Chase Larson, Peter Bennett — Lake Conference Tournament #1, Apr 20.' },
         { src: '/images/2026/may12-team-medals.webp', caption: 'Team celebration with medals — 2026 season.' },
+        { src: '/images/2026/may-team-silhouette-tee.webp', caption: 'Team silhouette on the tee — 2026 season.' },
         { src: '/images/2026/may12-walking-pond.webp', caption: 'On the course — 2026 season.' },
         { src: '/images/2026/may12-team-green.webp', caption: 'Team on the course — 2026 season.' },
       ],
@@ -57,14 +58,25 @@ function Photos() {
         { src: '/images/2026/may12-iron-shadow.webp', caption: 'Iron shot — 2026 season.' },
         { src: '/images/2026/may12-fairway-duo.webp', caption: 'Down the fairway — 2026 season.' },
 
+        { src: '/images/2026/may-par3-over-water.webp', caption: 'Par 3 over water — 2026 season.' },
+        { src: '/images/2026/may-two-on-green.webp', caption: 'On the green — 2026 season.' },
+        { src: '/images/2026/may-reading-putt.webp', caption: 'Reading the putt — 2026 season.' },
+        { src: '/images/2026/may-lining-up-putt.webp', caption: 'Lining up the putt — 2026 season.' },
+        { src: '/images/2026/may-iron-ball-flight.webp', caption: 'Iron shot, ball in flight — 2026 season.' },
+        { src: '/images/2026/may-tee-followthrough.webp', caption: 'Off the tee — 2026 season.' },
+
       ],
     },
     {
       id: '2026-3',
       title: 'Off Course',
       date: '2026 Season',
-      cover: null,
-      photos: [],
+      cover: '/images/2026/may-walking-water-cinematic.webp',
+      photos: [
+        { src: '/images/2026/may-walking-water-cinematic.webp', caption: 'Walking past the water — 2026 season.' },
+        { src: '/images/2026/may-player-coach-convo.webp', caption: 'On the course conversation — 2026 season.' },
+        { src: '/images/2026/may-scenic-vista.webp', caption: 'Course views — 2026 season.' },
+      ],
     },
   ]
 
