@@ -69,18 +69,11 @@ function Photos() {
         { src: '/images/2026/may-driver-followthrough-hero.webp', caption: 'Driver follow-through — 2026 season.' },
         { src: '/images/2026/may-tee-backswing-down-fairway.webp', caption: 'Top of the backswing — 2026 season.' },
 
-      ],
-    },
-    {
-      id: '2026-3',
-      title: 'Off Course',
-      date: '2026 Season',
-      cover: '/images/2026/may-walking-water-cinematic.webp',
-      photos: [
         { src: '/images/2026/may-walking-water-cinematic.webp', caption: 'Walking past the water — 2026 season.' },
-        { src: '/images/2026/may-player-coach-convo.webp', caption: 'On the course conversation — 2026 season.' },
+        { src: '/images/2026/may-player-coach-convo.webp', caption: 'On-course conversation — 2026 season.' },
         { src: '/images/2026/may-scenic-vista.webp', caption: 'Course views — 2026 season.' },
         { src: '/images/2026/may-green-fountain-scenic.webp', caption: 'Approach to the green — 2026 season.' },
+
       ],
     },
   ]
