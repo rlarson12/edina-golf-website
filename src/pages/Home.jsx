@@ -89,20 +89,22 @@ function Home() {
     ]
   }, [])
 
-  // Get recent varsity results (most recent first) — 2026 season
+  // Get recent varsity results (most recent first by date) — 2026 season
   const recentVarsityResults = useMemo(() => {
     return (golfData.events2026 || [])
       .filter(r => r.teamScore)
-      .slice(-3)
-      .reverse()
+      .slice()
+      .sort((a, b) => new Date(b.date) - new Date(a.date))
+      .slice(0, 3)
   }, [])
 
-  // Get recent JV results (most recent first) — 2026 season
+  // Get recent JV results (most recent first by date) — 2026 season
   const recentJVResults = useMemo(() => {
     return (golfData.jvEvents2026 || [])
       .filter(r => r.teamScore || r.teamResult)
-      .slice(-3)
-      .reverse()
+      .slice()
+      .sort((a, b) => new Date(b.date) - new Date(a.date))
+      .slice(0, 3)
   }, [])
 
   // Dynamically calculate leaderboard from playerStats scores
