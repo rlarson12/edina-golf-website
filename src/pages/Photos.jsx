@@ -10,8 +10,9 @@ function Photos() {
       id: '2026-1',
       title: 'Team Photos',
       date: '2026 Season',
-      cover: '/images/2026/team-edinburgh-medals-landscape.webp',
+      cover: '/images/2026/may-team-portrait-6.webp',
       photos: [
+        { src: '/images/2026/may-team-portrait-6.webp', caption: 'Team portrait — 2026 season.' },
         { src: '/images/2026/team-edinburgh-medals-landscape.webp', caption: 'Michael Vernon, Peter Bennett, Sander Ohe, Chase Larson, Charlie Nielsen — 1st place at The Preview, Edinburgh USA, Apr 24-25.' },
         { src: '/images/2026/team-edinburgh-medals.webp', caption: 'Michael Vernon, Peter Bennett, Sander Ohe, Chase Larson, Charlie Nielsen — 1st place at The Preview, Edinburgh USA, Apr 24-25.' },
         { src: '/images/action/varsity-team-chaska.webp', caption: 'Sander Ohe, David Colby, Michael Vernon, Charlie Nielsen, Chase Larson, Peter Bennett — Lake Conference Tournament #1, Apr 20.' },
@@ -64,6 +65,8 @@ function Photos() {
         { src: '/images/2026/may-lining-up-putt.webp', caption: 'Lining up the putt — 2026 season.' },
         { src: '/images/2026/may-iron-ball-flight.webp', caption: 'Iron shot, ball in flight — 2026 season.' },
         { src: '/images/2026/may-tee-followthrough.webp', caption: 'Off the tee — 2026 season.' },
+        { src: '/images/2026/may-driver-followthrough-hero.webp', caption: 'Driver follow-through — 2026 season.' },
+        { src: '/images/2026/may-tee-backswing-down-fairway.webp', caption: 'Top of the backswing — 2026 season.' },
 
       ],
     },
@@ -76,6 +79,7 @@ function Photos() {
         { src: '/images/2026/may-walking-water-cinematic.webp', caption: 'Walking past the water — 2026 season.' },
         { src: '/images/2026/may-player-coach-convo.webp', caption: 'On the course conversation — 2026 season.' },
         { src: '/images/2026/may-scenic-vista.webp', caption: 'Course views — 2026 season.' },
+        { src: '/images/2026/may-green-fountain-scenic.webp', caption: 'Approach to the green — 2026 season.' },
       ],
     },
   ]
