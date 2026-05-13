@@ -15,6 +15,9 @@ function Photos() {
         { src: '/images/2026/team-edinburgh-medals-landscape.webp', caption: 'Michael Vernon, Peter Bennett, Sander Ohe, Chase Larson, Charlie Nielsen — 1st place at The Preview, Edinburgh USA, Apr 24-25.' },
         { src: '/images/2026/team-edinburgh-medals.webp', caption: 'Michael Vernon, Peter Bennett, Sander Ohe, Chase Larson, Charlie Nielsen — 1st place at The Preview, Edinburgh USA, Apr 24-25.' },
         { src: '/images/action/varsity-team-chaska.webp', caption: 'Sander Ohe, David Colby, Michael Vernon, Charlie Nielsen, Chase Larson, Peter Bennett — Lake Conference Tournament #1, Apr 20.' },
+        { src: '/images/2026/may12-team-medals.webp', caption: 'Team celebration with medals — 2026 season.' },
+        { src: '/images/2026/may12-walking-pond.webp', caption: 'On the course — 2026 season.' },
+        { src: '/images/2026/may12-team-green.webp', caption: 'Team on the course — 2026 season.' },
       ],
     },
     {
@@ -46,7 +49,14 @@ function Photos() {
         { src: '/images/2026/pioneer-may6-action-3.webp', caption: 'Lake Conference Meet #2 at Pioneer Creek, May 6.' },
         { src: '/images/2026/pioneer-may6-action-4.webp', caption: 'Lake Conference Meet #2 at Pioneer Creek, May 6.' },
         { src: '/images/2026/pioneer-may6-action-5.webp', caption: 'Lake Conference Meet #2 at Pioneer Creek, May 6.' },
-      
+
+        { src: '/images/2026/may12-followthrough-goldenhour.webp', caption: 'Golden hour follow-through — 2026 season.' },
+        { src: '/images/2026/may12-ball-in-flight.webp', caption: 'Ball in flight — 2026 season.' },
+        { src: '/images/2026/may12-address-fairway.webp', caption: 'On the fairway — 2026 season.' },
+        { src: '/images/2026/may12-tee-swing-motion.webp', caption: 'Off the tee — 2026 season.' },
+        { src: '/images/2026/may12-iron-shadow.webp', caption: 'Iron shot — 2026 season.' },
+        { src: '/images/2026/may12-fairway-duo.webp', caption: 'Down the fairway — 2026 season.' },
+
       ],
     },
     {
