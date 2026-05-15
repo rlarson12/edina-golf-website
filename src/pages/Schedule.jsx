@@ -208,7 +208,7 @@ function Schedule() {
       { round: 2, id: '2026-JV-MAY12-PREP', date: '2026-05-12', dateFormatted: 'May 12', course: 'Oak Ridge Country Club', time: '1:30 PM', par: 70, teamScore: '308 (+28) / 306 (+26)' },
     ] },
     { id: '2026-JV-MAY13', date: '2026-05-13', dateFormatted: 'May 13', event: 'JV Conference @ Riverwood',          course: 'Riverwood Golf Course',      level: 'JV', time: '10:00 AM', teamScore: '311', teamFinish: '1st of 8' },
-    { id: '2026-JV6', date: '2026-05-14', dateFormatted: 'May 14',    event: 'Boys JV Game',                       course: 'Shamrock Golf Course',       level: 'JV', time: '8:30 AM' },
+    { id: '2026-JV6', date: '2026-05-14', dateFormatted: 'May 14',    event: 'Lake Conference JV Match #4',        course: 'Shamrock Golf Club',         level: 'JV', time: '8:30 AM', par: 72, holes: 18, iWanaMakerId: 211956, teamScore: '306 (+18)', teamFinish: '4th of 8' },
     { id: '2026-JV7', date: '2026-05-20', dateFormatted: 'May 20',    event: 'Boys JV Invitational',               course: 'Dahlgreen Golf Course',      level: 'JV', time: '8:00 AM' },
     { id: '2026-JV-MAY22', date: '2026-05-22', dateFormatted: 'May 22', event: 'JV Conference @ Pioneer Creek',      course: 'Pioneer Creek Golf Course',  level: 'JV', time: '2:30 PM' },
   ]
