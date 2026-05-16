@@ -6118,7 +6118,9 @@
       "holes": 18,
       "par": 72,
       "teamScore": null,
-      "teamFinish": null
+      "teamFinish": null,
+      "iWanaMakerId": 213459,
+      "pinnedVia": "tier2_2026-05-16"
     },
     {
       "id": "2026-2026-05-26-VAR-16",
@@ -7710,7 +7712,9 @@
       "teamScore": null,
       "teamFinish": null,
       "event": "Lake Conference Championship",
-      "startTimeUtc": null
+      "startTimeUtc": null,
+      "iWanaMakerId": 213459,
+      "pinnedVia": "tier2_2026-05-16"
     },
     {
       "id": "2026-2026-05-26-VAR-16",
