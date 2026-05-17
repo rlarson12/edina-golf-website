@@ -7457,12 +7457,13 @@
       "course": "Chaska Town Course",
       "holes": 18,
       "par": 72,
-      "teamScore": null,
-      "teamFinish": null,
+      "teamScore": 300,
+      "teamFinish": "1st of 8",
       "event": "Lake Conference Tournament #1",
       "startTimeUtc": null,
       "teeTime": "13:30",
-      "time": "1:30 PM"
+      "time": "1:30 PM",
+      "scheduleJsxId": "2026-V1"
     },
     {
       "id": "2026-2026-04-22-VAR-2",
@@ -7474,12 +7475,13 @@
       "course": "Stoneridge Golf Club",
       "holes": 18,
       "par": 72,
-      "teamScore": null,
-      "teamFinish": null,
+      "teamScore": 300,
+      "teamFinish": "5th of 20",
       "event": "East Ridge Invitational",
       "startTimeUtc": null,
       "time": "9:00 AM",
-      "iWanaMakerId": 197484
+      "iWanaMakerId": 197484,
+      "scheduleJsxId": "2026-V2"
     },
     {
       "id": "2026-2026-05-06-VAR-3",
@@ -7491,14 +7493,15 @@
       "course": "Pioneer Creek Golf Course",
       "holes": 18,
       "par": 72,
-      "teamScore": null,
-      "teamFinish": null,
+      "teamScore": 325,
+      "teamFinish": "5th of 8",
       "event": "Lake Conference Meet #2",
       "startTimeUtc": null,
       "time": "1:30 PM",
       "rescheduledFrom": "2026-04-23",
       "statusNote": "Rescheduled from April 23 (weather)",
-      "iWanaMakerId": 204214
+      "iWanaMakerId": 204214,
+      "scheduleJsxId": "2026-V3"
     },
     {
       "id": "2026-2026-04-24-VAR-4",
@@ -7510,13 +7513,14 @@
       "course": "Edinburgh Golf Course",
       "holes": 18,
       "par": 72,
-      "teamScore": null,
-      "teamFinish": null,
+      "teamScore": 287,
+      "teamFinish": "1st of 15",
       "event": "The Preview Day 1",
       "startTimeUtc": null,
       "teeTime": "07:00",
       "time": "7:00 AM",
-      "iWanaMakerId": 184513
+      "iWanaMakerId": 184513,
+      "scheduleJsxId": "2026-V4"
     },
     {
       "id": "2026-2026-04-25-VAR-5",
@@ -7528,13 +7532,14 @@
       "course": "Edinburgh Golf Course",
       "holes": 18,
       "par": 72,
-      "teamScore": null,
-      "teamFinish": null,
+      "teamScore": 285,
+      "teamFinish": "1st of 15",
       "event": "The Preview Day 2",
       "startTimeUtc": null,
       "teeTime": "07:00",
       "time": "7:00 AM",
-      "iWanaMakerId": 184513
+      "iWanaMakerId": 184513,
+      "scheduleJsxId": "2026-V4"
     },
     {
       "id": "2026-2026-04-27-VAR-6",
@@ -7552,7 +7557,8 @@
       "startTimeUtc": null,
       "time": "1:30 PM",
       "status": "rained_out",
-      "statusNote": "Rained out \u2014 no makeup scheduled"
+      "statusNote": "Rained out \u2014 no makeup scheduled",
+      "scheduleJsxId": "2026-V5"
     },
     {
       "id": "2026-2026-05-01-VAR-8",
@@ -7564,11 +7570,12 @@
       "course": "Dacotah Ridge Golf Club",
       "holes": 18,
       "par": 72,
-      "teamScore": null,
-      "teamFinish": null,
+      "teamScore": 289,
+      "teamFinish": "2nd of 18",
       "event": "Lakeville South Invitational Day 1",
       "startTimeUtc": null,
-      "iWanaMakerId": 209320
+      "iWanaMakerId": 209320,
+      "scheduleJsxId": "2026-V6"
     },
     {
       "id": "2026-2026-05-02-VAR-9",
@@ -7580,11 +7587,12 @@
       "course": "Dacotah Ridge Golf Club",
       "holes": 18,
       "par": 72,
-      "teamScore": null,
-      "teamFinish": null,
+      "teamScore": 295,
+      "teamFinish": "2nd of 18",
       "event": "Lakeville South Invitational Day 2",
       "startTimeUtc": null,
-      "iWanaMakerId": 209320
+      "iWanaMakerId": 209320,
+      "scheduleJsxId": "2026-V6"
     },
     {
       "id": "2026-2026-05-04-VAR-10",
@@ -7596,11 +7604,12 @@
       "course": "TPC Twin Cities",
       "holes": 18,
       "par": 72,
-      "teamScore": null,
-      "teamFinish": null,
+      "teamScore": 304,
+      "teamFinish": "2nd of 8",
       "event": "Spring Lake Park Invitational",
       "startTimeUtc": null,
-      "time": "TBD"
+      "time": "TBD",
+      "scheduleJsxId": "2026-V7"
     },
     {
       "id": "2026-2026-05-04-VAR-LC4",
@@ -7612,12 +7621,13 @@
       "course": "Medina CC",
       "holes": 18,
       "par": 72,
-      "teamScore": null,
-      "teamFinish": null,
+      "teamScore": 309,
+      "teamFinish": "1st of 8",
       "event": "Lake Conference Meet #4",
       "startTimeUtc": null,
       "time": "1:00 PM",
-      "iWanaMakerId": 201049
+      "iWanaMakerId": 201049,
+      "scheduleJsxId": "2026-V8"
     },
     {
       "id": "2026-2026-05-04-VAR-OAK",
@@ -7629,11 +7639,12 @@
       "course": "Oak Ridge CC",
       "holes": 18,
       "par": 70,
-      "teamScore": null,
-      "teamFinish": null,
+      "teamScore": 307,
+      "teamFinish": "2nd of 9",
       "event": "Boys Varsity Invitational",
       "startTimeUtc": null,
-      "iWanaMakerId": 210184
+      "iWanaMakerId": 210184,
+      "scheduleJsxId": "2026-V9"
     },
     {
       "id": "2026-2026-05-08-VAR-11",
@@ -7645,11 +7656,12 @@
       "course": "Detroit Country Club",
       "holes": 18,
       "par": 71,
-      "teamScore": null,
-      "teamFinish": null,
+      "teamScore": "297 (+13)",
+      "teamFinish": "T1st of 16 (R1)",
       "event": "Northwest Classic Day 1",
       "startTimeUtc": null,
-      "iWanaMakerId": 208202
+      "iWanaMakerId": 208202,
+      "scheduleJsxId": "2026-V10"
     },
     {
       "id": "2026-2026-05-09-VAR-12",
@@ -7661,11 +7673,12 @@
       "course": "Detroit Country Club",
       "holes": 18,
       "par": 71,
-      "teamScore": null,
-      "teamFinish": null,
+      "teamScore": "299 (+15)",
+      "teamFinish": "2nd of 16",
       "event": "Northwest Classic Day 2",
       "startTimeUtc": null,
-      "iWanaMakerId": 208202
+      "iWanaMakerId": 208202,
+      "scheduleJsxId": "2026-V10"
     },
     {
       "id": "2026-2026-05-11-VAR-13",
@@ -7677,11 +7690,12 @@
       "course": "Oak Ridge Country Club",
       "holes": 18,
       "par": 70,
-      "teamScore": null,
+      "teamScore": 289,
       "teamFinish": null,
       "event": "Edina Invitational Day 1",
       "startTimeUtc": null,
-      "iWanaMakerId": 212514
+      "iWanaMakerId": 212514,
+      "scheduleJsxId": "2026-V11"
     },
     {
       "id": "2026-2026-05-12-VAR-14",
@@ -7693,11 +7707,12 @@
       "course": "Oak Ridge Country Club",
       "holes": 18,
       "par": 70,
-      "teamScore": null,
-      "teamFinish": null,
+      "teamScore": "292 (+12)",
+      "teamFinish": "1st of 4",
       "event": "Edina Invitational Day 2",
       "startTimeUtc": null,
-      "iWanaMakerId": 212514
+      "iWanaMakerId": 212514,
+      "scheduleJsxId": "2026-V11"
     },
     {
       "id": "2026-2026-05-19-VAR-15",
@@ -7714,7 +7729,8 @@
       "event": "Lake Conference Championship",
       "startTimeUtc": null,
       "iWanaMakerId": 213459,
-      "pinnedVia": "tier2_2026-05-16"
+      "pinnedVia": "tier2_2026-05-16",
+      "scheduleJsxId": "2026-V12"
     },
     {
       "id": "2026-2026-05-26-VAR-16",
@@ -7729,7 +7745,8 @@
       "teamScore": null,
       "teamFinish": null,
       "event": "MSHSL Boys 6AAA Section Tournament Day 1",
-      "startTimeUtc": null
+      "startTimeUtc": null,
+      "scheduleJsxId": "2026-V13"
     },
     {
       "id": "2026-2026-05-27-VAR-17",
@@ -7744,7 +7761,8 @@
       "teamScore": null,
       "teamFinish": null,
       "event": "MSHSL Boys 6AAA Section Tournament Day 2",
-      "startTimeUtc": null
+      "startTimeUtc": null,
+      "scheduleJsxId": "2026-V13"
     },
     {
       "id": "2026-2026-06-09-VAR-18",
@@ -7759,7 +7777,8 @@
       "teamScore": null,
       "teamFinish": null,
       "event": "MSHSL AAA State Tournament Day 1",
-      "startTimeUtc": null
+      "startTimeUtc": null,
+      "scheduleJsxId": "2026-V14"
     },
     {
       "id": "2026-2026-06-10-VAR-19",
@@ -7774,7 +7793,8 @@
       "teamScore": null,
       "teamFinish": null,
       "event": "MSHSL AAA State Tournament Day 2",
-      "startTimeUtc": null
+      "startTimeUtc": null,
+      "scheduleJsxId": "2026-V14"
     }
   ],
   "jvSchedule2026": [
@@ -7896,7 +7916,9 @@
       "course": "Heritage Links Golf Course",
       "holes": 18,
       "time": "10:30 AM",
-      "iWanaMakerId": 209318
+      "iWanaMakerId": 209318,
+      "teamScore": 317,
+      "teamFinish": "3rd of 8"
     },
     {
       "id": "2026-JV4-D1",
@@ -7934,8 +7956,8 @@
       "course": "Wild Marsh Golf Club",
       "holes": 18,
       "time": "10:00 AM",
-      "teamScore": null,
-      "teamFinish": null,
+      "teamScore": 303,
+      "teamFinish": "2nd of 8",
       "iWanaMakerId": 212390
     },
     {
@@ -7947,7 +7969,9 @@
       "course": "Oak Ridge Country Club",
       "holes": 18,
       "time": "1:30 PM",
-      "iWanaMakerId": 212515
+      "iWanaMakerId": 212515,
+      "teamScore": "297 (+17) / 300 (+20)",
+      "teamFinish": null
     },
     {
       "id": "2026-JV-MAY13",
@@ -8092,7 +8116,9 @@
       "time": "TBD",
       "iWanaMakerId": 212515,
       "isMultiDay": true,
-      "round": 2
+      "round": 2,
+      "teamScore": "308 (+28) / 306 (+26)",
+      "teamFinish": "1st & 2nd of 3"
     }
   ],
   "seasonResults2026": [

@@ -217,6 +217,27 @@ function Schedule() {
   const varsitySchedule = golfData.schedule || []
   const jvSchedule = golfData.jvSchedule || []
 
+  // Build result overlay map from golfData.json schedule arrays.
+  // write-scores.py now writes teamScore + teamFinish to schedule2026/jvSchedule2026
+  // so score-pull crons automatically update the site without touching this file.
+  // The inline schedule2026 array below remains the structural source (event metadata,
+  // multi-day rounds, match-play data) while golfData overrides score fields when present.
+  const scheduleResultMap = useMemo(() => {
+    const map = {}
+    const addEntry = e => {
+      if (e.teamScore != null || e.teamFinish != null) {
+        const result = { teamScore: e.teamScore, teamFinish: e.teamFinish, teamResult: e.teamResult }
+        // Index by primary id
+        map[e.id] = result
+        // Also index by scheduleJsxId if present (varsity: golfData id differs from Schedule.jsx id)
+        if (e.scheduleJsxId) map[e.scheduleJsxId] = result
+      }
+    }
+    ;(golfData.schedule2026 || []).forEach(addEntry)
+    ;(golfData.jvSchedule2026 || []).forEach(addEntry)
+    return map
+  }, [])
+
   // Combine and tag events by level (2025)
   const allCombined2025 = useMemo(() => {
     const varsityTagged = varsitySchedule.map(e => ({ ...e, level: 'Varsity' }))
@@ -224,13 +245,15 @@ function Schedule() {
     return [...varsityTagged, ...jvTagged].sort((a, b) => new Date(b.date) - new Date(a.date))
   }, [varsitySchedule, jvSchedule])
 
-  // Get schedule based on year
+  // Get schedule based on year — overlay golfData result fields when present
   const yearSchedule = useMemo(() => {
     if (yearFilter === '2026') {
-      return schedule2026.sort((a, b) => new Date(a.date) - new Date(b.date))
+      return schedule2026
+        .map(e => scheduleResultMap[e.id] ? { ...e, ...scheduleResultMap[e.id] } : e)
+        .sort((a, b) => new Date(a.date) - new Date(b.date))
     }
     return allCombined2025
-  }, [yearFilter, allCombined2025])
+  }, [yearFilter, allCombined2025, scheduleResultMap])
 
   // Filter by level
   const levelFiltered = useMemo(() => {
