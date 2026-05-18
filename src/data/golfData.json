@@ -6108,6 +6108,65 @@
       ]
     },
     {
+      "id": "2026-2026-05-18-VAR-20",
+      "date": "2026-05-18T00:00:00.000Z",
+      "dateFormatted": "May 18",
+      "dateISO": "2026-05-18",
+      "name": "Lake Conference Tournament #3",
+      "level": "Varsity",
+      "course": "Oak Ridge Country Club",
+      "holes": 18,
+      "par": 70,
+      "teamScore": 285,
+      "teamFinish": "1st of 8",
+      "time": "1:00 PM",
+      "iWanaMakerId": 186072,
+      "players": [
+        {
+          "name": "Charlie Nielsen",
+          "grade": "JR",
+          "score": 70,
+          "position": 1,
+          "individualFinish": "T1st"
+        },
+        {
+          "name": "David Colby",
+          "grade": "SR",
+          "score": 70,
+          "position": 1,
+          "individualFinish": "T1st"
+        },
+        {
+          "name": "Peter Bennett",
+          "grade": "SR",
+          "score": 72,
+          "position": 3,
+          "individualFinish": "3rd"
+        },
+        {
+          "name": "Chase Larson",
+          "grade": "JR",
+          "score": 73,
+          "position": 4,
+          "individualFinish": "T4th"
+        },
+        {
+          "name": "Sander Ohe",
+          "grade": "SR",
+          "score": 73,
+          "position": 4,
+          "individualFinish": "T4th"
+        },
+        {
+          "name": "Michael Vernon",
+          "grade": "SO",
+          "score": 82,
+          "position": 31,
+          "individualFinish": "31st"
+        }
+      ]
+    },
+    {
       "id": "2026-2026-05-19-VAR-15",
       "date": "2026-05-19T00:00:00.000Z",
       "dateFormatted": "May 19",
@@ -8382,6 +8441,17 @@
       "finish": "1st of 8",
       "level": "JV",
       "isJV": true
+    },
+    {
+      "id": "2026-V-LC3",
+      "event": "Lake Conference Tournament #3",
+      "dateFormatted": "May 18",
+      "date": "2026-05-18",
+      "dateISO": "2026-05-18",
+      "course": "Oak Ridge Country Club",
+      "teamScore": "285 (+5)",
+      "finish": "1st of 8",
+      "level": "Varsity"
     }
   ],
   "players2026": [
@@ -8668,6 +8738,16 @@
           "eventId": "2026-2026-05-12-VAR-14",
           "score": 73,
           "individualFinish": "2nd"
+        },
+        {
+          "eventId": "2026-V15",
+          "score": 70,
+          "event": "Lake Conference Tournament #3",
+          "eventDate": "2026-05-18",
+          "holes": 18,
+          "par": 70,
+          "toPar": 0,
+          "individualFinish": "T1st"
         }
       ],
       "average": 75.71,
@@ -8780,6 +8860,16 @@
           "eventId": "2026-2026-05-12-VAR-14",
           "score": 68,
           "individualFinish": "1st"
+        },
+        {
+          "eventId": "2026-V15",
+          "score": 73,
+          "event": "Lake Conference Tournament #3",
+          "eventDate": "2026-05-18",
+          "holes": 18,
+          "par": 70,
+          "toPar": 3,
+          "individualFinish": "T4th"
         }
       ],
       "average": 73.14,
@@ -8892,6 +8982,16 @@
           "eventId": "2026-2026-05-12-VAR-14",
           "score": 80,
           "individualFinish": "10th"
+        },
+        {
+          "eventId": "2026-V15",
+          "score": 72,
+          "event": "Lake Conference Tournament #3",
+          "eventDate": "2026-05-18",
+          "holes": 18,
+          "par": 70,
+          "toPar": 2,
+          "individualFinish": "3rd"
         }
       ],
       "average": 73.0,
@@ -9004,6 +9104,16 @@
           "eventId": "2026-2026-05-12-VAR-14",
           "score": 74,
           "individualFinish": "4th"
+        },
+        {
+          "eventId": "2026-V15",
+          "score": 73,
+          "event": "Lake Conference Tournament #3",
+          "eventDate": "2026-05-18",
+          "holes": 18,
+          "par": 70,
+          "toPar": 3,
+          "individualFinish": "T4th"
         }
       ],
       "average": 74.71,
@@ -9116,6 +9226,16 @@
           "eventId": "2026-2026-05-12-VAR-14",
           "score": 78,
           "individualFinish": "13th"
+        },
+        {
+          "eventId": "2026-V15",
+          "score": 82,
+          "event": "Lake Conference Tournament #3",
+          "eventDate": "2026-05-18",
+          "holes": 18,
+          "par": 70,
+          "toPar": 12,
+          "individualFinish": "31st"
         }
       ],
       "average": 78.0,
@@ -9198,6 +9318,16 @@
           "eventId": "2026-2026-05-12-VAR-14",
           "score": 77,
           "individualFinish": "12th"
+        },
+        {
+          "eventId": "2026-V15",
+          "score": 70,
+          "event": "Lake Conference Tournament #3",
+          "eventDate": "2026-05-18",
+          "holes": 18,
+          "par": 70,
+          "toPar": 0,
+          "individualFinish": "T1st"
         }
       ],
       "average": 79.5,
@@ -10181,6 +10311,7 @@
       "05/12 - Edina JV Prep Invite",
       "05/13 - JV Conference @ Riverwood",
       "05/14 - Lake Conference JV Match #4",
+      "05/18 - Lake Conference Tournament #3",
       "05/19 - Lake Conference Championship",
       "05/20 - Boys JV Invitational",
       "05/22 - JV Conference @ Pioneer Creek",
@@ -10222,6 +10353,7 @@
           null,
           null,
           null,
+          72,
           null,
           null,
           null,
@@ -10263,6 +10395,7 @@
           null,
           null,
           null,
+          70,
           null,
           null,
           null,
@@ -10310,6 +10443,7 @@
           null,
           null,
           null,
+          null,
           null
         ]
       },
@@ -10345,6 +10479,7 @@
           null,
           null,
           null,
+          73,
           null,
           null,
           null,
@@ -10386,6 +10521,7 @@
           null,
           null,
           null,
+          70,
           null,
           null,
           null,
@@ -10427,6 +10563,7 @@
           null,
           null,
           null,
+          73,
           null,
           null,
           null,
@@ -10466,6 +10603,7 @@
           74,
           null,
           80,
+          null,
           null,
           null,
           null,
@@ -10515,6 +10653,7 @@
           null,
           null,
           null,
+          null,
           null
         ]
       },
@@ -10548,6 +10687,7 @@
           86,
           null,
           78,
+          null,
           null,
           null,
           null,
@@ -10597,6 +10737,7 @@
           null,
           null,
           null,
+          null,
           null
         ]
       },
@@ -10632,6 +10773,7 @@
           null,
           null,
           null,
+          82,
           null,
           null,
           null,
@@ -10679,6 +10821,7 @@
           null,
           null,
           null,
+          null,
           null
         ]
       },
@@ -10709,6 +10852,7 @@
           null,
           null,
           84,
+          null,
           null,
           null,
           null,
@@ -10761,6 +10905,7 @@
           null,
           null,
           null,
+          null,
           null
         ]
       },
@@ -10794,6 +10939,7 @@
           75,
           null,
           75,
+          null,
           null,
           null,
           null,
@@ -10843,6 +10989,7 @@
           null,
           null,
           null,
+          null,
           null
         ]
       },
@@ -10884,6 +11031,7 @@
           null,
           null,
           null,
+          null,
           null
         ]
       },
@@ -10917,6 +11065,7 @@
           76,
           null,
           83,
+          null,
           null,
           null,
           null,
@@ -10966,6 +11115,7 @@
           null,
           null,
           null,
+          null,
           null
         ]
       },
@@ -11007,6 +11157,7 @@
           null,
           null,
           null,
+          null,
           null
         ]
       },
@@ -11040,6 +11191,7 @@
           79,
           null,
           77,
+          null,
           null,
           null,
           null,
@@ -11089,6 +11241,7 @@
           null,
           null,
           null,
+          null,
           null
         ]
       },
@@ -11123,6 +11276,7 @@
           null,
           null,
           83,
+          null,
           null,
           null,
           null,
@@ -11171,6 +11325,7 @@
           null,
           null,
           null,
+          null,
           null
         ]
       },
@@ -11204,6 +11359,7 @@
           73,
           null,
           74,
+          null,
           null,
           null,
           null,
@@ -18045,6 +18201,288 @@
         5
       ],
       "total": 77
+    },
+    {
+      "playerName": "Charlie Nielsen",
+      "eventDate": "2026-05-18",
+      "courseName": "Oak Ridge Country Club",
+      "par": [
+        4,
+        4,
+        3,
+        4,
+        5,
+        4,
+        3,
+        4,
+        4,
+        4,
+        3,
+        4,
+        4,
+        5,
+        4,
+        3,
+        4,
+        4
+      ],
+      "scores": [
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        3,
+        4,
+        4,
+        4,
+        3,
+        4,
+        3,
+        5,
+        4,
+        3,
+        4,
+        6
+      ],
+      "total": 70,
+      "round": 1
+    },
+    {
+      "playerName": "David Colby",
+      "eventDate": "2026-05-18",
+      "courseName": "Oak Ridge Country Club",
+      "par": [
+        4,
+        4,
+        3,
+        4,
+        5,
+        4,
+        3,
+        4,
+        4,
+        4,
+        3,
+        4,
+        4,
+        5,
+        4,
+        3,
+        4,
+        4
+      ],
+      "scores": [
+        4,
+        5,
+        3,
+        4,
+        4,
+        4,
+        3,
+        4,
+        3,
+        4,
+        3,
+        5,
+        4,
+        4,
+        3,
+        3,
+        6,
+        4
+      ],
+      "total": 70,
+      "round": 1
+    },
+    {
+      "playerName": "Peter Bennett",
+      "eventDate": "2026-05-18",
+      "courseName": "Oak Ridge Country Club",
+      "par": [
+        4,
+        4,
+        3,
+        4,
+        5,
+        4,
+        3,
+        4,
+        4,
+        4,
+        3,
+        4,
+        4,
+        5,
+        4,
+        3,
+        4,
+        4
+      ],
+      "scores": [
+        3,
+        4,
+        4,
+        4,
+        5,
+        5,
+        3,
+        4,
+        4,
+        3,
+        4,
+        5,
+        4,
+        5,
+        4,
+        3,
+        4,
+        4
+      ],
+      "total": 72,
+      "round": 1
+    },
+    {
+      "playerName": "Chase Larson",
+      "eventDate": "2026-05-18",
+      "courseName": "Oak Ridge Country Club",
+      "par": [
+        4,
+        4,
+        3,
+        4,
+        5,
+        4,
+        3,
+        4,
+        4,
+        4,
+        3,
+        4,
+        4,
+        5,
+        4,
+        3,
+        4,
+        4
+      ],
+      "scores": [
+        4,
+        5,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        5,
+        4,
+        4,
+        5,
+        4,
+        4,
+        3,
+        3,
+        4,
+        5
+      ],
+      "total": 73,
+      "round": 1
+    },
+    {
+      "playerName": "Sander Ohe",
+      "eventDate": "2026-05-18",
+      "courseName": "Oak Ridge Country Club",
+      "par": [
+        4,
+        4,
+        3,
+        4,
+        5,
+        4,
+        3,
+        4,
+        4,
+        4,
+        3,
+        4,
+        4,
+        5,
+        4,
+        3,
+        4,
+        4
+      ],
+      "scores": [
+        4,
+        5,
+        5,
+        4,
+        5,
+        3,
+        2,
+        4,
+        4,
+        4,
+        4,
+        4,
+        5,
+        5,
+        4,
+        3,
+        4,
+        4
+      ],
+      "total": 73,
+      "round": 1
+    },
+    {
+      "playerName": "Michael Vernon",
+      "eventDate": "2026-05-18",
+      "courseName": "Oak Ridge Country Club",
+      "par": [
+        4,
+        4,
+        3,
+        4,
+        5,
+        4,
+        3,
+        4,
+        4,
+        4,
+        3,
+        4,
+        4,
+        5,
+        4,
+        3,
+        4,
+        4
+      ],
+      "scores": [
+        5,
+        4,
+        4,
+        5,
+        8,
+        4,
+        4,
+        6,
+        5,
+        4,
+        3,
+        4,
+        4,
+        5,
+        5,
+        3,
+        4,
+        5
+      ],
+      "total": 82,
+      "round": 1
     }
   ],
   "news2026": []
