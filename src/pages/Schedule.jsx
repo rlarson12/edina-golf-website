@@ -562,7 +562,7 @@ function Schedule() {
               {/* Stroke play score + finish (also used for best-ball when teamScore is set) */}
               {!isInactive && !isMatchPlay(event) && event.teamScore && (
                 <span className={`font-semibold ${
-                  event.teamScore.includes('(-') ? 'text-red-600' : 'text-gray-700'
+                  String(event.teamScore).includes('(-') ? 'text-red-600' : 'text-gray-700'
                 }`}>
                   {event.teamScore}
                 </span>
@@ -788,7 +788,7 @@ function Schedule() {
                         </div>
                       </div>
                       <div className={`font-semibold ${
-                        round.teamScore?.includes('(-') ? 'text-red-600' : 'text-gray-700'
+                        String(round.teamScore ?? '').includes('(-') ? 'text-red-600' : 'text-gray-700'
                       }`}>
                         {round.teamScore || '-'}
                       </div>
