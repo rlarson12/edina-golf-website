@@ -118,7 +118,8 @@
       "name": "Henry Freeman",
       "gradYear": 2027,
       "grade": 10,
-      "team": "jv"
+      "team": "jv",
+      "photo": "/images/players/henry-freeman.webp"
     },
     {
       "name": "Hudson Strodl",
@@ -8581,7 +8582,8 @@
       "name": "Henry Freeman",
       "grade": 11,
       "gradYear": 2027,
-      "team": "jv"
+      "team": "jv",
+      "photo": "/images/players/henry-freeman.webp"
     },
     {
       "name": "George Heinen",
