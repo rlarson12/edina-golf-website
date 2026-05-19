@@ -18,7 +18,7 @@ const schedule2026 = [
   { id: '2026-7c', date: '2026-05-04', dateFormatted: 'May 4',     event: 'Lake Conference Meet #4',            course: 'Medina CC' },
   { id: '2026-8',  date: '2026-05-08', endDate: '2026-05-09', dateFormatted: 'May 8-9',   event: 'Northwest Classic',                  course: 'Detroit Lakes', isMultiDay: true, status: 'completed' },
   { id: '2026-9',  date: '2026-05-11', dateFormatted: 'May 11-12', event: 'Edina Invitational',                 course: 'Oak Ridge', isMultiDay: true },
-  { id: '2026-10', date: '2026-05-19', dateFormatted: 'May 19',    event: 'Lake Conference Championship',       course: 'Fox Hollow' },
+  { id: '2026-10', date: '2026-05-19', dateFormatted: 'May 19',    event: 'Lake Conference Championship',       course: 'Fox Hollow', status: 'completed' },
   { id: '2026-11', date: '2026-05-27', dateFormatted: 'May 27-28', event: 'MSHSL Boys 6AAA Section Tournament', course: 'Meadows at Mystic Lake', isMultiDay: true },
   { id: '2026-12', date: '2026-06-09', dateFormatted: 'Jun 9-10',  event: 'MSHSL Boys AAA State Tournament',    course: 'Bunker Hills', isMultiDay: true },
 ]
