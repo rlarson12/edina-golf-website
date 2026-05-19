@@ -6182,10 +6182,10 @@
       "pinnedVia": "tier2_2026-05-16"
     },
     {
-      "id": "2026-2026-05-26-VAR-16",
-      "date": "2026-05-26T00:00:00.000Z",
-      "dateFormatted": "May 26",
-      "dateISO": "2026-05-26",
+      "id": "2026-2026-05-27-VAR-16",
+      "date": "2026-05-27T00:00:00.000Z",
+      "dateFormatted": "May 27",
+      "dateISO": "2026-05-27",
       "name": "MSHSL Boys 6AAA Section Tournament Day 1",
       "level": "Varsity",
       "course": "Meadows at Mystic Lake",
@@ -6195,10 +6195,10 @@
       "teamFinish": null
     },
     {
-      "id": "2026-2026-05-27-VAR-17",
-      "date": "2026-05-27T00:00:00.000Z",
-      "dateFormatted": "May 27",
-      "dateISO": "2026-05-27",
+      "id": "2026-2026-05-28-VAR-17",
+      "date": "2026-05-28T00:00:00.000Z",
+      "dateFormatted": "May 28",
+      "dateISO": "2026-05-28",
       "name": "MSHSL Boys 6AAA Section Tournament Day 2",
       "level": "Varsity",
       "course": "Meadows at Mystic Lake",
@@ -7808,10 +7808,10 @@
       "scheduleJsxId": "2026-V12"
     },
     {
-      "id": "2026-2026-05-26-VAR-16",
-      "date": "2026-05-26T00:00:00.000Z",
-      "dateFormatted": "May 26",
-      "dateISO": "2026-05-26",
+      "id": "2026-2026-05-27-VAR-16",
+      "date": "2026-05-27T00:00:00.000Z",
+      "dateFormatted": "May 27",
+      "dateISO": "2026-05-27",
       "name": "MSHSL Boys 6AAA Section Tournament Day 1",
       "level": "Varsity",
       "course": "Meadows at Mystic Lake",
@@ -7824,10 +7824,10 @@
       "scheduleJsxId": "2026-V13"
     },
     {
-      "id": "2026-2026-05-27-VAR-17",
-      "date": "2026-05-27T00:00:00.000Z",
-      "dateFormatted": "May 27",
-      "dateISO": "2026-05-27",
+      "id": "2026-2026-05-28-VAR-17",
+      "date": "2026-05-28T00:00:00.000Z",
+      "dateFormatted": "May 28",
+      "dateISO": "2026-05-28",
       "name": "MSHSL Boys 6AAA Section Tournament Day 2",
       "level": "Varsity",
       "course": "Meadows at Mystic Lake",
@@ -10315,8 +10315,8 @@
       "05/19 - Lake Conference Championship",
       "05/20 - Boys JV Invitational",
       "05/22 - JV Conference @ Pioneer Creek",
-      "05/26 - MSHSL Boys 6AAA Section Tournament Day 1",
-      "05/27 - MSHSL Boys 6AAA Section Tournament Day 2",
+      "05/27 - MSHSL Boys 6AAA Section Tournament Day 1",
+      "05/28 - MSHSL Boys 6AAA Section Tournament Day 2",
       "06/09 - MSHSL AAA State Tournament Day 1",
       "06/10 - MSHSL AAA State Tournament Day 2"
     ],
