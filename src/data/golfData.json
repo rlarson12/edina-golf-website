@@ -7058,13 +7058,51 @@
       "course": "Dahlgreen Golf Course",
       "holes": 18,
       "par": 72,
-      "teamScore": null,
-      "teamFinish": null,
+      "teamScore": 307,
+      "teamFinish": "T2 of 17",
       "time": "8:00 AM",
       "format": "stroke",
       "teamResult": null,
       "teamRecord": null,
-      "isJV": true
+      "isJV": true,
+      "players": [
+        {
+          "name": "Henry Applebaum",
+          "score": 73,
+          "individualFinish": "2nd",
+          "position": 2
+        },
+        {
+          "name": "Ari Prickett",
+          "score": 78,
+          "individualFinish": "T16th",
+          "position": 16
+        },
+        {
+          "name": "Mason Schultes",
+          "score": 78,
+          "individualFinish": "T16th",
+          "position": 16
+        },
+        {
+          "name": "Carter Ringle",
+          "score": 78,
+          "individualFinish": "T16th",
+          "position": 16
+        },
+        {
+          "name": "Mason Hughes",
+          "score": 79,
+          "individualFinish": "T24th",
+          "position": 24
+        },
+        {
+          "name": "Randy Dann",
+          "score": 79,
+          "individualFinish": "T24th",
+          "position": 24
+        }
+      ]
     },
     {
       "id": "2026-2026-05-22-JV-12",
@@ -8135,8 +8173,8 @@
       "course": "Dahlgreen Golf Course",
       "holes": 18,
       "time": "8:00 AM",
-      "teamScore": null,
-      "teamFinish": null
+      "teamScore": "307 (+19)",
+      "teamFinish": "T2 of 17"
     },
     {
       "id": "2026-JV-MAY22",
@@ -9841,6 +9879,11 @@
           "eventId": "2026-JV6",
           "score": 76,
           "individualFinish": "T12th"
+        },
+        {
+          "eventId": "2026-JV7",
+          "score": 73,
+          "individualFinish": "2nd"
         }
       ]
     },
@@ -9874,6 +9917,11 @@
           "eventId": "2026-JV-MAY13",
           "score": 84,
           "individualFinish": "T25th"
+        },
+        {
+          "eventId": "2026-JV7",
+          "score": 79,
+          "individualFinish": "T24th"
         }
       ]
     },
@@ -9935,6 +9983,11 @@
           "eventId": "2026-JV-MAY13",
           "score": 79,
           "individualFinish": "T7th"
+        },
+        {
+          "eventId": "2026-JV7",
+          "score": 79,
+          "individualFinish": "T24th"
         }
       ]
     },
@@ -10222,6 +10275,11 @@
           "eventId": "2026-JV-MAY12-PREP",
           "score": 75,
           "individualFinish": "6th"
+        },
+        {
+          "eventId": "2026-JV7",
+          "score": 78,
+          "individualFinish": "T16th"
         }
       ]
     },
@@ -10258,6 +10316,11 @@
           "eventId": "2026-JV6",
           "score": 77,
           "individualFinish": "T17th"
+        },
+        {
+          "eventId": "2026-JV7",
+          "score": 78,
+          "individualFinish": "T16th"
         }
       ]
     },
@@ -10296,6 +10359,11 @@
           "eventId": "2026-JV6",
           "score": 76,
           "individualFinish": "T12th"
+        },
+        {
+          "eventId": "2026-JV7",
+          "score": 78,
+          "individualFinish": "T16th"
         }
       ]
     }
@@ -18864,6 +18932,294 @@
       ],
       "total": 82,
       "round": 1
+    },
+    {
+      "playerName": "Henry Applebaum",
+      "eventDate": "2026-05-20",
+      "eventName": "Boys JV Invitational",
+      "round": 1,
+      "courseName": "Dahlgreen Golf Course",
+      "par": [
+        4,
+        3,
+        5,
+        4,
+        4,
+        3,
+        5,
+        4,
+        4,
+        4,
+        5,
+        3,
+        4,
+        3,
+        4,
+        4,
+        5,
+        4
+      ],
+      "scores": [
+        4,
+        3,
+        5,
+        3,
+        5,
+        3,
+        5,
+        4,
+        5,
+        5,
+        5,
+        3,
+        4,
+        2,
+        4,
+        4,
+        4,
+        5
+      ],
+      "total": 73
+    },
+    {
+      "playerName": "Ari Prickett",
+      "eventDate": "2026-05-20",
+      "eventName": "Boys JV Invitational",
+      "round": 1,
+      "courseName": "Dahlgreen Golf Course",
+      "par": [
+        4,
+        3,
+        5,
+        4,
+        4,
+        3,
+        5,
+        4,
+        4,
+        4,
+        5,
+        3,
+        4,
+        3,
+        4,
+        4,
+        5,
+        4
+      ],
+      "scores": [
+        4,
+        3,
+        5,
+        4,
+        4,
+        3,
+        5,
+        4,
+        5,
+        5,
+        5,
+        5,
+        4,
+        4,
+        4,
+        4,
+        5,
+        5
+      ],
+      "total": 78
+    },
+    {
+      "playerName": "Mason Schultes",
+      "eventDate": "2026-05-20",
+      "eventName": "Boys JV Invitational",
+      "round": 1,
+      "courseName": "Dahlgreen Golf Course",
+      "par": [
+        4,
+        3,
+        5,
+        4,
+        4,
+        3,
+        5,
+        4,
+        4,
+        4,
+        5,
+        3,
+        4,
+        3,
+        4,
+        4,
+        5,
+        4
+      ],
+      "scores": [
+        5,
+        3,
+        4,
+        4,
+        5,
+        3,
+        4,
+        4,
+        4,
+        4,
+        6,
+        3,
+        5,
+        4,
+        5,
+        5,
+        5,
+        5
+      ],
+      "total": 78
+    },
+    {
+      "playerName": "Carter Ringle",
+      "eventDate": "2026-05-20",
+      "eventName": "Boys JV Invitational",
+      "round": 1,
+      "courseName": "Dahlgreen Golf Course",
+      "par": [
+        4,
+        3,
+        5,
+        4,
+        4,
+        3,
+        5,
+        4,
+        4,
+        4,
+        5,
+        3,
+        4,
+        3,
+        4,
+        4,
+        5,
+        4
+      ],
+      "scores": [
+        5,
+        3,
+        4,
+        4,
+        4,
+        4,
+        5,
+        4,
+        4,
+        5,
+        5,
+        4,
+        4,
+        3,
+        5,
+        5,
+        5,
+        5
+      ],
+      "total": 78
+    },
+    {
+      "playerName": "Mason Hughes",
+      "eventDate": "2026-05-20",
+      "eventName": "Boys JV Invitational",
+      "round": 1,
+      "courseName": "Dahlgreen Golf Course",
+      "par": [
+        4,
+        3,
+        5,
+        4,
+        4,
+        3,
+        5,
+        4,
+        4,
+        4,
+        5,
+        3,
+        4,
+        3,
+        4,
+        4,
+        5,
+        4
+      ],
+      "scores": [
+        6,
+        3,
+        5,
+        4,
+        4,
+        3,
+        5,
+        4,
+        5,
+        6,
+        5,
+        3,
+        4,
+        3,
+        4,
+        5,
+        6,
+        4
+      ],
+      "total": 79
+    },
+    {
+      "playerName": "Randy Dann",
+      "eventDate": "2026-05-20",
+      "eventName": "Boys JV Invitational",
+      "round": 1,
+      "courseName": "Dahlgreen Golf Course",
+      "par": [
+        4,
+        3,
+        5,
+        4,
+        4,
+        3,
+        5,
+        4,
+        4,
+        4,
+        5,
+        3,
+        4,
+        3,
+        4,
+        4,
+        5,
+        4
+      ],
+      "scores": [
+        5,
+        4,
+        4,
+        6,
+        5,
+        3,
+        5,
+        4,
+        5,
+        4,
+        6,
+        3,
+        4,
+        4,
+        4,
+        3,
+        5,
+        5
+      ],
+      "total": 79
     }
   ],
   "news2026": []
