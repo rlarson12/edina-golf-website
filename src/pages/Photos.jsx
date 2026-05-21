@@ -12,6 +12,7 @@ function Photos() {
       date: '2026 Season',
       cover: '/images/2026/senior-night-2026.webp',
       photos: [
+        { src: '/images/2026/team-conference-championship-2026.webp', caption: 'Peter Bennett, Charlie Nielsen, Sander Ohe, Chase Larson, Michael Vernon, David Colby — 1st place, Lake Conference Championship at Fox Hollow, May 19.' },
         { src: '/images/2026/senior-night-2026.webp', caption: 'Seniors on Senior Night — 2026.' },
         { src: '/images/2026/may-team-portrait-6.webp', caption: 'Team portrait — 2026 season.' },
         { src: '/images/2026/team-edinburgh-medals-landscape.webp', caption: 'Michael Vernon, Peter Bennett, Sander Ohe, Chase Larson, Charlie Nielsen — 1st place at The Preview, Edinburgh USA, Apr 24-25.' },
