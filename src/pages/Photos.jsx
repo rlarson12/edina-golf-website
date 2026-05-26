@@ -77,6 +77,15 @@ function Photos() {
 
       ],
     },
+    {
+      id: '2026-3',
+      title: 'Off Course',
+      date: '2026 Season',
+      cover: '/images/2026/team-dinner-2026-05-25.webp',
+      photos: [
+        { src: '/images/2026/team-dinner-2026-05-25.webp', caption: 'Team dinner — 2026 season.' },
+      ],
+    },
   ]
 
   const albums2025 = [
