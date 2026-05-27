@@ -173,7 +173,10 @@ function Schedule() {
     ] },
     { id: '2026-V15', date: '2026-05-18', dateFormatted: 'May 18',    event: 'Lake Conference Tournament #3',      course: 'Oak Ridge Country Club',     level: 'Varsity', time: '1:00 PM', par: 70, holes: 18, iWanaMakerId: 186072, teamScore: '285', teamFinish: '1st of 8' },
     { id: '2026-V12', date: '2026-05-19', dateFormatted: 'May 19',    event: 'Lake Conference Championship',       course: 'Fox Hollow Golf Club',       level: 'Varsity', time: '8:00 AM', teamScore: '295 (+7)', teamFinish: '1st of 8' },
-    { id: '2026-V13', date: '2026-05-27', dateFormatted: 'May 27-28', event: 'Section 6AAA Championship',          course: 'Meadows at Mystic Lake',     level: 'Varsity', isMultiDay: true },
+    { id: '2026-V13', date: '2026-05-27', dateFormatted: 'May 27-28', event: 'Section 6AAA Championship',          course: 'Meadows at Mystic Lake',     level: 'Varsity', isMultiDay: true, iWanaMakerId: 211630, par: 72, holes: 18, rounds: [
+      { round: 1, id: '2026-2026-05-27-VAR-16', date: '2026-05-27', dateFormatted: 'May 27', course: 'Meadows at Mystic Lake', par: 72, teamScore: '293 (+5)' },
+      { round: 2, id: '2026-2026-05-28-VAR-17', date: '2026-05-28', dateFormatted: 'May 28', course: 'Meadows at Mystic Lake', par: 72 },
+    ]},
     { id: '2026-V14', date: '2026-06-09', dateFormatted: 'Jun 9-10',  event: 'MSHSL AAA State Tournament',         course: 'Bunker Hills Golf Course',   level: 'Varsity', isMultiDay: true },
     // JV Events
     { id: '2026-JV-APR16', date: '2026-04-16', dateFormatted: 'Apr 16',  event: 'Match Play @ Heritage Links',         course: 'Heritage Links Golf Club',   level: 'JV', time: '4:12 PM', format: 'matchplay', teamResult: 'Win', teamRecord: '4-0', matches: [
