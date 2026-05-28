@@ -6243,7 +6243,7 @@
       "holes": 18,
       "par": 72,
       "teamScore": 293,
-      "teamFinish": null,
+      "teamFinish": "2nd of 12 (R1)",
       "iWanaMakerId": 211630,
       "fieldSize": 12,
       "players": [
@@ -6283,7 +6283,9 @@
           "score": 78,
           "toPar": 6
         }
-      ]
+      ],
+      "round": 1,
+      "totalRounds": 3
     },
     {
       "id": "2026-2026-05-28-VAR-17",
@@ -6295,8 +6297,50 @@
       "course": "Meadows at Mystic Lake",
       "holes": 18,
       "par": 72,
-      "teamScore": null,
-      "teamFinish": null
+      "teamScore": 303,
+      "teamFinish": "2nd of 12 (R2)",
+      "round": 2,
+      "totalRounds": 3,
+      "iWanaMakerId": 211630,
+      "fieldSize": 12,
+      "players": [
+        {
+          "name": "Peter Bennett",
+          "grade": "SR",
+          "score": 70,
+          "toPar": -2
+        },
+        {
+          "name": "David Colby",
+          "grade": "SR",
+          "score": 77,
+          "toPar": 5
+        },
+        {
+          "name": "Charlie Nielsen",
+          "grade": "JR",
+          "score": 78,
+          "toPar": 6
+        },
+        {
+          "name": "Chase Larson",
+          "grade": "JR",
+          "score": 78,
+          "toPar": 6
+        },
+        {
+          "name": "Sander Ohe",
+          "grade": "SR",
+          "score": 81,
+          "toPar": 9
+        },
+        {
+          "name": "Michael Vernon",
+          "grade": "SO",
+          "score": 80,
+          "toPar": 8
+        }
+      ]
     },
     {
       "id": "2026-2026-06-09-VAR-18",
@@ -8658,6 +8702,15 @@
       "finish": "1st of 8",
       "level": "JV",
       "isJV": true
+    },
+    {
+      "id": "2026-V-SECTION6AAA",
+      "event": "Section 6AAA Championship",
+      "dateFormatted": "May 27-28",
+      "course": "Meadows at Mystic Lake",
+      "teamScore": "596 (+20)",
+      "finish": "2nd of 12",
+      "notes": "36-hole total. Benilde-St. Margaret's 1st (572). Edina qualifies for State."
     }
   ],
   "players2026": [
@@ -8970,6 +9023,15 @@
           "holes": 18,
           "par": 72,
           "toPar": 1
+        },
+        {
+          "eventId": "2026-2026-05-28-VAR-17",
+          "score": 78,
+          "event": "MSHSL Boys 6AAA Section Tournament Day 2",
+          "eventDate": "2026-05-28",
+          "holes": 18,
+          "par": 72,
+          "toPar": 6
         }
       ],
       "average": 75.71,
@@ -9107,6 +9169,15 @@
           "holes": 18,
           "par": 72,
           "toPar": 3
+        },
+        {
+          "eventId": "2026-2026-05-28-VAR-17",
+          "score": 81,
+          "event": "MSHSL Boys 6AAA Section Tournament Day 2",
+          "eventDate": "2026-05-28",
+          "holes": 18,
+          "par": 72,
+          "toPar": 9
         }
       ],
       "average": 73.14,
@@ -9244,6 +9315,15 @@
           "holes": 18,
           "par": 72,
           "toPar": 0
+        },
+        {
+          "eventId": "2026-2026-05-28-VAR-17",
+          "score": 70,
+          "event": "MSHSL Boys 6AAA Section Tournament Day 2",
+          "eventDate": "2026-05-28",
+          "holes": 18,
+          "par": 72,
+          "toPar": -2
         }
       ],
       "average": 73.0,
@@ -9381,6 +9461,15 @@
           "holes": 18,
           "par": 72,
           "toPar": 3
+        },
+        {
+          "eventId": "2026-2026-05-28-VAR-17",
+          "score": 78,
+          "event": "MSHSL Boys 6AAA Section Tournament Day 2",
+          "eventDate": "2026-05-28",
+          "holes": 18,
+          "par": 72,
+          "toPar": 6
         }
       ],
       "average": 74.71,
@@ -9518,6 +9607,15 @@
           "holes": 18,
           "par": 72,
           "toPar": 6
+        },
+        {
+          "eventId": "2026-2026-05-28-VAR-17",
+          "score": 80,
+          "event": "MSHSL Boys 6AAA Section Tournament Day 2",
+          "eventDate": "2026-05-28",
+          "holes": 18,
+          "par": 72,
+          "toPar": 8
         }
       ],
       "average": 78.0,
@@ -9625,6 +9723,15 @@
           "holes": 18,
           "par": 72,
           "toPar": 1
+        },
+        {
+          "eventId": "2026-2026-05-28-VAR-17",
+          "score": 77,
+          "event": "MSHSL Boys 6AAA Section Tournament Day 2",
+          "eventDate": "2026-05-28",
+          "holes": 18,
+          "par": 72,
+          "toPar": 5
         }
       ],
       "average": 79.5,
@@ -10715,7 +10822,7 @@
           null,
           null,
           72,
-          null,
+          70,
           null,
           null
         ]
@@ -10757,7 +10864,7 @@
           null,
           null,
           73,
-          null,
+          77,
           null,
           null
         ]
@@ -10841,7 +10948,7 @@
           null,
           null,
           75,
-          null,
+          78,
           null,
           null
         ]
@@ -10883,7 +10990,7 @@
           null,
           null,
           73,
-          null,
+          78,
           null,
           null
         ]
@@ -10925,7 +11032,7 @@
           null,
           null,
           75,
-          null,
+          81,
           null,
           null
         ]
@@ -11135,7 +11242,7 @@
           null,
           null,
           78,
-          null,
+          80,
           null,
           null
         ]
@@ -19980,6 +20087,288 @@
       ],
       "total": 78,
       "round": 1
+    },
+    {
+      "playerName": "Peter Bennett",
+      "eventDate": "2026-05-28",
+      "courseName": "Meadows at Mystic Lake",
+      "par": [
+        4,
+        3,
+        5,
+        4,
+        4,
+        5,
+        3,
+        4,
+        4,
+        5,
+        4,
+        4,
+        4,
+        3,
+        4,
+        4,
+        3,
+        5
+      ],
+      "scores": [
+        4,
+        2,
+        5,
+        4,
+        4,
+        4,
+        3,
+        4,
+        5,
+        5,
+        4,
+        3,
+        4,
+        4,
+        4,
+        4,
+        2,
+        5
+      ],
+      "total": 70,
+      "round": 2
+    },
+    {
+      "playerName": "David Colby",
+      "eventDate": "2026-05-28",
+      "courseName": "Meadows at Mystic Lake",
+      "par": [
+        4,
+        3,
+        5,
+        4,
+        4,
+        5,
+        3,
+        4,
+        4,
+        5,
+        4,
+        4,
+        4,
+        3,
+        4,
+        4,
+        3,
+        5
+      ],
+      "scores": [
+        4,
+        4,
+        5,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        5,
+        4,
+        4,
+        4,
+        4,
+        5,
+        4,
+        4,
+        6
+      ],
+      "total": 77,
+      "round": 2
+    },
+    {
+      "playerName": "Charlie Nielsen",
+      "eventDate": "2026-05-28",
+      "courseName": "Meadows at Mystic Lake",
+      "par": [
+        4,
+        3,
+        5,
+        4,
+        4,
+        5,
+        3,
+        4,
+        4,
+        5,
+        4,
+        4,
+        4,
+        3,
+        4,
+        4,
+        3,
+        5
+      ],
+      "scores": [
+        4,
+        3,
+        7,
+        5,
+        5,
+        6,
+        4,
+        3,
+        4,
+        5,
+        4,
+        4,
+        4,
+        3,
+        5,
+        4,
+        3,
+        5
+      ],
+      "total": 78,
+      "round": 2
+    },
+    {
+      "playerName": "Chase Larson",
+      "eventDate": "2026-05-28",
+      "courseName": "Meadows at Mystic Lake",
+      "par": [
+        4,
+        3,
+        5,
+        4,
+        4,
+        5,
+        3,
+        4,
+        4,
+        5,
+        4,
+        4,
+        4,
+        3,
+        4,
+        4,
+        3,
+        5
+      ],
+      "scores": [
+        4,
+        4,
+        5,
+        4,
+        4,
+        6,
+        3,
+        4,
+        6,
+        4,
+        5,
+        4,
+        4,
+        3,
+        4,
+        5,
+        3,
+        6
+      ],
+      "total": 78,
+      "round": 2
+    },
+    {
+      "playerName": "Sander Ohe",
+      "eventDate": "2026-05-28",
+      "courseName": "Meadows at Mystic Lake",
+      "par": [
+        4,
+        3,
+        5,
+        4,
+        4,
+        5,
+        3,
+        4,
+        4,
+        5,
+        4,
+        4,
+        4,
+        3,
+        4,
+        4,
+        3,
+        5
+      ],
+      "scores": [
+        4,
+        3,
+        6,
+        3,
+        4,
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        3,
+        5,
+        4,
+        5,
+        6
+      ],
+      "total": 81,
+      "round": 2
+    },
+    {
+      "playerName": "Michael Vernon",
+      "eventDate": "2026-05-28",
+      "courseName": "Meadows at Mystic Lake",
+      "par": [
+        4,
+        3,
+        5,
+        4,
+        4,
+        5,
+        3,
+        4,
+        4,
+        5,
+        4,
+        4,
+        4,
+        3,
+        4,
+        4,
+        3,
+        5
+      ],
+      "scores": [
+        4,
+        3,
+        5,
+        4,
+        4,
+        6,
+        4,
+        5,
+        4,
+        5,
+        4,
+        5,
+        4,
+        3,
+        5,
+        6,
+        3,
+        6
+      ],
+      "total": 80,
+      "round": 2
     }
   ],
   "news2026": []
