@@ -20,7 +20,7 @@ const schedule2026 = [
   { id: '2026-9',  date: '2026-05-11', dateFormatted: 'May 11-12', event: 'Edina Invitational',                 course: 'Oak Ridge', isMultiDay: true },
   { id: '2026-10', date: '2026-05-19', dateFormatted: 'May 19',    event: 'Lake Conference Championship',       course: 'Fox Hollow', status: 'completed' },
   { id: '2026-11', date: '2026-05-27', endDate: '2026-05-28', dateFormatted: 'May 27-28', event: 'MSHSL Boys 6AAA Section Tournament', course: 'Meadows at Mystic Lake', isMultiDay: true, status: 'completed' },
-  { id: '2026-12', date: '2026-06-09', dateFormatted: 'Jun 9-10',  event: 'MSHSL Boys AAA State Tournament',    course: 'Bunker Hills', isMultiDay: true },
+  { id: '2026-12', date: '2026-06-09', dateFormatted: 'Jun 9-10',  event: 'MSHSL Boys AAA State Tournament',    course: 'Bunker Hills', isMultiDay: true, note: 'Peter Bennett qualified as an individual (T4 at Sections, -2)' },
 ]
 
 const isActiveEvent = (e) => e.status !== 'rained_out' && e.status !== 'cancelled'
@@ -244,6 +244,9 @@ function Home() {
                       <div className="flex-grow min-w-0">
                         <div className="font-bold text-gray-900 text-base truncate">{ev.event}</div>
                         <div className="text-sm text-gray-600 truncate">{ev.course}</div>
+                        {ev.note && (
+                          <div className="text-xs text-edina-green font-medium mt-0.5">{ev.note}</div>
+                        )}
                       </div>
                     </div>
                   ))}

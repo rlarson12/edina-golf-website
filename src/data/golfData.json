@@ -6298,7 +6298,7 @@
       "holes": 18,
       "par": 72,
       "teamScore": 303,
-      "teamFinish": "2nd of 12 (R2)",
+      "teamFinish": "2nd of 12 (Team did not advance)",
       "round": 2,
       "totalRounds": 3,
       "iWanaMakerId": 211630,
@@ -6308,52 +6308,66 @@
           "name": "Peter Bennett",
           "grade": "SR",
           "score": 70,
-          "toPar": -2
+          "toPar": -2,
+          "individualFinish": "T4 \u2014 State qualifier"
         },
         {
           "name": "David Colby",
           "grade": "SR",
           "score": 77,
-          "toPar": 5
+          "toPar": 5,
+          "individualFinish": "10th"
         },
         {
           "name": "Charlie Nielsen",
           "grade": "JR",
           "score": 78,
-          "toPar": 6
+          "toPar": 6,
+          "individualFinish": "11th"
         },
         {
           "name": "Chase Larson",
           "grade": "JR",
           "score": 78,
-          "toPar": 6
+          "toPar": 6,
+          "individualFinish": "15th"
         },
         {
           "name": "Sander Ohe",
           "grade": "SR",
           "score": 81,
-          "toPar": 9
+          "toPar": 9,
+          "individualFinish": "17th"
         },
         {
           "name": "Michael Vernon",
           "grade": "SO",
           "score": 80,
-          "toPar": 8
+          "toPar": 8,
+          "individualFinish": "19th"
         }
-      ]
+      ],
+      "individualQualifiers": [
+        "Peter Bennett"
+      ],
+      "notes": "Edina finished 2nd of 12 (596 / +20) and did not advance to State. Peter Bennett qualified individually (T4, 142 / -2) and will compete at the MSHSL Boys AAA State Championship June 9-10 at Bunker Hills."
     },
     {
       "id": "2026-2026-06-09-VAR-18",
       "date": "2026-06-09T00:00:00.000Z",
       "dateFormatted": "Jun 9",
       "dateISO": "2026-06-09",
-      "name": "MSHSL Boys AAA MSHSL Boys AAA State Championship Day 1",
+      "name": "MSHSL Boys AAA State Championship Day 1",
       "level": "Varsity",
       "course": "Bunker Hills Golf Course",
       "holes": 18,
       "par": 72,
       "teamScore": null,
-      "teamFinish": null
+      "teamFinish": null,
+      "notes": "Edina did not advance to State as a team. Peter Bennett qualified as an individual (T4 at Sections, 142 / -2).",
+      "individualQualifiers": [
+        "Peter Bennett"
+      ]
     },
     {
       "id": "2026-2026-06-10-VAR-19",
@@ -6366,7 +6380,11 @@
       "holes": 18,
       "par": 72,
       "teamScore": null,
-      "teamFinish": null
+      "teamFinish": null,
+      "notes": "Edina did not advance to State as a team. Peter Bennett qualified as an individual (T4 at Sections, 142 / -2).",
+      "individualQualifiers": [
+        "Peter Bennett"
+      ]
     },
     {
       "id": "2026-JV-APR20",
@@ -8057,8 +8075,8 @@
       "course": "Meadows at Mystic Lake",
       "holes": 18,
       "par": 72,
-      "teamScore": null,
-      "teamFinish": null,
+      "teamScore": "303 (+15)",
+      "teamFinish": "2nd of 12 (Team did not advance)",
       "event": "MSHSL Boys 6AAA Section Tournament Day 2",
       "startTimeUtc": null,
       "iWanaMakerId": 211630,
@@ -8078,7 +8096,10 @@
       "teamFinish": null,
       "event": "MSHSL AAA State Tournament Day 1",
       "startTimeUtc": null,
-      "scheduleJsxId": "2026-V14"
+      "scheduleJsxId": "2026-V14",
+      "individualQualifiers": [
+        "Peter Bennett"
+      ]
     },
     {
       "id": "2026-2026-06-10-VAR-19",
@@ -8094,7 +8115,10 @@
       "teamFinish": null,
       "event": "MSHSL AAA State Tournament Day 2",
       "startTimeUtc": null,
-      "scheduleJsxId": "2026-V14"
+      "scheduleJsxId": "2026-V14",
+      "individualQualifiers": [
+        "Peter Bennett"
+      ]
     }
   ],
   "jvSchedule2026": [
@@ -9031,7 +9055,8 @@
           "eventDate": "2026-05-28",
           "holes": 18,
           "par": 72,
-          "toPar": 6
+          "toPar": 6,
+          "individualFinish": "11th"
         }
       ],
       "average": 75.71,
@@ -9177,7 +9202,8 @@
           "eventDate": "2026-05-28",
           "holes": 18,
           "par": 72,
-          "toPar": 9
+          "toPar": 9,
+          "individualFinish": "17th"
         }
       ],
       "average": 73.14,
@@ -9323,7 +9349,8 @@
           "eventDate": "2026-05-28",
           "holes": 18,
           "par": 72,
-          "toPar": -2
+          "toPar": -2,
+          "individualFinish": "T4 \u2014 State qualifier"
         }
       ],
       "average": 73.0,
@@ -9469,7 +9496,8 @@
           "eventDate": "2026-05-28",
           "holes": 18,
           "par": 72,
-          "toPar": 6
+          "toPar": 6,
+          "individualFinish": "15th"
         }
       ],
       "average": 74.71,
@@ -9615,7 +9643,8 @@
           "eventDate": "2026-05-28",
           "holes": 18,
           "par": 72,
-          "toPar": 8
+          "toPar": 8,
+          "individualFinish": "19th"
         }
       ],
       "average": 78.0,
@@ -9731,7 +9760,8 @@
           "eventDate": "2026-05-28",
           "holes": 18,
           "par": 72,
-          "toPar": 5
+          "toPar": 5,
+          "individualFinish": "10th"
         }
       ],
       "average": 79.5,

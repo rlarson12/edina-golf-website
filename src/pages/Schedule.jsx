@@ -173,11 +173,11 @@ function Schedule() {
     ] },
     { id: '2026-V15', date: '2026-05-18', dateFormatted: 'May 18',    event: 'Lake Conference Tournament #3',      course: 'Oak Ridge Country Club',     level: 'Varsity', time: '1:00 PM', par: 70, holes: 18, iWanaMakerId: 186072, teamScore: '285', teamFinish: '1st of 8' },
     { id: '2026-V12', date: '2026-05-19', dateFormatted: 'May 19',    event: 'Lake Conference Championship',       course: 'Fox Hollow Golf Club',       level: 'Varsity', time: '8:00 AM', teamScore: '295 (+7)', teamFinish: '1st of 8' },
-    { id: '2026-V13', date: '2026-05-27', dateFormatted: 'May 27-28', event: 'Section 6AAA Championship',          course: 'Meadows at Mystic Lake',     level: 'Varsity', isMultiDay: true, iWanaMakerId: 211630, par: 72, holes: 18, teamScore: '596 (+20)', teamFinish: '2nd of 12', rounds: [
+    { id: '2026-V13', date: '2026-05-27', dateFormatted: 'May 27-28', event: 'Section 6AAA Championship',          course: 'Meadows at Mystic Lake',     level: 'Varsity', isMultiDay: true, iWanaMakerId: 211630, par: 72, holes: 18, teamScore: '596 (+20)', teamFinish: '2nd of 12 (Team did not advance)', notes: 'Edina finished 2nd of 12 (596 / +20) and did not advance to State. Peter Bennett qualified individually (T4, 142 / -2) and will compete at the MSHSL Boys AAA State Championship June 9-10 at Bunker Hills.', individualQualifiers: ['Peter Bennett'], rounds: [
       { round: 1, id: '2026-2026-05-27-VAR-16', date: '2026-05-27', dateFormatted: 'May 27', course: 'Meadows at Mystic Lake', par: 72, teamScore: '293 (+5)' },
       { round: 2, id: '2026-2026-05-28-VAR-17', date: '2026-05-28', dateFormatted: 'May 28', course: 'Meadows at Mystic Lake', par: 72, teamScore: '303 (+15)' },
     ]},
-    { id: '2026-V14', date: '2026-06-09', dateFormatted: 'Jun 9-10',  event: 'MSHSL AAA State Tournament',         course: 'Bunker Hills Golf Course',   level: 'Varsity', isMultiDay: true },
+    { id: '2026-V14', date: '2026-06-09', dateFormatted: 'Jun 9-10',  event: 'MSHSL AAA State Tournament',         course: 'Bunker Hills Golf Course',   level: 'Varsity', isMultiDay: true, notes: 'Edina did not advance as a team. Peter Bennett qualified as an individual (T4 at Sections).', individualQualifiers: ['Peter Bennett'] },
     // JV Events
     { id: '2026-JV-APR16', date: '2026-04-16', dateFormatted: 'Apr 16',  event: 'Match Play @ Heritage Links',         course: 'Heritage Links Golf Club',   level: 'JV', time: '4:12 PM', format: 'matchplay', teamResult: 'Win', teamRecord: '4-0', matches: [
       { pair: ['Mason Catron', 'Randy Dann'], opponent: ['Landon Rowles', 'Walter Anderson'], result: 'Won 3&2' },
@@ -229,8 +229,8 @@ function Schedule() {
   const scheduleResultMap = useMemo(() => {
     const map = {}
     const addEntry = e => {
-      if (e.teamScore != null || e.teamFinish != null) {
-        const result = { teamScore: e.teamScore, teamFinish: e.teamFinish, teamResult: e.teamResult }
+      if (e.teamScore != null || e.teamFinish != null || e.notes != null || e.individualQualifiers != null) {
+        const result = { teamScore: e.teamScore, teamFinish: e.teamFinish, teamResult: e.teamResult, notes: e.notes, individualQualifiers: e.individualQualifiers }
         // Index by primary id
         map[e.id] = result
         // Also index by scheduleJsxId if present (varsity: golfData id differs from Schedule.jsx id)
@@ -771,6 +771,19 @@ function Schedule() {
                   </div>
                 )}
               </div>
+              {/* Result notes / individual qualifiers banner */}
+              {(event.notes || (Array.isArray(event.individualQualifiers) && event.individualQualifiers.length > 0)) && (
+                <div className="mb-3 p-3 rounded-lg bg-edina-green/10 border border-edina-green/30">
+                  {Array.isArray(event.individualQualifiers) && event.individualQualifiers.length > 0 && (
+                    <div className="text-sm font-semibold text-edina-green mb-1">
+                      Individual State Qualifier{event.individualQualifiers.length === 1 ? '' : 's'}: {event.individualQualifiers.join(', ')}
+                    </div>
+                  )}
+                  {event.notes && (
+                    <div className="text-sm text-gray-700 leading-relaxed">{event.notes}</div>
+                  )}
+                </div>
+              )}
               {/* Round breakdown for multi-day events */}
               {event.isMultiDay && event.rounds && (
                 <>
